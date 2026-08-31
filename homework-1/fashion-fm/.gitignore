@@ -1,0 +1,20 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Downloaded datasets and generated training artifacts
+/data/
+/outputs/
+
+# Test/lint artifacts
+.pytest_cache/
+.ruff_cache/
+.coverage
+coverage.xml
