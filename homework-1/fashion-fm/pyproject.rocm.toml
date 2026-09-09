@@ -1,0 +1,66 @@
+# AMD ROCm dependency variant. Symlink this file to pyproject.toml before
+# running `uv sync --extra rocm` on ROCm hosts; see README.md for details.
+[project]
+name = "fashion-fm"
+version = "0.1.0"
+description = "A tiny text-conditioned flow-matching model for FashionMNIST"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "click>=8.1",
+  "diffusers[torch]>=0.37.0",
+  "matplotlib>=3.10",
+  "numpy>=2.0",
+  "pillow>=11.0",
+  "pydantic>=2.11",
+  "pyyaml>=6.0",
+  "torch>=2.7.0",
+  "torchvision>=0.22.0",
+  "tqdm>=4.67.0",
+]
+
+[project.optional-dependencies]
+rocm = [
+  "torch",
+  "torchvision",
+  "triton-rocm; sys_platform == 'linux'",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.3",
+  "ruff>=0.11",
+]
+
+[project.scripts]
+fashion-fm = "fashion_fm.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[[tool.uv.index]]
+name = "pytorch-rocm"
+url = "https://download.pytorch.org/whl/rocm7.2"
+explicit = true
+
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-rocm", extra = "rocm", marker = "sys_platform == 'linux'" },
+]
+torchvision = [
+  { index = "pytorch-rocm", extra = "rocm", marker = "sys_platform == 'linux'" },
+]
+triton-rocm = [
+  { index = "pytorch-rocm", extra = "rocm", marker = "sys_platform == 'linux'" },
+]

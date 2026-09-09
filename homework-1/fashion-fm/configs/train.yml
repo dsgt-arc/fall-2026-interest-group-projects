@@ -1,0 +1,62 @@
+# Groups the validated settings for one run; change only with the loader schema; recommended value: keep `training`.
+training:
+
+  # Dataset cache path; change it to relocate downloads; recommended: a non-empty path on fast local storage.
+  data_dir: data
+
+  # Checkpoint and metrics path; change it to separate experiments; recommended: a unique writable path per run.
+  output_dir: outputs/fashion-fm
+
+  # Full passes over the dataset; increase for convergence or reduce for faster trials; recommended range: 10-200.
+  epochs: 50
+
+  # Images processed per optimizer step; tune for memory use and throughput; recommended range: 32-512.
+  batch_size: 256
+
+  # Data-loading subprocesses; tune to prevent input stalls or reduce CPU use; recommended range: 0-16.
+  workers: 4
+
+  # Optional cap on training examples; lower it for smoke tests or use null for all data; recommended: null or 1024-60000.
+  max_train_samples: null
+
+  # AdamW starting step size; tune when learning is unstable or too slow; recommended range: 0.00001-0.001.
+  learning_rate: 0.0002
+
+  # Cosine schedule's final step size; raise it to retain late updates or lower it to settle; recommended: 0-learning_rate.
+  cosine_min_lr: 0.00001
+
+  # AdamW L2-style regularization; raise it to curb overfitting or lower it for more capacity; recommended range: 0-0.01.
+  weight_decay: 0.0001
+
+  # Maximum gradient norm; lower it for unstable spikes or raise it if clipping dominates; recommended range: 0.1-10.
+  max_grad_norm: 1.0
+
+  # Fraction of class labels dropped for classifier-free guidance; tune conditioning strength; recommended range: 0.05-0.3.
+  cfg_dropout: 0.1
+
+  # EMA weight given to history; raise it for smoother weights or lower it to track faster; recommended range: 0.9-0.9999.
+  ema_decay: 0.99
+
+  # Discrete positions in the model's time embedding; change temporal resolution before training; recommended range: 100-2000.
+  timesteps: 1000
+
+  # Epoch interval for numbered checkpoints; lower it for recovery granularity at a storage cost; recommended range: 1-25.
+  save_every: 5
+
+  # ODE integration steps in each monitoring grid; raise for quality or lower for speed; recommended range: 10-100.
+  sample_steps: 30
+
+  # Random seed for reproducible initialization and batches; change it for independent runs; recommended range: 0-4294967295.
+  seed: 42
+
+  # Compute backend; override auto for debugging or explicit placement; recommended values: auto, cuda, mps, or cpu.
+  device: auto
+
+  # Enables CUDA/ROCm autocasting; disable it to debug numeric issues; recommended: true on GPUs, false on CPUs.
+  mixed_precision: true
+
+  # Spreads batches across visible GPUs; enable it only for multi-GPU training; recommended values: false or true with 2+ GPUs.
+  data_parallel: false
+
+  # Restarts from latest.pt when available; disable it for a fresh run in an existing output path; recommended: true.
+  resume: true

@@ -1,0 +1,35 @@
+[project]
+name = "clef-rag"
+version = "0.1.0"
+description = "Local Ollama RAG for the CLEF 2026 working notes"
+readme = "README.md"
+authors = [
+    { name = "Eric Regina", email = "eric.regina@gatech.edu" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "chromadb>=1.5.9",
+    "ir-measures>=0.4.3",
+    "langchain>=1.4.0",
+    "langchain-chroma>=1.1.0",
+    "langchain-classic>=1.0.8",
+    "langchain-community>=0.4.2",
+    "langchain-ollama>=1.1.0",
+    "langchain-text-splitters>=1.1.2",
+    "ollama>=0.6.2",
+    "pypdf>=6.18.0",
+    "rank-bm25>=0.2.2",
+]
+
+[project.scripts]
+clef-rag = "clef_rag:main"
+
+[build-system]
+requires = ["uv_build>=0.12.10,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
