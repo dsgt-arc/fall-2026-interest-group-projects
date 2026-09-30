@@ -42,7 +42,7 @@ class Retriever:
     def __init__(self, index, models):
         self.index, self.models = index, models
 
-    def search(self, question, *, track=None, author=None, paper_ids=None, top_k=6):
+    def search(self, question, *, track=None, author=None, paper_ids=None, top_k=3):
         store = self.index.vectorstore(self.models)
         catalog = list_documents(
             self.index.db, track=track, author=author, paper_ids=paper_ids
@@ -115,6 +115,13 @@ class Retriever:
         )
         ensemble = EnsembleRetriever(
             retrievers=[semantic, lexical], weights=[0.5, 0.5], c=60, id_key="chunk_id"
+            #experiment with a different weight distribution 
+            #retrievers=[semantic, lexical], weights=[0.7, 0.3], c=60, id_key="chunk_id"
+            #experiment with a dense weight distribution
+            #retrievers=[semantic, lexical], weights=[1.0, 0.0], c=60, id_key="chunk_id"
+            #experiment with a sparse weight distribution
+            #retrievers=[semantic, lexical], weights=[0.0, 1.0], c=60, id_key="chunk_id"
+
         )
         try:
             with tracing_context(enabled=False):
