@@ -1,0 +1,36 @@
+{
+  "checkpoint": "models/fashion-fm-best.pt",
+  "weights": "ema",
+  "seed": 2026,
+  "samples": 1000,
+  "samples_per_class": 100,
+  "sample_steps": 40,
+  "guidance_scale": 2.0,
+  "classifier_test_accuracy": 0.9019,
+  "condition_accuracy": 0.9490000605583191,
+  "mean_target_probability": 0.9045026302337646,
+  "within_class_pairwise_mse": 0.3223026990890503,
+  "nearest_training_mse_min": 0.027153324335813522,
+  "nearest_training_mse_mean": 0.10280124098062515,
+  "exact_training_copies": 0,
+  "per_class_accuracy": {
+    "t-shirt/top": 0.9699999690055847,
+    "trouser": 1.0,
+    "pullover": 0.949999988079071,
+    "dress": 1.0,
+    "coat": 0.9199999570846558,
+    "sandal": 0.9899999499320984,
+    "shirt": 0.6699999570846558,
+    "sneaker": 0.9899999499320984,
+    "bag": 1.0,
+    "ankle boot": 1.0
+  },
+  "provenance": {
+    "date": "2026-09-24",
+    "git_sha": "995a050",
+    "run_by": "ssathishswe",
+    "device": "NVIDIA GeForce RTX 5060 Ti",
+    "judge_classifier": "outputs/evaluation/fashion-classifier.pt (shared across both arms)",
+    "note": "Released checkpoint (epoch 5, step 295) re-scored at 100/class with the baseline judge."
+  }
+}
