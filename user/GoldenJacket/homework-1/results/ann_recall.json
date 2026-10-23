@@ -1,0 +1,14 @@
+{
+  "questions": 233,
+  "mean_recall_at_20": 0.7890557939914162,
+  "questions_below_0.5": 32,
+  "questions_perfect": 90,
+  "hnsw_config": {
+    "space": "cosine",
+    "ef_construction": 100,
+    "ef_search": 100,
+    "max_neighbors": 16,
+    "resize_factor": 1.2,
+    "sync_threshold": 1000
+  }
+}

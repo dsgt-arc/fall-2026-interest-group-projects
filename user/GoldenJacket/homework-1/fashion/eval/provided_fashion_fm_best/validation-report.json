@@ -1,0 +1,28 @@
+{
+  "checkpoint": "/Users/zacharywallace/Desktop/Academic-Work/GT - OMSCS/CS 8903 - Special Topic/fall-2026-interest-group-projects/homework-1/fashion-fm/models/fashion-fm-best.pt",
+  "weights": "ema",
+  "seed": 2026,
+  "samples": 160,
+  "samples_per_class": 16,
+  "sample_steps": 40,
+  "guidance_scale": 2.0,
+  "classifier_test_accuracy": 0.8999,
+  "condition_accuracy": 0.96875,
+  "mean_target_probability": 0.9265114665031433,
+  "within_class_pairwise_mse": 0.3270808756351471,
+  "nearest_training_mse_min": 0.02803117409348488,
+  "nearest_training_mse_mean": 0.1043832078576088,
+  "exact_training_copies": 0,
+  "per_class_accuracy": {
+    "t-shirt/top": 1.0,
+    "trouser": 1.0,
+    "pullover": 0.9375,
+    "dress": 1.0,
+    "coat": 1.0,
+    "sandal": 1.0,
+    "shirt": 0.75,
+    "sneaker": 1.0,
+    "bag": 1.0,
+    "ankle boot": 1.0
+  }
+}

@@ -1,0 +1,2885 @@
+{
+  "summary": {
+    "baseline": {
+      "config": {
+        "name": "baseline",
+        "dense_k": 20,
+        "bm25_k": 20,
+        "w_dense": 0.5,
+        "w_bm25": 0.5,
+        "c": 60,
+        "intro": "always",
+        "dense_search": "hnsw",
+        "dims": 768,
+        "rerank": 0,
+        "top_k": 6
+      },
+      "metrics": {
+        "1": {
+          "precision": 1.0,
+          "recall": 0.9166666666666666,
+          "hit_rate": 1.0,
+          "mrr": 1.0,
+          "map": 0.9166666666666666,
+          "ndcg": 1.0
+        },
+        "3": {
+          "precision": 0.38888888888888884,
+          "recall": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0,
+          "map": 1.0,
+          "ndcg": 1.0
+        },
+        "6": {
+          "precision": 0.19444444444444442,
+          "recall": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0,
+          "map": 1.0,
+          "ndcg": 1.0
+        },
+        "paper_hit@6": 1.0
+      }
+    },
+    "exact search only": {
+      "config": {
+        "name": "exact search only",
+        "dense_k": 20,
+        "bm25_k": 20,
+        "w_dense": 0.5,
+        "w_bm25": 0.5,
+        "c": 60,
+        "intro": "always",
+        "dense_search": "exact",
+        "dims": 768,
+        "rerank": 0,
+        "top_k": 6
+      },
+      "metrics": {
+        "1": {
+          "precision": 1.0,
+          "recall": 0.9166666666666666,
+          "hit_rate": 1.0,
+          "mrr": 1.0,
+          "map": 0.9166666666666666,
+          "ndcg": 1.0
+        },
+        "3": {
+          "precision": 0.38888888888888884,
+          "recall": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0,
+          "map": 1.0,
+          "ndcg": 1.0
+        },
+        "6": {
+          "precision": 0.19444444444444442,
+          "recall": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 1.0,
+          "map": 1.0,
+          "ndcg": 1.0
+        },
+        "paper_hit@6": 1.0
+      },
+      "p_vs_baseline": {
+        "ndcg": 1.0,
+        "reciprocal_rank": 1.0,
+        "hit": 1.0
+      }
+    },
+    "intro last only": {
+      "config": {
+        "name": "intro last only",
+        "dense_k": 20,
+        "bm25_k": 20,
+        "w_dense": 0.5,
+        "w_bm25": 0.5,
+        "c": 60,
+        "intro": "last",
+        "dense_search": "hnsw",
+        "dims": 768,
+        "rerank": 0,
+        "top_k": 6
+      },
+      "metrics": {
+        "1": {
+          "precision": 0.8333333333333334,
+          "recall": 0.75,
+          "hit_rate": 0.8333333333333334,
+          "mrr": 0.8333333333333334,
+          "map": 0.75,
+          "ndcg": 0.8333333333333334
+        },
+        "3": {
+          "precision": 0.3333333333333333,
+          "recall": 0.8333333333333334,
+          "hit_rate": 0.8333333333333334,
+          "mrr": 0.8333333333333334,
+          "map": 0.8333333333333334,
+          "ndcg": 0.8333333333333334
+        },
+        "6": {
+          "precision": 0.19444444444444442,
+          "recall": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 0.8666666666666667,
+          "map": 0.8666666666666667,
+          "ndcg": 0.8978088012057569
+        },
+        "paper_hit@6": 1.0
+      },
+      "p_vs_baseline": {
+        "ndcg": 0.4975751212439378,
+        "reciprocal_rank": 0.4975751212439378,
+        "hit": 1.0
+      }
+    },
+    "improved (intro last + exact search)": {
+      "config": {
+        "name": "improved (intro last + exact search)",
+        "dense_k": 20,
+        "bm25_k": 20,
+        "w_dense": 0.5,
+        "w_bm25": 0.5,
+        "c": 60,
+        "intro": "last",
+        "dense_search": "exact",
+        "dims": 768,
+        "rerank": 0,
+        "top_k": 6
+      },
+      "metrics": {
+        "1": {
+          "precision": 0.8333333333333334,
+          "recall": 0.75,
+          "hit_rate": 0.8333333333333334,
+          "mrr": 0.8333333333333334,
+          "map": 0.75,
+          "ndcg": 0.8333333333333334
+        },
+        "3": {
+          "precision": 0.3333333333333333,
+          "recall": 0.8333333333333334,
+          "hit_rate": 0.8333333333333334,
+          "mrr": 0.8333333333333334,
+          "map": 0.8333333333333334,
+          "ndcg": 0.8333333333333334
+        },
+        "6": {
+          "precision": 0.19444444444444442,
+          "recall": 1.0,
+          "hit_rate": 1.0,
+          "mrr": 0.8666666666666667,
+          "map": 0.8666666666666667,
+          "ndcg": 0.8978088012057569
+        },
+        "paper_hit@6": 1.0
+      },
+      "p_vs_baseline": {
+        "ndcg": 0.4975751212439378,
+        "reciprocal_rank": 0.4975751212439378,
+        "hit": 1.0
+      }
+    }
+  },
+  "per_question": {
+    "baseline": [
+      {
+        "id": "paper-1",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper1",
+            1
+          ],
+          [
+            "paper1",
+            3
+          ],
+          [
+            "paper1",
+            1
+          ],
+          [
+            "paper1",
+            2
+          ],
+          [
+            "paper1",
+            14
+          ],
+          [
+            "paper1",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "paper-2",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper2",
+            1
+          ],
+          [
+            "paper2",
+            3
+          ],
+          [
+            "paper2",
+            5
+          ],
+          [
+            "paper151",
+            11
+          ],
+          [
+            "paper2",
+            5
+          ],
+          [
+            "paper151",
+            13
+          ]
+        ]
+      },
+      {
+        "id": "paper-3",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper3",
+            1
+          ],
+          [
+            "paper3",
+            4
+          ],
+          [
+            "paper3",
+            2
+          ],
+          [
+            "paper3",
+            3
+          ],
+          [
+            "paper3",
+            2
+          ],
+          [
+            "paper3",
+            3
+          ]
+        ]
+      },
+      {
+        "id": "paper-4",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper4",
+            1
+          ],
+          [
+            "paper4",
+            10
+          ],
+          [
+            "paper4",
+            2
+          ],
+          [
+            "paper4",
+            2
+          ],
+          [
+            "paper4",
+            1
+          ],
+          [
+            "paper4",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "paper-5",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper5",
+            1
+          ],
+          [
+            "paper5",
+            3
+          ],
+          [
+            "paper5",
+            3
+          ],
+          [
+            "paper5",
+            2
+          ],
+          [
+            "paper5",
+            11
+          ],
+          [
+            "paper5",
+            5
+          ]
+        ]
+      },
+      {
+        "id": "paper-6",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper6",
+            1
+          ],
+          [
+            "paper6",
+            6
+          ],
+          [
+            "paper6",
+            4
+          ],
+          [
+            "paper6",
+            12
+          ],
+          [
+            "paper6",
+            6
+          ],
+          [
+            "paper6",
+            3
+          ]
+        ]
+      },
+      {
+        "id": "paper-7",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper7",
+            1
+          ],
+          [
+            "paper7",
+            11
+          ],
+          [
+            "paper7",
+            3
+          ],
+          [
+            "paper7",
+            7
+          ],
+          [
+            "paper7",
+            2
+          ],
+          [
+            "paper7",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "paper-8",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper8",
+            1
+          ],
+          [
+            "paper8",
+            4
+          ],
+          [
+            "paper8",
+            2
+          ],
+          [
+            "paper8",
+            2
+          ],
+          [
+            "paper8",
+            8
+          ],
+          [
+            "paper8",
+            4
+          ]
+        ]
+      },
+      {
+        "id": "synthesis-1",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 0.5,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper6",
+            1
+          ],
+          [
+            "paper8",
+            1
+          ],
+          [
+            "paper6",
+            12
+          ],
+          [
+            "paper8",
+            2
+          ],
+          [
+            "paper6",
+            2
+          ],
+          [
+            "paper8",
+            9
+          ]
+        ]
+      },
+      {
+        "id": "synthesis-2",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 0.5,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper3",
+            1
+          ],
+          [
+            "paper4",
+            1
+          ],
+          [
+            "paper3",
+            7
+          ],
+          [
+            "paper4",
+            10
+          ],
+          [
+            "paper3",
+            2
+          ],
+          [
+            "paper4",
+            12
+          ]
+        ]
+      },
+      {
+        "id": "synthesis-3",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper1",
+            1
+          ],
+          [
+            "paper1",
+            1
+          ],
+          [
+            "paper1",
+            4
+          ],
+          [
+            "paper1",
+            3
+          ],
+          [
+            "paper1",
+            13
+          ],
+          [
+            "paper1",
+            3
+          ]
+        ]
+      },
+      {
+        "id": "synthesis-4",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper51",
+            1
+          ],
+          [
+            "paper51",
+            2
+          ],
+          [
+            "paper54",
+            2
+          ],
+          [
+            "paper70",
+            2
+          ],
+          [
+            "paper51",
+            2
+          ],
+          [
+            "paper83",
+            1
+          ]
+        ]
+      }
+    ],
+    "exact search only": [
+      {
+        "id": "paper-1",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper1",
+            1
+          ],
+          [
+            "paper1",
+            3
+          ],
+          [
+            "paper1",
+            1
+          ],
+          [
+            "paper1",
+            2
+          ],
+          [
+            "paper1",
+            14
+          ],
+          [
+            "paper1",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "paper-2",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper2",
+            1
+          ],
+          [
+            "paper2",
+            3
+          ],
+          [
+            "paper2",
+            5
+          ],
+          [
+            "paper151",
+            11
+          ],
+          [
+            "paper2",
+            5
+          ],
+          [
+            "paper151",
+            13
+          ]
+        ]
+      },
+      {
+        "id": "paper-3",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper3",
+            1
+          ],
+          [
+            "paper3",
+            4
+          ],
+          [
+            "paper3",
+            2
+          ],
+          [
+            "paper3",
+            3
+          ],
+          [
+            "paper3",
+            2
+          ],
+          [
+            "paper3",
+            3
+          ]
+        ]
+      },
+      {
+        "id": "paper-4",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper4",
+            1
+          ],
+          [
+            "paper4",
+            10
+          ],
+          [
+            "paper4",
+            2
+          ],
+          [
+            "paper4",
+            2
+          ],
+          [
+            "paper4",
+            1
+          ],
+          [
+            "paper4",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "paper-5",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper5",
+            1
+          ],
+          [
+            "paper5",
+            3
+          ],
+          [
+            "paper5",
+            3
+          ],
+          [
+            "paper5",
+            2
+          ],
+          [
+            "paper5",
+            11
+          ],
+          [
+            "paper5",
+            5
+          ]
+        ]
+      },
+      {
+        "id": "paper-6",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper6",
+            1
+          ],
+          [
+            "paper6",
+            6
+          ],
+          [
+            "paper6",
+            4
+          ],
+          [
+            "paper6",
+            12
+          ],
+          [
+            "paper6",
+            6
+          ],
+          [
+            "paper6",
+            3
+          ]
+        ]
+      },
+      {
+        "id": "paper-7",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper7",
+            1
+          ],
+          [
+            "paper7",
+            11
+          ],
+          [
+            "paper7",
+            3
+          ],
+          [
+            "paper7",
+            7
+          ],
+          [
+            "paper7",
+            2
+          ],
+          [
+            "paper7",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "paper-8",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper8",
+            1
+          ],
+          [
+            "paper8",
+            4
+          ],
+          [
+            "paper8",
+            2
+          ],
+          [
+            "paper8",
+            2
+          ],
+          [
+            "paper8",
+            8
+          ],
+          [
+            "paper8",
+            4
+          ]
+        ]
+      },
+      {
+        "id": "synthesis-1",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 0.5,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper6",
+            1
+          ],
+          [
+            "paper8",
+            1
+          ],
+          [
+            "paper6",
+            12
+          ],
+          [
+            "paper8",
+            2
+          ],
+          [
+            "paper6",
+            2
+          ],
+          [
+            "paper8",
+            9
+          ]
+        ]
+      },
+      {
+        "id": "synthesis-2",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 0.5,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper3",
+            1
+          ],
+          [
+            "paper4",
+            1
+          ],
+          [
+            "paper3",
+            7
+          ],
+          [
+            "paper4",
+            10
+          ],
+          [
+            "paper3",
+            2
+          ],
+          [
+            "paper4",
+            12
+          ]
+        ]
+      },
+      {
+        "id": "synthesis-3",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper1",
+            1
+          ],
+          [
+            "paper1",
+            1
+          ],
+          [
+            "paper1",
+            4
+          ],
+          [
+            "paper1",
+            3
+          ],
+          [
+            "paper1",
+            13
+          ],
+          [
+            "paper1",
+            3
+          ]
+        ]
+      },
+      {
+        "id": "synthesis-4",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper51",
+            1
+          ],
+          [
+            "paper51",
+            2
+          ],
+          [
+            "paper54",
+            2
+          ],
+          [
+            "paper70",
+            2
+          ],
+          [
+            "paper51",
+            2
+          ],
+          [
+            "paper83",
+            1
+          ]
+        ]
+      }
+    ],
+    "intro last only": [
+      {
+        "id": "paper-1",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper1",
+            1
+          ],
+          [
+            "paper1",
+            3
+          ],
+          [
+            "paper1",
+            1
+          ],
+          [
+            "paper1",
+            2
+          ],
+          [
+            "paper1",
+            14
+          ],
+          [
+            "paper1",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "paper-2",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "hit": 0.0,
+            "reciprocal_rank": 0.0,
+            "average_precision": 0.0,
+            "ndcg": 0.0
+          },
+          "3": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "hit": 0.0,
+            "reciprocal_rank": 0.0,
+            "average_precision": 0.0,
+            "ndcg": 0.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 0.2,
+            "average_precision": 0.2,
+            "ndcg": 0.38685280723454163
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper2",
+            3
+          ],
+          [
+            "paper2",
+            5
+          ],
+          [
+            "paper151",
+            11
+          ],
+          [
+            "paper2",
+            5
+          ],
+          [
+            "paper151",
+            13
+          ],
+          [
+            "paper2",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "paper-3",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper3",
+            1
+          ],
+          [
+            "paper3",
+            4
+          ],
+          [
+            "paper3",
+            2
+          ],
+          [
+            "paper3",
+            3
+          ],
+          [
+            "paper3",
+            2
+          ],
+          [
+            "paper3",
+            3
+          ]
+        ]
+      },
+      {
+        "id": "paper-4",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper4",
+            1
+          ],
+          [
+            "paper4",
+            10
+          ],
+          [
+            "paper4",
+            2
+          ],
+          [
+            "paper4",
+            2
+          ],
+          [
+            "paper4",
+            1
+          ],
+          [
+            "paper4",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "paper-5",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper5",
+            1
+          ],
+          [
+            "paper5",
+            3
+          ],
+          [
+            "paper5",
+            3
+          ],
+          [
+            "paper5",
+            2
+          ],
+          [
+            "paper5",
+            11
+          ],
+          [
+            "paper5",
+            5
+          ]
+        ]
+      },
+      {
+        "id": "paper-6",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper6",
+            1
+          ],
+          [
+            "paper6",
+            6
+          ],
+          [
+            "paper6",
+            4
+          ],
+          [
+            "paper6",
+            12
+          ],
+          [
+            "paper6",
+            6
+          ],
+          [
+            "paper6",
+            3
+          ]
+        ]
+      },
+      {
+        "id": "paper-7",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper7",
+            1
+          ],
+          [
+            "paper7",
+            11
+          ],
+          [
+            "paper7",
+            3
+          ],
+          [
+            "paper7",
+            7
+          ],
+          [
+            "paper7",
+            2
+          ],
+          [
+            "paper7",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "paper-8",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper8",
+            1
+          ],
+          [
+            "paper8",
+            4
+          ],
+          [
+            "paper8",
+            2
+          ],
+          [
+            "paper8",
+            2
+          ],
+          [
+            "paper8",
+            8
+          ],
+          [
+            "paper8",
+            4
+          ]
+        ]
+      },
+      {
+        "id": "synthesis-1",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 0.5,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper6",
+            1
+          ],
+          [
+            "paper8",
+            1
+          ],
+          [
+            "paper6",
+            12
+          ],
+          [
+            "paper8",
+            2
+          ],
+          [
+            "paper6",
+            2
+          ],
+          [
+            "paper8",
+            9
+          ]
+        ]
+      },
+      {
+        "id": "synthesis-2",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 0.5,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper3",
+            1
+          ],
+          [
+            "paper4",
+            1
+          ],
+          [
+            "paper3",
+            7
+          ],
+          [
+            "paper4",
+            10
+          ],
+          [
+            "paper3",
+            2
+          ],
+          [
+            "paper4",
+            12
+          ]
+        ]
+      },
+      {
+        "id": "synthesis-3",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper1",
+            1
+          ],
+          [
+            "paper1",
+            4
+          ],
+          [
+            "paper1",
+            3
+          ],
+          [
+            "paper1",
+            13
+          ],
+          [
+            "paper1",
+            3
+          ],
+          [
+            "paper1",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "synthesis-4",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "hit": 0.0,
+            "reciprocal_rank": 0.0,
+            "average_precision": 0.0,
+            "ndcg": 0.0
+          },
+          "3": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "hit": 0.0,
+            "reciprocal_rank": 0.0,
+            "average_precision": 0.0,
+            "ndcg": 0.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 0.2,
+            "average_precision": 0.2,
+            "ndcg": 0.38685280723454163
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper51",
+            2
+          ],
+          [
+            "paper54",
+            2
+          ],
+          [
+            "paper70",
+            2
+          ],
+          [
+            "paper51",
+            2
+          ],
+          [
+            "paper83",
+            1
+          ],
+          [
+            "paper51",
+            1
+          ]
+        ]
+      }
+    ],
+    "improved (intro last + exact search)": [
+      {
+        "id": "paper-1",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper1",
+            1
+          ],
+          [
+            "paper1",
+            3
+          ],
+          [
+            "paper1",
+            1
+          ],
+          [
+            "paper1",
+            2
+          ],
+          [
+            "paper1",
+            14
+          ],
+          [
+            "paper1",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "paper-2",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "hit": 0.0,
+            "reciprocal_rank": 0.0,
+            "average_precision": 0.0,
+            "ndcg": 0.0
+          },
+          "3": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "hit": 0.0,
+            "reciprocal_rank": 0.0,
+            "average_precision": 0.0,
+            "ndcg": 0.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 0.2,
+            "average_precision": 0.2,
+            "ndcg": 0.38685280723454163
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper2",
+            3
+          ],
+          [
+            "paper2",
+            5
+          ],
+          [
+            "paper151",
+            11
+          ],
+          [
+            "paper2",
+            5
+          ],
+          [
+            "paper151",
+            13
+          ],
+          [
+            "paper2",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "paper-3",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper3",
+            1
+          ],
+          [
+            "paper3",
+            4
+          ],
+          [
+            "paper3",
+            2
+          ],
+          [
+            "paper3",
+            3
+          ],
+          [
+            "paper3",
+            2
+          ],
+          [
+            "paper3",
+            3
+          ]
+        ]
+      },
+      {
+        "id": "paper-4",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper4",
+            1
+          ],
+          [
+            "paper4",
+            10
+          ],
+          [
+            "paper4",
+            2
+          ],
+          [
+            "paper4",
+            2
+          ],
+          [
+            "paper4",
+            1
+          ],
+          [
+            "paper4",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "paper-5",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper5",
+            1
+          ],
+          [
+            "paper5",
+            3
+          ],
+          [
+            "paper5",
+            3
+          ],
+          [
+            "paper5",
+            2
+          ],
+          [
+            "paper5",
+            11
+          ],
+          [
+            "paper5",
+            5
+          ]
+        ]
+      },
+      {
+        "id": "paper-6",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper6",
+            1
+          ],
+          [
+            "paper6",
+            6
+          ],
+          [
+            "paper6",
+            4
+          ],
+          [
+            "paper6",
+            12
+          ],
+          [
+            "paper6",
+            6
+          ],
+          [
+            "paper6",
+            3
+          ]
+        ]
+      },
+      {
+        "id": "paper-7",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper7",
+            1
+          ],
+          [
+            "paper7",
+            11
+          ],
+          [
+            "paper7",
+            3
+          ],
+          [
+            "paper7",
+            7
+          ],
+          [
+            "paper7",
+            2
+          ],
+          [
+            "paper7",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "paper-8",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper8",
+            1
+          ],
+          [
+            "paper8",
+            4
+          ],
+          [
+            "paper8",
+            2
+          ],
+          [
+            "paper8",
+            2
+          ],
+          [
+            "paper8",
+            8
+          ],
+          [
+            "paper8",
+            4
+          ]
+        ]
+      },
+      {
+        "id": "synthesis-1",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 0.5,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper6",
+            1
+          ],
+          [
+            "paper8",
+            1
+          ],
+          [
+            "paper6",
+            12
+          ],
+          [
+            "paper8",
+            2
+          ],
+          [
+            "paper6",
+            2
+          ],
+          [
+            "paper8",
+            9
+          ]
+        ]
+      },
+      {
+        "id": "synthesis-2",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 0.5,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 0.5,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper3",
+            1
+          ],
+          [
+            "paper4",
+            1
+          ],
+          [
+            "paper3",
+            7
+          ],
+          [
+            "paper4",
+            10
+          ],
+          [
+            "paper3",
+            2
+          ],
+          [
+            "paper4",
+            12
+          ]
+        ]
+      },
+      {
+        "id": "synthesis-3",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "3": {
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 1.0,
+            "average_precision": 1.0,
+            "ndcg": 1.0
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper1",
+            1
+          ],
+          [
+            "paper1",
+            4
+          ],
+          [
+            "paper1",
+            3
+          ],
+          [
+            "paper1",
+            13
+          ],
+          [
+            "paper1",
+            3
+          ],
+          [
+            "paper1",
+            1
+          ]
+        ]
+      },
+      {
+        "id": "synthesis-4",
+        "retrieval_metrics": {
+          "1": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "hit": 0.0,
+            "reciprocal_rank": 0.0,
+            "average_precision": 0.0,
+            "ndcg": 0.0
+          },
+          "3": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "hit": 0.0,
+            "reciprocal_rank": 0.0,
+            "average_precision": 0.0,
+            "ndcg": 0.0
+          },
+          "6": {
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "hit": 1.0,
+            "reciprocal_rank": 0.2,
+            "average_precision": 0.2,
+            "ndcg": 0.38685280723454163
+          }
+        },
+        "paper_hit@6": 1.0,
+        "pages": [
+          [
+            "paper51",
+            2
+          ],
+          [
+            "paper54",
+            2
+          ],
+          [
+            "paper70",
+            2
+          ],
+          [
+            "paper51",
+            2
+          ],
+          [
+            "paper83",
+            1
+          ],
+          [
+            "paper51",
+            1
+          ]
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+epoch 1/25:   0%|          | 1/235 [00:01<05:02,  1.29s/it, loss=1.7483]
+epoch 1/25:   0%|          | 1/235 [00:01<05:02,  1.29s/it, loss=2.5670]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+training metrics plot: outputs/fashion-fm/training_metrics.png
+checkpoint: outputs/fashion-fm/latest.pt
+---------------------------------------
+Begin Slurm Epilog: Oct-18-2026 16:25:54
+Job ID:        6366980
+User ID:       zwallace9
+Account:       coc
+Job name:      fashion-fm-25anygpu
+Resources:     cpu=4,gres/gpu:a40=1,mem=16G,node=1
+Rsrc Used:     cput=00:33:08,vmem=0,walltime=00:08:17,mem=9953324K,energy_used=0
+Partition:     coc-gpu
+QOS:           coc-ice
+Nodes:         atl1-1-01-005-9-0
+---------------------------------------
