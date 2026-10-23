@@ -1,0 +1,36 @@
+{
+  "checkpoint": "outputs/fashion-fm/latest.pt",
+  "weights": "ema",
+  "seed": 2026,
+  "samples": 1000,
+  "samples_per_class": 100,
+  "sample_steps": 40,
+  "guidance_scale": 2.0,
+  "classifier_test_accuracy": 0.9019,
+  "condition_accuracy": 0.9880000352859497,
+  "mean_target_probability": 0.9677625894546509,
+  "within_class_pairwise_mse": 0.3519209921360016,
+  "nearest_training_mse_min": 0.01068169716745615,
+  "nearest_training_mse_mean": 0.07019628584384918,
+  "exact_training_copies": 0,
+  "per_class_accuracy": {
+    "t-shirt/top": 1.0,
+    "trouser": 1.0,
+    "pullover": 0.9699999690055847,
+    "dress": 1.0,
+    "coat": 0.9899999499320984,
+    "sandal": 1.0,
+    "shirt": 0.9199999570846558,
+    "sneaker": 1.0,
+    "bag": 1.0,
+    "ankle boot": 1.0
+  },
+  "provenance": {
+    "date": "2026-09-24",
+    "git_sha": "995a050",
+    "run_by": "ssathishswe",
+    "device": "NVIDIA GeForce RTX 5060 Ti",
+    "judge_classifier": "outputs/evaluation/fashion-classifier.pt (shared across both arms)",
+    "note": "60-epoch run from the committed configs/train.yml, same judge and sampling settings."
+  }
+}
