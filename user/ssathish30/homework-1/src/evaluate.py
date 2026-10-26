@@ -28,8 +28,23 @@ def evaluate(
     ignore_filters=False,
     top_k=6,
 ):
-    cutoffs = normalize_cutoffs(cutoffs)
     retrieval = retrieval or {}
+    if not retrieval_only:
+        defaults = {
+            "weights": (0.5, 0.5), "rrf_c": 60, "candidates": 20,
+            "introductions": True, "shuffle_seed": None, "rerank_depth": 0,
+        }
+        changed = [
+            key for key, value in retrieval.items()
+            if key not in defaults
+            or (tuple(value) if key == "weights" else value) != defaults[key]
+        ]
+        if changed or ignore_filters or top_k != 6:
+            raise ValueError(
+                "Retrieval overrides require --retrieval-only; full-generation "
+                "evaluation uses the starter's default retrieval and question filters."
+            )
+    cutoffs = normalize_cutoffs(cutoffs)
     cases = json.loads(questions_path.read_text())
     output = {
         "index": index.manifest,

@@ -1,8 +1,7 @@
-diff --git a/homework-1/clef-rag/src/clef_rag/cli.py b/homework-1/clef-rag/src/clef_rag/cli.py
-index 32b9270..073fca1 100644
---- a/homework-1/clef-rag/src/clef_rag/cli.py
-+++ b/homework-1/clef-rag/src/clef_rag/cli.py
-@@ -69,8 +69,50 @@ def parser():
+diff --git a/homework_1/clef-rag/src/clef_rag/cli.py b/homework_1/clef-rag/src/clef_rag/cli.py
+--- a/homework_1/clef-rag/src/clef_rag/cli.py
++++ b/homework_1/clef-rag/src/clef_rag/cli.py
+@@ -69,8 +69,50 @@
              command.add_argument("--title", help="Title substring")
          if name in ("search", "ask"):
              command.add_argument("question")
@@ -55,7 +54,7 @@ index 32b9270..073fca1 100644
          if name in ("ask", "evaluate"):
              command.add_argument("--model", choices=CHAT_MODELS, default=CHAT_MODELS[0])
          if name == "evaluate":
-@@ -90,9 +132,27 @@ def parser():
+@@ -90,7 +132,25 @@
              command.add_argument(
                  "--retrieval-only", action="store_true", help="Skip generated answers"
              )
@@ -65,8 +64,8 @@ index 32b9270..073fca1 100644
 +                help="Search the whole corpus instead of each question's papers/track",
 +            )
      return root
- 
- 
++
++
 +def retrieval_options(args):
 +    """Collect the ablation settings shared by search and evaluate."""
 +
@@ -78,23 +77,22 @@ index 32b9270..073fca1 100644
 +        "shuffle_seed": args.shuffle_seed,
 +        "rerank_depth": args.rerank_depth,
 +    }
-+
-+
+ 
+ 
  def render_sources(sources):
-     for source in sources:
-         print(
-@@ -155,7 +215,9 @@ def main(argv=None):
+@@ -155,7 +215,10 @@
                      print(result["answer"])
              elif args.command == "search":
                  ids = resolve_papers(index.db, args.paper) if args.paper else None
 -                sources = Retriever(index, LocalModels()).search(
++                models = LocalModels()
 +                sources = Retriever(
-+                    index, LocalModels(), **retrieval_options(args)
++                    index, models, rerank_models=models, **retrieval_options(args)
 +                ).search(
                      args.question,
                      track=args.track,
                      author=args.author,
-@@ -192,6 +254,9 @@ def main(argv=None):
+@@ -192,6 +255,9 @@
                      args.output,
                      args.retrieval_only,
                      cutoffs=args.k,
@@ -104,11 +102,10 @@ index 32b9270..073fca1 100644
                  )
                  if not args.json:
                      print(json.dumps(result["summary"], indent=2))
-diff --git a/homework-1/clef-rag/src/clef_rag/evaluate.py b/homework-1/clef-rag/src/clef_rag/evaluate.py
-index cf27366..46cfb78 100644
---- a/homework-1/clef-rag/src/clef_rag/evaluate.py
-+++ b/homework-1/clef-rag/src/clef_rag/evaluate.py
-@@ -24,8 +24,12 @@ def evaluate(
+diff --git a/homework_1/clef-rag/src/clef_rag/evaluate.py b/homework_1/clef-rag/src/clef_rag/evaluate.py
+--- a/homework_1/clef-rag/src/clef_rag/evaluate.py
++++ b/homework_1/clef-rag/src/clef_rag/evaluate.py
+@@ -24,7 +24,26 @@
      retrieval_only=False,
      *,
      cutoffs=DEFAULT_CUTOFFS,
@@ -116,12 +113,26 @@ index cf27366..46cfb78 100644
 +    ignore_filters=False,
 +    top_k=6,
  ):
-     cutoffs = normalize_cutoffs(cutoffs)
 +    retrieval = retrieval or {}
++    if not retrieval_only:
++        defaults = {
++            "weights": (0.5, 0.5), "rrf_c": 60, "candidates": 20,
++            "introductions": True, "shuffle_seed": None, "rerank_depth": 0,
++        }
++        changed = [
++            key for key, value in retrieval.items()
++            if key not in defaults
++            or (tuple(value) if key == "weights" else value) != defaults[key]
++        ]
++        if changed or ignore_filters or top_k != 6:
++            raise ValueError(
++                "Retrieval overrides require --retrieval-only; full-generation "
++                "evaluation uses the starter's default retrieval and question filters."
++            )
+     cutoffs = normalize_cutoffs(cutoffs)
      cases = json.loads(questions_path.read_text())
      output = {
-         "index": index.manifest,
-@@ -33,6 +37,16 @@ def evaluate(
+@@ -33,6 +52,16 @@
          "retrieval_evaluation": {
              "implementation": "ir-measures",
              "cutoffs": list(cutoffs),
@@ -138,7 +149,7 @@ index cf27366..46cfb78 100644
              "unit": "unique paper/PDF-page pair, ordered by first retrieved occurrence",
              "relevance": "binary; every listed gold page is relevant; unlisted pages score zero",
              "ranking": "final retrieved passages, before answer context selection; no extra retrieval for larger cutoffs",
-@@ -57,9 +71,21 @@ def evaluate(
+@@ -57,9 +86,21 @@
                      json.loads(key) for key in page_qrels(case["gold_sources"])
                  ]
              if retrieval_only:
@@ -163,98 +174,9 @@ index cf27366..46cfb78 100644
                  )
                  row["retrieved_sources"] = sources
              else:
-diff --git a/homework-1/clef-rag/src/clef_rag/rerank.py b/homework-1/clef-rag/src/clef_rag/rerank.py
-new file mode 100644
-index 0000000..b363cfb
---- /dev/null
-+++ b/homework-1/clef-rag/src/clef_rag/rerank.py
-@@ -0,0 +1,82 @@
-+"""Second-stage reranking of retrieved passages with the local chat model.
-+
-+Recall is far higher at depth 50 than at depth 6 (97.4% against 81.6% on
-+questions-hard), so the gold passage is usually retrieved and then ranked too
-+low to survive the cut. This stage reorders a deep candidate pool before it is
-+truncated, which is where that gap can be recovered.
-+"""
-+
-+import json
-+
-+from clef_rag.config import RagError
-+
-+SYSTEM = (
-+    "You judge whether a passage from a research paper answers a question. "
-+    "You reply only with the requested structured fields."
-+)
-+
-+SCHEMA = {
-+    "type": "object",
-+    "properties": {
-+        "score": {"type": "integer", "minimum": 0, "maximum": 3},
-+    },
-+    "required": ["score"],
-+}
-+
-+PROMPT = """Question: {question}
-+
-+Passage (from "{title}", PDF page {page}):
-+{text}
-+
-+Rate how well this passage answers the question:
-+3 = contains the answer outright
-+2 = directly about the question's subject, likely supporting
-+1 = same paper or topic, does not answer it
-+0 = unrelated
-+
-+Reply with the score only."""
-+
-+
-+def rerank(models, question, sources, *, keep, batch_log=None):
-+    """Score each passage against the question and return the best ``keep``.
-+
-+    Ties keep the first-stage order, so reranking can only reorder what
-+    retrieval already found. Scoring failures fall back to the original rank.
-+    """
-+
-+    if keep < 1:
-+        raise ValueError("keep must be at least 1")
-+    if len(sources) <= keep:
-+        return sources
-+
-+    scored = []
-+    for position, source in enumerate(sources):
-+        try:
-+            verdict = models.chat(
-+                SYSTEM,
-+                PROMPT.format(
-+                    question=question,
-+                    title=source.get("title", "")[:150],
-+                    page=source.get("page"),
-+                    text=source.get("text", "")[:1200],
-+                ),
-+                schema=SCHEMA,
-+                max_tokens=50,
-+            )
-+            score = int(verdict.get("score", 0))
-+        except Exception:
-+            # A passage the model refuses to score keeps its retrieval position
-+            # rather than being dropped.
-+            score = -1
-+        scored.append((score, -position, source))
-+        if batch_log:
-+            batch_log(position, score)
-+
-+    scored.sort(key=lambda item: (item[0], item[1]), reverse=True)
-+    kept = []
-+    for rank, (_, _, source) in enumerate(scored[:keep], start=1):
-+        item = dict(source)
-+        item["source_id"] = f"S{rank}"
-+        item["rank"] = rank
-+        kept.append(item)
-+    return kept
-diff --git a/homework-1/clef-rag/src/clef_rag/retrieve.py b/homework-1/clef-rag/src/clef_rag/retrieve.py
-index 224656f..1cdb0f2 100644
---- a/homework-1/clef-rag/src/clef_rag/retrieve.py
-+++ b/homework-1/clef-rag/src/clef_rag/retrieve.py
+diff --git a/homework_1/clef-rag/src/clef_rag/retrieve.py b/homework_1/clef-rag/src/clef_rag/retrieve.py
+--- a/homework_1/clef-rag/src/clef_rag/retrieve.py
++++ b/homework_1/clef-rag/src/clef_rag/retrieve.py
 @@ -1,5 +1,6 @@
  """LangChain hybrid retrieval over Chroma and a BM25 retriever."""
  
@@ -262,7 +184,7 @@ index 224656f..1cdb0f2 100644
  import re
  
  from langchain_classic.retrievers import EnsembleRetriever
-@@ -39,10 +40,42 @@ def overlaps(left, right):
+@@ -39,10 +40,42 @@
  
  
  class Retriever:
@@ -306,7 +228,7 @@ index 224656f..1cdb0f2 100644
          store = self.index.vectorstore(self.models)
          catalog = list_documents(
              self.index.db, track=track, author=author, paper_ids=paper_ids
-@@ -73,11 +106,18 @@ class Retriever:
+@@ -73,11 +106,18 @@
                  )
                  for paper_id in paper_ids
              ]
@@ -328,7 +250,7 @@ index 224656f..1cdb0f2 100644
          )
          introductions = []
          for document_id in leading_ids:
-@@ -104,20 +144,36 @@ class Retriever:
+@@ -104,20 +144,36 @@
          if not documents:
              return []
          ids = sorted({d.metadata["document_id"] for d in documents})
@@ -369,24 +291,102 @@ index 224656f..1cdb0f2 100644
 +                return ranked
          except Exception as exc:
              raise RagError(f"LangChain retrieval failed: {exc}") from exc
-diff --git a/homework-1/fashion-fm/configs/train.yml b/homework-1/fashion-fm/configs/train.yml
-index 6b1d941..ca17883 100644
---- a/homework-1/fashion-fm/configs/train.yml
-+++ b/homework-1/fashion-fm/configs/train.yml
-@@ -8,7 +8,7 @@ training:
-   output_dir: outputs/fashion-fm
- 
-   # Full passes over the dataset; increase for convergence or reduce for faster trials; recommended range: 10-200.
--  epochs: 1
-+  epochs: 60
- 
-   # Images processed per optimizer step; tune for memory use and throughput; recommended range: 32-512.
-   batch_size: 256
-diff --git a/homework-1/fashion-fm/src/fashion_fm/cli.py b/homework-1/fashion-fm/src/fashion_fm/cli.py
-index 6038514..e87d374 100644
---- a/homework-1/fashion-fm/src/fashion_fm/cli.py
-+++ b/homework-1/fashion-fm/src/fashion_fm/cli.py
-@@ -8,11 +8,13 @@ import torch
+diff --git a/homework_1/clef-rag/src/clef_rag/rerank.py b/homework_1/clef-rag/src/clef_rag/rerank.py
+new file mode 100644
+--- /dev/null
++++ b/homework_1/clef-rag/src/clef_rag/rerank.py
+@@ -0,0 +1,87 @@
++"""Second-stage reranking of retrieved passages with the local chat model.
++
++Recall is far higher at depth 50 than at depth 6 (97.4% against 81.6% on
++questions-hard), so the gold passage is usually retrieved and then ranked too
++low to survive the cut. This stage reorders a deep candidate pool before it is
++truncated, which is where that gap can be recovered.
++"""
++
++import json
++
++from clef_rag.config import RagError
++
++SYSTEM = (
++    "You judge whether a passage from a research paper answers a question. "
++    "You reply only with the requested structured fields."
++)
++
++SCHEMA = {
++    "type": "object",
++    "properties": {
++        "score": {"type": "integer", "minimum": 0, "maximum": 3},
++    },
++    "required": ["score"],
++}
++
++PROMPT = """Question: {question}
++
++Passage (from "{title}", PDF page {page}):
++{text}
++
++Rate how well this passage answers the question:
++3 = contains the answer outright
++2 = directly about the question's subject, likely supporting
++1 = same paper or topic, does not answer it
++0 = unrelated
++
++Reply with the score only."""
++
++
++def rerank(models, question, sources, *, keep, batch_log=None):
++    """Score each passage against the question and return the best ``keep``.
++
++    Ties keep the first-stage order, so reranking can only reorder what
++    retrieval already found. Any scoring failure returns the original top passages.
++    """
++
++    if keep < 1:
++        raise ValueError("keep must be at least 1")
++    if len(sources) <= keep:
++        return sources
++
++    scored = []
++    for position, source in enumerate(sources):
++        try:
++            verdict = models.chat(
++                SYSTEM,
++                PROMPT.format(
++                    question=question,
++                    title=source.get("title", "")[:150],
++                    page=source.get("page"),
++                    text=source.get("text", "")[:1200],
++                ),
++                schema=SCHEMA,
++                max_tokens=50,
++            )
++            score = int(verdict.get("score", 0))
++            if not 0 <= score <= 3:
++                raise ValueError("Reranking score must be between 0 and 3")
++        except Exception:
++            # Partial scores cannot be compared fairly with a failed request.
++            # Preserve the first-stage ranking for this entire question.
++            return [
++                {**source, "source_id": f"S{rank}", "rank": rank}
++                for rank, source in enumerate(sources[:keep], start=1)
++            ]
++        scored.append((score, -position, source))
++        if batch_log:
++            batch_log(position, score)
++
++    scored.sort(key=lambda item: (item[0], item[1]), reverse=True)
++    kept = []
++    for rank, (_, _, source) in enumerate(scored[:keep], start=1):
++        item = dict(source)
++        item["source_id"] = f"S{rank}"
++        item["rank"] = rank
++        kept.append(item)
++    return kept
+diff --git a/homework_1/fashion-fm/src/fashion_fm/cli.py b/homework_1/fashion-fm/src/fashion_fm/cli.py
+--- a/homework_1/fashion-fm/src/fashion_fm/cli.py
++++ b/homework_1/fashion-fm/src/fashion_fm/cli.py
+@@ -8,11 +8,13 @@
  from torchvision.utils import save_image
  
  from fashion_fm.data import FASHION_LABELS, description_to_label
@@ -400,7 +400,7 @@ index 6038514..e87d374 100644
  GENERATED_GRID = "outputs/generated.png"
  IMAGES_PER_PROMPT = 4
  
-@@ -89,3 +91,56 @@ def generate_command(checkpoint: str, prompt: tuple[str, ...]) -> None:
+@@ -89,3 +91,56 @@
      manifest = json.dumps(records, indent=2) + "\n"
      output.with_suffix(".json").write_text(manifest)
      click.echo(f"generated {len(images)} images: {output}")
@@ -457,3 +457,15 @@ index 6038514..e87d374 100644
 +    for name, accuracy in report["per_class_accuracy"].items():
 +        click.echo(f"  {name:<12} {accuracy:.4f}")
 +    click.echo(f"\nreport: {Path(output_dir) / 'validation-report.json'}")
+diff --git a/homework_1/fashion-fm/configs/train.yml b/homework_1/fashion-fm/configs/train.yml
+--- a/homework_1/fashion-fm/configs/train.yml
++++ b/homework_1/fashion-fm/configs/train.yml
+@@ -8,7 +8,7 @@
+   output_dir: outputs/fashion-fm
+ 
+   # Full passes over the dataset; increase for convergence or reduce for faster trials; recommended range: 10-200.
+-  epochs: 1
++  epochs: 60
+ 
+   # Images processed per optimizer step; tune for memory use and throughput; recommended range: 32-512.
+   batch_size: 256
