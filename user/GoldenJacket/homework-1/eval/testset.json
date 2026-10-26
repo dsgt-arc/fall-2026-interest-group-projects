@@ -1,0 +1,3963 @@
+[
+  {
+    "id": "syn-001",
+    "split": "test",
+    "category": "paper",
+    "question": "What is one approach that aims to convert an asymmetric query-to-document task into a more reliable symmetric document-to-document search?",
+    "expected_answer": "Hypothetical Document Embeddings (HyDE) use a generative large language model to synthesize a pseudo-document.",
+    "track_of_source": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+    "source_chunk": "0b5ea35b58b64c4e584b34d64afd686051a51758b36f220a6c551ecb9a7b551a",
+    "gold_sources": [
+      {
+        "paper": "paper33",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-002",
+    "split": "test",
+    "category": "paper",
+    "question": "What is the maximum possible Recall@5 score for a claim in the English language dataset used for the CheckThat! CLEF lab, given the constraints of the evaluation?",
+    "expected_answer": "0.39",
+    "track_of_source": "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles",
+    "source_chunk": "3abb2fd4d033d5da8152c91bc879b1081665ea0e4c7e86b9283d92bff2a525e1",
+    "gold_sources": [
+      {
+        "paper": "paper68",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-003",
+    "split": "test",
+    "category": "paper",
+    "question": "In graduation attire suggestions across multiple languages, how do generative language models typically categorize clothing recommendations?",
+    "expected_answer": "They frequently separate recommendations by gender, such as suggesting dresses or skirts for women and suits for men.",
+    "track_of_source": "ELOQUENT: Evaluation of Generative Language Model Quality",
+    "source_chunk": "bd4fa64fe656b8e1b46084fc5fd0697d6bcfe5c560294619166b953eda9e73c7",
+    "gold_sources": [
+      {
+        "paper": "paper110",
+        "pages": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-004",
+    "split": "test",
+    "category": "paper",
+    "question": "What range of probability values was explored when optimizing thresholds for Stage 2 category predictions?",
+    "expected_answer": "0.05 to 0.50",
+    "track_of_source": "EXIST: sEXism Identification in Social neTworks",
+    "source_chunk": "687a2e8036f802d4d4e5f8d8453fd8a46688468f34a50634e64a0ca8508880a4",
+    "gold_sources": [
+      {
+        "paper": "paper155",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-005",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the instructions, what format should a user's response take when answering a question?",
+    "expected_answer": "A",
+    "track_of_source": "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems",
+    "source_chunk": "f1fc74ed93e45220bf7fff26c28cd625d5c003fb0470831928e055fc0de59a54",
+    "gold_sources": [
+      {
+        "paper": "paper188",
+        "pages": [
+          15
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-006",
+    "split": "test",
+    "category": "paper",
+    "question": "How is the overall score for Test A in the HIPE-2026 evaluation calculated?",
+    "expected_answer": "It is the average of the macro Recall scores for both relation types.",
+    "track_of_source": "HIPE: Evaluating Accurate and Efficient Person–Place Relation Extraction from Multilingual Historical Texts",
+    "source_chunk": "bff4560fd378d0bf6f644a4b3a778c2138a95926fcdbb0fc416b05004a5e51d5",
+    "gold_sources": [
+      {
+        "paper": "paper218",
+        "pages": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-007",
+    "split": "dev",
+    "category": "paper",
+    "question": "What size patches are used when the CLIP vision encoder transforms a 224x224 image into tokens?",
+    "expected_answer": "14-pixel patches",
+    "track_of_source": "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security",
+    "source_chunk": "2ec65372df5eb3a29ca0e9045b226613316b994cf26b01cd71c684baf4259950",
+    "gold_sources": [
+      {
+        "paper": "paper260",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-008",
+    "split": "test",
+    "category": "paper",
+    "question": "What types of patterns were targeted by regular expression extractors when identifying French names?",
+    "expected_answer": "Parenthetical French equivalents, French title mentions, and description fragments indicating an official French name.",
+    "track_of_source": "JOKER: Humor Detection, Search, and Translation",
+    "source_chunk": "6fd61eff9f16dd3ca2807e9b1a9ed1e139a2171e0b1756ab42b8f25a05a6ba42",
+    "gold_sources": [
+      {
+        "paper": "paper307",
+        "pages": [
+          14
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-009",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the described approach, what was a benefit of combining models with 5-second analysis windows with models that consider longer acoustic sequences?",
+    "expected_answer": "The system benefited from combining 5-second models aligned with the evaluation windows and longer-context models that could capture boundary-crossing events and persistent acoustic patterns.",
+    "track_of_source": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+    "source_chunk": "b731963c4855467cd036cfa24fe6da5d778605399547dfd063d6a27418b94695",
+    "gold_sources": [
+      {
+        "paper": "paper340",
+        "pages": [
+          20
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-010",
+    "split": "dev",
+    "category": "paper",
+    "question": "What parameter controls the balance between original query terms and feedback terms in the RM3 approach?",
+    "expected_answer": "The feedback interpolation parameter, fb_lambda.",
+    "track_of_source": "LongEval: Longitudinal Evaluation of IR Model Performance",
+    "source_chunk": "1008c2b769839e7d0aae527b06c49064ab950f38b51e3d192b6e9e21a1dd4678",
+    "gold_sources": [
+      {
+        "paper": "paper379",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-011",
+    "split": "dev",
+    "category": "paper",
+    "question": "What was the F1 score achieved by the 'bcos' method when evaluated on the most challenging fold (Fold 2) using a LogReg proxy?",
+    "expected_answer": "0.6637",
+    "track_of_source": "QuantumCLEF: Quantum Computing, Information Retrieval and Recommender Systems",
+    "source_chunk": "61ca7083c6bb6a9db3ed58703ff2914a7c8337db119dcf533a7389f93802eec9",
+    "gold_sources": [
+      {
+        "paper": "paper437",
+        "pages": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-012",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the dataset statistics, how many sentences are included in the test set for the SimpleText Task 2?",
+    "expected_answer": "105,001",
+    "track_of_source": "SimpleText: Simplify Scientific Text (and Nothing More)",
+    "source_chunk": "0a1e112d81c165e4f7b8c9de5d120f27544c72c7a155bf187caf12810244ac9c",
+    "gold_sources": [
+      {
+        "paper": "paper456",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-013",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the described system, what value is used as the default threshold for classifying skills as core versus contextual?",
+    "expected_answer": "0.5",
+    "track_of_source": "TalentCLEF: Skill and Job Title Intelligence for Human Capital Management",
+    "source_chunk": "91365bfbed999aa4f366400eda8bd54b0787d03fefb28026c37b2e467d9345d5",
+    "gold_sources": [
+      {
+        "paper": "paper477",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-014",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the error analysis, what was the precision score for identifying 'natural' fallacy instances?",
+    "expected_answer": "0.85",
+    "track_of_source": "Touché: Argumentation Systems",
+    "source_chunk": "3741d03957c5c3015b07e66f20948fc7cf6d67011db0f9e91062351976c7939e",
+    "gold_sources": [
+      {
+        "paper": "paper494",
+        "pages": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-015",
+    "split": "dev",
+    "category": "paper",
+    "question": "What LoRA configuration parameters (rank, scaling factor, dropout rate, and targeted layers) were used when training the symptom-specific adapters?",
+    "expected_answer": "Rank 𝑟= 16, scaling factor𝛼= 32, dropout of 0.1, and the query and value projection layers were targeted.",
+    "track_of_source": "eRisk: Early Risk Prediction on the Internet",
+    "source_chunk": "244bcfb1139834d31c38fd888cf44f0c0bea12369e8de5ab23b2f3f726328504",
+    "gold_sources": [
+      {
+        "paper": "paper112",
+        "pages": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-016",
+    "split": "test",
+    "category": "paper",
+    "question": "According to an evaluation, which keyword extraction method produced the greatest average number of terms, and why was this not necessarily indicative of quality?",
+    "expected_answer": "ClinicalBERT extracted the highest average number of keywords, but the evaluation revealed that many of these terms were not directly useful for guiding summarization because they were broad, weakly contextualized, or fragmented.",
+    "track_of_source": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+    "source_chunk": "6c384ac0d8c20690fe46316a6950b021e0563bc3fe03570d2e12a64ef987a45a",
+    "gold_sources": [
+      {
+        "paper": "paper32",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-017",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the experiments, how did localized cluster negatives affect retrieval precision?",
+    "expected_answer": "Localized cluster negatives improved precision-oriented retrieval.",
+    "track_of_source": "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles",
+    "source_chunk": "c31d9ede5097315551b902d8b173c1ca01302c9393be2d0deb90e6f4ff3cd4a0",
+    "gold_sources": [
+      {
+        "paper": "paper55",
+        "pages": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-018",
+    "split": "test",
+    "category": "paper",
+    "question": "What were the final values of the CORAL biases, b0 and b1, after training, and by how much did they deviate from their initial values?",
+    "expected_answer": "+1.048 and -1.049, with deviations of +0.048 and -0.049 respectively.",
+    "track_of_source": "ELOQUENT: Evaluation of Generative Language Model Quality",
+    "source_chunk": "5d0b0325b8f260aac83f44068f5f267f67b39c9415c42460a8dc4f0cfd46f7f8",
+    "gold_sources": [
+      {
+        "paper": "paper100",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-019",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the dataset overview, how many memes in the training data were labeled as sexist (YES)?",
+    "expected_answer": "2,617",
+    "track_of_source": "EXIST: sEXism Identification in Social neTworks",
+    "source_chunk": "8feb7d00b85a5cd30da74c92a559a4a5961ced888f20eedc2ba077c1dbe7acd8",
+    "gold_sources": [
+      {
+        "paper": "paper175",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-020",
+    "split": "dev",
+    "category": "paper",
+    "question": "Until what date was scoring data available for TSLA in the FinMMEval lab?",
+    "expected_answer": "26 June",
+    "track_of_source": "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems",
+    "source_chunk": "c0ce818c5ed0cad13ee68e4ae0a4b33f5e60d21e7f6c94536e607e93751cfb19",
+    "gold_sources": [
+      {
+        "paper": "paper186",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-021",
+    "split": "test",
+    "category": "paper",
+    "question": "What vocabulary size, composed of unigrams and bigrams, was determined to offer the optimal trade-off between accuracy and model parameter count when encoding sentences?",
+    "expected_answer": "5,000",
+    "track_of_source": "HIPE: Evaluating Accurate and Efficient Person–Place Relation Extraction from Multilingual Historical Texts",
+    "source_chunk": "806ae392fdf04336b48bf0dbe343074f68005ce6d6d6e817649bce2a759bc96f",
+    "gold_sources": [
+      {
+        "paper": "paper216",
+        "pages": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-022",
+    "split": "test",
+    "category": "paper",
+    "question": "What margin value is used to repel speaker embeddings from other speakers' reference embeddings during contrastive speaker embedding optimization?",
+    "expected_answer": "-0.3",
+    "track_of_source": "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security",
+    "source_chunk": "24b8b7ad21c5ed0e61d2edcd6e24d80a49517dc95b676b6b1a6a50d7a31da022",
+    "gold_sources": [
+      {
+        "paper": "paper238",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-023",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the evaluation methodology for Task 4 of the JOKER Lab, how were the generated outputs compared?",
+    "expected_answer": "Pairs of generated outputs were compared by an ensemble of LLM judges in a pairwise evaluation protocol.",
+    "track_of_source": "JOKER: Humor Detection, Search, and Translation",
+    "source_chunk": "0774d04b4908af10ce65ad340aecfd4793d773c8338df58206710aa0e8671ed9",
+    "gold_sources": [
+      {
+        "paper": "paper309",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-024",
+    "split": "dev",
+    "category": "paper",
+    "question": "What is the approximate range of fluctuation observed in macro-F1 scores for a given configuration during component sweeps, and what is the reason for this variation?",
+    "expected_answer": "The macro-F1 score can fluctuate by up to approximately 0.01, due to the random sampling used in the negative-subsampling step being influenced by the number of previous runs in the same session.",
+    "track_of_source": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+    "source_chunk": "83d5b834f2c2df8a6d4f59ff7cdf8bf8743955473dfdb96081534420d616fe34",
+    "gold_sources": [
+      {
+        "paper": "paper346",
+        "pages": [
+          20
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-025",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the experimental setup, what four large language models were used to generate relevance labels?",
+    "expected_answer": "qwen3-32b, llama-3.1-8b, gpt-oss-120b, and gpt-oss-20b",
+    "track_of_source": "LongEval: Longitudinal Evaluation of IR Model Performance",
+    "source_chunk": "ff02a81a9c8151c5ce649afd7d3902589df2a8a811c221a8248d319617543b54",
+    "gold_sources": [
+      {
+        "paper": "paper377",
+        "pages": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-026",
+    "split": "test",
+    "category": "paper",
+    "question": "In the RADAR system, how are semantic and stylometric representations combined, and what is the dimensionality of the resulting fused representation?",
+    "expected_answer": "Semantic and stylometric evidence are fused using a cross-attention module where the semantic representation acts as a query, and the style representation acts as a key and value. The resulting fused representation is 512-dimensional.",
+    "track_of_source": "PAN: Digital Text Forensics and Stylometry",
+    "source_chunk": "0258a2c4232d95351590d5f6b40a6a6b3bc34d45e0297900963732ad7f64dccb",
+    "gold_sources": [
+      {
+        "paper": "paper395",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-027",
+    "split": "test",
+    "category": "paper",
+    "question": "How is the local density of a document calculated?",
+    "expected_answer": "It is defined as the average cosine similarity to its *k* nearest neighbors.",
+    "track_of_source": "QuantumCLEF: Quantum Computing, Information Retrieval and Recommender Systems",
+    "source_chunk": "c65d6b4a9e3f7e12ffdd360b791551b91ccc18cddd2f284da779d8ed4d32bc8c",
+    "gold_sources": [
+      {
+        "paper": "paper443",
+        "pages": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-028",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the text, how much does the cosine similarity of sentence drafts typically change between iterations during the text simplification process?",
+    "expected_answer": "The cosine similarity of sentence drafts typically ranges from 0.88 to 0.91 between iterations.",
+    "track_of_source": "SimpleText: Simplify Scientific Text (and Nothing More)",
+    "source_chunk": "f2fc248b50201a1409d6cb0907c2ac9c6e0b570d9413d665e7121013fe571225",
+    "gold_sources": [
+      {
+        "paper": "paper471",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-029",
+    "split": "test",
+    "category": "paper",
+    "question": "What metric is used to quantify gender bias in TalentCLEF system rankings?",
+    "expected_answer": "Rank-Biased Overlap (RBO) is used to quantify gender bias.",
+    "track_of_source": "TalentCLEF: Skill and Job Title Intelligence for Human Capital Management",
+    "source_chunk": "539d33fe9ed219849766f3a624072a298ecc43852835f97ecbe9c5be87b858e8",
+    "gold_sources": [
+      {
+        "paper": "paper474",
+        "pages": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-030",
+    "split": "test",
+    "category": "paper",
+    "question": "What was the Main score achieved by the run that consistently used the Gemma 3 model across all corpora in the Touché argumentation systems CLEF lab?",
+    "expected_answer": "0.7829",
+    "track_of_source": "Touché: Argumentation Systems",
+    "source_chunk": "a96491edaa65b23f9e12490e2b1fb10f1c416ab39deabff484734adbe46dd6d2",
+    "gold_sources": [
+      {
+        "paper": "paper498",
+        "pages": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-031",
+    "split": "test",
+    "category": "paper",
+    "question": "In the eRisk early risk prediction pipeline, how many of the highest-ranked candidates were reranked by the LLM for more difficult symptoms?",
+    "expected_answer": "400",
+    "track_of_source": "eRisk: Early Risk Prediction on the Internet",
+    "source_chunk": "4058c24be6ddcb61ea2bbe91499f76347dbcdc097b46908910daf7b1191ff4b0",
+    "gold_sources": [
+      {
+        "paper": "paper120",
+        "pages": [
+          12
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-032",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the analysis, what type of relationship was incorrectly predicted between 'azathioprine' and 'AZA'?",
+    "expected_answer": "It was labeled as an abbreviation instead of an alternative name.",
+    "track_of_source": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+    "source_chunk": "e568c3d99c57993c2323d6040934dccd044f08b48cce9dec1292f4889fd0a83c",
+    "gold_sources": [
+      {
+        "paper": "paper22",
+        "pages": [
+          13
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-033",
+    "split": "test",
+    "category": "paper",
+    "question": "What was the MRR@5 score for the configuration using multilingual translation and pseudo-relevance feedback in the French language?",
+    "expected_answer": "0.269",
+    "track_of_source": "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles",
+    "source_chunk": "8f27ff443d3b2562f48adde26e84ea7502150bfdaf405cf02050f572686a9532",
+    "gold_sources": [
+      {
+        "paper": "paper58",
+        "pages": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-034",
+    "split": "dev",
+    "category": "paper",
+    "question": "What Spearman correlation value approximately corresponds to a Cultural Signal Purity (CSP) score of 0.744?",
+    "expected_answer": "Approximately 0.51",
+    "track_of_source": "ELOQUENT: Evaluation of Generative Language Model Quality",
+    "source_chunk": "d996dbcff45b513fd4929ddaa161ef355541d37a07a73f792e08ede3a75a8226",
+    "gold_sources": [
+      {
+        "paper": "paper104",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-035",
+    "split": "dev",
+    "category": "paper",
+    "question": "What regularization term is used to prevent the uncertainty parameter from approaching infinity in the Automatic Weighted Loss function?",
+    "expected_answer": "A log𝜎 𝑖 regularization term is used.",
+    "track_of_source": "EXIST: sEXism Identification in Social neTworks",
+    "source_chunk": "90cb7402d34e6b1ad3ab4dd077fbc8901668b4723f2260f2ff840e3f38641182",
+    "gold_sources": [
+      {
+        "paper": "paper156",
+        "pages": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-036",
+    "split": "test",
+    "category": "paper",
+    "question": "What was the percentage gain achieved by the agent on BTC compared to a buy-and-hold strategy in the FinMMEval 2026 competition?",
+    "expected_answer": "+22.41%",
+    "track_of_source": "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems",
+    "source_chunk": "25abc02856664058d6345e2f2d0340dc2d26a3412480447d889be90bb0c0974a",
+    "gold_sources": [
+      {
+        "paper": "paper199",
+        "pages": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-037",
+    "split": "test",
+    "category": "paper",
+    "question": "How many runs were submitted by participating teams in the HIPE-2026 CLEF lab?",
+    "expected_answer": "More than 40 runs were submitted.",
+    "track_of_source": "HIPE: Evaluating Accurate and Efficient Person–Place Relation Extraction from Multilingual Historical Texts",
+    "source_chunk": "de2f2a8bb23685cc90f5a99c981322ceaea0d7c2c74801906bf410af4212f3dd",
+    "gold_sources": [
+      {
+        "paper": "paper212",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-038",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the text, what are the three primary technical hurdles in the ImageCLEF task involving LGG/HGG classification?",
+    "expected_answer": "The challenges are: aligning feature spaces from MRI (processed by NeuroVFM) and pathology (processed by GigaPath), maintaining prediction stability when pathology data is unavailable, and using large language models (LLMs) in a controlled manner to incorporate radiology report reasoning without being overly sensitive to prompt variations.",
+    "track_of_source": "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security",
+    "source_chunk": "376ea91ea85cfd4d9128791802a6692772c10f0abd64b46457ef75556d4ae8fb",
+    "gold_sources": [
+      {
+        "paper": "paper250",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-039",
+    "split": "test",
+    "category": "paper",
+    "question": "What was the MAP achieved by the configuration using Qwen with a weight of 0.60, each Gemma judge with a weight of 0.20, and a blend of 0.30/0.70?",
+    "expected_answer": "0.6343",
+    "track_of_source": "JOKER: Humor Detection, Search, and Translation",
+    "source_chunk": "2c9706df5b15c25323f02607d6b9142f2aeee9c99fafb79814860f70fa01edbf",
+    "gold_sources": [
+      {
+        "paper": "paper310",
+        "pages": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-040",
+    "split": "dev",
+    "category": "paper",
+    "question": "For the Texas horned lizard subset in the LifeCLEF lab, what method was used for HDBSCAN and cluster merging due to the absence of labeled training data?",
+    "expected_answer": "An uncalibrated global fallback was used for HDBSCAN, followed by a conservative cluster-level SIFT + LightGlue merge.",
+    "track_of_source": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+    "source_chunk": "d96e5d2bfe22e6b989528c5e94f54dd2675796683137f9ff8a343dff49eaa412",
+    "gold_sources": [
+      {
+        "paper": "paper327",
+        "pages": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-041",
+    "split": "dev",
+    "category": "paper",
+    "question": "What format was used for the submitted run files in the CLEF LongEval task 3?",
+    "expected_answer": "Each run file contained one JSON file per snapshot, including metadata and a list of five candidate queries for each session.",
+    "track_of_source": "LongEval: Longitudinal Evaluation of IR Model Performance",
+    "source_chunk": "a28445ca17adb64c8bf8dda147fdb4b6ce5d910be420ce3fe7f4b4df8807dbae",
+    "gold_sources": [
+      {
+        "paper": "paper382",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-042",
+    "split": "test",
+    "category": "paper",
+    "question": "What was the proportion of human-written documents in the validation set used for evaluation in the PAN Digital Text Forensics and Stylometry lab?",
+    "expected_answer": "35.58%",
+    "track_of_source": "PAN: Digital Text Forensics and Stylometry",
+    "source_chunk": "ea0bc48952ccaa43c7a56e82fae05fccbecfdbd6d845a7d8a56fb564d13dc904",
+    "gold_sources": [
+      {
+        "paper": "paper425",
+        "pages": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-043",
+    "split": "test",
+    "category": "paper",
+    "question": "Which two tasks within the QuantumCLEF 2026 lab did the team participate in?",
+    "expected_answer": "Task 2 and Task 3",
+    "track_of_source": "QuantumCLEF: Quantum Computing, Information Retrieval and Recommender Systems",
+    "source_chunk": "d6df3f847e9c7cb55fa381e87dc0f24a7bca059e2656d2ee3949cf3c125b0d42",
+    "gold_sources": [
+      {
+        "paper": "paper438",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-044",
+    "split": "test",
+    "category": "paper",
+    "question": "What was the F1 score at the sentence level (multiclass) for the 'Train–Inference Misaligned' method when evaluated on the official test set for the SimpleText CLEF lab?",
+    "expected_answer": "0.8478",
+    "track_of_source": "SimpleText: Simplify Scientific Text (and Nothing More)",
+    "source_chunk": "3712696b1c577db6d084213eb94b1c1f611eeac70898efc34ecbccb5335266fb",
+    "gold_sources": [
+      {
+        "paper": "paper462",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-045",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the TalentCLEF data, approximately how many times were skills marked as irrelevant for the 'Financial Analyst' role across the two rejection categories?",
+    "expected_answer": "9,577",
+    "track_of_source": "TalentCLEF: Skill and Job Title Intelligence for Human Capital Management",
+    "source_chunk": "452630e274b4139b6bfadb4ec8e41241ba10b0440ef29585df6562b3ee34cd23",
+    "gold_sources": [
+      {
+        "paper": "paper475",
+        "pages": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-046",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the text, what is a potential advantage of guideline-conditioned fine-tuning compared to approaches that embed annotation rules within a classification layer?",
+    "expected_answer": "Guideline-conditioned fine-tuning could improve robustness while ensuring the model applies the provided rule instead of inferring one from the data.",
+    "track_of_source": "Touché: Argumentation Systems",
+    "source_chunk": "d8a5e63dc1eae4e27c863ca040fd62bc97e6911934a8f01fac2a168784c5de3f",
+    "gold_sources": [
+      {
+        "paper": "paper510",
+        "pages": [
+          13
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-047",
+    "split": "test",
+    "category": "paper",
+    "question": "What method is used to generate dense vector representations for both queries and candidate sentences in the eRisk early risk prediction task?",
+    "expected_answer": "The BAAI/bge-large-en-v1.5 bi-encoder model is used to produce dense vector representations.",
+    "track_of_source": "eRisk: Early Risk Prediction on the Internet",
+    "source_chunk": "b513de27fca930ca5d2a817c4772a2d478805875aa239c7efaa17ef7fd3138bf",
+    "gold_sources": [
+      {
+        "paper": "paper116",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-048",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the results presented, what was the F1 score achieved by the BioLinkBERT-large model when compared to the BiomedNLP-BiomedBERT-large-uncased-abstract model?",
+    "expected_answer": "0.8797",
+    "track_of_source": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+    "source_chunk": "9d387e62658419cc6062bbac305144c3fe54feedfad776a0610b6300aeecf3f5",
+    "gold_sources": [
+      {
+        "paper": "paper29",
+        "pages": [
+          23
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-049",
+    "split": "dev",
+    "category": "paper",
+    "question": "What character limit is applied to evidence content after cleaning, and why?",
+    "expected_answer": "Evidence content is truncated to 4,000 characters per source to stay within the context window limits of GPT-4o-mini.",
+    "track_of_source": "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles",
+    "source_chunk": "9e535d4f493be2c7002ccb90ee2467374b4f3f08a4c04f363e4501c6620a81bd",
+    "gold_sources": [
+      {
+        "paper": "paper80",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-050",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the text, how might Libor Vávra’s earlier criticism of Minister Blažek’s decision have been different if the reprimand had been known at the time?",
+    "expected_answer": "Libor Vávra, the president of the Judges’ Union, indicated that they might not have criticized Minister Blažek’s decision had they been aware of the reprimand earlier.",
+    "track_of_source": "ELOQUENT: Evaluation of Generative Language Model Quality",
+    "source_chunk": "f040352e9fb95c71511468ba1c2fbb3d417c0f71878009c79ed44c9ac66ed0f8",
+    "gold_sources": [
+      {
+        "paper": "paper98",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-051",
+    "split": "test",
+    "category": "paper",
+    "question": "What fields are included in the structured JSON output generated by the Act Prompt?",
+    "expected_answer": "- reasoning, is_sexist, intention, and categories",
+    "track_of_source": "EXIST: sEXism Identification in Social neTworks",
+    "source_chunk": "4a2eaba0ec17159ccc06677a90e661e406ba104ecd8f37326e599f5e79ccbac2",
+    "gold_sources": [
+      {
+        "paper": "paper179",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-052",
+    "split": "dev",
+    "category": "paper",
+    "question": "What was the annualized volatility for a Buy-and-Hold strategy with TSLA, according to the described results?",
+    "expected_answer": "33.4%",
+    "track_of_source": "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems",
+    "source_chunk": "b01f6bdeb6796eba8b19d52c7eb6c2a432e3e8072e130f2851a2a332c0611f78",
+    "gold_sources": [
+      {
+        "paper": "paper197",
+        "pages": [
+          13
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-053",
+    "split": "dev",
+    "category": "paper",
+    "question": "What was the decrease in macro recall for the NLI encoder when transferring from the development to the held-out English test set?",
+    "expected_answer": "0.254",
+    "track_of_source": "HIPE: Evaluating Accurate and Efficient Person–Place Relation Extraction from Multilingual Historical Texts",
+    "source_chunk": "0c7197927bcf256f29410bfae6a75ce2fa1862f50fef9878ea8292e6860628c8",
+    "gold_sources": [
+      {
+        "paper": "paper221",
+        "pages": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-054",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the examples provided, what characteristic are companies in the electrical sector seeking in potential employees?",
+    "expected_answer": "High energy",
+    "track_of_source": "JOKER: Humor Detection, Search, and Translation",
+    "source_chunk": "2c4807c427b7fbf9ebe5598507768003d90a86b6d32b05086b5cca840fdd7a01",
+    "gold_sources": [
+      {
+        "paper": "paper303",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-055",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the evaluation, approximately how much did the postprocessing chain, which includes temporal smoothing and file-level rescaling, improve the leaderboard score?",
+    "expected_answer": "+0.0118",
+    "track_of_source": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+    "source_chunk": "c2a66a83adccb84652cd5a4c2dab3bb662d00094a92d41d981bb04ee85ef9255",
+    "gold_sources": [
+      {
+        "paper": "paper338",
+        "pages": [
+          17
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-056",
+    "split": "dev",
+    "category": "paper",
+    "question": "What percentage of descriptions in version V8 began with conversational headers?",
+    "expected_answer": "Approximately 13.4%",
+    "track_of_source": "LongEval: Longitudinal Evaluation of IR Model Performance",
+    "source_chunk": "04c6654fb73fe42930e88a6bed92bd07fa73a876a5951e71e6907eaf8cc741a1",
+    "gold_sources": [
+      {
+        "paper": "paper380",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-057",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the described detection procedure, what statistical test is used to evaluate the significance of the 'green list' channel's results when more than five eligible tokens are in scope?",
+    "expected_answer": "A one-sided binomial z-test.",
+    "track_of_source": "PAN: Digital Text Forensics and Stylometry",
+    "source_chunk": "c8059a1e357b1a489d410470d633c86ee931e23101213ac2b360807831875633",
+    "gold_sources": [
+      {
+        "paper": "paper423",
+        "pages": [
+          13
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-058",
+    "split": "test",
+    "category": "paper",
+    "question": "What naming convention must be followed when submitting run files for the QuantumCLEF lab?",
+    "expected_answer": "Run files must be named in the format [Centroids]_[Method]_[Groupname]_[SubmissionID].txt, where [Centroids] is 10, 25, or 50, [Method] is QA or SA, [Groupname] is the team name, and [SubmissionID] is a custom identifier.",
+    "track_of_source": "QuantumCLEF: Quantum Computing, Information Retrieval and Recommender Systems",
+    "source_chunk": "b157170d64fa19a816b4404dce918d9c56b0463da0e87207d88175422ed7b6a2",
+    "gold_sources": [
+      {
+        "paper": "paper436",
+        "pages": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-059",
+    "split": "test",
+    "category": "paper",
+    "question": "What dataset provides the authentic plain language summaries used as examples for the in-context learning approach?",
+    "expected_answer": "The BioCLEAR reference set.",
+    "track_of_source": "SimpleText: Simplify Scientific Text (and Nothing More)",
+    "source_chunk": "7cc821c4c417612e665238c8d6df31a459e090f9433dd3bfc3b999f3ed55876a",
+    "gold_sources": [
+      {
+        "paper": "paper453",
+        "pages": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-060",
+    "split": "dev",
+    "category": "paper",
+    "question": "What mathematical formula was used to combine the scores from the dense embedding and BM25 retrieval methods?",
+    "expected_answer": "Score Hybrid = α * Score Dense + (1 − α) * Score BM25",
+    "track_of_source": "TalentCLEF: Skill and Job Title Intelligence for Human Capital Management",
+    "source_chunk": "e8cf880cbedf845985f50180e11075c164817b4328971e4d2070ef4ab87e9f85",
+    "gold_sources": [
+      {
+        "paper": "paper483",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-061",
+    "split": "dev",
+    "category": "paper",
+    "question": "For datasets with provided PDF guidelines, what large language model and prompt were used to generate summaries for input?",
+    "expected_answer": "gemini-2.5-flash was used with a structured prompt requesting 2-3 sentence summaries defining what constitutes an argument and what does not.",
+    "track_of_source": "Touché: Argumentation Systems",
+    "source_chunk": "703fd6356e511306423d506c216eef81d880890f0cfd24721d27c516c81ee406",
+    "gold_sources": [
+      {
+        "paper": "paper505",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-062",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the described approach, how many papers informed the design of the pipeline for Task 1 in the eRisk lab?",
+    "expected_answer": "51",
+    "track_of_source": "eRisk: Early Risk Prediction on the Internet",
+    "source_chunk": "f8338c650bd84c1dddd5fb216200836ad89ce9af9a2a1a1e65d13b2d323f73c2",
+    "gold_sources": [
+      {
+        "paper": "paper148",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-063",
+    "split": "test",
+    "category": "paper",
+    "question": "What correlation coefficient was observed between entity embedding dimension and F1 score?",
+    "expected_answer": "0.313",
+    "track_of_source": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+    "source_chunk": "bed7c455e9efcee4ff95feb71698095e037e2eed42150612466a5af7886ffd44",
+    "gold_sources": [
+      {
+        "paper": "paper48",
+        "pages": [
+          11
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-064",
+    "split": "test",
+    "category": "paper",
+    "question": "What is one prominent sparse vector representation approach used in information retrieval?",
+    "expected_answer": "Okapi BM25",
+    "track_of_source": "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles",
+    "source_chunk": "42c505a504eb4513820406a8af1168608ef0db3e22833ad892ec8d6bd5bb321e",
+    "gold_sources": [
+      {
+        "paper": "paper60",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-065",
+    "split": "test",
+    "category": "paper",
+    "question": "What was the QWK score achieved when using the largest Qwen3-Embedding model (8B) with Logistic Regression?",
+    "expected_answer": "0.581",
+    "track_of_source": "ELOQUENT: Evaluation of Generative Language Model Quality",
+    "source_chunk": "3bb51e83e5ab1de76565bb374110e5de707b7d99c14f3122cebe3ce733652fb7",
+    "gold_sources": [
+      {
+        "paper": "paper108",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-066",
+    "split": "dev",
+    "category": "paper",
+    "question": "What percentage of training set meme samples had a disagreement of 3 or more out of 6 annotators?",
+    "expected_answer": "15.41%",
+    "track_of_source": "EXIST: sEXism Identification in Social neTworks",
+    "source_chunk": "fd81c6c094f0c1335b315566b026153d83fd3098137d8d31e76af79dc98fae82",
+    "gold_sources": [
+      {
+        "paper": "paper158",
+        "pages": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-067",
+    "split": "test",
+    "category": "paper",
+    "question": "What large language model is utilized as the base for the system's LLM component?",
+    "expected_answer": "Qwen2.5-7B-Instruct",
+    "track_of_source": "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems",
+    "source_chunk": "3812074f8fa4e42078914026893f8e39b3005138a9e8863ac79ae8c7359480de",
+    "gold_sources": [
+      {
+        "paper": "paper206",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-068",
+    "split": "test",
+    "category": "paper",
+    "question": "What two relation types do systems participating in the HIPE-2026 CLEF lab need to predict?",
+    "expected_answer": "at and isAt",
+    "track_of_source": "HIPE: Evaluating Accurate and Efficient Person–Place Relation Extraction from Multilingual Historical Texts",
+    "source_chunk": "e065bd8184dd186621f03a6d221cf7a31693fbcfb572e8ff884149235bbc11e9",
+    "gold_sources": [
+      {
+        "paper": "paper222",
+        "pages": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-069",
+    "split": "dev",
+    "category": "paper",
+    "question": "What CUDA version was used in the system's implementation?",
+    "expected_answer": "CUDA 12.1",
+    "track_of_source": "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security",
+    "source_chunk": "40a1e236fb76952fa3ad6257f31b6c51b4b9aa6b59802cdd1eb5c8b49d7981ae",
+    "gold_sources": [
+      {
+        "paper": "paper242",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-070",
+    "split": "test",
+    "category": "paper",
+    "question": "What initial detector and model architecture were used for inference on the test set in the LifeCLEF task?",
+    "expected_answer": "The MBARI-315k YOLOv8 detector was used.",
+    "track_of_source": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+    "source_chunk": "a5d4d7c892d48e87173f2a5b771bc2efe359c9dfbc7b3259387e99e42b98be89",
+    "gold_sources": [
+      {
+        "paper": "paper355",
+        "pages": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-071",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the evaluation, how did temporal full-text retrieval affect ARP and robustness compared to FT BM25 and the BM25 pivot?",
+    "expected_answer": "Temporal full-text retrieval improved ARP and robustness over FT BM25 and the BM25 pivot.",
+    "track_of_source": "LongEval: Longitudinal Evaluation of IR Model Performance",
+    "source_chunk": "b33ba1e6646b24acc367d2528e3ebe44b5c1359d1c213d86741f2d3d94455ad8",
+    "gold_sources": [
+      {
+        "paper": "paper384",
+        "pages": [
+          13
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-072",
+    "split": "test",
+    "category": "paper",
+    "question": "What techniques were employed to improve the stability of adversarial training over extended periods?",
+    "expected_answer": "Label smoothing, a specific detector update cadence, dynamic freezing of detector updates, reward clipping, and numerical safeguards (such as NaN-safe logits and gradient sanitisation) were used to stabilize training.",
+    "track_of_source": "PAN: Digital Text Forensics and Stylometry",
+    "source_chunk": "e3e3508790ff70e9857c23fa9412a4f4a60706f3a676cd961de1e379eaadfd07",
+    "gold_sources": [
+      {
+        "paper": "paper422",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-073",
+    "split": "dev",
+    "category": "paper",
+    "question": "What random seed was used to create the 80/20 holdout split for the User Rating Matrix in QuantumCLEF Task 1B?",
+    "expected_answer": "42",
+    "track_of_source": "QuantumCLEF: Quantum Computing, Information Retrieval and Recommender Systems",
+    "source_chunk": "f87c84ccc0b38ffda5c19ee275f128352ea906a70191d2a66afd423872ecc05f",
+    "gold_sources": [
+      {
+        "paper": "paper441",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-074",
+    "split": "dev",
+    "category": "paper",
+    "question": "How many sentences are included in the Cochrane-auto 2026 dataset?",
+    "expected_answer": "3,679",
+    "track_of_source": "SimpleText: Simplify Scientific Text (and Nothing More)",
+    "source_chunk": "799ddb3d56c9ea3864202aab4ae6670bcdb7c67eafe2f91379da781d4050c71f",
+    "gold_sources": [
+      {
+        "paper": "paper454",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-075",
+    "split": "dev",
+    "category": "paper",
+    "question": "For TalentCLEF Task A and Task B, what model was chosen as the primary embedding model?",
+    "expected_answer": "intfloat/multilingual-e5-large-instruct (mE5-large-instruct)",
+    "track_of_source": "TalentCLEF: Skill and Job Title Intelligence for Human Capital Management",
+    "source_chunk": "215824397a40ccb9a7e8a86926b99131ddc54cba04210a21f4c5565eed9b2692",
+    "gold_sources": [
+      {
+        "paper": "paper486",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-076",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the document, what three criteria were used to evaluate the contribution of the enhanced-track rewrite to a classifier?",
+    "expected_answer": "A string-mask sanity check, a per-class distribution consistent with strong label-bearing signal, and a falsifiable follow-up.",
+    "track_of_source": "Touché: Argumentation Systems",
+    "source_chunk": "f7a68a19e3b44868ed564c01a0bed70fc4084605b3ad310e7b1f797b5e543b99",
+    "gold_sources": [
+      {
+        "paper": "paper502",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-077",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to a comparison of teams participating in the eRisk early risk prediction task, what was the latency (measured in posts) of the team with the highest F1 score?",
+    "expected_answer": "9 posts",
+    "track_of_source": "eRisk: Early Risk Prediction on the Internet",
+    "source_chunk": "4c728af604e15112b7ae6a01ec7c7cc9f184709fcab5b770a25c3d5f6322eb09",
+    "gold_sources": [
+      {
+        "paper": "paper114",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-078",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the analysis of BioASQ collections, what percentage of annotations belong to the 'Disease, Disorder, or Finding' class?",
+    "expected_answer": "36.6%",
+    "track_of_source": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+    "source_chunk": "6ce17933cfac99bd7deeb41b00982bf3f258870ac42cafc9967753a3fd0bf3f3",
+    "gold_sources": [
+      {
+        "paper": "paper39",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-079",
+    "split": "dev",
+    "category": "paper",
+    "question": "What are some of the ranking methods explored in Task 2 of the CheckThat! CLEF lab?",
+    "expected_answer": "Pointwise scoring, pairwise ranking, order-debiased pairwise prompting, PREPAIR-style structured comparison, and DPO with Bradley-Terry reward modeling were explored.",
+    "track_of_source": "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles",
+    "source_chunk": "d8ea397cb73358215477b023e739cb778f6f9b22154dc72eb2f11e63c25b0473",
+    "gold_sources": [
+      {
+        "paper": "paper75",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-080",
+    "split": "dev",
+    "category": "paper",
+    "question": "What metric, calculated from Spearman correlations between two scores (Uq and Aq) for each language pair, is used to determine a system's final score in the CLEF ELOQUENT lab?",
+    "expected_answer": "CSP = 1 - ¯𝜌^2, where ¯𝜌 is the average of Spearman correlations.",
+    "track_of_source": "ELOQUENT: Evaluation of Generative Language Model Quality",
+    "source_chunk": "98fd8dfdafd856e289e24769b683b6f63258b67df24691349aa3f1f71b1669c6",
+    "gold_sources": [
+      {
+        "paper": "paper96",
+        "pages": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-081",
+    "split": "test",
+    "category": "paper",
+    "question": "What generative foundation model was used and what parameter-efficient fine-tuning technique was applied?",
+    "expected_answer": "Qwen2.5-7B-Instruct was used as the generative foundation model, and parameter-efficient fine-tuning was applied using LoRA/QLoRA.",
+    "track_of_source": "EXIST: sEXism Identification in Social neTworks",
+    "source_chunk": "d98eb8e316da5639a2edb62328955903096797a13e0fcd58046b075067e07809",
+    "gold_sources": [
+      {
+        "paper": "paper182",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-082",
+    "split": "test",
+    "category": "paper",
+    "question": "What model was primarily used for inference in the FinMMEval shared configuration, and how was a secondary model utilized?",
+    "expected_answer": "Google Gemini 3.1 Pro was the primary model for inference, with Gemini 3.5 Flash available as a secondary option via an environment variable.",
+    "track_of_source": "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems",
+    "source_chunk": "36c865329fb7d2cfa0da12ef3859089820f19712ab99117361d8e7f77492486d",
+    "gold_sources": [
+      {
+        "paper": "paper208",
+        "pages": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-083",
+    "split": "dev",
+    "category": "paper",
+    "question": "Why were temporal augmentations not applied to the literary surprise set?",
+    "expected_answer": "The literary surprise set uses documents with only year-level publication dates, which the strict date conversion parser cannot handle.",
+    "track_of_source": "HIPE: Evaluating Accurate and Efficient Person–Place Relation Extraction from Multilingual Historical Texts",
+    "source_chunk": "039292376526a9c2015e61361d5a577152e6e3aa6dfab5bad41a8f7890ccf73b",
+    "gold_sources": [
+      {
+        "paper": "paper217",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-084",
+    "split": "dev",
+    "category": "paper",
+    "question": "What is the formula used to calculate the loss term for positive labels in the ASL method?",
+    "expected_answer": "𝐿+ = (1−𝑝 𝑐)𝛾+ log(𝑝𝑐)",
+    "track_of_source": "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security",
+    "source_chunk": "001727e3600a2a38e93ec84fcba8cd6ae9e9d1eb9beee5ad125ab79caeb18fa8",
+    "gold_sources": [
+      {
+        "paper": "paper263",
+        "pages": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-085",
+    "split": "dev",
+    "category": "paper",
+    "question": "In the evaluated set for the JOKER CLEF lab, approximately what percentage of translations successfully maintained the original wordplay or references while sounding natural in French?",
+    "expected_answer": "29%",
+    "track_of_source": "JOKER: Humor Detection, Search, and Translation",
+    "source_chunk": "df0b60412d17d597594331a8ec580d29878f738ad2d8eed0243dbbc8a23e8f40",
+    "gold_sources": [
+      {
+        "paper": "paper304",
+        "pages": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-086",
+    "split": "test",
+    "category": "paper",
+    "question": "What parameter value was used for the focal focusing parameter when fine-tuning the model?",
+    "expected_answer": "1.0",
+    "track_of_source": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+    "source_chunk": "35916b34c4530ab2653e832499bb1eb3ae1f162f87af185f2d6d4c4b9137c106",
+    "gold_sources": [
+      {
+        "paper": "paper336",
+        "pages": [
+          11
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-087",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the evaluation, what are more informative metrics than ROUGE-L for assessing the core capabilities of retrieval-augmented generation, particularly grounding and evidence quality?",
+    "expected_answer": "Retrieval precision, nugget coverage, and average grade are more informative than ROUGE-L alone.",
+    "track_of_source": "LongEval: Longitudinal Evaluation of IR Model Performance",
+    "source_chunk": "0600a169c7ca69919a0714abca635188437ce2d75e80187122a1974bec66e9e6",
+    "gold_sources": [
+      {
+        "paper": "paper385",
+        "pages": [
+          11
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-088",
+    "split": "dev",
+    "category": "paper",
+    "question": "What Eval. score did the configuration using the same main settings as Core but with a different random seed (Seed46) achieve?",
+    "expected_answer": "0.55",
+    "track_of_source": "PAN: Digital Text Forensics and Stylometry",
+    "source_chunk": "ea94b0cf49983a053e105da7b182d15cd3fe99e78428baea91a11ebd0f71cb04",
+    "gold_sources": [
+      {
+        "paper": "paper411",
+        "pages": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-089",
+    "split": "test",
+    "category": "paper",
+    "question": "What Macro-F1 score was achieved using a subset of training data selected by a QA method in the QuantumCLEF Task 2 internal validation protocol?",
+    "expected_answer": "0.9484",
+    "track_of_source": "QuantumCLEF: Quantum Computing, Information Retrieval and Recommender Systems",
+    "source_chunk": "d939b87a17628a149e798be4c1e8ae9dba348966c1c3d2e0e5e7487c250d50b9",
+    "gold_sources": [
+      {
+        "paper": "paper439",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-090",
+    "split": "test",
+    "category": "paper",
+    "question": "By how much did using a medical substitution lexicon negatively impact SARI scores during development?",
+    "expected_answer": "Using a 129-entry medical substitution lexicon reduced SARI by 0.21–1.84 points.",
+    "track_of_source": "SimpleText: Simplify Scientific Text (and Nothing More)",
+    "source_chunk": "16e8da1fae21d14728385e96267f104e2152f2735089bae2166a483def08b421",
+    "gold_sources": [
+      {
+        "paper": "paper461",
+        "pages": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-091",
+    "split": "test",
+    "category": "paper",
+    "question": "What was the NDCG@10 score achieved by System 1 when evaluated on the validation set using pytrec_eval?",
+    "expected_answer": "0.3083",
+    "track_of_source": "TalentCLEF: Skill and Job Title Intelligence for Human Capital Management",
+    "source_chunk": "e74048a61f5ad0881b41e140e5b2611a570f14c4f91aa66c21869caf35086528",
+    "gold_sources": [
+      {
+        "paper": "paper488",
+        "pages": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-092",
+    "split": "test",
+    "category": "paper",
+    "question": "What macro-F1 score did the bag-of-words proxy achieve on enhanced text during five-fold cross-validation for the Touché CLEF lab's Sub-Task 2?",
+    "expected_answer": "0.965",
+    "track_of_source": "Touché: Argumentation Systems",
+    "source_chunk": "b57692453eef1f72de5e9ce8b81ab7159bf4864056fcb92606888d2526251e5e",
+    "gold_sources": [
+      {
+        "paper": "paper495",
+        "pages": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-093",
+    "split": "test",
+    "category": "paper",
+    "question": "According to empirical analysis, by what percentage did the learned policy reduce mean ERDE50 compared to the fixed-threshold baseline in 5-fold cross-validation?",
+    "expected_answer": "21%",
+    "track_of_source": "eRisk: Early Risk Prediction on the Internet",
+    "source_chunk": "f47123df95cb275309b1ab850c3b6f6c09a0248012cd05c3bba60505b6f80646",
+    "gold_sources": [
+      {
+        "paper": "paper122",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-094",
+    "split": "test",
+    "category": "paper",
+    "question": "For the BioBERT(80/20) model, how many training epochs were used?",
+    "expected_answer": "5",
+    "track_of_source": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+    "source_chunk": "6bd3ee3f387ce074f9e50168532ce8d8cdd14e4b6268bf8e149c07e09d4f0cb9",
+    "gold_sources": [
+      {
+        "paper": "paper27",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-095",
+    "split": "test",
+    "category": "paper",
+    "question": "For the CheckThat! Task 1 experiments, how many English training examples were included in the dataset?",
+    "expected_answer": "14,977",
+    "track_of_source": "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles",
+    "source_chunk": "8ef9fd2378d27a47d8f04e9cc93b26e678bf39c15906f9d1b156ef7b0a58c176",
+    "gold_sources": [
+      {
+        "paper": "paper88",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-096",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the described methodology, which readability formula uses the proportion of polysyllabic words to estimate text difficulty?",
+    "expected_answer": "The Gunning Fog Index.",
+    "track_of_source": "ELOQUENT: Evaluation of Generative Language Model Quality",
+    "source_chunk": "81e2850d1261074996f1f6a6f75f275166ee5b627c07cde4ac3b6c5978c865ba",
+    "gold_sources": [
+      {
+        "paper": "paper97",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-097",
+    "split": "dev",
+    "category": "paper",
+    "question": "What was the cross-validated F1 macro score achieved by the top-performing single model for Task 2.1 (Memes)?",
+    "expected_answer": "0.7915",
+    "track_of_source": "EXIST: sEXism Identification in Social neTworks",
+    "source_chunk": "39d23048f17078301041d48e1273f2dca9aafa043ef4300d4b297b018d81c941",
+    "gold_sources": [
+      {
+        "paper": "paper153",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-098",
+    "split": "test",
+    "category": "paper",
+    "question": "How is the Relative Strength Index (RSI) transformed in this FinMMEval approach, and what is the resulting neutral level?",
+    "expected_answer": "It is recentered from the range [0, 100] to [-1, 1] by subtracting 50, resulting in a neutral level of zero.",
+    "track_of_source": "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems",
+    "source_chunk": "d3bcd1c41e711b902f05b91baab8c1baf236dde0a32061bc741dddb95f492f59",
+    "gold_sources": [
+      {
+        "paper": "paper205",
+        "pages": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-099",
+    "split": "dev",
+    "category": "paper",
+    "question": "What was the highest macro recall achieved for the 'isAt' relation in German development data, and which model produced it?",
+    "expected_answer": "The highest macro recall achieved for the 'isAt' relation in German development data was 0.758, produced by Qwen3.5-4B.",
+    "track_of_source": "HIPE: Evaluating Accurate and Efficient Person–Place Relation Extraction from Multilingual Historical Texts",
+    "source_chunk": "b1bd15583d1b7d888c0c9149db5f611dc5fecf0051976666decdd62a6de94856",
+    "gold_sources": [
+      {
+        "paper": "paper228",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-100",
+    "split": "dev",
+    "category": "paper",
+    "question": "What temperature was used when generating multiple response samples?",
+    "expected_answer": "0.6",
+    "track_of_source": "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security",
+    "source_chunk": "0d45029e22486ea9181fd20201a0546c7c617a5237ee397d45e374a9768dd0a0",
+    "gold_sources": [
+      {
+        "paper": "paper301",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-101",
+    "split": "test",
+    "category": "paper",
+    "question": "What ensemble of large language models was used to generate the Bradley-Terry leaderboard for Task 4's French track?",
+    "expected_answer": "Groq openai/gpt-oss-20b + deepseek-chat + models/gemini-2.5-flash-lite",
+    "track_of_source": "JOKER: Humor Detection, Search, and Translation",
+    "source_chunk": "2888b51266d743e5d5446d8954702c888e6f4244788e5de678a2e073841880a5",
+    "gold_sources": [
+      {
+        "paper": "paper305",
+        "pages": [
+          20
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-102",
+    "split": "dev",
+    "category": "paper",
+    "question": "What happens when no genus-level relatives are found in the training data during proxy score calculation?",
+    "expected_answer": "Propagation proceeds to the family level, and then to the order level, to guarantee a detection score for all 234 evaluation species.",
+    "track_of_source": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+    "source_chunk": "f59cca970d760350dc349329383f5a24604d73941b11be7acea42f0920ba90d0",
+    "gold_sources": [
+      {
+        "paper": "paper363",
+        "pages": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-103",
+    "split": "dev",
+    "category": "paper",
+    "question": "What LLM was used as a judge in the RAGAs framework for evaluating faithfulness and relevancy?",
+    "expected_answer": "Claude Sonnet 4.6",
+    "track_of_source": "LongEval: Longitudinal Evaluation of IR Model Performance",
+    "source_chunk": "d22cead825a24aaa875e53b6ea669e50ecd699e7e417c67783fc5d23c77be1aa",
+    "gold_sources": [
+      {
+        "paper": "paper381",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-104",
+    "split": "dev",
+    "category": "paper",
+    "question": "What metrics were used to evaluate the retrieval systems on the small, custom development datasets?",
+    "expected_answer": "nDCG became the more informative ranking metric after recall saturated.",
+    "track_of_source": "PAN: Digital Text Forensics and Stylometry",
+    "source_chunk": "e09310b9a1f62beabfee2023dc002e0e38266ed720a27ab1e954955dfa21c419",
+    "gold_sources": [
+      {
+        "paper": "paper398",
+        "pages": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-105",
+    "split": "test",
+    "category": "paper",
+    "question": "What is the dimensionality of the feature vectors used in the 100_ICM variant of the music recommendation dataset?",
+    "expected_answer": "100",
+    "track_of_source": "QuantumCLEF: Quantum Computing, Information Retrieval and Recommender Systems",
+    "source_chunk": "16e773d558293f30d25aa2127dc34f84d2a2310b85f6f07f58f7c46d7732ce21",
+    "gold_sources": [
+      {
+        "paper": "paper442",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-106",
+    "split": "test",
+    "category": "paper",
+    "question": "What compression ratio did the submission using Claude Sonnet 4 achieve when simplifying sentences?",
+    "expected_answer": "0.73",
+    "track_of_source": "SimpleText: Simplify Scientific Text (and Nothing More)",
+    "source_chunk": "a069ce281d97022886107060922aa3aecb815ddaae7113a38d1488c10f418d6a",
+    "gold_sources": [
+      {
+        "paper": "paper455",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-107",
+    "split": "dev",
+    "category": "paper",
+    "question": "For the English TalentCLEF system, what was the maximum improvement in MAP achieved through tuning route weights compared to using equal weights?",
+    "expected_answer": "+0.0007",
+    "track_of_source": "TalentCLEF: Skill and Job Title Intelligence for Human Capital Management",
+    "source_chunk": "838394e1b6516d01b493e4f00ae1ba55ad7f407c65ab1f9c359c7ff7008b1128",
+    "gold_sources": [
+      {
+        "paper": "paper485",
+        "pages": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-108",
+    "split": "dev",
+    "category": "paper",
+    "question": "What sentence transformer model was fine-tuned for the WGNA 2025 dataset in sub-task 1?",
+    "expected_answer": "MiniLM-L6-v2",
+    "track_of_source": "Touché: Argumentation Systems",
+    "source_chunk": "e3676148e43f28f6e19d1377b48e187b3803ea7777cf654f81364f1b47ba0bf3",
+    "gold_sources": [
+      {
+        "paper": "paper492",
+        "pages": [
+          15
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-109",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the scoring process in the eRisk CLEF lab, what is the maximum possible raw total score produced by summing symptom scores?",
+    "expected_answer": "63",
+    "track_of_source": "eRisk: Early Risk Prediction on the Internet",
+    "source_chunk": "4a3acc8dada99477586130182cf222834242f53938982e21e6c1d4a21c70a099",
+    "gold_sources": [
+      {
+        "paper": "paper142",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-110",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the guidelines for BioASQ question answering, how should answers be ordered when multiple potential responses are identified?",
+    "expected_answer": "Answers should first be ordered by how often they appear in the provided snippets, and then alphabetically.",
+    "track_of_source": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+    "source_chunk": "d6d036729dbfb66f30698c7ba3d6435768bee1b81b6f4a837927ee65ea952d89",
+    "gold_sources": [
+      {
+        "paper": "paper45",
+        "pages": [
+          32
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-111",
+    "split": "test",
+    "category": "paper",
+    "question": "When using the pairwise RankNet model, how is the loss function calculated for each pair of positive and negative traces?",
+    "expected_answer": "The RankNet loss is calculated using the formula -log𝜎(𝑠 +−𝑠−), where 𝑠 + and 𝑠− are the scores of the positive and negative traces, respectively.",
+    "track_of_source": "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles",
+    "source_chunk": "c0836ce4f69f86f6a9801d97f0b92bc58001972a43033791b6a6789a98001261",
+    "gold_sources": [
+      {
+        "paper": "paper57",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-112",
+    "split": "dev",
+    "category": "paper",
+    "question": "What maximum number of new tokens were generated during the text generation process?",
+    "expected_answer": "1000",
+    "track_of_source": "ELOQUENT: Evaluation of Generative Language Model Quality",
+    "source_chunk": "8005b6bcd71e44516f335b5f9f5408da24576152d6846e1a5f9d73c04731b86b",
+    "gold_sources": [
+      {
+        "paper": "paper109",
+        "pages": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-113",
+    "split": "dev",
+    "category": "paper",
+    "question": "In Task 2.3 of the EXIST CLEF lab, what were the ranking positions achieved by the system in Spanish, Global, and English?",
+    "expected_answer": "The system achieved first place in Spanish and Global, and second place in English.",
+    "track_of_source": "EXIST: sEXism Identification in Social neTworks",
+    "source_chunk": "1fd0fdf23acca18e1496818c21dfdf5fdcdd371815df78ee9ff987bfaea07ac4",
+    "gold_sources": [
+      {
+        "paper": "paper165",
+        "pages": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-114",
+    "split": "test",
+    "category": "paper",
+    "question": "What was the relative improvement in precision observed when using BAS, and what does this suggest about its generation behavior?",
+    "expected_answer": "Precision improved by 5%, which aligns with BAS converging towards a generation style that prioritizes accuracy over diversity.",
+    "track_of_source": "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems",
+    "source_chunk": "6d14c6837076001d66310ab2c3867029f4375c4a47a164c25ed4076fe00ab21a",
+    "gold_sources": [
+      {
+        "paper": "paper194",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-115",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the Accuracy profile results, what was the highest score achieved by any system in the HIPE CLEF lab?",
+    "expected_answer": "0.7479",
+    "track_of_source": "HIPE: Evaluating Accurate and Efficient Person–Place Relation Extraction from Multilingual Historical Texts",
+    "source_chunk": "be3ce6bdd45f4744ae37b1a00d799acbf1e7f38b9a75531fe85b1adf4e4d2770",
+    "gold_sources": [
+      {
+        "paper": "paper227",
+        "pages": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-116",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the results, how did the systems performing in the automated captioning benchmark compare to other participating teams?",
+    "expected_answer": "The systems ranked fifth out of the participating teams within a closely grouped top cluster.",
+    "track_of_source": "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security",
+    "source_chunk": "36bfe9ec16ab0c02726ff622a9db09efdfcdc7abd85dac20b8264cc0f6ef7a3e",
+    "gold_sources": [
+      {
+        "paper": "paper259",
+        "pages": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-117",
+    "split": "dev",
+    "category": "paper",
+    "question": "What was the MAP score for System 1 on the official Hinglish test set?",
+    "expected_answer": "0.3372",
+    "track_of_source": "JOKER: Humor Detection, Search, and Translation",
+    "source_chunk": "b27fecbd58fb4536caaeab4652d2d00f760ec9a5324264924d12d58fae5bc08e",
+    "gold_sources": [
+      {
+        "paper": "paper311",
+        "pages": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-118",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the analysis, what validation AUC score did the head model achieve?",
+    "expected_answer": "0.852",
+    "track_of_source": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+    "source_chunk": "3e0854bf8047641f9ee6757b8fc4a7f7f45d02681db8bfa47e568a7d42674164",
+    "gold_sources": [
+      {
+        "paper": "paper322",
+        "pages": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-119",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the results of the LongEval-RAG task, how did generation-only systems perform relative to other approaches?",
+    "expected_answer": "Generation-only systems ranked as the second, fifth, and fourteenth best runs out of 26 total.",
+    "track_of_source": "LongEval: Longitudinal Evaluation of IR Model Performance",
+    "source_chunk": "4c2ab6016c00a48260617d8989879e0a22ee4eb2fb06c47da0134dd46d6b0e71",
+    "gold_sources": [
+      {
+        "paper": "paper374",
+        "pages": [
+          24
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-120",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the validation set results, which system demonstrated the lowest false positive count?",
+    "expected_answer": "The aggregation layer had the lowest false positive count (13).",
+    "track_of_source": "PAN: Digital Text Forensics and Stylometry",
+    "source_chunk": "6041769a541645d8caced72d13c698d5f8753d42844adec781b4221e78965c4f",
+    "gold_sources": [
+      {
+        "paper": "paper427",
+        "pages": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-121",
+    "split": "dev",
+    "category": "paper",
+    "question": "How is the Feature Penalization Matrix (FPM) calculated, and what information does it encode?",
+    "expected_answer": "The Feature Penalization Matrix (FPM) is calculated by multiplying the transpose of the Item Content Matrix (ICM) by an agreement mask (K) and then multiplying that result by the ICM again (FPM=ICM ⊤·𝐾·ICM). It encodes how much selecting a particular feature pair is supported by collaborative evidence.",
+    "track_of_source": "QuantumCLEF: Quantum Computing, Information Retrieval and Recommender Systems",
+    "source_chunk": "998e691764d643ea7df5629992c3e5907d731b3074880e15b963f5430581f889",
+    "gold_sources": [
+      {
+        "paper": "paper440",
+        "pages": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-122",
+    "split": "test",
+    "category": "paper",
+    "question": "What was the average Joint Exact Match Accuracy achieved when using hierarchical constraints?",
+    "expected_answer": "89.4%",
+    "track_of_source": "SimpleText: Simplify Scientific Text (and Nothing More)",
+    "source_chunk": "d8ab1b3f22d9ce83b25a2b6e67f8a321fabb56299b1ffe83fdb4c65ad83a63f0",
+    "gold_sources": [
+      {
+        "paper": "paper448",
+        "pages": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-123",
+    "split": "dev",
+    "category": "paper",
+    "question": "What query and document lengths were used when applying ColBERT as a re-ranker?",
+    "expected_answer": "Query length was 128 and document length was 220.",
+    "track_of_source": "TalentCLEF: Skill and Job Title Intelligence for Human Capital Management",
+    "source_chunk": "59c729a26309319d6446dba9f27a1642655f917b928f818689761c3cdba95494",
+    "gold_sources": [
+      {
+        "paper": "paper484",
+        "pages": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-124",
+    "split": "dev",
+    "category": "paper",
+    "question": "What was the percentage point improvement observed on the development set for relationship identification (ST3) when using joint training and a DeBERTa encoder compared to a per-task RoBERTa baseline?",
+    "expected_answer": "+21 percentage points",
+    "track_of_source": "Touché: Argumentation Systems",
+    "source_chunk": "333dcaa1252d5351b574eaba8426167f2bd2b3ee6d681a6a0fd292814528a34a",
+    "gold_sources": [
+      {
+        "paper": "paper504",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-125",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the described system for early risk prediction in the eRisk CLEF lab, how many BDI-II symptoms are assessed, and how are they organized for the interviewer agent?",
+    "expected_answer": "Twenty-one BDI-II symptoms are assessed, grouped into seven thematic clusters.",
+    "track_of_source": "eRisk: Early Risk Prediction on the Internet",
+    "source_chunk": "f23f845d096747a0077dd452c0682341e9598c49b488af67758484b866d35418",
+    "gold_sources": [
+      {
+        "paper": "paper129",
+        "pages": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-126",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the results, by how much did the ensemble method improve MRR when the initial evidence retrieval was of high quality?",
+    "expected_answer": "0.0295",
+    "track_of_source": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+    "source_chunk": "16ce99d53f72a2029be9c45021c5df237954fd22ea3890683645a9ab94f6cb67",
+    "gold_sources": [
+      {
+        "paper": "paper40",
+        "pages": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-127",
+    "split": "dev",
+    "category": "paper",
+    "question": "What is a potential drawback of using the same generation model for both fact planning and self-critique within the pipeline?",
+    "expected_answer": "It may limit the independence of the revision stage because the critic could adopt the writer's reasoning patterns.",
+    "track_of_source": "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles",
+    "source_chunk": "9cf5bd781ffd810c51bca63c33e9002afd4fa6cedc6626f26265305b75840891",
+    "gold_sources": [
+      {
+        "paper": "paper65",
+        "pages": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-128",
+    "split": "dev",
+    "category": "paper",
+    "question": "What is one advantage of using deterministic decoding in language model inference, according to the text?",
+    "expected_answer": "Deterministic decoding reduces inference cost by producing consistent outputs from a single pass.",
+    "track_of_source": "ELOQUENT: Evaluation of Generative Language Model Quality",
+    "source_chunk": "a2bdd742a29b663d2b54f43509f8175300b6c6d7740be2e7ecc630f4b9fa8de4",
+    "gold_sources": [
+      {
+        "paper": "paper101",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-129",
+    "split": "dev",
+    "category": "paper",
+    "question": "What dimensionality are the embeddings produced by the SigLIP model for each video frame?",
+    "expected_answer": "768 dimensions",
+    "track_of_source": "EXIST: sEXism Identification in Social neTworks",
+    "source_chunk": "0581f67fa147badf549477dec40a1a0703bde283f7a73dcd0910bdc49cd66282",
+    "gold_sources": [
+      {
+        "paper": "paper159",
+        "pages": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-130",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the prompt design for Run 1 in the HIPE CLEF lab, what type of relationship between a person and a place does example #1 aim to reinforce?",
+    "expected_answer": "Example #1 aims to reinforce the understanding that an action occurring at a place indicates a person's presence there, not just a role.",
+    "track_of_source": "HIPE: Evaluating Accurate and Efficient Person–Place Relation Extraction from Multilingual Historical Texts",
+    "source_chunk": "d3953692238d6c2d1063acb609dca364dafc8ac06c1dcff81d99aa90213b9413",
+    "gold_sources": [
+      {
+        "paper": "paper226",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-131",
+    "split": "dev",
+    "category": "paper",
+    "question": "What type of classification problem is the Concept Detection Task in the ImageCLEFmed Caption 2026 lab?",
+    "expected_answer": "A multi-label classification problem.",
+    "track_of_source": "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security",
+    "source_chunk": "c5bd4d1a351647c8cc98753ac74ef6fc8048e1fc976daaf650a2f0cf210d4908",
+    "gold_sources": [
+      {
+        "paper": "paper239",
+        "pages": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-132",
+    "split": "test",
+    "category": "paper",
+    "question": "Approximately how many documents are initially retrieved for each query in the first stage of the retrieval process?",
+    "expected_answer": "290",
+    "track_of_source": "JOKER: Humor Detection, Search, and Translation",
+    "source_chunk": "582f7f6119e043b080cf50389bb02d8cee61e790afcfc83fd98d14511191c3cd",
+    "gold_sources": [
+      {
+        "paper": "paper308",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-133",
+    "split": "dev",
+    "category": "paper",
+    "question": "What was the public ARI score achieved by submission0314_01.csv in the AnimalCLEF 2026 ProtoNCE/PCDC task?",
+    "expected_answer": "0.29076",
+    "track_of_source": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+    "source_chunk": "5b58751768805e2ccd0c4c2aedcc1ce2576976cef4218d1cddc77092c1200b75",
+    "gold_sources": [
+      {
+        "paper": "paper329",
+        "pages": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-134",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the instructions, what should be the output format for the 'Document Filter Prompt'?",
+    "expected_answer": "{\"each references id\":\"Composed of the numbers 1(retain) and 0(discard)\"}",
+    "track_of_source": "LongEval: Longitudinal Evaluation of IR Model Performance",
+    "source_chunk": "ca4b360f4ae4d8a7190c307e64bcdc0d492185316aafddc1580ae3827259a91c",
+    "gold_sources": [
+      {
+        "paper": "paper378",
+        "pages": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-135",
+    "split": "test",
+    "category": "paper",
+    "question": "What percentage of AI math solutions contain the LaTeX command `\boxed{}`?",
+    "expected_answer": "99%",
+    "track_of_source": "PAN: Digital Text Forensics and Stylometry",
+    "source_chunk": "c9d30d7890e3f65f89adc5513afab4ce1b2f081691b9273f56f4a99c52934275",
+    "gold_sources": [
+      {
+        "paper": "paper401",
+        "pages": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-136",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the described framework, what is the purpose of the Retrieval-Aligned Semantic Discernment Layer in the SimpleText CLEF lab task?",
+    "expected_answer": "It dynamically compares each simplified sentence to the original Cochrane abstract to identify the top three most semantically related facts, creating context-aligned text pairs.",
+    "track_of_source": "SimpleText: Simplify Scientific Text (and Nothing More)",
+    "source_chunk": "674240c705028ec9f5b6512695ab8f0dfccd83ccf1610c7bb4d4893cd9f63911",
+    "gold_sources": [
+      {
+        "paper": "paper472",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-137",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the described system, what percentage of random training job-skill pairings share no skills?",
+    "expected_answer": "76.4%",
+    "track_of_source": "TalentCLEF: Skill and Job Title Intelligence for Human Capital Management",
+    "source_chunk": "d8720ff285d220a3bbb4ddae0f258ad9567963cfad0d3bec8c6b8e77fe5146bf",
+    "gold_sources": [
+      {
+        "paper": "paper479",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-138",
+    "split": "dev",
+    "category": "paper",
+    "question": "For guideline-conditioned LLM runs, what was the largest difference observed (in percentage points) between the highest and lowest predicted argument rates across the TACO, TAPE, and TAUS systems?",
+    "expected_answer": "62.6",
+    "track_of_source": "Touché: Argumentation Systems",
+    "source_chunk": "93910b199e805a28753da8ae9b12a7c8a8cd4d511eadf01217d946d6e9cabfea",
+    "gold_sources": [
+      {
+        "paper": "paper497",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-139",
+    "split": "test",
+    "category": "paper",
+    "question": "How is the attention scoring modified in the supervised attention architecture?",
+    "expected_answer": "The attention scoring is modified by adding a bias matrix, derived from the Dual Relevance Mask, to the standard self-attention scoring equation.",
+    "track_of_source": "eRisk: Early Risk Prediction on the Internet",
+    "source_chunk": "d78bdbab38240ff66fb0c798e022a93e07834823768fd57a3f1709d69dcd60ed",
+    "gold_sources": [
+      {
+        "paper": "paper133",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-140",
+    "split": "dev",
+    "category": "paper",
+    "question": "For how long was antibiotic treatment with coamoxiclav administered?",
+    "expected_answer": "14 days",
+    "track_of_source": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+    "source_chunk": "6eb607873cb4ffe7dc0bb398e85db51aca477cf9ff5ce65610922b826fcbd436",
+    "gold_sources": [
+      {
+        "paper": "paper2",
+        "pages": [
+          33
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-141",
+    "split": "test",
+    "category": "paper",
+    "question": "What macro MRR@5 score did the submitted system achieve on the official test set for the CheckThat! task?",
+    "expected_answer": "0.5199",
+    "track_of_source": "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles",
+    "source_chunk": "66737ff71c0a9b492ddfc4535e9a1068baab316a2b6d40b975ece04b67d90066",
+    "gold_sources": [
+      {
+        "paper": "paper83",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-142",
+    "split": "dev",
+    "category": "paper",
+    "question": "What proportion of the input token space, during experimentation, was attributed to background context?",
+    "expected_answer": "Approximately 70%.",
+    "track_of_source": "ELOQUENT: Evaluation of Generative Language Model Quality",
+    "source_chunk": "66acf8c1596083f4a9726469dd2ab732fa7b9a038d50af02784e5e787ae7abc6",
+    "gold_sources": [
+      {
+        "paper": "paper99",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-143",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the evaluation results, how many of the 50 runs submitted for EXIST 2026 Task 3.3 exceeded the performance of the majority-class baseline?",
+    "expected_answer": "24",
+    "track_of_source": "EXIST: sEXism Identification in Social neTworks",
+    "source_chunk": "b28eaa93222855295a50c5943c50beb97a35d71d9e353c24f500aff661b31c31",
+    "gold_sources": [
+      {
+        "paper": "paper152",
+        "pages": [
+          49
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-144",
+    "split": "dev",
+    "category": "paper",
+    "question": "What is the maximum word count for the natural-language rationales generated by the framework?",
+    "expected_answer": "50 words",
+    "track_of_source": "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems",
+    "source_chunk": "4d312b25ec7686492da9e3a23b84accbf40ab4edda3b2a54ba91f2c371d21b93",
+    "gold_sources": [
+      {
+        "paper": "paper200",
+        "pages": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-145",
+    "split": "dev",
+    "category": "paper",
+    "question": "What was the ranking of the most generalizable model on the out-of-domain surprise test set in binary evaluation?",
+    "expected_answer": "3rd out of 44",
+    "track_of_source": "HIPE: Evaluating Accurate and Efficient Person–Place Relation Extraction from Multilingual Historical Texts",
+    "source_chunk": "5b3486b9488b9b064a5db64f9440734d140187ebf69e2004937932be45191ea2",
+    "gold_sources": [
+      {
+        "paper": "paper220",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-146",
+    "split": "test",
+    "category": "paper",
+    "question": "What maximum norm was used for gradient clipping during training?",
+    "expected_answer": "1.0",
+    "track_of_source": "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security",
+    "source_chunk": "de040dc7d17496eff719e4f08b7bf98deceedea5f11c10db1af0b86963be5aa5",
+    "gold_sources": [
+      {
+        "paper": "paper286",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-147",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the provided example, what is the permissible type of conversion allowed when translating English puns into French to maintain the humorous effect?",
+    "expected_answer": "A homophonic pun can be converted into a homographic pun, or vice versa, to ensure a natural and equivalent humorous effect in French.",
+    "track_of_source": "JOKER: Humor Detection, Search, and Translation",
+    "source_chunk": "0383c4c03dcbea8091ef8c633988ebdee408edb53aecf1f57e251d804cc94e7e",
+    "gold_sources": [
+      {
+        "paper": "paper312",
+        "pages": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-148",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the described experiment using the 010 head-only checkpoint, which pooling rule resulted in the lowest public Macro F1 score?",
+    "expected_answer": "The plain mean pooling rule achieved the lowest public Macro F1 score (0.25784).",
+    "track_of_source": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+    "source_chunk": "555f4958d34010da48d25aec43699c988c646e5171e5c91dd1b0262d4b237f20",
+    "gold_sources": [
+      {
+        "paper": "paper358",
+        "pages": [
+          11
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-149",
+    "split": "dev",
+    "category": "paper",
+    "question": "Which datasets, beyond DACTYL-complete, were considered for augmenting the training data?",
+    "expected_answer": "LLMTrace, Personagen, Stack Exchange, MAGA-Bench, and DetectRL were considered as additional training datasets.",
+    "track_of_source": "PAN: Digital Text Forensics and Stylometry",
+    "source_chunk": "a75ffaa73ae6c2ffcff63011fe8dbc09298be45ee261834937f36dd3be670231",
+    "gold_sources": [
+      {
+        "paper": "paper426",
+        "pages": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-150",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the evaluation methodology, what two metrics are used to assess the semantic similarity of the system's output compared to a reference?",
+    "expected_answer": "BERTScore, which measures semantic similarity using contextual embeddings, and BLEU and SARI.",
+    "track_of_source": "SimpleText: Simplify Scientific Text (and Nothing More)",
+    "source_chunk": "9525e64d06db9112c652c258ebf1d47271e934d5535e1d0d577eb24c85556a22",
+    "gold_sources": [
+      {
+        "paper": "paper468",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-151",
+    "split": "dev",
+    "category": "paper",
+    "question": "What was the rank of CV 14823 for query 36044 in a previous system configuration?",
+    "expected_answer": "66",
+    "track_of_source": "TalentCLEF: Skill and Job Title Intelligence for Human Capital Management",
+    "source_chunk": "4dbaa24a9111f60dd5c33e66c31265e5fafd68cb7117b896ed1ab489bd5333f6",
+    "gold_sources": [
+      {
+        "paper": "paper487",
+        "pages": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-152",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the provided example, what is the relevance issue when someone cites Damien Woody's opinion as evidence?",
+    "expected_answer": "Damien Woody's expertise as a former NFL player does not inherently qualify him to judge whether Rob Gronkowski is physically declining.",
+    "track_of_source": "Touché: Argumentation Systems",
+    "source_chunk": "a1425a73e5e0cda4933b10445cda932e1eb60a956c007a5d31949836b079619c",
+    "gold_sources": [
+      {
+        "paper": "paper501",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-153",
+    "split": "dev",
+    "category": "paper",
+    "question": "In the eRisk early risk prediction task, how are query banks trained when candidate-level labels are not available?",
+    "expected_answer": "Query banks are trained as candidate-level evidence selectors using subject-level supervision, optimizing them to assign higher relevance scores to candidates from positive samples compared to those from negative samples. They are not trained as a final depression classifier.",
+    "track_of_source": "eRisk: Early Risk Prediction on the Internet",
+    "source_chunk": "119cb54c70d3c6a7fbba4239c43acf0655532ca4220d1a0def9c9a490778207b",
+    "gold_sources": [
+      {
+        "paper": "paper141",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-154",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the results, which model achieved the highest ROUGE scores among the submitted runs?",
+    "expected_answer": "Salamandra 7B Medical",
+    "track_of_source": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+    "source_chunk": "6d342e390eb622d6a83f620da219f62c93440ddc378e8016c83144bf04eb1b79",
+    "gold_sources": [
+      {
+        "paper": "paper10",
+        "pages": [
+          11
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-155",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the analysis, what was the performance score of the team with the lowest ranking among the top five in the CheckThat! lab?",
+    "expected_answer": "0.563",
+    "track_of_source": "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles",
+    "source_chunk": "453c66992d4202357e6c8d39fb2e4b340e14293fe1c914e7a74af082416dbf22",
+    "gold_sources": [
+      {
+        "paper": "paper63",
+        "pages": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-156",
+    "split": "test",
+    "category": "paper",
+    "question": "What are the two conditions that were found to fail in opposite directions during the evaluation of generative language models?",
+    "expected_answer": "The conditions were injecting context that is neutral to the prompt's culture and injecting context that conflicts with the prompt's culture.",
+    "track_of_source": "ELOQUENT: Evaluation of Generative Language Model Quality",
+    "source_chunk": "89d633ab1fe2e59b4b3ef733ef228d8cc1f5cb188daa7333ae49723a6f7309c9",
+    "gold_sources": [
+      {
+        "paper": "paper105",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-157",
+    "split": "dev",
+    "category": "paper",
+    "question": "What Macro-F1 score would have been achieved on the development set if a threshold of 0.53 had been used?",
+    "expected_answer": "0.6474",
+    "track_of_source": "EXIST: sEXism Identification in Social neTworks",
+    "source_chunk": "54bafde49586ae137cd0e0caec9d6c7aed6096788c64daa4c957fede66e65528",
+    "gold_sources": [
+      {
+        "paper": "paper181",
+        "pages": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-158",
+    "split": "test",
+    "category": "paper",
+    "question": "What was the average answer length, in words, produced by the Gemini 3.5 baseline model in the FinMMEval task?",
+    "expected_answer": "74.84",
+    "track_of_source": "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems",
+    "source_chunk": "b3c6154f2d89ab8bc9e032a9369e9224f130b78deab6046da7adeeebfd670e20",
+    "gold_sources": [
+      {
+        "paper": "paper204",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-159",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the HIPE-2026 efficiency profile rankings across Newspaper test sets, which approach consistently achieved the best ranking in terms of parameter size?",
+    "expected_answer": "The distance-based approach consistently achieved the best ranking in terms of parameter size.",
+    "track_of_source": "HIPE: Evaluating Accurate and Efficient Person–Place Relation Extraction from Multilingual Historical Texts",
+    "source_chunk": "7f4cdd434d5792b0baeaacb1900af1a830d2babd14283b0adda250b62aff38a6",
+    "gold_sources": [
+      {
+        "paper": "paper219",
+        "pages": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-160",
+    "split": "test",
+    "category": "paper",
+    "question": "What was the Privacy Preservation Score (PPS) achieved by the Conditional Flow Matching framework utilizing a UNet model trained for 100 epochs?",
+    "expected_answer": "0.549",
+    "track_of_source": "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security",
+    "source_chunk": "f4eece3aba70edd5318414027f7609b6b11ed269e3e3a255605636a9956760eb",
+    "gold_sources": [
+      {
+        "paper": "paper284",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-161",
+    "split": "dev",
+    "category": "paper",
+    "question": "In the English track of the JOKER humor detection, search, and translation CLEF lab, what was the difference in BT score between the top-performing system and the second-highest-scoring system?",
+    "expected_answer": "227 points",
+    "track_of_source": "JOKER: Humor Detection, Search, and Translation",
+    "source_chunk": "72599e323715184694dea26dbf2cb15248a616abf317cb8854eb76ce47285d47",
+    "gold_sources": [
+      {
+        "paper": "paper306",
+        "pages": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-162",
+    "split": "test",
+    "category": "paper",
+    "question": "What is the base learning rate used when training the CNN system for the LifeCLEF task?",
+    "expected_answer": "10^-3",
+    "track_of_source": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+    "source_chunk": "cf3ab81d0a153cb270582ca86617676db7d7036dc4b8eb6b1c427769d4359ffa",
+    "gold_sources": [
+      {
+        "paper": "paper364",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-163",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the evaluation, what was the nDCG@10 score for the BM25 baseline at the third temporal snapshot?",
+    "expected_answer": "0.150",
+    "track_of_source": "LongEval: Longitudinal Evaluation of IR Model Performance",
+    "source_chunk": "668f90a87ab74caa5814ff07608a4f5f98bbb45c0168114b3ac967cc6a20ed86",
+    "gold_sources": [
+      {
+        "paper": "paper375",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-164",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the text, what was significant about the Nara Period (710–794) in relation to Japanese literature and the arts?",
+    "expected_answer": "The establishment of a stable capital during the Nara Period enabled literature and the arts to flourish.",
+    "track_of_source": "PAN: Digital Text Forensics and Stylometry",
+    "source_chunk": "61b96c089c568cb9658dfd487f872c357712bc972aaf4b627dbc4bb0f7a934ce",
+    "gold_sources": [
+      {
+        "paper": "paper386",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-165",
+    "split": "test",
+    "category": "paper",
+    "question": "What quantization method was used when initially loading the base model during fine-tuning?",
+    "expected_answer": "4-bit NF4 quantization was used.",
+    "track_of_source": "SimpleText: Simplify Scientific Text (and Nothing More)",
+    "source_chunk": "f6d2ad585a715e81a689eb5923a8d85c8dcfa6cddca201e3669156edd49cf4c0",
+    "gold_sources": [
+      {
+        "paper": "paper449",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-166",
+    "split": "test",
+    "category": "paper",
+    "question": "What online platform was used as the source for the sentences in the Touché CLEF lab dataset?",
+    "expected_answer": "Reddit",
+    "track_of_source": "Touché: Argumentation Systems",
+    "source_chunk": "9e1a4e6b5cd2478b94070818b7cffc2e4fd08d72b0cee2800a72b5f07072d803",
+    "gold_sources": [
+      {
+        "paper": "paper493",
+        "pages": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-167",
+    "split": "dev",
+    "category": "paper",
+    "question": "What was the purpose of crafting prompts that addressed multiple domains within the BDI-II assessment?",
+    "expected_answer": "To help differentiate between related symptom areas and severity levels, such as mild sadness versus persistent low mood, by eliciting nuanced patient language.",
+    "track_of_source": "eRisk: Early Risk Prediction on the Internet",
+    "source_chunk": "4be4c3a89d1b8f8319405cc76e2f68261566486b6bb979ee29ac694520a828ef",
+    "gold_sources": [
+      {
+        "paper": "paper151",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-168",
+    "split": "test",
+    "category": "paper",
+    "question": "In the BioASQ challenge, how did the performance of a system's ensemble pipeline compare to other submissions when a confidence threshold cutoff was applied?",
+    "expected_answer": "In batch 4, when the confidence threshold cutoff was active, the ensemble pipeline achieved the highest mean Precision among all submissions.",
+    "track_of_source": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+    "source_chunk": "2cbc87058422c42a4f7ce6b7fc8e1a9be9a1e81501973dc83f9bfe8d7916c57a",
+    "gold_sources": [
+      {
+        "paper": "paper6",
+        "pages": [
+          17
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-169",
+    "split": "dev",
+    "category": "paper",
+    "question": "What was the Macro F1 score achieved by the system for Arabic in the CheckThat! task, and how did it compare to the highest score?",
+    "expected_answer": "The system achieved a Macro F1 score of 0.3557 for Arabic, ranking last among fifteen submissions and trailing the top-ranked score by 0.5122 points.",
+    "track_of_source": "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles",
+    "source_chunk": "908a50cef066e7e167a467fb01a00ff0c75b7ffc04dd8bde30588f211fc602dc",
+    "gold_sources": [
+      {
+        "paper": "paper79",
+        "pages": [
+          13
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-170",
+    "split": "test",
+    "category": "paper",
+    "question": "How many languages were evaluated in this ELOQUENT 2026 study?",
+    "expected_answer": "6",
+    "track_of_source": "ELOQUENT: Evaluation of Generative Language Model Quality",
+    "source_chunk": "7000e5a4299e56f8766c34d9853e34531c9ab51334bb8338ee8619adcc9b60d6",
+    "gold_sources": [
+      {
+        "paper": "paper106",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-171",
+    "split": "dev",
+    "category": "paper",
+    "question": "What percentage of the training records in the EXIST 2026 challenge were in Spanish?",
+    "expected_answer": "49.67%",
+    "track_of_source": "EXIST: sEXism Identification in Social neTworks",
+    "source_chunk": "be826dafd18a2452d0dffdb7ae2935cb54061e51e2b4b9c466207c3885ae55e8",
+    "gold_sources": [
+      {
+        "paper": "paper164",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-172",
+    "split": "test",
+    "category": "paper",
+    "question": "What was the cumulative return of the 'All agents' strategy for BTC between September 2024 and December 2025?",
+    "expected_answer": "+20.1%",
+    "track_of_source": "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems",
+    "source_chunk": "c761859402c7967a63fc77c08f4cab57606d1cf11c67fc2bc90a3fbcc78d6269",
+    "gold_sources": [
+      {
+        "paper": "paper196",
+        "pages": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-173",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the evaluation process, how are non-standard values for the 'at' relation label handled during normalization?",
+    "expected_answer": "Non-standard values like 'LIKELY', 'POSSIBLE', and 'MAYBE' are mapped to 'PROBABLE', while any unrecognized values default to 'FALSE'.",
+    "track_of_source": "HIPE: Evaluating Accurate and Efficient Person–Place Relation Extraction from Multilingual Historical Texts",
+    "source_chunk": "92c6d4632f8fdd7c71d94515f419022c8b44555c6bc452dba914054521a1ea2c",
+    "gold_sources": [
+      {
+        "paper": "paper215",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-174",
+    "split": "test",
+    "category": "paper",
+    "question": "What random seed was used when creating the holdout split for the textual OpenQA experiments in the ImageCLEF lab?",
+    "expected_answer": "42",
+    "track_of_source": "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security",
+    "source_chunk": "3a007a233e2ae64d7b06a25f4ec1ebb2fc3d877f7a3eb46cf31c4cf0e274f867",
+    "gold_sources": [
+      {
+        "paper": "paper270",
+        "pages": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-175",
+    "split": "test",
+    "category": "paper",
+    "question": "For the English version of the CLEF JOKER lab, how many runs were submitted?",
+    "expected_answer": "Four",
+    "track_of_source": "JOKER: Humor Detection, Search, and Translation",
+    "source_chunk": "fc9b0cb4d8a9bcf3352a0db64a1eb04f214e087101c82d81203f712ae9468754",
+    "gold_sources": [
+      {
+        "paper": "paper315",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-176",
+    "split": "test",
+    "category": "paper",
+    "question": "What K value was outside the scope of the pairwise-disagreement audit that led to the missed submission #238 in the LifeCLEF task?",
+    "expected_answer": "K = 555.",
+    "track_of_source": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+    "source_chunk": "6464aaa7e8c99f06a2aa1dd3bc398bf0cb5222f4c32537b9317f3dcbb593016d",
+    "gold_sources": [
+      {
+        "paper": "paper372",
+        "pages": [
+          16
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-177",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the report, how many queries were used to generate the aggregate scores?",
+    "expected_answer": "47",
+    "track_of_source": "LongEval: Longitudinal Evaluation of IR Model Performance",
+    "source_chunk": "29c4427a57e59efc34f2dc9de68bd46409bba2616e6cf999a9386f1259997baf",
+    "gold_sources": [
+      {
+        "paper": "paper383",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-178",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the described method, what is the maximum number of candidate types selected in the first stage of embedding?",
+    "expected_answer": "12",
+    "track_of_source": "PAN: Digital Text Forensics and Stylometry",
+    "source_chunk": "e6cb67774e7119651ce0302ec3523134433aa152573d5dc897eb581836f16241",
+    "gold_sources": [
+      {
+        "paper": "paper409",
+        "pages": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-179",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the research, what four elements were identified as crucial for dependable detection of fabricated or excessive content in biomedical text?",
+    "expected_answer": "Explicit source evidence, domain-specific pretraining, probability-level ensembling, and document-level threshold calibration.",
+    "track_of_source": "SimpleText: Simplify Scientific Text (and Nothing More)",
+    "source_chunk": "44924fa79e95e72d7a0c3aa484320341fb5af3aba61d615290be405cb720cf61",
+    "gold_sources": [
+      {
+        "paper": "paper450",
+        "pages": [
+          21
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-180",
+    "split": "dev",
+    "category": "paper",
+    "question": "What loss functions were combined during the fine-tuning of the bi-encoder?",
+    "expected_answer": "GISTEmbedLoss and MatryoshkaLoss were combined.",
+    "track_of_source": "TalentCLEF: Skill and Job Title Intelligence for Human Capital Management",
+    "source_chunk": "a3adab2e6a07d14b8369e1d67d919346a4f79535bf520f713876af03c8cccca1",
+    "gold_sources": [
+      {
+        "paper": "paper491",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-181",
+    "split": "test",
+    "category": "paper",
+    "question": "What instructions are given to the model regarding the certainty of a 'positive verdict' when classifying fallacies using the binary baseline system?",
+    "expected_answer": "The model is instructed to require clear and unambiguous evidence before returning a positive verdict, adhering to a 'strictness prior'.",
+    "track_of_source": "Touché: Argumentation Systems",
+    "source_chunk": "8a207cdf0b9a4f1c85f9e2085a1f277a83a537709aa8ee47cb8117a8dff7b36a",
+    "gold_sources": [
+      {
+        "paper": "paper496",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-182",
+    "split": "test",
+    "category": "paper",
+    "question": "What was the maximum difference between the MAP score achieved by a theoretical oracle and the best performing system in the eRisk early risk prediction task, when using unanimity-based relevance judgments?",
+    "expected_answer": "0.038",
+    "track_of_source": "eRisk: Early Risk Prediction on the Internet",
+    "source_chunk": "952254a693fb63c3b19076407985a4181b88047ae5a1589b9c9c6ac53ae20615",
+    "gold_sources": [
+      {
+        "paper": "paper139",
+        "pages": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-183",
+    "split": "dev",
+    "category": "paper",
+    "question": "What techniques are being explored by recent BioASQ systems to enhance reasoning capabilities?",
+    "expected_answer": "Recent BioASQ systems are increasingly using retrieval-augmented generation (RAG) frameworks, agentic retrieval strategies, dynamic biomedical knowledge graphs, self-reflective retrieval refinement, and feedback-driven retrieval loops.",
+    "track_of_source": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+    "source_chunk": "6fe81c7ff388dc772d1a56b0a1fcffc265078da98d1516d51dc8f859328b8dbc",
+    "gold_sources": [
+      {
+        "paper": "paper50",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-184",
+    "split": "dev",
+    "category": "paper",
+    "question": "What learning rate was used when fine-tuning the model for the CheckThat! task?",
+    "expected_answer": "1×10 −4",
+    "track_of_source": "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles",
+    "source_chunk": "2388fb3b46edf8d7c52ed4634c1084ae28b2c6a8894c37741902be8cdda103f2",
+    "gold_sources": [
+      {
+        "paper": "paper94",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-185",
+    "split": "test",
+    "category": "paper",
+    "question": "When a prompt's language is German, which country is used as the default culture?",
+    "expected_answer": "Germany",
+    "track_of_source": "ELOQUENT: Evaluation of Generative Language Model Quality",
+    "source_chunk": "afdd14c747db72bbaf3ed0174255cd273e250343d49362aca815b0f4b2bda5ab",
+    "gold_sources": [
+      {
+        "paper": "paper107",
+        "pages": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-186",
+    "split": "dev",
+    "category": "paper",
+    "question": "What is the primary evaluation metric used for the EXIST sexism identification tasks?",
+    "expected_answer": "The Information-Contrast Model (ICM) is the primary evaluation metric, specifically the ICM-Norm variant.",
+    "track_of_source": "EXIST: sEXism Identification in Social neTworks",
+    "source_chunk": "b8e415a4041af60f24cbd56ec2e1b359194a78a3a202b6dbde77953e9b8c2459",
+    "gold_sources": [
+      {
+        "paper": "paper178",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-187",
+    "split": "test",
+    "category": "paper",
+    "question": "By how much did the trading strategy improve upon a Buy&Hold baseline for the TSLA trading task in the FinMMEval lab?",
+    "expected_answer": "13.55%",
+    "track_of_source": "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems",
+    "source_chunk": "5a10a964c6e7d311cfe1391744a97022c773b92ab39d5bebef38b6e87e7f48c7",
+    "gold_sources": [
+      {
+        "paper": "paper203",
+        "pages": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-188",
+    "split": "dev",
+    "category": "paper",
+    "question": "What optimization framework was used for hyperparameter tuning?",
+    "expected_answer": "Optuna",
+    "track_of_source": "HIPE: Evaluating Accurate and Efficient Person–Place Relation Extraction from Multilingual Historical Texts",
+    "source_chunk": "f311c93b413ab8fa7e2558b7e2cfdeb15dfa7ff28205f525d6ddd4c8c5c1a5d9",
+    "gold_sources": [
+      {
+        "paper": "paper214",
+        "pages": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-189",
+    "split": "dev",
+    "category": "paper",
+    "question": "What ROUGE-1 score did one system achieve on the public leaderboard for ImageCLEF's multimodal challenges?",
+    "expected_answer": "0.89",
+    "track_of_source": "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security",
+    "source_chunk": "6e2391bebb00c59b8c6fee701f56b32e075b587052ffdc57e192539f1261dec0",
+    "gold_sources": [
+      {
+        "paper": "paper231",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-190",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the leaderboard, what was the score achieved by the best all-model translator ensemble in the JOKER Humor Detection, Search, and Translation CLEF lab?",
+    "expected_answer": "35.949",
+    "track_of_source": "JOKER: Humor Detection, Search, and Translation",
+    "source_chunk": "10456ab4105f94e1df2d462354d7cc7a8080139cd33db11eb79f98efee44c2ba",
+    "gold_sources": [
+      {
+        "paper": "paper314",
+        "pages": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-191",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the results presented, what is one reason why Positive-Unlabeled (PU) training with a student-teacher approach has not yet been fully successful?",
+    "expected_answer": "It has been limited by the reliability of the teacher model, which has not been substantially more reliable than the student models.",
+    "track_of_source": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+    "source_chunk": "db33c2e50e5e1bb2f4cd69d05b0356824c800602265e1403bdb63af51fa756cd",
+    "gold_sources": [
+      {
+        "paper": "paper325",
+        "pages": [
+          14
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-192",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the ablation study, how did altering the input construction affect the model's performance?",
+    "expected_answer": "Even small changes to input construction substantially altered performance.",
+    "track_of_source": "PAN: Digital Text Forensics and Stylometry",
+    "source_chunk": "6c43f08b0b56cac226d39cf5522a887d866382384d7db77199187c1f220c1ed8",
+    "gold_sources": [
+      {
+        "paper": "paper417",
+        "pages": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-193",
+    "split": "dev",
+    "category": "paper",
+    "question": "What two labels are participants expected to predict in the CLEF SimpleText 2026 Task 3?",
+    "expected_answer": "Field Area and Discipline Area.",
+    "track_of_source": "SimpleText: Simplify Scientific Text (and Nothing More)",
+    "source_chunk": "eaf2e0c33c0b7a2c774d02f7536253d77184232858d6a8f0368fad376403ea3e",
+    "gold_sources": [
+      {
+        "paper": "paper466",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-194",
+    "split": "test",
+    "category": "paper",
+    "question": "What was the MAP score achieved by the fused union system when performing English-to-English job title matching?",
+    "expected_answer": "0.8207",
+    "track_of_source": "TalentCLEF: Skill and Job Title Intelligence for Human Capital Management",
+    "source_chunk": "619335029d20d77597f0a86358c52fa16b4d212f3269cdf35914cedf537fda2a",
+    "gold_sources": [
+      {
+        "paper": "paper489",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-195",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the results, which machine learning approach demonstrated the greatest improvement over a TF-IDF + LinearSVC baseline in the Touché CLEF lab Sub-Task 3?",
+    "expected_answer": "The multi-task DeBERTa architecture showed the largest gain in F1 score compared to the TF-IDF + LinearSVC baseline.",
+    "track_of_source": "Touché: Argumentation Systems",
+    "source_chunk": "acce984044ba4a4411f0ee6b098eea01dc3753778e0834747dcbd00d624031e8",
+    "gold_sources": [
+      {
+        "paper": "paper506",
+        "pages": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-196",
+    "split": "test",
+    "category": "paper",
+    "question": "What was the F1-score achieved by the run utilizing a Random Forest model with the default threshold in the eRisk 2026 Task 2?",
+    "expected_answer": "0.78",
+    "track_of_source": "eRisk: Early Risk Prediction on the Internet",
+    "source_chunk": "d8121848d02a258e676d7a136a682f8fe283cf8ef30891b84f0a99a550bb6574",
+    "gold_sources": [
+      {
+        "paper": "paper131",
+        "pages": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-197",
+    "split": "test",
+    "category": "paper",
+    "question": "What model consistently yielded lower performance compared to BERT-based models in the BioASQ challenge?",
+    "expected_answer": "GreekDeBERTa-base",
+    "track_of_source": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+    "source_chunk": "976dd90051f06bd615b15256e3bf2e6fd7eb7d26e01d9e014c8b68593de2e76b",
+    "gold_sources": [
+      {
+        "paper": "paper34",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-198",
+    "split": "test",
+    "category": "paper",
+    "question": "According to a study published in *Antiviral Research* by Monash University, what effect did a single dose of Ivermectin have on coronavirus in cell culture?",
+    "expected_answer": "It stopped the coronavirus from growing and eradicated all of its genetic material within two days.",
+    "track_of_source": "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles",
+    "source_chunk": "4e3bd4495d04278fa6cfa95d72c30dc36d42616640e8d590a8f2573934f28a4f",
+    "gold_sources": [
+      {
+        "paper": "paper51",
+        "pages": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-199",
+    "split": "test",
+    "category": "paper",
+    "question": "What was the false-positive rate of Macko-replica on human evaluations from the PAN'25 dataset?",
+    "expected_answer": "≤ 0.04",
+    "track_of_source": "ELOQUENT: Evaluation of Generative Language Model Quality",
+    "source_chunk": "48faa44e7aae68d646759509e7d6e97ba4fa46de67f7fb108e5c73122fe1cc8e",
+    "gold_sources": [
+      {
+        "paper": "paper102",
+        "pages": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-200",
+    "split": "dev",
+    "category": "paper",
+    "question": "What were the key differences between the approaches used in the EXIST 2024 and 2025 editions of the lab?",
+    "expected_answer": "EXIST 2024 introduced sexism identification in memes as a subtask, and EXIST 2025 retained this subtask, allowing participating systems to be categorized into three architectural families.",
+    "track_of_source": "EXIST: sEXism Identification in Social neTworks",
+    "source_chunk": "1e45935fe44d92a5a6361c452ebe355353b119d86b7b127617f16424fae8e66a",
+    "gold_sources": [
+      {
+        "paper": "paper177",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-201",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to an analysis of errors in Task 2 of the FinMMEval lab, what was one reason why the system's output received a lower ROUGE-1 precision score?",
+    "expected_answer": "The system used valid synonyms for financial facts, such as 'revenue expansion' instead of 'sales growth,' which differed from the direct unigrams used in the gold-standard references.",
+    "track_of_source": "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems",
+    "source_chunk": "fcc79e9b6986a154159fc401a8ab775f99024e72271fc4126d7dab6e22e81890",
+    "gold_sources": [
+      {
+        "paper": "paper211",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-202",
+    "split": "test",
+    "category": "paper",
+    "question": "What model was determined to be the strongest during initial prompt template calibration?",
+    "expected_answer": "GPT-OSS 120B",
+    "track_of_source": "HIPE: Evaluating Accurate and Efficient Person–Place Relation Extraction from Multilingual Historical Texts",
+    "source_chunk": "c44c1409d0cb4a7386ed2fdafccd9730393d23e63c0fcbd730c662e2a60b0d10",
+    "gold_sources": [
+      {
+        "paper": "paper225",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-203",
+    "split": "dev",
+    "category": "paper",
+    "question": "By how much did the performance of Bulgarian visual question answering improve when using a three-sentence direct English prompt compared to a Chain-of-Thought (CoT) prompt?",
+    "expected_answer": "0.009 points",
+    "track_of_source": "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security",
+    "source_chunk": "cc074aa00c099893174f523a25a0bad279528c9c90dcc57b49bede553398a6a2",
+    "gold_sources": [
+      {
+        "paper": "paper273",
+        "pages": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-204",
+    "split": "dev",
+    "category": "paper",
+    "question": "What was the MAP score achieved on the English data for the CLEF 2026 JOKER Task 1 run?",
+    "expected_answer": "0.3063",
+    "track_of_source": "JOKER: Humor Detection, Search, and Translation",
+    "source_chunk": "d686b905bfb038aa548e84afa1c065f7d35c8ac7391f2607f4d9d625cb382361",
+    "gold_sources": [
+      {
+        "paper": "paper313",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-205",
+    "split": "dev",
+    "category": "paper",
+    "question": "What loss function was used to address class imbalance during named entity recognition and relation extraction?",
+    "expected_answer": "Weighted cross entropy.",
+    "track_of_source": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+    "source_chunk": "b74f499338820644a8f64a097015a78bca3259dbcf85f8bbad1a8d0c7b341fdc",
+    "gold_sources": [
+      {
+        "paper": "paper319",
+        "pages": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-206",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the evaluation guidelines for the PAN Digital Text Forensics and Stylometry lab, under what circumstances should a 'Trace' be scored as 'yes' regarding potential harm?",
+    "expected_answer": "A Trace should be scored 'yes' if releasing it to a broad audience, including vulnerable populations, would pose a harm risk, even if the harm is plausible and not certain.",
+    "track_of_source": "PAN: Digital Text Forensics and Stylometry",
+    "source_chunk": "e84a19c6fc36d2dba1cd26214829f50c0055aef869c98cb85ea029351ecf84b4",
+    "gold_sources": [
+      {
+        "paper": "paper399",
+        "pages": [
+          16
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-207",
+    "split": "test",
+    "category": "paper",
+    "question": "In the SimpleText CLEF lab, how are sentences without a corresponding complex counterpart handled during the retrieval process for RAG systems?",
+    "expected_answer": "Sentences without a complex counterpart are treated as inserted content.",
+    "track_of_source": "SimpleText: Simplify Scientific Text (and Nothing More)",
+    "source_chunk": "beae3dab2192c1a670c657aa865ebe61edd850ec99ac78fbbab8f6a4ec1a9dd4",
+    "gold_sources": [
+      {
+        "paper": "paper464",
+        "pages": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-208",
+    "split": "dev",
+    "category": "paper",
+    "question": "What was the improvement in Recall@100 after enabling alias explosion and full-ranking?",
+    "expected_answer": "The Recall@100 increased to 0.423 after alias explosion and full-ranking were enabled.",
+    "track_of_source": "TalentCLEF: Skill and Job Title Intelligence for Human Capital Management",
+    "source_chunk": "019a094371a3d511093af16256bb5fc1ba147ceb3c29bf380a3459df18dcf1ca",
+    "gold_sources": [
+      {
+        "paper": "paper482",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-209",
+    "split": "dev",
+    "category": "paper",
+    "question": "What was the macro-F1 score achieved by the Gemma 4 31B 'Enhanced' system on the Touché validation dataset for the LOGIC task?",
+    "expected_answer": "0.87",
+    "track_of_source": "Touché: Argumentation Systems",
+    "source_chunk": "9c12883cc75758cae427de37bf8f409f19488c81c7b79772c19d63f649eff332",
+    "gold_sources": [
+      {
+        "paper": "paper500",
+        "pages": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-210",
+    "split": "dev",
+    "category": "paper",
+    "question": "What condition must be met regarding a user's posts before an alert is triggered?",
+    "expected_answer": "An alert is triggered only when more than half of a user’s posts exhibit depressive signals.",
+    "track_of_source": "eRisk: Early Risk Prediction on the Internet",
+    "source_chunk": "fcb455ebcc44fc8e20e22153584a00b38359c7e33b18750e432ba172b38a2c89",
+    "gold_sources": [
+      {
+        "paper": "paper121",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-211",
+    "split": "test",
+    "category": "paper",
+    "question": "According to an analysis of the MultiClinSum-2 dataset, what is the approximate compression ratio from full text to summary?",
+    "expected_answer": "0.2",
+    "track_of_source": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+    "source_chunk": "b78befed7f62c96ad0893317e003d9eb39e8874a58083fc1737ccdf9393266cb",
+    "gold_sources": [
+      {
+        "paper": "paper14",
+        "pages": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-212",
+    "split": "dev",
+    "category": "paper",
+    "question": "For which languages did experimentation with the bge-reranker-v2-gemma model yield improvements in the CheckThat! task, and what were the final re-ranking depths used for each?",
+    "expected_answer": "German used a re-ranking depth of 5, and French used a depth of 10.",
+    "track_of_source": "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles",
+    "source_chunk": "c215ad95a0ed87a18f5f58bb957d43d5b191a3a6722494cf4cf6d42098747ac6",
+    "gold_sources": [
+      {
+        "paper": "paper66",
+        "pages": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-213",
+    "split": "test",
+    "category": "paper",
+    "question": "What is one potential change planned for future iterations of the Voight-Kampff task to increase its difficulty?",
+    "expected_answer": "Including more contemporary writing styles, topics, and online genres is a planned change.",
+    "track_of_source": "ELOQUENT: Evaluation of Generative Language Model Quality",
+    "source_chunk": "0e9ca43b85809bcdb6174bdd35c1346e506ef7814ef3cf347a979ec71141d3f6",
+    "gold_sources": [
+      {
+        "paper": "paper95",
+        "pages": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-214",
+    "split": "dev",
+    "category": "paper",
+    "question": "What calibration metrics were used to assess the accuracy of predicted probabilities, and on what size validation set were they calculated?",
+    "expected_answer": "Expected Calibration Error (ECE), Maximum Calibration Error (MCE), and Brier score were used, calculated on a validation set of size 598.",
+    "track_of_source": "EXIST: sEXism Identification in Social neTworks",
+    "source_chunk": "c0a0cb611a3185fa345c2f2ea1826b6922e1bed599a458a985d12ed8b2b6183d",
+    "gold_sources": [
+      {
+        "paper": "paper174",
+        "pages": [
+          12
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-215",
+    "split": "dev",
+    "category": "paper",
+    "question": "For Task 1 in FinMMEval, what prompting techniques did the Gemini-based system employ?",
+    "expected_answer": "The system utilized language-specific prompt construction, few-shot examples, confidence-based decision logic, and selective self-consistency.",
+    "track_of_source": "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems",
+    "source_chunk": "c3e3bc17afac4c4bf924e33cf35b4e9fa9c4384e7ea8e9f040b5c9d86173918a",
+    "gold_sources": [
+      {
+        "paper": "paper184",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-216",
+    "split": "test",
+    "category": "paper",
+    "question": "What type of model was used in the system described as 'Fine-tuned DeBERTa–GLiREL'?",
+    "expected_answer": "A GLiREL relation extraction model with a DeBERTA encoder was fine-tuned on CLEF-HIPE relation extraction data.",
+    "track_of_source": "HIPE: Evaluating Accurate and Efficient Person–Place Relation Extraction from Multilingual Historical Texts",
+    "source_chunk": "5089f5b20335e4924dcc3fb8f96e1e8d247204f7b6f0ba72f80fdaaa0e8d5875",
+    "gold_sources": [
+      {
+        "paper": "paper223",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-217",
+    "split": "test",
+    "category": "paper",
+    "question": "In which two languages did token-budget and guided-repair adjustments show the most potential during validation?",
+    "expected_answer": "Polish and Islamic Studies",
+    "track_of_source": "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security",
+    "source_chunk": "b96ecfcc63836ce7cbf39b0d9a0a2acf56051cab4b53ac2e179fbb0b31b6d12d",
+    "gold_sources": [
+      {
+        "paper": "paper300",
+        "pages": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-218",
+    "split": "dev",
+    "category": "paper",
+    "question": "What mechanism was used to schedule wake-ups for long-running jobs, and how did the frequency of these wake-ups change near submission deadlines?",
+    "expected_answer": "A cron-like mechanism was used, with initial heartbeats every hour, tightened to approximately 10 minutes near submission deadlines.",
+    "track_of_source": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+    "source_chunk": "0b0ce98b0f0748f5e15453459b04a52cf9c0d0b26367c1cf13cee17fb9d38996",
+    "gold_sources": [
+      {
+        "paper": "paper352",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-219",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the text, what type of evaluation metric might be preferable to a single threshold when assessing safety detection, and why?",
+    "expected_answer": "Precision-recall curves are suggested as potentially more informative than a single threshold because deployments often prioritize handling missed unsafe steps differently from incorrectly flagging safe steps.",
+    "track_of_source": "PAN: Digital Text Forensics and Stylometry",
+    "source_chunk": "4a4d9987afe15379c2c668f0a5867ea49d862985c68f59063770d2ccbcba0e94",
+    "gold_sources": [
+      {
+        "paper": "paper390",
+        "pages": [
+          11
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-220",
+    "split": "dev",
+    "category": "paper",
+    "question": "How many studies were included in the evaluation of urinary biomarkers for endometriosis?",
+    "expected_answer": "Eight",
+    "track_of_source": "SimpleText: Simplify Scientific Text (and Nothing More)",
+    "source_chunk": "ce7b2765d590de40ce72b77565b8a51693b326245da760ffc8ed33000d91953c",
+    "gold_sources": [
+      {
+        "paper": "paper444",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-221",
+    "split": "test",
+    "category": "paper",
+    "question": "According to the described method for TalentCLEF Task B, what information is included in the enriched representation of a job title?",
+    "expected_answer": "The enriched representation includes a view of the job title, task facets, and compact skill cards.",
+    "track_of_source": "TalentCLEF: Skill and Job Title Intelligence for Human Capital Management",
+    "source_chunk": "1fe47e7b704298b775072f5b24f41de3c3dd4b916b292c58d8c61f3443d72856",
+    "gold_sources": [
+      {
+        "paper": "paper481",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-222",
+    "split": "test",
+    "category": "paper",
+    "question": "For the BERT-base model used in the Detection subtask with seed 42 within the Touché argumentation systems CLEF lab, what learning rate was used during fine-tuning?",
+    "expected_answer": "2×10−5",
+    "track_of_source": "Touché: Argumentation Systems",
+    "source_chunk": "9118cb05b1eafc10a43cafa8112f0d18a04b59c18e17d890754682a7d1aea673",
+    "gold_sources": [
+      {
+        "paper": "paper511",
+        "pages": [
+          16
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-223",
+    "split": "test",
+    "category": "paper",
+    "question": "For which run did the raw per-round probability ranks perform as well as or better than the clamped score?",
+    "expected_answer": "Run 0",
+    "track_of_source": "eRisk: Early Risk Prediction on the Internet",
+    "source_chunk": "b53effb747185843c85227aa0ce4629426c09339c73d4197655549c1ec4caf6a",
+    "gold_sources": [
+      {
+        "paper": "paper136",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-224",
+    "split": "dev",
+    "category": "paper",
+    "question": "What was the size (in parameters) of the foundational model used for the BioASQ challenge?",
+    "expected_answer": "300 million",
+    "track_of_source": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+    "source_chunk": "39ac7eecb5558f48f5a88aeec70aa4c28a6f58e630dfa7852e9005aa26680c46",
+    "gold_sources": [
+      {
+        "paper": "paper20",
+        "pages": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-225",
+    "split": "test",
+    "category": "paper",
+    "question": "What learning rate was used for the LoRA component during training?",
+    "expected_answer": "1×10−5",
+    "track_of_source": "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles",
+    "source_chunk": "804b76ade8164d7e8a2d8d8fc1c9f9590e33c9827eb25c46a99be7cc8320f007",
+    "gold_sources": [
+      {
+        "paper": "paper77",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-226",
+    "split": "dev",
+    "category": "paper",
+    "question": "What label sets were used to constrain the model's output during decoding for the rubric-based and simple rating tracks in the CLEF lab?",
+    "expected_answer": "{0, 1, 2} for rubric-based rating and {0, 1, 2, 3, 4} for simple rating.",
+    "track_of_source": "ELOQUENT: Evaluation of Generative Language Model Quality",
+    "source_chunk": "fca951236a030a60bff1ea11858d1e1e1e36a9dcfb2711113613f01799591e03",
+    "gold_sources": [
+      {
+        "paper": "paper103",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-227",
+    "split": "test",
+    "category": "paper",
+    "question": "What steps were taken to clean the initial text captions obtained from TikTok's automatic speech recognition system?",
+    "expected_answer": "The cleaning process included normalizing Unicode, removing URLs and user mentions, splitting hashtags, deleting emoji text, collapsing repeated characters, and removing bracketed noise tokens.",
+    "track_of_source": "EXIST: sEXism Identification in Social neTworks",
+    "source_chunk": "eda88961e059283c074ad9f3564fd5eedb31a622081e0f128c234dc2e651b04a",
+    "gold_sources": [
+      {
+        "paper": "paper167",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-228",
+    "split": "dev",
+    "category": "paper",
+    "question": "For checkpoint selection during targeted fine-tuning and reward alignment studies, how many labeled examples are included in the internal set?",
+    "expected_answer": "274",
+    "track_of_source": "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems",
+    "source_chunk": "db7e8b5b30d11ba382f6efc8a9331236f5d76f1143053bbf5b01695ed834d27a",
+    "gold_sources": [
+      {
+        "paper": "paper209",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-229",
+    "split": "dev",
+    "category": "paper",
+    "question": "According to the text, what is the approximate parameter size of language models considered impractical for digital humanities pipelines processing large document collections?",
+    "expected_answer": "26 billion or more parameters.",
+    "track_of_source": "HIPE: Evaluating Accurate and Efficient Person–Place Relation Extraction from Multilingual Historical Texts",
+    "source_chunk": "87f73447453053586dccf041ed3a792156b7a101352c3387c1554bee0fe19549",
+    "gold_sources": [
+      {
+        "paper": "paper213",
+        "pages": [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-230",
+    "split": "dev",
+    "category": "paper",
+    "question": "In the ImageCLEF multimodal challenge, how are missing numeric values handled when constructing features for the main model path?",
+    "expected_answer": "Missing numeric values are not filled during feature construction; instead, model pipelines use median imputation with missingness indicators.",
+    "track_of_source": "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security",
+    "source_chunk": "7a7a616a6a0d29d19bf20dc129c62923deadaefd3cfe71eaebd8b90b2dc4a6d0",
+    "gold_sources": [
+      {
+        "paper": "paper296",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-231",
+    "split": "dev",
+    "category": "paper",
+    "question": "Approximately how many lines did the structured experiment log contain?",
+    "expected_answer": "2,500",
+    "track_of_source": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+    "source_chunk": "f8ede704acc8cd98427f1d33ef3df71a8e441d211181844c0e062d625bfe7e40",
+    "gold_sources": [
+      {
+        "paper": "paper323",
+        "pages": [
+          16
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-232",
+    "split": "test",
+    "category": "paper",
+    "question": "What was the maximum number of training epochs used for the FLAN-T5 model, and why was this limit chosen?",
+    "expected_answer": "Three epochs were used, as performance decreased and overfitting to the Cochrane-Auto training data was observed with more epochs.",
+    "track_of_source": "SimpleText: Simplify Scientific Text (and Nothing More)",
+    "source_chunk": "b17bc5fb3b578a6b06905f98266c440f70872820561cd2ba8c4133f4ab195d19",
+    "gold_sources": [
+      {
+        "paper": "paper465",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "syn-233",
+    "split": "test",
+    "category": "paper",
+    "question": "What value is used for label smoothing when calculating the cross-entropy loss?",
+    "expected_answer": "0.05",
+    "track_of_source": "TalentCLEF: Skill and Job Title Intelligence for Human Capital Management",
+    "source_chunk": "d7c5822cbfc5aa4ca7f7fa27eb680fc491854764b58d1b93c3913df5d1a284d8",
+    "gold_sources": [
+      {
+        "paper": "paper478",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  }
+]

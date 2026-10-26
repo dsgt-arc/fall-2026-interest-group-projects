@@ -1,0 +1,8 @@
+# environments, datasets, weights, and caches stay local (see user/README.md)
+fashion/.venv/
+fashion/data/
+fashion/outputs/
+fashion/eval/*.pt
+results/query_embeddings.json
+__pycache__/
+fashion/pace/*.pt
