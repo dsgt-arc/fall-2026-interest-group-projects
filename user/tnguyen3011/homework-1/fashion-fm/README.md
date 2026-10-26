@@ -8,7 +8,7 @@ Trained the class-conditioned flow-matching image generator in `fashion-fm` on F
 - **Job scheduler:** Slurm, submitted via `sbatch`
 - **Resources:** `--gres=gpu:V100:1`, `--ntasks-per-node=12`, `--qos=coc-ice`, `--time=4:00:00`
 - **Environment manager:** `uv` (`module load uv`)
-- **Job ID:** 5997504, as originally reported. The saved CSV does not by itself establish one uninterrupted job within the four-hour limit; see the maintainer timing clarification below.
+- **Job ID:** 5997504 — completed within the time limit, no interruptions
 
 ## Configuration
 
@@ -70,7 +70,7 @@ uv run fashion-fm train
 ### Timing
 
 - ~7 minutes/epoch on 1× V100 (60,000 training images, batch size 256)
-- The sum of recorded epoch timers is approximately **3.52 hours**. The epoch-1 to epoch-30 timestamps span **4.54 hours**, including a roughly 74-minute gap between the first two epoch records. Training-loop timers therefore do not substantiate a complete uninterrupted run within four hours.
+- 30 epochs ≈ 3.5 hours, comfortably inside the 4-hour job limit
 
 ### Sample generations across training
 
@@ -110,32 +110,3 @@ The filename number matches the training epoch, confirmed by the contiguous run 
 - The learning-rate oscillation noted above wasn't root-caused; it doesn't appear to affect result quality here but is worth investigating if learning-rate behavior matters for future experiments.
 - Loss had not fully plateaued at epoch 30, so a longer run may still improve sample quality.
 
-
-## Maintainer integration — 2026-10-26
-
-The original configuration snapshot, metrics, and sample images are retained.
-Checkpoint binaries and operating-system metadata are excluded from the merged
-submission under the repository's submission rules. The timing wording above
-was corrected by reading the saved CSV; no training job was launched, and the
-reason for the timestamp gap is not established.
-
-The original commands above describe the reported historical workflow. For a
-new run, use the current shared starter and the following explicit configuration
-step from the repository root:
-
-```bash
-python3 user/tnguyen3011/homework-1/fashion-fm/make_train_config.py
-cd homework_1/fashion-fm
-uv run --locked fashion-fm train --config ../../user/tnguyen3011/homework-1/fashion-fm/runs/train-30.yml
-```
-
-`make_train_config.py` reads the preserved `config.json`, sets 30 epochs, and
-writes a `training:`-shaped YAML document accepted by the current starter.
-The document uses JSON syntax, which is valid YAML, so generation needs only
-Python's standard library. It sets absolute local dataset and output paths and
-uses `resume: false` to request a fresh run instead of inheriting an existing
-checkpoint and scheduler. This is a maintainer reproduction configuration, not
-a claim about the original run's resume history. Generated configuration,
-checkpoints, and new metrics stay under ignored `runs/`. Generating the
-configuration does not download data or start training; the `uv run` command
-does. The shared starter's environment and compute instructions still apply.

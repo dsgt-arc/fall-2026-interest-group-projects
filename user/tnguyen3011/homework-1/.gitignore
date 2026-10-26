@@ -1,9 +1,0 @@
-# Local integration runs and downloaded/trained artifacts.
-**/runs/
-**/__pycache__/
-**/.pytest_cache/
-**/.venv/
-**/.DS_Store
-**/*.pt
-**/data/
-**/index/
