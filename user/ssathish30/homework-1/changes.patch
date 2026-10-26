@@ -1,0 +1,459 @@
+diff --git a/homework-1/clef-rag/src/clef_rag/cli.py b/homework-1/clef-rag/src/clef_rag/cli.py
+index 32b9270..073fca1 100644
+--- a/homework-1/clef-rag/src/clef_rag/cli.py
++++ b/homework-1/clef-rag/src/clef_rag/cli.py
+@@ -69,8 +69,50 @@ def parser():
+             command.add_argument("--title", help="Title substring")
+         if name in ("search", "ask"):
+             command.add_argument("question")
+-        if name == "search":
+-            command.add_argument("--top-k", type=positive, default=6)
++        if name in ("search", "evaluate"):
++            command.add_argument(
++                "--top-k",
++                type=positive,
++                default=6,
++                help="Passages returned per question; raise it to measure recall at depth",
++            )
++        if name in ("search", "evaluate"):
++            command.add_argument(
++                "--weights",
++                type=float,
++                nargs=2,
++                default=[0.5, 0.5],
++                metavar=("SEMANTIC", "LEXICAL"),
++                help="Rank-fusion weights; use 1 0 or 0 1 to isolate one retriever",
++            )
++            command.add_argument(
++                "--rrf-c",
++                type=positive,
++                default=60,
++                help="Reciprocal-rank-fusion constant (default: 60)",
++            )
++            command.add_argument(
++                "--candidates",
++                type=positive,
++                default=20,
++                help="Candidates each retriever contributes before fusion",
++            )
++            command.add_argument(
++                "--no-introductions",
++                action="store_true",
++                help="Skip the opening-context passage so metrics score the fused ranking",
++            )
++            command.add_argument(
++                "--rerank-depth",
++                type=int,
++                default=0,
++                help="Retrieve this many passages then rerank with the chat model down to --top-k",
++            )
++            command.add_argument(
++                "--shuffle-seed",
++                type=int,
++                help="Randomize the fused order; negative control for evaluation validity",
++            )
+         if name in ("ask", "evaluate"):
+             command.add_argument("--model", choices=CHAT_MODELS, default=CHAT_MODELS[0])
+         if name == "evaluate":
+@@ -90,9 +132,27 @@ def parser():
+             command.add_argument(
+                 "--retrieval-only", action="store_true", help="Skip generated answers"
+             )
++            command.add_argument(
++                "--ignore-question-filters",
++                action="store_true",
++                help="Search the whole corpus instead of each question's papers/track",
++            )
+     return root
+ 
+ 
++def retrieval_options(args):
++    """Collect the ablation settings shared by search and evaluate."""
++
++    return {
++        "weights": tuple(args.weights),
++        "rrf_c": args.rrf_c,
++        "candidates": args.candidates,
++        "introductions": not args.no_introductions,
++        "shuffle_seed": args.shuffle_seed,
++        "rerank_depth": args.rerank_depth,
++    }
++
++
+ def render_sources(sources):
+     for source in sources:
+         print(
+@@ -155,7 +215,9 @@ def main(argv=None):
+                     print(result["answer"])
+             elif args.command == "search":
+                 ids = resolve_papers(index.db, args.paper) if args.paper else None
+-                sources = Retriever(index, LocalModels()).search(
++                sources = Retriever(
++                    index, LocalModels(), **retrieval_options(args)
++                ).search(
+                     args.question,
+                     track=args.track,
+                     author=args.author,
+@@ -192,6 +254,9 @@ def main(argv=None):
+                     args.output,
+                     args.retrieval_only,
+                     cutoffs=args.k,
++                    retrieval=retrieval_options(args),
++                    ignore_filters=args.ignore_question_filters,
++                    top_k=args.top_k,
+                 )
+                 if not args.json:
+                     print(json.dumps(result["summary"], indent=2))
+diff --git a/homework-1/clef-rag/src/clef_rag/evaluate.py b/homework-1/clef-rag/src/clef_rag/evaluate.py
+index cf27366..46cfb78 100644
+--- a/homework-1/clef-rag/src/clef_rag/evaluate.py
++++ b/homework-1/clef-rag/src/clef_rag/evaluate.py
+@@ -24,8 +24,12 @@ def evaluate(
+     retrieval_only=False,
+     *,
+     cutoffs=DEFAULT_CUTOFFS,
++    retrieval=None,
++    ignore_filters=False,
++    top_k=6,
+ ):
+     cutoffs = normalize_cutoffs(cutoffs)
++    retrieval = retrieval or {}
+     cases = json.loads(questions_path.read_text())
+     output = {
+         "index": index.manifest,
+@@ -33,6 +37,16 @@ def evaluate(
+         "retrieval_evaluation": {
+             "implementation": "ir-measures",
+             "cutoffs": list(cutoffs),
++            "retrieval_settings": {
++                "weights": list(retrieval.get("weights", (0.5, 0.5))),
++                "rrf_c": retrieval.get("rrf_c", 60),
++                "candidates": retrieval.get("candidates", 20),
++                "introductions": retrieval.get("introductions", True),
++                "shuffle_seed": retrieval.get("shuffle_seed"),
++                "question_filters_applied": not ignore_filters,
++                "top_k": top_k,
++                "rerank_depth": retrieval.get("rerank_depth", 0),
++            },
+             "unit": "unique paper/PDF-page pair, ordered by first retrieved occurrence",
+             "relevance": "binary; every listed gold page is relevant; unlisted pages score zero",
+             "ranking": "final retrieved passages, before answer context selection; no extra retrieval for larger cutoffs",
+@@ -57,9 +71,21 @@ def evaluate(
+                     json.loads(key) for key in page_qrels(case["gold_sources"])
+                 ]
+             if retrieval_only:
+-                ids = resolve_papers(index.db, case.get("papers", [])) or None
+-                sources = Retriever(index, models).search(
+-                    case["question"], paper_ids=ids, track=case.get("track")
++                # Dropping the per-question filters makes retrieval search the
++                # whole corpus instead of the papers holding the answer.
++                ids = (
++                    None
++                    if ignore_filters
++                    else resolve_papers(index.db, case.get("papers", [])) or None
++                )
++                sources = Retriever(
++                    index, models,
++                    **{**retrieval, "rerank_models": models},
++                ).search(
++                    case["question"],
++                    paper_ids=ids,
++                    track=None if ignore_filters else case.get("track"),
++                    top_k=top_k,
+                 )
+                 row["retrieved_sources"] = sources
+             else:
+diff --git a/homework-1/clef-rag/src/clef_rag/rerank.py b/homework-1/clef-rag/src/clef_rag/rerank.py
+new file mode 100644
+index 0000000..b363cfb
+--- /dev/null
++++ b/homework-1/clef-rag/src/clef_rag/rerank.py
+@@ -0,0 +1,82 @@
++"""Second-stage reranking of retrieved passages with the local chat model.
++
++Recall is far higher at depth 50 than at depth 6 (97.4% against 81.6% on
++questions-hard), so the gold passage is usually retrieved and then ranked too
++low to survive the cut. This stage reorders a deep candidate pool before it is
++truncated, which is where that gap can be recovered.
++"""
++
++import json
++
++from clef_rag.config import RagError
++
++SYSTEM = (
++    "You judge whether a passage from a research paper answers a question. "
++    "You reply only with the requested structured fields."
++)
++
++SCHEMA = {
++    "type": "object",
++    "properties": {
++        "score": {"type": "integer", "minimum": 0, "maximum": 3},
++    },
++    "required": ["score"],
++}
++
++PROMPT = """Question: {question}
++
++Passage (from "{title}", PDF page {page}):
++{text}
++
++Rate how well this passage answers the question:
++3 = contains the answer outright
++2 = directly about the question's subject, likely supporting
++1 = same paper or topic, does not answer it
++0 = unrelated
++
++Reply with the score only."""
++
++
++def rerank(models, question, sources, *, keep, batch_log=None):
++    """Score each passage against the question and return the best ``keep``.
++
++    Ties keep the first-stage order, so reranking can only reorder what
++    retrieval already found. Scoring failures fall back to the original rank.
++    """
++
++    if keep < 1:
++        raise ValueError("keep must be at least 1")
++    if len(sources) <= keep:
++        return sources
++
++    scored = []
++    for position, source in enumerate(sources):
++        try:
++            verdict = models.chat(
++                SYSTEM,
++                PROMPT.format(
++                    question=question,
++                    title=source.get("title", "")[:150],
++                    page=source.get("page"),
++                    text=source.get("text", "")[:1200],
++                ),
++                schema=SCHEMA,
++                max_tokens=50,
++            )
++            score = int(verdict.get("score", 0))
++        except Exception:
++            # A passage the model refuses to score keeps its retrieval position
++            # rather than being dropped.
++            score = -1
++        scored.append((score, -position, source))
++        if batch_log:
++            batch_log(position, score)
++
++    scored.sort(key=lambda item: (item[0], item[1]), reverse=True)
++    kept = []
++    for rank, (_, _, source) in enumerate(scored[:keep], start=1):
++        item = dict(source)
++        item["source_id"] = f"S{rank}"
++        item["rank"] = rank
++        kept.append(item)
++    return kept
+diff --git a/homework-1/clef-rag/src/clef_rag/retrieve.py b/homework-1/clef-rag/src/clef_rag/retrieve.py
+index 224656f..1cdb0f2 100644
+--- a/homework-1/clef-rag/src/clef_rag/retrieve.py
++++ b/homework-1/clef-rag/src/clef_rag/retrieve.py
+@@ -1,5 +1,6 @@
+ """LangChain hybrid retrieval over Chroma and a BM25 retriever."""
+ 
++import random
+ import re
+ 
+ from langchain_classic.retrievers import EnsembleRetriever
+@@ -39,10 +40,42 @@ def overlaps(left, right):
+ 
+ 
+ class Retriever:
+-    def __init__(self, index, models):
++    def __init__(
++        self,
++        index,
++        models,
++        *,
++        weights=(0.5, 0.5),
++        rrf_c=60,
++        candidates=20,
++        introductions=True,
++        shuffle_seed=None,
++        rerank_depth=0,
++        rerank_models=None,
++    ):
+         self.index, self.models = index, models
++        self.weights = list(weights)
++        self.rrf_c = rrf_c
++        self.candidates = candidates
++        # Ablations disable the opening-context prepend, or destroy the fused
++        # order outright, so metrics reflect the ranking under test.
++        self.introductions = introductions
++        self.shuffle_seed = shuffle_seed
++        # Reranking reorders a deeper pool before it is cut to top_k.
++        self.rerank_depth = rerank_depth
++        self.rerank_models = rerank_models
+ 
+     def search(self, question, *, track=None, author=None, paper_ids=None, top_k=6):
++        if self.rerank_depth > top_k:
++            deep = self._select(
++                question, track=track, author=author, paper_ids=paper_ids,
++                top_k=self.rerank_depth)
++            from clef_rag.rerank import rerank
++            return rerank(self.rerank_models, question, deep, keep=top_k)
++        return self._select(
++            question, track=track, author=author, paper_ids=paper_ids, top_k=top_k)
++
++    def _select(self, question, *, track=None, author=None, paper_ids=None, top_k=6):
+         store = self.index.vectorstore(self.models)
+         catalog = list_documents(
+             self.index.db, track=track, author=author, paper_ids=paper_ids
+@@ -73,11 +106,18 @@ class Retriever:
+                 )
+                 for paper_id in paper_ids
+             ]
+-            ranked = [group[i] for i in range(20) for group in groups if len(group) > i]
++            ranked = [
++                group[i]
++                for i in range(self.candidates)
++                for group in groups
++                if len(group) > i
++            ]
+         else:
+             ranked = self._rank(question, store, chunks)
+-        leading_ids = paper_ids or (
+-            [ranked[0].metadata["document_id"]] if ranked else []
++        leading_ids = (
++            paper_ids or ([ranked[0].metadata["document_id"]] if ranked else [])
++            if self.introductions
++            else []
+         )
+         introductions = []
+         for document_id in leading_ids:
+@@ -104,20 +144,36 @@ class Retriever:
+         if not documents:
+             return []
+         ids = sorted({d.metadata["document_id"] for d in documents})
++        depth = min(self.candidates, len(documents))
+         semantic = store.as_retriever(
+             search_kwargs={
+-                "k": min(20, len(documents)),
++                "k": depth,
+                 "filter": {"document_id": {"$in": ids}},
+             }
+         )
+         lexical = BM25Retriever.from_documents(
+-            documents, k=min(20, len(documents)), preprocess_func=lexical_tokens
++            documents, k=depth, preprocess_func=lexical_tokens
+         )
++        # A zero weight still costs a retrieval call, so drop that arm entirely
++        # to isolate the other one.
++        arms = [
++            (retriever, weight)
++            for retriever, weight in ((semantic, self.weights[0]), (lexical, self.weights[1]))
++            if weight > 0
++        ]
++        if not arms:
++            raise RagError("At least one retriever weight must be greater than zero.")
+         ensemble = EnsembleRetriever(
+-            retrievers=[semantic, lexical], weights=[0.5, 0.5], c=60, id_key="chunk_id"
++            retrievers=[retriever for retriever, _ in arms],
++            weights=[weight for _, weight in arms],
++            c=self.rrf_c,
++            id_key="chunk_id",
+         )
+         try:
+             with tracing_context(enabled=False):
+-                return ensemble.invoke(question)
++                ranked = ensemble.invoke(question)
++                if self.shuffle_seed is not None:
++                    random.Random(self.shuffle_seed).shuffle(ranked)
++                return ranked
+         except Exception as exc:
+             raise RagError(f"LangChain retrieval failed: {exc}") from exc
+diff --git a/homework-1/fashion-fm/configs/train.yml b/homework-1/fashion-fm/configs/train.yml
+index 6b1d941..ca17883 100644
+--- a/homework-1/fashion-fm/configs/train.yml
++++ b/homework-1/fashion-fm/configs/train.yml
+@@ -8,7 +8,7 @@ training:
+   output_dir: outputs/fashion-fm
+ 
+   # Full passes over the dataset; increase for convergence or reduce for faster trials; recommended range: 10-200.
+-  epochs: 1
++  epochs: 60
+ 
+   # Images processed per optimizer step; tune for memory use and throughput; recommended range: 32-512.
+   batch_size: 256
+diff --git a/homework-1/fashion-fm/src/fashion_fm/cli.py b/homework-1/fashion-fm/src/fashion_fm/cli.py
+index 6038514..e87d374 100644
+--- a/homework-1/fashion-fm/src/fashion_fm/cli.py
++++ b/homework-1/fashion-fm/src/fashion_fm/cli.py
+@@ -8,11 +8,13 @@ import torch
+ from torchvision.utils import save_image
+ 
+ from fashion_fm.data import FASHION_LABELS, description_to_label
++from fashion_fm.evaluate import evaluate_checkpoint
+ from fashion_fm.flow import sample
+ from fashion_fm.train import load_generator, load_train_config, train
+ 
+ CHECKPOINT = "outputs/fashion-fm/latest.pt"
+ DEFAULT_TRAIN_CONFIG = Path("configs/train.yml")
++EVAL_DIR = "outputs/evaluation"
+ GENERATED_GRID = "outputs/generated.png"
+ IMAGES_PER_PROMPT = 4
+ 
+@@ -89,3 +91,56 @@ def generate_command(checkpoint: str, prompt: tuple[str, ...]) -> None:
+     manifest = json.dumps(records, indent=2) + "\n"
+     output.with_suffix(".json").write_text(manifest)
+     click.echo(f"generated {len(images)} images: {output}")
++
++
++@main.command("evaluate", help="Score a checkpoint's samples for class fidelity and novelty.")
++@click.option("--checkpoint", default=CHECKPOINT, show_default=True)
++@click.option("--output-dir", default=EVAL_DIR, show_default=True)
++@click.option("--data-dir", default="data", show_default=True)
++@click.option("--classifier", default=None, help="Reuse a judge classifier so runs stay comparable.")
++@click.option("--num-per-class", default=16, show_default=True, help="Samples generated per class.")
++@click.option("--sample-steps", default=40, show_default=True, help="ODE steps per sample.")
++@click.option("--guidance-scale", default=2.0, show_default=True, help="Classifier-free guidance strength.")
++@click.option("--seed", default=2026, show_default=True)
++@click.option("--device", default="auto", show_default=True)
++@click.option("--raw-weights", is_flag=True, help="Score raw weights instead of the EMA copy.")
++def evaluate_command(
++    checkpoint: str,
++    output_dir: str,
++    data_dir: str,
++    classifier: str | None,
++    num_per_class: int,
++    sample_steps: int,
++    guidance_scale: float,
++    seed: int,
++    device: str,
++    raw_weights: bool,
++) -> None:
++    """Report how well generated samples match their requested class."""
++
++    report = evaluate_checkpoint(
++        checkpoint,
++        output_dir,
++        data_dir=data_dir,
++        classifier_checkpoint=classifier,
++        num_per_class=num_per_class,
++        sample_steps=sample_steps,
++        guidance_scale=guidance_scale,
++        seed=seed,
++        device=device,
++        use_ema=not raw_weights,
++    )
++
++    # Show the headline numbers; the full report stays on disk as JSON.
++    click.echo(f"weights: {report['weights']}  samples: {report['samples']}")
++    click.echo(f"classifier test accuracy: {report['classifier_test_accuracy']:.4f}")
++    click.echo(f"condition accuracy:       {report['condition_accuracy']:.4f}")
++    click.echo(f"mean target probability:  {report['mean_target_probability']:.4f}")
++    click.echo(f"within-class pairwise MSE: {report['within_class_pairwise_mse']:.4f}")
++    click.echo(f"nearest training MSE:      min {report['nearest_training_mse_min']:.4f}, "
++               f"mean {report['nearest_training_mse_mean']:.4f}")
++    click.echo(f"exact training copies:     {report['exact_training_copies']}")
++    click.echo("\nper-class accuracy:")
++    for name, accuracy in report["per_class_accuracy"].items():
++        click.echo(f"  {name:<12} {accuracy:.4f}")
++    click.echo(f"\nreport: {Path(output_dir) / 'validation-report.json'}")

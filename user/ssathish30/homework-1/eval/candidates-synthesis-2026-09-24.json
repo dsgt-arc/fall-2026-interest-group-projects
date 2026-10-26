@@ -1,0 +1,772 @@
+[
+  {
+    "id": "synth-001",
+    "category": "synthesis",
+    "question": "Compared to OpenBioLLM's performance in generating abstractive answers, how did ELiRF-UPV\u2019s results on relation classification tasks demonstrate a competitive advantage?",
+    "expected_answer": "The system utilizing OpenBioLLM showed lower abstractive answer quality despite competitive retrieval performance, whereas ELiRF-UPV achieved top rankings across multiple tracks with scores like 0.5060 in the English track, indicating a stronger showing in relation classification.",
+    "gold_sources": [
+      {
+        "paper": "paper50",
+        "pages": [
+          9
+        ]
+      },
+      {
+        "paper": "paper27",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "screen": "NEEDS_MANUAL_REWRITE",
+      "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+      "titles": [
+        "Retrieval-Augmented Biomedical Question Answering with Weak-Question Recovery and Neural Reranking for BioASQ Task 14b",
+        "ELiRF-UPV at BioNNE-R Task: Transfer Learning on Transformer-based Models for Biomedical Relation Classification"
+      ],
+      "urls": [
+        "https://clef-staging.pages.dev/paper50.pdf#page=9",
+        "https://clef-staging.pages.dev/paper27.pdf#page=5"
+      ],
+      "source_passages": [
+        ". The highest ideal-answer performance was observed in Batch 2, achieving ROUGE-2 F1 = 0.1583 and ROUGE-SU4 F1 = 0.1540. Compared with the top-performing systems, which achieved ROUGE-2 F1 values of approximately 0.15\u20130.16, our system produced lower abstractiveanswer quality despite competitive retrieval performance. This suggests that retrieval refinements contributed more substantially to exact-answer prediction than to abstractive summary generation. Future improvements will therefore focus on stronger biomedical instruction tuning, retrieval-aware prompting, and citation-aware evidence synthesis to improve long-form answer generation while preserving factual grounding. Overall, the Phase A+ results demonstrate that the proposed hybrid retrieval and OpenBioLLMbased generation framework produces structurally valid and evidence-grounded biomedical answers across multiple BioASQ evaluation batches, while highlighting remaining opportunities for improving abstractive answer generation.",
+        ". The other two track results remain competitive, but show some improvement margin compared to other teams\u2019 implementations. Table 5 Best results per team on each task. Only best results included on this table were considered to elaborate the ranking. Team English Track Russian Track Bilingual Track ELiRF-UPV 0.5060 (1) 0.4717 0.4540 lakshan-nii 0.5016 (2) 0.5283 (1) 0.5015 (1) savvafq 0.4570 0.4829 (3) 0.4849 (2) avaliev 0.4733 0.5057 (2) 0.4527 aakobiakova 0.4951 (3) 0.4403 0.4716 (3) rabiaozdemir 0.4620 \u2013 \u2013 lsi_uned 0.4514 \u2013 \u2013 Baseline 0.2825 0.3070 0.3027"
+      ],
+      "page_check": [
+        {
+          "verdict": "LOW_OVERLAP",
+          "overlap": 0.25
+        },
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "LOW_OVERLAP",
+      "note": "page-location check: only 25% of the stored passage found on paper50 p9; confirm the page number before use"
+    }
+  },
+  {
+    "id": "synth-002",
+    "category": "synthesis",
+    "question": "How do the strategies for combining multiple models or retrievers differ between the NumCoT ensemble and the hybrid approach utilizing BGE-M3?",
+    "expected_answer": "The NumCoT ensemble uses a grid search to determine weights for four individual systems (pairwise, Longformer, etc.) with top-5 voting and softmax temperature, while the hybrid approach fuses BM25 or employs a fine-tuned cross-encoder on top of BGE-M3 using a fixed alpha value.",
+    "gold_sources": [
+      {
+        "paper": "paper92",
+        "pages": [
+          4
+        ]
+      },
+      {
+        "paper": "paper54",
+        "pages": [
+          17
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "screen": "UNSCREENED",
+      "track": "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles",
+      "titles": [
+        "nadie at CheckThat! 2026: Numerical Reasoning-Enhanced Verifier for Fact-Checking Numerical Claims",
+        "NEXA at CheckThat! 2026: Hybrid Source Retrieval for Cross-Lingual Scientific Web Claims"
+      ],
+      "urls": [
+        "https://clef-staging.pages.dev/paper92.pdf#page=4",
+        "https://clef-staging.pages.dev/paper54.pdf#page=17"
+      ],
+      "source_passages": [
+        ". These experiments test whether broader trace coverage and direct evidence access compensate for the extra input noise. Finally, we construct a four-model ensemble from the NumCoT, pairwise, Longformer, and all-traces evidence systems. Scores are aligned by exact trace text, normalised within each claim, and linearly combined. Model weights, aggregation strategy, and softmax temperature are selected on validation data by grid search. The selected weights are 0.33, 0.27, 0.10, and 0.30, respectively, with top-5 voting and temperature 0.5.",
+        ". When fused with BM25, the best fusion weight dropped to 0.10, and the gain over the lexical baseline was between 0.0001 and 0.01 depending on the language, which is essentially negligible. This suggests that the mismatch is not limited to the query representation alone, since SPECTER2 document embeddings also appear to be less aligned with the requirements of claim-to-abstract retrieval. Overall, BGE-M3 with \ud835\udefc= 0.70 remains the preferred encoder. 5.6.3. Cross-Encoder Fine-Tuning On top of the BGE-M3 fusion run we applied the fine-tuned cross-encoder described in Section 3. For this experiment the hybrid baseline uses the full dense retrieval configuration (cosine scored over all 10 000 documents,\ud835\udefc=0.80), which achieves a higher MRR@5 than the top-50 fusion reported in Table 7. Table 9 compares this baseline against the task-specific fine-tuned model reranking its top-50 candidates. Table 9 Cross-encoder fine-tuning on top of the full dense fusion run, MRR@5. The hybrid baseline uses BGE-M3 cosine over all 10 000 documents (\ud835\udefc=0.80). Fine-tuned is ms-marco-MiniLM-L-6-v2 after 2-epoch training on hard negatives from our retrieval pipeline, reranking the top-50 candidates"
+      ],
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        },
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "synth-003",
+    "category": "synthesis",
+    "question": "According to the University of Pavia team's work and UTS\u2019s findings regarding strategies that evade detectors, what contrasting effect does adding conversational context have on generative language models \u2013 one reducing Cultural Similarity Performance (CSP) while the other allows certain narrative forms to bypass detection?",
+    "expected_answer": "The University of Pavia team found that any added conversational context reduced CSP scores, even neutral context, whereas UTS observed that stream-narrative cells escaped detector classes due to radical shifts in narrative form.",
+    "gold_sources": [
+      {
+        "paper": "paper96",
+        "pages": [
+          6
+        ]
+      },
+      {
+        "paper": "paper102",
+        "pages": [
+          7
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "screen": "UNSCREENED",
+      "track": "ELOQUENT: Evaluation of Generative Language Model Quality",
+      "titles": [
+        "Overview of the Cultural Robustness and Diversity Task of the ELOQUENT 2026 Lab for Evaluating Generative Language Model Quality",
+        "UTS at ELOQUENT 2026 Voight-Kampff: structural shifts in AI writing bypass state-of-the-art detectors"
+      ],
+      "urls": [
+        "https://clef-staging.pages.dev/paper96.pdf#page=6",
+        "https://clef-staging.pages.dev/paper102.pdf#page=7"
+      ],
+      "source_passages": [
+        "the added context conflicted with the prompt\u2019s culture or remained culturally neutral, and whether it appeared as earlier dialogue or retrieved memory. The results showed that adding conversational context of any kind reduced CSP for the stronger models, with culture-neutral context proving at least as harmful as conflicting context. The qualitative analysis clarified why the scalar score was not enough: conflicting context tended to pull responses toward the injected culture, sometimes even overriding a country explicitly named in the prompt, while neutral context pushed responses toward generic, culture-agnostic content. Their highest CSP score (0.875) was obtained by Llama-3.1-8B-Instruct with the initial prompts. The University of Pavia team [ 8]tried the highest number of strategies (six). They used eight languages (English, German, Greek, Italian, Polish, Russian, Spanish, and Turkish) and two models (Llama 3.1 8B Instruct and Aya Expanse 8B). In addition to the baseline strategy, they used chain-ofthought (identify the cultural context, determine the relevant norms, and infer the culture the user is referring to)",
+        ". Total\ud835\udc5b=6,500 Claude Opus candidates. The ordering symmetrically inverts Macko-pp\u2019s: strategies that survive Macko-pp (synth_anchor 0.846, style_pre1923 0.657, style_sebald 0.798) are caught by the neutral committee (\u2264 0.19); strategies that beat the neutral committee (caveman 0.93, style_dillard 0.88, stream 0.69) are caught by Macko-pp (\u2264 0.09). No strategy in this pool beats both detector classes simultaneously \u2014 a hard Pareto frontier. The round-two failures (fragments, dialect_appalachian) probe alternative OOD axes and fail in the same way, ruling out a generic \u201cany OOD axis works\u201d interpretation. 4.7. Stream-narrative defeats both classes The Pareto frontier from the previous section presents one notable exception: stream cells on 7 narrative-genre topics escape Macko-pp at a\u2265 30% rate, while expository topics are caught uniformly. This suggests that form-content match is the operative variable, pointing to a second co-equal OOD mechanism alongside period register: radical shifts in narrative form."
+      ],
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 0.846
+        },
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "synth-004",
+    "category": "synthesis",
+    "question": "According to both accounts, what base language model was utilized for text-based inputs, and how did each system handle visual content representation?",
+    "expected_answer": "Both systems employed XLM-RoBERTa-base for processing textual data; however, while the first approach directly incorporated CLIP image embeddings for visual content, the second used official OCR text for meme instances.",
+    "gold_sources": [
+      {
+        "paper": "paper157",
+        "pages": [
+          9
+        ]
+      },
+      {
+        "paper": "paper181",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "screen": "UNSCREENED",
+      "track": "EXIST: sEXism Identification in Social neTworks",
+      "titles": [
+        "Multimodal Sexism Identification and Characterization using Large Language Models and Gradient Boosting",
+        "Team tai6le at EXIST 2026: System Description"
+      ],
+      "urls": [
+        "https://clef-staging.pages.dev/paper157.pdf#page=9",
+        "https://clef-staging.pages.dev/paper181.pdf#page=4"
+      ],
+      "source_passages": [
+        ". To operationalize feature selection, we use a tree-based ranking procedure. An initial XGBoost regressor, configured with 200 estimators and histogram-based tree growth, is trained on the unreduced feature space. We then extract the feature importances from the fitted model, rank all dimensions in descending order, and retain the top-ranked features for downstream training. In development experiments, we compare different cardinality thresholds and find that retaining 300 features provides the best trade-off between information preservation and noise reduction for meme Task 2.1. In addition to improving computational efficiency and robustness against cross-modal noise, this selection provides a vital interpretability mechanism. By inspecting the top-ranked dimensions, we can better understand which types of evidence the system relies on, such as textual cues, visual representations, sensor-derived information, or higher-level semantic indicators. This is particularly important in sexism detection, where model decisions may depend on subtle cues related to stereotypes, objectification, irony, or authorial stance. 5. Experiments 5.1. Models For meme inputs, we extract three main types of representations. First, visual content is represented directly through CLIP [34] image embeddings",
+        ". For inference, the trained model was applied to the official test metadata for each subtask. Soft outputs were written in the official PyEvALL [9, 10] JSON format as label-probability dictionaries. Hard outputs were derived from the same probabilities using the decoding rule for each run: either argmax or a tuned YES threshold for binary subtasks, and thresholding for multi-label subtasks. All files were validated for the expected naming convention and JSON structure before being compressed into the final submission package. 5. Models and Experiment Setups 5.1. Text-Only Models For the text-only setting, we used XLM-RoBERTa-base with the official textual fields provided by the dataset. For meme instances, the input was the official OCR text. For video instances, the input was the official textual content. This setting was used in the text-only XLM-RoBERTa-base run for the binary identification subtasks. It was also used in the selected formal XLM-RoBERTa-base run for the video subtasks, where Tasks 3.1 and 3.3 used the official original video text only."
+      ],
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        },
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "synth-005",
+    "category": "synthesis",
+    "question": "How do the approaches to handling low confidence predictions differ between the Multi-Agent Financial Intelligence Framework and the TrustMe team's discarded decision mechanisms?",
+    "expected_answer": "The Multi-Agent Financial Intelligence Framework converts low-confidence predictions into 'HOLD' recommendations alongside other safety constraints, while the TrustMe team found that a three-way majority vote system (with varying temperatures) consistently resulted in mostly 'HOLD' actions and was therefore abandoned.",
+    "gold_sources": [
+      {
+        "paper": "paper200",
+        "pages": [
+          10
+        ]
+      },
+      {
+        "paper": "paper201",
+        "pages": [
+          9
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "screen": "UNSCREENED",
+      "track": "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems",
+      "titles": [
+        "A Multi-Agent Financial Intelligence Framework for Financial Decision Making",
+        "Working notes of TrustMe team in CLEF 2026 FinMMEval Track 3"
+      ],
+      "urls": [
+        "https://clef-staging.pages.dev/paper200.pdf#page=10",
+        "https://clef-staging.pages.dev/paper201.pdf#page=9"
+      ],
+      "source_passages": [
+        ". For rule-based agents, including the Technical Analysis Agent and Event Detection Agent, confidence is represented by heuristic confidence scores derived from the strength and consistency of the corresponding financial signals. These values are treated as auxiliary input features for the meta-classifier rather than calibrated probability estimates [32, 33]. 6.4. Safety Verification To improve operational robustness during real-time deployment, the framework incorporates a lightweight safety verification stage after meta-classifier inference. Predictions associated with low confidence or unstable market conditions are conservatively converted into HOLD recommendations to reduce unnecessary trading risk. Additional safety constraints based on abnormal volatility and extreme technical indicator values further prevent unreliable predictions during highly uncertain market conditions. This post-processing stage improves decision stability while maintaining the low inference latency required by the FinMMEval Task 3 evaluation protocol. 6.5. Decision Rationale Generation In addition to predicting the final trading action, the framework generates a concise natural-language rationale that summarizes the primary evidence supporting the recommendation",
+        "regard the deterministic momentum rule as a baseline that any LLM agent on this benchmark should be measured against. 5.4. Things tested but not deployed A long tail of components and decision mechanisms was exercised and discarded. We summarise them here. Technical indicators.RSI/MACD/Z-score was tested but turned out to be not beneficial with 10-day history period. Decision-mechanism variants.Three-way majority vote (temperatures 0.1, 0.3, 0.5) resulted in mostly HOLDs. Dual-strategy and asset-specific prompts.A dual-strategy architecture with asset-specific prompts was implemented, motivated by the very different microstructure of stocks and crypto (Table 8). It was eventually replaced by a unified momentum-follow prompt due to comparable performance and lower maintenance burden. Phenomenon Stock Crypto Daily momentum corr.\u223c50% neutral 36% anti-correlated Mean reversion moderate, multi-day strong, same-day Optimal RSI standard 30/70 Cardwell 40\u201390 / 10\u201360 Oversold bounce 3+ down days 2+ down days>3% Trading days Mon\u2013Fri 24/7 HOLD appropriateness 20\u201330%<10% Table 8:Stock vs. crypto market microstructure (dual-strategy motivation). Volatility-adaptive BTC strategy.BTC mean-reversion works in high-volatility regimes (+21.85% on d187\u2013216, 4.33% daily vol, 53% reversal rate) but fails in moderate-vol markets (\u22121.35% on d95\u2013124, 2.55% daily vol, 41% reversal rate)"
+      ],
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        },
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "synth-006",
+    "category": "synthesis",
+    "question": "How do Gemma-4-26B (MoE)'s prompt strategies and Mistral-Small-24B's approach to handling multilingual data differ in their reported performance on person-place relation extraction tasks?",
+    "expected_answer": "Gemma-4-26B (MoE) utilizes a tiered prompting strategy with varying shot counts (0, 3, 5, 10) and demonstrates improved results with higher shot counts, while Mistral-Small-24B primarily employs a single prompt configuration across its experiments using native language data.",
+    "gold_sources": [
+      {
+        "paper": "paper220",
+        "pages": [
+          15
+        ]
+      },
+      {
+        "paper": "paper224",
+        "pages": [
+          3
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "screen": "UNSCREENED",
+      "track": "HIPE: Evaluating Accurate and Efficient Person\u2013Place Relation Extraction from Multilingual Historical Texts",
+      "titles": [
+        "Where Were They? Person-Place Relation Extraction in Multilingual Historical Archives",
+        "Layer Freezing and Cost-Sensitive Learning for English Historical Relation Classification"
+      ],
+      "urls": [
+        "https://clef-staging.pages.dev/paper220.pdf#page=15",
+        "https://clef-staging.pages.dev/paper224.pdf#page=3"
+      ],
+      "source_passages": [
+        ". German (DE) English (EN) French (FR) Model Prompt ShotsGlbat isAtGlbat isAtGlbat isAt Gemma-3-27b en 0 0.5299 0.3927 0.66710.72090.5890 0.85280.66110.5147 0.8074 en 3 0.5256 0.3668 0.6843 0.6662 0.4428 0.8895 0.5413 0.3952 0.6875 en 5 0.4975 0.3919 0.6032 0.6881 0.4956 0.8805 0.4747 0.3551 0.5944 native 00.56220.4919 0.63260.72090.5890 0.8528 0.6528 0.5280 0.7777 native 3 0.5393 0.4314 0.6472 0.6662 0.4428 0.8895 0.4972 0.3557 0.6386 native 5 0.5163 0.4281 0.6046 0.6881 0.4956 0.8805 0.4520 0.3511 0.5528 Gemma-4-26B (MoE) en 0 0.5541 0.4322 0.6760 0.7347 0.6558 0.8137 0.5252 0.4327 0.6178 en 3 0.7119 0.6238 0.8000 0.7349 0.6411 0.8287 0.7218 0.6567 0.7869 en 5 0.4789 0.3925 0.5652 0.7550 0.6534 0.8565 0.7379 0.6612 0.8145 en 10 0.7316 0.6495 0.81360.78030.6854 0.87530.74810.6725 0.8236 native 0 0.5096 0.4060 0.6132 \u2014 \u2014 \u2014 0.4957 0.4044 0.5870 native 3 0.7229 0.6578 0.7879 \u2014 \u2014 \u2014 0.7386 0.6821 0.7950 native 5 0.4748 0.3844 0.5652 \u2014 \u2014 \u2014 0.7432 0.6757 0.8108 native 100.75180.6529 0.8508 \u2014 \u2014 \u2014 0.7359 0.6714 0.8004 Mistral- Small-24B en 0 0.5389 0.5002 0.5775 0.5741 0.5168 0.6314 0.5749 0.5205 0.6293 en 5 0.5122 0.4505 0.5738 0.5653 0.4715 0.6591 0.5720 0.4969 0.6472 en 10 0.5214 0.4396 0.6033 0.5496 0.4604 0.6389 0.5360 0.4528 0.6193 native 00.59170.5875 0.59590.59350.5279 0.65910.59140.5677 0.6151 native 5 0.5595 0.5280 0.5909 0.5773 0.4715 0.6832 0.5776",
+        ". The classifier minimized overall loss simply by predicting the majority class for almost every pair. While this yielded a deceptively stable raw accuracy floor of approximately 73%, the system\u2019s macro recall for identifying true historical associations collapsed to exactly 0.0000. This initial empirical failure proved that standard out-of-the-box pipelines cannot navigate moderately skewed data environments without explicit architectural adjustments. 3. Contextual Prompt Engineering and Parameter Optimization To break past the limitations of standard text-pair classification over a skewed data distribution, we restructured the input mechanics to explicitly guide the model\u2019s self-attention layers through a Question- Answering (QA) framework. 3.1. Sentence-Pair QA Restructuring Rather than expecting the sequence classifier to implicitly learn entity linkages from raw unformatted text blocks, the target task was reformulated. For every extracted person-location pair, a deterministic natural language query was dynamically generated to act as a semantic constraint (e.g., \"Question: Is [Person] physically located in [Location]?\")"
+      ],
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        },
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "synth-007",
+    "category": "synthesis",
+    "question": "Considering UIT_NEWRON's canonical post-processing and DenseNet-121\u2019s use of asymmetric loss (ASL), what contrasting observation was made regarding initialization strategies for improving performance?",
+    "expected_answer": "While ImageNet initialization proved beneficial for the DenseNet-121 system, medical-domain initialization with RadImageNet did not improve results and even led to less stable finetuning compared to using ImageNet.",
+    "gold_sources": [
+      {
+        "paper": "paper275",
+        "pages": [
+          8
+        ]
+      },
+      {
+        "paper": "paper297",
+        "pages": [
+          10
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "screen": "UNSCREENED",
+      "track": "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security",
+      "titles": [
+        "UIT_NEWRON at ImageCLEFmed MEDVQA-GI 2026: Canonical Post-Processing for Gastrointestinal Visual Question Answering",
+        "UIT_Worker at ImageCLEFmedical 2026: DenseNet-121 Full-Fit Medical Concept Detection with Asymmetric Loss"
+      ],
+      "urls": [
+        "https://clef-staging.pages.dev/paper275.pdf#page=8",
+        "https://clef-staging.pages.dev/paper297.pdf#page=10"
+      ],
+      "source_passages": [
+        ". Location Instr. Presence Landmark Color Landmark Presence Polyp Count Polyp Removal Polyp Size Polyp T ype Procedure T ype T ext Presence 2 4 6 8 10 Clarity Abnorm. Color Abnorm. Location Abnorm. Presence Abnorm. T ype Box ArtifactInstr. Count Instr. Location Instr. Presence Landmark Color Landmark Presence Polyp Count Polyp Removal Polyp Size Polyp T ype Procedure T ype T ext Presence 2 4 6 8 10 Completeness Kvasir-VQA-test Private (b) Breakdown per LLM dimension Figure 1:Radar plots comparing UIT_NEWRON performance on Kvasir-VQA-test vs. Private Test across clinical question classes and evaluation dimensions.",
+        "The result demonstrates that a carefully trained convolutional baseline remains competitive for large-scale medical concept detection. DenseNet-121 provides efficient and reusable visual features, ASL directly addresses the sparse multi-label target structure, and the threshold of 0.60 provides a conservative precision-recall balance suitable for the imbalanced label space. 6.2. Empirical observations and submission analysis Table 4 summarizes the main empirical observations that guided the final submission. The final ImageNet-initialized DenseNet-121 trained with full-fit ASL reached the best score among our tested strategies. In contrast, medical-domain initialization with RadImageNet did not improve the final system, and the ensemble strategy was slightly worse than the single model. Table 4 Summary of key empirical observations from our submission development. Strategy F1 Observation DenseNet-121 + ImageNet + ASL + full-fit0.5725 Best official configuration; stable under the final 116,604-image full-fit setting. Ensemble with ConvNeXt/EfficientNet variants 0.5712 Slightly lower score; models tended to reinforce similar mistakes on hard rare labels. RadImageNet initialization 0.5314 Did not outperform ImageNet initialization; finetuning was less stable with the standard learningrate recipe"
+      ],
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        },
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "synth-008",
+    "category": "synthesis",
+    "question": "How does the behavior of Gemini in generating 'contrep\u00e8teries' contrast with the observation made about RIVER_task_1_MPNet+RoBERTa\u2019s ranking quality for Hinglish?",
+    "expected_answer": "Gemini tends to reproduce well-known phrases instead of creating new ones, even when unrelated to the input, while RIVER_task_1_MPNet+RoBERTa struggles to concentrate relevant humorous items densely enough in the top ten results.",
+    "gold_sources": [
+      {
+        "paper": "paper313",
+        "pages": [
+          6
+        ]
+      },
+      {
+        "paper": "paper309",
+        "pages": [
+          7
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "screen": "UNSCREENED",
+      "track": "JOKER: Humor Detection, Search, and Translation",
+      "titles": [
+        "CLEF 2026 JOKER Track: Relevance-Aware Multilingual Retrieval for Humorous Wordplay",
+        "Testing LLMs on JOKER Task 3: Onomastic Wordplay Translation and Task 4: Humour Generation. UBO at CLEF 2026"
+      ],
+      "urls": [
+        "https://clef-staging.pages.dev/paper313.pdf#page=6",
+        "https://clef-staging.pages.dev/paper309.pdf#page=7"
+      ],
+      "source_passages": [
+        "observations suggest that the current 0.3/0.7 fusion yields good ranking quality across the list but does not yet concentrate relevant humorous items densely enough in the top ten. Table 3 Performance of selected team runs for Hinglish. Run IDMAP NDCG@5 NDCG@10 NDCG@100 recip_rank P@10 num_q num_rel_ret num_rel RIVER_task_1_MPNet+RoBERTa0.3897 0.5395 0.51990.54460.83820.2735 464 1490 2910 myteam_BERT0.3830 0.3959 0.45230.61130.65960.2804485 2493 2910 UAds_pt_rm30.3707 0.3811 0.4380 0.6010 0.6383 0.2744 485 2493 2910 UAds_pt_bm250.3516 0.3599 0.4180 0.5854 0.6101 0.2678 485 2493 2910 results_pt_finetuned0.3506 0.3582 0.4173 0.5849 0.6102 0.2676 485 2493 2910 pjmathematician_Q06-gist0.3372 0.4487 0.4616 0.5091 0.7607 0.2565 485 1542 2910 pjmathematician_Q06-gist320.3148 0.4187 0.4342 0.4840 0.7135 0.2449 485 1501 2910 duth_xanthi_pt0.3047 0.2989 0.3635 0.5416 0.4934 0.2503 485 2493 2910 Skommarkhos_BM25_E5_MiniLM0.2183 0.2850 0.2881 0.4501 0.5541 0.1575 485 2405 2910 UAds_pt_rm3_CE1K0.0876 0.1783 0.1591 0.1591 0.5258 0.0526 485 255 2910 For the Hinglish dataset, Table 3 lists our run with a MAP of 0.3897, NDCG@5 of 0.5395, NDCG@10 of 0.5199, and reciprocal rank of 0.8382. The NDCG@10 margin over the next entry in the table is 0.06 in absolute terms, and the reciprocal-rank margin is 0.08. The P@10 score of 0.2735 is exceeded by only the myteam_BERT run, which reports 0.2804",
+        ". Despite these limitations, Gemini occasionally generates validcontrep\u00e8teries. Another interesting observation is that Gemini occasionally reproduces well-knowncontrep\u00e8teries instead of generating new ones. For example, the famouscontrep\u00e8terie\u00ab folle de la messe \u00bb appears nine times, despite being unrelated to the corresponding input\"Cedi, \" \u201cil en va de suie\u201d, \u201canagram\u201d, \u201cfolie\u201d, \u201ccinq\u201d, \u201cformes\u201d, \u201cdong\u201d, \u201cobsol\u00e8tement\u201d, and \u201cSI | Venn\u201d. Similarly,\u201cglisser dans la piscine\u201dis generated four times for the unrelated\"pr\u00e9cipitation\u201d, \u201cVenn\u201d, \u201ctransparent\u201d, \u201cWhite | Bluecorp\u201d. These examples suggest that, rather than conditioning on the provided input, the model sometimes defaults to memorized, well-knowncontrep\u00e8teries. 4. Conclusions This paper presented the UBO participation in JOKER at CLEF 2026 for Task 3 on onomastic wordplay translation and Task 4 on humour generation. We evaluated several state-of-the-art LLMs using promptbased approaches without task-specific fine-tuning. For wordplay translation, we investigated the use"
+      ],
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        },
+        {
+          "verdict": "OK",
+          "overlap": 0.9
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "synth-009",
+    "category": "synthesis",
+    "question": "Compared to the re-ranking approach in 'Calibrated Similarity and Graph Clustering,' which utilizes a combined Jaccard distance and an original pairwise distance controlled by parameter \u03bb, what optimization strategy was employed for weighting backbones in 'Rapid Exploration of Foundation Models and Supervised Contrastive Learning'?",
+    "expected_answer": "The system in 'Rapid Exploration...' optimized backbone weights using a grid search to maximize training-set ARI, with weight steps of 0.2 and threshold values between 0.3 and 0.7, whereas the other approach uses a parameter \u03bb to balance neighborhood-based and original pairwise distances.",
+    "gold_sources": [
+      {
+        "paper": "paper336",
+        "pages": [
+          7
+        ]
+      },
+      {
+        "paper": "paper339",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "screen": "UNSCREENED",
+      "track": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+      "titles": [
+        "Calibrated Similarity and Graph Clustering for Open-Set Animal Re-Identification",
+        "Rapid Exploration of Foundation Models and Supervised Contrastive Learning for Open-Set Individual Animal Discovery"
+      ],
+      "urls": [
+        "https://clef-staging.pages.dev/paper336.pdf#page=7",
+        "https://clef-staging.pages.dev/paper339.pdf#page=5"
+      ],
+      "source_passages": [
+        ". A continuous Jaccard distance was then computed between the re-ranked neighborhood vectors: \ud835\udc51\ud835\udc3d \ud835\udc56\ud835\udc57 = 1\u2212 \u2211\ufe00 \ud835\udc59 min(\ud835\udc63\ud835\udc56(\ud835\udc59),\ud835\udc63 \ud835\udc57(\ud835\udc59))\u2211\ufe00 \ud835\udc59 max(\ud835\udc63\ud835\udc56(\ud835\udc59),\ud835\udc63 \ud835\udc57(\ud835\udc59)). The final distance combined this neighborhood-based distance with the original WildFusion distance: \ud835\udc51final \ud835\udc56\ud835\udc57 = (1\u2212\ud835\udf06)\ud835\udc51 \ud835\udc3d \ud835\udc56\ud835\udc57 +\ud835\udf06\ud835\udc51 orig \ud835\udc56\ud835\udc57 , where\ud835\udf06\u2208[0,1] controlled the contribution of the original pairwise distance. The re-ranked similarity matrix was then obtained as \ud835\udc46rr \ud835\udc56\ud835\udc57 = 1\u2212\ud835\udc51 final \ud835\udc56\ud835\udc57 . The matrix passed to clustering was therefore \ud835\udc46CW = {\ufe03 \ud835\udc46rr,if re-ranking is enabled for the species, \ud835\udc46\ud835\udc44\ud835\udc44,otherwise. The re-ranking parameters (\ud835\udc581,\ud835\udc58 2,\ud835\udf06) were selected as part of the species-specific clustering configuration, together with the graph-construction and label-propagation hyperparameters.",
+        ". \u2211\ufe01 \ud835\udc5a \ud835\udc64(\ud835\udc60) \ud835\udc5a = 1 (3) where\ud835\udc64(\ud835\udc60) \ud835\udc5a is the weight assigned to backbone\ud835\udc5a for species\ud835\udc60, optimized to maximize training-set ARI. The grid search uses weight steps of 0.2 and threshold values from 0.3 to 0.7 (V21), which is relatively coarse due to computational constraints. 4.6. Final System Configuration (V22) Among our 11 Kaggle submissions (Table 6), V22 achieves the highest private leaderboard score (0.320), exceeding the next-best version V16 (0.280) by 0.040 ARI; we therefore select V22 as our final submitted system. V22 builds on V21, our foundation-model-only baseline (DINOv3, InternViT, SigLIP2, EVA02- CLIP; described in Section 5.1), by adding MegaDescriptor-L-384 as a fifth backbone and training a supervised projection head on the concatenated 18,688-dimensional features. Table 3 summarizes the complete configuration, extracted directly from our code and run logs. Projection head architecture. A 2-layer MLP: Linear(18,688\u2192 1,024)\u2192 BatchNorm\u2192 GELU\u2192 Dropout(0.1)\u2192 Linear(1,024\u2192 256)\u2192 L2-normalize. All backbone weights are frozen; only the projection head is trained. Training details. SupCon loss with\ud835\udf0f = 0.07, AdamW (lr = 5\u00d7 10\u22124, weight decay 10\u22124), cosine annealing over 50 epochs, gradient clipping at 1.0. The PK sampler samples\ud835\udc43 identities with\ud835\udc3e images each per mini-batch. Ensemble with raw MegaDescriptor"
+      ],
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        },
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "synth-010",
+    "category": "synthesis",
+    "question": "Comparing 'DS@GT ARC at LongEval' with 'Hybrid Evidence-Aware User Simulation for Scientific Search Sessions,' how do the priorities of frontier models like Claude Opus 4.7 Thinking contrast with those of a system designed to maximize faithfulness such as CRAG+CiteFix?",
+    "expected_answer": "CRAG+CiteFix prioritizes factual grounding and attribution accuracy, achieving high faithfulness scores, while frontier models like Claude Opus 4.7 Thinking prioritize answer relevancy even at the expense of strict citation integrity and faithfulness to the source material.",
+    "gold_sources": [
+      {
+        "paper": "paper381",
+        "pages": [
+          7
+        ]
+      },
+      {
+        "paper": "paper382",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "screen": "rewritten",
+      "track": "LongEval: Longitudinal Evaluation of IR Model Performance",
+      "titles": [
+        "DS@GT ARC at LongEval: Citation Integrity and Factual Grounding in Scientific QA",
+        "Hybrid Evidence-Aware User Simulation for Scientific Search Sessions at LongEval 2026 Task 3"
+      ],
+      "urls": [
+        "https://clef-staging.pages.dev/paper381.pdf#page=7",
+        "https://clef-staging.pages.dev/paper382.pdf#page=4"
+      ],
+      "source_passages": [
+        "System Global Faithfulness Citation Faithfulness Answer Relevancy Hybrid Baseline 0.741 0.741 0.531 CRAG+CiteFix 0.784 0.758 0.476 GPT-5.5 Thinking 0.559 0.417 0.756 Claude Opus 4.7 Thinking 0.553 0.528 0.646 Table 4 RAGAs automated evaluation metrics across generation architectures. CRAG+CiteFix maximizes factual grounding and attribution accuracy, while frontier models (Opus, GPT-5.5) prioritize answer relevancy at the expense of strict citation integrity. 4.2. RAGAs Evaluation Metrics Table 4 shows the results of our reference-free RAGAs evaluation. These metrics evaluate strictly for attribution integrity and grounding of claims rather than lexical overlaps or semantic similarity. Our CRAG+CiteFix pipeline maximized faithfulness to the supplied context, achieving a Global Faithfulness of 0.784 and a Citation Faithfulness of 0.758. Conversely, the frontier models performed quite poorly on these evaluations. Faithfulness scores for both GPT-5.5 Thinking and Claude Opus 4.7 Thinking collapsed despite producing answers that were highly relevant to the queries. This indicates a failure mode where the models output highly relevant answers without extracting their claims from the cited documents. 5",
+        ". The threshold was chosen during hidden-last-query development to avoid sentence-like candidates while preserving enough technical context. The generator also creates small recombinations of document keywords. These candidates are not expected to be perfect, but they provide robust fallbacks and often capture the stable core of the information needed. The heuristic generator is deliberately conservative. Normalization includes trimming whitespace, collapsing repeated spaces, removing surrounding punctuation or quotation marks, rejecting empty strings, and using a lowercase copy only for deduplication and lexical matching. The displayed query text keeps its original casing when possible. The generator also avoids very short candidates and limits the maximum length of each query. It matters for the final diversity objective: a broad but noisy pool can lower quality if the ranker is forced to fill all five positions from poor alternatives. 5.2. Transition Memory The second source is a transition memory learned from the training sessions. For every training session with at least two query steps, the system hides the last query, computes the state representation of the visible prefix, and stores the pair: visible session state\u2192observed next query. At inference time, the current session state is compared with all stored training states using cosine similarity"
+      ],
+      "note": "banned phrasing removed by hand; content unchanged",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        },
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "synth-011",
+    "category": "synthesis",
+    "question": "Compared to the approach taken by Team Asdkklkk's ModernBERT-Based Source Detection system, what method did Team Bit-by-Bit employ for selecting the decision threshold used in their Guardian Ensemble?",
+    "expected_answer": "Team Bit-by-Bit selected a hard decision threshold of 0.05 based on visual inspection of predicted probability histograms, whereas Team Asdkklkk performed a systematic threshold search on a validation set to determine the optimal value.",
+    "gold_sources": [
+      {
+        "paper": "paper399",
+        "pages": [
+          9
+        ]
+      },
+      {
+        "paper": "paper417",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "screen": "UNSCREENED",
+      "track": "PAN: Digital Text Forensics and Stylometry",
+      "titles": [
+        "Team Bit-by-Bit at PAN 2026: Multi-Criterion Guardian Ensemble and Step Expert for Reasoning Trajectory Safety",
+        "Team Asdkklkk at PAN 2026:ModernBERT-Based Source Detection for Mathematical Reasoning Trajectories at PAN 2026"
+      ],
+      "urls": [
+        "https://clef-staging.pages.dev/paper399.pdf#page=9",
+        "https://clef-staging.pages.dev/paper417.pdf#page=5"
+      ],
+      "source_passages": [
+        ". The submitted predictions use a hard decision threshold\ud835\udc47= 0.05 on extracted soft verdict-token probabilities, which raises step F1 from 0.1967 at the default binary verdict to 0.3133 on the official test set. The small, aggressive threshold was chosen deliberately, with the intention of erring on the side of flagging steps as unsafe; this reflects the observation that under-detection of unsafe content is the dominant failure mode of the binary verdict (see Section 6). However, this choice was not systematically ablated; the specific value 0.05 was selected from a visual inspection of the predicted-probability histogram in the inference outputs, rather than from a validation sweep.",
+        ". Then backpropagate the loss and update the model parameters using the AdamW optimizer. 6. Evaluate the model on the validation set and save the model with the optimal macro F1. 7. Perform threshold search on the validation set and save the best threshold. 4.3.2. Inference Program The inference program first loads the optimal model parameters saved during the training stage and the corresponding tokenizer, and preprocesses the test set samples using text cleaning, truncation, and"
+      ],
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        },
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "synth-012",
+    "category": "synthesis",
+    "question": "QUBO Based Quantum Annealing for Feature Selection utilizes binary decision variables to select samples, while Cluster-Aware QUBO Instance Selection employs a Pareto-frontier configuration identified through Bayesian optimization; how do these approaches differ in their method of determining which data instances are selected?",
+    "expected_answer": "The former uses direct assignment of binary variables and a defined budget per batch, whereas the latter leverages Bayesian optimization to find an optimal balance between Macro-F1 score and size reduction based on cluster count and other parameters.",
+    "gold_sources": [
+      {
+        "paper": "paper443",
+        "pages": [
+          6
+        ]
+      },
+      {
+        "paper": "paper437",
+        "pages": [
+          7
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "screen": "UNSCREENED",
+      "track": "QuantumCLEF: Quantum Computing, Information Retrieval and Recommender Systems",
+      "titles": [
+        "QUBO Based Quantum Annealing for Feature Selection, Instance Selection and Clustering",
+        "Cluster-Aware QUBO Instance Selection with Representativeness Scoring and Noise Pre-Filtering for the QuantumCLEF 2026 Sentiment Classification Task"
+      ],
+      "urls": [
+        "https://clef-staging.pages.dev/paper443.pdf#page=6",
+        "https://clef-staging.pages.dev/paper437.pdf#page=7"
+      ],
+      "source_passages": [
+        "\ud835\udc46(\ud835\udc65\ud835\udc56) =\ud835\udefc\ud835\udc45(\ud835\udc65 \ud835\udc56)\u2212\ud835\udefd\ud835\udc48(\ud835\udc65 \ud835\udc56) +\ud835\udefe\ud835\udc37(\ud835\udc65 \ud835\udc56)\u2212\ud835\udeff\ud835\udc38(\ud835\udc65 \ud835\udc56), where\ud835\udefc,\ud835\udefd,\ud835\udefe, and \ud835\udeff control the weightages of reliability, uncertainty, density, and redundancy, respectively. Higher scores indicate informative, representative, and noise resistant training instances. 2.3.3. QUBO Formulation To make the optimization process feasible on current quantum hardware, the dataset is first divided into class balanced batches. A subset selection budget is then assigned to each batch in proportion to its size, ensuring that all classes remain fairly represented while still achieving the desired overall data reduction. Within each batch, binary decision variables \ud835\udc65\ud835\udc56\u2208{0,1} are used to indicate whether a sample\ud835\udc51\ud835\udc56 is selected. The subset selection task is then formulated as the following QUBO optimization problem: min x \u239b \u239d\u2212\ud835\udefc \u2211\ufe01 \ud835\udc56 \ud835\udc46(\ud835\udc51\ud835\udc56)\ud835\udc65\ud835\udc56 +\ud835\udefd \u2211\ufe01 \ud835\udc56<\ud835\udc57 sim(\ud835\udc51\ud835\udc56,\ud835\udc51 \ud835\udc57)\ud835\udc65\ud835\udc56\ud835\udc65\ud835\udc57 +\ud835\udf06 (\ufe03\u2211\ufe01 \ud835\udc56 \ud835\udc65\ud835\udc56\u2212\ud835\udc58 \ud835\udc4f )\ufe032\u239e \u23a0, where\ud835\udc46(\ud835\udc51\ud835\udc56) denotes the composite quality score of sample \ud835\udc51\ud835\udc56, sim(\ud835\udc51\ud835\udc56,\ud835\udc51 \ud835\udc57) represents the cosine similarity between samples \ud835\udc51\ud835\udc56 and\ud835\udc51\ud835\udc57, and \ud835\udc58\ud835\udc4f is the number of samples to be selected from batch \ud835\udc4f",
+        "Table 1 DistilBERT fine-tuning configuration for our internal validation experiment (Section 7.4). This is a sanity check we ran ourselves and is separate from the organiser\u2019s official evaluation. Hyperparameter Value Epochs 10 (early-stop patience 3) Batch size 32 Learning rate 2\u00d710 \u22125 Warmup ratio 10% Weight decay 0.01 Optimizer AdamW count depends on the embedding geometry, and the optimal weight balance depends on the cluster count and the chosen reduction ratio. We framed the search as a multi-objective Bayesian optimization problem: jointly maximise Macro-F1 and the size reduction. We use BoTorch\u2019s\ud835\udc5e-Expected Hypervolume Improvement in log-space [13, 14] with a Gaussian Process surrogate (10 Sobol initialization trials + 25 BO iterations) and a reference point of (F1= 0.85,Reduction= 0.20) . The BoTorch sweep identified the following Pareto-frontier configuration: \u2022percentage_keep = 0.30, n_clusters = 25, \ud835\udc64sim = 0.3 , \ud835\udc64cluster = 0.3 , \ud835\udc5f= 0.5 , num_reads=400. After 5-fold verification, this base configuration achieved F1 =0.9497\u00b10.0119 at 70.37% reduction with the original cluster-aware diagonal. We then applied two further enhancements that were not in the BoTorch search space: the representativeness-aware diagonal (Section 4.2.2) and the Cleanlab pre-filter (Section 4.3). The combined configuration was submitted. 6"
+      ],
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        },
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "synth-013",
+    "category": "synthesis",
+    "question": "How do FutureMakers and MedCascade handle classification head training with respect to domain specificity?",
+    "expected_answer": "FutureMakers trains a single linear classification head for all categories using PubMedBERT-base, while MedCascade instantiates separate linear classification heads for each parent field, allowing for specialized feature learning within those domains.",
+    "gold_sources": [
+      {
+        "paper": "paper462",
+        "pages": [
+          3
+        ]
+      },
+      {
+        "paper": "paper448",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "screen": "UNSCREENED",
+      "track": "SimpleText: Simplify Scientific Text (and Nothing More)",
+      "titles": [
+        "FutureMakers at the CLEF 2026 SimpleText Track: Retrieval-Augmented Evidence-Focused Overgeneration Detection for Task 2.2",
+        "Improving Scientific Research Area Classification through Transformer Fine-Tuning and Per-Document Model Selection"
+      ],
+      "urls": [
+        "https://clef-staging.pages.dev/paper462.pdf#page=3",
+        "https://clef-staging.pages.dev/paper448.pdf#page=5"
+      ],
+      "source_passages": [
+        ". They are then concatenated into a compact evidence context \ud835\udc36(\ud835\udc61): \ud835\udc36(\ud835\udc61) = \u2a01\ufe01 \ud835\udc56\u2208\ud835\udc3c\ud835\udc3e \ud835\udc60\ud835\udc56, \ud835\udc3c \ud835\udc3e = topK \ud835\udc56\u2208{1,...,\ud835\udc5b} sim\u2032(\ud835\udc61, \ud835\udc60\ud835\udc56) where topK denotes the operation of taking the indices of the\ud835\udc3e highest similarity scores in descending order, and \u2a01\ufe00 denotes text concatenation in the original document order. 3.2. Biomedical Entailment Classifier We adopt PubMedBERT-base as the backbone network. The model input is formatted as a text pair: the evidence context \ud835\udc36(\ud835\udc61) serves as the first segment, and the target sentence \ud835\udc61 as the second segment. The tokenizer automatically inserts the special delimiter token and assigns token type ids. The final hidden state of the [CLS] token is fed into a linear classification head, which outputs a probability distribution over the six categories.",
+        ". We programmatically enforce the taxonomy by maintaining a dictionary linking each parent field to its valid child disciplines. During the forward pass, the model generates logits for all 19 disciplines. However, before the argmax operation is applied to extract the final class prediction, we isolate the subset of discipline indices corresponding to the predicted parent field. The logits for all non-child disciplines are artificially suppressed (set to negative infinity). The softmax function is then calculated exclusively over the valid child subset. This cascaded approach guarantees topological validity; the system cannot logically predict a discipline that violates the hierarchical tree. Furthermore, during the fine-tuning phase, the discipline classifier is explicitly trained only on instances belonging to the correct parent field. We instantiate separate linear classification heads for each parent field. Thus, the weights of the discipline head for \u201cLife Sciences\u201d are updated exclusively using biological and medical texts. This deep decoupling allows the transformer to learn specialized, fine-grained feature representations for intra-field discrimination without catastrophic interference from fundamentally distinct domains. 3.4"
+      ],
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        },
+        {
+          "verdict": "OK",
+          "overlap": 0.714
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "synth-014",
+    "category": "synthesis",
+    "question": "Considering System 3 from 'Fine-tuned Bi-Encoder for Job-Skill Matching' and ui-nlp\u2019s approach in 'Multilingual Bi-Encoder Retrieval with Ensemble Strategy', what fundamental difference exists in the initial backbone encoder models selected for their respective bi-encoders?",
+    "expected_answer": "System 3 utilized paraphrase-multilingual-mpnet-base-v2, a model designed for general semantic similarity, while ui-nlp's approach did not specify its backbone but implied an ensemble strategy, suggesting a potentially different or more complex initial model choice.",
+    "gold_sources": [
+      {
+        "paper": "paper488",
+        "pages": [
+          6
+        ]
+      },
+      {
+        "paper": "paper486",
+        "pages": [
+          6
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "screen": "UNSCREENED",
+      "track": "TalentCLEF: Skill and Job Title Intelligence for Human Capital Management",
+      "titles": [
+        "Fine-tuned Bi-Encoder for Job-Skill Matching: Exploring Curriculum Learning, Hard Negative Mining, and Hybrid Retrieval",
+        "ui-nlp at TalentCLEF 2026: Multilingual Bi-Encoder Retrieval with Ensemble Strategy for Job-Person and Job-Skill Matching"
+      ],
+      "urls": [
+        "https://clef-staging.pages.dev/paper488.pdf#page=6",
+        "https://clef-staging.pages.dev/paper486.pdf#page=6"
+      ],
+      "source_passages": [
+        "4.3. System 3: Multilingual Bi-Encoder with Single-Stage MNRL (Submitted) Having observed that both BGE-based systems underperformed expectations, we reconsidered the backbone model choice and training complexity. Our third system simplifies substantially: a single-stage fine-tuned multilingual bi-encoder trained on all job-skill pairs, with straightforward dense retrieval at inference. 4.3.1. Model We use paraphrase-multilingual-mpnet-base-v2 [4] as the backbone encoder. This model produces 768-dimensional sentence embeddings pre-trained on over 50 languages using multilingual paraphrase pairs, making it naturally suited to the multilingual nature of ESCO. Unlike BGE, this model was not specifically designed for retrieval but for general-purpose semantic similarity. As our results show, this turns out to be a better fit for this task. 4.3.2. Training Data Preparation All 114,699 job-skill pairs (both essential and optional) are used. For each pair, the job text is formed by joining all aliases for that job ID, and the skill text by joining all aliases for that skill ID. Both are truncated to a maximum of 80 tokens. Pairs where either the job or skill text is empty after alias resolution are discarded. Each valid pair forms an (anchor, positive) example for MNRL training",
+        "Task A is evaluated under three official benchmark settings: Overall Multilingual, Cross-Lingual, and Bias-Controlled. The Overall Multilingual setting evaluates general multilingual retrieval performance using Mean Average Precision (MAP) as the primary metric, whereas the Cross-Lingual setting specifically measures the ability to retrieve candidates across different languages, also using MAP as the primary metric. The Bias-Controlled setting evaluates retrieval robustness under benchmark conditions designed to reduce potential demographic biases, using Rank Biased Overlap (RBO) as the primary metric. For the Cross-Lingual (en-es) and Bias-Controlled settings, local evaluation was not possible as the required development data for these settings were not publicly available. 3.5. Task B: Job-Skill Matching with Skill Type Classification For Task B, job titles are used as queries, while skills from the ESCO taxonomy constitute the retrieval corpus. To enrich semantic coverage, each skill is expanded using all available aliases provided in ESCO. This strategy allows the retrieval model to capture a wider range of skill expressions and terminology variations. For instruction-based retrieval, each job title is formatted using the following query template. As in Task A, this instruction prefix was used in English without translation"
+      ],
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        },
+        {
+          "verdict": "OK",
+          "overlap": 0.8
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "synth-015",
+    "category": "synthesis",
+    "question": "According to the reports, which language models achieved the highest individual performance in fallacy detection \u2013 Qwen3 embedding or Qwen2.5 \u2013 and what was the corresponding F1 score for each?",
+    "expected_answer": "Qwen2.5 achieved an F1 of 0.751, while Qwen3 embedding's performance is only referenced as a foundation model used for text embedding and reranking without a specific F1 score provided.",
+    "gold_sources": [
+      {
+        "paper": "paper508",
+        "pages": [
+          6
+        ]
+      },
+      {
+        "paper": "paper493",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "screen": "UNSCREENED",
+      "track": "Touch\u00e9: Argumentation Systems",
+      "titles": [
+        "Seals-NLP at Touch\u00e9: Comparing Fully Tuned Encoders and Optimized LLMs for Multi-Task Fallacy Detection",
+        "NapierNLP at Touch\u00e9: Fallacy Detection with Small Language Models and Model Fusion"
+      ],
+      "urls": [
+        "https://clef-staging.pages.dev/paper508.pdf#page=6",
+        "https://clef-staging.pages.dev/paper493.pdf#page=4"
+      ],
+      "source_passages": [
+        ". 7180\u20137198. doi:10.18653/v1/2022. findings-emnlp.532. [6] A. Ramponi, A. Daffara, S. Tonelli, Fine-grained fallacy detection with human label variation, in: Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers), Association for Computational Linguistics, 2025, pp. 762\u2013784. doi:10.18653/v1/2025.naacl-long.34. [7] J. Kiesel, \u00c7. \u00c7\u00f6ltekin, M. Gohsen, S. Heineking, M. Heinrich, M. Fr\u00f6be, T. Hagen, M. Aliannejadi, S. Anand, T. Erjavec, M. Hagen, M. Kopp, N. Ljube\u0161i\u0107, K. Meden, N. Mirzakhmedova, V. Morkevi\u010dius, H. Scells, M. Wolter, I. Zelch, M. Potthast, B. Stein, Overview of Touch\u00e9 2025: Argumentation Systems, in: J. C. de Albornoz, J. Gonzalo, L. Plaza, A. Garc\u00eda Seco de Herrera, J. Mothe, F. Piroi, P. Rosso, D. Spina, G. Faggioli, N. Ferro (Eds.), Experimental IR Meets Multilinguality, Multimodality, and Interaction. 16th International Conference of the CLEF Association (CLEF 2025), Lecture Notes in Computer Science, Springer, Berlin Heidelberg New York, 2025. doi:10.1007/978-3-031-88720-8_67. [8] Y. Zhang, M. Li, D. Long, X. Zhang, H. Lin, B. Yang, P. Xie, A. Yang, D. Liu, J. Lin, F. Huang, J. Zhou, Qwen3 embedding: Advancing text embedding and reranking through foundation models, 2025. arXiv:2506.05176. [9] J. Devlin, M.-W. Chang, K. Lee, K",
+        ". Our best individual model was Qwen2.5, with an F1 of 0.751. This was our best overall model, outperforming all our ensemble methods. However, our ensemble methods performed better than the other individual models and adding BERT and RoBERTa improved the performance of both our soft and hard voting ensembles for the Binary F1 score. However, for the Macro F1 score the HV ensemble (without either BERT or RoBERTa) was the best ensemble, and would have placed 3rd in the competition. Further work on which models to use for the ensemble is needed: a quick experiment just using Qwen and TinyLlama increased the Binary F1 of the SV model to 0.754 and the HV model to 0.751. Table 4 Performance of models on the test dataset: Binary F1, Precision, Recall, Accuracy, and Macro F1 - Trained and tested on the base data only. Model Binary F1 Precision Recall Accuracy Macro F1 GPT2 0.686 0.654 0.722 0.674 0.673 Qwen2.5 0.751 0.7300.774 0.747 0.747 GPT-Neo 0.647 0.7420.574 0.691 0.686 TinyLlama 0.713 0.674 0.757 0.700 0.699 Soft Voting 0.737 0.719 0.757 0.734 0.734 Hard Voting 0.744 0.731 0.757 0.743 0.743 Bert 0.645 0.602 0.696 0.622 0.621 Roberta 0.698 0.6360.7740.670 0.667 Soft Voting + Berts 0.742 0.7120.7740.734 0.734 Hard Voting + Berts 0.745 0.7180.7740.738 0.738 Trained and Tested on Enhanced Data:Our models trained and tested on the enhanced data can be seen in table 5"
+      ],
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 0.529
+        },
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "synth-016",
+    "category": "synthesis",
+    "question": "How do SymptomAI's adjustments to query terms and expansion of the reranker pool differ from erisk_cedri\u2019s implementation of an early stopping mechanism for conversational turns?",
+    "expected_answer": "SymptomAI iteratively refined queries based on judge feedback and increased candidates for a GPT-4o-mini reranker, while erisk_cedri employed a rule-based system to limit the number of conversational turns depending on depression severity or symptom signal.",
+    "gold_sources": [
+      {
+        "paper": "paper124",
+        "pages": [
+          4
+        ]
+      },
+      {
+        "paper": "paper112",
+        "pages": [
+          3
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "screen": "UNSCREENED",
+      "track": "eRisk: Early Risk Prediction on the Internet",
+      "titles": [
+        "SymptomAI @ eRisk 2026: Layered Retrieval for ADHD Symptom Sentence Ranking",
+        "erisk_cedri at eRisk 2026 Task 1: Conversational Depression Detection Using LoRA-Adapted Symptom Classifiers"
+      ],
+      "urls": [
+        "https://clef-staging.pages.dev/paper124.pdf#page=4",
+        "https://clef-staging.pages.dev/paper112.pdf#page=3"
+      ],
+      "source_passages": [
+        "Table 1 Four-tier pronoun scoring in Run 4. The third-person penalty is new relative to Run 3. Pronouns present Multiplier Rationale I, I\u2019m, my, me, myself 1.3\u00d7 Strong self-report\u2192 boost we, our, us 1.1\u00d7 Group experience\u2192 small boost None of the above 1.0\u00d7 Neutral he, she, they, his, her, him, them 0.7\u00d7 About someone else\u2192 penalise 15 (talking too much), and 17. For each, the judge\u2019s NOT_RELEVANT feedback was traced to systematic false positive clusters, and the query was edited to pull the semantic search away from those clusters. For example, symptom 6\u2019s query originally contained \u201cactive\u201d and \u201cdrive\u201d, which attracted gym and motivational content; these were replaced with ADHD-specific phrases such as \u201ccan\u2019t slow down my brain\u201d and \u201crunning on overdrive\u201d. The 12 remaining symptoms were unchanged, as the judge reported no recurring failures on them. (iv) Expanded reranker pool. The number of candidates passed to GPT-4o-mini was doubled from 50 to 100 per symptom, and raised to 200 for the three weak symptoms (12, 16, 17). This ensures that correct sentences ranked between positions 50 and 100 by embedding similarity are visible to the reranker. (v) Per-symptom reranker prompt. The Run 3 prompt used general instructions",
+        ". 3.4. Early Stopping Mechanism To minimize conversational turns while maintaining detection accuracy, an early stopping mechanism was implemented based on multiple criteria: \u2022Severe depression (BDI\u226525): stop after 3 turns \u2022Moderate depression (BDI\u226520): stop after 4 turns \u2022Mild depression (BDI\u226516): stop after 5 turns \u2022Strong symptom signal (5+ symptoms with probability\u22650.7): stop after 3 turns \u2022 Core depression cluster active (Sadness, Loss of Pleasure, Loss of Interest, Loss of Energy): stop after 4 turns This approach aimed to balance early detection with avoiding false positives for control personas. 4. Results Predictions were submitted for 18 out of 20 personas due to time constraints during the final submission weeks. Table 1 presents the official results. Table 1 Official results for erisk_cedri (18/20 personas). DCHR = Depression Category Hit Rate, ADODL = Average Difference between Overall Depression Levels, ASHR = Average Symptom Hit Rate. L-prefixed metrics are latency-weighted versions. Run DCHR Rank ADODL Rank ASHR Rank #1 0.1111 17 0.8325 20 0.1667 7 #2 0.2222 13 0.8474 14 0.1806 6 #3 0.3889 6 0.8686 8 0.0972 14"
+      ],
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        },
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  }
+]

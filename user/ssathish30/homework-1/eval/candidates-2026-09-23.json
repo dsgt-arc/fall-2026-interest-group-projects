@@ -1,0 +1,1998 @@
+[
+  {
+    "id": "cand-001",
+    "category": "paper",
+    "question": "What was the Ma-F1 score achieved by BERT-Experiment-3-A?",
+    "expected_answer": "78.76",
+    "gold_sources": [
+      {
+        "paper": "paper13",
+        "pages": [
+          9
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+      "title": "Do You Need a Frontier LLM, or Can Domain-Specific Encoders Compete in Gut\u2013Brain Information Extraction?",
+      "pdf_page": 9,
+      "chunk_id": "fb8dc2f7f0ff26483e129b908309b70fdbf66aa126f69fe8442871316a2490c2",
+      "url": "https://clef-staging.pages.dev/paper13.pdf#page=9",
+      "source_passage": ". Dev Test Model Ma-\ud835\udc39 1 \ud835\udf07-P\ud835\udf07-R\ud835\udf07-\ud835\udc39 1 Ma-\ud835\udc391 \ud835\udf07-P\ud835\udf07-R\ud835\udf07-\ud835\udc39 1 BASELINE74.38 77.10 82.78 79.84 72.67 77.82 82.21 79.96 BERT Group BERT-Experiment-1-A 75.74 82.52 82.94 82.73 73.91 81.95 81.76 81.86 BERT-Experiment-1-B \u2013 \u2013 \u2013 \u2013 73.14 79.58 82.17 80.85 BERT-Experiment-2-A 77.75 83.52 83.42 83.47 73.14 82.38 80.95 81.66 BERT-Experiment-2-B \u2013 \u2013 \u2013 \u2013 74.61 81.72 82.51 82.11 BERT-Experiment-3-A 78.57 80.40 83.97 82.15 73.93 80.51 81.76 81.13 BERT-Experiment-3-B \u2013 \u2013 \u2013 \u2013 71.50 82.03 79.69 80.84 BERT-Experiment-4-A 74.52 81.14 83.97 82.53 71.01 80.29 81.25 80.77 BERT-Experiment-4-B \u2013 \u2013 \u2013 \u2013 70.96 81.26 82.47 81.86 BERT-Experiment-5-A 77.75 83.00 84.25 83.62 75.04 82.65 82.65 82.65 BERT-Experiment-5-B \u2013 \u2013 \u2013 \u2013 74.61 81.38 82.77 82.07 BERT-Experiment-6-A 77.20 82.86 83.78 83.31 74.27 82.66 81.65 82.16 BERT-Experiment-6-B \u2013 \u2013 \u2013 \u2013 73.61 79.72 82.32 80.99 BERT-Experiment-7-A 78.49 83.46 85.44 84.44 74.07 81.57 82.84 82.19 BERT-Experiment-7-B \u2013 \u2013 \u2013 \u2013 74.88 81.64 82.06 81.85 BERT-Experiment-8-A 78.94 82.3185.4883.87 74.73 81.48 83.02 82.25 BERT-Experiment-8-B \u2013 \u2013 \u2013 \u2013 75.44 82.20 83.17 82.68 GLiNER Group GLiNER-Experiment-1 77.71 82.90 84.05 83.47 76.19 83.33 83.36 83.34 GLiNER-Experiment-2 78.76 86.15 82.39 84.2376.65 86.1381.6983.85 GLiNER-Experiment-3 77.8886.3481.71 83.96 74.33 86.07 81.06 83.49",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-002",
+    "category": "paper",
+    "question": "According to the study, which run achieved superior results in Catalan when evaluated using traditional ROUGE metrics?",
+    "expected_answer": "Run 2.",
+    "gold_sources": [
+      {
+        "paper": "paper47",
+        "pages": [
+          7
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+      "title": "Multilingual Clinical Summarization with LLMs: A Comparative Study of GRPO and Dynamic One-Shot Approaches",
+      "pdf_page": 7,
+      "chunk_id": "2652c03c997f46ed24d23bfaabfb632f9a1f9dad83e28e142c04bd633a895b8a",
+      "url": "https://clef-staging.pages.dev/paper47.pdf#page=7",
+      "source_passage": "metrics calculated between 0 and 1. Three evaluation frameworks are included: a traditional metric based on ROUGE [25], a semantic similarity-based framework relying on transformers with BERTScore [26], and a LLM-as-a-judge paradigm using EuroLLM 4 [27] that focuses in four metrics normally evaluated by humans: Faithfulness, Completeness, Fluency and Consistency. The definition for each metric can be found in the MultiClinSum-2 overview [5]. 4.1. English, Spanish and Catalan On the three languages where the 5 runs were submitted, comparing the different evaluation frameworks yields different conclusions. For instance, we can see in Table 4 that evaluating the traditional metrics reliant on ROUGE shows that run 2 is superior in English and in Spanish. This run corresponds to the Qwen model being trained on GRPO in ROUGE metrics and prompted in a zero-shot setting. Thus, it would make sense that this run, and run 1, which corresponds to the same model being prompted with a dynamic example, yield the best results in this particular metrics. Run 5, also trained on GRPO (both with ROUGE and NLI entailment) and with dynamic prompting, obtains good results as well. In Catalan, run 1 is superior to the others, generally speaking, which suggests that, for lower-resource languages, extra information or examples are beneficial",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-003",
+    "category": "paper",
+    "question": "According to Baymax at CLEF 2026, what was the range of occurrences for synonym-based augmentation?",
+    "expected_answer": "\ud835\udc40\ud835\udc56 = max\ud835\udc59\u2208\ud835\udc4c\ud835\udc56\ud835\udc5a(\ud835\udc59)",
+    "gold_sources": [
+      {
+        "paper": "paper12",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+      "title": "Baymax at CLEF 2026: Leveraging XLM-RoBERTa and Semantic Label Embeddings for Greek Clinical Coding",
+      "pdf_page": 4,
+      "chunk_id": "e24e9caa262c039c87ae102e7f49746a0d99204fc65d6adc91d4a0a22929d7d2",
+      "url": "https://clef-staging.pages.dev/paper12.pdf#page=4",
+      "source_passage": "represented by only a handful of clinical narratives, often sharing highly idiosyncratic phrasing; aggressively replicating and lexically perturbing such a small pool of examples risks overfitting to narrow surface patterns and introducing synonym-induced noise that fails to generalize, rather than genuinely enriching the model\u2019s exposure to the underlying diagnostic concept. We therefore restrict synonym-based augmentation to the medium-frequency range (30\u2013300 occurrences), where the curated dictionary offers sufficient lexical diversity to produce non-degenerate augmented variants, prioritizing the stabilization of these medium-frequency classes. The extremely rare codes are instead handled primarily through the positive-class weighting scheme described in Section 3.3. For a multi-label record (\ud835\udc65\ud835\udc56,\ud835\udc4c\ud835\udc56), the effective multiplier is\ud835\udc40\ud835\udc56 = max\ud835\udc59\u2208\ud835\udc4c\ud835\udc56\ud835\udc5a(\ud835\udc59), ensuring that records containing at least one under-represented code receive augmentation proportional to the rarity of their most infrequent label. This strategy yielded, for example, an expansion from 2,000 original records to 7,312 training samples in Fold 1. 2.3.2",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-004",
+    "category": "paper",
+    "question": "Why were beam search results not submitted for CHASTE?",
+    "expected_answer": "A strong discrepancy between the test and development sets was observed, leading to worse results in NED.",
+    "gold_sources": [
+      {
+        "paper": "paper21",
+        "pages": [
+          13
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+      "title": "CHASTE: Constrained Holistic Annotator System with onTological Entities",
+      "pdf_page": 13,
+      "chunk_id": "fdeac7f2c82457acfad8797f2472ec49188c6e993daa6c050b6df345b656c6d5",
+      "url": "https://clef-staging.pages.dev/paper21.pdf#page=13",
+      "source_passage": ". F1 F1,micro RelativeF 1 RelativeF 1,micro Model Beams NED FT RAG LoRA Naive Filter Baseline - - - - - - -0.34 -0.36 -0.46 -0.45 3.1 8B\u00d7 \u00d7\u2713\u00d7\u2713\u00d7-0.16 -0.17 -0.42 -0.39 \u2713 \u00d7 \u00d7\u2713\u00d7-0.10 -0.12 -0.30 -0.29 \u2713 \u2713\u00d7-0.11 -0.12 -0.31 -0.30 \u2713 \u2713 \u2713\u00d7-0.11 -0.11 -0.29 -0.28 3.2 3B\u00d7 \u00d7\u2713\u00d7\u2713\u00d7-0.14 -0.16 -0.40 -0.37 \u2713 \u00d7 \u00d7\u2713\u00d7-0.11 -0.13 -0.32 -0.31 \u2713 \u2713\u00d7-0.12 -0.12 -0.32 -0.30 \u2713 \u2713 \u2713\u00d7-0.12 -0.12 -0.32 -0.31 Naive\u00d7 \u00d7 \u00d7 \u00d7\u2713\u00d7-0.11 -0.12 -0.30 -0.29 merged results. The second limitation of our results is that we could not submit any results with beam search enabled due to time constraints, as they require linearly more tokens \u2013 better than the shallow beam search, but worse than the base constrained generation. The inclusion of these, however, would most likely have led to only marginal improvements, as already indicated in the development set. ToGS resultsOur own results in Tables 15 to 18, first, indicate a strong discrepancy between the test and development set, leading to worse results of our system across the evaluation in NED, and small, but",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-005",
+    "category": "paper",
+    "question": "According to the paper, which LoRA variant was the strongest encoder-only?",
+    "expected_answer": "The passage states that LLaMA-3.2-3B QLoRA models produced the best local validation Recall@5 among the authors' own reruns.",
+    "gold_sources": [
+      {
+        "paper": "paper82",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles",
+      "title": "Leifus at CheckThat! 2026: A Lightweight Verifier for Multilingual Reasoning-Trace Ranking",
+      "pdf_page": 5,
+      "chunk_id": "88e9548dcfea9919dc3d6b70ad27117e75737a0fa66b5410442d79e92f2ab5f9",
+      "url": "https://clef-staging.pages.dev/paper82.pdf#page=5",
+      "source_passage": ". All reported test predictions were regenerated after this fix. 5. Experiments We report validation results for model selection and test results for final analysis. The metrics are Recall@5 for trace ranking, top-1 accuracy for the verdict of the best trace, macro-F1, weighted-F1, and class-wise F1. Unless otherwise noted, boldface in result tables marks the best value within each metric column. For Arabic, the Conflicting class has zero support in the local test labels, so its F1 is not displayed in the Arabic results but still affects the three-label macro-F1. All results are offline scores computed with the released labels and scorer, and should not be interpreted as official leaderboard results. 5.1. Validation results Table 4 shows a compact English validation comparison. The original LLaMA-3.2-1B baseline from the organizers\u2019 notebook was strong. Our LLaMA-3.2-3B QLoRA models produced the best local validation Recall@5 among our own reruns, while XLM-RoBERTa-large was the strongest encoder-only LoRA variant. 5.2. English test results Table 5 reports English test results. LLaMA-3.2-1B with mean pooling achieved the best Recall@5 and accuracy. DeBERTa-v3-base full fine-tuning achieved the best macro-F1, mainly because its Conflicting F1 was higher than the LLaMA-1B mean-pooling run",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-006",
+    "category": "paper",
+    "question": "According to the Overview of the CLEF-2026 CheckThat! Lab Task 3, what specific post-processing step did some teams use to replace temporary evidence identifiers?",
+    "expected_answer": "Adding citations to factual statements that were missing explicit source links.",
+    "gold_sources": [
+      {
+        "paper": "paper53",
+        "pages": [
+          9
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles",
+      "title": "Overview of the CLEF-2026 CheckThat! Lab Task 3 on Generating Full Fact-Checking Articles",
+      "pdf_page": 9,
+      "chunk_id": "26bb156a64d248c57abf54fce7d7b8bb0ea817c952f7dcc423bc7b71d0bf95b9",
+      "url": "https://clef-staging.pages.dev/paper53.pdf#page=9",
+      "source_passage": ". 6.3. Post-Processing Finally, several teams also incorporated post-processing steps after article generation to further improve performance on the citation-oriented measures and ensure compatibility with the task evaluation setup. These steps included adding citations to factual statements that were missing explicit source links, replacing temporary evidence identifiers with the corresponding URLs as provided in the input, validating citation formats, and appending evidence-derived factual statements at the end of the generated article.",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-007",
+    "category": "paper",
+    "question": "For what task did SINAI-UGPLN use intfloat/multilingual-e5-large?",
+    "expected_answer": "The lexical strategy.",
+    "gold_sources": [
+      {
+        "paper": "paper88",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles",
+      "title": "SINAI-UGPLN at CheckThat! 2026: Dense Retrieval and Neural Reranking for Scientific Source Retrieval from Social Media Claims",
+      "pdf_page": 4,
+      "chunk_id": "415d014030498ef126efbdcd3a6eb6fe631557d3bf1b84410e3c1f7106cf00fc",
+      "url": "https://clef-staging.pages.dev/paper88.pdf#page=4",
+      "source_passage": ". We implemented two complementary retrieval strategies. The lexical strategy used BM25 over the candidate paper representation. BM25 captures exact term overlap and is useful when the post mentions distinctive scientific terms, disease names, treatments, or title fragments. However, it is sensitive to lexical mismatch and was expected to be weaker for German and French posts. The dense strategy used intfloat/multilingual-e5-large. This model maps queries and documents into a shared multilingual semantic space. Candidate papers were ranked by similarity between normalized query and passage embeddings. This stage was designed to reduce the gap between informal social media language and formal scientific abstracts. 4.4. Hybrid Fusion To analyze whether lexical and dense evidence were complementary, BM25 and E5 rankings were combined using Reciprocal Rank Fusion. RRF was selected because it directly combines rankings and does not require calibration of scores between BM25 and embedding-based similarities. The global fusion setting used the same RRF configuration for all languages. However, the Development results showed that retrieval behavior was language-dependent. Lexical evidence improved English but introduced noise for German and French. For this reason, we also analyzed a language-aware strategy in which RRF was applied to English while E5 was kept for German and French",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 0.765
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-008",
+    "category": "paper",
+    "question": "According to DS@GT ARC's evidence cleaning process for CheckThat!, what cosine similarity threshold is used to classify documents as boilerplate?",
+    "expected_answer": "0.25",
+    "gold_sources": [
+      {
+        "paper": "paper90",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles",
+      "title": "DS@GT ARC at CheckThat! 2026: A Verdict-Anchored Pipeline for Generating Fact-Checking Articles",
+      "pdf_page": 4,
+      "chunk_id": "14240e53677123af8493e7bb9bc07d9fa6e434793669032e0659ddc3e6c55d3e",
+      "url": "https://clef-staging.pages.dev/paper90.pdf#page=4",
+      "source_passage": ". 3.3.1. Evidence Cleaning The premise articles vary widely in quality. Some documents contain clean article text, while others contain only website boilerplate such as navigation menus, cookie banners, and paywall messages. In addition, some documents are effectively empty, containing little usable content. We address this variation by classifying each source document into one of three categories before constructing the prompt: \u2022 Empty: documents whose raw word count is zero or smaller than the claim\u2019s word count, on the assumption that a document shorter than the claim cannot contain meaningful evidence. \u2022 Boilerplate: non-empty documents with low semantic overlap with the claim. We measure this overlap as the cosine similarity between the claim and the document, computed with all-MiniLM-L6-v2 [12] sentence embeddings, and mark documents below a threshold of 0.25 as boilerplate. \u2022 Relevant: the remaining documents, which are non-empty and exceed the similarity threshold. For long premise articles, we do not explicitly chunk or truncate the text before embedding. The full cleaned document is passed to all-MiniLM-L6-v2, which applies its own fixed input-length limit (256 tokens) internally. As a result, similarity for very long documents is computed primarily from their opening content, since text beyond the model\u2019s input limit is not seen during embedding",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-009",
+    "category": "paper",
+    "question": "According to the Toulouse IRIT Lab's participation in ELOQUENT at CLEF 2026, who performed the annotation of cluster labels?",
+    "expected_answer": "Domains like food items, family relationships, or clothing were used as descriptive labels when responses consistently referred to the same domain. Otherwise, a label best capturing the dominant theme was selected.",
+    "gold_sources": [
+      {
+        "paper": "paper104",
+        "pages": [
+          7
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "ELOQUENT: Evaluation of Generative Language Model Quality",
+      "title": "Cultural Robustness in Multilingual LLMs: The Toulouse IRIT Lab\u2019s Participation in ELOQUENT at CLEF 2026",
+      "pdf_page": 7,
+      "chunk_id": "665052653adc8369f1781ab9aa17ca9b8618c7b6b6394682076b0f14c35310ca",
+      "url": "https://clef-staging.pages.dev/paper104.pdf#page=7",
+      "source_passage": ". For each cluster, we identified the main recurring theme by looking for common semantic patterns, including shared topics, similar types of recommendations, and recurring cultural references. When responses consistently referred to the same domain (e.g., food items, family relationships, or clothing), we used that domain as the descriptive label. When responses were more heterogeneous, we selected the label that best captured the dominant theme across the majority of responses. H. Mekkaoui performed the annotation. These labels should therefore be interpreted as qualitative summaries of the cluster content rather than automatically generated categories, and they may reflect a degree of subjectivity inherent to manual annotation (see Table3).",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-010",
+    "category": "paper",
+    "question": "According to SRH-ReliableAI's experiments, what numerical improvement in CSP was observed when facts were translated into the prompt\u2019s language?",
+    "expected_answer": "One possible explanation is that it promotes language-frame consistency, allowing the model to avoid switching representations between the retrieved context and the question.",
+    "gold_sources": [
+      {
+        "paper": "paper107",
+        "pages": [
+          6
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "ELOQUENT: Evaluation of Generative Language Model Quality",
+      "title": "SRH-ReliableAI at the 2026 ELOQUENT Lab for Evaluating Generative Language Model Quality: CultuRAG for Cultural Robustness and Diversity",
+      "pdf_page": 6,
+      "chunk_id": "84c5316d8534dab0f039099931e7e94a87a3a9c9baa94685844ecab542925c63",
+      "url": "https://clef-staging.pages.dev/paper107.pdf#page=6",
+      "source_passage": "CultuRAG fixes this by removing the guesswork. Instead of hoping the model remembers that Finns eat ruisleip\u00e4 and drink more coffee per capita than anyone else, we tell it. The model then weaves these facts into a more grounded, specific answer. 7.2. Why Do Native-Language Facts Help More? The extra +0.072 CSP from translating facts into the prompt\u2019s language is one of the more informative results in the paper, but there are two different explanations for it that our current experiments cannot tell apart. Two candidate mechanisms.The first candidate islanguage-frame consistency: when everything in the prompt is in one language, the model does not need to switch representations between the retrieved context and the question, and the cultural associations tied to that language activate more coherently. The second iscode-switching avoidance: the gain may instead reflect the model recovering from a general degradation caused by cross-lingual context in the prompt, independent of any cultural signal. Distinguishing these requires an additional condition in which both the prompt and the retrieved facts are held in the same language while thecultural contentof the facts is randomised, which we did not run. We flag this as an important ablation for future work (Section 7.3)",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-011",
+    "category": "paper",
+    "question": "What open-weights model did WSE-Research use for their CLEF 2026 ELOQUENT Sensemaking system?",
+    "expected_answer": "Partial Credit.",
+    "gold_sources": [
+      {
+        "paper": "paper103",
+        "pages": [
+          7
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "ELOQUENT: Evaluation of Generative Language Model Quality",
+      "title": "WSE-Research at CLEF 2026 ELOQUENT Sensemaking: LLM-Based Scoring of Student Answers to PISA Reading Comprehension Items",
+      "pdf_page": 7,
+      "chunk_id": "b120b74d805243f074030b9d39e0575ed96fa695e5e402b891c4d6ed628af7be",
+      "url": "https://clef-staging.pages.dev/paper103.pdf#page=7",
+      "source_passage": ". Our development set performance was substantially higher than test set performance: rubric QWK 0.87 vs. 0.65 overall, and simple QWK 0.71 vs. 0.46. This drop is consistent across all participating systems and reflects domain shift, PISA item difficulty, and different label distributions. Despite this gap, our system maintained its first-place ranking, suggesting that the zero-shot approach generalizes better to unseen domains than more domain-dependent methods. Fine-tuned encoder models showed particularly large drops on the PISA subset (e.g., EuroBERT-210m: non-PISA 0.54 vs. PISA 0.12). 7. Conclusion We described the WSE-Research system for the CLEF 2026 ELOQUENT Sensemaking shared task. Using a single open-weights model (Qwen3.5-27B) with track-conditional prompting and constrained decoding, our system ranked first on both evaluation tracks across all 13 languages. The approach requires no fine-tuning, no translation pipeline, and no language-specific components. Our analysis reveals that Partial Credit is the hardest label for LLM-based grading (31% misclassified as No Credit), and that the PISA/non-PISA performance gap varies dramatically by language\u2014Ukrainian PISA rubric scoring is essentially random (QWK 0.08), while non-PISA Ukrainian reaches 0.68",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 0.714
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-012",
+    "category": "paper",
+    "question": "What was the QWK score for the WritersLogic mDeBERTa-v3 PoE model on the Additional test set?",
+    "expected_answer": "0.512\u00b1020",
+    "gold_sources": [
+      {
+        "paper": "paper98",
+        "pages": [
+          17
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "ELOQUENT: Evaluation of Generative Language Model Quality",
+      "title": "Overview of the PISA Quiz Item Scoring (Sensemaking) Task of the ELOQUENT 2026 Lab for Evaluating Generative Language Model Quality",
+      "pdf_page": 17,
+      "chunk_id": "2bedd71075923408f1f65b963be5997315975e6441c03eea88915c1f6a35f557",
+      "url": "https://clef-staging.pages.dev/paper98.pdf#page=17",
+      "source_passage": "Model Name Overall QWK Addi test set PISA test set Addi test set Native devel set WSE Research\u21b0Qwen 3.5 27B 0.464 0.416\u00b10080.512\u00b10200.378\u00b10090.714\u00b1018 Baselines\u21b0Gemma4-E4B 0.3780.299\u00b10080.456\u00b10230.344\u00b10080.662\u00b1018 Baselines\u21b0Gemma4-E2B 0.2650.256\u00b10080.273\u00b10220.304\u00b10070.465\u00b1022 WritersLogic\u21b0mDeBERTa-v3 PoE NA0.423\u00b1008NA0.361\u00b10090.536\u00b1023 ASTeam\u21b0qwen3_fewshot NA0.416\u00b1007NA0.366\u00b10080.545\u00b1023 deep_thinkers\u21b0modernbert -0.030 -0.018\u00b1008-0.043\u00b1025-0.011\u00b10100.007\u00b1028 deep_thinkers\u21b0hpltv3_bert_base NA NA -0.018\u00b1018NA NA deep_thinkers\u21b0hpltv3_bert_finetuned_classification NA NA -0.022\u00b1013NA NA deep_thinkers\u21b0hpltv3_bert_finetuned_regression NA NA -0.029\u00b1009NA NA Table 2 The simple track QWK. Here, we compare the results for predicting the full 5-class scale. The value after \u00b1 signifies the bootstrap confidence interval [ 39] (\ud835\udc5d <0.05 ) based on 999 resamples. Colors are scaled from best (dark red) to worst (dark blue) for each column separately. The WritersLogic team provided their simplerating grades only for theAdditionaltest set, not thePISAtest set. Similarly, Deep Thinkers did not provide Additionaltest set grades for this track. ASTeam did not providePISAtest set grades in any track",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 0.7
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-013",
+    "category": "paper",
+    "question": "What cross-validation scheme was used to train the metalearners?",
+    "expected_answer": "To enhance reproducibility, all remaining hyperparameters were kept at their scikit-learn default values unless otherwise specified.",
+    "gold_sources": [
+      {
+        "paper": "paper159",
+        "pages": [
+          8
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "EXIST: sEXism Identification in Social neTworks",
+      "title": "UMUTeam at EXIST2026: Multimodal Stacking Architecture for Sexism Detection in Short Videos",
+      "pdf_page": 8,
+      "chunk_id": "4f2d10c6d2d8379b5081711e5df9094262b7df990f3f06dd1c5134b9eaa2e669",
+      "url": "https://clef-staging.pages.dev/paper159.pdf#page=8",
+      "source_passage": ". To ensure robust generalization and prevent data leakage during the late fusion training, the metalearners were trained using a 5-fold stratified cross-validation scheme on the meta-features. The resulting ensembled pipeline aligns with our core objective of maintaining a lightweight yet mathematically sound multimodal architecture capable of capturing multi-source signals without the prohibitive computational overhead of end-to-end deep multimodal networks. 4.5. Hyperparameter Configuration To enhance the reproducibility of this work, Table 4 summarizes the key hyperparameters used for each base classifier and meta-learner described in Sections 4.1\u20134.4. Unless otherwise specified, all remaining hyperparameters were kept at theirscikit-learndefault values.",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 0.667
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-014",
+    "category": "paper",
+    "question": "According to 'Subjective Sexism Identification in Social Media Memes Using Multimodal Embedding Ensembles', what is the mean soft-label score for the dataset?",
+    "expected_answer": "Below 200 characters.",
+    "gold_sources": [
+      {
+        "paper": "paper175",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "EXIST: sEXism Identification in Social neTworks",
+      "title": "Subjective Sexism Identification in Social Media Memes Using Multimodal Embedding Ensembles",
+      "pdf_page": 4,
+      "chunk_id": "fd35ad476cd5c0e4ab8b72b0d266957261d01f21e62015574a0000d0f286fe04",
+      "url": "https://clef-staging.pages.dev/paper175.pdf#page=4",
+      "source_passage": ". This observation motivates the use of probabilistic learning strategies rather than relying solely on hard-label supervision. Figure 3 illustrates the distribution of meme text lengths. The distribution is highly right-skewed, with most memes containing relatively short textual content and a small number of outliers extending to much larger lengths. The majority of samples are concentrated below 200 characters, suggesting that sexism detection often relies on short contextual statements, captions, or phrases. At the same time, the presence of longer textual instances requires models to effectively capture semantic information across varying sequence lengths. Figure 4 presents the relationship between hard labels and soft-label proportions. Memes assigned a hard YES label generally exhibit higher positive proportions, while NO memes are associated with lower values. However, a noticeable overlap exists near the decision boundary, indicating that some memes receive mixed judgments from annotators. This overlap provides direct evidence of disagreement among annotators and demonstrates that sexism identification cannot always be treated as a purely objective classification problem. Table 1 summarizes the main dataset characteristics. The mean soft-label score is 0.556, while",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-015",
+    "category": "paper",
+    "question": "What probability is used for dictionary-based synonym substitution in UniKo's data augmentation?",
+    "expected_answer": "class-weighted cross-entropy with label smoothing.",
+    "gold_sources": [
+      {
+        "paper": "paper167",
+        "pages": [
+          7
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "EXIST: sEXism Identification in Social neTworks",
+      "title": "UniKo at EXIST 2026: Integrating Physiological Sensor Signals Into a Multimodal Fusion Architecture for Sexism Detection in TikTok Videos",
+      "pdf_page": 7,
+      "chunk_id": "8156c351aa7624fdbf41fe32baf2dacd092df2e5a5b38cc752063671a8657245",
+      "url": "https://clef-staging.pages.dev/paper167.pdf#page=7",
+      "source_passage": ". She should just stay quiet and look pretty instead. Synonym substitution Every girl on this app just wants attention from males and never talks about anything else. She should just stay quiet and look pretty instead. where \u2112CE isclass-weightedcross-entropywithlabelsmoothing \ud835\udf00=0.05; \u2112KL issoft-labelKLdivergence weighted by\ud835\udc64ann=\ud835\udc5bann/3; \u2112focal is focal loss (\ud835\udefe =2) on the 3.3 sigmoid head; and\u2112mixup is soft-label mixup (\ud835\udefc=0.2). Task weights are 50% for 3.1 and 25% each for 3.2 and 3.3. 4.6. Data Augmentation Seven augmentation strategies cycle across minority-class items without network access: (1) token shuffle (swap two adjacent tokens); (2) token deletion (10% rate); (3) token repeat (duplicate one token); (4)spancrop(85%spanfromarandomstartpoint); (5)sentenceswap(exchangetwoadjacentsentences); (6) emphasis-word insertion (a language-detection heuristic inserts one of a small set of English or Spanish emphasis adverbs, e.g.clearly/claramente, really/realmente); (7) dictionary-based synonym substitution, replacing a fixed set of sexism-domain terms (e.g.woman/mujer, body/cuerpo) with a hand-curated bilingual synonym list, at a per-occurrence probability of 0.4",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-016",
+    "category": "paper",
+    "question": "What baseline system achieves perfect predictions in the EXIST 2026 task?",
+    "expected_answer": "ICM-soft is the official metric used.",
+    "gold_sources": [
+      {
+        "paper": "paper166",
+        "pages": [
+          8
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "EXIST: sEXism Identification in Social neTworks",
+      "title": "SPECTRA at EXIST2026: Sexism Prediction and Evaluation of Multimedia Content Through Physiological and Gaze Responses Analysis",
+      "pdf_page": 8,
+      "chunk_id": "ff17bdcc007778c427b1290587f0c28009a2bb87923c731af7ef35e2e4b53754",
+      "url": "https://clef-staging.pages.dev/paper166.pdf#page=8",
+      "source_passage": ". Specifically, in the Hard-Hardsetting, the system predicts a discrete class label, which is compared against a deterministic gold-standard derived from a majority threshold over the annotators. In this case the official evaluation measure used is the ICM metric. Conversely, in theSoft-Softsetting, the system predicts a probability distribution over the categories, which is evaluated against the full distribution of human annotator judgements to measure how well the model captures actual annotator variability. In this case the ICM-soft is the official metric used. Consistent with the setup of previous meme classification tracks in this challenge, no predefined validation set was officially provided. To provide context for the presented results, the organizers provided three reference systems. The Goldbaseline represents a model that achieves perfect predictions, establishing an upper bound for the ICM score. TheMajority ClassandMinority Classbaselines are non-informative lower bounds that assign all instances to the majority or minority class, respectively. This allows us to perform sanity checks to confirm that systems submitted capture meaningful patterns rather than simply reflecting biases in class distribution. Table 2 Official EXIST 2026 results of Task 2.1 under Hard evaluation",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-017",
+    "category": "paper",
+    "question": "What formatting convention did the Pranshu Rastogi system prompts enforce for dollar figures greater than or equal to one billion?",
+    "expected_answer": "The Answer: None. convention is used for empty-news Expert items.",
+    "gold_sources": [
+      {
+        "paper": "paper208",
+        "pages": [
+          6
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems",
+      "title": "Pranshu Rastogi @ FinMMEval 2026: Systems for Tasks 1 and 2 - Prompt-Engineered Gemini for Multilingual and Cross-Lingual Financial Reports QA\u22c6",
+      "pdf_page": 6,
+      "chunk_id": "7542c816d5a2a203f482f7bc3a5557eac092a426669928bfac95476201125959",
+      "url": "https://clef-staging.pages.dev/paper208.pdf#page=6",
+      "source_passage": ". 2. Synthesis pass (tier-appropriate thinking). The model receives the extracted numbers and is instructed to compute and format the final answer. Decomposing the task this way prevents the model from amortizing its thinking budget across both extraction and synthesis simultaneously, which is what caused single-pass generation to stumble on these items. 3.3.5 ROUGE-1 Output Discipline Because the official Task 2 metric is unigram overlap with expert references, prompt design that predicts expert phrasing pays a direct metric dividend. Our system prompts therefore enforce a battery of formatting conventions distilled from development-gold analysis: dollar figures as $X.XB for amounts \u2265 1 billion and $X,XXX million otherwise; period notation as Q3 FY2020 and FY2020; news quotations rendered verbatim with explicit language labels; column names quoted exactly as they appear in the statements; the Answer: None. convention for empty-news Expert items; and a hard 100-word cap on the answer body. A small post-processing step (_ensure_answer_prefix) enforces that every stored output begins with Answer:. Gemini does not support assistant-side pre-filling, so we enforce this in code rather than through prompt scaffolding. 4. Experimental Setup Datasets. Task 1 uses the four official test files ( {english,arabic,chinese,hindi} _task1_final_test_public.jsonl, 200 items each)",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-018",
+    "category": "paper",
+    "question": "What ROUGE-1 F1 score did Approach 2 achieve on PolyFiQA-Easy?",
+    "expected_answer": "+29%",
+    "gold_sources": [
+      {
+        "paper": "paper194",
+        "pages": [
+          6
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems",
+      "title": "LinguaRank @ FinMMEval 2026 Task 2: LLM Translation and BAS-Tuned Chain-of-Thought for Multilingual Financial QA",
+      "pdf_page": 6,
+      "chunk_id": "5cfa71463852d2398709699b830b6b82781f977155b915c3745f201e4ed7365d",
+      "url": "https://clef-staging.pages.dev/paper194.pdf#page=6",
+      "source_passage": "App. 1 (Easy) App. 1 (Expert) App. 2 (Easy/Final) 0 0.2 0.4 0.6ROUGE-1 F1 Precision Recall Figure 2:ROUGE-1 F1, Precision, and Recall for Approaches 1 and 2 on both dataset tiers. Approach 3 is omitted from this chart because it was evaluated on a different (76-example) subset; its F1 is reported in Table 2 for reference only. Table 3 Illustrative comparison of answers produced by Approach 1 and Approach 2 for the same PolyFiQA-Easy question.To be completed by the authors from system logs prior to submission. Question:[insert question text] Approach 1 answer:[insert answer] Approach 2 answer:[insert answer] The BAS-optimised system (Approach 2) achieves ROUGE-1 F1 0.4848 on PolyFiQA-Easy, a gain of +0.1102 over Approach 1 (relative: +29%). The recall improvement (0.3694\u21920.5173, +40% relative) is the larger contributor, indicating that ranked multilingual evidence provided the LLM with substantially more answer-relevant tokens. Precision also improved (0.4884\u21920.5119, +5% relative), consistent with BAS converging to a low-temperature, high-precision generation regime",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 0.5
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-019",
+    "category": "paper",
+    "question": "According to the 'fosu ltw @ FinMMEval 2026 Task 1' report, which issue ID was downgraded to low confidence in the Chinese track?",
+    "expected_answer": "English.",
+    "gold_sources": [
+      {
+        "paper": "paper202",
+        "pages": [
+          6
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems",
+      "title": "fosu ltw @ FinMMEval 2026 Task 1: A Traceable Autoresearch Workflow for Multilingual Financial Multiple-Choice Answer Review",
+      "pdf_page": 6,
+      "chunk_id": "4c24f3eaba71db2e8b5c70a6d609641f8b6e03a44eff857b3872dba4f1affd41",
+      "url": "https://clef-staging.pages.dev/paper202.pdf#page=6",
+      "source_passage": "Table 4 English attention items and concrete review issues. ID Concrete issue 044Current assets depend on recovered table values; the answer is supported after reconstructing cash, receivables, inventory, and prepaid rent. 053Order-execution strategy depends on identifying a large order versus participation-style execution. 118Missing or incomplete case data weakens the calculation evidence. 140Missing table/case information prevents a fully closed verification. 163Original statement text is absent from the public file; the answer is kept as a valid submission but not treated as ground truth. 179Original statement text is absent, making this one of the highest-priority source-recovery items. 190Missing source data limits verification beyond the available residual evidence. 5.2. Chinese Track The Chinese report uses the public Chinese question file as its source and explicitly does not use English as a meaning-alignment reference. Its filled submission is the effective file; the template is kept only as an original empty template. Expert review confirms the overall classification and key calculations, upgrades064and095to high confidence, downgrades179to low confidence, and strengthens the rationale for goodwill recognition in004and coherent risk measurement in070. The Chinese low-confidence set is053,119,163, and179",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-020",
+    "category": "paper",
+    "question": "According to TextSentinels @ FinMMEval 2026 Task 1, which model serves as the reasoning-oriented scorer?",
+    "expected_answer": "Groq\u2019s OpenAI-compatible API",
+    "gold_sources": [
+      {
+        "paper": "paper192",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems",
+      "title": "TextSentinels @ FinMMEval 2026 Task 1: A Multilingual Routed Retrieval-Augmented System for Financial Multiple Choice Questions",
+      "pdf_page": 4,
+      "chunk_id": "b1928920e1f99ae10af552f0acc7f158cc4171addd67a13ea4b90d2782427308",
+      "url": "https://clef-staging.pages.dev/paper192.pdf#page=4",
+      "source_passage": "2.5. Route-aware option scoring The final answer selection stage uses a routed option-scoring ensemble served through Groq\u2019s OpenAIcompatible API. In the final system, Qwen serves dually as the router and as the factual/conceptual scorer, while GPT-OSS-20B serves as the reasoning-oriented scorer. Instead of asking the models to generate a final answer directly, we formulate the task as option scoring. For each target question, the system constructs a prompt containing the visible question, the candidate options, route-specific instructions, and a small retrieved support set from the FAISS index based on the designated retrieval depth. Both models then assign scores to the available answer choices. The scoring system message is\u201cYou are a careful financial multiple-choice solver. Reason privately. Return strict JSON only. \u201d, and the user prompt follows this template: Score each option for correctness. Return JSON only with keys: scores, best_answer. scores must map each option letter to a non-negative number. best_answer must be one option letter. <route instruction> Retrieved examples: Example 1 (similarity=<score>) Question: <retrieved question> <A>. <option A> ... Correct answer: <retrieved answer> ... (repeated for each retrieved example, or \"Retrieved examples: none\") Target language: <language> Question: <question> Options: <A>. <option A> ..",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 0.875
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-021",
+    "category": "paper",
+    "question": "According to Table 4, what was the macro recall score for Mistral 3.2 on the German training set?",
+    "expected_answer": "No, the combination had a negative effect on the English test set compared to the base model.",
+    "gold_sources": [
+      {
+        "paper": "paper217",
+        "pages": [
+          7
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "HIPE: Evaluating Accurate and Efficient Person\u2013Place Relation Extraction from Multilingual Historical Texts",
+      "title": "Scaffolding Large and Small Reasoning Models for Person-Place Relation Extraction",
+      "pdf_page": 7,
+      "chunk_id": "c53da70136dcc4e94c28ff997dacde49c6eecd4ca599a444d006facc832844e1",
+      "url": "https://clef-staging.pages.dev/paper217.pdf#page=7",
+      "source_passage": "Table 4 Base model results on training set Language Model at MR at Acc isAt MR isAt Acc Global MR German Mistral 3.2 0.502 0.537 0.689 0.549 0.592 Mistral 4 0.435 0.449 0.64 0.618 0.537 GPT-OSS 0.701 0.794 0.824 0.893 0.758 English Mistral 3.2 0.475 0.577 0.707 0.606 0.591 Mistral 4 0.443 0.469 0.685 0.612 0.564 GPT-OSS 0.645 0.814 0.833 0.818 0.739 French Mistral 3.2 0.487 0.609 0.736 0.621 0.612 Mistral 4 0.459 0.502 0.718 0.701 0.588 GPT-OSS 0.597 0.799 0.81 0.86 0.704 The results further show that Mistral 3.2 can generally profit from the additional information provided by HeidelTime and the logical constraints from conditional prompting: Both strategies improve the global macro recall score above the base model score in all but one case (french test set with french prompting and added temporal information, which had a negligible negative effect). Combining both strategies did not further improve the results however, and the combination even had a negative effect on the English test set compared to the base model. Translating prompts for non-English languages also had a generally negative effect on performance with this model: While it seemingly improved accuracy scores for the base model predictions, macro recall decreased substantially for the isAt prediction task",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-022",
+    "category": "paper",
+    "question": "What was the macro recall increase for German text after preprocessing in the HIPE-2026 task?",
+    "expected_answer": "https://github.com/hipe-eval/HIPE-2026-eval",
+    "gold_sources": [
+      {
+        "paper": "paper221",
+        "pages": [
+          10
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "HIPE: Evaluating Accurate and Efficient Person\u2013Place Relation Extraction from Multilingual Historical Texts",
+      "title": "Person-Place Relation Extraction in Historical Texts: A Dual Approach with Fine-Tuned NLI Encoders and SLMs at HIPE-2026",
+      "pdf_page": 10,
+      "chunk_id": "19a28f3e03680408bafcf64e55e2b840ad68d539a57d2f158f939b5885146ea2",
+      "url": "https://clef-staging.pages.dev/paper221.pdf#page=10",
+      "source_passage": ". This semantic drift breaks the alignment between the entity mentions in the premise and those in the hypothesis, leading to false negatives. Conversely, German text benefits markedly from preprocessing, with macro recall rising from 0.484 to 0.515. Historical German newspapers are heavily affected by compounding word structures, segmentation issues, and gothic-script (Fractur) OCR degradations. For German, the structural benefit of restoring word boundaries and resolving Fractur typeface errors outweighs the linguistic tax of 11The shared task submission files and evaluation orchestrator can be found at https://github.com/hipe-eval/HIPE-2026-eval",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-023",
+    "category": "paper",
+    "question": "What size (in MB) is the Gemma 4 model?",
+    "expected_answer": "Macro-recall.",
+    "gold_sources": [
+      {
+        "paper": "paper222",
+        "pages": [
+          8
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "HIPE: Evaluating Accurate and Efficient Person\u2013Place Relation Extraction from Multilingual Historical Texts",
+      "title": "INSA Lyon at HIPE 2026: A Modular Ensemble Pipeline for Person\u2013Place Relation Classification in Historical Newspapers",
+      "pdf_page": 8,
+      "chunk_id": "b98fe767d1b68a1611b2a73079f76409f0474ddf7787f51f5baf2d4b3b37bcce",
+      "url": "https://clef-staging.pages.dev/paper222.pdf#page=8",
+      "source_passage": "Table 2 Parameter counts and deployed model sizes. Component Parameters Size (MB) Precision / format Random Forest (handcrafted) 0.84M 20 joblib C4 (StandardScaler + LR) 11.6K 1 joblib OrdContM1 2.16M 8 .pt hmBERT encoder 110.6M 424 FP32 mDeBERTa-v3 base 278M 1,061 FP32 XLM-RoBERTa-large 560M 2,136 FP32 Gemma 4 31B 30.7B 58,556 BF16 Llama 3.3 70B Instruct 70.6B 134,571 BF16 For internal validation and model development, we also inspect validation macro-F1 reported by the encoder training runs, since it provides a complementary view of class-balanced classification quality during fine-tuning. When discussing official performance, however, we prioritize macro-recall because it is the shared-task target metric. 6. Results 6.1. Results before Submission We validated all three runs on the reserved evaluation split described in Section5 using macro-recall (MR). ForisAt , feature-based and ensemble combinations were also evaluated on the official v1.0 isAt-test set. Table3 summarizes the main pre-submission results. Table 3 Pre-submission comparison of the three submitted runs. MR( at ) is reported on the reserved validation split, whereas MR(isAt ) is reported on v1.0 isAt-test . Bootstrap intervals are 95% CIs",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-024",
+    "category": "paper",
+    "question": "According to Table 1, how many document pairs are present in the Gold Train A French split of the HIPE-2026 data?",
+    "expected_answer": "35 307",
+    "gold_sources": [
+      {
+        "paper": "paper218",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "HIPE: Evaluating Accurate and Efficient Person\u2013Place Relation Extraction from Multilingual Historical Texts",
+      "title": "UMUTeam at HIPE-CLEF 2026: Person-Place Relation Extraction from Multilingual Historical Documents",
+      "pdf_page": 5,
+      "chunk_id": "9812a3fcdd1f8f173d72f3a55ce468f2fdb4c580b70ad9d7ec45f5a7182ba72d",
+      "url": "https://clef-staging.pages.dev/paper218.pdf#page=5",
+      "source_passage": ". The official data is divided into training, development, and test splits, as summarized in Table1. Table 1 Statistics of the HIPE-2026 released data by split and language. Split Language #Documents #Pairs Gold Train A de 34 466 Gold Train A en 35 307 Gold Train A fr 35 478 Silver Train A de 64 893 Silver Train A en 23 206 Silver Train A fr 293 4,110 Silver Dev A de 32 432 Silver Dev A en 17 151 Silver Dev A fr 107 1,498 Gold Test A de 19 238 Gold Test A en 19 162 Gold Test A fr 19 238 Gold Test B fr 30 480 2https://github.com/hipe-eval/HIPE-2026-data/releases/tag/v1.0",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-025",
+    "category": "paper",
+    "question": "What GitHub repository URL contains the inference code and checkpoint for the NeuroVietCH system?",
+    "expected_answer": "ChatGPT",
+    "gold_sources": [
+      {
+        "paper": "paper250",
+        "pages": [
+          8
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security",
+      "title": "NeuroVietCH at MEDIQA-CORE-Task-1 2026: LLM-Guided Multimodal Distillation for Brain Tumor Subtype Classification",
+      "pdf_page": 8,
+      "chunk_id": "508b84b84ce658a158b01f8ca08756b53fb01dd42ec51451c4868385bb4ea69a",
+      "url": "https://clef-staging.pages.dev/paper250.pdf#page=8",
+      "source_passage": ". First-stage model + ChatGPT Yes Yes ChatGPT No Model-prior LLM refinement. Gemini-guided distilled student Yes Yes Gemini Yes Distillation reference. ChatGPT-guided distilled student Yes Yes ChatGPT Yes Final submitted system. We did not use any additional labeled patient datasets beyond the data released by the organizers. The provided NeuroVFM MRI embeddings and GigaPath pathology embeddings were used as input representations. The only external models used beyond the provided embeddings were commercial LLMs used for report-guided prediction refinement and teacher generation. Only de-identified radiology reports and model predictions were provided to the LLMs; no raw MRI files, whole-slide pathology images, identifiable patient information, or private metadata were uploaded. The inference code and checkpoint for the submitted system are publicly available at https://github. com/candleMind/corebt-llm-distill. The repository supports reproduction of the model-based inference",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-026",
+    "category": "paper",
+    "question": "What was the maximum norm used for gradient clipping in the MediFact model?",
+    "expected_answer": "The official evaluation protocol provided by the ImageCLEFmed MEDIQA 2026 Task 02 organizers.",
+    "gold_sources": [
+      {
+        "paper": "paper286",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security",
+      "title": "MediFact at MEDIQA-CORE-Task-2 2026: Interaction-Aware Multimodal Fusion for Fine-Grained Radiology Report Discrepancy Analysis",
+      "pdf_page": 5,
+      "chunk_id": "de040dc7d17496eff719e4f08b7bf98deceedea5f11c10db1af0b86963be5aa5",
+      "url": "https://clef-staging.pages.dev/paper286.pdf#page=5",
+      "source_passage": ". To improve optimization stability and prevent exploding gradients during backpropagation, gradient clipping was applied: \u2016\ud835\udc54\u2016\u22641.0(11) The proposed MediFact model was trained for five epochs. It used mini-batch optimization with a batch size of 8. Five epochs were sufficient for convergence. This was confirmed using validation performance. 2.8. Inference and Prediction Pipeline During inference, the trained MediFact model was evaluated in inference mode. This disabled dropout behavior and stabilized prediction consistency. Inference was performed in a no-gradient execution context. This reduced memory consumption and computational overhead. The report embedding, edit embedding, and CT embedding were extracted independently. They were normalized before fusion. All feature vectors were converted to float32 format. This maintained datatype consistency across modalities. 3. Results and Discussion The proposed MediFact framework was evaluated using the official evaluation protocol provided by the ImageCLEFmed MEDIQA 2026 Task 02 organizers. Table 1 Performance comparison on the ImageCLEFmed MEDIQA 2026 Task 02 benchmark using the official organizer evaluation metrics. The official evaluation code provided by the organizers was used for all reported results 2",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-027",
+    "category": "paper",
+    "question": "What algorithm was used to obtain the final one-to-one assignment?",
+    "expected_answer": "A compact DCGAN-style architecture.",
+    "gold_sources": [
+      {
+        "paper": "paper287",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security",
+      "title": "Empirical Privacy Without Differential Privacy: A Privacy\u2013Utility Frontier Analysis of Synthetic CT Generation",
+      "pdf_page": 5,
+      "chunk_id": "0f00822b83c410b0b8434d020f5c6bb9b7c7a21018d8158d0bb51071f6430948",
+      "url": "https://clef-staging.pages.dev/paper287.pdf#page=5",
+      "source_passage": "the held-out validation partition is an honest generalisation estimate, whereas a separate \u201cdevelopment accuracy\u201d that we computed over the full10,000-image development pool is optimistic, because roughly 90% of that pool consists of images the encoder was trained on. As described in Section 6.5, postprocessing methods and their hyperparameters were selected on this full-pool accuracy, which inflated expectations relative to the held-out signal. At inference time, all test images and candidate latents were embedded and compared using the full cosine-similarity matrix \ud835\udc46. We optionally applied Sinkhorn normalisation [29], CSLS reweighting [30], CSLS\ud835\udc56\ud835\udc57 = 2\ud835\udc46\ud835\udc56\ud835\udc57\u2212 \u00af\ud835\udc46row \ud835\udc56 \u2212 \u00af\ud835\udc46col \ud835\udc57 ,(5) mutual-\ud835\udc58NN boosting, and multi-crop test-time augmentation. The final one-to-one assignment was obtained with the Hungarian algorithm [31]. 4.3. Subtask 3: Privacy-Preserving CT Generation Subtask 3 required generating 5,000 synthetic CT slices and submitting the generator checkpoint so that the organisers could evaluate both image quality and privacy leakage. Our design prioritised empirical privacy under the benchmark attacks rather than maximising visual fidelity. We used a compact DCGAN-style architecture",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 0.692
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-028",
+    "category": "paper",
+    "question": "What range of scalar temperatures was searched for during temperature scaling applied to each model?",
+    "expected_answer": "EfficientNet-B3",
+    "gold_sources": [
+      {
+        "paper": "paper289",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security",
+      "title": "A Multi-Architecture Ensemble with Test-Time Augmentation and Adaptive Batch Normalization for Image Deepfake Detection",
+      "pdf_page": 4,
+      "chunk_id": "c77aab3d4f23d3fd576da56021c73b6c50222aa6f155dfdb6fe0f91b1c01ecbd",
+      "url": "https://clef-staging.pages.dev/paper289.pdf#page=4",
+      "source_passage": ". This large shift indicates a clear mismatch between the batch-normalization statistics learned on our training data and those of the evaluation set. Because the test labels are not available to us, we cannot isolate the effect of this adaptation on final accuracy; we return to its likely implications in Section 5. 3.6. Calibration and Ensemble Optimization Neural networks are often over-confident, producing poorly calibrated probabilities. Before combining the models, we applied temperature scaling to each model independently: we searched for the scalar temperature (in the range 0.5\u20133.0) that minimized the log loss of the model's predictions on the validation set, and divided that model's logits by this temperature. Temperature scaling does not change the predicted class but softens the probability distribution, improving calibration and log loss without affecting F1. For each model we then had two sets of test predictions \u2014 the multi-scale TTA logits (Section 3.4) and the AdaBN-adapted logits (Section 3.5) \u2014 which we combined by averaging the two corresponding calibrated probabilities with equal weight. For the Swin Transformer and CLIP, which are unaffected by AdaBN, this is equivalent to using the TTA predictions alone; for EfficientNet-B3 it blends the two views. We submitted two runs",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-029",
+    "category": "paper",
+    "question": "What was the CI high value for the 'arampageos / DUTH_Task4_SCRATCHPAPER_ES_ ARENA' run?",
+    "expected_answer": "165",
+    "gold_sources": [
+      {
+        "paper": "paper305",
+        "pages": [
+          17
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "JOKER: Humor Detection, Search, and Translation",
+      "title": "Overview of the CLEF 2026 JOKER Task 4: Humor Generation in English, French, and Spanish",
+      "pdf_page": 17,
+      "chunk_id": "57c2a489975aa22b704f29c968008435ea22157293d8df19dd50eb60acf78a30",
+      "url": "https://clef-staging.pages.dev/paper305.pdf#page=17",
+      "source_passage": "(continued) Rank Team / Run BT CI low CI high\ud835\udc5b \ud835\udc4f 10arampageos / DUTH_Task4_ES_DEEP_EXACTPUN_ TOP2 1211 1151 1291 165 11arampageos / DUTH_Task4_SCRATCHPAPER_ES_ ARENA 1171 1137 1211 333 12arampageos / DUTH_Task4_ES_DEEP_EXACTPUN_ TOP3 1171 1110 1240 148 13arampageos / DUTH_Task4_QWEN14_BLEUMIMIC_ ES_PATCH 1160 1127 1205 288 14arampageos / DUTH_Task4_QWEN14_BLEUMIMIC_ ES_ALL 1142 1089 1176 262 15arampageos / DUTH_Task4_ES_XID_SALVAGE_ TOP5 1135 1087 1200 178 16arampageos/DUTH_Task4_ES_NOBLOCK_PATCH61135 1085 1183 231 17arampageos / DUTH_Task4_QWEN14_BLEUMIMIC_ ES_SAFE 1133 1086 1188 239 18arampageos / DUTH_Task4_ES_QUALITY_V2_ MEDALLON 1126 1070 1191 158 19liana87/UBO_task4_gemma_pun1125 1084 1172 322 20arampageos/DUTH_Task4_ES_TRAINSEL_TOP11122 1062 1174 162 21arampageos / DUTH_Task4_QWEN14_BLEUMIMIC_ V2_ES_ALL 1122 1090 1161 327 22arampageos / DUTH_Task4_ES_QUALITY_V1_ SAFE 1122 1067 1178 170 23arampageos / DUTH_Task4_ES_DEEP_SINGLE_ R05_es_0919_EXACT_PUN_TRAIN_es_0925 1120 1073 1184 177 24arampageos/DUTH_Task4_DUPCONSIST_ES1118 1078 1162 286 25arampageos / DUTH_Task4_ES_BEST834_PAIR_ SINGLE_R05_R06 1117 1053 1173 174 26arampageos / DUTH_Task4_ES_SCOREENS2_ PATCH7 1115 1070 1180 245 27arampageos / DUTH_Task4_BLOCK_ES_ BESTBLOCK 1114 1075 1157 278 28arampageos / DUTH_Task4_ES_DEEP_SINGLE_ R03_es_2303_EXACT_PUN_TRAIN_es_0762 1114 1058 1179 168 29arampageos /",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-030",
+    "category": "paper",
+    "question": "What system submitted results using the run ID 'UAms_Task1_Anserini'?",
+    "expected_answer": "CodaBench",
+    "gold_sources": [
+      {
+        "paper": "paper302",
+        "pages": [
+          6
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "JOKER: Humor Detection, Search, and Translation",
+      "title": "Overview of the CLEF 2026 JOKER Task 1: Humor-Aware Information Retrieval in English and Hinglish",
+      "pdf_page": 6,
+      "chunk_id": "ad64079e42e1ddf38a2efe72e25d4959c68daf5960f7498eda32fc27547ffcc0",
+      "url": "https://clef-staging.pages.dev/paper302.pdf#page=6",
+      "source_passage": "[ { \"run_id\":\"UAms_Task1_Anserini\", \"manual\": 0, \"qid\": 1, \"docid\":\"41958\", \"rank\": 0, \"score\": 3.8852999210357666 }, { \"run_id\":\"UAms_Task1_Anserini\", \"manual\": 0, \"qid\": 1, \"docid\":\"44782\", \"rank\": 1, \"score\": 3.7513999938964844 } ] 2.3. Training and Test Data The task provides two query sets. The first is a smaller training set for which qrels are released. This set supports offline experimentation and model development. The second is a larger test set used for official evaluation on the CodaBench leaderboard. Participants submit their run files for the test queries to CodaBench, where they are evaluated against hidden qrels. Participants may include results for the training topics in their submission files. They may also add extra fields to the submitted JSON file if needed. However, official evaluation is performed over all topics in the test query file. The submitted runs are evaluated using the standard trec_eval measures and implementation. 3. Evaluation System outputs are evaluated against the hidden humor-aware relevance annotations using standard information retrieval measures across multiple ranking cutoffs. All relevant documents are both relevant to the topic and humorous. The primary ranking metric isMean Average Precision (MAP), which penalizes models that fail to track both topical and humorous alignment concurrently",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-031",
+    "category": "paper",
+    "question": "What percentage of the manually categorized subset of English puns saw disagreement between the two classifiers?",
+    "expected_answer": "MarianMT with detector-guided selection.",
+    "gold_sources": [
+      {
+        "paper": "paper315",
+        "pages": [
+          8
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "JOKER: Humor Detection, Search, and Translation",
+      "title": "University of Amsterdam at the CLEF 2026 JOKER Track",
+      "pdf_page": 8,
+      "chunk_id": "b06c4e6f7ee4d7fd1ec98defdea9d03881bc6693984f3e6a3fd7eba06322e6ea",
+      "url": "https://clef-staging.pages.dev/paper315.pdf#page=8",
+      "source_passage": ". The best of these runs therefore remains MarianMT with detector-guided selection. Analysis of Classifier Disagreement The two classifiers select different translations for 2,547 out of 4,061 puns (62.7%). To analyze whether these differences vary by pun type, the final thesis analysis uses a balanced, manually categorized subset of 60 held-out English puns, comprising 20 homophonic, 20 polysemous, and 20 compound puns. The classifiers selected different translations in 12 of 21 cases (57%), with the disagreement rate varying by pun type: 71% for homophonic, 29% for polysemous, and 71% for compound puns. The low disagreement on polysemous puns makes sense: both classifiers detect this type well, so they tend to assign the highest score to the same candidate. For homophonic and compound puns, where the classifiers have different strengths, they more often pick different candidates. Qualitative Evaluation Table 4 shows an example where the two classifiers make different choices. In this compound pun (condiments/condoms), the multilingual classifier assigns a much higher pun",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-032",
+    "category": "paper",
+    "question": "What was the MAP score of the XGBoost rank:ndcg model?",
+    "expected_answer": "Sparse-query failure, specifically for queries like 'a'.",
+    "gold_sources": [
+      {
+        "paper": "paper308",
+        "pages": [
+          11
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "JOKER: Humor Detection, Search, and Translation",
+      "title": "Cairo University at the CLEF 2026 JOKER Track Heuristic Pun-Morphology Features and Tree Ensembles for Humor-Aware Information Retrieval",
+      "pdf_page": 11,
+      "chunk_id": "68fed81ff8aea4501a0d57f91d99ad5af0e33f302cfeb0ad8c79143b15094fff",
+      "url": "https://clef-staging.pages.dev/paper308.pdf#page=11",
+      "source_passage": ". Two failure modes recur. Sparse-query failure.For the query \"a\", several relevant documents are short alphabet jokes that do not match any joke template (e.g. \"What\u2019s a vampire\u2019s favorite letter? AHHHHH!\" ). The model correctly retrieves them via joke-format and pun-morphology features (the all-caps token \"AHHHHH\" triggers adv_n_all_caps_words), but for highly common one-letter queries the BM25 score has very low discriminative power and a number of irrelevant documents containing isolated \u201cA\u201d also score high. The result is a noisier ranking for the most ambiguous queries. Conceptual pun failure.Some relevant documents use the query word only indirectly. For example, in a hypothetical query \"musician\" with relevant document \"Why did the musician get an A+ in alphabet class?\" , our morphology features fire correctly. But for queries whose relevance requires recognising a phonetic substitution rather than a surface trigger (e.g. a homophone), neither our character-level nor phonetic features generalise reliably given the small training set. This is the regime where the LLM-as-a-feature approach (Section 6) would be expected to help, but we did not deploy it in the official submissions due to time constraints. 6. Discussion Our ensemble averaged seven base models, including XGBoost rank:ndcg which underperformed (MAP=0.5875)",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-033",
+    "category": "paper",
+    "question": "According to the authors, what task did they apply their agentic workflow to?",
+    "expected_answer": "The workflow targeted BirdCLEF+ 2026.",
+    "gold_sources": [
+      {
+        "paper": "paper352",
+        "pages": [
+          6
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+      "title": "Optimising the Measurable Layer: An Autonomous Agentic Workflow for BirdCLEF+ 2026 and Its Failure Modes",
+      "pdf_page": 6,
+      "chunk_id": "47cfb27e353a4f94d79abdd6f568876211c085c36ec15206a751578a5e63f504",
+      "url": "https://clef-staging.pages.dev/paper352.pdf#page=6",
+      "source_passage": ". 5. Lessons for Agentic ML Workflows We state the central lesson as a principle and a corollary, then give the evidence and a checklist a practitioner can apply directly. The measurable-layer principle. A grade-seeking agentic workflow spends its effort on the layer of the solution it can measure most cheaply, not the layer that holds the most value; once that layer saturates it keeps polishing, because each probe still returns a legible number. Selection corollary. If the searched layer only recombines one public artifact, the candidate pool collapses into a single public-tied band whose private order the public score cannot resolve\u2014so final selection has no signal, and the platform default can choose near the band\u2019s worst.",
+      "screen": "NEEDS_MANUAL_REWRITE",
+      "rewrite_attempt": "What competition did the workflow target?",
+      "note": "auto-rewrite avoided banned words but stayed non-specific; rewrite by hand from source_passage",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-034",
+    "category": "paper",
+    "question": "For which number of target species were prototypes computed using the PerchV2 embeddings?",
+    "expected_answer": "Focal BCE with \u03b1 = 0.25 and \u03b3 = 2.0.",
+    "gold_sources": [
+      {
+        "paper": "paper321",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+      "title": "CPU-Constrained Multi-Signal Pipeline for Bioacoustic Wildlife Monitoring: BirdCLEF+ 2026 Working Note",
+      "pdf_page": 4,
+      "chunk_id": "4f8a631db7de2df0451d1123b54b9c1fb474cf0d4f69f65ccf138d443be72857",
+      "url": "https://clef-staging.pages.dev/paper321.pdf#page=4",
+      "source_passage": ". Reported validation scores during training are therefore optimistic and should be interpreted accordingly. 4.2. Hyperparameters and Loss \u2022 Epochs: 30; batch size: 64 \u2022 Optimiser: AdamW, lr = 2\u00d7 10\u22125, weight decay 10\u22124 \u2022 Scheduler: CosineAnnealingLR,\ud835\udc47max = 30,\ud835\udf02min = 5\u00d7 10\u22127 \u2022 Loss: Focal BCE,\ud835\udefc = 0.25,\ud835\udefe = 2.0 [4] \u2022 Augmentation: Gaussian noise (\ud835\udf0e = 0.01) on embeddings; Mixup [5] with\ud835\udf06\u223c Uniform(0.1, 0.5) \u2022 Gradient clipping:\u2016\u2207\u2016\u221e\u2264 1.0 \u2022 Initialisation: warm-started from best prior checkpoint 4.3. Prototype Extraction After training, per-species prototype embeddings are computed by averaging the PerchV2 embeddings of all labeled soundscape segments for that species, then L2-normalising. This yields prototypes for 75 of the 234 target species; for the remaining 159 species, no labeled soundscape segments are available. 5. Multi-Signal Post-Processing Pipeline Our inference pipeline fuses three evidence sources and applies four sequential post-processing steps. Signal fusion. Let pmlp, pperch, and pproto denote MLP sigmoid outputs, aligned PerchV2 classifier probabilities, and prototype similarity scores respectively. For each species\ud835\udc57: \ud835\udc5d\ud835\udc57 = 0.65\u00b7\ud835\udc5dmlp,\ud835\udc57 + 0.35\u00b7\ud835\udc5dperch,\ud835\udc57 + 0.20\u00b7\ud835\udc5dproto,\ud835\udc57 Weights are additive (not normalised to 1) to allow mild probability inflation for rare species",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-035",
+    "category": "paper",
+    "question": "What Technology Agency of the Czech Republic project number supported LP's work?",
+    "expected_answer": "https://www.kaggle.com/c/animal-clef-2026",
+    "gold_sources": [
+      {
+        "paper": "paper316",
+        "pages": [
+          9
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+      "title": "Overview of AnimalCLEF 2026: Discovery and Re-identification of Individual Animals",
+      "pdf_page": 9,
+      "chunk_id": "cccc5409dcc67ace6cb17d830c55bccfbe8365ff4a6fc278ce7bde1e81e77cb5",
+      "url": "https://clef-staging.pages.dev/paper316.pdf#page=9",
+      "source_passage": ". Acknowledgments LP was supported by the Technology Agency of the Czech Republic, project No. SS73020004. LA was supported by the Center for advanced machines and manufacturing technology (CAMAT) - TN02000028. We would like to thank all participants for sharing their codebases and working nodes, which are available at https://www.kaggle.com/c/animal-clef-2026. References [1] P. Palencia, R. Vada, S. Zanet, M. Calvini, A. De Giovanni, G. Gola, E. Ferroglio, Not just pictures: Utility of camera trapping in the context of african swine fever and wild boar management, Transboundary and Emerging Diseases 2023 (2023) 1\u20139. [2] J. M. Rowcliffe, J. Field, S. T. Turvey, C. Carbone, Estimating animal density using camera traps without the need for individual recognition, Journal of Applied Ecology (2008) 1228\u20131236. [3] A. Caravaggi, M. Zaccaroni, F. Riga, S. C. Schai-Braun, J. T. Dick, W. I. Montgomery, N. Reid, An invasive-native mammalian species replacement process captured by camera trap survey random encounter models, Remote Sensing in Ecology and Conservation 2 (2016) 45\u201358. [4] J. D. Blount, M. W. Chynoweth, A. M. Green, \u00c7. H. \u015eekercio\u011flu, COVID-19 highlights the importance of camera traps for wildlife conservation research and management, Biological Conservation 256 (2021) 108984. [5] J. R. Parham, J. Crall, C. Stewart, T. Berger-Wolf, D",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 0.824
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-036",
+    "category": "paper",
+    "question": "According to the 'Lexicon Engineering and Gradient Boosting for Plant Pest Relation Extraction' paper, what percentage of biologically-named entities matched based on NCBI identifier match after the NCBI Taxonomy expansion step?",
+    "expected_answer": "37",
+    "gold_sources": [
+      {
+        "paper": "paper346",
+        "pages": [
+          10
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+      "title": "Lexicon Engineering and Gradient Boosting for Plant Pest Relation Extraction",
+      "pdf_page": 10,
+      "chunk_id": "3ace883c676c6694fbce7f8caf644a4dfb10c8d51aecc13acf173f66bf190cd2",
+      "url": "https://clef-staging.pages.dev/paper346.pdf#page=10",
+      "source_passage": "development split is reserved for hyperparameter tuning in Section 4.5. Step 1: Surface-form collection.Surface forms are collected from two sources of the training JSON: the text_bound_annotations.entities field (gold entity mentions with offsets and types) and the knowledge_graph field (alias lists on every gold edge). Each surface form is paired with a type counter incremented by the matching entity type. To prevent generic words from polluting the lexicon, I discard 37 manually curated stop-words (disease,plant,vector,location,date,area,region,country, season,year,species,host,leaf,soil, . . . ) and any form shorter than three characters. Step 2: Coreference collapse.Each identity coreference group is collapsed to a single canonical surface form (the longest member). All non-canonical members are mapped to the canonical one in a chain table that is later consulted during output deduplication (Section 4.6). Step 3: NCBI Taxonomy expansion.For every gold entity carrying an NCBI Taxonomy normalisation, I group all surface forms that share the same taxon identifier and propagate the majority type across the group. This step is what lifts the matching ceiling from 58% (exact surface match) to 84% (NCBI identifier match) on the development split for biologically-named entities (Section 3.1)",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 0.733
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-037",
+    "category": "paper",
+    "question": "What three metrics do LLM judges use to evaluate topics in the official LongEval Task 2 challenge?",
+    "expected_answer": "Alignment, Distinguishability, and Clarity.",
+    "gold_sources": [
+      {
+        "paper": "paper380",
+        "pages": [
+          7
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "LongEval: Longitudinal Evaluation of IR Model Performance",
+      "title": "Qrels-Grounded and Agentic LLM Query Expansion with Post-Processing Optimization for Longitudinal Scientific Topic Extraction",
+      "pdf_page": 7,
+      "chunk_id": "e77af2d30ab0929d018a9da03c3098e5129c7991243d5991d3a383bece152d15",
+      "url": "https://clef-staging.pages.dev/paper380.pdf#page=7",
+      "source_passage": "index that executes a classic BM25 lexical match, which purely measures word-frequency overlap on the generateddescription. In this setup, V9 is heavily over-optimized: it uses unconstrained keyword expansions (Fix C) and simple query prepending to cram raw document terminology into the description. While highly effective for a flat lexical search engine, V9 generates descriptions and narratives that are structurally conversational, unstructured, and noisy. In contrast, the official LongEval Task 2 challenge on the TIRA platform does not evaluate submissions using a standard keyword search engine. Instead, it deploysLarge Language Model (LLM) judges (LLM-as-a-judge) to grade query-document pairs longitudinally across multiple temporal snapshots. The LLM judges evaluate topics on three distinct metrics: 1. Alignment:How well the generated description and narrative reflect the true underlying search intent. 2. Distinguishability:How effectively the narrative separates highly relevant documents from borderline or non-relevant ones. 3.Clarity:The absence of ambiguity or conversational fluff in the narrative",
+      "screen": "rewritten",
+      "original_question": "According to the text, what method does system V9 use for keyword expansion?",
+      "note": "auto-rewritten; verify against source_passage like any other",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-038",
+    "category": "paper",
+    "question": "What language model did all agents utilize in Experiment 1?",
+    "expected_answer": "0.35",
+    "gold_sources": [
+      {
+        "paper": "paper378",
+        "pages": [
+          6
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "LongEval: Longitudinal Evaluation of IR Model Performance",
+      "title": "A Multi-Agent Approach with Similarity-Guided Judgment for Scientific Knowledge Retrieval and Answer Generation",
+      "pdf_page": 6,
+      "chunk_id": "badf7486a4f3c7702fe33c9c3e493a4d52bee0a03ad4a2a801a7ffa96daf6722",
+      "url": "https://clef-staging.pages.dev/paper378.pdf#page=6",
+      "source_passage": ". All agents utilize Qwen3.6-35B-A3B with a uniform temperature of 0.5. This configuration isolates Qwen\u2019s multi-agent behavior under higher stochasticity. Experiment 2 (multi-agent-rag-v4)shares the same pipeline as Experiment 1 but applies a differentiated temperature scheme: 0.1 for the document filter, relation scorer, and answer verifier, and 0.35 for the answer generator. This setup creates a symmetric comparison with Experiment 4, enabling direct analysis of how different models behave within the identical low-temperature strategy. Experiment 3 (multi-agent-rag-v2)replaces all components with DeepSeek-V4-Pro while retaining the temperature scheme from Experiment 2 (0.1 for filtering/scoring/verification, 0.35 for generation). This experiment investigates the performance of a higher-capacity model under low temperature and in the absence of quantitative similarity signals. Experiment 4 (multi-agent-rag-v3)extends Experiment 3 by integrating semantic similarity computation into the verification step. It calculates sim(\ud835\udc5e,\ud835\udc4e) and the similarity set sim\ud835\udc37 between the answer and ranked documents, feeding both as auxiliary signals into the answer verifier. Upon a failure verdict, the verifier generates targeted revision feedback and trigger a rollback to the answer generator for regeneration. Models and temperatures match Experiment 3",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 0.714
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-039",
+    "category": "paper",
+    "question": "What OpenAI language model was used for answer generation in all runs unless otherwise noted?",
+    "expected_answer": "The rule-minilm variant.",
+    "gold_sources": [
+      {
+        "paper": "paper385",
+        "pages": [
+          7
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "LongEval: Longitudinal Evaluation of IR Model Performance",
+      "title": "Candidate-Constrained Retrieval-Augmented Generation for LongEval-RAG: System Design and Empirical Analysis",
+      "pdf_page": 7,
+      "chunk_id": "b17a584149548433e25e92daac098b28dddcd3b03bba8edaa635cb96c1267636",
+      "url": "https://clef-staging.pages.dev/paper385.pdf#page=7",
+      "source_passage": ". Each sentence-level evidence item carries an evidence_idand citation indices into thereferenceslist. The rule-minilm variant is methodologically important because it separates passage construction from neural sentence selection. Passage boundaries remain deterministic and overlap-preserving, while MiniLM is used only after candidate evidence has been narrowed to sentence-level answer candidates. This design reduces the risk that embedding-based segmentation will discard useful local context, while still allowing a neural model to prioritize sentences that are semantically close to the query. Unless otherwise noted, all answer generation runs use OpenAI gpt-5.4-mini. The model receives only the selected candidate-constrained evidence items and is limited to at most five answer sentences. After batch generation, returned evidence_id values are mapped back to sentence candidates, citation indices, and source document IDs. This preserves the candidate constraint at the prompt level and makes every final citation traceable to an official candidate document. 4. Experimental Variants Table 4 summarizes the ten experimental variants currently tracked in the repository. Together, they serve three purposes: retrieval-strength ablation, chunking-strategy comparison, and sentence-selection comparison. Table 4 should be read together with the following role summary",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-040",
+    "category": "paper",
+    "question": "What Qwen model is used as the basis for the dense retrieval component in QwenTemporalIR?",
+    "expected_answer": "To surface semantically relevant documents that may use different vocabulary from the query.",
+    "gold_sources": [
+      {
+        "paper": "paper379",
+        "pages": [
+          6
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "LongEval: Longitudinal Evaluation of IR Model Performance",
+      "title": "Temporal Stability in Scientific Information Retrieval: A Three-System Analysis for CLEF LongEval 2026",
+      "pdf_page": 6,
+      "chunk_id": "629bea5ac1ffa7045739542e933735c0a96c14658a600e6d4a9eabefd555fe4d",
+      "url": "https://clef-staging.pages.dev/paper379.pdf#page=6",
+      "source_passage": ". This is a slightly more conservative setting than the grid search extremes, retaining 85% of the original query weight while allowing limited feedback-driven expansion. 5.4. Retrieval Depth and Fusion Coverage All components are computed at TOP_K = 1000 documents. After fusion, results are truncated to the top 1000 ranked documents per query. The outer-join merge strategy ensures that documents appearing in only one component receive a score of zero for the missing components, preserving full retrieval coverage. 6. System 3: QwenTemporalIR 6.1. Motivation QwenTemporalIR extends the sparse retrieval pipeline with a dense retrieval component based on pre-built document embeddings from the Qwen3-Embedding-4B model. Dense retrieval operates in a complementary semantic space relative to BM25 and RM3, which are sensitive to exact term overlap. By incorporating dense retrieval signals, the system aims to surface semantically relevant documents that may use different vocabulary from the query \u2013 a particularly useful property when corpus vocabulary evolves across snapshots. We note that despite its name, QwenTemporalIR does not incorporate an explicit temporal signal (unlike Temporal_Fusion); the name reflects its use of the Qwen3 dense embedding model within the LongEval temporal retrieval setting, not a temporal-aware ranking mechanism. 6.2",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 0.75
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-041",
+    "category": "paper",
+    "question": "What was Writerslogic's rank and soft F1 score on Subtask 2?",
+    "expected_answer": "0.31",
+    "gold_sources": [
+      {
+        "paper": "paper401",
+        "pages": [
+          6
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "PAN: Digital Text Forensics and Stylometry",
+      "title": "Writerslogic at PAN 2026: Process over Content for Robust Detection under Domain Shift",
+      "pdf_page": 6,
+      "chunk_id": "117049f3a6903a169eb6f597e6683be66a42f864894366b24f12b88e5d04108e",
+      "url": "https://clef-staging.pages.dev/paper401.pdf#page=6",
+      "source_passage": ". On Subtask 2 we rank 3rd of seven on macro F1 (0.66) but 2nd on soft F1 (0.27), behind only the top entry (0.31): the union system sacrifices a little overall accuracy for better-calibrated step scores. The gap between our 1st-place source detection and mid-table safety classification mirrors the difficulty gap between the two subtasks\u2014source detection rewards a high-precision cross-domain signal (LLM agreement), whereas safety classification under shift resists every approach we tried. Table 4 Leaderboard results (top 5 each subtask). Team F1 Soft F1 Rank (F1) Rank (Soft) S1 davidcondrey .85\u20131\u2013 srikarkashyap .83 \u2013 2 \u2013 skyduan .80 \u2013 3 \u2013 affliction .75 \u2013 4 \u2013 23020073 .72 \u2013 5 \u2013 S2 ioanabrr .75 .31 1 1 srikarkashyap .70 .17 2 3 davidcondrey .66 .27 3 2 skyduan .65 .16 4 4 threshdsnmj .56 .09 5 5 5. Task 2: Voight-Kampff Generative AI Detection The PAN@CLEF 2026 Voight-Kampff task [2, 38] requires classifying text as human-written or AIgenerated across multiple genres (essays, news, fiction), outputting a continuous probability score in [0,1]",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 0.857
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-042",
+    "category": "paper",
+    "question": "What dimensionality feature space does MAC-XGBoost utilize?",
+    "expected_answer": "MAC-XGBoost operates within an 18-dimensional feature space.",
+    "gold_sources": [
+      {
+        "paper": "paper432",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "PAN: Digital Text Forensics and Stylometry",
+      "title": "Team ydong at PAN 2026: Detecting Machine-Generated Text via Multi-Algorithm Compression Distances and Shallow Statistics",
+      "pdf_page": 5,
+      "chunk_id": "4d1e25ddad70e09a05f92417ed7084326a606a84d741ba352595883e45aaff04",
+      "url": "https://clef-staging.pages.dev/paper432.pdf#page=5",
+      "source_passage": ". In our experiments, the traditional TF-IDF + SVM baseline achieved the highest raw scores on this dataset (AUROC: 0.996, F1: 0.980), outperforming our proposed MAC-XGBoost. While MAC- XGBoost yields slightly lower absolute scores than this lexical baseline, it offers a fundamentally different perspective for the detection task. Operating within a highly compact 18-dimensional feature space derived from compression distances and shallow statistical patterns, MAC-XGBoost achieves a highly competitive AUROC of 0.966 without any reliance on semantic or lexical content. Moreover, by surpassing Binoculars (AUROC: 0.918), a state-of-the-art LLM detector, our framework demonstrates that information-theoretic features provide a robust and highly efficient alternative foundation for AI text detection. 5. Conclusions This paper presents MAC-XGBoost, a highly efficient, semantic-agnostic framework for AI authorship verification. Shifting the detection paradigm from deep linguistic analysis to information-theoretic evaluation, we capture the structural redundancies inherent in autoregressive generation. Our method ensembles multiple compression typologies and shallow token statistics into a remarkably compact feature space",
+      "screen": "rewritten",
+      "original_question": "What AUROC score did Binoculars achieve in the experiments described?",
+      "note": "auto-rewritten; verify against source_passage like any other",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-043",
+    "category": "paper",
+    "question": "What was the RR achieved by the 'fosuai / oscillating-list' system on the official PAN26 main test?",
+    "expected_answer": "numpy",
+    "gold_sources": [
+      {
+        "paper": "paper430",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "PAN: Digital Text Forensics and Stylometry",
+      "title": "Team Fosuai at PAN 2026: Source Retrieval via Query-Chunk Provenance Modeling for Generative Plagiarism Detection",
+      "pdf_page": 5,
+      "chunk_id": "b857627fe78f9576a4a3713ee4faacbbb590630ad5c555c16865fab702d6f804",
+      "url": "https://clef-staging.pages.dev/paper430.pdf#page=5",
+      "source_passage": ". The converted development data and official main test differ in corpus scale, domain mixture, query generation, and plagiarism type distribution. This suggests that robust retrieval under unseen generative plagiarism distributions remains the central challenge of the task. 5. Conclusions We presented Query-Chunk Provenance Modeling, a lightweight (numpy-only) source retrieval method for PAN26 generative plagiarism detection. The method decomposes suspicious documents into paragraph-level segments, independently retrieves sources per segment via BM25, and aggregates results through coverage-weighted voting to construct an explicit provenance graph. On development data, our method consistently outperforms standard BM25. On the official PAN26 main test, our system (fosuai / oscillating-list) achieved RR=0.9350 (3rd by RR). The submitted run\u2019s top-10 output limit constrained Recall@100; future work should output top-1000 and explore topic-based or embedding-based segmentation strategies for improved semantic coherence. Code Availability The implementation, including the TIRA Docker entry pointscripts/submit_pan26.py, is available at https://github.com/Abraham-wy/Generative-Plagiarism-Detection. The official submitted system used team identifierfosuaiand software nameoscillating-list",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 0.667
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-044",
+    "category": "paper",
+    "question": "According to the authors, what is the arXiv identifier for the overview of PAN 2026?",
+    "expected_answer": "Training methodology aimed to expose models to MGT evasion techniques.",
+    "gold_sources": [
+      {
+        "paper": "paper416",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "PAN: Digital Text Forensics and Stylometry",
+      "title": "AK-YS at PAN 2026: Towards Robust Machine-Generated Text Detection under Domain Shift and Obfuscation",
+      "pdf_page": 5,
+      "chunk_id": "12dc560a9069d4ea9c5c91d5b837d6c6cef2a7915491900486b81e0db18ba7b4",
+      "url": "https://clef-staging.pages.dev/paper416.pdf#page=5",
+      "source_passage": ". In summary, our training methodology aimed to expose the models to MGT evasion techniques and improve generalisation across domains. The results show that training on diverse data improves performance on popular MGT benchmarks. Additionally, larger models were able to capture complex patterns inherent to obfuscated text. However, model size alone cannot ensure performance, as carefully designed adversarial text generation methods were able to deceive models in certain configurations. References [1] J. Bevendorff, M. Fr\u00f6be, A. Greiner-Petter, A. Jakoby, M. Mayerl, P. Nakov, H. Plutz, M. Potthast, B. Stein, M. N. Ta, Y. Wang, E. Zangerle, Overview of pan 2026: Voight-kampff generative ai detection, text watermarking, multi-author writing style analysis, generative plagiarism detection, and reasoning trajectory detection, 2026.arXiv:arXiv:2602.09147. [2] A. A. Ayele, N. Babakov, J. Bevendorff, X. B. Casals, B. Chulvi, D. Dementieva, A. Elnagar, D. Freitag, M. Fr\u00f6be, D. Koren\u010di\u0107, M. Mayerl, D. Moskovskiy, A. Mukherjee, A. Panchenko, M. Potthast, F. Rangel, N. Rizwan, P. Rosso, F. Schneider, A. Smirnova, E. Stamatatos, E. Stakovskii, B. Stein, M. Taul\u00e9, D. Ustalov, X. Wang, M. Wiegmann, S. M. Yimam, E",
+      "screen": "NEEDS_MANUAL_REWRITE",
+      "rewrite_attempt": "What is one evasion technique that training methodology aimed to address?",
+      "note": "auto-rewrite avoided banned words but stayed non-specific; rewrite by hand from source_passage",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-045",
+    "category": "paper",
+    "question": "What are the names of the two unified formulations used by Team SYZYGY?",
+    "expected_answer": "\ud835\udc44\ud835\udc3c\ud835\udc3c+WMI 1 and \ud835\udc44\ud835\udc3c\ud835\udc3c+WMI 2.",
+    "gold_sources": [
+      {
+        "paper": "paper440",
+        "pages": [
+          9
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "QuantumCLEF: Quantum Computing, Information Retrieval and Recommender Systems",
+      "title": "Team SYZYGY at QuantumCLEF 2026: Feature Selection Using Quantum Annealing",
+      "pdf_page": 9,
+      "chunk_id": "9f257b53273881e960f76fec6767ea92c676df6f07be85e1d64d1dfe873ae05c",
+      "url": "https://clef-staging.pages.dev/paper440.pdf#page=9",
+      "source_passage": ". To solve this limitation, we can directly combine this synergy metric with our previous normalization approaches to construct two new QUBO matrices. Combining the interaction information with the weighted mutual information variants gives us the unified formulations\ud835\udc44 \ud835\udc3c\ud835\udc3c+WMI 1 and\ud835\udc44 \ud835\udc3c\ud835\udc3c+WMI 2: \ud835\udc44\ud835\udc3c\ud835\udc3c+WMI 1 \ud835\udc57\ud835\udc56 = \u23a7 \u23aa\u23a8 \u23aa\u23a9 \u2212\ud835\udc3c(\ud835\udc47;\ud835\udc4b \ud835\udc56)if\ud835\udc57=\ud835\udc56 \ud835\udc3c\ud835\udc3c(\ud835\udc47;\ud835\udc4b \ud835\udc56;\ud835\udc4b \ud835\udc57) +WMI 1(\ud835\udc4b\ud835\udc56;\ud835\udc4b \ud835\udc57) +CMI(\ud835\udc47;\ud835\udc4b \ud835\udc56;\ud835\udc4b \ud835\udc57)if\ud835\udc57 >\ud835\udc56 0otherwise . \ud835\udc44\ud835\udc3c\ud835\udc3c+WMI 2 \ud835\udc57\ud835\udc56 = \u23a7 \u23aa\u23a8 \u23aa\u23a9 \u2212\ud835\udc3c(\ud835\udc47;\ud835\udc4b \ud835\udc56)if\ud835\udc57=\ud835\udc56 \ud835\udc3c\ud835\udc3c(\ud835\udc47;\ud835\udc4b \ud835\udc56;\ud835\udc4b \ud835\udc57) +WMI 2(\ud835\udc4b\ud835\udc56;\ud835\udc4b \ud835\udc57) +CMI(\ud835\udc47;\ud835\udc4b \ud835\udc56;\ud835\udc4b \ud835\udc57)if\ud835\udc57 >\ud835\udc56 0otherwise . These final two formulations bring together all our core optimization objectives. The linear elements and quadratic conditional mutual information terms consistently prioritize features that carry high",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-046",
+    "category": "paper",
+    "question": "By how much did Hybrid QA outperform the diagonal greedy baseline on Task 1B?",
+    "expected_answer": "Task 1B (feature selection) and Task 2 (instance selection)",
+    "gold_sources": [
+      {
+        "paper": "paper441",
+        "pages": [
+          7
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "QuantumCLEF: Quantum Computing, Information Retrieval and Recommender Systems",
+      "title": "Team R2AI at QuantumCLEF 2026: Interaction-Aware Feature Selection and Complementary-Signal Instance Selection via QUBO Optimization",
+      "pdf_page": 7,
+      "chunk_id": "68523bb3dd77231832a1ae6b15075d13c98137f8fac9af012c8b800b6c26ec73",
+      "url": "https://clef-staging.pages.dev/paper441.pdf#page=7",
+      "source_passage": ". This indicates that without pre-selection the solver is free to remove features anywhere in the full 400-variable space, optimizing a second-order proxy that diverges from the true nDCG objective at large removal counts. The diagonal greedy baseline (+9.5%), which selects features purely on individual \u0394\ud835\udc56 without any pairwise modelling, substantially outperforms SA (+2.5%). This demonstrates that restricting removal to the most individually impactful features is a critical prerequisite for effective large-scale feature selection, regardless of whether pairwise interactions are modelled. Crucially, Hybrid QA (+15.1%) significantly outperforms the diagonal greedy baseline ( +9.5%), confirming that pairwise interaction information in the Q matrixdoesprovide useful signal once the search space is appropriately constrained. The diagonal pre-selection aligns the candidate pool with the true objective, after which the pairwise QUBO refinement within the 150-variable sub-BQM delivers meaningful additional gains. The combination of diagonal filtering and quadratic optimization is therefore what drives Hybrid QA\u2019s advantage on the large-scale feature set. 5. Conclusion This paper presented Team R2AI\u2019s participation in QuantumCLEF 2026 on Task 1B (feature selection) and Task 2 (instance selection) through QUBO-based annealing optimization",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-047",
+    "category": "paper",
+    "question": "What nDCG@10 score did teamR2AI achieve?",
+    "expected_answer": "TeamFAST-NUCES adopted a QUBO formulation that combines collaborative relevance, separability, coverage, and redundancy signals extracted from both the Item Content Matrix and the User Rating Matrix.",
+    "gold_sources": [
+      {
+        "paper": "paper436",
+        "pages": [
+          11
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "QuantumCLEF: Quantum Computing, Information Retrieval and Recommender Systems",
+      "title": "QuantumCLEF 2026: Overview of the Third Quantum Computing Challenge for Information Retrieval and Recommender Systems at CLEF",
+      "pdf_page": 11,
+      "chunk_id": "ad7f7b8de10b1ab02dcd0c8063b844c9af6f14c10fb5e7b2fa20d3ee162e58af",
+      "url": "https://clef-staging.pages.dev/paper436.pdf#page=11",
+      "source_passage": ". requiring lower computational effort. The best-performing configuration was proposed by teamR2AI, which obtained an nDCG@10 score of 0.0396 while retaining 380 features, outperforming the baseline by a substantial margin. At the same time, submission 1B_400_ICM_QA_FAST-NUCES_Ensemble from teamFAST-NUCESachieved a score comparable to the baseline while retaining only 150 features, demonstrating a significant reduction in feature dimensionality without sacrificing effectiveness. From a methodological perspective, the participating teams explored a variety of feature-selection strategies. TeamFAST-NUCESadopted a QUBO formulation that combines collaborative relevance, separability, coverage, and redundancy signals extracted from both the Item Content Matrix and the User Rating Matrix [44]. In contrast, teamSkywalkersdeveloped a hybrid Bayesian-quantum pipeline that integrates Optuna-based hyperparameter optimization with a QUBO formulation leveraging Random Forest relevance scores and cosine-similarity redundancy penalties. Their approach automatically calibrates penalty weights, eliminating the need for manual tuning [ 47]. TeamSYZYGY, instead, proposed a collaborative-driven QUBO formulation designed to align content-based similarity with user-interaction similarity through an agreement mask that is subsequently projected back into the feature space [48]",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-048",
+    "category": "paper",
+    "question": "What proxy classifier was used for evaluating QA- and SA-selected subsets in Task 2?",
+    "expected_answer": "NYT Vader (20% injected noise)",
+    "gold_sources": [
+      {
+        "paper": "paper439",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "QuantumCLEF: Quantum Computing, Information Retrieval and Recommender Systems",
+      "title": "Entropy of Void at QuantumCLEF 2026: Hardware-Aware QUBO Decomposition via Quantum Annealing - Instance Selection and Document Clustering",
+      "pdf_page": 5,
+      "chunk_id": "d939b87a17628a149e798be4c1e8ae9dba348966c1c3d2e0e5e7487c250d50b9",
+      "url": "https://clef-staging.pages.dev/paper439.pdf#page=5",
+      "source_passage": "Figure 2:Left: PCA projection of LLaMA 3.1 8B embeddings (768D \u2192 50D) coloured by sentiment class across one training fold. Right: Subproblem size distribution and class balance within \ud835\udc58-medoids clusters (Fold 1, target_cluster_size= 20). Table 1 Task 2: 5-fold cross-validation on NYT Vader (20% injected noise), using Logistic Regression as a proxy classifier (see protocol above). Both QA and SA retain\u223c40% of training data while matching full-data Macro-F1. Reduction \u224860%is consistent across all folds. Method Macro-F1\u2191Retention Reduction QPU time Full baseline 0.9482 100% 0% \u2014 SA-selected subset 0.9484\u223c40%\u223c60% \u2014 QA-selected subset 0.9484\u223c40%\u223c60%<1% of 160 s budget 4.5. Task 2 Results Internal validation protocol.Since fine-tuning the full LLaMA 3.1 8B model per fold was not feasible within our compute budget, we use Logistic Regression as a proxy classifier to evaluate the quality of QA- and SA-selected subsets prior to official submission. For each of the 5 folds, the fold\u2019s embeddings are split 80%/20% (stratified by class, fixed seed) into a training portion and a held-out validation portion that is never touched by the selection process",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-049",
+    "category": "paper",
+    "question": "According to Table 14 in the Elsevier at CLEF 2026 SimpleText paper, what fraction of source occurrences of the phrase 'could' were retained in the reference simplification for sentence-level gold training pairs?",
+    "expected_answer": "0.30",
+    "gold_sources": [
+      {
+        "paper": "paper451",
+        "pages": [
+          15
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "SimpleText: Simplify Scientific Text (and Nothing More)",
+      "title": "Elsevier at CLEF 2026 SimpleText: Deconstructing Scientific Text Simplification with Direct and Multi-Stage LLM Approaches",
+      "pdf_page": 15,
+      "chunk_id": "78c302383817ef5338807121307ec989cb8145e02c25193812af34de3493f926",
+      "url": "https://clef-staging.pages.dev/paper451.pdf#page=15",
+      "source_passage": "Table 14 Stage 1 mined hedge/uncertainty preservation rates in the gold training pairs: the fraction of source occurrences of each phrase retained in the reference simplification. Hedge phrase Sentence Document may 0.66 0.63 probably 0.66 0.71 uncertain 0.67 0.62 could 0.53 0.42 unclear 0.49 0.30 no evidence 0.57 0.52 little or no 0.63 0.62 low-certainty evidence 0.17 0.21 very low-certainty evidence 0.14 0.12 D. Prompt Templates D.1. Guidance Synthesis Prompt Stage 2 converts the mined artifact (Appendix C) into structured guidance with a single LLM call. The system prompt is shown in GSYN; the paired user message contains the compact mined artifact as JSON (corpus statistics, top dropped/added tokens, candidate jargon substitutions, hedge-preservation rates, and up to nine sampled complex-to-simple pairs), and {level} is instantiated as either sentence or document. The rules, jargon_substitutions, and must_preserve fields of the returned JSON populate the guidance overlays below. GSYN - System prompt used in Stage 2 to synthesize structured guidance from the mined pattern artifact You are an expert in plain-language medical writing. Given mined statistics and example complex->simple sentence pairs from a medical simplification corpus, you must produce concrete, actionable guidance that a downstream LLM can follow when simplifying medical text for a general audience",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-050",
+    "category": "paper",
+    "question": "What was the impact on SARI when a 129-entry medical lexicon was disabled in the Codabench submissions for Task 1?",
+    "expected_answer": "The output cleanup pass removed leading preamble phrases such as \u201chere\u2019s the simplified version:\u201d, \u201csimplified:\u201d, and \u201csure, \u201d.",
+    "gold_sources": [
+      {
+        "paper": "paper461",
+        "pages": [
+          6
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "SimpleText: Simplify Scientific Text (and Nothing More)",
+      "title": "Multilingual Scientific Text Simplification Using a Locally Deployed Open-Source LLM: Plan-Driven Sentence Simplification and Summary-Guided Document Simplification with Llama 3.1 8B at the CLEF 2026 SimpleText Track --- Task 1",
+      "pdf_page": 6,
+      "chunk_id": "d50aa5359c8d78c521c49810bae4244a14a16e2a02f36c82428ce684d0b23ca6",
+      "url": "https://clef-staging.pages.dev/paper461.pdf#page=6",
+      "source_passage": "4.7. Output Cleanup LLMs occasionally prefix their output with a preamble phrase such as \u201cHere\u2019s the simplified version:\u201d or \u201cSure!\u201d before producing the actual simplification. These phrases are penalised by SARI because they do not appear in the reference simplifications. We apply a regular-expression cleanup pass to all outputs, across all languages, that strips: \u2022leading preamble phrases (\u201chere\u2019s the simplified version:\u201d, \u201csimplified:\u201d, \u201csure, \u201d, and variants); \u2022leading and trailing quotation marks; \u2022trailing translation-artifact annotations (e.g., \u201c(Translation from French:)\u201d). This cleanup is applied after every model inference call in both tasks. Note: a 129-entry medical lexicon (e.g.,myocardial infarction \u2192 heart attack) was evaluated during development but was disabled in the final submissions because it reduced SARI by 0.21\u20131.84 points on our English development evaluation; the P5 prompt\u2019s own jargon-replacement rules proved more effective. 4.8. Worked Example: End-to-End Processing This subsection traces real inputs through each pipeline using actual outputs from the final Codabench submissions. 4.8.1. Task 1.1 \u2014 Sentence-Level Walkthrough Input (English): We included 19 trials (17 RCTs and two cluster-RCTs). Step 1 \u2014 Language mapping.Thelanguagefield isen;{lang}is set toEnglish",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-051",
+    "category": "paper",
+    "question": "What SARI score did the submitted plan-guided system achieve on the official CLEF 2026 evaluation for Task 1.1?",
+    "expected_answer": "51.96",
+    "gold_sources": [
+      {
+        "paper": "paper460",
+        "pages": [
+          3
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "SimpleText: Simplify Scientific Text (and Nothing More)",
+      "title": "NUQLab at SimpleText 2026: Plan-Guided Biomedical Scientific Text Simplification",
+      "pdf_page": 3,
+      "chunk_id": "b8645ff1405b6b6700795bfb6cab199eaca7c5e7dae1717c6c3b26676f4febd1",
+      "url": "https://clef-staging.pages.dev/paper460.pdf#page=3",
+      "source_passage": ". Task 1.2 uses a test file of 8,069 documents; the primary evaluation subset contains 175 English Cochrane-auto documents. The validation split for Task 1.2 contains 119 documents. Implementation.All experiments run on a single NVIDIA T4 GPU in Google Colab using PyTorch and Hugging Face Transformers. The random seed is set to 42. Table 2 summarizes the inference settings. 5. Results and Discussion 5.1. Task 1.1: Sentence-Level Simplification Table 3 summarizes the validation SARI scores across configurations. On the official CLEF 2026 evaluation, the submitted plan-guided system achieves a SARI of38.96. On our offline Cochrane-auto validation subset, the same system reaches a SARI of 51.96 on the non-delete rows, above both the plain BARTsent fallback and an earlier plan-guided run without the full controltoken diagnostic; the gap between the offline and official figures reflects the broader, multilingual",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 0.9
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-052",
+    "category": "paper",
+    "question": "What specific LLM was used as 'LLM2' in the THM@SimpleText system?",
+    "expected_answer": "0.9",
+    "gold_sources": [
+      {
+        "paper": "paper456",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "SimpleText: Simplify Scientific Text (and Nothing More)",
+      "title": "THM@SimpleText 2026 - Task 2: Ensemble-based Hallucination Classification in Text Simplification",
+      "pdf_page": 4,
+      "chunk_id": "fe14d8221430d8c34bfe3246780fec18111286c8bced721bbe537b6954ecd75b",
+      "url": "https://clef-staging.pages.dev/paper456.pdf#page=4",
+      "source_passage": ". The classification results from the first Random Forest are filtered again. Entries surpassing a threshold of 0.9 for the label \u2018None\u2018 assigned by the Random Forest or coming with an unanimous BERT agreement threshold of 0.6 to the same error class with the Random Forest are considered agreed upon and thus disregarded. Only ambiguous cases, entries with different assigned classes or low certainty, are then given to the LLM council. The LLM2, GPT-4.1-nano in our case, is tasked to handle these entries. Table 3 contains the prompt to assess factuality and error-types of ambiguous entries. In the LLM\u2019s responses, entries with placeholders (\"empty, due to none\" ) are assigned \u2018None\u2018 labels. 4.3. Ultimate Council In the last step, all BERT and Random Forest results are merged into a single rich record per entry containing all information. Here, the BERT outputs are compared with the LLM responses to highlight disagreements. A conflict score is computed per sentence according to the following rules: \u2022+0.6if the LLM indicated a class that BERT assigned low probability (missed detection). \u2022+0.2if BERT assigned a probability>0.3to a class that the LLM did not flag. \u2022+0.4 if the LLM indicated that the sentence is clean while BERT indicated at least one error class. Table 4 contains a sample entry after the merging of information from LLM and filter",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-053",
+    "category": "paper",
+    "question": "What is Skillberg.app's Spanish score?",
+    "expected_answer": "Skillberg.app",
+    "gold_sources": [
+      {
+        "paper": "paper474",
+        "pages": [
+          11
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "TalentCLEF: Skill and Job Title Intelligence for Human Capital Management",
+      "title": "Overview of TalentCLEF 2026: Task A \u2014 Contextualized Job\u2013Person Matching",
+      "pdf_page": 11,
+      "chunk_id": "a2d6e2fe1844f314014258acd1e42777791afcfd8bdbcabb31ca192a73402a4a",
+      "url": "https://clef-staging.pages.dev/paper474.pdf#page=11",
+      "source_passage": ". Beyond the podium,Skillberg.app is notable for a strong English score \u2014close to the second-best result in that language\u2014 paired with a lower Spanish score (0.6384), while CYUT shows the opposite asymmetry, performing better in Spanish than in English. Every participating team that produced valid test submissions surpassed the organizer baseline; the spread among participants\u2019 scores, however \u2014roughly 0.22 MAP points from top to bottom\u2014 indicates that the methodological choices analyzed in Section4 translate into substantial differences in ranking quality.",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-054",
+    "category": "paper",
+    "question": "What Graded NDCG score did the final two-stage pipeline achieve on the official unseen test set?",
+    "expected_answer": "0.7399",
+    "gold_sources": [
+      {
+        "paper": "paper476",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "TalentCLEF: Skill and Job Title Intelligence for Human Capital Management",
+      "title": "Semantic Reranking for Zero-Shot Occupation-Skill Linking",
+      "pdf_page": 5,
+      "chunk_id": "14be2159f18d2c9981d5161c7141ec1bc9b44a9df9004f2cd721d4512fb8d2fb",
+      "url": "https://clef-staging.pages.dev/paper476.pdf#page=5",
+      "source_passage": ". Test Set Performance:To validate the generalization of our semantic approach, the final twostage pipeline was evaluated on the official unseen test set. The model maintained highly competitive performance, achieving aGraded NDCG of 0.7399and aBinary (General) NDCG of 0.7746. Furthermore, the system achieved aMAP of 0.3093and anMRR of 0.8052. This demonstrates that our zero-shot focused methodology successfully maps unseen conceptual definitions without overfitting to the predefined training lists. 5. Conclusion Accurate occupation-skill linking serves as the foundational layer for modern workforce analytics, educational planning, and personalized career development. In this paper, we outlined our methodology for HR TalentCLEF 2026 Task B, designing a system aimed at solving these core labor market challenges efficiently. We demonstrated that generating occupation descriptions with LLMs from scratch, while rigidly anchoring skill semantics to baseline ESCO definitions, successfully prevents representation collapse and enables true semantic matching.",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 0.818
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-055",
+    "category": "paper",
+    "question": "According to Skillberg's findings regarding Task A, what weighting of dense and sparse scores yielded a measurable lift over dense-only retrieval?",
+    "expected_answer": "0.6374",
+    "gold_sources": [
+      {
+        "paper": "paper491",
+        "pages": [
+          6
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "TalentCLEF: Skill and Job Title Intelligence for Human Capital Management",
+      "title": "Skillberg at TalentCLEF 2026: Cross-Framework Knowledge-Graph Grounded Multilingual Encoders for Job\u2013Person and Job\u2013Skill Matching",
+      "pdf_page": 6,
+      "chunk_id": "4f0a41b164bcca4d8d55d1fde27d51f4650389a53e02d69972fb0c16aeea5fc2",
+      "url": "https://clef-staging.pages.dev/paper491.pdf#page=6",
+      "source_passage": ". We flag this as the most useful per-task lesson for other practitioners building cross-lingual retrieval pipelines: do not assume the reranker is additive across all languages. What surprised us: hybrid dense\u2013sparse retrieval matters more than expected.Our prior going into Task A was that, with a strong fine-tuned multilingual encoder, BM25 would be redundant \u2014 the encoder should already cover the lexical signal as a special case of semantic matching. In practice, even a 0.85/0.15 weighting in favour of the dense score gave a measurable lift over denseonly retrieval, particularly on queries with rare technical vocabulary, named entities, and corporatespecific abbreviations. Lexical matching is not subsumed by good embeddings; the two signals are complementary. Per-language behaviour.On the official Task A test set we observed a small but consistent gap between English and Spanish, with English ahead on both MAP (0.6597 vs 0.6374) and NDCG (0.8560 vs 0.8463) \u2014 though the gap is narrower on NDCG. We have not yet pinned down whether this reflects labelquality differences in the test set, residual asymmetries in our training-pair sampling, an interaction",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 0.571
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-056",
+    "category": "paper",
+    "question": "What GPT model was used for parsing resumes and job descriptions in QTPride?",
+    "expected_answer": "multilingual-e5-large-instruct",
+    "gold_sources": [
+      {
+        "paper": "paper490",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "TalentCLEF: Skill and Job Title Intelligence for Human Capital Management",
+      "title": "QTPride @TalentCLEF 2026: Towards Multi-View Job-Person Matching with LLM Parsing and Knowledge Graph-Enhanced Retrieval",
+      "pdf_page": 4,
+      "chunk_id": "c38790d82b1228e34bf05e383cb46b49b1e2a8f6ba87a8c8562e3b13c28ac8ac",
+      "url": "https://clef-staging.pages.dev/paper490.pdf#page=4",
+      "source_passage": "3.2. Implementation details For the preprocessing stage, we use GPT-5 mini with a zero-shot prompt to convert multilingual resumes and job descriptions into fixed JSON schemas. The prompt explicitly instructs the model to extract only information explicitly stated in the source documents without inferring or hallucinating missing content. Minor normalization is permitted, such as standardizing date formats, separating comma-separated skill lists, or normalizing obvious entities, while preserving the original semantics and avoiding unnecessary paraphrasing. Outputs are required to conform to the predefined schema, and malformed generations are automatically regenerated. We manually inspected a subset of the extracted outputs to verify that the extracted information remained faithful to the source documents. The complete prompts used for resume and job description parsing are provided in Appendix A. 3.3. Results 3.3.1. Embedding model performance on full text To determine the baseline embedding model for our retrieval system, we conduct an evaluation on the development set using several multilingual embedding models. The results in Table 2 show that multilingual-e5-large-instruct consistently outperforms the other models, achieving the highest mAP scores for both English and Spanish",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-057",
+    "category": "paper",
+    "question": "What was the increase in mean macro-F1 for GPT-5.2 when adding the dataset-specific argument criterion?",
+    "expected_answer": "0.747",
+    "gold_sources": [
+      {
+        "paper": "paper510",
+        "pages": [
+          7
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "Touch\u00e9: Argumentation Systems",
+      "title": "Context-Awakens at Touch\u00e9: Generalizable Argument Identification with In-Context Learning",
+      "pdf_page": 7,
+      "chunk_id": "c148b183c90111a464427aa882018e1e62a7ac0030b05679818631f860ebd6fd",
+      "url": "https://clef-staging.pages.dev/paper510.pdf#page=7",
+      "source_passage": ". Classification uses structured output with a Pydantic schema constraining responses to {Argument, No-Argument} , eliminating post-hoc label normalization. All three text manipulations (M0, M1, M2) for a given sentence are classified in parallel via thread pooling. 5. Results This section first reports our diagnostic experiments on the development split, then the official submission result on the held-out test set. The context-ladder (Section 5.1) and manipulation (Section 5.2) experiments use a sample size of\ud835\udc41= 60 per dataset, chosen for faster inference and less computation. The baseline comparison in Table 3 instead uses the full development split (\ud835\udc41= 340 per dataset), since gold labels were available to us and it serves as our diagnostic reference for the held-out test. The contamination audit (Section 5.3) uses 50 sentences per dataset, as described in Section 4. The final submission (Section 5.4) is evaluated on the official held-out test set. 5.1. RQ1: What context is relevant? The clearest effect appears at the first context step. Adding the dataset-specific argument criterion already changes the task substantially: mean macro-F1 across the ten public datasets increases from 0.567 to 0.721 for GPT-5.2 (+0.154), from 0.606 to 0.709 for Ministral 8B (+0.103), and from 0.606 to 0.747 for Mistral Medium (+0.141)",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 0.765
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-058",
+    "category": "paper",
+    "question": "According to the evaluation, how many records did the courtroom and BERT disagree on?",
+    "expected_answer": "+4.0 pp",
+    "gold_sources": [
+      {
+        "paper": "paper501",
+        "pages": [
+          8
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "Touch\u00e9: Argumentation Systems",
+      "title": "Webis at Touch\u00e9: The Court of Fallacies: Adversarial LLM Advocacy with Forensic Appeal for Reddit Fallacy Detection",
+      "pdf_page": 8,
+      "chunk_id": "6f6f07bec79a9c00e00af7d35daf6ac90e199a02bbecddee91c01abdd1ca0d98",
+      "url": "https://clef-staging.pages.dev/paper501.pdf#page=8",
+      "source_passage": ". The expert witness probability and the appeal are nearly neutral: removing\ud835\udc43 (fallacy) costs only 0.7 pp, dropping the appeal is essentially flat (+0.3 pp), and a symmetric appeal matches the asymmetric default to within 0.1 pp. On base, the courtroom adds value mainly through retrieval: two polarity-stratified precedent pools, each routed to the advocate who can use it. Onenhanced, every ablation improves the score. The biggest gains come from weakening the appeal: a symmetric appeal gains 5.5 pp and dropping the appeal entirely gains 4.0 pp, while removing\ud835\udc43 (fallacy) from the prompts gains 2.4 pp. Retrieval changes matter less (+0.8 pp for a shared mixed pool, +2.3 pp for no precedents). The direction reverses because the expert witness becomes over-confident on explicit surface markers. The asymmetric appeal is meant to catch cases where the expert witness disagrees with the defense; here, it instead pulls correct non-fallacy verdicts toward fallacy. The burden-of-proof asymmetry breaks down once the expert witness itself is the source of error. 4.4. Where the Trial Wins and Loses The aggregate macro-\ud835\udc391 scores mask different behavior across the two variants. On base, the trial and BERT disagree on 24 of the 141 records (17%); the trial is right in 13 of these and BERT in 11, which yields the trial\u2019s modest 1.3 pp edge",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-059",
+    "category": "paper",
+    "question": "From what pool of items were the four examples for the four-shot prompt sampled?",
+    "expected_answer": "778 items",
+    "gold_sources": [
+      {
+        "paper": "paper496",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "Touch\u00e9: Argumentation Systems",
+      "title": "Graz University of Technology at Touch\u00e9: Prompting Strategies for LLM-based Fallacy Detection",
+      "pdf_page": 5,
+      "chunk_id": "e7118e92df8789104d7183dc618e1d3c6b91f0c99962dc35e8b4a06230befc1d",
+      "url": "https://clef-staging.pages.dev/paper496.pdf#page=5",
+      "source_passage": "case that resembles a different fallacy. The four examples are presented in random order. They are sampled at random from the 778-item pool described in Section 3.2, with resampling per request: every evaluation item is paired with a freshly drawn set of four examples. The four-shot prompt is delivered across two conversational turns. The first turn presents the four examples and asks the model to label them. The model\u2019s response is recorded. The second turn provides the model\u2019s own labels back as context, together with the actual argument to be classified. This two-turn structure keeps token consumption manageable without altering the four-example calibration content. 3.3.3. Single-Prompt Multiclass The third strategy presents all classes together in a single prompt and asks the model to select the most appropriate label, including an explicitnoneoption. For the Subtask 1+2 group this is a nine-way decision over the eight fallacy types andnone(Listing 3). For Subtask 3 the basis and goal dimensions are presented jointly in one prompt, and the model returns one label for each dimension in a single response (Listing 4). The strictness prior is used, in the same wording as the binary baseline: this strategy differs from the baseline along the topology axis but not along the prior axis. No in-context examples are provided. Listing 3: Multiclass fallacy prompt",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-060",
+    "category": "paper",
+    "question": "According to this text, what is the URL for the Gemma 4 model card?",
+    "expected_answer": "Natural language inference.",
+    "gold_sources": [
+      {
+        "paper": "paper500",
+        "pages": [
+          9
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "Touch\u00e9: Argumentation Systems",
+      "title": "helium at Touch\u00e9: The Case for Naturalistic Evaluation of Fallacy Detection",
+      "pdf_page": 9,
+      "chunk_id": "5067912aecda186726c779ec0e2e77262cfa93190c245eb17210f384d67956bb",
+      "url": "https://clef-staging.pages.dev/paper500.pdf#page=9",
+      "source_passage": "Chapter of the Association for Computational Linguistics, 2025, pp. 132\u2013147. doi:10.18653/v1/ 2025.findings- ijcnlp.8 . [7] Z. Jin, A. Lalwani, T. Vaidhya, X. Shen, Y. Ding, Z. Lyu, M. Sachan, R. Mihalcea, B. Sch\u00f6lkopf, Logical fallacy detection, in: Findings of the Association for Computational Linguistics: EMNLP 2022, 2022, pp. 7180\u20137198. doi:10.18653/v1/2022.findings- emnlp.532 . [8] S. R. Bowman, G. Angeli, C. Potts, C. D. Manning, A large annotated corpus for learning natural language inference, in: Proceedings of the 2015 Conference on Empirical Methods in Natural Language Processing (EMNLP), 2015, pp. 632\u2013642. doi:10.18653/v1/D15- 1075 . [9] OpenAI, New embedding models and API updates, 2024. https://openai.com/index/ new-embedding-models-and-api-updates/. [10] K. Clark, M.-T. Luong, Q. V. Le, C. D. Manning, ELECTRA: Pre-training text encoders as discriminators rather than generators, in: International Conference on Learning Representations (ICLR), 2020. https://arxiv.org/abs/2003.10555. [11] Y. Liu, M. Ott, N. Goyal, J. Du, M. Joshi, D. Chen, O. Levy, M. Lewis, L. Zettlemoyer, V. Stoyanov, RoBERTa: A robustly optimized BERT pretraining approach, arXiv preprint arXiv:1907.11692 (2019). https://arxiv.org/abs/1907.11692. [12] Google DeepMind, Gemma 4 model card, 2026.https://ai.google.dev/gemma/docs/core/model_ card_4.",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 0.714
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-061",
+    "category": "paper",
+    "question": "What BAAI model does the BGE-small run utilize?",
+    "expected_answer": "It uses a hybrid query prototype incorporating both raw ASRS questions and natural-language Likert-style answer descriptions.",
+    "gold_sources": [
+      {
+        "paper": "paper130",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "eRisk: Early Risk Prediction on the Internet",
+      "title": "DS@GT-ARC at eRisk 2026 Task 3: Sparse, Semantic, and LLM Reranking for ADHD Symptom Sentences",
+      "pdf_page": 4,
+      "chunk_id": "d9c1e3cf46221355f52b7ebe5cc24c849a734e0489f0adada79189337fb4a569",
+      "url": "https://clef-staging.pages.dev/paper130.pdf#page=4",
+      "source_passage": ". The BGE-small run uses BAAI/bge-small-en-v1.5, also with raw ASRS questions, over the BM25 v2 candidate pool. These systems are intended to recover paraphrases and semantically related symptom evidence that sparse retrieval may rank too low. Our rationale was to use general-purpose open-weight embedding models as a practical floor for semantic reranking performance rather than relying on costly inference-only encoders. 4.3. Prototype Query Reranking The prototype hybrid run extends dense reranking by changing the query representation. Instead of embedding only the raw ASRS question, it uses a hybrid query prototype that incorporates the question and natural-language Likert-style answer descriptions. For each ASRS item, we embed the answer descriptions corresponding to Likert severity ranks 2\u20135, compute a severity-weighted centroid over those answer embeddings, average that centroid with the raw ASRS question embedding, and then L2-normalize the resulting vector before cosine reranking. The motivation is that ASRS symptoms are often expressed through severity-graded behaviors rather than a single question wording. For example, a symptom about staying on task may be expanded with prototype statements such as \u201cI sometimes have trouble staying on task\u201d or \u201cI always have trouble staying on task",
+      "screen": "NEEDS_MANUAL_REWRITE",
+      "rewrite_attempt": "What type of query representation does the prototype hybrid run employ?",
+      "note": "auto-rewrite avoided banned words but stayed non-specific; rewrite by hand from source_passage",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-062",
+    "category": "paper",
+    "question": "For which LLM persona did all three runs assign a score of 14 against a ground truth of 13?",
+    "expected_answer": "LLM persona 4 and LLM persona 8.",
+    "gold_sources": [
+      {
+        "paper": "paper134",
+        "pages": [
+          7
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "eRisk: Early Risk Prediction on the Internet",
+      "title": "BUAP-CRC @ eRisk 2026: Conversational Depression Detection Using Judges Model",
+      "pdf_page": 7,
+      "chunk_id": "1754cf0fb4d51e35c93f5b29381b2e4f50437f65f1892f801502165bf630d2fb",
+      "url": "https://clef-staging.pages.dev/paper134.pdf#page=7",
+      "source_passage": ". The strongest individual results were observed for LLM persona 15, where run #1 exactly reproduced the ground truth score of 38 and runs #2 and #3 deviated by a single point (39), and for LLM persona 10, where all three runs assigned 14 points against a ground truth of 13, with the correct \"Mild\" classification and consistent identification of symptoms including loss of interest, self-dislike, and irritability. LLM persona 7 also showed high concordance, with scores of 32, 33, and 31 against a ground truth of 35, preserving the \"Severe\" classification. With respect to inter-run differences, run #1 exhibited greater conservatism in the moderate range, which in several cases (e.g., LLM persona 4 and LLM persona 8) brought its estimates closer to the ground truth. Run #2 showed a tendency to over-classify moderate profiles by one severity level, though it demonstrated greater internal consistency across turns. Run #3, despite manual intervention on the first two personas, offered no systematic advantage over the fully automated runs, and was uniquely accurate in identifying the Minimal level for LLM persona 19, where the other methods classified the profile as Mild",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-063",
+    "category": "paper",
+    "question": "What assessment tool did the authors use for conversation transcripts?",
+    "expected_answer": "A large language model was used for BDI-II assessment from conversation transcripts.",
+    "gold_sources": [
+      {
+        "paper": "paper147",
+        "pages": [
+          6
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "eRisk: Early Risk Prediction on the Internet",
+      "title": "pjmathematician @ eRisk 2026 : Automating Conversational Depression Detection",
+      "pdf_page": 6,
+      "chunk_id": "a2b14b4aec25f2676e8a5ccbd921f547dd177a81f626a259178b2345f808d91c",
+      "url": "https://clef-staging.pages.dev/paper147.pdf#page=6",
+      "source_passage": "as the raw diagnostic ability of the underlying model, and that short, targeted clinical interviews can outperform long exploratory dialogues once latency is taken into account. Future work includes making the interview adaptive\u2014selecting follow-up questions only when the evidence for particular symptoms is ambiguous\u2014while preserving the low message budget, as well as calibrating the assessor\u2019s score estimates to further improve category-level accuracy (DCHR). We also plan to investigate ensembling the per-run assessments and quantifying the uncertainty of the BDI-II estimates to support more reliable early-stopping decisions. Acknowledgments We thank the eRisk 2026 organisers for designing and running the task, and for releasing the simulated personas in a reproducible form. Declaration on Generative AI During the preparation of this work, the author(s) used a large language model as a core component of the described system (BDI-II assessment from conversation transcripts), as documented in the methodology. In addition, the author(s) used a generative AI assistant for grammar and spelling checking during the writing of this paper. After using these tools, the author(s) reviewed and edited the content as needed and take(s) full responsibility for the publication\u2019s content. References [1] A. Perez, J. Parapar, X. Wang, F",
+      "screen": "NEEDS_MANUAL_REWRITE",
+      "rewrite_attempt": "What tool did contributors use to assess conversation transcripts?",
+      "note": "auto-rewrite avoided banned words but stayed non-specific; rewrite by hand from source_passage",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  },
+  {
+    "id": "cand-064",
+    "category": "paper",
+    "question": "What F1 score did MentalBERT achieve on the validation set without augmentation?",
+    "expected_answer": "0.70",
+    "gold_sources": [
+      {
+        "paper": "paper114",
+        "pages": [
+          3
+        ]
+      }
+    ],
+    "_verify": {
+      "status": "UNVERIFIED",
+      "track": "eRisk: Early Risk Prediction on the Internet",
+      "title": "erisk-cedri at eRisk 2026: MentalBERT with BDI-II Filtering and Empathy Detection for Contextualized Early Depression Detection",
+      "pdf_page": 3,
+      "chunk_id": "39d13751fc2919706eb78207666ea5d128314217b9e0ecb3f05d5bdac8f39287",
+      "url": "https://clef-staging.pages.dev/paper114.pdf#page=3",
+      "source_passage": ". Class weights were also applied to further balance the loss. The posts are concatenated in reverse chronological order so that, if the input exceeds 512 tokens and has to be truncated, the most recent content is preserved. The model produces a single probability for the positive class through a linear head with sigmoid activation. The base model (without augmentation) reached F1 of 0.842 on the validation set (threshold 0.70, Precision 0.941, Recall 0.762, 16 true positives, 1 false positive, 5 false negatives, 161 true negatives).",
+      "screen": "UNSCREENED",
+      "page_check": [
+        {
+          "verdict": "OK",
+          "overlap": 1.0
+        }
+      ],
+      "page_check_result": "OK"
+    }
+  }
+]
