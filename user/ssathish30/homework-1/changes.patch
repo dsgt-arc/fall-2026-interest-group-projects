@@ -1,7 +1,8 @@
-diff --git a/homework_1/clef-rag/src/clef_rag/cli.py b/homework_1/clef-rag/src/clef_rag/cli.py
---- a/homework_1/clef-rag/src/clef_rag/cli.py
-+++ b/homework_1/clef-rag/src/clef_rag/cli.py
-@@ -69,8 +69,50 @@
+diff --git a/homework-1/clef-rag/src/clef_rag/cli.py b/homework-1/clef-rag/src/clef_rag/cli.py
+index 32b9270..073fca1 100644
+--- a/homework-1/clef-rag/src/clef_rag/cli.py
++++ b/homework-1/clef-rag/src/clef_rag/cli.py
+@@ -69,8 +69,50 @@ def parser():
              command.add_argument("--title", help="Title substring")
          if name in ("search", "ask"):
              command.add_argument("question")
@@ -54,7 +55,7 @@ diff --git a/homework_1/clef-rag/src/clef_rag/cli.py b/homework_1/clef-rag/src/c
          if name in ("ask", "evaluate"):
              command.add_argument("--model", choices=CHAT_MODELS, default=CHAT_MODELS[0])
          if name == "evaluate":
-@@ -90,7 +132,25 @@
+@@ -90,9 +132,27 @@ def parser():
              command.add_argument(
                  "--retrieval-only", action="store_true", help="Skip generated answers"
              )
@@ -64,8 +65,8 @@ diff --git a/homework_1/clef-rag/src/clef_rag/cli.py b/homework_1/clef-rag/src/c
 +                help="Search the whole corpus instead of each question's papers/track",
 +            )
      return root
-+
-+
+ 
+ 
 +def retrieval_options(args):
 +    """Collect the ablation settings shared by search and evaluate."""
 +
@@ -77,22 +78,23 @@ diff --git a/homework_1/clef-rag/src/clef_rag/cli.py b/homework_1/clef-rag/src/c
 +        "shuffle_seed": args.shuffle_seed,
 +        "rerank_depth": args.rerank_depth,
 +    }
- 
- 
++
++
  def render_sources(sources):
-@@ -155,7 +215,10 @@
+     for source in sources:
+         print(
+@@ -155,7 +215,9 @@ def main(argv=None):
                      print(result["answer"])
              elif args.command == "search":
                  ids = resolve_papers(index.db, args.paper) if args.paper else None
 -                sources = Retriever(index, LocalModels()).search(
-+                models = LocalModels()
 +                sources = Retriever(
-+                    index, models, rerank_models=models, **retrieval_options(args)
++                    index, LocalModels(), **retrieval_options(args)
 +                ).search(
                      args.question,
                      track=args.track,
                      author=args.author,
-@@ -192,6 +255,9 @@
+@@ -192,6 +254,9 @@ def main(argv=None):
                      args.output,
                      args.retrieval_only,
                      cutoffs=args.k,
@@ -102,10 +104,11 @@ diff --git a/homework_1/clef-rag/src/clef_rag/cli.py b/homework_1/clef-rag/src/c
                  )
                  if not args.json:
                      print(json.dumps(result["summary"], indent=2))
-diff --git a/homework_1/clef-rag/src/clef_rag/evaluate.py b/homework_1/clef-rag/src/clef_rag/evaluate.py
---- a/homework_1/clef-rag/src/clef_rag/evaluate.py
-+++ b/homework_1/clef-rag/src/clef_rag/evaluate.py
-@@ -24,7 +24,26 @@
+diff --git a/homework-1/clef-rag/src/clef_rag/evaluate.py b/homework-1/clef-rag/src/clef_rag/evaluate.py
+index cf27366..46cfb78 100644
+--- a/homework-1/clef-rag/src/clef_rag/evaluate.py
++++ b/homework-1/clef-rag/src/clef_rag/evaluate.py
+@@ -24,8 +24,12 @@ def evaluate(
      retrieval_only=False,
      *,
      cutoffs=DEFAULT_CUTOFFS,
@@ -113,26 +116,12 @@ diff --git a/homework_1/clef-rag/src/clef_rag/evaluate.py b/homework_1/clef-rag/
 +    ignore_filters=False,
 +    top_k=6,
  ):
-+    retrieval = retrieval or {}
-+    if not retrieval_only:
-+        defaults = {
-+            "weights": (0.5, 0.5), "rrf_c": 60, "candidates": 20,
-+            "introductions": True, "shuffle_seed": None, "rerank_depth": 0,
-+        }
-+        changed = [
-+            key for key, value in retrieval.items()
-+            if key not in defaults
-+            or (tuple(value) if key == "weights" else value) != defaults[key]
-+        ]
-+        if changed or ignore_filters or top_k != 6:
-+            raise ValueError(
-+                "Retrieval overrides require --retrieval-only; full-generation "
-+                "evaluation uses the starter's default retrieval and question filters."
-+            )
      cutoffs = normalize_cutoffs(cutoffs)
++    retrieval = retrieval or {}
      cases = json.loads(questions_path.read_text())
      output = {
-@@ -33,6 +52,16 @@
+         "index": index.manifest,
+@@ -33,6 +37,16 @@ def evaluate(
          "retrieval_evaluation": {
              "implementation": "ir-measures",
              "cutoffs": list(cutoffs),
@@ -149,7 +138,7 @@ diff --git a/homework_1/clef-rag/src/clef_rag/evaluate.py b/homework_1/clef-rag/
              "unit": "unique paper/PDF-page pair, ordered by first retrieved occurrence",
              "relevance": "binary; every listed gold page is relevant; unlisted pages score zero",
              "ranking": "final retrieved passages, before answer context selection; no extra retrieval for larger cutoffs",
-@@ -57,9 +86,21 @@
+@@ -57,9 +71,21 @@ def evaluate(
                      json.loads(key) for key in page_qrels(case["gold_sources"])
                  ]
              if retrieval_only:
@@ -174,128 +163,12 @@ diff --git a/homework_1/clef-rag/src/clef_rag/evaluate.py b/homework_1/clef-rag/
                  )
                  row["retrieved_sources"] = sources
              else:
-diff --git a/homework_1/clef-rag/src/clef_rag/retrieve.py b/homework_1/clef-rag/src/clef_rag/retrieve.py
---- a/homework_1/clef-rag/src/clef_rag/retrieve.py
-+++ b/homework_1/clef-rag/src/clef_rag/retrieve.py
-@@ -1,5 +1,6 @@
- """LangChain hybrid retrieval over Chroma and a BM25 retriever."""
- 
-+import random
- import re
- 
- from langchain_classic.retrievers import EnsembleRetriever
-@@ -39,10 +40,42 @@
- 
- 
- class Retriever:
--    def __init__(self, index, models):
-+    def __init__(
-+        self,
-+        index,
-+        models,
-+        *,
-+        weights=(0.5, 0.5),
-+        rrf_c=60,
-+        candidates=20,
-+        introductions=True,
-+        shuffle_seed=None,
-+        rerank_depth=0,
-+        rerank_models=None,
-+    ):
-         self.index, self.models = index, models
-+        self.weights = list(weights)
-+        self.rrf_c = rrf_c
-+        self.candidates = candidates
-+        # Ablations disable the opening-context prepend, or destroy the fused
-+        # order outright, so metrics reflect the ranking under test.
-+        self.introductions = introductions
-+        self.shuffle_seed = shuffle_seed
-+        # Reranking reorders a deeper pool before it is cut to top_k.
-+        self.rerank_depth = rerank_depth
-+        self.rerank_models = rerank_models
- 
-     def search(self, question, *, track=None, author=None, paper_ids=None, top_k=6):
-+        if self.rerank_depth > top_k:
-+            deep = self._select(
-+                question, track=track, author=author, paper_ids=paper_ids,
-+                top_k=self.rerank_depth)
-+            from clef_rag.rerank import rerank
-+            return rerank(self.rerank_models, question, deep, keep=top_k)
-+        return self._select(
-+            question, track=track, author=author, paper_ids=paper_ids, top_k=top_k)
-+
-+    def _select(self, question, *, track=None, author=None, paper_ids=None, top_k=6):
-         store = self.index.vectorstore(self.models)
-         catalog = list_documents(
-             self.index.db, track=track, author=author, paper_ids=paper_ids
-@@ -73,11 +106,18 @@
-                 )
-                 for paper_id in paper_ids
-             ]
--            ranked = [group[i] for i in range(20) for group in groups if len(group) > i]
-+            ranked = [
-+                group[i]
-+                for i in range(self.candidates)
-+                for group in groups
-+                if len(group) > i
-+            ]
-         else:
-             ranked = self._rank(question, store, chunks)
--        leading_ids = paper_ids or (
--            [ranked[0].metadata["document_id"]] if ranked else []
-+        leading_ids = (
-+            paper_ids or ([ranked[0].metadata["document_id"]] if ranked else [])
-+            if self.introductions
-+            else []
-         )
-         introductions = []
-         for document_id in leading_ids:
-@@ -104,20 +144,36 @@
-         if not documents:
-             return []
-         ids = sorted({d.metadata["document_id"] for d in documents})
-+        depth = min(self.candidates, len(documents))
-         semantic = store.as_retriever(
-             search_kwargs={
--                "k": min(20, len(documents)),
-+                "k": depth,
-                 "filter": {"document_id": {"$in": ids}},
-             }
-         )
-         lexical = BM25Retriever.from_documents(
--            documents, k=min(20, len(documents)), preprocess_func=lexical_tokens
-+            documents, k=depth, preprocess_func=lexical_tokens
-         )
-+        # A zero weight still costs a retrieval call, so drop that arm entirely
-+        # to isolate the other one.
-+        arms = [
-+            (retriever, weight)
-+            for retriever, weight in ((semantic, self.weights[0]), (lexical, self.weights[1]))
-+            if weight > 0
-+        ]
-+        if not arms:
-+            raise RagError("At least one retriever weight must be greater than zero.")
-         ensemble = EnsembleRetriever(
--            retrievers=[semantic, lexical], weights=[0.5, 0.5], c=60, id_key="chunk_id"
-+            retrievers=[retriever for retriever, _ in arms],
-+            weights=[weight for _, weight in arms],
-+            c=self.rrf_c,
-+            id_key="chunk_id",
-         )
-         try:
-             with tracing_context(enabled=False):
--                return ensemble.invoke(question)
-+                ranked = ensemble.invoke(question)
-+                if self.shuffle_seed is not None:
-+                    random.Random(self.shuffle_seed).shuffle(ranked)
-+                return ranked
-         except Exception as exc:
-             raise RagError(f"LangChain retrieval failed: {exc}") from exc
-diff --git a/homework_1/clef-rag/src/clef_rag/rerank.py b/homework_1/clef-rag/src/clef_rag/rerank.py
+diff --git a/homework-1/clef-rag/src/clef_rag/rerank.py b/homework-1/clef-rag/src/clef_rag/rerank.py
 new file mode 100644
+index 0000000..b363cfb
 --- /dev/null
-+++ b/homework_1/clef-rag/src/clef_rag/rerank.py
-@@ -0,0 +1,87 @@
++++ b/homework-1/clef-rag/src/clef_rag/rerank.py
+@@ -0,0 +1,82 @@
 +"""Second-stage reranking of retrieved passages with the local chat model.
 +
 +Recall is far higher at depth 50 than at depth 6 (97.4% against 81.6% on
@@ -339,7 +212,7 @@ new file mode 100644
 +    """Score each passage against the question and return the best ``keep``.
 +
 +    Ties keep the first-stage order, so reranking can only reorder what
-+    retrieval already found. Any scoring failure returns the original top passages.
++    retrieval already found. Scoring failures fall back to the original rank.
 +    """
 +
 +    if keep < 1:
@@ -362,15 +235,10 @@ new file mode 100644
 +                max_tokens=50,
 +            )
 +            score = int(verdict.get("score", 0))
-+            if not 0 <= score <= 3:
-+                raise ValueError("Reranking score must be between 0 and 3")
 +        except Exception:
-+            # Partial scores cannot be compared fairly with a failed request.
-+            # Preserve the first-stage ranking for this entire question.
-+            return [
-+                {**source, "source_id": f"S{rank}", "rank": rank}
-+                for rank, source in enumerate(sources[:keep], start=1)
-+            ]
++            # A passage the model refuses to score keeps its retrieval position
++            # rather than being dropped.
++            score = -1
 +        scored.append((score, -position, source))
 +        if batch_log:
 +            batch_log(position, score)
@@ -383,10 +251,142 @@ new file mode 100644
 +        item["rank"] = rank
 +        kept.append(item)
 +    return kept
-diff --git a/homework_1/fashion-fm/src/fashion_fm/cli.py b/homework_1/fashion-fm/src/fashion_fm/cli.py
---- a/homework_1/fashion-fm/src/fashion_fm/cli.py
-+++ b/homework_1/fashion-fm/src/fashion_fm/cli.py
-@@ -8,11 +8,13 @@
+diff --git a/homework-1/clef-rag/src/clef_rag/retrieve.py b/homework-1/clef-rag/src/clef_rag/retrieve.py
+index 224656f..1cdb0f2 100644
+--- a/homework-1/clef-rag/src/clef_rag/retrieve.py
++++ b/homework-1/clef-rag/src/clef_rag/retrieve.py
+@@ -1,5 +1,6 @@
+ """LangChain hybrid retrieval over Chroma and a BM25 retriever."""
+ 
++import random
+ import re
+ 
+ from langchain_classic.retrievers import EnsembleRetriever
+@@ -39,10 +40,42 @@ def overlaps(left, right):
+ 
+ 
+ class Retriever:
+-    def __init__(self, index, models):
++    def __init__(
++        self,
++        index,
++        models,
++        *,
++        weights=(0.5, 0.5),
++        rrf_c=60,
++        candidates=20,
++        introductions=True,
++        shuffle_seed=None,
++        rerank_depth=0,
++        rerank_models=None,
++    ):
+         self.index, self.models = index, models
++        self.weights = list(weights)
++        self.rrf_c = rrf_c
++        self.candidates = candidates
++        # Ablations disable the opening-context prepend, or destroy the fused
++        # order outright, so metrics reflect the ranking under test.
++        self.introductions = introductions
++        self.shuffle_seed = shuffle_seed
++        # Reranking reorders a deeper pool before it is cut to top_k.
++        self.rerank_depth = rerank_depth
++        self.rerank_models = rerank_models
+ 
+     def search(self, question, *, track=None, author=None, paper_ids=None, top_k=6):
++        if self.rerank_depth > top_k:
++            deep = self._select(
++                question, track=track, author=author, paper_ids=paper_ids,
++                top_k=self.rerank_depth)
++            from clef_rag.rerank import rerank
++            return rerank(self.rerank_models, question, deep, keep=top_k)
++        return self._select(
++            question, track=track, author=author, paper_ids=paper_ids, top_k=top_k)
++
++    def _select(self, question, *, track=None, author=None, paper_ids=None, top_k=6):
+         store = self.index.vectorstore(self.models)
+         catalog = list_documents(
+             self.index.db, track=track, author=author, paper_ids=paper_ids
+@@ -73,11 +106,18 @@ class Retriever:
+                 )
+                 for paper_id in paper_ids
+             ]
+-            ranked = [group[i] for i in range(20) for group in groups if len(group) > i]
++            ranked = [
++                group[i]
++                for i in range(self.candidates)
++                for group in groups
++                if len(group) > i
++            ]
+         else:
+             ranked = self._rank(question, store, chunks)
+-        leading_ids = paper_ids or (
+-            [ranked[0].metadata["document_id"]] if ranked else []
++        leading_ids = (
++            paper_ids or ([ranked[0].metadata["document_id"]] if ranked else [])
++            if self.introductions
++            else []
+         )
+         introductions = []
+         for document_id in leading_ids:
+@@ -104,20 +144,36 @@ class Retriever:
+         if not documents:
+             return []
+         ids = sorted({d.metadata["document_id"] for d in documents})
++        depth = min(self.candidates, len(documents))
+         semantic = store.as_retriever(
+             search_kwargs={
+-                "k": min(20, len(documents)),
++                "k": depth,
+                 "filter": {"document_id": {"$in": ids}},
+             }
+         )
+         lexical = BM25Retriever.from_documents(
+-            documents, k=min(20, len(documents)), preprocess_func=lexical_tokens
++            documents, k=depth, preprocess_func=lexical_tokens
+         )
++        # A zero weight still costs a retrieval call, so drop that arm entirely
++        # to isolate the other one.
++        arms = [
++            (retriever, weight)
++            for retriever, weight in ((semantic, self.weights[0]), (lexical, self.weights[1]))
++            if weight > 0
++        ]
++        if not arms:
++            raise RagError("At least one retriever weight must be greater than zero.")
+         ensemble = EnsembleRetriever(
+-            retrievers=[semantic, lexical], weights=[0.5, 0.5], c=60, id_key="chunk_id"
++            retrievers=[retriever for retriever, _ in arms],
++            weights=[weight for _, weight in arms],
++            c=self.rrf_c,
++            id_key="chunk_id",
+         )
+         try:
+             with tracing_context(enabled=False):
+-                return ensemble.invoke(question)
++                ranked = ensemble.invoke(question)
++                if self.shuffle_seed is not None:
++                    random.Random(self.shuffle_seed).shuffle(ranked)
++                return ranked
+         except Exception as exc:
+             raise RagError(f"LangChain retrieval failed: {exc}") from exc
+diff --git a/homework-1/fashion-fm/configs/train.yml b/homework-1/fashion-fm/configs/train.yml
+index 6b1d941..ca17883 100644
+--- a/homework-1/fashion-fm/configs/train.yml
++++ b/homework-1/fashion-fm/configs/train.yml
+@@ -8,7 +8,7 @@ training:
+   output_dir: outputs/fashion-fm
+ 
+   # Full passes over the dataset; increase for convergence or reduce for faster trials; recommended range: 10-200.
+-  epochs: 1
++  epochs: 60
+ 
+   # Images processed per optimizer step; tune for memory use and throughput; recommended range: 32-512.
+   batch_size: 256
+diff --git a/homework-1/fashion-fm/src/fashion_fm/cli.py b/homework-1/fashion-fm/src/fashion_fm/cli.py
+index 6038514..e87d374 100644
+--- a/homework-1/fashion-fm/src/fashion_fm/cli.py
++++ b/homework-1/fashion-fm/src/fashion_fm/cli.py
+@@ -8,11 +8,13 @@ import torch
  from torchvision.utils import save_image
  
  from fashion_fm.data import FASHION_LABELS, description_to_label
@@ -400,7 +400,7 @@ diff --git a/homework_1/fashion-fm/src/fashion_fm/cli.py b/homework_1/fashion-fm
  GENERATED_GRID = "outputs/generated.png"
  IMAGES_PER_PROMPT = 4
  
-@@ -89,3 +91,56 @@
+@@ -89,3 +91,56 @@ def generate_command(checkpoint: str, prompt: tuple[str, ...]) -> None:
      manifest = json.dumps(records, indent=2) + "\n"
      output.with_suffix(".json").write_text(manifest)
      click.echo(f"generated {len(images)} images: {output}")
@@ -457,15 +457,3 @@ diff --git a/homework_1/fashion-fm/src/fashion_fm/cli.py b/homework_1/fashion-fm
 +    for name, accuracy in report["per_class_accuracy"].items():
 +        click.echo(f"  {name:<12} {accuracy:.4f}")
 +    click.echo(f"\nreport: {Path(output_dir) / 'validation-report.json'}")
-diff --git a/homework_1/fashion-fm/configs/train.yml b/homework_1/fashion-fm/configs/train.yml
---- a/homework_1/fashion-fm/configs/train.yml
-+++ b/homework_1/fashion-fm/configs/train.yml
-@@ -8,7 +8,7 @@
-   output_dir: outputs/fashion-fm
- 
-   # Full passes over the dataset; increase for convergence or reduce for faster trials; recommended range: 10-200.
--  epochs: 1
-+  epochs: 60
- 
-   # Images processed per optimizer step; tune for memory use and throughput; recommended range: 32-512.
-   batch_size: 256

@@ -41,7 +41,7 @@ def rerank(models, question, sources, *, keep, batch_log=None):
     """Score each passage against the question and return the best ``keep``.
 
     Ties keep the first-stage order, so reranking can only reorder what
-    retrieval already found. Any scoring failure returns the original top passages.
+    retrieval already found. Scoring failures fall back to the original rank.
     """
 
     if keep < 1:
@@ -64,15 +64,10 @@ def rerank(models, question, sources, *, keep, batch_log=None):
                 max_tokens=50,
             )
             score = int(verdict.get("score", 0))
-            if not 0 <= score <= 3:
-                raise ValueError("Reranking score must be between 0 and 3")
         except Exception:
-            # Partial scores cannot be compared fairly with a failed request.
-            # Preserve the first-stage ranking for this entire question.
-            return [
-                {**source, "source_id": f"S{rank}", "rank": rank}
-                for rank, source in enumerate(sources[:keep], start=1)
-            ]
+            # A passage the model refuses to score keeps its retrieval position
+            # rather than being dropped.
+            score = -1
         scored.append((score, -position, source))
         if batch_log:
             batch_log(position, score)

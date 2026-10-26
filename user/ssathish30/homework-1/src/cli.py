@@ -215,9 +215,8 @@ def main(argv=None):
                     print(result["answer"])
             elif args.command == "search":
                 ids = resolve_papers(index.db, args.paper) if args.paper else None
-                models = LocalModels()
                 sources = Retriever(
-                    index, models, rerank_models=models, **retrieval_options(args)
+                    index, LocalModels(), **retrieval_options(args)
                 ).search(
                     args.question,
                     track=args.track,
