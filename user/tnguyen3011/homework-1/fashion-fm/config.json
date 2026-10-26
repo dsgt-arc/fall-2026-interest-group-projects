@@ -1,0 +1,22 @@
+{
+  "data_dir": "data",
+  "output_dir": "outputs/fashion-fm",
+  "epochs": 30,
+  "batch_size": 256,
+  "workers": 4,
+  "learning_rate": 0.0002,
+  "cosine_min_lr": 0.00001,
+  "weight_decay": 0.0001,
+  "max_grad_norm": 1.0,
+  "cfg_dropout": 0.1,
+  "ema_decay": 0.99,
+  "timesteps": 1000,
+  "seed": 42,
+  "max_train_samples": null,
+  "sample_steps": 30,
+  "save_every": 5,
+  "mixed_precision": true,
+  "data_parallel": false,
+  "device": "auto",
+  "resume": true
+}
