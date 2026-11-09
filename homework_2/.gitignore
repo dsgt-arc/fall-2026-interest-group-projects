@@ -3,3 +3,6 @@ __pycache__
 data
 artifacts
 .cache
+logs
+vision-ir-*.out
+hw2-setup-*.out
