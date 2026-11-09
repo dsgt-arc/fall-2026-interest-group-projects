@@ -48,8 +48,8 @@ Then choose **Run → Run All Cells**.
   No Hugging Face account or login is needed. Free
   disk space needed: about 12 GB on a Mac, about 20 GB on Linux or Windows (PyTorch's CUDA
   libraries add about 7 GB).
-- **Time:** about 10 minutes on an Apple-silicon Mac (measured on an M4 Max; smaller chips
-  take longer), plus downloads. I-JEPA and DiT are the slow models; their progress bars keep
+- **Time:** about 10–20 minutes on an Apple-silicon Mac (measured on an M4 Max; smaller
+  chips take longer), plus downloads. I-JEPA and DiT are the slow models; their progress bars keep
   moving. Results are cached in `artifacts/vision/`, so running it again takes about a minute.
 - **CPU only?** It works, but the first run can take an hour or more. Use PACE ICE instead.
 - **Memory:** one model is loaded at a time. 8 GB of RAM is the minimum; 16 GB is better.
