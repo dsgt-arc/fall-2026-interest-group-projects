@@ -1,4 +1,4 @@
-"""Download a small, fixed slice of GPR1200 and define the two retrieval tasks.
+"""Download a small, fixed slice of GPR1200 and build the Task 2 (edited copy) queries.
 
 GPR1200 (Schall et al., 2021, https://arxiv.org/abs/2111.13122) has 1,200 groups of
 10 images. Each block of 200 groups comes from a different source, so one small

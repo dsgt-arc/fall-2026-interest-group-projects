@@ -12,7 +12,7 @@ def model_cache() -> Path:
     """Use the Hugging Face cache if one is configured (e.g. on PACE scratch).
 
     Otherwise keep weights next to the project, like Part 1 does. Set HF_HOME
-    to a scratch directory on ICE so ~6 GB of weights stay out of your home quota.
+    to a scratch directory on ICE so ~7.6 GB of weights stay out of your home quota.
     """
     if "HF_HUB_CACHE" in os.environ:
         return Path(os.environ["HF_HUB_CACHE"])

@@ -24,8 +24,9 @@ Six frozen pretrained models (ViT, ConvNeXt, DINOv2, I-JEPA, V-JEPA 2, and DiT) 
 1,250 images from [GPR1200](https://arxiv.org/abs/2111.13122) into vectors. They are compared
 on two tasks: finding other photos of the same landmark, object, product, species, or
 sketch class, and finding the exact original of an edited photo. The notebook also asks
-where inside each network the most useful features live. As of November 2026, no general-purpose H-JEPA image
-encoder has been released, so V-JEPA 2 is the second JEPA model; the notebook explains why.
+where inside each network the most useful features live. As of November 2026, no
+general-purpose H-JEPA image encoder has been released, so V-JEPA 2 is the second JEPA
+model; the notebook explains why.
 
 ### Run it on your computer
 
@@ -43,7 +44,8 @@ Then choose **Run → Run All Cells**.
   On Windows, PyTorch from PyPI runs on the CPU even with an NVIDIA GPU; on Linux, an NVIDIA
   GPU needs driver 580 or newer. The first notebook cell prints the device it found.
 - **Downloads (first run only):** about 150 MB of images into `data/gpr1200/` and 7.6 GB of
-  model weights into `.cache/models/`. No Hugging Face account or login is needed. Free
+  model weights into `.cache/models/` (or your Hugging Face cache, if `HF_HOME` is set).
+  No Hugging Face account or login is needed. Free
   disk space needed: about 12 GB on a Mac, about 20 GB on Linux or Windows (PyTorch's CUDA
   libraries add about 7 GB).
 - **Time:** about 10 minutes on an Apple-silicon Mac (measured on an M4 Max; smaller chips
@@ -70,7 +72,8 @@ Then choose **Run → Run All Cells**.
    sbatch vision_ir/job.sbatch
    ```
 
-   The log is `vision-ir-<job id>.out`. When the job finishes, open
+   The log is `vision-ir-<job id>.out`. The first run took about 20 minutes on an ICE GPU,
+   including setup and downloads. When the job finishes, open
    `artifacts/vision/teaching.executed.ipynb`, for example in
    [Open OnDemand](https://ondemand-ice.pace.gatech.edu/).
 
@@ -110,4 +113,7 @@ These results come from a 1,250-image slice with one fixed setting per model, so
 
 ### Responses
 
-**Add your responses to the questions above in this file and submit a PR.**
+**Write your answers in `user/<your-github-handle>/homework-2/README.md` and submit a PR**
+(see [`user/README.md`](../user/README.md)). Also copy your run's
+`artifacts/vision/summary.csv` into that folder. Do not commit `data/`, `.cache/`, or the
+rest of `artifacts/`.

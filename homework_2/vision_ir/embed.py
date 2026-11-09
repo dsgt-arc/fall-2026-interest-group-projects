@@ -18,7 +18,7 @@ from .augment import augment
 from .models import BACKBONES, encoder_options, load_encoder
 
 # Increase when preprocessing, photo edits, or pooling change, so old caches are ignored.
-CACHE_VERSION = 1
+CACHE_VERSION = 2
 
 
 @dataclass(frozen=True)
@@ -40,7 +40,7 @@ class Embeddings:
     ids: list[str]
     final: np.ndarray            # (images, dim) retrieval vectors
     layers: dict[int, np.ndarray]  # block number -> (images, dim_at_that_block)
-    seconds: float = float("nan")  # time to load the model and embed every image
+    seconds: float = float("nan")  # time to embed every image (model already loaded)
     device: str = ""               # where that time was measured
 
     @cached_property
@@ -114,8 +114,8 @@ def embed(
     if cached is not None:
         return cached
 
-    start_time = time.perf_counter()
     encoder = load_encoder(key, cache_dir, device, **options)
+    start_time = time.perf_counter()  # time the embedding only, not reading weights from disk
     finals, layers = [], {}
     for start in tqdm(range(0, len(items), batch_size), desc=f"Embedding with {key}"):
         out = encoder([item.load() for item in items[start : start + batch_size]])

@@ -2,9 +2,8 @@
 
     uv run python -m vision_ir.prefetch
 
-Safe to rerun: finished files are skipped. Useful on PACE ICE, where you may
-want to download on a login node before a GPU job, and before working offline
-(set HF_HUB_OFFLINE=1 afterwards).
+Safe to rerun: finished files are skipped. The PACE ICE job runs this before the
+notebook. After it finishes you can work offline (set HF_HUB_OFFLINE=1).
 """
 
 from huggingface_hub import snapshot_download
