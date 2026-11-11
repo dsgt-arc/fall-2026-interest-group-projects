@@ -1,0 +1,849 @@
+[
+  {
+    "id": "hard-bioasq-1",
+    "category": "paper",
+    "question": "In a biomedical question-answering pipeline that fuses BM25 with MedCPT dense retrieval, what score-fusion weight alpha and MMR lambda were used?",
+    "gold_sources": [
+      {
+        "paper": "paper18",
+        "pages": [
+          5,
+          12
+        ]
+      }
+    ],
+    "expected_answer": "Score fusion alpha = 0.65; MMR selection lambda = 0.95 (top-50 to top-10)."
+  },
+  {
+    "id": "hard-bioasq-2",
+    "category": "paper",
+    "question": "How many PubMed documents were fetched for BioASQ round 3 test questions, and how many of them were unique?",
+    "gold_sources": [
+      {
+        "paper": "paper18",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "expected_answer": "640 documents fetched, 549 unique; the pipeline was run on 64 questions."
+  },
+  {
+    "id": "hard-bioasq-3",
+    "category": "paper",
+    "question": "How many freely accessible MCP tools were in the tool catalogue of the hierarchical multi-agent biomedical QA pipeline?",
+    "gold_sources": [
+      {
+        "paper": "paper31",
+        "pages": [
+          1,
+          4,
+          5,
+          6
+        ]
+      }
+    ],
+    "expected_answer": "136 free MCP-compatible tools."
+  },
+  {
+    "id": "hard-bioasq-4",
+    "category": "paper",
+    "question": "Which alpha values were used in Weaviate hybrid search to balance keyword matching and semantic similarity, and how many documents were retrieved per query?",
+    "gold_sources": [
+      {
+        "paper": "paper31",
+        "pages": [
+          3
+        ]
+      }
+    ],
+    "expected_answer": "Alpha values 0.25 and 0.75, retrieving k = 40 documents."
+  },
+  {
+    "id": "hard-checkthat-1",
+    "category": "paper",
+    "question": "Which model decomposed numerical claims into sub-claims before verification, and into at most how many sub-claims?",
+    "gold_sources": [
+      {
+        "paper": "paper84",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "expected_answer": "Llama-3.2-3B-Instruct; at most two sub-claims."
+  },
+  {
+    "id": "hard-checkthat-2",
+    "category": "paper",
+    "question": "For a LLaMA-3.2-3B verifier fine-tuned to rank reasoning traces for numerical claim verification, what LoRA rank, LoRA alpha, and learning rate were used?",
+    "gold_sources": [
+      {
+        "paper": "paper94",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "expected_answer": "LoRA rank 16, alpha 32, dropout 0.05; learning rate 1e-4, 5 epochs."
+  },
+  {
+    "id": "hard-eloquent-1",
+    "category": "paper",
+    "question": "What average AUROC drop did the HUMPA proxy-attack strategy achieve against AI-text detectors?",
+    "gold_sources": [
+      {
+        "paper": "paper109",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "expected_answer": "An average AUROC drop of 70.4% across multiple datasets."
+  },
+  {
+    "id": "hard-eloquent-2",
+    "category": "paper",
+    "question": "How many valid submissions did the ELOQUENT 2026 Cultural Robustness and Diversity task receive, and which team had the largest score spread (delta) across its submissions?",
+    "gold_sources": [
+      {
+        "paper": "paper96",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "expected_answer": "107 valid submissions; UAmsterdam had the largest delta (0.488, best score 0.875)."
+  },
+  {
+    "id": "hard-exist-1",
+    "category": "paper",
+    "question": "What development split ratio and random seed did an XLM-RoBERTa-based EXIST 2026 team use to create its internal train/dev split?",
+    "gold_sources": [
+      {
+        "paper": "paper181",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "expected_answer": "A 0.1 development ratio with random seed 42, stratified by language and label information."
+  },
+  {
+    "id": "hard-exist-2",
+    "category": "paper",
+    "question": "In a late-fusion system for sexism detection in TikTok short videos, which text features and classifier were used for the text modality?",
+    "gold_sources": [
+      {
+        "paper": "paper159",
+        "pages": [
+          2,
+          5
+        ]
+      }
+    ],
+    "expected_answer": "TF-IDF with character 3-5 grams and an SVM classifier (class_weight balanced)."
+  },
+  {
+    "id": "hard-exist-3",
+    "category": "paper",
+    "question": "What is the average duration of the TikTok videos in the EXIST 2026 dataset?",
+    "gold_sources": [
+      {
+        "paper": "paper159",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "expected_answer": "About 27 seconds, ranging from 5 seconds to about 1 minute."
+  },
+  {
+    "id": "hard-exist-4",
+    "category": "synthesis",
+    "question": "How many training and test videos does the EXIST 2026 TikTok video dataset contain?",
+    "gold_sources": [
+      {
+        "paper": "paper159",
+        "pages": [
+          3
+        ]
+      },
+      {
+        "paper": "paper152",
+        "pages": [
+          5
+        ]
+      },
+      {
+        "paper": "paper153",
+        "pages": [
+          3
+        ]
+      },
+      {
+        "paper": "paper157",
+        "pages": [
+          4
+        ]
+      },
+      {
+        "paper": "paper163",
+        "pages": [
+          4
+        ]
+      },
+      {
+        "paper": "paper167",
+        "pages": [
+          3
+        ]
+      },
+      {
+        "paper": "paper168",
+        "pages": [
+          2
+        ]
+      },
+      {
+        "paper": "paper176",
+        "pages": [
+          5
+        ]
+      },
+      {
+        "paper": "paper181",
+        "pages": [
+          2,
+          4
+        ]
+      }
+    ],
+    "expected_answer": "2,524 training and 674 test videos (3,198 in total)."
+  },
+  {
+    "id": "hard-finmm-1",
+    "category": "paper",
+    "question": "In an agentic multilingual financial QA system built on LangGraph, how were financial news articles chunked (chunk size and overlap)?",
+    "gold_sources": [
+      {
+        "paper": "paper204",
+        "pages": [
+          3
+        ]
+      }
+    ],
+    "expected_answer": "Chunks of about 100 words or characters with 40% overlap between adjacent chunks."
+  },
+  {
+    "id": "hard-finmm-2",
+    "category": "paper",
+    "question": "What weight did the LangGraph-based financial RAG system assign to semantic similarity versus BM25 in hybrid retrieval?",
+    "gold_sources": [
+      {
+        "paper": "paper204",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "expected_answer": "A relatively high semantic weight of about 0.7-0.9, with a smaller BM25 contribution."
+  },
+  {
+    "id": "hard-hipe-1",
+    "category": "paper",
+    "question": "In HIPE-2026 person-place relation classification, what distance threshold did a naive distance-based baseline use to predict a relation?",
+    "gold_sources": [
+      {
+        "paper": "paper219",
+        "pages": [
+          3
+        ]
+      }
+    ],
+    "expected_answer": "It predicts true when the minimum person-place mention distance is less than 80, otherwise false."
+  },
+  {
+    "id": "hard-hipe-2",
+    "category": "paper",
+    "question": "Which backbone model performed best for the ITER relation model in terms of macro-recall in HIPE-2026?",
+    "gold_sources": [
+      {
+        "paper": "paper219",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "expected_answer": "DeBERTaV3 (base), macro-recall 0.5506."
+  },
+  {
+    "id": "hard-hipe-3",
+    "category": "paper",
+    "question": "How many persons, locations, and unique person-place pairs were in the Wikidata knowledge-graph cache used for HIPE-2026 relation classification?",
+    "gold_sources": [
+      {
+        "paper": "paper226",
+        "pages": [
+          3
+        ]
+      }
+    ],
+    "expected_answer": "1,121 persons, 1,224 locations, 2,942 unique pairs."
+  },
+  {
+    "id": "hard-hipe-4",
+    "category": "paper",
+    "question": "Which hard and soft constraint weights were submitted in the logic-constrained fine-tuning approach to HIPE-2026, and what global development score did they give?",
+    "gold_sources": [
+      {
+        "paper": "paper226",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "expected_answer": "lambda_hard = 0.05 and lambda_soft = 0.02, global dev score 0.6989."
+  },
+  {
+    "id": "hard-imageclef-1",
+    "category": "paper",
+    "question": "How many patients are in the CoRe-BT glioma cohort, and how large are its training, validation, and test splits?",
+    "gold_sources": [
+      {
+        "paper": "paper298",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "expected_answer": "310 patients; train 183, validation 42, test 36 (plus an MRI-only Test #2 of 18)."
+  },
+  {
+    "id": "hard-imageclef-2",
+    "category": "paper",
+    "question": "Which base vision-language model and visual encoder were adapted with QLoRA for ImageCLEFmed medical image captioning?",
+    "gold_sources": [
+      {
+        "paper": "paper292",
+        "pages": [
+          3
+        ]
+      }
+    ],
+    "expected_answer": "LLaVA-1.5-7B with a CLIP ViT-L/14 encoder at 336x336 and Vicuna-7B."
+  },
+  {
+    "id": "hard-imageclef-3",
+    "category": "paper",
+    "question": "What sampling temperature was used in the stochastic-sampling submission for medical image captioning with an adapted LLaVA model?",
+    "gold_sources": [
+      {
+        "paper": "paper292",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "expected_answer": "Temperature 1.2 with do_sample=True (Run 4)."
+  },
+  {
+    "id": "hard-joker-1",
+    "category": "paper",
+    "question": "Which LLM judges formed the cross-provider judge ensemble for JOKER humour generation, and which candidate judge was dropped?",
+    "gold_sources": [
+      {
+        "paper": "paper305",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "expected_answer": "gpt-oss-20b, deepseek-chat, and gemini-2.5-flash-lite; mistral-small-latest was piloted but dropped."
+  },
+  {
+    "id": "hard-joker-2",
+    "category": "paper",
+    "question": "How many training and test instances are in the English humour generation track of JOKER Task 4?",
+    "gold_sources": [
+      {
+        "paper": "paper305",
+        "pages": [
+          3
+        ]
+      },
+      {
+        "paper": "paper307",
+        "pages": [
+          16,
+          17
+        ]
+      },
+      {
+        "paper": "paper315",
+        "pages": [
+          2
+        ]
+      }
+    ],
+    "expected_answer": "3,344 training and 150 test instances."
+  },
+  {
+    "id": "hard-joker-3",
+    "category": "paper",
+    "question": "How many documents and test queries are in the English and Hinglish tracks of JOKER humour-aware retrieval?",
+    "gold_sources": [
+      {
+        "paper": "paper302",
+        "pages": [
+          3,
+          11
+        ]
+      },
+      {
+        "paper": "paper307",
+        "pages": [
+          5,
+          6
+        ]
+      },
+      {
+        "paper": "paper311",
+        "pages": [
+          5,
+          6,
+          9
+        ]
+      },
+      {
+        "paper": "paper315",
+        "pages": [
+          2
+        ]
+      }
+    ],
+    "expected_answer": "English: 96,603 documents, 971 test queries; Hinglish: 32,652 documents, 485 test queries."
+  },
+  {
+    "id": "hard-joker-4",
+    "category": "paper",
+    "question": "Which model generated the factual distractor sentences for the Hinglish humour retrieval track, and how many sentences per word?",
+    "gold_sources": [
+      {
+        "paper": "paper302",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "expected_answer": "claude-sonnet-4-20250514, 60 sentences per word (20 English, 20 Romanized Hindi, 20 Hinglish)."
+  },
+  {
+    "id": "hard-lifeclef-1",
+    "category": "paper",
+    "question": "Which pre-trained baseline model did the organizers provide for multi-label vegetation quadrat classification?",
+    "gold_sources": [
+      {
+        "paper": "paper360",
+        "pages": [
+          4
+        ]
+      },
+      {
+        "paper": "paper320",
+        "pages": [
+          4
+        ]
+      },
+      {
+        "paper": "paper328",
+        "pages": [
+          3,
+          4
+        ]
+      },
+      {
+        "paper": "paper337",
+        "pages": [
+          4,
+          5,
+          12
+        ]
+      },
+      {
+        "paper": "paper341",
+        "pages": [
+          3
+        ]
+      }
+    ],
+    "expected_answer": "A DINOv2 ViT-Base/14 with four registers (vit_base_patch14_reg4_dinov2.lvd142m)."
+  },
+  {
+    "id": "hard-lifeclef-2",
+    "category": "paper",
+    "question": "How many target classes are in BirdCLEF+ 2026, and how many of them are birds?",
+    "gold_sources": [
+      {
+        "paper": "paper323",
+        "pages": [
+          3
+        ]
+      },
+      {
+        "paper": "paper348",
+        "pages": [
+          3
+        ]
+      },
+      {
+        "paper": "paper353",
+        "pages": [
+          3
+        ]
+      },
+      {
+        "paper": "paper364",
+        "pages": [
+          10
+        ]
+      }
+    ],
+    "expected_answer": "234 target classes, of which 162 are Aves."
+  },
+  {
+    "id": "hard-lifeclef-3",
+    "category": "paper",
+    "question": "What inference runtime budget constrained BirdCLEF+ 2026 submissions, and which toolkit was used to export sound event detection models for CPU inference?",
+    "gold_sources": [
+      {
+        "paper": "paper323",
+        "pages": [
+          1,
+          2,
+          5,
+          10,
+          11
+        ]
+      }
+    ],
+    "expected_answer": "A 90-minute runtime budget; SED models were exported to OpenVINO."
+  },
+  {
+    "id": "hard-longeval-1",
+    "category": "paper",
+    "question": "Which run achieved the highest nDCG@10 on snapshot 1 in LongEval 2026 Task 1, compared with the BM25 baseline?",
+    "gold_sources": [
+      {
+        "paper": "paper376",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "expected_answer": "Dense-Fusion-Run with 0.326 versus 0.279 for baseline BM25."
+  },
+  {
+    "id": "hard-longeval-2",
+    "category": "paper",
+    "question": "Which learning-to-rank feature had the highest gain in the Dense-Fusion run for LongEval scientific retrieval?",
+    "gold_sources": [
+      {
+        "paper": "paper376",
+        "pages": [
+          3
+        ]
+      }
+    ],
+    "expected_answer": "Recency (document age in months), gain 7028.65."
+  },
+  {
+    "id": "hard-longeval-3",
+    "category": "paper",
+    "question": "How many documents are in each of the three LongEval-Sci 2026 corpus snapshots?",
+    "gold_sources": [
+      {
+        "paper": "paper379",
+        "pages": [
+          1,
+          3
+        ]
+      }
+    ],
+    "expected_answer": "869,902; 1,322,720; and 1,661,900 documents."
+  },
+  {
+    "id": "hard-pan-1",
+    "category": "paper",
+    "question": "What LoRA rank and target modules were used to fine-tune Qwen3-14B-Base for PAN 2026 AI-generated text detection?",
+    "gold_sources": [
+      {
+        "paper": "paper396",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "expected_answer": "LoRA rank 8, alpha 16, targeting q_proj and v_proj."
+  },
+  {
+    "id": "hard-pan-2",
+    "category": "paper",
+    "question": "What fraction of training samples received a homoglyph attack as data augmentation in a Qwen-ensemble PAN 2026 detector?",
+    "gold_sources": [
+      {
+        "paper": "paper396",
+        "pages": [
+          3,
+          4
+        ]
+      }
+    ],
+    "expected_answer": "10% of the training samples."
+  },
+  {
+    "id": "hard-pan-3",
+    "category": "paper",
+    "question": "What four subsystems make up the interpretable multi-signal ensemble for AI-generated text detection at PAN 2026?",
+    "gold_sources": [
+      {
+        "paper": "paper427",
+        "pages": [
+          4,
+          7
+        ]
+      }
+    ],
+    "expected_answer": "Lexical, linguistic, probabilistic, and semantic subsystems."
+  },
+  {
+    "id": "hard-quantum-1",
+    "category": "paper",
+    "question": "What three terms make up the QUBO energy function for feature selection in the Optuna-tuned recommender approach?",
+    "gold_sources": [
+      {
+        "paper": "paper442",
+        "pages": [
+          1,
+          4
+        ]
+      }
+    ],
+    "expected_answer": "A relevance term, a pairwise redundancy penalty, and a squared budget constraint on the number of selected features."
+  },
+  {
+    "id": "hard-quantum-2",
+    "category": "paper",
+    "question": "How many implicit interactions are in the User Rating Matrix of the QuantumCLEF music recommendation dataset?",
+    "gold_sources": [
+      {
+        "paper": "paper442",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "expected_answer": "3,209,730 implicit interactions."
+  },
+  {
+    "id": "hard-simpletext-1",
+    "category": "paper",
+    "question": "What are the mean and maximum source sentence lengths (in words) of the SimpleText 2026 Task 1 input data?",
+    "gold_sources": [
+      {
+        "paper": "paper470",
+        "pages": [
+          3,
+          4
+        ]
+      }
+    ],
+    "expected_answer": "Mean 23.01 words, maximum 450 words, over 48,809 records."
+  },
+  {
+    "id": "hard-simpletext-2",
+    "category": "paper",
+    "question": "Which locally served model and inference settings were used for multilingual scientific text simplification with Ollama?",
+    "gold_sources": [
+      {
+        "paper": "paper461",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "expected_answer": "llama3.1:8b-instruct-q4_K_M with temperature 0.2, top-p 0.95, top-k 40, seed 42, 2,048-token context."
+  },
+  {
+    "id": "hard-talent-1",
+    "category": "paper",
+    "question": "Which two models were ensembled for job description to resume matching in TalentCLEF 2026 Task A, and how was the ensemble weight chosen?",
+    "gold_sources": [
+      {
+        "paper": "paper486",
+        "pages": [
+          5,
+          8,
+          9,
+          11
+        ]
+      }
+    ],
+    "expected_answer": "mE5-large-instruct and mE5-large; the weight alpha was chosen by grid search on the development set, optimizing MAP."
+  },
+  {
+    "id": "hard-touche-1",
+    "category": "paper",
+    "question": "How was the 938-instance Touché fallacy detection training data split for model development?",
+    "gold_sources": [
+      {
+        "paper": "paper500",
+        "pages": [
+          3
+        ]
+      }
+    ],
+    "expected_answer": "738 training instances and a 200-instance held-out validation set."
+  },
+  {
+    "id": "hard-touche-2",
+    "category": "paper",
+    "question": "How much did enhanced training inputs raise RoBERTa-large in-domain validation macro-F1 for fallacy detection?",
+    "gold_sources": [
+      {
+        "paper": "paper500",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "expected_answer": "From 0.65 to 0.87."
+  },
+  {
+    "id": "hard-touche-3",
+    "category": "paper",
+    "question": "What sequence length and learning rate were used to fine-tune roberta-base on rule-plus-sentence inputs for Touché argument detection?",
+    "gold_sources": [
+      {
+        "paper": "paper505",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "expected_answer": "Maximum sequence length 384, AdamW lr 2e-5, weight decay 0.01, 3 epochs."
+  },
+  {
+    "id": "hard-touche-4",
+    "category": "paper",
+    "question": "Which team achieved the best F1 in Touché 2025 Task 4 ad detection, and with which model?",
+    "gold_sources": [
+      {
+        "paper": "paper505",
+        "pages": [
+          3,
+          4
+        ]
+      }
+    ],
+    "expected_answer": "JU-NLP with a CrossEncoder (mpnet + ms-marco), F1 0.773."
+  },
+  {
+    "id": "hard-erisk-1",
+    "category": "paper",
+    "question": "How many candidate sentences are in the eRisk 2026 ADHD symptom sentence corpus, and what is the average sentence length?",
+    "gold_sources": [
+      {
+        "paper": "paper140",
+        "pages": [
+          3
+        ]
+      },
+      {
+        "paper": "paper113",
+        "pages": [
+          3
+        ]
+      },
+      {
+        "paper": "paper120",
+        "pages": [
+          2,
+          3
+        ]
+      },
+      {
+        "paper": "paper130",
+        "pages": [
+          1,
+          2
+        ]
+      },
+      {
+        "paper": "paper139",
+        "pages": [
+          2,
+          3,
+          4
+        ]
+      },
+      {
+        "paper": "paper146",
+        "pages": [
+          2
+        ]
+      },
+      {
+        "paper": "paper150",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "expected_answer": "4,170,875 sentences, averaging 13.05 words."
+  },
+  {
+    "id": "hard-erisk-2",
+    "category": "paper",
+    "question": "What weights were assigned to the ASRS-v1.1 response options from Never to Very Often in the weighted semantic embedding run?",
+    "gold_sources": [
+      {
+        "paper": "paper140",
+        "pages": [
+          4,
+          5
+        ]
+      }
+    ],
+    "expected_answer": "[0.05, 0.10, 0.20, 0.30, 0.35]."
+  },
+  {
+    "id": "hard-erisk-3",
+    "category": "paper",
+    "question": "In eRisk 2026 conversational depression detection, how many simulated patient personas were there, and what score range had to be predicted?",
+    "gold_sources": [
+      {
+        "paper": "paper142",
+        "pages": [
+          3
+        ]
+      }
+    ],
+    "expected_answer": "20 personas; a BDI-II total score from 0 to 63, plus up to four key symptoms."
+  },
+  {
+    "id": "hard-erisk-4",
+    "category": "paper",
+    "question": "How many stages does the acute safety follow-up ladder have in the safety-first multi-agent depression detection pipeline?",
+    "gold_sources": [
+      {
+        "paper": "paper142",
+        "pages": [
+          1,
+          4
+        ]
+      }
+    ],
+    "expected_answer": "Five stages."
+  }
+]

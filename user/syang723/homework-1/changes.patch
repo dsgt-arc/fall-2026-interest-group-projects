@@ -1,0 +1,110 @@
+diff --git a/homework_1/clef-rag/src/clef_rag/index.py b/homework_1/clef-rag/src/clef_rag/index.py
+index 56997be..7df0c14 100644
+--- a/homework_1/clef-rag/src/clef_rag/index.py
++++ b/homework_1/clef-rag/src/clef_rag/index.py
+@@ -97,9 +97,20 @@ class Index:
+ 
+     def documents(self, paper_ids=None):
+         where = {"document_id": {"$in": paper_ids}} if paper_ids else None
+-        return as_documents(
+-            self.collection.get(where=where, include=["documents", "metadatas"])
+-        )
++        # Page the read: one unbounded get() on >32,766 chunks exceeds SQLite's
++        # variable limit inside Chroma (hit with smaller chunk sizes).
++        batch, offset, docs = 10000, 0, []
++        while True:
++            page = self.collection.get(
++                where=where,
++                include=["documents", "metadatas"],
++                limit=batch,
++                offset=offset,
++            )
++            docs.extend(as_documents(page))
++            if len(page["ids"]) < batch:
++                return docs
++            offset += batch
+ 
+     def close(self):
+         if self.db is not None:
+diff --git a/homework_1/clef-rag/src/clef_rag/ingest.py b/homework_1/clef-rag/src/clef_rag/ingest.py
+index 844c8e9..c4e38de 100644
+--- a/homework_1/clef-rag/src/clef_rag/ingest.py
++++ b/homework_1/clef-rag/src/clef_rag/ingest.py
+@@ -2,6 +2,7 @@
+ 
+ import hashlib
+ import json
++import os
+ import re
+ import sqlite3
+ import time
+@@ -26,8 +27,9 @@ from clef_rag.index import (
+ from clef_rag.models import EMBED_INPUT_BYTES
+ 
+ EXTRACTION_VERSION = "langchain-pypdf-pages-v1"
+-CHUNK_BYTES = 1400
+-OVERLAP_BYTES = 250
++# Experiment knobs (defaults reproduce the original index); re-ingest into a new --index-dir.
++CHUNK_BYTES = int(os.getenv("RAG_CHUNK_BYTES", "1400"))
++OVERLAP_BYTES = int(os.getenv("RAG_OVERLAP_BYTES", "250"))
+ 
+ 
+ def content_hash(value):
+diff --git a/homework_1/clef-rag/src/clef_rag/retrieve.py b/homework_1/clef-rag/src/clef_rag/retrieve.py
+index 224656f..92e5bd5 100644
+--- a/homework_1/clef-rag/src/clef_rag/retrieve.py
++++ b/homework_1/clef-rag/src/clef_rag/retrieve.py
+@@ -1,5 +1,6 @@
+ """LangChain hybrid retrieval over Chroma and a BM25 retriever."""
+ 
++import os
+ import re
+ 
+ from langchain_classic.retrievers import EnsembleRetriever
+@@ -89,8 +90,17 @@ class Retriever:
+                         key=lambda d: (d.metadata["page"], d.metadata["start_char"]),
+                     )
+                 )
++        # Experiment knob: where the leading paper's opening chunk goes.
++        # first (original) | second (after the best passage) | off
++        intro_mode = os.getenv("RAG_INTRO", "first")
++        if intro_mode == "off" and not paper_ids:
++            ordered = ranked
++        elif intro_mode == "second" and not paper_ids:
++            ordered = ranked[:1] + introductions + ranked[1:]
++        else:
++            ordered = introductions + ranked
+         selected = []
+-        for document in introductions + ranked:
++        for document in ordered:
+             item = source_record(document)
+             if not any(overlaps(item, previous) for previous in selected):
+                 item["source_id"] = f"S{len(selected) + 1}"
+@@ -103,18 +113,24 @@ class Retriever:
+     def _rank(self, question, store, documents):
+         if not documents:
+             return []
++        # Experiment knobs (defaults reproduce the original system).
++        candidates = int(os.getenv("RAG_CANDIDATES", "20"))
++        w_dense = float(os.getenv("RAG_W_DENSE", "0.5"))
+         ids = sorted({d.metadata["document_id"] for d in documents})
+         semantic = store.as_retriever(
+             search_kwargs={
+-                "k": min(20, len(documents)),
++                "k": min(candidates, len(documents)),
+                 "filter": {"document_id": {"$in": ids}},
+             }
+         )
+         lexical = BM25Retriever.from_documents(
+-            documents, k=min(20, len(documents)), preprocess_func=lexical_tokens
++            documents, k=min(candidates, len(documents)), preprocess_func=lexical_tokens
+         )
+         ensemble = EnsembleRetriever(
+-            retrievers=[semantic, lexical], weights=[0.5, 0.5], c=60, id_key="chunk_id"
++            retrievers=[semantic, lexical],
++            weights=[w_dense, 1 - w_dense],
++            c=60,
++            id_key="chunk_id",
+         )
+         try:
+             with tracing_context(enabled=False):

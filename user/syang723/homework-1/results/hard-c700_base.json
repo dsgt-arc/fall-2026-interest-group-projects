@@ -1,0 +1,3086 @@
+{
+ "summary": {
+  "cases_run": 47,
+  "errors": 0,
+  "retrieval_passed": 37,
+  "retrieval_eligible": 47,
+  "retrieval_checked": 47,
+  "retrieval_metrics": {
+   "1": {
+    "precision": 0.0851063829787234,
+    "recall": 0.03723404255319149,
+    "hit_rate": 0.0851063829787234,
+    "mrr": 0.0851063829787234,
+    "map": 0.03723404255319149,
+    "ndcg": 0.0851063829787234
+   },
+   "3": {
+    "precision": 0.326241134751773,
+    "recall": 0.6471470019342359,
+    "hit_rate": 0.7872340425531915,
+    "mrr": 0.40780141843971635,
+    "map": 0.34121534493874917,
+    "ndcg": 0.462287213961613
+   },
+   "6": {
+    "precision": 0.21631205673758863,
+    "recall": 0.7794003868471954,
+    "hit_rate": 0.8936170212765957,
+    "mrr": 0.43049645390070923,
+    "map": 0.38550693101225014,
+    "ndcg": 0.5122565518517258
+   }
+  },
+  "catalog_passed": 0,
+  "abstention_passed": 0,
+  "answerable_questions_supported": 0,
+  "manual_claim_review": "Required; automatic checks do not establish factual correctness.",
+  "retrieval_unscored": 0
+ },
+ "results": [
+  {
+   "id": "hard-bioasq-1",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper18",
+     5
+    ],
+    [
+     "paper18",
+     12
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper6",
+     1
+    ],
+    [
+     "paper6",
+     6
+    ],
+    [
+     "paper33",
+     6
+    ],
+    [
+     "paper24",
+     4
+    ],
+    [
+     "paper18",
+     2
+    ],
+    [
+     "paper37",
+     4
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "6": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    }
+   },
+   "retrieval_pass": false,
+   "elapsed_seconds": 7.1
+  },
+  {
+   "id": "hard-bioasq-2",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper18",
+     4
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper18",
+     1
+    ],
+    [
+     "paper18",
+     4
+    ],
+    [
+     "paper18",
+     3
+    ],
+    [
+     "paper18",
+     19
+    ],
+    [
+     "paper23",
+     3
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 6.191
+  },
+  {
+   "id": "hard-bioasq-3",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper31",
+     1
+    ],
+    [
+     "paper31",
+     4
+    ],
+    [
+     "paper31",
+     5
+    ],
+    [
+     "paper31",
+     6
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper31",
+     1
+    ],
+    [
+     "paper31",
+     4
+    ],
+    [
+     "paper31",
+     2
+    ],
+    [
+     "paper31",
+     5
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 1.0,
+     "recall": 0.25,
+     "hit": 1.0,
+     "reciprocal_rank": 1.0,
+     "average_precision": 0.25,
+     "ndcg": 1.0
+    },
+    "3": {
+     "precision": 0.6666666666666666,
+     "recall": 0.5,
+     "hit": 1.0,
+     "reciprocal_rank": 1.0,
+     "average_precision": 0.5,
+     "ndcg": 0.7653606369886217
+    },
+    "6": {
+     "precision": 0.5,
+     "recall": 0.75,
+     "hit": 1.0,
+     "reciprocal_rank": 1.0,
+     "average_precision": 0.6875,
+     "ndcg": 0.8048099750039491
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 6.641
+  },
+  {
+   "id": "hard-bioasq-4",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper31",
+     3
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper31",
+     1
+    ],
+    [
+     "paper31",
+     3
+    ],
+    [
+     "paper18",
+     7
+    ],
+    [
+     "paper7",
+     3
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 7.381
+  },
+  {
+   "id": "hard-checkthat-1",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper84",
+     4
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper84",
+     1
+    ],
+    [
+     "paper84",
+     4
+    ],
+    [
+     "paper84",
+     7
+    ],
+    [
+     "paper84",
+     3
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 6.258
+  },
+  {
+   "id": "hard-checkthat-2",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper94",
+     5
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper94",
+     1
+    ],
+    [
+     "paper94",
+     3
+    ],
+    [
+     "paper94",
+     5
+    ],
+    [
+     "paper64",
+     6
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.3333333333333333,
+     "average_precision": 0.3333333333333333,
+     "ndcg": 0.5
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.3333333333333333,
+     "average_precision": 0.3333333333333333,
+     "ndcg": 0.5
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 6.655
+  },
+  {
+   "id": "hard-eloquent-1",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper109",
+     4
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper422",
+     1
+    ],
+    [
+     "paper422",
+     9
+    ],
+    [
+     "paper422",
+     8
+    ],
+    [
+     "paper422",
+     7
+    ],
+    [
+     "paper419",
+     9
+    ],
+    [
+     "paper109",
+     4
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.16666666666666666,
+     "average_precision": 0.16666666666666666,
+     "ndcg": 0.3562071871080222
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 7.684
+  },
+  {
+   "id": "hard-eloquent-2",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper96",
+     4
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper96",
+     1
+    ],
+    [
+     "paper96",
+     4
+    ],
+    [
+     "paper96",
+     2
+    ],
+    [
+     "paper96",
+     3
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 6.128
+  },
+  {
+   "id": "hard-exist-1",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper181",
+     4
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper181",
+     1
+    ],
+    [
+     "paper181",
+     6
+    ],
+    [
+     "paper181",
+     4
+    ],
+    [
+     "paper181",
+     10
+    ],
+    [
+     "paper181",
+     5
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.3333333333333333,
+     "average_precision": 0.3333333333333333,
+     "ndcg": 0.5
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.3333333333333333,
+     "average_precision": 0.3333333333333333,
+     "ndcg": 0.5
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 6.136
+  },
+  {
+   "id": "hard-exist-2",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper159",
+     2
+    ],
+    [
+     "paper159",
+     5
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper152",
+     1
+    ],
+    [
+     "paper152",
+     14
+    ],
+    [
+     "paper159",
+     1
+    ],
+    [
+     "paper176",
+     2
+    ],
+    [
+     "paper159",
+     2
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 0.5,
+     "hit": 1.0,
+     "reciprocal_rank": 0.2,
+     "average_precision": 0.1,
+     "ndcg": 0.23719771276929622
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 6.232
+  },
+  {
+   "id": "hard-exist-3",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper159",
+     4
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper159",
+     1
+    ],
+    [
+     "paper159",
+     4
+    ],
+    [
+     "paper176",
+     5
+    ],
+    [
+     "paper159",
+     3
+    ],
+    [
+     "paper167",
+     3
+    ],
+    [
+     "paper152",
+     45
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 6.592
+  },
+  {
+   "id": "hard-exist-4",
+   "category": "synthesis",
+   "gold_pages": [
+    [
+     "paper159",
+     3
+    ],
+    [
+     "paper152",
+     5
+    ],
+    [
+     "paper153",
+     3
+    ],
+    [
+     "paper157",
+     4
+    ],
+    [
+     "paper163",
+     4
+    ],
+    [
+     "paper167",
+     3
+    ],
+    [
+     "paper168",
+     2
+    ],
+    [
+     "paper176",
+     5
+    ],
+    [
+     "paper181",
+     2
+    ],
+    [
+     "paper181",
+     4
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper168",
+     1
+    ],
+    [
+     "paper168",
+     2
+    ],
+    [
+     "paper176",
+     5
+    ],
+    [
+     "paper159",
+     3
+    ],
+    [
+     "paper181",
+     2
+    ],
+    [
+     "paper163",
+     4
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.6666666666666666,
+     "recall": 0.2,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.11666666666666665,
+     "ndcg": 0.5307212739772434
+    },
+    "6": {
+     "precision": 0.8333333333333334,
+     "recall": 0.5,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.35500000000000004,
+     "ndcg": 0.6973975865011866
+    }
+   },
+   "retrieval_pass": false,
+   "elapsed_seconds": 6.389
+  },
+  {
+   "id": "hard-finmm-1",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper204",
+     3
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper204",
+     1
+    ],
+    [
+     "paper204",
+     3
+    ],
+    [
+     "paper188",
+     2
+    ],
+    [
+     "paper187",
+     3
+    ],
+    [
+     "paper187",
+     2
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 5.928
+  },
+  {
+   "id": "hard-finmm-2",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper204",
+     4
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper188",
+     1
+    ],
+    [
+     "paper188",
+     2
+    ],
+    [
+     "paper36",
+     6
+    ],
+    [
+     "paper204",
+     4
+    ],
+    [
+     "paper36",
+     4
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.25,
+     "average_precision": 0.25,
+     "ndcg": 0.43067655807339306
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 6.456
+  },
+  {
+   "id": "hard-hipe-1",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper219",
+     3
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper136",
+     1
+    ],
+    [
+     "paper136",
+     9
+    ],
+    [
+     "paper219",
+     3
+    ],
+    [
+     "paper136",
+     2
+    ],
+    [
+     "paper219",
+     1
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.3333333333333333,
+     "average_precision": 0.3333333333333333,
+     "ndcg": 0.5
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.3333333333333333,
+     "average_precision": 0.3333333333333333,
+     "ndcg": 0.5
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 5.915
+  },
+  {
+   "id": "hard-hipe-2",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper219",
+     5
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper219",
+     1
+    ],
+    [
+     "paper219",
+     5
+    ],
+    [
+     "paper219",
+     4
+    ],
+    [
+     "paper228",
+     1
+    ],
+    [
+     "paper219",
+     9
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 6.593
+  },
+  {
+   "id": "hard-hipe-3",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper226",
+     3
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper226",
+     1
+    ],
+    [
+     "paper226",
+     3
+    ],
+    [
+     "paper212",
+     5
+    ],
+    [
+     "paper226",
+     4
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 6.502
+  },
+  {
+   "id": "hard-hipe-4",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper226",
+     5
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper226",
+     1
+    ],
+    [
+     "paper226",
+     5
+    ],
+    [
+     "paper226",
+     4
+    ],
+    [
+     "paper226",
+     8
+    ],
+    [
+     "paper226",
+     2
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 6.679
+  },
+  {
+   "id": "hard-imageclef-1",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper298",
+     4
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper232",
+     1
+    ],
+    [
+     "paper232",
+     3
+    ],
+    [
+     "paper298",
+     4
+    ],
+    [
+     "paper298",
+     1
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.3333333333333333,
+     "average_precision": 0.3333333333333333,
+     "ndcg": 0.5
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.3333333333333333,
+     "average_precision": 0.3333333333333333,
+     "ndcg": 0.5
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 6.363
+  },
+  {
+   "id": "hard-imageclef-2",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper292",
+     3
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper292",
+     1
+    ],
+    [
+     "paper292",
+     2
+    ],
+    [
+     "paper292",
+     3
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.3333333333333333,
+     "average_precision": 0.3333333333333333,
+     "ndcg": 0.5
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.3333333333333333,
+     "average_precision": 0.3333333333333333,
+     "ndcg": 0.5
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 6.712
+  },
+  {
+   "id": "hard-imageclef-3",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper292",
+     5
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper292",
+     1
+    ],
+    [
+     "paper292",
+     5
+    ],
+    [
+     "paper292",
+     7
+    ],
+    [
+     "paper292",
+     3
+    ],
+    [
+     "paper292",
+     4
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 8.784
+  },
+  {
+   "id": "hard-joker-1",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper305",
+     5
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper305",
+     1
+    ],
+    [
+     "paper305",
+     5
+    ],
+    [
+     "paper310",
+     5
+    ],
+    [
+     "paper305",
+     8
+    ],
+    [
+     "paper306",
+     16
+    ],
+    [
+     "paper306",
+     15
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 6.117
+  },
+  {
+   "id": "hard-joker-2",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper305",
+     3
+    ],
+    [
+     "paper307",
+     16
+    ],
+    [
+     "paper307",
+     17
+    ],
+    [
+     "paper315",
+     2
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper305",
+     1
+    ],
+    [
+     "paper305",
+     3
+    ],
+    [
+     "paper307",
+     16
+    ],
+    [
+     "paper305",
+     4
+    ],
+    [
+     "paper307",
+     17
+    ],
+    [
+     "paper305",
+     8
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.6666666666666666,
+     "recall": 0.5,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.29166666666666663,
+     "ndcg": 0.5307212739772434
+    },
+    "6": {
+     "precision": 0.5,
+     "recall": 0.75,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.44166666666666665,
+     "ndcg": 0.592512031964586
+    }
+   },
+   "retrieval_pass": false,
+   "elapsed_seconds": 5.737
+  },
+  {
+   "id": "hard-joker-3",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper302",
+     3
+    ],
+    [
+     "paper302",
+     11
+    ],
+    [
+     "paper307",
+     5
+    ],
+    [
+     "paper307",
+     6
+    ],
+    [
+     "paper311",
+     5
+    ],
+    [
+     "paper311",
+     6
+    ],
+    [
+     "paper311",
+     9
+    ],
+    [
+     "paper315",
+     2
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper302",
+     1
+    ],
+    [
+     "paper302",
+     3
+    ],
+    [
+     "paper302",
+     11
+    ],
+    [
+     "paper307",
+     5
+    ],
+    [
+     "paper313",
+     4
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.6666666666666666,
+     "recall": 0.25,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.14583333333333331,
+     "ndcg": 0.5307212739772434
+    },
+    "6": {
+     "precision": 0.5,
+     "recall": 0.375,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.23958333333333331,
+     "ndcg": 0.47254583883871204
+    }
+   },
+   "retrieval_pass": false,
+   "elapsed_seconds": 5.843
+  },
+  {
+   "id": "hard-joker-4",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper302",
+     4
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper302",
+     1
+    ],
+    [
+     "paper302",
+     4
+    ],
+    [
+     "paper311",
+     8
+    ],
+    [
+     "paper315",
+     7
+    ],
+    [
+     "paper311",
+     6
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 6.534
+  },
+  {
+   "id": "hard-lifeclef-1",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper360",
+     4
+    ],
+    [
+     "paper320",
+     4
+    ],
+    [
+     "paper328",
+     3
+    ],
+    [
+     "paper328",
+     4
+    ],
+    [
+     "paper337",
+     4
+    ],
+    [
+     "paper337",
+     5
+    ],
+    [
+     "paper337",
+     12
+    ],
+    [
+     "paper341",
+     3
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper360",
+     1
+    ],
+    [
+     "paper360",
+     4
+    ],
+    [
+     "paper354",
+     2
+    ],
+    [
+     "paper360",
+     10
+    ],
+    [
+     "paper354",
+     1
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 0.125,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.0625,
+     "ndcg": 0.2960819109658652
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 0.125,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.0625,
+     "ndcg": 0.19092086617893467
+    }
+   },
+   "retrieval_pass": false,
+   "elapsed_seconds": 10.537
+  },
+  {
+   "id": "hard-lifeclef-2",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper323",
+     3
+    ],
+    [
+     "paper348",
+     3
+    ],
+    [
+     "paper353",
+     3
+    ],
+    [
+     "paper364",
+     10
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper322",
+     1
+    ],
+    [
+     "paper317",
+     10
+    ],
+    [
+     "paper330",
+     1
+    ],
+    [
+     "paper323",
+     2
+    ],
+    [
+     "paper333",
+     1
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "6": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    }
+   },
+   "retrieval_pass": false,
+   "elapsed_seconds": 9.6
+  },
+  {
+   "id": "hard-lifeclef-3",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper323",
+     1
+    ],
+    [
+     "paper323",
+     2
+    ],
+    [
+     "paper323",
+     5
+    ],
+    [
+     "paper323",
+     10
+    ],
+    [
+     "paper323",
+     11
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper359",
+     1
+    ],
+    [
+     "paper359",
+     13
+    ],
+    [
+     "paper333",
+     7
+    ],
+    [
+     "paper323",
+     2
+    ],
+    [
+     "paper359",
+     2
+    ],
+    [
+     "paper322",
+     3
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 0.2,
+     "hit": 1.0,
+     "reciprocal_rank": 0.25,
+     "average_precision": 0.05,
+     "ndcg": 0.14606834984270645
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 7.0
+  },
+  {
+   "id": "hard-longeval-1",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper376",
+     5
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper376",
+     1
+    ],
+    [
+     "paper376",
+     4
+    ],
+    [
+     "paper374",
+     7
+    ],
+    [
+     "paper374",
+     16
+    ],
+    [
+     "paper379",
+     13
+    ],
+    [
+     "paper374",
+     5
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "6": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    }
+   },
+   "retrieval_pass": false,
+   "elapsed_seconds": 5.929
+  },
+  {
+   "id": "hard-longeval-2",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper376",
+     3
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper376",
+     1
+    ],
+    [
+     "paper376",
+     3
+    ],
+    [
+     "paper374",
+     5
+    ],
+    [
+     "paper379",
+     7
+    ],
+    [
+     "paper384",
+     6
+    ],
+    [
+     "paper376",
+     4
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 5.994
+  },
+  {
+   "id": "hard-longeval-3",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper379",
+     1
+    ],
+    [
+     "paper379",
+     3
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper379",
+     1
+    ],
+    [
+     "paper379",
+     3
+    ],
+    [
+     "paper374",
+     1
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 1.0,
+     "recall": 0.5,
+     "hit": 1.0,
+     "reciprocal_rank": 1.0,
+     "average_precision": 0.5,
+     "ndcg": 1.0
+    },
+    "3": {
+     "precision": 0.6666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 1.0,
+     "average_precision": 1.0,
+     "ndcg": 1.0
+    },
+    "6": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 1.0,
+     "average_precision": 1.0,
+     "ndcg": 1.0
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 6.271
+  },
+  {
+   "id": "hard-pan-1",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper396",
+     5
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper252",
+     1
+    ],
+    [
+     "paper252",
+     4
+    ],
+    [
+     "paper396",
+     5
+    ],
+    [
+     "paper252",
+     5
+    ],
+    [
+     "paper431",
+     7
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.3333333333333333,
+     "average_precision": 0.3333333333333333,
+     "ndcg": 0.5
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.3333333333333333,
+     "average_precision": 0.3333333333333333,
+     "ndcg": 0.5
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 6.829
+  },
+  {
+   "id": "hard-pan-2",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper396",
+     3
+    ],
+    [
+     "paper396",
+     4
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper396",
+     1
+    ],
+    [
+     "paper396",
+     3
+    ],
+    [
+     "paper396",
+     4
+    ],
+    [
+     "paper396",
+     6
+    ],
+    [
+     "paper386",
+     6
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.6666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5833333333333333,
+     "ndcg": 0.6934264036172708
+    },
+    "6": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5833333333333333,
+     "ndcg": 0.6934264036172708
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 6.289
+  },
+  {
+   "id": "hard-pan-3",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper427",
+     4
+    ],
+    [
+     "paper427",
+     7
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper427",
+     1
+    ],
+    [
+     "paper427",
+     4
+    ],
+    [
+     "paper427",
+     2
+    ],
+    [
+     "paper427",
+     6
+    ],
+    [
+     "paper427",
+     7
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 0.5,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.25,
+     "ndcg": 0.38685280723454163
+    },
+    "6": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.45,
+     "ndcg": 0.6240505200038379
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 5.849
+  },
+  {
+   "id": "hard-quantum-1",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper442",
+     1
+    ],
+    [
+     "paper442",
+     4
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper442",
+     1
+    ],
+    [
+     "paper442",
+     4
+    ],
+    [
+     "paper442",
+     2
+    ],
+    [
+     "paper442",
+     6
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 1.0,
+     "recall": 0.5,
+     "hit": 1.0,
+     "reciprocal_rank": 1.0,
+     "average_precision": 0.5,
+     "ndcg": 1.0
+    },
+    "3": {
+     "precision": 0.6666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 1.0,
+     "average_precision": 1.0,
+     "ndcg": 1.0
+    },
+    "6": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 1.0,
+     "average_precision": 1.0,
+     "ndcg": 1.0
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 6.331
+  },
+  {
+   "id": "hard-quantum-2",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper442",
+     5
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper349",
+     1
+    ],
+    [
+     "paper349",
+     5
+    ],
+    [
+     "paper442",
+     3
+    ],
+    [
+     "paper346",
+     8
+    ],
+    [
+     "paper442",
+     5
+    ],
+    [
+     "paper346",
+     2
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.2,
+     "average_precision": 0.2,
+     "ndcg": 0.38685280723454163
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 5.956
+  },
+  {
+   "id": "hard-simpletext-1",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper470",
+     3
+    ],
+    [
+     "paper470",
+     4
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper470",
+     1
+    ],
+    [
+     "paper470",
+     4
+    ],
+    [
+     "paper470",
+     3
+    ],
+    [
+     "paper456",
+     2
+    ],
+    [
+     "paper444",
+     3
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.6666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5833333333333333,
+     "ndcg": 0.6934264036172708
+    },
+    "6": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5833333333333333,
+     "ndcg": 0.6934264036172708
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 6.111
+  },
+  {
+   "id": "hard-simpletext-2",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper461",
+     4
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper461",
+     1
+    ],
+    [
+     "paper461",
+     3
+    ],
+    [
+     "paper461",
+     2
+    ],
+    [
+     "paper461",
+     11
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "6": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    }
+   },
+   "retrieval_pass": false,
+   "elapsed_seconds": 5.811
+  },
+  {
+   "id": "hard-talent-1",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper486",
+     5
+    ],
+    [
+     "paper486",
+     8
+    ],
+    [
+     "paper486",
+     9
+    ],
+    [
+     "paper486",
+     11
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper486",
+     1
+    ],
+    [
+     "paper486",
+     5
+    ],
+    [
+     "paper481",
+     7
+    ],
+    [
+     "paper474",
+     5
+    ],
+    [
+     "paper478",
+     3
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 0.25,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.125,
+     "ndcg": 0.2960819109658652
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 0.25,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.125,
+     "ndcg": 0.24630238874073
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 6.832
+  },
+  {
+   "id": "hard-touche-1",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper500",
+     3
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper500",
+     1
+    ],
+    [
+     "paper500",
+     3
+    ],
+    [
+     "paper495",
+     4
+    ],
+    [
+     "paper508",
+     3
+    ],
+    [
+     "paper494",
+     2
+    ],
+    [
+     "paper494",
+     6
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 6.051
+  },
+  {
+   "id": "hard-touche-2",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper500",
+     5
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper500",
+     1
+    ],
+    [
+     "paper500",
+     5
+    ],
+    [
+     "paper499",
+     1
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 5.992
+  },
+  {
+   "id": "hard-touche-3",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper505",
+     5
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper505",
+     1
+    ],
+    [
+     "paper505",
+     5
+    ],
+    [
+     "paper505",
+     6
+    ],
+    [
+     "paper505",
+     4
+    ],
+    [
+     "paper499",
+     1
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    },
+    "6": {
+     "precision": 0.16666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.5,
+     "ndcg": 0.6309297535714575
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 6.281
+  },
+  {
+   "id": "hard-touche-4",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper505",
+     3
+    ],
+    [
+     "paper505",
+     4
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper505",
+     1
+    ],
+    [
+     "paper505",
+     5
+    ],
+    [
+     "paper505",
+     3
+    ],
+    [
+     "paper492",
+     9
+    ],
+    [
+     "paper505",
+     4
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 0.5,
+     "hit": 1.0,
+     "reciprocal_rank": 0.3333333333333333,
+     "average_precision": 0.16666666666666666,
+     "ndcg": 0.3065735963827292
+    },
+    "6": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.3333333333333333,
+     "average_precision": 0.3666666666666667,
+     "ndcg": 0.5437713091520254
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 6.109
+  },
+  {
+   "id": "hard-erisk-1",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper140",
+     3
+    ],
+    [
+     "paper113",
+     3
+    ],
+    [
+     "paper120",
+     2
+    ],
+    [
+     "paper120",
+     3
+    ],
+    [
+     "paper130",
+     1
+    ],
+    [
+     "paper130",
+     2
+    ],
+    [
+     "paper139",
+     2
+    ],
+    [
+     "paper139",
+     3
+    ],
+    [
+     "paper139",
+     4
+    ],
+    [
+     "paper146",
+     2
+    ],
+    [
+     "paper150",
+     4
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper140",
+     1
+    ],
+    [
+     "paper140",
+     3
+    ],
+    [
+     "paper111",
+     17
+    ],
+    [
+     "paper146",
+     2
+    ],
+    [
+     "paper111",
+     16
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 0.09090909090909091,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.045454545454545456,
+     "ndcg": 0.2960819109658652
+    },
+    "6": {
+     "precision": 0.3333333333333333,
+     "recall": 0.18181818181818182,
+     "hit": 1.0,
+     "reciprocal_rank": 0.5,
+     "average_precision": 0.09090909090909091,
+     "ndcg": 0.3212446320893053
+    }
+   },
+   "retrieval_pass": false,
+   "elapsed_seconds": 6.634
+  },
+  {
+   "id": "hard-erisk-2",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper140",
+     4
+    ],
+    [
+     "paper140",
+     5
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper48",
+     1
+    ],
+    [
+     "paper48",
+     7
+    ],
+    [
+     "paper140",
+     5
+    ],
+    [
+     "paper46",
+     8
+    ],
+    [
+     "paper140",
+     4
+    ],
+    [
+     "paper33",
+     6
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.3333333333333333,
+     "recall": 0.5,
+     "hit": 1.0,
+     "reciprocal_rank": 0.3333333333333333,
+     "average_precision": 0.16666666666666666,
+     "ndcg": 0.3065735963827292
+    },
+    "6": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 0.3333333333333333,
+     "average_precision": 0.3666666666666667,
+     "ndcg": 0.5437713091520254
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 8.7
+  },
+  {
+   "id": "hard-erisk-3",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper142",
+     3
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper135",
+     1
+    ],
+    [
+     "paper135",
+     2
+    ],
+    [
+     "paper147",
+     1
+    ],
+    [
+     "paper111",
+     2
+    ],
+    [
+     "paper111",
+     4
+    ],
+    [
+     "paper144",
+     8
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "3": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    },
+    "6": {
+     "precision": 0.0,
+     "recall": 0.0,
+     "hit": 0.0,
+     "reciprocal_rank": 0.0,
+     "average_precision": 0.0,
+     "ndcg": 0.0
+    }
+   },
+   "retrieval_pass": false,
+   "elapsed_seconds": 6.033
+  },
+  {
+   "id": "hard-erisk-4",
+   "category": "paper",
+   "gold_pages": [
+    [
+     "paper142",
+     1
+    ],
+    [
+     "paper142",
+     4
+    ]
+   ],
+   "retrieved_pages": [
+    [
+     "paper142",
+     1
+    ],
+    [
+     "paper142",
+     4
+    ],
+    [
+     "paper142",
+     10
+    ],
+    [
+     "paper142",
+     2
+    ]
+   ],
+   "retrieval_metrics": {
+    "1": {
+     "precision": 1.0,
+     "recall": 0.5,
+     "hit": 1.0,
+     "reciprocal_rank": 1.0,
+     "average_precision": 0.5,
+     "ndcg": 1.0
+    },
+    "3": {
+     "precision": 0.6666666666666666,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 1.0,
+     "average_precision": 1.0,
+     "ndcg": 1.0
+    },
+    "6": {
+     "precision": 0.3333333333333333,
+     "recall": 1.0,
+     "hit": 1.0,
+     "reciprocal_rank": 1.0,
+     "average_precision": 1.0,
+     "ndcg": 1.0
+    }
+   },
+   "retrieval_pass": true,
+   "elapsed_seconds": 6.209
+  }
+ ]
+}
