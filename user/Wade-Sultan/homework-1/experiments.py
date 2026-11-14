@@ -1,0 +1,190 @@
+"""Run retrieval-only evaluations for the configs in configs.toml.
+
+Each run writes results/<config>.json (settings, per-question rankings and
+scores, macro averages) and rebuilds results/summary.md from every saved run.
+Scoring reuses the starter's ir-measures code, so numbers are comparable with
+`clef-rag evaluate --retrieval-only`.
+"""
+
+import argparse
+import json
+import time
+import tomllib
+from dataclasses import fields
+from datetime import datetime, timezone
+from pathlib import Path
+
+from clef_rag.catalog import resolve_papers
+from clef_rag.index import Index
+from clef_rag.metrics import (
+    aggregate_retrieval_metrics,
+    normalize_cutoffs,
+    page_qrels,
+    page_run,
+    retrieval_metrics,
+)
+from clef_rag.models import LocalModels
+
+from retriever import ConfigurableRetriever, Settings
+
+HERE = Path(__file__).resolve().parent
+STARTER = HERE / "../../../homework-1/clef-rag"
+RESULTS = HERE / "results"
+EVAL_KEYS = {"description", "questions", "cutoffs", "paper_filter", "track_filter"}
+RETRIEVER_KEYS = {f.name for f in fields(Settings)}
+METRICS = [
+    ("precision", "P"),
+    ("recall", "R"),
+    ("hit_rate", "Hit"),
+    ("mrr", "MRR"),
+    ("map", "MAP"),
+    ("ndcg", "nDCG"),
+]
+
+
+def load_configs(path):
+    raw = tomllib.loads(path.read_text())
+    defaults = raw.get("defaults", {})
+    configs = {}
+    for name, overrides in raw.get("configs", {}).items():
+        merged = {"description": "", **defaults, **overrides}
+        unknown = set(merged) - EVAL_KEYS - RETRIEVER_KEYS
+        if unknown:
+            raise SystemExit(f"{name}: unknown keys {sorted(unknown)}")
+        merged["changed"] = {
+            k: v
+            for k, v in overrides.items()
+            if k != "description" and defaults.get(k) != v
+        }
+        configs[name] = merged
+    return configs
+
+
+def run_config(name, config, index, models):
+    settings = Settings(**{k: config[k] for k in RETRIEVER_KEYS if k in config})
+    retriever = ConfigurableRetriever(index, models, settings)
+    cutoffs = normalize_cutoffs(config["cutoffs"])
+    questions_path = (HERE / config["questions"]).resolve()
+    cases = [c for c in json.loads(questions_path.read_text()) if c.get("gold_sources")]
+    rows = []
+    for number, case in enumerate(cases, 1):
+        started = time.perf_counter()
+        row = {"id": case["id"], "category": case["category"], "question": case["question"]}
+        try:
+            row["gold_pages"] = [json.loads(key) for key in page_qrels(case["gold_sources"])]
+            papers = case.get("papers", []) if config["paper_filter"] else []
+            sources = retriever.search(
+                case["question"],
+                paper_ids=resolve_papers(index.db, papers) or None,
+                track=case.get("track") if config["track_filter"] else None,
+            )
+            # Keep rankings, not passage text, so result files stay small enough to commit.
+            row["retrieved"] = [
+                {k: s[k] for k in ("rank", "document_id", "page", "id")} for s in sources
+            ]
+            row["retrieved_pages"] = [json.loads(key) for key in page_run(sources)]
+            row["retrieval_metrics"] = retrieval_metrics(
+                sources, case["gold_sources"], cutoffs
+            )
+        except Exception as exc:  # noqa: BLE001 - record the failure and keep going
+            row["error"] = str(exc)
+        row["elapsed_seconds"] = round(time.perf_counter() - started, 3)
+        rows.append(row)
+        status = "error" if "error" in row else f"nDCG@{cutoffs[-1]}=" + format(
+            row["retrieval_metrics"][str(cutoffs[-1])]["ndcg"], ".3f"
+        )
+        print(f"  [{number}/{len(cases)}] {case['id']}: {status}")
+    return {
+        "config": name,
+        "description": config["description"],
+        "run_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "settings": {k: v for k, v in config.items() if k not in ("description", "changed")},
+        "changed_from_defaults": config["changed"],
+        "index": {
+            k: index.manifest.get(k)
+            for k in ("generation", "created_at", "embedding_model", "chunk_bytes", "overlap_bytes")
+        },
+        "summary": {
+            "questions": len(rows),
+            "scored": sum("retrieval_metrics" in r for r in rows),
+            "errors": sum("error" in r for r in rows),
+            "mean_seconds": round(sum(r["elapsed_seconds"] for r in rows) / len(rows), 3),
+            "metrics": aggregate_retrieval_metrics(rows),
+        },
+        "results": rows,
+    }
+
+
+def write_summary(results):
+    runs = [json.loads(p.read_text()) for p in sorted(results.glob("*.json"))]
+    # Baseline first, then alphabetical, so every table reads as "compared to baseline".
+    runs.sort(key=lambda r: (r["config"] != "baseline", r["config"]))
+    lines = [
+        "# Retrieval experiments",
+        "",
+        "Generated by `experiments.py`; do not edit by hand. Macro averages over"
+        " scored questions, using unique paper/PDF-page pairs as the ranking unit.",
+        "",
+        "| Config | Changes | Scored | Errors | Sec/query | Run at |",
+        "| --- | --- | --- | --- | --- | --- |",
+    ]
+    for run in runs:
+        changes = ", ".join(f"`{k}={v}`" for k, v in run["changed_from_defaults"].items())
+        s = run["summary"]
+        lines.append(
+            f"| {run['config']} | {changes or 'none'} | {s['scored']}/{s['questions']}"
+            f" | {s['errors']} | {s['mean_seconds']} | {run['run_at']} |"
+        )
+    cutoffs = sorted({k for r in runs for k in (r["summary"]["metrics"] or {})}, key=int)
+    for k in cutoffs:
+        lines += [
+            "",
+            f"## @{k}",
+            "",
+            "| Config | " + " | ".join(label for _, label in METRICS) + " |",
+            "| --- |" + " --- |" * len(METRICS),
+        ]
+        for run in runs:
+            scores = (run["summary"]["metrics"] or {}).get(k)
+            cells = [f"{scores[m]:.4f}" if scores else "n/a" for m, _ in METRICS]
+            lines.append(f"| {run['config']} | " + " | ".join(cells) + " |")
+    (results / "summary.md").write_text("\n".join(lines) + "\n")
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    parser.add_argument("configs", nargs="*", help="Config names (default: all)")
+    parser.add_argument("--config-file", type=Path, default=HERE / "configs.toml")
+    parser.add_argument("--index-dir", type=Path, default=STARTER / "index")
+    parser.add_argument(
+        "--questions",
+        type=Path,
+        help="Score every config on this question file instead; results go to results/<file stem>/",
+    )
+    args = parser.parse_args()
+
+    configs = load_configs(args.config_file)
+    missing = set(args.configs) - set(configs)
+    if missing:
+        raise SystemExit(f"Unknown configs: {sorted(missing)}. Have: {sorted(configs)}")
+    results = RESULTS
+    if args.questions:
+        for config in configs.values():
+            config["questions"] = str(args.questions.resolve())
+        results = RESULTS / args.questions.stem
+    results.mkdir(parents=True, exist_ok=True)
+    models = LocalModels()
+    with Index(args.index_dir.resolve()) as index:
+        for name in args.configs or configs:
+            print(f"{name}: {configs[name]['description']}")
+            result = run_config(name, configs[name], index, models)
+            out = results / f"{name}.json"
+            out.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n")
+            for k, scores in (result["summary"]["metrics"] or {}).items():
+                print(f"  @{k}: " + "  ".join(f"{label} {scores[m]:.4f}" for m, label in METRICS))
+    write_summary(results)
+    print(f"Wrote {results / 'summary.md'}")
+
+
+if __name__ == "__main__":
+    main()

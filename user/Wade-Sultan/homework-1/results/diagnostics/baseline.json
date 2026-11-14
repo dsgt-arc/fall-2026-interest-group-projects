@@ -1,0 +1,960 @@
+{
+  "config": "baseline",
+  "run": "baseline",
+  "generate": false,
+  "description": "Starter system, unchanged",
+  "run_at": "2026-10-12T04:38:22+00:00",
+  "settings": {
+    "questions": "../../../homework-1/clef-rag/eval/questions.json",
+    "cutoffs": [
+      1,
+      3,
+      6
+    ],
+    "candidates": 20,
+    "semantic_weight": 0.5,
+    "lexical_weight": 0.5,
+    "rrf_c": 60,
+    "top_k": 6,
+    "prepend_intro": true,
+    "paper_filter": true,
+    "track_filter": true
+  },
+  "changed_from_defaults": {},
+  "index": {
+    "generation": "build-b0d11cd06fb64d168d9ae66033aca1aa",
+    "created_at": "2026-10-04T22:53:29.530661+00:00",
+    "embedding_model": "embeddinggemma:300m",
+    "chunk_bytes": 1400,
+    "overlap_bytes": 250
+  },
+  "questions": 12,
+  "errors": 0,
+  "summary": {
+    "chunking": {
+      "chunks": 21046,
+      "median_bytes": 1282.0,
+      "fragment_rate": 0.052979188444359976,
+      "mid_sentence_rate": 0.0014627011214041932,
+      "page_break_cut_rate": 0.2610032362459547,
+      "section_span_rate": 0.29806138933764137,
+      "retrieved_fragments": 0.16666666666666666,
+      "quotes": {
+        "retrieved": 0,
+        "not_retrieved": 0,
+        "split": 0,
+        "missing": 0
+      }
+    },
+    "embedding": {
+      "hit_fused": 1.0,
+      "hit_dense": 0.4166666666666667,
+      "hit_lexical": 0.6666666666666666,
+      "mrr_fused": 1.0,
+      "mrr_dense": 0.16944444444444443,
+      "mrr_lexical": 0.4236111111111111,
+      "unmatched_questions": 5,
+      "gold_overlap": 0.6018849206349206,
+      "paraphrases": 0,
+      "paraphrase_hit_fused": null,
+      "paraphrase_hit_dense": null
+    },
+    "noise": {
+      "precision": 0.19444444444444442,
+      "off_target_rate": 0.06944444444444443,
+      "distinct_papers": 1.5,
+      "rank1_gold": 1.0,
+      "supported_clean": null,
+      "supported_noisy": null,
+      "recall_clean": null,
+      "recall_noisy": null,
+      "cited_distractor": null
+    },
+    "context": {
+      "mean_dropped": 0.0,
+      "questions_dropping": 0,
+      "gold_lost": 0,
+      "max_budget_used": 0.9940381224284155,
+      "max_est_prompt_tokens": 3051,
+      "context_tokens": 8192,
+      "recall_first": null,
+      "recall_middle": null,
+      "recall_last": null,
+      "cited_gold_first": null,
+      "cited_gold_middle": null,
+      "cited_gold_last": null
+    },
+    "hallucination": {
+      "answered": null,
+      "expected_recall": null,
+      "ungrounded_number_answers": null,
+      "ungrounded_term_rate": null,
+      "abstained": null,
+      "errors": null
+    }
+  },
+  "results": [
+    {
+      "id": "paper-1",
+      "category": "paper",
+      "question": "Which two biomedical QA tasks are covered by paper1?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper1",
+          "page": 1,
+          "id": "5b9a2f963ac046bc4cb2c59104ffe59fa63cc1a851b4f9e7966799d17d9ad7a2"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper1",
+          "page": 3,
+          "id": "a2102d0157c93fc96cf93f6cbc0229f3a89db8c679c55e40640c1a67a49cc145"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper1",
+          "page": 1,
+          "id": "267b0046c9ea71954e57c8fa832ea55490afe254eefb93d215f005f945ba12e5"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper1",
+          "page": 2,
+          "id": "dfa71bbf275345ba67415c47892b98eacf588c5c7ab593dd314666e5bb52db71"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper1",
+          "page": 14,
+          "id": "7b55d38785f1ac2e7ccb3773e70a72d7f7cbd3bfb060beb99ec5fe2a753d7d50"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper1",
+          "page": 1,
+          "id": "194a8a767b6e68d66f1fe947e7e4527c29ec2afe7f7500099e860e768c5c0bb4"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 1,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 1,
+          "dense": 2,
+          "lexical": 2
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.6666666666666666,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.16666666666666666,
+        "off_target": 0,
+        "passages": 6,
+        "distinct_papers": 1,
+        "rank1_gold": true
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.8218948778038165,
+        "est_prompt_tokens": 2505
+      }
+    },
+    {
+      "id": "paper-2",
+      "category": "paper",
+      "question": "How many languages does MultiClinSum-2 cover, and what does it summarize?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper2",
+          "page": 1,
+          "id": "5a181deefcc6cb7c54e78b51c1c622684131a3c5ed3533efd3578696a3e3edea"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper2",
+          "page": 3,
+          "id": "719b597a9b1ea1a6d2776b6be240e92c997b516422fae50332d3c48e643a0450"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper2",
+          "page": 5,
+          "id": "9cfd24ae9aec1b821c316cc357b0ea4c68a933e82b99b538b489c2a9cda2efe0"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper151",
+          "page": 11,
+          "id": "612c4493a0ba7ae39c149c6415c6c87409c0dbda143a5736fa0c215eaf0134a0"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper2",
+          "page": 5,
+          "id": "e54788688bd6e516b3a1447bead77ab4153997c19cfeb3dcda10eb6540985910"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper151",
+          "page": 13,
+          "id": "c6e83ef47d9adc35ffd69c072b94424f36dc1483279db51697c9c0c17ed4d185"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 1,
+          "dense": 6,
+          "lexical": null
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.5,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.16666666666666666,
+        "off_target": 2,
+        "passages": 6,
+        "distinct_papers": 2,
+        "rank1_gold": true
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.8945250272490987,
+        "est_prompt_tokens": 2773
+      }
+    },
+    {
+      "id": "paper-3",
+      "category": "paper",
+      "question": "Which languages and entity/relation type counts does paper3 describe for BioNNE-R?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper3",
+          "page": 1,
+          "id": "e4dd05c34edf8f18b0370e0764cc74d80acdc4b919acb6d29215ccbe4db0d0a4"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper3",
+          "page": 4,
+          "id": "75d476c64669850c1b5bf97dbb902b6bbdddb41887faa8e2b69df3de0bb3880c"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper3",
+          "page": 2,
+          "id": "5870fe31e6fc8aec941016376145992b6b3004de172aedcd1c5ff30f72b730e5"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper3",
+          "page": 3,
+          "id": "26ec4fbf3ee8af2ea37e7153e550a93a5bec109caf975d6292ced51bcc6e6f26"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper3",
+          "page": 2,
+          "id": "4d64cd0b2b6a60e8d5afc4b63d05f9f6c97592b5108c3ad0e3d69316061751d2"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper3",
+          "page": 3,
+          "id": "82fe7f0fbecf9d5ee28859e948cd20e15fe6141262869fbf752d0e5fd4761438"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 1,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 1,
+          "dense": null,
+          "lexical": 2
+        },
+        "unmatched_terms": [
+          "paper3"
+        ],
+        "gold_overlap": 0.5555555555555556,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.16666666666666666,
+        "off_target": 0,
+        "passages": 6,
+        "distinct_papers": 1,
+        "rank1_gold": true
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.8508978016445712,
+        "est_prompt_tokens": 2604
+      }
+    },
+    {
+      "id": "paper-4",
+      "category": "paper",
+      "question": "What language and document type does ELCardioCC 2026 use in paper4?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper4",
+          "page": 1,
+          "id": "a0f6412087bf1a2661cffe30336eb6855cd39e8a1ebbda22f0bea9547b50dd81"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper4",
+          "page": 10,
+          "id": "037574fede2af415c68f0ac9f3185cfa2bb76a6b499305244da88c12358c7a33"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper4",
+          "page": 2,
+          "id": "5d131465dacc6f24e2b5570a7fe8b5d57e9d602fa5db5dd2c58aa8d949087c89"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper4",
+          "page": 2,
+          "id": "8b3c51b86d3f353783df00f30a1d906e1fc519018918538f0ae5df0e2c1343ca"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper4",
+          "page": 1,
+          "id": "2e28e86182401e162d2832ec2c601935f9cbeb9c4e0b68b74da5ea164616563f"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper4",
+          "page": 1,
+          "id": "49c861449f1c663bd97bcb21788199f76994cdc64b000efbde2074153e979c76"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 1,
+          "dense": 1,
+          "lexical": 1
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.7142857142857143,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.16666666666666666,
+        "off_target": 0,
+        "passages": 6,
+        "distinct_papers": 1,
+        "rank1_gold": true
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.8481521830218721,
+        "est_prompt_tokens": 2592
+      }
+    },
+    {
+      "id": "paper-5",
+      "category": "paper",
+      "question": "What are the four GutBrainIE subtasks described in paper5?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper5",
+          "page": 1,
+          "id": "c553c75f857a13cd100af8f93ba389bc431363fb18d2f78b7522b478cfd44638"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper5",
+          "page": 3,
+          "id": "a1cec1ea028377d5f1fa632ffe9817fc67900a1923662b0ce87c80c3ba7cf1f1"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper5",
+          "page": 3,
+          "id": "2348ba6381814b5d8e7d7dfb2476cd5708758f30006686b4efc0cc368e0b42b0"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper5",
+          "page": 2,
+          "id": "9fda907b146c8ec566623e6ce120947a10e86fde7577f5625e8be170effcf1cb"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper5",
+          "page": 11,
+          "id": "aed235b2dc8e9f6bccb60f0a3a09f4423e95c46ac063f6a6614636ff49a5f180"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper5",
+          "page": 5,
+          "id": "52f5113252222ed3b20d6a32f4ca3bac03984ae26ef5b2dad8a2370fa795a650"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 1,
+          "dense": 5,
+          "lexical": null
+        },
+        "unmatched_terms": [
+          "paper5"
+        ],
+        "gold_overlap": 0.6,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.16666666666666666,
+        "off_target": 0,
+        "passages": 6,
+        "distinct_papers": 1,
+        "rank1_gold": true
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.942471947747446,
+        "est_prompt_tokens": 2913
+      }
+    },
+    {
+      "id": "paper-6",
+      "category": "paper",
+      "question": "What four retrieval variants are described in paper6?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper6",
+          "page": 1,
+          "id": "1aede7238bdd439cb25eb8372936252161c5577bb311765bcb243e0e089f82a3"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper6",
+          "page": 6,
+          "id": "97f470207975579347076bdf4f299e0ffcbd0ae528e32999bc98907866ebcc40"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper6",
+          "page": 4,
+          "id": "1a31a28e89cdd26c4bf09444fd81c9efa439c847a4d7b0bab0e699d8b393ddcb"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper6",
+          "page": 12,
+          "id": "0a7bbe85dbc0070a92ebb7dcd160335104c7015708a4cc1801f934e3b3d9f155"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper6",
+          "page": 6,
+          "id": "a38c85afbeced5a2b6cf7eacc98b0b9fe4cdac368efe00a5ca10df1e7a68b62f"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper6",
+          "page": 3,
+          "id": "ddd41ddb81b1bb141a9eb9a89e48b810a987330033607c2eface1c6bf4e59a1d"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 1,
+          "dense": null,
+          "lexical": 4
+        },
+        "unmatched_terms": [
+          "paper6"
+        ],
+        "gold_overlap": 0.6,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.16666666666666666,
+        "off_target": 0,
+        "passages": 6,
+        "distinct_papers": 1,
+        "rank1_gold": true
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.8838202059094333,
+        "est_prompt_tokens": 2711
+      }
+    },
+    {
+      "id": "paper-7",
+      "category": "paper",
+      "question": "How large was the question subset used for keyword search refinement in paper7?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper7",
+          "page": 1,
+          "id": "e9838e15b1edd140eb4386b83a0fa7d516b3cd300c2f09beab83facc51535dcd"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper7",
+          "page": 11,
+          "id": "9e4c11f37a75cd108ef10db78810b47e3e9d8e1999f9dda2eeeac2f3be399c68"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper7",
+          "page": 3,
+          "id": "3fab6f75a2b03946f9a6af7803684d47dc68077618f6445491c94041fe6d952c"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper7",
+          "page": 7,
+          "id": "9a07278729eed0f06129c40a0e2515949aea243883047c498448517bf1f6ee84"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper7",
+          "page": 2,
+          "id": "923fd001e26f97e9a2bba07ae17ae8b1dcb9813396258b6499238afd013ffa02"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper7",
+          "page": 1,
+          "id": "5d3b5fd7cf45878de3fd89ff393e735faf8db54be6afc20d686895db97db4315"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 1,
+          "dense": null,
+          "lexical": 1
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.875,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.16666666666666666,
+        "off_target": 0,
+        "passages": 6,
+        "distinct_papers": 1,
+        "rank1_gold": true
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.9206442412549283,
+        "est_prompt_tokens": 2837
+      }
+    },
+    {
+      "id": "paper-8",
+      "category": "paper",
+      "question": "What are the main pipeline components of MedCascade in paper8?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper8",
+          "page": 1,
+          "id": "e597280b498fedfad1a1ef1bf367efd7b723ace2d11ef3935eac9959bf001d2e"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper8",
+          "page": 4,
+          "id": "9297e84d6c92938d5c2acfaddb89fb8635c8355cc0e3a99194746007b0fc5c2d"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper8",
+          "page": 2,
+          "id": "aff1cc7f065f724bb1c31ca9673662e3a38bfa48721034df0ac383bd04af45ab"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper8",
+          "page": 2,
+          "id": "6fe05222ba8d6020fe3f52083a0ca6f5ff3b14667332b447523342cffdec595a"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper8",
+          "page": 8,
+          "id": "12b70a30fbbc92202d1607f59da29bc1f0c5ed17f58ca16ffb4d0066c099c94b"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper8",
+          "page": 4,
+          "id": "ee3aa82b5e2a76f4b1f2676a3696290d004dcb13ed1496697d997bfbce35f1c8"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 1,
+          "dense": null,
+          "lexical": 3
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.4,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.16666666666666666,
+        "off_target": 0,
+        "passages": 6,
+        "distinct_papers": 1,
+        "rank1_gold": true
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.9830792427542302,
+        "est_prompt_tokens": 3051
+      }
+    },
+    {
+      "id": "synthesis-1",
+      "category": "synthesis",
+      "question": "Compare the retrieval approaches in paper6 and paper8.",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper6",
+          "page": 1,
+          "id": "1aede7238bdd439cb25eb8372936252161c5577bb311765bcb243e0e089f82a3"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper8",
+          "page": 1,
+          "id": "e597280b498fedfad1a1ef1bf367efd7b723ace2d11ef3935eac9959bf001d2e"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper6",
+          "page": 12,
+          "id": "0a7bbe85dbc0070a92ebb7dcd160335104c7015708a4cc1801f934e3b3d9f155"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper8",
+          "page": 2,
+          "id": "caa11e725978f13d2d84b21d956c1aadf9bc42aa54c2bc335b31eb3d6a859176"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper6",
+          "page": 2,
+          "id": "284a462c86c750ee8db0710c751d0e344cf7e7bdb998af26c71405549a0f51c7"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper8",
+          "page": 9,
+          "id": "5981d8abd2f36165150e21fd96d1652e80d07a5e34011164c38451da6ea48fb5"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 1,
+          "dense": null,
+          "lexical": null
+        },
+        "unmatched_terms": [
+          "paper6"
+        ],
+        "gold_overlap": 0.2,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.3333333333333333,
+        "off_target": 0,
+        "passages": 6,
+        "distinct_papers": 2,
+        "rank1_gold": true
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.9275908253808807,
+        "est_prompt_tokens": 2861
+      }
+    },
+    {
+      "id": "synthesis-2",
+      "category": "synthesis",
+      "question": "How do the tasks and languages differ between paper3 and paper4?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper3",
+          "page": 1,
+          "id": "e4dd05c34edf8f18b0370e0764cc74d80acdc4b919acb6d29215ccbe4db0d0a4"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper4",
+          "page": 1,
+          "id": "a0f6412087bf1a2661cffe30336eb6855cd39e8a1ebbda22f0bea9547b50dd81"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper3",
+          "page": 7,
+          "id": "73bf9f4a8dbe6aefd0e49ff841125882a890fe8c71523f0bac990c9390e54de9"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper4",
+          "page": 10,
+          "id": "62a4504fb4101676c227944d1ae95fdbe02da1279aaabaedcb6b36b888cc269d"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper3",
+          "page": 2,
+          "id": "4d64cd0b2b6a60e8d5afc4b63d05f9f6c97592b5108c3ad0e3d69316061751d2"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper4",
+          "page": 12,
+          "id": "d38ce378891a0012827a003a436963b9bc6d259c9dfd1caa03ffd63f829a6644"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 1,
+          "dense": null,
+          "lexical": 1
+        },
+        "unmatched_terms": [
+          "paper3"
+        ],
+        "gold_overlap": 0.5,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.3333333333333333,
+        "off_target": 0,
+        "passages": 6,
+        "distinct_papers": 2,
+        "rank1_gold": true
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.9070040214477212,
+        "est_prompt_tokens": 2795
+      }
+    },
+    {
+      "id": "synthesis-3",
+      "category": "synthesis",
+      "question": "What is the purpose of BioASQ 14b and Synergy14 in CLEF 2026?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper1",
+          "page": 1,
+          "id": "5b9a2f963ac046bc4cb2c59104ffe59fa63cc1a851b4f9e7966799d17d9ad7a2"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper1",
+          "page": 1,
+          "id": "194a8a767b6e68d66f1fe947e7e4527c29ec2afe7f7500099e860e768c5c0bb4"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper1",
+          "page": 4,
+          "id": "111f31889c3530ee4cf22508e859300afa5e7eb48b8fccf535715d67ba9ec5f6"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper1",
+          "page": 3,
+          "id": "9cb9ce76cca21e3a58a09c261616bcadccf05a7c2e75963647f3f59deb4672e7"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper1",
+          "page": 13,
+          "id": "84b76c5814216834aa303ac5d33c11135dcf78658dcee2b032870cc23d75c224"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper1",
+          "page": 3,
+          "id": "39ed9ca8100830e6a94d680e4becd0b9c7590b737aa9cc28c7a55eda22ccff68"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 1,
+          "dense": 6,
+          "lexical": 2
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.8333333333333334,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.16666666666666666,
+        "off_target": 0,
+        "passages": 6,
+        "distinct_papers": 1,
+        "rank1_gold": true
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.8713460088784656,
+        "est_prompt_tokens": 2675
+      }
+    },
+    {
+      "id": "synthesis-4",
+      "category": "synthesis",
+      "question": "What is CheckThat! 2026 Task 1 trying to retrieve, and which three languages does it cover?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper51",
+          "page": 1,
+          "id": "11802f4f1a8bfbb0fd6107a75c5cac0b60b7abbf4ac81ae7872fbf4b60c2defb"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper51",
+          "page": 2,
+          "id": "487a14b317240cc37edb20a5b85c7c4f506a275bf458bb6ba87ebc2e0e30435f"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper54",
+          "page": 2,
+          "id": "f1cb2ace9fe2c9f8179c38b378d5cbf17ca58e837b2d4750fbb234cad6cb3c4d"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper70",
+          "page": 2,
+          "id": "24d0af1b82c1c771802d10bfe4a1e8bb7c603ea63e699c779df0177430f7e053"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper51",
+          "page": 2,
+          "id": "6458611b1a88cef2e4709067326d36eac526728f0d718c9a97544793bdc708d7"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper83",
+          "page": 1,
+          "id": "0ae3298772ccc53fb7c2250d1ab1e9776b62f8021e800ffed7cdb9ab5dfc0aa4"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 1,
+          "dense": null,
+          "lexical": null
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.7777777777777778,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.16666666666666666,
+        "off_target": 3,
+        "passages": 6,
+        "distinct_papers": 4,
+        "rank1_gold": true
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.9940381224284155,
+        "est_prompt_tokens": 3008
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+__pycache__/
+# gemma3 outputs (rewrites, HyDE, doc2query, glossary) are local and regenerate on demand.
+cache/
+# Chroma's binary store is rebuilt by ./doc2query.sh; the manifest and the readable
+# questions.json stay tracked.
+doc2query-index/*
+!doc2query-index/manifest.json
+!doc2query-index/questions.json
+# Run logs.
+logs/
+# fashion-fm run (fashion-fm/train.yml): the dataset and model weights stay local;
+# metrics, sample grids and generated images can be committed.
+fashion-fm/data/
+fashion-fm/outputs/**/*.pt

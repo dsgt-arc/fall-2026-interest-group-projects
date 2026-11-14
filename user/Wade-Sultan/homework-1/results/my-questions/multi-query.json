@@ -1,0 +1,1772 @@
+{
+  "config": "multi-query",
+  "description": "Search the question plus 3 gemma3 rewordings",
+  "run_at": "2026-11-08T06:53:01+00:00",
+  "settings": {
+    "questions": "/home/theatomicsultan/omscs/clef/hw1/user/Wade-Sultan/homework-1/my-questions.json",
+    "cutoffs": [
+      1,
+      3,
+      6
+    ],
+    "candidates": 20,
+    "semantic_weight": 0.5,
+    "lexical_weight": 0.5,
+    "rrf_c": 60,
+    "top_k": 6,
+    "prepend_intro": true,
+    "expand_query": false,
+    "query_mode": "multi_query",
+    "rewrites": 3,
+    "doc2query_weight": 0.0,
+    "rerank_depth": 0,
+    "paper_filter": true,
+    "track_filter": true
+  },
+  "changed_from_defaults": {
+    "query_mode": "multi_query"
+  },
+  "index": {
+    "generation": "build-b0d11cd06fb64d168d9ae66033aca1aa",
+    "created_at": "2026-10-04T22:53:29.530661+00:00",
+    "embedding_model": "embeddinggemma:300m",
+    "chunk_bytes": 1400,
+    "overlap_bytes": 250
+  },
+  "summary": {
+    "questions": 17,
+    "scored": 17,
+    "errors": 0,
+    "mean_seconds": 2.954,
+    "metrics": {
+      "1": {
+        "precision": 0.11764705882352941,
+        "recall": 0.034313725490196074,
+        "hit_rate": 0.11764705882352941,
+        "mrr": 0.11764705882352941,
+        "map": 0.034313725490196074,
+        "ndcg": 0.11764705882352941
+      },
+      "3": {
+        "precision": 0.1372549019607843,
+        "recall": 0.2450980392156863,
+        "hit_rate": 0.35294117647058826,
+        "mrr": 0.22549019607843138,
+        "map": 0.1323529411764706,
+        "ndcg": 0.19006695489209832
+      },
+      "6": {
+        "precision": 0.0784313725490196,
+        "recall": 0.27450980392156865,
+        "hit_rate": 0.4117647058823529,
+        "mrr": 0.24019607843137253,
+        "map": 0.13970588235294118,
+        "ndcg": 0.19863872598189883
+      }
+    }
+  },
+  "results": [
+    {
+      "id": "detail-1",
+      "category": "detail",
+      "question": "How many unique generator models were used to generate the machine-generated portion of the PAN dataset?",
+      "gold_pages": [
+        [
+          "paper397",
+          3
+        ]
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "paper422",
+          "page": 1,
+          "id": "08620edee426bb10f89fec13aac73e5d1980cf860034d00bdedafd916d84a110"
+        },
+        {
+          "rank": 2,
+          "document_id": "paper422",
+          "page": 3,
+          "id": "83742eb4cc9b597c5fa0790ce49355137b75044e08860b8e1111760aa69b9075"
+        },
+        {
+          "rank": 3,
+          "document_id": "paper389",
+          "page": 4,
+          "id": "e149c7c4f801efb7dd9dc1c24baf9f132b4090f241d8fcb5ac6dccafbf1decd8"
+        },
+        {
+          "rank": 4,
+          "document_id": "paper419",
+          "page": 3,
+          "id": "9b845e367982f3fa08d3628d13a1feb4cb55f2c4df5f8341995eb2a7704f4e51"
+        },
+        {
+          "rank": 5,
+          "document_id": "paper422",
+          "page": 6,
+          "id": "db98a1c8d080792267050f3c408649a45364ea8792ec22c53c7ccc8eb434316f"
+        },
+        {
+          "rank": 6,
+          "document_id": "paper395",
+          "page": 2,
+          "id": "4cc8792e17dbeaa2531df6dd907c8b3be4e7694b432a26378ffecaa8eb134d7f"
+        }
+      ],
+      "retrieved_pages": [
+        [
+          "paper422",
+          1
+        ],
+        [
+          "paper422",
+          3
+        ],
+        [
+          "paper389",
+          4
+        ],
+        [
+          "paper419",
+          3
+        ],
+        [
+          "paper422",
+          6
+        ],
+        [
+          "paper395",
+          2
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "3": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "6": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        }
+      },
+      "elapsed_seconds": 2.832
+    },
+    {
+      "id": "detail-2",
+      "category": "detail",
+      "question": "How many text samples are in the Kaggle Academic out-of-distribution dataset?",
+      "gold_pages": [
+        [
+          "paper416",
+          3
+        ]
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "paper416",
+          "page": 1,
+          "id": "4a14f80024156611a3cd7b363088600978ca1cf9583833fdbcf29768610838cb"
+        },
+        {
+          "rank": 2,
+          "document_id": "paper416",
+          "page": 4,
+          "id": "d6e53432d4ad6730afc75d412e0ad0b5ef0a4daf9d27f9084641de6dd7295c7c"
+        },
+        {
+          "rank": 3,
+          "document_id": "paper416",
+          "page": 3,
+          "id": "3461d66996272173e3544440bccb8d961c2e6fded55bcbc9127206b014af2217"
+        },
+        {
+          "rank": 4,
+          "document_id": "paper83",
+          "page": 9,
+          "id": "81c4d7ef58bc42b4f1e58c0eb563abb89cd5c0a517b02eaec472d7e8c4e3e1df"
+        },
+        {
+          "rank": 5,
+          "document_id": "paper356",
+          "page": 7,
+          "id": "04b83679aec01c022ef2f81508f1e4ebe6b069ffb0ee62a831ff306430dad71f"
+        },
+        {
+          "rank": 6,
+          "document_id": "paper374",
+          "page": 13,
+          "id": "edbf651e0f4e93602b1d5834ccc3f8fc03616012bfd85ddc3d5670ce56e39da7"
+        }
+      ],
+      "retrieved_pages": [
+        [
+          "paper416",
+          1
+        ],
+        [
+          "paper416",
+          4
+        ],
+        [
+          "paper416",
+          3
+        ],
+        [
+          "paper83",
+          9
+        ],
+        [
+          "paper356",
+          7
+        ],
+        [
+          "paper374",
+          13
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "3": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "average_precision": 0.3333333333333333,
+          "ndcg": 0.5
+        },
+        "6": {
+          "precision": 0.16666666666666666,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "average_precision": 0.3333333333333333,
+          "ndcg": 0.5
+        }
+      },
+      "elapsed_seconds": 3.089
+    },
+    {
+      "id": "detail-3",
+      "category": "detail",
+      "question": "What GPU did the HULAT-HAI authors run their models on?",
+      "gold_pages": [
+        [
+          "paper468",
+          4
+        ]
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "paper468",
+          "page": 1,
+          "id": "aba96abd89563dcab32e411852abc145f221175c4c113a7576eb020d379bc1a8"
+        },
+        {
+          "rank": 2,
+          "document_id": "paper468",
+          "page": 1,
+          "id": "e5ce4972089a4c7e5e6bf338f12553cb0d5a5893a5277f7af37505e262467165"
+        },
+        {
+          "rank": 3,
+          "document_id": "paper468",
+          "page": 4,
+          "id": "338dff86d2234e7428e2f6d290d78bcd266c8b1547cc7ecfdb1ecb47bca1d07f"
+        },
+        {
+          "rank": 4,
+          "document_id": "paper468",
+          "page": 1,
+          "id": "ab509b2d4fec37c6cf376c2432f37c87b0ca2be57eb9bdfdd0f5c4676c9370e4"
+        },
+        {
+          "rank": 5,
+          "document_id": "paper468",
+          "page": 6,
+          "id": "fe8edd56ed71bc95b734efdfabafc647104a3c9ecf6443db3553bee467a516f7"
+        },
+        {
+          "rank": 6,
+          "document_id": "paper468",
+          "page": 8,
+          "id": "b9881f91dad5216747cce3576587fb5a79b09af594f9718b87b025f8b0107094"
+        }
+      ],
+      "retrieved_pages": [
+        [
+          "paper468",
+          1
+        ],
+        [
+          "paper468",
+          4
+        ],
+        [
+          "paper468",
+          6
+        ],
+        [
+          "paper468",
+          8
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "3": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 0.5,
+          "average_precision": 0.5,
+          "ndcg": 0.6309297535714575
+        },
+        "6": {
+          "precision": 0.16666666666666666,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 0.5,
+          "average_precision": 0.5,
+          "ndcg": 0.6309297535714575
+        }
+      },
+      "elapsed_seconds": 4.608
+    },
+    {
+      "id": "detail-4",
+      "category": "detail",
+      "question": "What low-resource language did the main dataset for the ELOQUENT 2026 task use as the anchor?",
+      "gold_pages": [
+        [
+          "paper386",
+          3
+        ]
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "paper96",
+          "page": 1,
+          "id": "7c82cb515fd9facb3dac3e7c43831ec131b82ed2458eca3cc274ef9bb7f3903a"
+        },
+        {
+          "rank": 2,
+          "document_id": "paper96",
+          "page": 3,
+          "id": "98fd8dfdafd856e289e24769b683b6f63258b67df24691349aa3f1f71b1669c6"
+        },
+        {
+          "rank": 3,
+          "document_id": "paper98",
+          "page": 5,
+          "id": "222f83a5dc1995b8391afa84f8d3cd3bfc43193d66273a781adff48a30f8ca8a"
+        },
+        {
+          "rank": 4,
+          "document_id": "paper96",
+          "page": 3,
+          "id": "cb63ab41ac9d139d81cf60f7db50c01958658617b568d7386ce681147db1021f"
+        },
+        {
+          "rank": 5,
+          "document_id": "paper98",
+          "page": 5,
+          "id": "c70ea3d0daa3e079f884f30ba5bf9e460d052c827868d2d4330d56cc0a02a417"
+        },
+        {
+          "rank": 6,
+          "document_id": "paper101",
+          "page": 2,
+          "id": "6174b09222f4933936443d9cf1d276f544cced07ae5a43a489480be035c2d6f9"
+        }
+      ],
+      "retrieved_pages": [
+        [
+          "paper96",
+          1
+        ],
+        [
+          "paper96",
+          3
+        ],
+        [
+          "paper98",
+          5
+        ],
+        [
+          "paper101",
+          2
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "3": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "6": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        }
+      },
+      "elapsed_seconds": 2.953
+    },
+    {
+      "id": "detail-5",
+      "category": "detail",
+      "question": "What token limit did the DS@GT team on the PAN 2026 task set?",
+      "gold_pages": [
+        [
+          "paper397",
+          5
+        ]
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "paper397",
+          "page": 1,
+          "id": "95d4f679e875ba07c827aba3d0645cc71a8aca2b31c8be2544a87f2659d1804c"
+        },
+        {
+          "rank": 2,
+          "document_id": "paper397",
+          "page": 1,
+          "id": "2d139f92ebb16d67a3760474177fed76a94f06773de1f9df1f340d0dce8598e7"
+        },
+        {
+          "rank": 3,
+          "document_id": "paper403",
+          "page": 2,
+          "id": "bfb3b42163d4d3854175954976c41fde202e09bd3512b4b0f4407ce336b2eaa5"
+        },
+        {
+          "rank": 4,
+          "document_id": "paper393",
+          "page": 3,
+          "id": "a18a761fbd68f2c942b4fbf62608240f6310a43f2c9d9f19ce724ffa680f4988"
+        },
+        {
+          "rank": 5,
+          "document_id": "paper408",
+          "page": 3,
+          "id": "c3c9cdbdaf28a059761c6b06ad6133118fd365ef33af5bce6652b14d8d7783e9"
+        },
+        {
+          "rank": 6,
+          "document_id": "paper390",
+          "page": 3,
+          "id": "1435e8c7de7707feced3cb64eb4b6d8ad37ce84432a7b85d082ad45b5f75343d"
+        }
+      ],
+      "retrieved_pages": [
+        [
+          "paper397",
+          1
+        ],
+        [
+          "paper403",
+          2
+        ],
+        [
+          "paper393",
+          3
+        ],
+        [
+          "paper408",
+          3
+        ],
+        [
+          "paper390",
+          3
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "3": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "6": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        }
+      },
+      "elapsed_seconds": 2.732
+    },
+    {
+      "id": "detail-6",
+      "category": "detail",
+      "question": "What is the name of the metric that assigns a score equal to the reciprocal rank of an item by relevance, considering only the top 5 documents?",
+      "gold_pages": [
+        [
+          "paper66",
+          3
+        ]
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "paper61",
+          "page": 1,
+          "id": "c30cf8cb5099fe40aabc463c08100a4cd1dfaa21c061de256f3f6221fe2ef02b"
+        },
+        {
+          "rank": 2,
+          "document_id": "paper61",
+          "page": 7,
+          "id": "b84f6b9cfbe3e9ed65c42621ab65b9c3a9ba64022b04f04c9487e96a1d930096"
+        },
+        {
+          "rank": 3,
+          "document_id": "paper49",
+          "page": 4,
+          "id": "645f2df21c90144527a5282351ed54f469350034aebbae0cff7e7cb1378e8b2c"
+        },
+        {
+          "rank": 4,
+          "document_id": "paper91",
+          "page": 3,
+          "id": "e28414ca8d26895558fc409ada87efcd8d77b16fbed4184fba6eed6e002fd81f"
+        },
+        {
+          "rank": 5,
+          "document_id": "paper389",
+          "page": 5,
+          "id": "c07ae2464a09b313895557f69c82865ad465d7e3a69f6ff9b3899716cae728a9"
+        },
+        {
+          "rank": 6,
+          "document_id": "paper45",
+          "page": 3,
+          "id": "e06309c1ee233f5bf9893b4976845cd7535dea8c6f2a914249a72b82a12c2038"
+        }
+      ],
+      "retrieved_pages": [
+        [
+          "paper61",
+          1
+        ],
+        [
+          "paper61",
+          7
+        ],
+        [
+          "paper49",
+          4
+        ],
+        [
+          "paper91",
+          3
+        ],
+        [
+          "paper389",
+          5
+        ],
+        [
+          "paper45",
+          3
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "3": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "6": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        }
+      },
+      "elapsed_seconds": 2.867
+    },
+    {
+      "id": "detail-7",
+      "category": "detail",
+      "question": "How many independent fine tuning runs did the GetGut@AAU team perform on each dataset?",
+      "gold_pages": [
+        [
+          "paper17",
+          7
+        ]
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "paper17",
+          "page": 1,
+          "id": "11fb20713b4bf63f73de20f51a828da203764faf2cfb4806bc4801a34c67c6bc"
+        },
+        {
+          "rank": 2,
+          "document_id": "paper17",
+          "page": 17,
+          "id": "5bac3f72f172d44d0781ed79fb213c085270705dd1750a3201fe3ec253344f18"
+        },
+        {
+          "rank": 3,
+          "document_id": "paper5",
+          "page": 31,
+          "id": "25cc4de84cbeb9f7c83f9ad437e35c5ce44c80e0ae4c183793cef1e3aaccc2ec"
+        },
+        {
+          "rank": 4,
+          "document_id": "paper17",
+          "page": 16,
+          "id": "d9fc6faa99faf4091d906f5ba92f788b854eba94674e8574a0d4f25e8ce116ea"
+        },
+        {
+          "rank": 5,
+          "document_id": "paper5",
+          "page": 12,
+          "id": "cecc537312c988986238aba84c66142d7b95697871196cf3e77c7ac2186b974d"
+        },
+        {
+          "rank": 6,
+          "document_id": "paper17",
+          "page": 12,
+          "id": "0ddcfb493a5de1ec5684d750e09c1258d59b2f4174ce72619c35965ede71c7ea"
+        }
+      ],
+      "retrieved_pages": [
+        [
+          "paper17",
+          1
+        ],
+        [
+          "paper17",
+          17
+        ],
+        [
+          "paper5",
+          31
+        ],
+        [
+          "paper17",
+          16
+        ],
+        [
+          "paper5",
+          12
+        ],
+        [
+          "paper17",
+          12
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "3": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "6": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        }
+      },
+      "elapsed_seconds": 2.906
+    },
+    {
+      "id": "detail-8",
+      "category": "detail",
+      "question": "What context retrieval method did the gfreitas team say helped most?",
+      "gold_pages": [
+        [
+          "paper255",
+          7
+        ]
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "paper255",
+          "page": 1,
+          "id": "f7fdf459f841c7a1b794d65f8d95cc647ceebb6a7a8086770339954f25890982"
+        },
+        {
+          "rank": 2,
+          "document_id": "paper255",
+          "page": 1,
+          "id": "7648e81c59e27343040da2fe042ff62b4f5433f63f58e983f7d4ad3d5d66e4cc"
+        },
+        {
+          "rank": 3,
+          "document_id": "paper381",
+          "page": 7,
+          "id": "fa3e633b42dbbe180f69161bc196e150fb4a170fff03aed8681cac968a25ccbc"
+        },
+        {
+          "rank": 4,
+          "document_id": "paper294",
+          "page": 13,
+          "id": "409c350e2eca876b14caf06d02795ede4b1f3b7328feae33719e4b6b3f498820"
+        },
+        {
+          "rank": 5,
+          "document_id": "paper229",
+          "page": 14,
+          "id": "9279eb2ea5d20a79dc528d70b88b00c84a6965dd97c01ce7af743b3f5b882310"
+        },
+        {
+          "rank": 6,
+          "document_id": "paper510",
+          "page": 11,
+          "id": "a3a3cf3ca697e8d9ed3eb7eecdf379ef8c548565f0f9484eb1ced7b9ade4bc18"
+        }
+      ],
+      "retrieved_pages": [
+        [
+          "paper255",
+          1
+        ],
+        [
+          "paper381",
+          7
+        ],
+        [
+          "paper294",
+          13
+        ],
+        [
+          "paper229",
+          14
+        ],
+        [
+          "paper510",
+          11
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "3": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "6": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        }
+      },
+      "elapsed_seconds": 2.798
+    },
+    {
+      "id": "wording-1",
+      "category": "wording",
+      "question": "How did the clinical summarization team that used group-relative reinforcement learning do compared with the baselines?",
+      "gold_pages": [
+        [
+          "paper2",
+          14
+        ]
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "paper2",
+          "page": 1,
+          "id": "5a181deefcc6cb7c54e78b51c1c622684131a3c5ed3533efd3578696a3e3edea"
+        },
+        {
+          "rank": 2,
+          "document_id": "paper2",
+          "page": 7,
+          "id": "b9cf3dc06e8a4ca02f82fb1faa9403f09b6f02af9b9a6a639c1326d8ca3f57af"
+        },
+        {
+          "rank": 3,
+          "document_id": "paper2",
+          "page": 21,
+          "id": "054ac0839adb4d735720a893a864aae8f18f3e1cf438f70656f209c50369f69c"
+        },
+        {
+          "rank": 4,
+          "document_id": "paper2",
+          "page": 24,
+          "id": "fd91d7a4c04bce5e9fa2c4a78085b9f367b1ff9ed388d88436480ae4256e6ac5"
+        },
+        {
+          "rank": 5,
+          "document_id": "paper2",
+          "page": 19,
+          "id": "16b6b6e3462513c098a3c4f7255ab3959f6a764807d382d5f487fd39f000f827"
+        },
+        {
+          "rank": 6,
+          "document_id": "paper2",
+          "page": 12,
+          "id": "97b3e017e8a57907d09039afdf264d8ee63eafeffb68bb875c46cc12ed9f4261"
+        }
+      ],
+      "retrieved_pages": [
+        [
+          "paper2",
+          1
+        ],
+        [
+          "paper2",
+          7
+        ],
+        [
+          "paper2",
+          21
+        ],
+        [
+          "paper2",
+          24
+        ],
+        [
+          "paper2",
+          19
+        ],
+        [
+          "paper2",
+          12
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "3": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "6": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        }
+      },
+      "elapsed_seconds": 2.841
+    },
+    {
+      "id": "wording-2",
+      "category": "wording",
+      "question": "For the BioASQ team that had an LLM refine its own keyword searches, did merging the rankings of three queries beat a single query?",
+      "gold_pages": [
+        [
+          "paper7",
+          6
+        ]
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "paper7",
+          "page": 1,
+          "id": "e9838e15b1edd140eb4386b83a0fa7d516b3cd300c2f09beab83facc51535dcd"
+        },
+        {
+          "rank": 2,
+          "document_id": "paper7",
+          "page": 2,
+          "id": "ae4ac383a17bbdc222b6d3165bab2732e9c4f35c35f8772b05084f825cb7889f"
+        },
+        {
+          "rank": 3,
+          "document_id": "paper7",
+          "page": 3,
+          "id": "3fab6f75a2b03946f9a6af7803684d47dc68077618f6445491c94041fe6d952c"
+        },
+        {
+          "rank": 4,
+          "document_id": "paper7",
+          "page": 11,
+          "id": "9e4c11f37a75cd108ef10db78810b47e3e9d8e1999f9dda2eeeac2f3be399c68"
+        },
+        {
+          "rank": 5,
+          "document_id": "paper7",
+          "page": 1,
+          "id": "3b9b5b40a0a1668ff970f509bf25ff14823e2eaecc472a159f3d6defc751def6"
+        },
+        {
+          "rank": 6,
+          "document_id": "paper7",
+          "page": 1,
+          "id": "5d3b5fd7cf45878de3fd89ff393e735faf8db54be6afc20d686895db97db4315"
+        }
+      ],
+      "retrieved_pages": [
+        [
+          "paper7",
+          1
+        ],
+        [
+          "paper7",
+          2
+        ],
+        [
+          "paper7",
+          3
+        ],
+        [
+          "paper7",
+          11
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "3": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "6": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        }
+      },
+      "elapsed_seconds": 2.903
+    },
+    {
+      "id": "wording-3",
+      "category": "wording",
+      "question": "How much did evolving the prompt automatically improve English results over the stock model for the HIPE team?",
+      "gold_pages": [
+        [
+          "paper221",
+          8
+        ]
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "paper219",
+          "page": 1,
+          "id": "4a355c4dcf04ea5c700e2e5a2a9fefb72f5c5eab42aa2371e0ed75d40b221dc3"
+        },
+        {
+          "rank": 2,
+          "document_id": "paper219",
+          "page": 6,
+          "id": "27e231e7c3a63732aed57286201cc5c6d87742770bfdfbaf16806a37bb40a0b7"
+        },
+        {
+          "rank": 3,
+          "document_id": "paper215",
+          "page": 2,
+          "id": "35255fab8e7ee45cbe4e96fb4cf36adba24365788cda5d36fab43462c0009579"
+        },
+        {
+          "rank": 4,
+          "document_id": "paper220",
+          "page": 15,
+          "id": "bb70b8cfbcb3f035f560e45071523199e2e3f6b692b91db2325795086dff19b2"
+        },
+        {
+          "rank": 5,
+          "document_id": "paper219",
+          "page": 12,
+          "id": "07cc95cb5a36bdd8a796213405620d5b69f583ff09cc8b298d70efb6a3849905"
+        },
+        {
+          "rank": 6,
+          "document_id": "paper219",
+          "page": 8,
+          "id": "3dc5a0c6193f4349d1d2c7f2aa46cf716c15550bc73cab054035a1092a673132"
+        }
+      ],
+      "retrieved_pages": [
+        [
+          "paper219",
+          1
+        ],
+        [
+          "paper219",
+          6
+        ],
+        [
+          "paper215",
+          2
+        ],
+        [
+          "paper220",
+          15
+        ],
+        [
+          "paper219",
+          12
+        ],
+        [
+          "paper219",
+          8
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "3": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "6": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        }
+      },
+      "elapsed_seconds": 2.812
+    },
+    {
+      "id": "wording-4",
+      "category": "wording",
+      "question": "Which task asks for teams to improve the detection of sexism via multimodal contextual, visual, and social cues?",
+      "gold_pages": [
+        [
+          "paper152",
+          1
+        ]
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "paper158",
+          "page": 1,
+          "id": "881b119b0a4c71cd5ce577d15e4f9d646e89f50ff52d17516698568b0722eeb7"
+        },
+        {
+          "rank": 2,
+          "document_id": "paper152",
+          "page": 1,
+          "id": "46a5afb6a51197e221d4091623de4805b7d519a03db3005fecd885168d94263a"
+        },
+        {
+          "rank": 3,
+          "document_id": "paper179",
+          "page": 1,
+          "id": "be42dc23ada072c680010b103173a5473f942f99d8c70f8fd5f262098b86d669"
+        },
+        {
+          "rank": 4,
+          "document_id": "paper176",
+          "page": 2,
+          "id": "9240dbffb7dac52fdfeec9579a35a580f0fa205e5ce7684d3a46a795b395455d"
+        },
+        {
+          "rank": 5,
+          "document_id": "paper158",
+          "page": 1,
+          "id": "6b0548d2c3922d1332991b048362f2306e876f20624f0ba3be4beb5047bab8d0"
+        },
+        {
+          "rank": 6,
+          "document_id": "paper157",
+          "page": 2,
+          "id": "09692e43fa999cce9e1b39e4041de31bb863179958f18bdc4b9f849efd587cef"
+        }
+      ],
+      "retrieved_pages": [
+        [
+          "paper158",
+          1
+        ],
+        [
+          "paper152",
+          1
+        ],
+        [
+          "paper179",
+          1
+        ],
+        [
+          "paper176",
+          2
+        ],
+        [
+          "paper157",
+          2
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "3": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 0.5,
+          "average_precision": 0.5,
+          "ndcg": 0.6309297535714575
+        },
+        "6": {
+          "precision": 0.16666666666666666,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 0.5,
+          "average_precision": 0.5,
+          "ndcg": 0.6309297535714575
+        }
+      },
+      "elapsed_seconds": 2.84
+    },
+    {
+      "id": "wording-5",
+      "category": "wording",
+      "question": "Which run achieve the best Average Difference between Overall Depression Levels?",
+      "gold_pages": [
+        [
+          "paper147",
+          5
+        ]
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "paper111",
+          "page": 1,
+          "id": "f2d866db85b1d7189edc20905e5efdfdcf88027644b111a2425c143ad6b77950"
+        },
+        {
+          "rank": 2,
+          "document_id": "paper111",
+          "page": 5,
+          "id": "c14dc915e9ca049412a5645ccf8aa2f6305cc07bb67a48fa19fadda62d47a4f6"
+        },
+        {
+          "rank": 3,
+          "document_id": "paper134",
+          "page": 2,
+          "id": "3067a7eec7465c60ec1c4064b902c54529e34ca62d1f4c83cc2d1b7fed249867"
+        },
+        {
+          "rank": 4,
+          "document_id": "paper151",
+          "page": 7,
+          "id": "4ec4b146537cab46857d77778d11474c552233c1cec0a66e8dd6e08b8840ea2e"
+        },
+        {
+          "rank": 5,
+          "document_id": "paper111",
+          "page": 5,
+          "id": "2de15843594f660b6ee77fa2391a11a2bc0309d958bf2575632d76ea4eb23a7a"
+        },
+        {
+          "rank": 6,
+          "document_id": "paper115",
+          "page": 4,
+          "id": "56a0061e636f7a24c7ace59e7ce3ff94d6a1158ab58e50381b7b4bec98c361f7"
+        }
+      ],
+      "retrieved_pages": [
+        [
+          "paper111",
+          1
+        ],
+        [
+          "paper111",
+          5
+        ],
+        [
+          "paper134",
+          2
+        ],
+        [
+          "paper151",
+          7
+        ],
+        [
+          "paper115",
+          4
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "3": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "6": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        }
+      },
+      "elapsed_seconds": 2.859
+    },
+    {
+      "id": "comparison-1",
+      "category": "comparison",
+      "question": "Which PlantCLEF teams tried retrieval-augmented classification, and did it help?",
+      "gold_pages": [
+        [
+          "paper320",
+          8
+        ],
+        [
+          "paper320",
+          10
+        ],
+        [
+          "paper360",
+          9
+        ]
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "paper337",
+          "page": 1,
+          "id": "2174dba573ee4ff7527ce6fc51ceb447d78dee7970328d4252ac45e97d76be76"
+        },
+        {
+          "rank": 2,
+          "document_id": "paper337",
+          "page": 1,
+          "id": "7f288ee3491ff92be7bd949e0cad77daccef9579d1d9a0a6221c457f7241a776"
+        },
+        {
+          "rank": 3,
+          "document_id": "paper320",
+          "page": 10,
+          "id": "59a88dfd8d9c305589c7bbad3c2c6d6e78a9f686dedb2de0de608bc740dc43df"
+        },
+        {
+          "rank": 4,
+          "document_id": "paper328",
+          "page": 2,
+          "id": "e6665565ff6684e3e8d97c3d2b729de336dbd426e40677d262d3a012b84480e1"
+        },
+        {
+          "rank": 5,
+          "document_id": "paper320",
+          "page": 10,
+          "id": "a72d9185025cb9b469784b7b9bfccd4765d248ea4b09bf322b1e22df901e1cd9"
+        },
+        {
+          "rank": 6,
+          "document_id": "paper328",
+          "page": 9,
+          "id": "3bd0542895c6e3d94c63080271083225d63aacbd386e051fd7f519641569c39a"
+        }
+      ],
+      "retrieved_pages": [
+        [
+          "paper337",
+          1
+        ],
+        [
+          "paper320",
+          10
+        ],
+        [
+          "paper328",
+          2
+        ],
+        [
+          "paper328",
+          9
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "3": {
+          "precision": 0.3333333333333333,
+          "recall": 0.3333333333333333,
+          "hit": 1.0,
+          "reciprocal_rank": 0.5,
+          "average_precision": 0.16666666666666666,
+          "ndcg": 0.2960819109658652
+        },
+        "6": {
+          "precision": 0.16666666666666666,
+          "recall": 0.3333333333333333,
+          "hit": 1.0,
+          "reciprocal_rank": 0.5,
+          "average_precision": 0.16666666666666666,
+          "ndcg": 0.2960819109658652
+        }
+      },
+      "elapsed_seconds": 2.74
+    },
+    {
+      "id": "comparison-2",
+      "category": "comparison",
+      "question": "How do the JANZZ.technology and SBERT contrastive fine-tuning systems for TalentCLEF Task B differ?",
+      "gold_pages": [
+        [
+          "paper476",
+          1
+        ],
+        [
+          "paper476",
+          3
+        ],
+        [
+          "paper477",
+          1
+        ]
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "paper477",
+          "page": 1,
+          "id": "9f720072b52f1788ee887f63c2e6bf9944929063a1e02544a9acbf9861219312"
+        },
+        {
+          "rank": 2,
+          "document_id": "paper477",
+          "page": 3,
+          "id": "179484091a844e28edf970adf212173428c26140a1a5c646da7717f9c894637e"
+        },
+        {
+          "rank": 3,
+          "document_id": "paper477",
+          "page": 3,
+          "id": "a13f9c3c2e5300c811a40e534a287280b5ccdcfd384acb9519e5cfeb06dfea5a"
+        },
+        {
+          "rank": 4,
+          "document_id": "paper477",
+          "page": 1,
+          "id": "9301740603cbeba2a732f2347eb7e27f28b91271c6a25f40a721af9028200b62"
+        },
+        {
+          "rank": 5,
+          "document_id": "paper477",
+          "page": 7,
+          "id": "05d9d5bf6c59d33e9067271e82581bfe743c1ea7da551256919eb7b1eac26e93"
+        },
+        {
+          "rank": 6,
+          "document_id": "paper477",
+          "page": 2,
+          "id": "ac255032a464591531dd5a1a50d5dc489bc3e512ec3e1e780f9ded50db8805b8"
+        }
+      ],
+      "retrieved_pages": [
+        [
+          "paper477",
+          1
+        ],
+        [
+          "paper477",
+          3
+        ],
+        [
+          "paper477",
+          7
+        ],
+        [
+          "paper477",
+          2
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 0.3333333333333333,
+          "ndcg": 1.0
+        },
+        "3": {
+          "precision": 0.3333333333333333,
+          "recall": 0.3333333333333333,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 0.3333333333333333,
+          "ndcg": 0.46927872602275644
+        },
+        "6": {
+          "precision": 0.16666666666666666,
+          "recall": 0.3333333333333333,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 0.3333333333333333,
+          "ndcg": 0.46927872602275644
+        }
+      },
+      "elapsed_seconds": 2.815
+    },
+    {
+      "id": "comparison-3",
+      "category": "comparison",
+      "question": "How do the DS@GT and zhengqiaozeng systems for Voight-Kampff AI detection differ?",
+      "gold_pages": [
+        [
+          "paper397",
+          1
+        ],
+        [
+          "paper397",
+          5
+        ],
+        [
+          "paper434",
+          1
+        ],
+        [
+          "paper434",
+          4
+        ]
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "paper434",
+          "page": 1,
+          "id": "0c77caa60fbda37dc206e94fe01f352c8966cf1a8efc102e911e939449719ee2"
+        },
+        {
+          "rank": 2,
+          "document_id": "paper434",
+          "page": 5,
+          "id": "54bb481b428c1c9f57e5d050fea5603796632bdc60c98fd120b5ec88dabef597"
+        },
+        {
+          "rank": 3,
+          "document_id": "paper434",
+          "page": 1,
+          "id": "6648bd16a81317b59392873650d8da654660e26f0360870d95b78251b1846d4f"
+        },
+        {
+          "rank": 4,
+          "document_id": "paper397",
+          "page": 1,
+          "id": "95d4f679e875ba07c827aba3d0645cc71a8aca2b31c8be2544a87f2659d1804c"
+        },
+        {
+          "rank": 5,
+          "document_id": "paper299",
+          "page": 1,
+          "id": "217fa99c1c949bfff97549eda7936c96432cc517378cad80048c280b592d3832"
+        },
+        {
+          "rank": 6,
+          "document_id": "paper397",
+          "page": 6,
+          "id": "ecefc8ce98e3203c1342d9b5b6de37286d3cbf7d61cc3018f9af9f251bacfef8"
+        }
+      ],
+      "retrieved_pages": [
+        [
+          "paper434",
+          1
+        ],
+        [
+          "paper434",
+          5
+        ],
+        [
+          "paper397",
+          1
+        ],
+        [
+          "paper299",
+          1
+        ],
+        [
+          "paper397",
+          6
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 1.0,
+          "recall": 0.25,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 0.25,
+          "ndcg": 1.0
+        },
+        "3": {
+          "precision": 0.6666666666666666,
+          "recall": 0.5,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 0.41666666666666663,
+          "ndcg": 0.7039180890341347
+        },
+        "6": {
+          "precision": 0.3333333333333333,
+          "recall": 0.5,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 0.41666666666666663,
+          "ndcg": 0.5855700749881525
+        }
+      },
+      "elapsed_seconds": 2.826
+    },
+    {
+      "id": "comparison-4",
+      "category": "comparison",
+      "question": "What do the PAN Reasoning Trajectory Detection and Touché labs have in common in how they evaluate submissions?",
+      "gold_pages": [
+        [
+          "paper390",
+          5
+        ],
+        [
+          "paper492",
+          5
+        ]
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "document_id": "paper390",
+          "page": 1,
+          "id": "1fae054d97fced073dabf56744c1951e4e26df739011f79c6081037ac44d3fa3"
+        },
+        {
+          "rank": 2,
+          "document_id": "paper390",
+          "page": 12,
+          "id": "de63492b4ff0a37691fd283a76cef1c4a1b351fe3527c10a476140ebffe03b9c"
+        },
+        {
+          "rank": 3,
+          "document_id": "paper390",
+          "page": 14,
+          "id": "ebe0fbae77051acbb6ffa89f48893e669121d60e9b12a036cec7bbd9a9ea59d7"
+        },
+        {
+          "rank": 4,
+          "document_id": "paper390",
+          "page": 5,
+          "id": "8594613bbcabe9cb48f6d4d40d249d434d53f8fd299e902145d6815b0d06fd8e"
+        },
+        {
+          "rank": 5,
+          "document_id": "paper390",
+          "page": 8,
+          "id": "3ebb5dc4129be81c57fe1f6711d0a9e703d271ca2cca33c7d2c7fe698680b4c6"
+        },
+        {
+          "rank": 6,
+          "document_id": "paper390",
+          "page": 8,
+          "id": "3cfb5374141a066acf3d1c9508d73f0a968ebb357ce8696601197c3eeb18e8c2"
+        }
+      ],
+      "retrieved_pages": [
+        [
+          "paper390",
+          1
+        ],
+        [
+          "paper390",
+          12
+        ],
+        [
+          "paper390",
+          14
+        ],
+        [
+          "paper390",
+          5
+        ],
+        [
+          "paper390",
+          8
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "3": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "6": {
+          "precision": 0.16666666666666666,
+          "recall": 0.5,
+          "hit": 1.0,
+          "reciprocal_rank": 0.25,
+          "average_precision": 0.125,
+          "ndcg": 0.2640681225725909
+        }
+      },
+      "elapsed_seconds": 2.801
+    }
+  ]
+}

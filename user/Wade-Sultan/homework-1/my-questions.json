@@ -1,0 +1,286 @@
+[
+  {
+    "id": "detail-1",
+    "category": "detail",
+    "question": "How many unique generator models were used to generate the machine-generated portion of the PAN dataset?",
+    "gold_sources": [
+      {
+        "paper": "paper397",
+        "pages": [
+          3
+        ]
+      }
+    ],
+    "expected_answer": "23"
+  },
+  {
+    "id": "detail-2",
+    "category": "detail",
+    "question": "How many text samples are in the Kaggle Academic out-of-distribution dataset?",
+    "gold_sources": [
+      {
+        "paper": "paper416",
+        "pages": [
+          3
+        ]
+      }
+    ],
+    "expected_answer": "6,069"
+  },
+  {
+    "id": "detail-3",
+    "category": "detail",
+    "question": "What GPU did the HULAT-HAI authors run their models on?",
+    "gold_sources": [
+      {
+        "paper": "paper468",
+        "pages": [
+          4
+        ]
+      }
+    ],
+    "expected_answer": "NVIDIA L4 GPU"
+  },
+  {
+    "id": "detail-4",
+    "category": "detail",
+    "question": "What low-resource language did the main dataset for the ELOQUENT 2026 task use as the anchor?",
+    "gold_sources": [
+      {
+        "paper": "paper386",
+        "pages": [
+          3
+        ]
+      }
+    ],
+    "expected_answer": "Tibetan"
+  },
+  {
+    "id": "detail-5",
+    "category": "detail",
+    "question": "What token limit did the DS@GT team on the PAN 2026 task set?",
+    "gold_sources": [
+      {
+        "paper": "paper397",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "expected_answer": "512"
+  },
+  {
+    "id": "detail-6",
+    "category": "detail",
+    "question": "What is the name of the metric that assigns a score equal to the reciprocal rank of an item by relevance, considering only the top 5 documents?",
+    "gold_sources": [
+      {
+        "paper": "paper66",
+        "pages": [
+          3
+        ]
+      }
+    ],
+    "expected_answer": "MRR@5"
+  },
+  {
+    "id": "detail-7",
+    "category": "detail",
+    "question": "How many independent fine tuning runs did the GetGut@AAU team perform on each dataset?",
+    "gold_sources": [
+      {
+        "paper": "paper17",
+        "pages": [
+          7
+        ]
+      }
+    ],
+    "expected_answer": "5"
+  },
+  {
+    "id": "detail-8",
+    "category": "detail",
+    "question": "What context retrieval method did the gfreitas team say helped most?",
+    "gold_sources": [
+      {
+        "paper": "paper255",
+        "pages": [
+          7
+        ]
+      }
+    ],
+    "expected_answer": "visual context retrieval"
+  },
+  {
+    "id": "wording-1",
+    "category": "wording",
+    "question": "How did the clinical summarization team that used group-relative reinforcement learning do compared with the baselines?",
+    "gold_sources": [
+      {
+        "paper": "paper2",
+        "pages": [
+          14
+        ]
+      }
+    ],
+    "expected_answer": "ixa-sum's GRPO system with dynamic one-shot prompting beat both the zero-shot and fine-tuned MCS-mT5-large baselines and led BERTScore in English (0.876), Spanish (0.882), Catalan (0.882) and French (0.873)"
+  },
+  {
+    "id": "wording-2",
+    "category": "wording",
+    "question": "For the BioASQ team that had an LLM refine its own keyword searches, did merging the rankings of three queries beat a single query?",
+    "gold_sources": [
+      {
+        "paper": "paper7",
+        "pages": [
+          6
+        ]
+      }
+    ],
+    "expected_answer": "Mixed. Phase A+ Batch 3: list F-measure up (0.2717 vs 0.2128) but factoid MRR down (0.3431 vs 0.4216). Phase B Batch 3: factoid MRR up (0.5000 vs 0.4608) but list F-measure down (0.2629 vs 0.2989)"
+  },
+  {
+    "id": "wording-3",
+    "category": "wording",
+    "question": "How much did evolving the prompt automatically improve English results over the stock model for the HIPE team?",
+    "gold_sources": [
+      {
+        "paper": "paper221",
+        "pages": [
+          8
+        ]
+      }
+    ],
+    "expected_answer": "macro recall rose from 0.591 to 0.654 with a prompt optimized on GPT-OSS-20B, and to 0.660 after also fine-tuning on distilled reasoning chains"
+  },
+  {
+    "id": "wording-4",
+    "category": "wording",
+    "question": "Which task asks for teams to improve the detection of sexism via multimodal contextual, visual, and social cues?",
+    "gold_sources": [
+      {
+        "paper": "paper152",
+        "pages": [
+          1
+        ]
+      }
+    ],
+    "expected_answer": "EXIST"
+  },
+  {
+    "id": "wording-5",
+    "category": "wording",
+    "question": "Which run achieve the best Average Difference between Overall Depression Levels?",
+    "gold_sources": [
+      {
+        "paper": "paper147",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "expected_answer": "3"
+  },
+  {
+    "id": "comparison-1",
+    "category": "comparison",
+    "question": "Which PlantCLEF teams tried retrieval-augmented classification, and did it help?",
+    "gold_sources": [
+      {
+        "paper": "paper320",
+        "pages": [
+          8,
+          10
+        ]
+      },
+      {
+        "paper": "paper360",
+        "pages": [
+          9
+        ]
+      }
+    ],
+    "expected_answer": "several teams blended kNN or prototype retrieval scores with model logits; one team found it (and LoRA) did not beat their tuned tiling baseline under limited compute"
+  },
+  {
+    "id": "comparison-2",
+    "category": "comparison",
+    "question": "How do the JANZZ.technology and SBERT contrastive fine-tuning systems for TalentCLEF Task B differ?",
+    "gold_sources": [
+      {
+        "paper": "paper476",
+        "pages": [
+          1,
+          3
+        ]
+      },
+      {
+        "paper": "paper477",
+        "pages": [
+          1
+        ]
+      }
+    ],
+    "expected_answer": "paper476 uses two stages, a gte-modernbert bi-encoder then a fine-tuned Qwen3-Reranker cross-encoder; paper477 fine-tunes Sentence-BERT with contrastive learning on alias-enriched ESCO skills, raising MAP from 0.1430 to 0.2564"
+  },
+  {
+    "id": "comparison-3",
+    "category": "comparison",
+    "question": "How do the DS@GT and zhengqiaozeng systems for Voight-Kampff AI detection differ?",
+    "gold_sources": [
+      {
+        "paper": "paper397",
+        "pages": [
+          1,
+          5
+        ]
+      },
+      {
+        "paper": "paper434",
+        "pages": [
+          1,
+          4
+        ]
+      }
+    ],
+    "expected_answer": "DS@GT LoRA-fine-tunes the decoder model Qwen2.5-1.5B; zhengqiaozeng fine-tunes the encoder DeBERTa-v3-large with an R-Drop plus contrastive loss. Each team's extra technique (homoglyph/synonym augmentation, extra losses) gave no real gain"
+  },
+  {
+    "id": "comparison-4",
+    "category": "comparison",
+    "question": "What do the PAN Reasoning Trajectory Detection and Touché labs have in common in how they evaluate submissions?",
+    "gold_sources": [
+      {
+        "paper": "paper390",
+        "pages": [
+          5
+        ]
+      },
+      {
+        "paper": "paper492",
+        "pages": [
+          5
+        ]
+      }
+    ],
+    "expected_answer": "both use macro-F1 as the primary metric so every class counts equally, including rare ones"
+  },
+  {
+    "id": "unsupported-1",
+    "category": "unsupported",
+    "question": "How much did the gfreitas team on ImageCLEF spend in AI API costs during evaluation?",
+    "expected_answer": "not stated"
+  },
+  {
+    "id": "unsupported-2",
+    "category": "unsupported",
+    "question": "How much time did the TalentCLEF organizers spend on annotation?",
+    "expected_answer": "not stated"
+  },
+  {
+    "id": "unsupported-3",
+    "category": "unsupported",
+    "question": "Which team will win TalentCLEF next year?",
+    "expected_answer": "not answerable"
+  }
+]

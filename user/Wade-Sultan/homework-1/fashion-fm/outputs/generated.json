@@ -1,0 +1,114 @@
+[
+  {
+    "index": 0,
+    "prompt": "a plain t-shirt",
+    "label": 0,
+    "class": "t-shirt/top",
+    "file": "outputs/generated/0000-t-shirt-top.png"
+  },
+  {
+    "index": 1,
+    "prompt": "a plain t-shirt",
+    "label": 0,
+    "class": "t-shirt/top",
+    "file": "outputs/generated/0001-t-shirt-top.png"
+  },
+  {
+    "index": 2,
+    "prompt": "a plain t-shirt",
+    "label": 0,
+    "class": "t-shirt/top",
+    "file": "outputs/generated/0002-t-shirt-top.png"
+  },
+  {
+    "index": 3,
+    "prompt": "a plain t-shirt",
+    "label": 0,
+    "class": "t-shirt/top",
+    "file": "outputs/generated/0003-t-shirt-top.png"
+  },
+  {
+    "index": 4,
+    "prompt": "a sneaker",
+    "label": 7,
+    "class": "sneaker",
+    "file": "outputs/generated/0004-sneaker.png"
+  },
+  {
+    "index": 5,
+    "prompt": "a sneaker",
+    "label": 7,
+    "class": "sneaker",
+    "file": "outputs/generated/0005-sneaker.png"
+  },
+  {
+    "index": 6,
+    "prompt": "a sneaker",
+    "label": 7,
+    "class": "sneaker",
+    "file": "outputs/generated/0006-sneaker.png"
+  },
+  {
+    "index": 7,
+    "prompt": "a sneaker",
+    "label": 7,
+    "class": "sneaker",
+    "file": "outputs/generated/0007-sneaker.png"
+  },
+  {
+    "index": 8,
+    "prompt": "small handbag",
+    "label": 8,
+    "class": "bag",
+    "file": "outputs/generated/0008-bag.png"
+  },
+  {
+    "index": 9,
+    "prompt": "small handbag",
+    "label": 8,
+    "class": "bag",
+    "file": "outputs/generated/0009-bag.png"
+  },
+  {
+    "index": 10,
+    "prompt": "small handbag",
+    "label": 8,
+    "class": "bag",
+    "file": "outputs/generated/0010-bag.png"
+  },
+  {
+    "index": 11,
+    "prompt": "small handbag",
+    "label": 8,
+    "class": "bag",
+    "file": "outputs/generated/0011-bag.png"
+  },
+  {
+    "index": 12,
+    "prompt": "ankle boot",
+    "label": 9,
+    "class": "ankle boot",
+    "file": "outputs/generated/0012-ankle boot.png"
+  },
+  {
+    "index": 13,
+    "prompt": "ankle boot",
+    "label": 9,
+    "class": "ankle boot",
+    "file": "outputs/generated/0013-ankle boot.png"
+  },
+  {
+    "index": 14,
+    "prompt": "ankle boot",
+    "label": 9,
+    "class": "ankle boot",
+    "file": "outputs/generated/0014-ankle boot.png"
+  },
+  {
+    "index": 15,
+    "prompt": "ankle boot",
+    "label": 9,
+    "class": "ankle boot",
+    "file": "outputs/generated/0015-ankle boot.png"
+  }
+]

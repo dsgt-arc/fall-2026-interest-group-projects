@@ -1,0 +1,2716 @@
+{
+  "config": "baseline",
+  "run": "baseline+gen",
+  "generate": true,
+  "description": "Starter system, unchanged",
+  "run_at": "2026-10-12T04:55:09+00:00",
+  "settings": {
+    "questions": "../../../homework-1/clef-rag/eval/questions.json",
+    "cutoffs": [
+      1,
+      3,
+      6
+    ],
+    "candidates": 20,
+    "semantic_weight": 0.5,
+    "lexical_weight": 0.5,
+    "rrf_c": 60,
+    "top_k": 6,
+    "prepend_intro": true,
+    "paper_filter": true,
+    "track_filter": true
+  },
+  "changed_from_defaults": {},
+  "index": {
+    "generation": "build-b0d11cd06fb64d168d9ae66033aca1aa",
+    "created_at": "2026-10-04T22:53:29.530661+00:00",
+    "embedding_model": "embeddinggemma:300m",
+    "chunk_bytes": 1400,
+    "overlap_bytes": 250
+  },
+  "questions": 16,
+  "errors": 0,
+  "summary": {
+    "chunking": {
+      "chunks": 21046,
+      "median_bytes": 1282.0,
+      "fragment_rate": 0.052979188444359976,
+      "mid_sentence_rate": 0.0014627011214041932,
+      "page_break_cut_rate": 0.2610032362459547,
+      "section_span_rate": 0.29806138933764137,
+      "retrieved_fragments": 0.16666666666666666,
+      "quotes": {
+        "retrieved": 0,
+        "not_retrieved": 0,
+        "split": 0,
+        "missing": 0
+      }
+    },
+    "embedding": {
+      "hit_fused": 1.0,
+      "hit_dense": 0.4166666666666667,
+      "hit_lexical": 0.6666666666666666,
+      "mrr_fused": 1.0,
+      "mrr_dense": 0.16944444444444443,
+      "mrr_lexical": 0.4236111111111111,
+      "unmatched_questions": 5,
+      "gold_overlap": 0.6018849206349206,
+      "paraphrases": 0,
+      "paraphrase_hit_fused": null,
+      "paraphrase_hit_dense": null
+    },
+    "noise": {
+      "precision": 0.19444444444444442,
+      "off_target_rate": 0.06944444444444443,
+      "distinct_papers": 1.5,
+      "rank1_gold": 1.0,
+      "supported_clean": 1.0,
+      "supported_noisy": 1.0,
+      "recall_clean": 0.7412037037037037,
+      "recall_noisy": 0.750462962962963,
+      "cited_distractor": 0.25
+    },
+    "context": {
+      "mean_dropped": 0.0,
+      "questions_dropping": 0,
+      "gold_lost": 0,
+      "max_budget_used": 0.9940381224284155,
+      "max_est_prompt_tokens": 3051,
+      "context_tokens": 8192,
+      "recall_first": 0.7180555555555556,
+      "recall_middle": 0.5768518518518518,
+      "recall_last": 0.7616402116402116,
+      "cited_gold_first": 0.8333333333333334,
+      "cited_gold_middle": 0.6666666666666666,
+      "cited_gold_last": 0.5
+    },
+    "hallucination": {
+      "answered": 1.0,
+      "expected_recall": 0.7412037037037037,
+      "ungrounded_number_answers": 0,
+      "ungrounded_term_rate": 0.044725757040179094,
+      "abstained": 1.0,
+      "errors": 0
+    }
+  },
+  "results": [
+    {
+      "id": "paper-1",
+      "category": "paper",
+      "question": "Which two biomedical QA tasks are covered by paper1?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper1",
+          "page": 1,
+          "id": "5b9a2f963ac046bc4cb2c59104ffe59fa63cc1a851b4f9e7966799d17d9ad7a2"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper1",
+          "page": 3,
+          "id": "a2102d0157c93fc96cf93f6cbc0229f3a89db8c679c55e40640c1a67a49cc145"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper1",
+          "page": 1,
+          "id": "267b0046c9ea71954e57c8fa832ea55490afe254eefb93d215f005f945ba12e5"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper1",
+          "page": 2,
+          "id": "dfa71bbf275345ba67415c47892b98eacf588c5c7ab593dd314666e5bb52db71"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper1",
+          "page": 14,
+          "id": "7b55d38785f1ac2e7ccb3773e70a72d7f7cbd3bfb060beb99ec5fe2a753d7d50"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper1",
+          "page": 1,
+          "id": "194a8a767b6e68d66f1fe947e7e4527c29ec2afe7f7500099e860e768c5c0bb4"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 1,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 1,
+          "dense": 2,
+          "lexical": 2
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.6666666666666666,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.16666666666666666,
+        "off_target": 0,
+        "passages": 6,
+        "distinct_papers": 1,
+        "rank1_gold": true
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.8218948778038165,
+        "est_prompt_tokens": 2505
+      },
+      "generation": {
+        "base": {
+          "supported": true,
+          "answer": "Paper1 covers the biomedical QA tasks 14b and Synergy14. [S1][S2][S3]\n\nTask 14b is on biomedical semantic QA. [S3][S4]\n\nTask Synergy14 is on QA about developing biomedical topics. [S1][S3]",
+          "cited": [
+            {
+              "source_id": "S1",
+              "document_id": "paper1",
+              "page": 1,
+              "id": "5b9a2f963ac046bc4cb2c59104ffe59fa63cc1a851b4f9e7966799d17d9ad7a2"
+            },
+            {
+              "source_id": "S2",
+              "document_id": "paper1",
+              "page": 3,
+              "id": "a2102d0157c93fc96cf93f6cbc0229f3a89db8c679c55e40640c1a67a49cc145"
+            },
+            {
+              "source_id": "S3",
+              "document_id": "paper1",
+              "page": 1,
+              "id": "267b0046c9ea71954e57c8fa832ea55490afe254eefb93d215f005f945ba12e5"
+            },
+            {
+              "source_id": "S4",
+              "document_id": "paper1",
+              "page": 2,
+              "id": "dfa71bbf275345ba67415c47892b98eacf588c5c7ab593dd314666e5bb52db71"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [],
+          "ungrounded_term_rate": 0.0,
+          "expected_recall": 0.6666666666666666
+        },
+        "noisy": {
+          "supported": true,
+          "answer": "Paper1 covers the biomedical QA tasks 14b and Synergy14. [S1][S3][S6]",
+          "cited": [
+            {
+              "source_id": "S1",
+              "document_id": "paper48",
+              "page": 2,
+              "id": "9e5cda1f2c67d0ce570840a2b5fa7a34314b641b8ad903bd8e65873bab0ec4b1"
+            },
+            {
+              "source_id": "S3",
+              "document_id": "paper1",
+              "page": 1,
+              "id": "5b9a2f963ac046bc4cb2c59104ffe59fa63cc1a851b4f9e7966799d17d9ad7a2"
+            },
+            {
+              "source_id": "S6",
+              "document_id": "paper1",
+              "page": 1,
+              "id": "267b0046c9ea71954e57c8fa832ea55490afe254eefb93d215f005f945ba12e5"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [],
+          "ungrounded_term_rate": 0.0,
+          "expected_recall": 0.6666666666666666,
+          "distractors": 3,
+          "cited_distractor": true
+        },
+        "position": {
+          "first": {
+            "supported": true,
+            "answer": "Paper1 covers the biomedical QA tasks 14b and Synergy14. [S1][S2]\n\nTask 14b is on biomedical semantic QA. [S2][S5]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper1",
+                "page": 1,
+                "id": "5b9a2f963ac046bc4cb2c59104ffe59fa63cc1a851b4f9e7966799d17d9ad7a2"
+              },
+              {
+                "source_id": "S2",
+                "document_id": "paper1",
+                "page": 1,
+                "id": "267b0046c9ea71954e57c8fa832ea55490afe254eefb93d215f005f945ba12e5"
+              },
+              {
+                "source_id": "S5",
+                "document_id": "paper1",
+                "page": 2,
+                "id": "dfa71bbf275345ba67415c47892b98eacf588c5c7ab593dd314666e5bb52db71"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [],
+            "ungrounded_term_rate": 0.0,
+            "expected_recall": 0.6666666666666666
+          },
+          "middle": {
+            "supported": true,
+            "answer": "Paper1 covers the biomedical QA tasks 14b and Synergy14. [S1][S2][S3][S4]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper1",
+                "page": 3,
+                "id": "a2102d0157c93fc96cf93f6cbc0229f3a89db8c679c55e40640c1a67a49cc145"
+              },
+              {
+                "source_id": "S2",
+                "document_id": "paper1",
+                "page": 1,
+                "id": "5b9a2f963ac046bc4cb2c59104ffe59fa63cc1a851b4f9e7966799d17d9ad7a2"
+              },
+              {
+                "source_id": "S3",
+                "document_id": "paper1",
+                "page": 1,
+                "id": "267b0046c9ea71954e57c8fa832ea55490afe254eefb93d215f005f945ba12e5"
+              },
+              {
+                "source_id": "S4",
+                "document_id": "paper1",
+                "page": 1,
+                "id": "194a8a767b6e68d66f1fe947e7e4527c29ec2afe7f7500099e860e768c5c0bb4"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [],
+            "ungrounded_term_rate": 0.0,
+            "expected_recall": 0.6666666666666666
+          },
+          "last": {
+            "supported": true,
+            "answer": "Paper1 covers the QA tasks 14b and Synergy14. [S1][S4][S5]\n\nTask 14b is a biomedical semantic QA task. [S2][S5]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper1",
+                "page": 3,
+                "id": "a2102d0157c93fc96cf93f6cbc0229f3a89db8c679c55e40640c1a67a49cc145"
+              },
+              {
+                "source_id": "S2",
+                "document_id": "paper1",
+                "page": 2,
+                "id": "dfa71bbf275345ba67415c47892b98eacf588c5c7ab593dd314666e5bb52db71"
+              },
+              {
+                "source_id": "S4",
+                "document_id": "paper1",
+                "page": 1,
+                "id": "5b9a2f963ac046bc4cb2c59104ffe59fa63cc1a851b4f9e7966799d17d9ad7a2"
+              },
+              {
+                "source_id": "S5",
+                "document_id": "paper1",
+                "page": 1,
+                "id": "267b0046c9ea71954e57c8fa832ea55490afe254eefb93d215f005f945ba12e5"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [],
+            "ungrounded_term_rate": 0.0,
+            "expected_recall": 0.6666666666666666
+          }
+        }
+      }
+    },
+    {
+      "id": "paper-2",
+      "category": "paper",
+      "question": "How many languages does MultiClinSum-2 cover, and what does it summarize?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper2",
+          "page": 1,
+          "id": "5a181deefcc6cb7c54e78b51c1c622684131a3c5ed3533efd3578696a3e3edea"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper2",
+          "page": 3,
+          "id": "719b597a9b1ea1a6d2776b6be240e92c997b516422fae50332d3c48e643a0450"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper2",
+          "page": 5,
+          "id": "9cfd24ae9aec1b821c316cc357b0ea4c68a933e82b99b538b489c2a9cda2efe0"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper151",
+          "page": 11,
+          "id": "612c4493a0ba7ae39c149c6415c6c87409c0dbda143a5736fa0c215eaf0134a0"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper2",
+          "page": 5,
+          "id": "e54788688bd6e516b3a1447bead77ab4153997c19cfeb3dcda10eb6540985910"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper151",
+          "page": 13,
+          "id": "c6e83ef47d9adc35ffd69c072b94424f36dc1483279db51697c9c0c17ed4d185"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 1,
+          "dense": 6,
+          "lexical": null
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.5,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.16666666666666666,
+        "off_target": 2,
+        "passages": 6,
+        "distinct_papers": 2,
+        "rank1_gold": true
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.8945250272490987,
+        "est_prompt_tokens": 2773
+      },
+      "generation": {
+        "base": {
+          "supported": true,
+          "answer": "MultiClinSum-2 covers 15 languages. [S2]\n\nMultiClinSum-2 summarizes clinical case reports. [S1]",
+          "cited": [
+            {
+              "source_id": "S1",
+              "document_id": "paper2",
+              "page": 1,
+              "id": "5a181deefcc6cb7c54e78b51c1c622684131a3c5ed3533efd3578696a3e3edea"
+            },
+            {
+              "source_id": "S2",
+              "document_id": "paper2",
+              "page": 3,
+              "id": "719b597a9b1ea1a6d2776b6be240e92c997b516422fae50332d3c48e643a0450"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [
+            "summarizes"
+          ],
+          "ungrounded_term_rate": 0.125,
+          "expected_recall": 1.0
+        },
+        "noisy": {
+          "supported": true,
+          "answer": "MultiClinSum-2 covers 15 languages. [S2]\n\nMultiClinSum-2 summarizes clinical case reports. [S1]",
+          "cited": [
+            {
+              "source_id": "S1",
+              "document_id": "paper2",
+              "page": 1,
+              "id": "5a181deefcc6cb7c54e78b51c1c622684131a3c5ed3533efd3578696a3e3edea"
+            },
+            {
+              "source_id": "S2",
+              "document_id": "paper2",
+              "page": 3,
+              "id": "719b597a9b1ea1a6d2776b6be240e92c997b516422fae50332d3c48e643a0450"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [
+            "summarizes"
+          ],
+          "ungrounded_term_rate": 0.125,
+          "expected_recall": 1.0,
+          "distractors": 3,
+          "cited_distractor": false
+        },
+        "position": {
+          "first": {
+            "supported": true,
+            "answer": "MultiClinSum-2 covers 15 languages. [S2]\n\nMultiClinSum-2 summarizes clinical case reports. [S1]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper2",
+                "page": 1,
+                "id": "5a181deefcc6cb7c54e78b51c1c622684131a3c5ed3533efd3578696a3e3edea"
+              },
+              {
+                "source_id": "S2",
+                "document_id": "paper2",
+                "page": 3,
+                "id": "719b597a9b1ea1a6d2776b6be240e92c997b516422fae50332d3c48e643a0450"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [
+              "summarizes"
+            ],
+            "ungrounded_term_rate": 0.125,
+            "expected_recall": 1.0
+          },
+          "middle": {
+            "supported": true,
+            "answer": "MultiClinSum-2 covers 15 languages. [S1]\n\nMultiClinSum-2 summarizes clinical case reports. [S1][S3]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper2",
+                "page": 3,
+                "id": "719b597a9b1ea1a6d2776b6be240e92c997b516422fae50332d3c48e643a0450"
+              },
+              {
+                "source_id": "S3",
+                "document_id": "paper2",
+                "page": 1,
+                "id": "5a181deefcc6cb7c54e78b51c1c622684131a3c5ed3533efd3578696a3e3edea"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [
+              "summarizes"
+            ],
+            "ungrounded_term_rate": 0.125,
+            "expected_recall": 1.0
+          },
+          "last": {
+            "supported": true,
+            "answer": "MultiClinSum-2 covers 15 languages. [S1]\n\nMultiClinSum-2 summarizes clinical case reports. [S1][S6]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper2",
+                "page": 3,
+                "id": "719b597a9b1ea1a6d2776b6be240e92c997b516422fae50332d3c48e643a0450"
+              },
+              {
+                "source_id": "S6",
+                "document_id": "paper2",
+                "page": 1,
+                "id": "5a181deefcc6cb7c54e78b51c1c622684131a3c5ed3533efd3578696a3e3edea"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [
+              "summarizes"
+            ],
+            "ungrounded_term_rate": 0.125,
+            "expected_recall": 1.0
+          }
+        }
+      }
+    },
+    {
+      "id": "paper-3",
+      "category": "paper",
+      "question": "Which languages and entity/relation type counts does paper3 describe for BioNNE-R?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper3",
+          "page": 1,
+          "id": "e4dd05c34edf8f18b0370e0764cc74d80acdc4b919acb6d29215ccbe4db0d0a4"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper3",
+          "page": 4,
+          "id": "75d476c64669850c1b5bf97dbb902b6bbdddb41887faa8e2b69df3de0bb3880c"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper3",
+          "page": 2,
+          "id": "5870fe31e6fc8aec941016376145992b6b3004de172aedcd1c5ff30f72b730e5"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper3",
+          "page": 3,
+          "id": "26ec4fbf3ee8af2ea37e7153e550a93a5bec109caf975d6292ced51bcc6e6f26"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper3",
+          "page": 2,
+          "id": "4d64cd0b2b6a60e8d5afc4b63d05f9f6c97592b5108c3ad0e3d69316061751d2"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper3",
+          "page": 3,
+          "id": "82fe7f0fbecf9d5ee28859e948cd20e15fe6141262869fbf752d0e5fd4761438"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 1,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 1,
+          "dense": null,
+          "lexical": 2
+        },
+        "unmatched_terms": [
+          "paper3"
+        ],
+        "gold_overlap": 0.5555555555555556,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.16666666666666666,
+        "off_target": 0,
+        "passages": 6,
+        "distinct_papers": 1,
+        "rank1_gold": true
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.8508978016445712,
+        "est_prompt_tokens": 2604
+      },
+      "generation": {
+        "base": {
+          "supported": true,
+          "answer": "Paper3 describes the BioNNE-R task as covering English and Russian languages. [S1]\n\nThe task covers 8 entity types and 14 relation types. [S4]",
+          "cited": [
+            {
+              "source_id": "S1",
+              "document_id": "paper3",
+              "page": 1,
+              "id": "e4dd05c34edf8f18b0370e0764cc74d80acdc4b919acb6d29215ccbe4db0d0a4"
+            },
+            {
+              "source_id": "S4",
+              "document_id": "paper3",
+              "page": 3,
+              "id": "26ec4fbf3ee8af2ea37e7153e550a93a5bec109caf975d6292ced51bcc6e6f26"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [
+            "describes"
+          ],
+          "ungrounded_term_rate": 0.06666666666666667,
+          "expected_recall": 1.0
+        },
+        "noisy": {
+          "supported": true,
+          "answer": "Paper3 describes that BioNNE-R covers 8 entity types and 14 relation types. [S1][S5]\n\nPaper3 states that BioNNE-R requires systems to extract semantic relations between nested biomedical entities in English and Russian PubMed abstracts. [S1][S6]",
+          "cited": [
+            {
+              "source_id": "S1",
+              "document_id": "paper3",
+              "page": 1,
+              "id": "e4dd05c34edf8f18b0370e0764cc74d80acdc4b919acb6d29215ccbe4db0d0a4"
+            },
+            {
+              "source_id": "S5",
+              "document_id": "paper3",
+              "page": 3,
+              "id": "26ec4fbf3ee8af2ea37e7153e550a93a5bec109caf975d6292ced51bcc6e6f26"
+            },
+            {
+              "source_id": "S6",
+              "document_id": "paper3",
+              "page": 2,
+              "id": "4d64cd0b2b6a60e8d5afc4b63d05f9f6c97592b5108c3ad0e3d69316061751d2"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [
+            "states"
+          ],
+          "ungrounded_term_rate": 0.038461538461538464,
+          "expected_recall": 1.0,
+          "distractors": 3,
+          "cited_distractor": false
+        },
+        "position": {
+          "first": {
+            "supported": true,
+            "answer": "Paper3 describes the BioNNE-R task as covering English and Russian languages. [S1]\n\nThe task covers 8 entity types and 14 relation types. [S4]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper3",
+                "page": 1,
+                "id": "e4dd05c34edf8f18b0370e0764cc74d80acdc4b919acb6d29215ccbe4db0d0a4"
+              },
+              {
+                "source_id": "S4",
+                "document_id": "paper3",
+                "page": 3,
+                "id": "26ec4fbf3ee8af2ea37e7153e550a93a5bec109caf975d6292ced51bcc6e6f26"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [
+              "describes"
+            ],
+            "ungrounded_term_rate": 0.06666666666666667,
+            "expected_recall": 1.0
+          },
+          "middle": {
+            "supported": true,
+            "answer": "Paper3 describes the BioNNE-R task as covering English and Russian languages. [S3]\n\nThe task covers 8 entity types and 14 relation types. [S4]",
+            "cited": [
+              {
+                "source_id": "S3",
+                "document_id": "paper3",
+                "page": 1,
+                "id": "e4dd05c34edf8f18b0370e0764cc74d80acdc4b919acb6d29215ccbe4db0d0a4"
+              },
+              {
+                "source_id": "S4",
+                "document_id": "paper3",
+                "page": 3,
+                "id": "26ec4fbf3ee8af2ea37e7153e550a93a5bec109caf975d6292ced51bcc6e6f26"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [
+              "describes"
+            ],
+            "ungrounded_term_rate": 0.06666666666666667,
+            "expected_recall": 1.0
+          },
+          "last": {
+            "supported": true,
+            "answer": "Paper3 describes the BioNNE-R task using English and Russian languages. [S2][S3]\n\nThe task uses 8 entity types (ANATOMY, CHEM, DEVICE, DISO, FINDING, INJURY_POISONING, LABPROC, PHYS) and 14 relation types. [S3]",
+            "cited": [
+              {
+                "source_id": "S2",
+                "document_id": "paper3",
+                "page": 2,
+                "id": "5870fe31e6fc8aec941016376145992b6b3004de172aedcd1c5ff30f72b730e5"
+              },
+              {
+                "source_id": "S3",
+                "document_id": "paper3",
+                "page": 3,
+                "id": "26ec4fbf3ee8af2ea37e7153e550a93a5bec109caf975d6292ced51bcc6e6f26"
+              }
+            ],
+            "cited_gold": false,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [
+              "uses",
+              "using"
+            ],
+            "ungrounded_term_rate": 0.08695652173913043,
+            "expected_recall": 1.0
+          }
+        }
+      }
+    },
+    {
+      "id": "paper-4",
+      "category": "paper",
+      "question": "What language and document type does ELCardioCC 2026 use in paper4?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper4",
+          "page": 1,
+          "id": "a0f6412087bf1a2661cffe30336eb6855cd39e8a1ebbda22f0bea9547b50dd81"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper4",
+          "page": 10,
+          "id": "037574fede2af415c68f0ac9f3185cfa2bb76a6b499305244da88c12358c7a33"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper4",
+          "page": 2,
+          "id": "5d131465dacc6f24e2b5570a7fe8b5d57e9d602fa5db5dd2c58aa8d949087c89"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper4",
+          "page": 2,
+          "id": "8b3c51b86d3f353783df00f30a1d906e1fc519018918538f0ae5df0e2c1343ca"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper4",
+          "page": 1,
+          "id": "2e28e86182401e162d2832ec2c601935f9cbeb9c4e0b68b74da5ea164616563f"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper4",
+          "page": 1,
+          "id": "49c861449f1c663bd97bcb21788199f76994cdc64b000efbde2074153e979c76"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 1,
+          "dense": 1,
+          "lexical": 1
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.7142857142857143,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.16666666666666666,
+        "off_target": 0,
+        "passages": 6,
+        "distinct_papers": 1,
+        "rank1_gold": true
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.8481521830218721,
+        "est_prompt_tokens": 2592
+      },
+      "generation": {
+        "base": {
+          "supported": true,
+          "answer": "ELCardioCC 2026 uses the Greek language. [S2][S3][S4]\n\nELCardioCC 2026 uses hospital discharge letters as the document type. [S3][S4]",
+          "cited": [
+            {
+              "source_id": "S2",
+              "document_id": "paper4",
+              "page": 10,
+              "id": "037574fede2af415c68f0ac9f3185cfa2bb76a6b499305244da88c12358c7a33"
+            },
+            {
+              "source_id": "S3",
+              "document_id": "paper4",
+              "page": 2,
+              "id": "5d131465dacc6f24e2b5570a7fe8b5d57e9d602fa5db5dd2c58aa8d949087c89"
+            },
+            {
+              "source_id": "S4",
+              "document_id": "paper4",
+              "page": 2,
+              "id": "8b3c51b86d3f353783df00f30a1d906e1fc519018918538f0ae5df0e2c1343ca"
+            }
+          ],
+          "cited_gold": false,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [],
+          "ungrounded_term_rate": 0.0,
+          "expected_recall": 0.5
+        },
+        "noisy": {
+          "supported": true,
+          "answer": "ELCardioCC 2026 uses the Greek language. [S1][S3][S4]\n\nThe document type is hospital discharge letters. [S4]",
+          "cited": [
+            {
+              "source_id": "S1",
+              "document_id": "paper4",
+              "page": 1,
+              "id": "a0f6412087bf1a2661cffe30336eb6855cd39e8a1ebbda22f0bea9547b50dd81"
+            },
+            {
+              "source_id": "S3",
+              "document_id": "paper4",
+              "page": 10,
+              "id": "037574fede2af415c68f0ac9f3185cfa2bb76a6b499305244da88c12358c7a33"
+            },
+            {
+              "source_id": "S4",
+              "document_id": "paper4",
+              "page": 2,
+              "id": "5d131465dacc6f24e2b5570a7fe8b5d57e9d602fa5db5dd2c58aa8d949087c89"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [],
+          "ungrounded_term_rate": 0.0,
+          "expected_recall": 0.5,
+          "distractors": 3,
+          "cited_distractor": false
+        },
+        "position": {
+          "first": {
+            "supported": true,
+            "answer": "ELCardioCC 2026 uses the Greek language. [S4][S5][S6]\n\nELCardioCC 2026 uses hospital discharge letters as the document type. [S2][S5][S6]",
+            "cited": [
+              {
+                "source_id": "S2",
+                "document_id": "paper4",
+                "page": 1,
+                "id": "2e28e86182401e162d2832ec2c601935f9cbeb9c4e0b68b74da5ea164616563f"
+              },
+              {
+                "source_id": "S4",
+                "document_id": "paper4",
+                "page": 10,
+                "id": "037574fede2af415c68f0ac9f3185cfa2bb76a6b499305244da88c12358c7a33"
+              },
+              {
+                "source_id": "S5",
+                "document_id": "paper4",
+                "page": 2,
+                "id": "5d131465dacc6f24e2b5570a7fe8b5d57e9d602fa5db5dd2c58aa8d949087c89"
+              },
+              {
+                "source_id": "S6",
+                "document_id": "paper4",
+                "page": 2,
+                "id": "8b3c51b86d3f353783df00f30a1d906e1fc519018918538f0ae5df0e2c1343ca"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [],
+            "ungrounded_term_rate": 0.0,
+            "expected_recall": 0.5
+          },
+          "middle": {
+            "supported": true,
+            "answer": "ELCardioCC 2026 uses the Greek language. [S1][S2][S5]\n\nELCardioCC 2026 uses hospital discharge letters as the document type. [S2][S5][S6]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper4",
+                "page": 10,
+                "id": "037574fede2af415c68f0ac9f3185cfa2bb76a6b499305244da88c12358c7a33"
+              },
+              {
+                "source_id": "S2",
+                "document_id": "paper4",
+                "page": 1,
+                "id": "a0f6412087bf1a2661cffe30336eb6855cd39e8a1ebbda22f0bea9547b50dd81"
+              },
+              {
+                "source_id": "S5",
+                "document_id": "paper4",
+                "page": 2,
+                "id": "5d131465dacc6f24e2b5570a7fe8b5d57e9d602fa5db5dd2c58aa8d949087c89"
+              },
+              {
+                "source_id": "S6",
+                "document_id": "paper4",
+                "page": 2,
+                "id": "8b3c51b86d3f353783df00f30a1d906e1fc519018918538f0ae5df0e2c1343ca"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [],
+            "ungrounded_term_rate": 0.0,
+            "expected_recall": 0.5
+          },
+          "last": {
+            "supported": true,
+            "answer": "ELCardioCC 2026 uses the Greek language. [S2][S4]\n\nThe document type is hospital discharge letters. [S2][S4]",
+            "cited": [
+              {
+                "source_id": "S2",
+                "document_id": "paper4",
+                "page": 2,
+                "id": "5d131465dacc6f24e2b5570a7fe8b5d57e9d602fa5db5dd2c58aa8d949087c89"
+              },
+              {
+                "source_id": "S4",
+                "document_id": "paper4",
+                "page": 1,
+                "id": "a0f6412087bf1a2661cffe30336eb6855cd39e8a1ebbda22f0bea9547b50dd81"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [],
+            "ungrounded_term_rate": 0.0,
+            "expected_recall": 0.5
+          }
+        }
+      }
+    },
+    {
+      "id": "paper-5",
+      "category": "paper",
+      "question": "What are the four GutBrainIE subtasks described in paper5?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper5",
+          "page": 1,
+          "id": "c553c75f857a13cd100af8f93ba389bc431363fb18d2f78b7522b478cfd44638"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper5",
+          "page": 3,
+          "id": "a1cec1ea028377d5f1fa632ffe9817fc67900a1923662b0ce87c80c3ba7cf1f1"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper5",
+          "page": 3,
+          "id": "2348ba6381814b5d8e7d7dfb2476cd5708758f30006686b4efc0cc368e0b42b0"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper5",
+          "page": 2,
+          "id": "9fda907b146c8ec566623e6ce120947a10e86fde7577f5625e8be170effcf1cb"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper5",
+          "page": 11,
+          "id": "aed235b2dc8e9f6bccb60f0a3a09f4423e95c46ac063f6a6614636ff49a5f180"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper5",
+          "page": 5,
+          "id": "52f5113252222ed3b20d6a32f4ca3bac03984ae26ef5b2dad8a2370fa795a650"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 1,
+          "dense": 5,
+          "lexical": null
+        },
+        "unmatched_terms": [
+          "paper5"
+        ],
+        "gold_overlap": 0.6,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.16666666666666666,
+        "off_target": 0,
+        "passages": 6,
+        "distinct_papers": 1,
+        "rank1_gold": true
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.942471947747446,
+        "est_prompt_tokens": 2913
+      },
+      "generation": {
+        "base": {
+          "supported": true,
+          "answer": "The four GutBrainIE subtasks are Named Entity Recognition (NER), Named Entity Recognition and Disambiguation (NERD), Mention-level RE (M-RE), and Concept-level RE (C-RE). [S2][S3]",
+          "cited": [
+            {
+              "source_id": "S2",
+              "document_id": "paper5",
+              "page": 3,
+              "id": "a1cec1ea028377d5f1fa632ffe9817fc67900a1923662b0ce87c80c3ba7cf1f1"
+            },
+            {
+              "source_id": "S3",
+              "document_id": "paper5",
+              "page": 3,
+              "id": "2348ba6381814b5d8e7d7dfb2476cd5708758f30006686b4efc0cc368e0b42b0"
+            }
+          ],
+          "cited_gold": false,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [],
+          "ungrounded_term_rate": 0.0,
+          "expected_recall": 0.7777777777777778
+        },
+        "noisy": {
+          "supported": true,
+          "answer": "The four GutBrainIE subtasks are Named Entity Recognition (NER), Named Entity Recognition and Disambiguation (NERD), Mention-level RE (M-RE), and Concept-level RE (C-RE). [S2][S4][S5]",
+          "cited": [
+            {
+              "source_id": "S2",
+              "document_id": "paper5",
+              "page": 3,
+              "id": "a1cec1ea028377d5f1fa632ffe9817fc67900a1923662b0ce87c80c3ba7cf1f1"
+            },
+            {
+              "source_id": "S4",
+              "document_id": "paper5",
+              "page": 3,
+              "id": "2348ba6381814b5d8e7d7dfb2476cd5708758f30006686b4efc0cc368e0b42b0"
+            },
+            {
+              "source_id": "S5",
+              "document_id": "paper39",
+              "page": 1,
+              "id": "51e0409db5a5722554b205033d3bf0e72aeccba26c84c3621d314c375fc3ddf7"
+            }
+          ],
+          "cited_gold": false,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [],
+          "ungrounded_term_rate": 0.0,
+          "expected_recall": 0.7777777777777778,
+          "distractors": 3,
+          "cited_distractor": true
+        },
+        "position": {
+          "first": {
+            "supported": true,
+            "answer": "The four GutBrainIE subtasks are Named Entity Recognition (NER), Named Entity Recognition and Disambiguation (NERD), Mention-level RE (M-RE), and Concept-level RE (C-RE). [S2][S3]",
+            "cited": [
+              {
+                "source_id": "S2",
+                "document_id": "paper5",
+                "page": 3,
+                "id": "a1cec1ea028377d5f1fa632ffe9817fc67900a1923662b0ce87c80c3ba7cf1f1"
+              },
+              {
+                "source_id": "S3",
+                "document_id": "paper5",
+                "page": 3,
+                "id": "2348ba6381814b5d8e7d7dfb2476cd5708758f30006686b4efc0cc368e0b42b0"
+              }
+            ],
+            "cited_gold": false,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [],
+            "ungrounded_term_rate": 0.0,
+            "expected_recall": 0.7777777777777778
+          },
+          "middle": {
+            "supported": true,
+            "answer": "The four GutBrainIE subtasks are Named Entity Recognition (NER), Named Entity Recognition and Disambiguation (NERD), Mention-level RE (M-RE), and Concept-level RE (C-RE). [S2]",
+            "cited": [
+              {
+                "source_id": "S2",
+                "document_id": "paper5",
+                "page": 3,
+                "id": "2348ba6381814b5d8e7d7dfb2476cd5708758f30006686b4efc0cc368e0b42b0"
+              }
+            ],
+            "cited_gold": false,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [],
+            "ungrounded_term_rate": 0.0,
+            "expected_recall": 0.7777777777777778
+          },
+          "last": {
+            "supported": true,
+            "answer": "The four GutBrainIE subtasks are Named Entity Recognition (NER), Named Entity Recognition and Disambiguation (NERD), Mention-level RE (M-RE), and Concept-level RE (C-RE). [S2]",
+            "cited": [
+              {
+                "source_id": "S2",
+                "document_id": "paper5",
+                "page": 3,
+                "id": "2348ba6381814b5d8e7d7dfb2476cd5708758f30006686b4efc0cc368e0b42b0"
+              }
+            ],
+            "cited_gold": false,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [],
+            "ungrounded_term_rate": 0.0,
+            "expected_recall": 0.7777777777777778
+          }
+        }
+      }
+    },
+    {
+      "id": "paper-6",
+      "category": "paper",
+      "question": "What four retrieval variants are described in paper6?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper6",
+          "page": 1,
+          "id": "1aede7238bdd439cb25eb8372936252161c5577bb311765bcb243e0e089f82a3"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper6",
+          "page": 6,
+          "id": "97f470207975579347076bdf4f299e0ffcbd0ae528e32999bc98907866ebcc40"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper6",
+          "page": 4,
+          "id": "1a31a28e89cdd26c4bf09444fd81c9efa439c847a4d7b0bab0e699d8b393ddcb"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper6",
+          "page": 12,
+          "id": "0a7bbe85dbc0070a92ebb7dcd160335104c7015708a4cc1801f934e3b3d9f155"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper6",
+          "page": 6,
+          "id": "a38c85afbeced5a2b6cf7eacc98b0b9fe4cdac368efe00a5ca10df1e7a68b62f"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper6",
+          "page": 3,
+          "id": "ddd41ddb81b1bb141a9eb9a89e48b810a987330033607c2eface1c6bf4e59a1d"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 1,
+          "dense": null,
+          "lexical": 4
+        },
+        "unmatched_terms": [
+          "paper6"
+        ],
+        "gold_overlap": 0.6,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.16666666666666666,
+        "off_target": 0,
+        "passages": 6,
+        "distinct_papers": 1,
+        "rank1_gold": true
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.8838202059094333,
+        "est_prompt_tokens": 2711
+      },
+      "generation": {
+        "base": {
+          "supported": true,
+          "answer": "The four retrieval pipeline variants are sparse-only, sparse-dense hybrid, dense pseudo-relevance feedback, and a cross-encoder ensemble. [S1]",
+          "cited": [
+            {
+              "source_id": "S1",
+              "document_id": "paper6",
+              "page": 1,
+              "id": "1aede7238bdd439cb25eb8372936252161c5577bb311765bcb243e0e089f82a3"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [],
+          "ungrounded_term_rate": 0.0,
+          "expected_recall": 1.0
+        },
+        "noisy": {
+          "supported": true,
+          "answer": "Paper6 describes four retrieval pipeline variants: sparse-only, sparse-dense hybrid, dense pseudo-relevance feedback, and a cross-encoder ensemble. [S2][S6]\n\nThe sparse-only pipeline uses BM25 as the sole retrieval component. [S6]\n\nThe hybrid pipeline combines BM25 and dense retrieval through WSum fusion. [S6]",
+          "cited": [
+            {
+              "source_id": "S2",
+              "document_id": "paper6",
+              "page": 1,
+              "id": "1aede7238bdd439cb25eb8372936252161c5577bb311765bcb243e0e089f82a3"
+            },
+            {
+              "source_id": "S6",
+              "document_id": "paper6",
+              "page": 6,
+              "id": "a38c85afbeced5a2b6cf7eacc98b0b9fe4cdac368efe00a5ca10df1e7a68b62f"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [],
+          "ungrounded_term_rate": 0.0,
+          "expected_recall": 1.0,
+          "distractors": 3,
+          "cited_distractor": false
+        },
+        "position": {
+          "first": {
+            "supported": true,
+            "answer": "The four retrieval pipeline variants are sparse-only, sparse-dense hybrid, dense pseudo-relevance feedback, and a cross-encoder ensemble. [S1]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper6",
+                "page": 1,
+                "id": "1aede7238bdd439cb25eb8372936252161c5577bb311765bcb243e0e089f82a3"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [],
+            "ungrounded_term_rate": 0.0,
+            "expected_recall": 1.0
+          },
+          "middle": {
+            "supported": true,
+            "answer": "The four pipeline variants are sparse-only, sparse-dense hybrid, dense pseudo-relevance feedback, and a cross-encoder ensemble. [S3][S5]\n\nThe sparse-only pipeline uses BM25 as the sole retrieval component. [S5]\n\nThe hybrid pipeline combines BM25 and dense retrieval through WSum fusion. [S5][S6]",
+            "cited": [
+              {
+                "source_id": "S3",
+                "document_id": "paper6",
+                "page": 1,
+                "id": "1aede7238bdd439cb25eb8372936252161c5577bb311765bcb243e0e089f82a3"
+              },
+              {
+                "source_id": "S5",
+                "document_id": "paper6",
+                "page": 6,
+                "id": "a38c85afbeced5a2b6cf7eacc98b0b9fe4cdac368efe00a5ca10df1e7a68b62f"
+              },
+              {
+                "source_id": "S6",
+                "document_id": "paper6",
+                "page": 3,
+                "id": "ddd41ddb81b1bb141a9eb9a89e48b810a987330033607c2eface1c6bf4e59a1d"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [],
+            "ungrounded_term_rate": 0.0,
+            "expected_recall": 1.0
+          },
+          "last": {
+            "supported": true,
+            "answer": "The four pipeline variants are sparse-only, sparse-dense hybrid, dense pseudo-relevance feedback, and a cross-encoder ensemble. [S1][S6]\n\nThe sparse-only pipeline uses BM25 as the sole retrieval component. [S4]\n\nThe hybrid pipeline combines BM25 and dense retrieval through WSum fusion. [S4][S5]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper6",
+                "page": 6,
+                "id": "97f470207975579347076bdf4f299e0ffcbd0ae528e32999bc98907866ebcc40"
+              },
+              {
+                "source_id": "S4",
+                "document_id": "paper6",
+                "page": 6,
+                "id": "a38c85afbeced5a2b6cf7eacc98b0b9fe4cdac368efe00a5ca10df1e7a68b62f"
+              },
+              {
+                "source_id": "S5",
+                "document_id": "paper6",
+                "page": 3,
+                "id": "ddd41ddb81b1bb141a9eb9a89e48b810a987330033607c2eface1c6bf4e59a1d"
+              },
+              {
+                "source_id": "S6",
+                "document_id": "paper6",
+                "page": 1,
+                "id": "1aede7238bdd439cb25eb8372936252161c5577bb311765bcb243e0e089f82a3"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [],
+            "ungrounded_term_rate": 0.0,
+            "expected_recall": 1.0
+          }
+        }
+      }
+    },
+    {
+      "id": "paper-7",
+      "category": "paper",
+      "question": "How large was the question subset used for keyword search refinement in paper7?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper7",
+          "page": 1,
+          "id": "e9838e15b1edd140eb4386b83a0fa7d516b3cd300c2f09beab83facc51535dcd"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper7",
+          "page": 11,
+          "id": "9e4c11f37a75cd108ef10db78810b47e3e9d8e1999f9dda2eeeac2f3be399c68"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper7",
+          "page": 3,
+          "id": "3fab6f75a2b03946f9a6af7803684d47dc68077618f6445491c94041fe6d952c"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper7",
+          "page": 7,
+          "id": "9a07278729eed0f06129c40a0e2515949aea243883047c498448517bf1f6ee84"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper7",
+          "page": 2,
+          "id": "923fd001e26f97e9a2bba07ae17ae8b1dcb9813396258b6499238afd013ffa02"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper7",
+          "page": 1,
+          "id": "5d3b5fd7cf45878de3fd89ff393e735faf8db54be6afc20d686895db97db4315"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 1,
+          "dense": null,
+          "lexical": 1
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.875,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.16666666666666666,
+        "off_target": 0,
+        "passages": 6,
+        "distinct_papers": 1,
+        "rank1_gold": true
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.9206442412549283,
+        "est_prompt_tokens": 2837
+      },
+      "generation": {
+        "base": {
+          "supported": true,
+          "answer": "The question subset used for keyword search refinement consisted of 24 questions. [S1]",
+          "cited": [
+            {
+              "source_id": "S1",
+              "document_id": "paper7",
+              "page": 1,
+              "id": "e9838e15b1edd140eb4386b83a0fa7d516b3cd300c2f09beab83facc51535dcd"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [
+            "consisted"
+          ],
+          "ungrounded_term_rate": 0.125,
+          "expected_recall": 0.4
+        },
+        "noisy": {
+          "supported": true,
+          "answer": "The question subset used for keyword search refinement consisted of 24 questions. [S1]",
+          "cited": [
+            {
+              "source_id": "S1",
+              "document_id": "paper7",
+              "page": 1,
+              "id": "e9838e15b1edd140eb4386b83a0fa7d516b3cd300c2f09beab83facc51535dcd"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [
+            "consisted"
+          ],
+          "ungrounded_term_rate": 0.125,
+          "expected_recall": 0.4,
+          "distractors": 1,
+          "cited_distractor": false
+        },
+        "position": {
+          "first": {
+            "supported": true,
+            "answer": "The question subset used for keyword search refinement was 24 questions. [S1]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper7",
+                "page": 1,
+                "id": "e9838e15b1edd140eb4386b83a0fa7d516b3cd300c2f09beab83facc51535dcd"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [],
+            "ungrounded_term_rate": 0.0,
+            "expected_recall": 0.4
+          },
+          "middle": {
+            "supported": true,
+            "answer": "The question subset used for keyword search refinement consisted of 24 questions. [S2][S3]",
+            "cited": [
+              {
+                "source_id": "S2",
+                "document_id": "paper7",
+                "page": 3,
+                "id": "3fab6f75a2b03946f9a6af7803684d47dc68077618f6445491c94041fe6d952c"
+              },
+              {
+                "source_id": "S3",
+                "document_id": "paper7",
+                "page": 1,
+                "id": "e9838e15b1edd140eb4386b83a0fa7d516b3cd300c2f09beab83facc51535dcd"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [
+              "consisted"
+            ],
+            "ungrounded_term_rate": 0.125,
+            "expected_recall": 0.4
+          },
+          "last": {
+            "supported": true,
+            "answer": "The main refinement run used 24 training questions per iteration. [S2]\n\nTraining questions were selected from the latest 500 BioASQ training questions. [S2]",
+            "cited": [
+              {
+                "source_id": "S2",
+                "document_id": "paper7",
+                "page": 3,
+                "id": "3fab6f75a2b03946f9a6af7803684d47dc68077618f6445491c94041fe6d952c"
+              }
+            ],
+            "cited_gold": false,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [],
+            "ungrounded_term_rate": 0.0,
+            "expected_recall": 0.8
+          }
+        }
+      }
+    },
+    {
+      "id": "paper-8",
+      "category": "paper",
+      "question": "What are the main pipeline components of MedCascade in paper8?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper8",
+          "page": 1,
+          "id": "e597280b498fedfad1a1ef1bf367efd7b723ace2d11ef3935eac9959bf001d2e"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper8",
+          "page": 4,
+          "id": "9297e84d6c92938d5c2acfaddb89fb8635c8355cc0e3a99194746007b0fc5c2d"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper8",
+          "page": 2,
+          "id": "aff1cc7f065f724bb1c31ca9673662e3a38bfa48721034df0ac383bd04af45ab"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper8",
+          "page": 2,
+          "id": "6fe05222ba8d6020fe3f52083a0ca6f5ff3b14667332b447523342cffdec595a"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper8",
+          "page": 8,
+          "id": "12b70a30fbbc92202d1607f59da29bc1f0c5ed17f58ca16ffb4d0066c099c94b"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper8",
+          "page": 4,
+          "id": "ee3aa82b5e2a76f4b1f2676a3696290d004dcb13ed1496697d997bfbce35f1c8"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 1,
+          "dense": null,
+          "lexical": 3
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.4,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.16666666666666666,
+        "off_target": 0,
+        "passages": 6,
+        "distinct_papers": 1,
+        "rank1_gold": true
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.9830792427542302,
+        "est_prompt_tokens": 3051
+      },
+      "generation": {
+        "base": {
+          "supported": true,
+          "answer": "MedCascade combines LLM-based query expansion, sparse retrieval, neural reranking, LLM-based listwise reranking, Dense PRF reranking, snippet extraction, and LLM-based answer generation. [S1][S2][S4]\n\nThe pipeline starts with a large candidate set retrieved from the indexed PubMed corpus and progressively applies reranking stages. [S2]\n\nThe first-stage retrieval uses BM25. [S2][S5]",
+          "cited": [
+            {
+              "source_id": "S1",
+              "document_id": "paper8",
+              "page": 1,
+              "id": "e597280b498fedfad1a1ef1bf367efd7b723ace2d11ef3935eac9959bf001d2e"
+            },
+            {
+              "source_id": "S2",
+              "document_id": "paper8",
+              "page": 4,
+              "id": "9297e84d6c92938d5c2acfaddb89fb8635c8355cc0e3a99194746007b0fc5c2d"
+            },
+            {
+              "source_id": "S4",
+              "document_id": "paper8",
+              "page": 2,
+              "id": "6fe05222ba8d6020fe3f52083a0ca6f5ff3b14667332b447523342cffdec595a"
+            },
+            {
+              "source_id": "S5",
+              "document_id": "paper8",
+              "page": 8,
+              "id": "12b70a30fbbc92202d1607f59da29bc1f0c5ed17f58ca16ffb4d0066c099c94b"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [
+            "corpus"
+          ],
+          "ungrounded_term_rate": 0.024390243902439025,
+          "expected_recall": 1.0
+        },
+        "noisy": {
+          "supported": true,
+          "answer": "MedCascade combines LLM-based query expansion, sparse retrieval, neural reranking, LLM-based listwise reranking, Dense PRF reranking, snippet extraction, and LLM-based answer generation. [S1][S2][S4]\n\nThe pipeline starts with a large candidate set retrieved from the indexed PubMed corpus and progressively applies reranking stages. [S2]\n\nThe first-stage retrieval uses BM25. [S2][S5]",
+          "cited": [
+            {
+              "source_id": "S1",
+              "document_id": "paper8",
+              "page": 1,
+              "id": "e597280b498fedfad1a1ef1bf367efd7b723ace2d11ef3935eac9959bf001d2e"
+            },
+            {
+              "source_id": "S2",
+              "document_id": "paper8",
+              "page": 4,
+              "id": "9297e84d6c92938d5c2acfaddb89fb8635c8355cc0e3a99194746007b0fc5c2d"
+            },
+            {
+              "source_id": "S4",
+              "document_id": "paper8",
+              "page": 2,
+              "id": "6fe05222ba8d6020fe3f52083a0ca6f5ff3b14667332b447523342cffdec595a"
+            },
+            {
+              "source_id": "S5",
+              "document_id": "paper8",
+              "page": 8,
+              "id": "12b70a30fbbc92202d1607f59da29bc1f0c5ed17f58ca16ffb4d0066c099c94b"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [
+            "corpus"
+          ],
+          "ungrounded_term_rate": 0.024390243902439025,
+          "expected_recall": 1.0,
+          "distractors": 0,
+          "cited_distractor": false
+        },
+        "position": {
+          "first": {
+            "supported": true,
+            "answer": "MedCascade combines LLM-based query expansion, sparse retrieval, neural reranking, LLM-based listwise reranking, Dense PRF reranking, snippet extraction, and LLM-based answer generation. [S1][S2][S4]\n\nThe pipeline starts with a large candidate set retrieved from the indexed PubMed corpus and progressively applies reranking stages. [S2]\n\nThe first-stage retrieval uses BM25. [S2][S5]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper8",
+                "page": 1,
+                "id": "e597280b498fedfad1a1ef1bf367efd7b723ace2d11ef3935eac9959bf001d2e"
+              },
+              {
+                "source_id": "S2",
+                "document_id": "paper8",
+                "page": 4,
+                "id": "9297e84d6c92938d5c2acfaddb89fb8635c8355cc0e3a99194746007b0fc5c2d"
+              },
+              {
+                "source_id": "S4",
+                "document_id": "paper8",
+                "page": 2,
+                "id": "6fe05222ba8d6020fe3f52083a0ca6f5ff3b14667332b447523342cffdec595a"
+              },
+              {
+                "source_id": "S5",
+                "document_id": "paper8",
+                "page": 8,
+                "id": "12b70a30fbbc92202d1607f59da29bc1f0c5ed17f58ca16ffb4d0066c099c94b"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [
+              "corpus"
+            ],
+            "ungrounded_term_rate": 0.024390243902439025,
+            "expected_recall": 1.0
+          },
+          "middle": {
+            "supported": false,
+            "answer": "I couldn't verify an answer against the retrieved passages. Try a narrower question.",
+            "cited": [],
+            "cited_gold": false,
+            "expected_recall": 0.0
+          },
+          "last": {
+            "supported": true,
+            "answer": "MedCascade combines LLM-based query expansion, BM25 first-stage retrieval, intermediate neural reranking, LLM-based listwise reranking, Dense PRF reranking, score fusion, snippet extraction, and LLM-based answer generation. [S1]\n\nThe system starts from a large candidate set retrieved from the indexed PubMed corpus. [S1]\n\nMedCascade uses Claude Sonnet 43 for LLM-based query expansion. [S5]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper8",
+                "page": 4,
+                "id": "9297e84d6c92938d5c2acfaddb89fb8635c8355cc0e3a99194746007b0fc5c2d"
+              },
+              {
+                "source_id": "S5",
+                "document_id": "paper8",
+                "page": 4,
+                "id": "ee3aa82b5e2a76f4b1f2676a3696290d004dcb13ed1496697d997bfbce35f1c8"
+              }
+            ],
+            "cited_gold": false,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [],
+            "ungrounded_term_rate": 0.0,
+            "expected_recall": 0.9285714285714286
+          }
+        }
+      }
+    },
+    {
+      "id": "synthesis-1",
+      "category": "synthesis",
+      "question": "Compare the retrieval approaches in paper6 and paper8.",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper6",
+          "page": 1,
+          "id": "1aede7238bdd439cb25eb8372936252161c5577bb311765bcb243e0e089f82a3"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper8",
+          "page": 1,
+          "id": "e597280b498fedfad1a1ef1bf367efd7b723ace2d11ef3935eac9959bf001d2e"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper6",
+          "page": 12,
+          "id": "0a7bbe85dbc0070a92ebb7dcd160335104c7015708a4cc1801f934e3b3d9f155"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper8",
+          "page": 2,
+          "id": "caa11e725978f13d2d84b21d956c1aadf9bc42aa54c2bc335b31eb3d6a859176"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper6",
+          "page": 2,
+          "id": "284a462c86c750ee8db0710c751d0e344cf7e7bdb998af26c71405549a0f51c7"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper8",
+          "page": 9,
+          "id": "5981d8abd2f36165150e21fd96d1652e80d07a5e34011164c38451da6ea48fb5"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 1,
+          "dense": null,
+          "lexical": null
+        },
+        "unmatched_terms": [
+          "paper6"
+        ],
+        "gold_overlap": 0.2,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.3333333333333333,
+        "off_target": 0,
+        "passages": 6,
+        "distinct_papers": 2,
+        "rank1_gold": true
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.9275908253808807,
+        "est_prompt_tokens": 2861
+      },
+      "generation": {
+        "base": {
+          "supported": true,
+          "answer": "Paper6 utilized a hybrid retrieval approach combining sparse lexical search with dense retrieval, fused through Rank Fusion algorithms, followed by cross-encoder re-ranking. [S5]\n\nPaper8 employed a multi-stage cascaded retrieval system that included sparse retrieval (BM25), neural sparse methods (SPLADE), and dense retrieval methods, along with neural reranking and dense pseudo relevance feedback. [S4]",
+          "cited": [
+            {
+              "source_id": "S4",
+              "document_id": "paper8",
+              "page": 2,
+              "id": "caa11e725978f13d2d84b21d956c1aadf9bc42aa54c2bc335b31eb3d6a859176"
+            },
+            {
+              "source_id": "S5",
+              "document_id": "paper6",
+              "page": 2,
+              "id": "284a462c86c750ee8db0710c751d0e344cf7e7bdb998af26c71405549a0f51c7"
+            }
+          ],
+          "cited_gold": false,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [
+            "along",
+            "cascaded",
+            "employed",
+            "feedback",
+            "followed",
+            "included",
+            "pseudo",
+            "relevance",
+            "utilized"
+          ],
+          "ungrounded_term_rate": 0.1956521739130435,
+          "expected_recall": 0.2777777777777778
+        },
+        "noisy": {
+          "supported": true,
+          "answer": "Paper6 developed four retrieval pipeline variants including sparse-only, sparse-dense hybrid, dense pseudo-relevance feedback, and a cross-encoder ensemble. [S2]\n\nPaper8 combined sparse retrieval, neural reranking, LLM-based listwise reranking, Dense PRF reranking, and snippet extraction. [S3]",
+          "cited": [
+            {
+              "source_id": "S2",
+              "document_id": "paper6",
+              "page": 1,
+              "id": "1aede7238bdd439cb25eb8372936252161c5577bb311765bcb243e0e089f82a3"
+            },
+            {
+              "source_id": "S3",
+              "document_id": "paper8",
+              "page": 1,
+              "id": "e597280b498fedfad1a1ef1bf367efd7b723ace2d11ef3935eac9959bf001d2e"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [
+            "including"
+          ],
+          "ungrounded_term_rate": 0.029411764705882353,
+          "expected_recall": 0.3888888888888889,
+          "distractors": 3,
+          "cited_distractor": false
+        },
+        "position": {
+          "first": {
+            "supported": false,
+            "answer": "I couldn't verify an answer against the retrieved passages. Try a narrower question.",
+            "cited": [],
+            "cited_gold": false,
+            "expected_recall": 0.0
+          },
+          "middle": {
+            "supported": false,
+            "answer": "I couldn't verify an answer against the retrieved passages. Try a narrower question.",
+            "cited": [],
+            "cited_gold": false,
+            "expected_recall": 0.0
+          },
+          "last": {
+            "supported": true,
+            "answer": "Paper6 combines sparse lexical search with dense retrieval, fused through Rank Fusion algorithms. [S3]\n\nPaper8 uses BM25 as a first-stage retriever and also employs neural sparse methods like SPLADE and dense retrieval methods with bi-encoders. [S2]",
+            "cited": [
+              {
+                "source_id": "S2",
+                "document_id": "paper8",
+                "page": 2,
+                "id": "caa11e725978f13d2d84b21d956c1aadf9bc42aa54c2bc335b31eb3d6a859176"
+              },
+              {
+                "source_id": "S3",
+                "document_id": "paper6",
+                "page": 2,
+                "id": "284a462c86c750ee8db0710c751d0e344cf7e7bdb998af26c71405549a0f51c7"
+              }
+            ],
+            "cited_gold": false,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [
+              "employs",
+              "like",
+              "uses"
+            ],
+            "ungrounded_term_rate": 0.1,
+            "expected_recall": 0.2222222222222222
+          }
+        }
+      }
+    },
+    {
+      "id": "synthesis-2",
+      "category": "synthesis",
+      "question": "How do the tasks and languages differ between paper3 and paper4?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper3",
+          "page": 1,
+          "id": "e4dd05c34edf8f18b0370e0764cc74d80acdc4b919acb6d29215ccbe4db0d0a4"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper4",
+          "page": 1,
+          "id": "a0f6412087bf1a2661cffe30336eb6855cd39e8a1ebbda22f0bea9547b50dd81"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper3",
+          "page": 7,
+          "id": "73bf9f4a8dbe6aefd0e49ff841125882a890fe8c71523f0bac990c9390e54de9"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper4",
+          "page": 10,
+          "id": "62a4504fb4101676c227944d1ae95fdbe02da1279aaabaedcb6b36b888cc269d"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper3",
+          "page": 2,
+          "id": "4d64cd0b2b6a60e8d5afc4b63d05f9f6c97592b5108c3ad0e3d69316061751d2"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper4",
+          "page": 12,
+          "id": "d38ce378891a0012827a003a436963b9bc6d259c9dfd1caa03ffd63f829a6644"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 1,
+          "dense": null,
+          "lexical": 1
+        },
+        "unmatched_terms": [
+          "paper3"
+        ],
+        "gold_overlap": 0.5,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.3333333333333333,
+        "off_target": 0,
+        "passages": 6,
+        "distinct_papers": 2,
+        "rank1_gold": true
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.9070040214477212,
+        "est_prompt_tokens": 2795
+      },
+      "generation": {
+        "base": {
+          "supported": true,
+          "answer": "Paper3 focuses on biomedical nested relation extraction in English and Russian PubMed abstracts, covering 8 entity types and 14 relation types. [S1]\n\nPaper4 focuses on document-level diagnostic code assignment for Greek cardiology hospital discharge letters. [S2]",
+          "cited": [
+            {
+              "source_id": "S1",
+              "document_id": "paper3",
+              "page": 1,
+              "id": "e4dd05c34edf8f18b0370e0764cc74d80acdc4b919acb6d29215ccbe4db0d0a4"
+            },
+            {
+              "source_id": "S2",
+              "document_id": "paper4",
+              "page": 1,
+              "id": "a0f6412087bf1a2661cffe30336eb6855cd39e8a1ebbda22f0bea9547b50dd81"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [],
+          "ungrounded_term_rate": 0.0,
+          "expected_recall": 0.7222222222222222
+        },
+        "noisy": {
+          "supported": true,
+          "answer": "Paper3 (BioNNE-R) focuses on nested biomedical relation extraction in English and Russian PubMed abstracts. [S3]\n\nPaper4 (ELCardioCC) focuses on clinical coding in cardiology using Greek hospital discharge letters. [S4]",
+          "cited": [
+            {
+              "source_id": "S3",
+              "document_id": "paper3",
+              "page": 1,
+              "id": "e4dd05c34edf8f18b0370e0764cc74d80acdc4b919acb6d29215ccbe4db0d0a4"
+            },
+            {
+              "source_id": "S4",
+              "document_id": "paper4",
+              "page": 1,
+              "id": "a0f6412087bf1a2661cffe30336eb6855cd39e8a1ebbda22f0bea9547b50dd81"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [
+            "using"
+          ],
+          "ungrounded_term_rate": 0.043478260869565216,
+          "expected_recall": 0.7222222222222222,
+          "distractors": 3,
+          "cited_distractor": false
+        },
+        "position": {
+          "first": {
+            "supported": true,
+            "answer": "Paper3 focuses on biomedical nested relation extraction in English and Russian PubMed abstracts, covering 8 entity types and 14 relation types. [S1]\n\nPaper4 focuses on document-level diagnostic code assignment for Greek cardiology hospital discharge letters. [S2]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper3",
+                "page": 1,
+                "id": "e4dd05c34edf8f18b0370e0764cc74d80acdc4b919acb6d29215ccbe4db0d0a4"
+              },
+              {
+                "source_id": "S2",
+                "document_id": "paper4",
+                "page": 1,
+                "id": "a0f6412087bf1a2661cffe30336eb6855cd39e8a1ebbda22f0bea9547b50dd81"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [],
+            "ungrounded_term_rate": 0.0,
+            "expected_recall": 0.7222222222222222
+          },
+          "middle": {
+            "supported": true,
+            "answer": "Paper3's task evaluated extraction of relations between nested biomedical entities in English and Russian across English, Russian, and bilingual subtasks. [S1]\n\nPaper4's task evaluated document-level diagnostic code assignment for Greek cardiology hospital discharge letters. [S4]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper3",
+                "page": 7,
+                "id": "73bf9f4a8dbe6aefd0e49ff841125882a890fe8c71523f0bac990c9390e54de9"
+              },
+              {
+                "source_id": "S4",
+                "document_id": "paper4",
+                "page": 1,
+                "id": "a0f6412087bf1a2661cffe30336eb6855cd39e8a1ebbda22f0bea9547b50dd81"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [
+              "s"
+            ],
+            "ungrounded_term_rate": 0.06451612903225806,
+            "expected_recall": 0.7777777777777778
+          },
+          "last": {
+            "supported": true,
+            "answer": "Paper3's task evaluated extraction of relations between nested biomedical entities in English and Russian across English, Russian, and bilingual subtasks. [S1]\n\nPaper4's task evaluated document-level diagnostic code assignment for Greek cardiology hospital discharge letters. [S6]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper3",
+                "page": 7,
+                "id": "73bf9f4a8dbe6aefd0e49ff841125882a890fe8c71523f0bac990c9390e54de9"
+              },
+              {
+                "source_id": "S6",
+                "document_id": "paper4",
+                "page": 1,
+                "id": "a0f6412087bf1a2661cffe30336eb6855cd39e8a1ebbda22f0bea9547b50dd81"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [
+              "s"
+            ],
+            "ungrounded_term_rate": 0.06451612903225806,
+            "expected_recall": 0.7777777777777778
+          }
+        }
+      }
+    },
+    {
+      "id": "synthesis-3",
+      "category": "synthesis",
+      "question": "What is the purpose of BioASQ 14b and Synergy14 in CLEF 2026?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper1",
+          "page": 1,
+          "id": "5b9a2f963ac046bc4cb2c59104ffe59fa63cc1a851b4f9e7966799d17d9ad7a2"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper1",
+          "page": 1,
+          "id": "194a8a767b6e68d66f1fe947e7e4527c29ec2afe7f7500099e860e768c5c0bb4"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper1",
+          "page": 4,
+          "id": "111f31889c3530ee4cf22508e859300afa5e7eb48b8fccf535715d67ba9ec5f6"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper1",
+          "page": 3,
+          "id": "9cb9ce76cca21e3a58a09c261616bcadccf05a7c2e75963647f3f59deb4672e7"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper1",
+          "page": 13,
+          "id": "84b76c5814216834aa303ac5d33c11135dcf78658dcee2b032870cc23d75c224"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper1",
+          "page": 3,
+          "id": "39ed9ca8100830e6a94d680e4becd0b9c7590b737aa9cc28c7a55eda22ccff68"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 1,
+          "dense": 6,
+          "lexical": 2
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.8333333333333334,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.16666666666666666,
+        "off_target": 0,
+        "passages": 6,
+        "distinct_papers": 1,
+        "rank1_gold": true
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.8713460088784656,
+        "est_prompt_tokens": 2675
+      },
+      "generation": {
+        "base": {
+          "supported": true,
+          "answer": "BioASQ 14b is a biomedical semantic QA task. [S1]\n\nSynergy14 is a QA task about developing biomedical topics where the questions may still miss a definite answer. [S1]",
+          "cited": [
+            {
+              "source_id": "S1",
+              "document_id": "paper1",
+              "page": 1,
+              "id": "5b9a2f963ac046bc4cb2c59104ffe59fa63cc1a851b4f9e7966799d17d9ad7a2"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [],
+          "ungrounded_term_rate": 0.0,
+          "expected_recall": 0.75
+        },
+        "noisy": {
+          "supported": true,
+          "answer": "BioASQ 14b is a biomedical semantic QA task. [S1]\n\nSynergy14 is a QA task about developing biomedical topics where the questions may still miss a definite answer. [S1]",
+          "cited": [
+            {
+              "source_id": "S1",
+              "document_id": "paper1",
+              "page": 1,
+              "id": "5b9a2f963ac046bc4cb2c59104ffe59fa63cc1a851b4f9e7966799d17d9ad7a2"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [],
+          "ungrounded_term_rate": 0.0,
+          "expected_recall": 0.75,
+          "distractors": 0,
+          "cited_distractor": false
+        },
+        "position": {
+          "first": {
+            "supported": true,
+            "answer": "BioASQ 14b is a biomedical semantic QA task. [S1]\n\nSynergy14 is a QA task about developing biomedical topics where the questions may still miss a definite answer. [S1]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper1",
+                "page": 1,
+                "id": "5b9a2f963ac046bc4cb2c59104ffe59fa63cc1a851b4f9e7966799d17d9ad7a2"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [],
+            "ungrounded_term_rate": 0.0,
+            "expected_recall": 0.75
+          },
+          "middle": {
+            "supported": false,
+            "answer": "I couldn't verify an answer against the retrieved passages. Try a narrower question.",
+            "cited": [],
+            "cited_gold": false,
+            "expected_recall": 0.0
+          },
+          "last": {
+            "supported": true,
+            "answer": "The purpose of Task Synergy14 is to establish a synergy where experts evaluate systems’ responses and this feedback is then used to refine the systems’ responses in an iterative fashion. [S4]\n\nTask Synergy14 addresses emerging biomedical topics and questions may still miss a definite answer. [S5][S4]",
+            "cited": [
+              {
+                "source_id": "S4",
+                "document_id": "paper1",
+                "page": 3,
+                "id": "39ed9ca8100830e6a94d680e4becd0b9c7590b737aa9cc28c7a55eda22ccff68"
+              },
+              {
+                "source_id": "S5",
+                "document_id": "paper1",
+                "page": 1,
+                "id": "5b9a2f963ac046bc4cb2c59104ffe59fa63cc1a851b4f9e7966799d17d9ad7a2"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [],
+            "ungrounded_term_rate": 0.0,
+            "expected_recall": 0.6666666666666666
+          }
+        }
+      }
+    },
+    {
+      "id": "synthesis-4",
+      "category": "synthesis",
+      "question": "What is CheckThat! 2026 Task 1 trying to retrieve, and which three languages does it cover?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper51",
+          "page": 1,
+          "id": "11802f4f1a8bfbb0fd6107a75c5cac0b60b7abbf4ac81ae7872fbf4b60c2defb"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper51",
+          "page": 2,
+          "id": "487a14b317240cc37edb20a5b85c7c4f506a275bf458bb6ba87ebc2e0e30435f"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper54",
+          "page": 2,
+          "id": "f1cb2ace9fe2c9f8179c38b378d5cbf17ca58e837b2d4750fbb234cad6cb3c4d"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper70",
+          "page": 2,
+          "id": "24d0af1b82c1c771802d10bfe4a1e8bb7c603ea63e699c779df0177430f7e053"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper51",
+          "page": 2,
+          "id": "6458611b1a88cef2e4709067326d36eac526728f0d718c9a97544793bdc708d7"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper83",
+          "page": 1,
+          "id": "0ae3298772ccc53fb7c2250d1ab1e9776b62f8021e800ffed7cdb9ab5dfc0aa4"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 1,
+          "dense": null,
+          "lexical": null
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.7777777777777778,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.16666666666666666,
+        "off_target": 3,
+        "passages": 6,
+        "distinct_papers": 4,
+        "rank1_gold": true
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.9940381224284155,
+        "est_prompt_tokens": 3008
+      },
+      "generation": {
+        "base": {
+          "supported": true,
+          "answer": "CheckThat! 2026 Task 1 aims to retrieve the mentioned paper from a pool of candidate papers, given a social media post that contains a scientific claim and an implicit reference to a scientific paper. [S1][S2]\n\nThe task covers English, German, and French languages. [S1][S2]",
+          "cited": [
+            {
+              "source_id": "S1",
+              "document_id": "paper51",
+              "page": 1,
+              "id": "11802f4f1a8bfbb0fd6107a75c5cac0b60b7abbf4ac81ae7872fbf4b60c2defb"
+            },
+            {
+              "source_id": "S2",
+              "document_id": "paper51",
+              "page": 2,
+              "id": "487a14b317240cc37edb20a5b85c7c4f506a275bf458bb6ba87ebc2e0e30435f"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [],
+          "ungrounded_term_rate": 0.0,
+          "expected_recall": 0.8
+        },
+        "noisy": {
+          "supported": true,
+          "answer": "CheckThat! 2026 Task 1 aims to retrieve the mentioned paper from a pool of candidate papers, given a social media post that contains a scientific claim and an implicit reference to a scientific paper. [S1][S2]\n\nThe task covers English, German, and French languages. [S1][S2][S5]",
+          "cited": [
+            {
+              "source_id": "S1",
+              "document_id": "paper51",
+              "page": 1,
+              "id": "11802f4f1a8bfbb0fd6107a75c5cac0b60b7abbf4ac81ae7872fbf4b60c2defb"
+            },
+            {
+              "source_id": "S2",
+              "document_id": "paper51",
+              "page": 2,
+              "id": "487a14b317240cc37edb20a5b85c7c4f506a275bf458bb6ba87ebc2e0e30435f"
+            },
+            {
+              "source_id": "S5",
+              "document_id": "paper76",
+              "page": 3,
+              "id": "b91b4a0ee0ed625ce0cbc6a3824d867e1d87f71edf78c68e859dce654656a06e"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [],
+          "ungrounded_term_rate": 0.0,
+          "expected_recall": 0.8,
+          "distractors": 3,
+          "cited_distractor": true
+        },
+        "position": {
+          "first": {
+            "supported": true,
+            "answer": "CheckThat! 2026 Task 1 aims to retrieve the mentioned paper from a pool of candidate papers, given a social media post that contains a scientific claim and an implicit reference to a scientific paper. [S1][S2]\n\nThe task covers English, German, and French languages. [S1][S2]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper51",
+                "page": 1,
+                "id": "11802f4f1a8bfbb0fd6107a75c5cac0b60b7abbf4ac81ae7872fbf4b60c2defb"
+              },
+              {
+                "source_id": "S2",
+                "document_id": "paper51",
+                "page": 2,
+                "id": "487a14b317240cc37edb20a5b85c7c4f506a275bf458bb6ba87ebc2e0e30435f"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [],
+            "ungrounded_term_rate": 0.0,
+            "expected_recall": 0.8
+          },
+          "middle": {
+            "supported": true,
+            "answer": "CheckThat! 2026 Task 1 aims to retrieve the mentioned paper from a pool of candidate papers, given a social media post that contains a scientific claim and an implicit reference to a scientific paper. [S1][S3]\n\nThe task covers English, German, and French languages. [S1][S3][S5][S6]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper51",
+                "page": 2,
+                "id": "487a14b317240cc37edb20a5b85c7c4f506a275bf458bb6ba87ebc2e0e30435f"
+              },
+              {
+                "source_id": "S3",
+                "document_id": "paper51",
+                "page": 1,
+                "id": "11802f4f1a8bfbb0fd6107a75c5cac0b60b7abbf4ac81ae7872fbf4b60c2defb"
+              },
+              {
+                "source_id": "S5",
+                "document_id": "paper51",
+                "page": 2,
+                "id": "6458611b1a88cef2e4709067326d36eac526728f0d718c9a97544793bdc708d7"
+              },
+              {
+                "source_id": "S6",
+                "document_id": "paper83",
+                "page": 1,
+                "id": "0ae3298772ccc53fb7c2250d1ab1e9776b62f8021e800ffed7cdb9ab5dfc0aa4"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [],
+            "ungrounded_term_rate": 0.0,
+            "expected_recall": 0.8
+          },
+          "last": {
+            "supported": true,
+            "answer": "The task is to retrieve the mentioned paper from a pool of candidate papers, given a social media post that contains a scientific claim and an implicit reference to a scientific paper. [S1]\n\nThe task covers English, German, and French. [S1][S5]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper51",
+                "page": 2,
+                "id": "487a14b317240cc37edb20a5b85c7c4f506a275bf458bb6ba87ebc2e0e30435f"
+              },
+              {
+                "source_id": "S5",
+                "document_id": "paper83",
+                "page": 1,
+                "id": "0ae3298772ccc53fb7c2250d1ab1e9776b62f8021e800ffed7cdb9ab5dfc0aa4"
+              }
+            ],
+            "cited_gold": false,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [
+              "given"
+            ],
+            "ungrounded_term_rate": 0.05,
+            "expected_recall": 0.8
+          }
+        }
+      }
+    },
+    {
+      "id": "unsupported-1",
+      "category": "unsupported",
+      "question": "According to these papers, what is the Wi-Fi password at my home?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper401",
+          "page": 1,
+          "id": "84ee934fffea916ff71a3db89cedbf671698486dc6e9a68e09137489be728821"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper401",
+          "page": 8,
+          "id": "f4313bf6ae1f3e50ec35524adac9c0898c7f801402796b595ba034674f414dfd"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper137",
+          "page": 3,
+          "id": "636f3016e413d58f6e9c8e7027f8183192728d5b1e9de70988462bd1cd6c089d"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper405",
+          "page": 3,
+          "id": "c98e6068822bafa1f82a73cac2aa5938b781dad44865cc2f794b4df85cd6fb80"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper105",
+          "page": 3,
+          "id": "3ec73a6469886aeeadfc1faac01980a7886d2fbe24a6462a2a20744c5bba491b"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper401",
+          "page": 13,
+          "id": "1cb363fc2c6b0b3529bfd5dbc4b7aa1d8e659a1101bb34bd4a6412423e661631"
+        }
+      ],
+      "generation": {
+        "route": "content",
+        "abstained": true,
+        "base": {
+          "supported": false,
+          "answer": "I don't have enough evidence in the available corpus to answer this question.",
+          "cited": [],
+          "cited_gold": false,
+          "expected_recall": 0.0
+        }
+      }
+    },
+    {
+      "id": "unsupported-2",
+      "category": "unsupported",
+      "question": "What will be the exact winning score at CLEF 2030?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper322",
+          "page": 1,
+          "id": "f6bad393b20153d0b05c62a449b96240ebbb2beab23ef7a46ad7b0a2d2cb2650"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper322",
+          "page": 1,
+          "id": "0f1a085eb45d139142e4b0c456c452595e9c6a50f870efa18eb212fd39f96d17"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper309",
+          "page": 8,
+          "id": "2cab8a2400378b1adb848c9b3dfd048f78e9f145d659b5fcc0f08e6e75d37754"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper237",
+          "page": 4,
+          "id": "968419e940491dac204766c49f50a40257cd3fece2e99abbd31636a304a1db24"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper18",
+          "page": 7,
+          "id": "da32c5552a643785c43d29978e89812f07490b7ceb9c1e5bfdce65b1dfb74f5e"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper237",
+          "page": 4,
+          "id": "18d0a45d7088662991fdae75195a6ca54da15c2289bce3cb7ae10d4396398d61"
+        }
+      ],
+      "generation": {
+        "route": "content",
+        "abstained": true,
+        "base": {
+          "supported": false,
+          "answer": "I don't have enough evidence in the available corpus to answer this question.",
+          "cited": [],
+          "cited_gold": false,
+          "expected_recall": 0.0
+        }
+      }
+    },
+    {
+      "id": "unsupported-3",
+      "category": "unsupported",
+      "question": "How many papers use retrieval-augmented generation?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper381",
+          "page": 1,
+          "id": "39d9a9055ca53e37a45a71bc39e330b87b3269717ea55853f1db32aa8a3cd1e9"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper381",
+          "page": 1,
+          "id": "00d8c6b00bc6e3e9bf25a10a82a9d6d5447c034a2d63fda2f69c6ae3b3d2426a"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper385",
+          "page": 15,
+          "id": "3ad2c7338da6df19ea0371c2fbfa130b4fc55753dcbb5012a2bb95d3a5e0936e"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper389",
+          "page": 4,
+          "id": "e149c7c4f801efb7dd9dc1c24baf9f132b4090f241d8fcb5ac6dccafbf1decd8"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper381",
+          "page": 10,
+          "id": "561bbdb69c1de2318fdd2010f69a896c3b404f5d48089671194fb796133be06a"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper18",
+          "page": 1,
+          "id": "1b57be2f45c9480cecb16334486ee4c248b492d887e94977aeb2d9d7c391d464"
+        }
+      ],
+      "generation": {
+        "route": "unsupported_count",
+        "abstained": true
+      }
+    },
+    {
+      "id": "unsupported-4",
+      "category": "unsupported",
+      "question": "What private reviewer scores were assigned to paper6?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper6",
+          "page": 1,
+          "id": "1aede7238bdd439cb25eb8372936252161c5577bb311765bcb243e0e089f82a3"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper6",
+          "page": 11,
+          "id": "c02fbb023620750a2772c48c80819da07b85bf2cde74fb4d3adfa9af29f21877"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper6",
+          "page": 15,
+          "id": "da4f4b5342310cbbb56676f75d5fd22111c1566eb1c81e1fbf7decad536445a6"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper6",
+          "page": 16,
+          "id": "54327737a50773ca64a57cb27383473c83e0aed964f70d62f1f3d9fe3eb87c81"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper6",
+          "page": 13,
+          "id": "d2f8786bfe8ca4caef928a43ad69c951f07c8155aee7513e9ce472e05c1123e2"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper6",
+          "page": 16,
+          "id": "154db12d1501964184328f4eed6f944a9a8427d26c6ed02db1c1b58783236a71"
+        }
+      ],
+      "generation": {
+        "route": "content",
+        "abstained": true,
+        "base": {
+          "supported": false,
+          "answer": "I don't have enough evidence in the available corpus to answer this question.",
+          "cited": [],
+          "cited_gold": false,
+          "expected_recall": 0.0
+        }
+      }
+    }
+  ]
+}
