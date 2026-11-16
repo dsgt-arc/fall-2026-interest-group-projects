@@ -4,7 +4,7 @@ I conducted a 3x3x3 grid search to determine optimal parameters to improve the C
 The following parameters were used for the 3x3x3 grid search:
 
 
-| Weight Pairs (Lexical, Semantic) | Candidate Retrieval Amounts | Top K |
+| Weight Pairs (Semantic, Lexical) | Candidate Retrieval Amounts | Top K |
 | -------------------------------- | --------------------------- | ----- |
 | 0.2, 0.8                         | 5                           | 3     |
 | 0.5, 0.5                         | 20                          | 6     |
@@ -13,72 +13,182 @@ The following parameters were used for the 3x3x3 grid search:
 The default parameters (the control) was weight pair = 0.5, 0.5, candidate retrieval amount = 20, and top K = 6. 
 Thus, the grid search would evaluate how increasing or decreasing the parameters would affect the CLEF RAG system.
 
-The 3x3x3 grid search was chosen to keep the evaluation within a reasonable runtime as the total runtime for the experiment was already greater than 3.5 hours.
+The 3x3x3 grid search was chosen to keep the evaluation within a reasonable runtime as the total runtime for the experiment was already greater than 3.5 hours on a typical NVIDIA RTX Laptop.
 
 The weight pairs were chosen to evaluate how a heavier weighting towards a lexical ranker vs semantic ranker would affect the question & answer performance. The candidate retrieval amounts were chosen to determine how a small retrieval amount and a marginally higher retrieval amount (since 20 candidates is already a relatively high amount) would affect the question & answer performance. The top Ks were chosen to determine how a relatively lower and a relatively higher amount would affect the question & answer performance.
 
-The following questions and answers were used to evaluate the CLEF RAG system. The number of questions and answers were kept minimal but variety to keep the runtime reasonable.
+The following questions and answers were used to evaluate the CLEF RAG system. The number of questions and answers were kept minimal but varied to keep the runtime reasonable.
 
-| Question | Answer |
-| --- | --- |
-| What is disagreement-aware ensemble? | four detectors with fundamentally different assumptions are fused by a meta-learner that receives not just their individual scores but their variance and range as explicit features, encoding the degree of inter-detector inconsistency |
-| How does DeBERTa improves upon BERT-style encoders? | Through disentangled attention and enhanced decoding pre-training. |
-| What does the result show about JobBERT in paper484? | The results show that JobBERT is already a strong dense baseline. |
-| A teacher ensemble of the triplet members labelled what in paper333? | Soundscape, training, and prior-year windows. |
-| What's the bibliography size for paper501? | 17 references cited. |
-| According to paper160's official EXIST 2026 leaderboard results, what rank and ICM-Hard-Norm score did the NeverChorizoInMyPaella team achieve on Task 3.1? | Rank 38th, with an ICM-Hard Norm of 0.5662. |
-| Which team ranked higher in the official EXIST 2026 leaderboard for Task 3.1 hard-hard, the team for paper160 or the team for paper163? | Team ELiRF-UPV of paper163 ranked higher at 1st place than Team NeverChorizoInMyPaella of paper160 at 38th place. |
-| Which team ranked lower in the FinMMEval 2026 Task 2 leaderboard, the team for paper187 or the team for paper190? | HU_LLM_Fin in paper187 ranked lower. |
-| Did the team in paper172 rank higher than the team in paper173 in the official EXIST 2026 leaderboard for Task 2.1 ALL? Compare the F1-YES score difference. | No, the team in paper172 ranked lower than the team in paper173. The F1-YES score difference was 0.0191. |
-| Are the authors in paper241 and paper242 written by the same author? | Yes, they are both written by Anubhav. |
-| What is the home address of paper6's lead author? | Insufficient evidence. |
-| What is a agreement-aware ensemble? | No such term in the paper; the paper describes disagreement-aware ensemble. |
-| How does BERT improves upon DeBERTa-style encoders? | It does not; DeBERTa improves upon BERT-style encoders. |
-| What ensemble of the tuplet members labelled the soundscape, training, and prior-year windows in paper333. | Cannot answer; no tuplet members mentioned. |
+| # | Question | Answer |
+| --- | --- | --- |
+| 1 | What is disagreement-aware ensemble? | four detectors with fundamentally different assumptions are fused by a meta-learner that receives not just their individual scores but their variance and range as explicit features, encoding the degree of inter-detector inconsistency |
+| 2 | How does DeBERTa improves upon BERT-style encoders? | Through disentangled attention and enhanced decoding pre-training. |
+| 3 | What does the result show about JobBERT in paper484? | The results show that JobBERT is already a strong dense baseline. |
+| 4 | A teacher ensemble of the triplet members labelled what in paper333? | Soundscape, training, and prior-year windows. |
+| 5 | What's the bibliography size for paper501? | 17 references cited. |
+| 6 | According to paper160's official EXIST 2026 leaderboard results, what rank and ICM-Hard-Norm score did the NeverChorizoInMyPaella team achieve on Task 3.1? | Rank 38th, with an ICM-Hard Norm of 0.5662. |
+| 7 | Which team ranked higher in the official EXIST 2026 leaderboard for Task 3.1 hard-hard, the team for paper160 or the team for paper163? | Team ELiRF-UPV of paper163 ranked higher at 1st place than Team NeverChorizoInMyPaella of paper160 at 38th place. |
+| 8 | Which team ranked lower in the FinMMEval 2026 Task 2 leaderboard, the team for paper187 or the team for paper190? | HU_LLM_Fin in paper187 ranked lower. |
+| 9 | Did the team in paper172 rank higher than the team in paper173 in the official EXIST 2026 leaderboard for Task 2.1 ALL? Compare the F1-YES score difference. | No, the team in paper172 ranked lower than the team in paper173. The F1-YES score difference was 0.0191. |
+| 10 | Are the authors in paper241 and paper242 written by the same author? | Yes, they are both written by Anubhav. |
+| 11 | What is the home address of paper6's lead author? | Insufficient evidence. |
+| 12| What is a agreement-aware ensemble? | No such term in the paper; the paper describes disagreement-aware ensemble. |
+| 13 | How does BERT improves upon DeBERTa-style encoders? | It does not; DeBERTa improves upon BERT-style encoders. |
+| 14 | What ensemble of the tuplet members labelled the soundscape, training, and prior-year windows in paper333. | Cannot answer; no tuplet members mentioned. |
+
+
+**Note on the Retrieval and Generation**  
+Answers are generated by gemma3:12b and embeddings come from embeddinggemma:300m. Before generation, the first chunk of the paper is placed ahead of the results. As a result, page 1 was ranked first in all retrievals.
+
+**Primary Metric**  
+The primary metric was whether the CLEF RAG system generated a correct answer. Each distinct generated answers were compared with the expected answer in the table above. An answer counts as correct only if it states the key fact of the expected answer. Partially correct answers, answers missing a key detail, unintended abstention responses and errors count as wrong. For example, in Question 1 the answer must include "four detectors", because that is the definition the paper gives. Extra detail is accepted only if the paper supports it. Every claim was checked against the source papers. This was chosen as the primary metric because it is the primary purpose of the system, and retrieval metrics alone cannot show how correct the answer generated is.
+
+**Secondary Metrics**  
+Hit@k, MRR, nDCG, Recall@k and Gold Covered are secondary metrics, primarily to determine the retrieval quality. Note that since the opening chunk is prepended, Hit@1 and MRR are capped for every question whose gold page is not page 1. Hit@1 stayed at about 0.32 in every configuration for that reason, so the weights cannot move it.
 
 # Results
-I experimented different retriever weights, retrieval depth, and retrieval candidates compared to the default values of (0.5, 0.5), 6, and 20.
+The following table describes the overall results from the grid search:
 
-The CLEF RAG system performed well on most paper type questions. However, the CLEF RAG system performance did vary with the following questions:
+
+| Factor | Level | Correct answers | Gold page covered | Avg latency (s) |
+| --- | --- | --- | --- | --- |
+| Top K | 3 | 19.0% (24 of 126) | 82% | 27.1 |
+| Top K | 6 | 28.6% (36 of 126) | 94% | 39.1 |
+| Top K | 9 | 26.2% (33 of 126) | 97% | 39.6 |
+| Weights (semantic/lexical) | 0.2/0.8 | 24.6% (31 of 126) | 88% | 35.9 |
+| Weights | 0.5/0.5 | 23.8% (30 of 126) | 93% | 33.2 |
+| Weights | 0.8/0.2 | 25.4% (32 of 126) | 92% | 36.7 |
+| Candidates | 5 | 25.4% (32 of 126) | 91% | 34.4 |
+| Candidates | 20 | 23.8% (30 of 126) | 92% | 35.7 |
+| Candidates | 25 | 24.6% (31 of 126) | 92% | 35.7 |
+
+The following table describes correct answers per configuration:
+
+| Candidates | K | 0.2/0.8 | 0.5/0.5 | 0.8/0.2 |
+| --- | --- | --- | --- | --- |
+| 5 | 3 | 2 | 3 | 3 |
+| 5 | 6 | 4 | 4 | 4 |
+| 5 | 9 | **5 (best)** | 3 | 4 |
+| 20 | 3 | 3 | 2 | 3 |
+| 20 | 6 | 4 | **4 (control)** | 4 |
+| 20 | 9 | 3 | 4 | 3 |
+| 25 | 3 | 3 | 2 | 3 |
+| 25 | 6 | 4 | 4 | 4 |
+| 25 | 9 | 3 | 4 | 4 |
+
+The control (20 candidates, K=6, 0.5/0.5) answered 4 of 14 correctly. Twelve other configurations tie it and one (5 candidates, K=9, 0.2/0.8) scores 5. Overall, 93 of 378 runs (24.6%) were correct. The 20 and 25 candidate settings had identical retrieval metrics, so their one-run difference (on Question 1) is probably wording variation in the generated answers.
+
+**Correct runs per question** (out of 27):
+
+| # | Question (short) | Correct runs | Changes with the grid? |
+| --- | --- | --- | --- |
+| 1 | Disagreement-aware ensemble | 10 | Yes: only at K=6 and K=9, since the K=3 answers omit "four detectors" |
+| 2 | DeBERTa vs BERT-style encoders | 27 | No |
+| 3 | JobBERT result (paper484) | 25 | Yes: 2 runs at 5 candidates, 0.5/0.5, K=6 and K=9 |
+| 4 | Teacher ensemble (paper333) | 14 | Yes: weights and K |
+| 5 | Bibliography size (paper501) | 0 | No |
+| 6 | Paper160 rank and ICM-Hard-Norm | 0 | No |
+| 7 | Paper160 vs paper163 | 0 | No (9 errors, 18 wrong rank) |
+| 8 | FinMMEval ranking | 0 | No |
+| 9 | Paper172 vs paper173 | 0 | No |
+| 10 | Authorship | 0 | No |
+| 11 | Home address (abstain expected) | 17 | Yes: weights and K |
+| 12 | "agreement-aware" typo | 0 | No |
+| 13 | Reversed BERT/DeBERTa premise | 0 | No |
+| 14 | "tuplet" typo | 0 | No |
+
+Further details of retrieval metrics can be found in Appendix B.
+
+One question is answered correctly in every configuration (question 2), nine in none, and four (1, 3, 4 and 11) respond to the grid.
+
+Of the six paper-type questions (1 to 6), two were answered correctly in at least 25 of 27 runs (questions 2 and 3), one in 14 of 27 (question 4), one in 10 of 27 (question 1), and two in none (questions 5 and 6). The results varied with the following questions:
+- What is disagreement-aware ensemble?
+    - 10 of 27 runs correct, all at K=6 or K=9. The expected answer is the paper's definition, which starts with "four detectors". The other 17 runs omit "four detectors" (including all 9 at K=3) and are counted wrong. Many answers add detail such as a LightGBM meta-learner or the detector names. These terms were described and supported in paper408 so it is not hallucination.
+- What does the result show about JobBERT in paper484?
+    - 25 of 27 runs correct. The 2 failing runs (5 candidates, 0.5/0.5, K=6 and K=9) describe JobBERT only as a domain-adapted bi-encoder and do not say it is a strong dense baseline. All claims in the 27 answers are supported by paper484.
 - What's the bibliography size for paper501?
     - This question was a catalog-style question for the paper category questions, and more of a limitation of RAG in general.
-- According to paper160's official EXIST 2026 leaderboard results, what rank and ICM-Hard-Norm score did the NeverChorizoInMyPaella team achieve on Task 3.1?
-    - The CLEF RAG system either could not answer the question or stated the ICM-Hard score instead of the ICM-Hard-Norm score.
+    - 0 of 27 runs correct: the system abstained every time. The gold page (paper501:p11) was at rank 3 in all nine 0.8/0.2 configurations, so retrieval was not the only limit here.
+- According to paper160's official EXIST 2026 leaderboard results, what rank and ICM-Hard-Norm score did the NeverChorizoInMyPaella team achieve on Task 3.1? (Question 6)
+    - 0 of 27 runs correct, and the gold page was retrieved in all 27. All 9 runs at K=3 answered rank 38 with 0.1312 (the ICM-Hard value) labelled as the Norm score. At K=6 and K=9, 16 of 18 runs returned "I couldn't verify..." and 2 abstained.
 - A teacher ensemble of the triplet members labelled what in paper333?
-    - The CLEF RAG system could not answer the questions under certain parameters.
+    - 14 of 27 runs correct. Of the 13 failures, 6 gave no answer (0.8/0.2 with 20 or 25 candidates: 2 abstained at K=3 and 4 returned "couldn't verify" at K=6 and K=9). The other 7 gave a wrong answer (the triplet member names or the rank-mean weights, both accurate per paper333 but not what was asked), at 5 candidates with 0.8/0.2, K=3 with 0.5/0.5, and 5 candidates with 0.2/0.8 at K=3.
 
-The CLEF RAG system also did well on most sythesis type questions. Some observations:
+Some observations for synthesis questions:
 - Are the authors in paper241 and paper242 written by the same author?
-    - At certain parameters, the CLEF RAG system started also including "both papers list the email address", and "both papers list the ORCID ID...".
-    - The CLEF RAG system never explicitly states yes they are written by the same author.
+    - 0 of 27 runs correct. While every answer lists Anubhav as the author of both papers (and at certain parameters also notes shared email addresses and ORCID IDs), none explicitly states "yes" or "same author" to answer the yes/no question.
 - Did the team in paper172 rank higher than the team in paper173 in the official EXIST 2026 leaderboard for Task 2.1 ALL? Compare the F1-YES score difference.
-    - The CLEF RAG system was not able to answer for some parameters (I don't have enough evidence in the available corpus to answer this question.).
-    - The calculation of the difference varied.
+    - 0 of 27 runs correct: 9 runs abstained (all at K=3), 12 runs at K=6 and K=9 gave both ranks and F1-YES scores without stating "No" or the 0.0191 difference, and 6 runs (all at 0.2/0.8) miscalculated the difference as 0.0113.
 - Which team ranked higher in the official EXIST 2026 leaderboard for Task 3.1 hard-hard, the team for paper160 or the team for paper163?
-    - The CLEF RAG system was not able to answer for some parameters (The answer hit its output limit. Try a narrower question.
-    ).
-    - The CLEF RAG system did not explicitly say which team ranked higher.
-    - The CLEF RAG system also got the ranking wrong (Team ELiRF-UPV ranked 1st, not 3rd).
+    - 0 of 27 runs correct. 9 runs (all at K=3) returned the error "The answer hit its output limit. Try a narrower question." and no answer. The other 18 runs say ELiRF-UPV ranked 3rd (ICM-Hard 0.3195) and NeverChorizoInMyPaella 38th (0.1312), citing S3, where the expected answer is 1st. The leaderboard lists ELiRF-UPV_2 at rank 1 and ELiRF-UPV_1 at rank 3.
 - Which team ranked lower in the FinMMEval 2026 Task 2 leaderboard, the team for paper187 or the team for paper190?
-    - The CLEF RAG system did not explicitly say which team ranked lower.
+    - 0 of 27 runs correct. None states which team ranked lower. The answers give the ranks (HU_LLM_Fin 10th, IGT 3rd), but the question asks which team ranked lower, so they are counted wrong.
 
-Most notably, the CLEF RAG system performed poorly on all unsupported-type questions. Below summarizes what the CLEF RAG system answered across all parameters:
+Most notably, three of the four unsupported-type questions (12, 13 and 14) were never answered correctly (0 of 81 runs). The fourth (question 11, home address) was handled correctly in 17 of 27 runs. Below summarizes what the CLEF RAG system answered across all parameters:
 - What ensemble of the tuplet members labelled the soundscape, training, and prior-year windows in paper333.
-    - The CLEF RAG system failed to differentiate "tuplet" vs "triplet", and answered using the definition for "triplet" members. Tuplet was never mentioned in the corpus.
+    - 0 of 27 runs correct: the CLEF RAG system failed to differentiate "tuplet" vs "triplet", answering with the "triplet" definition in all 27 runs with no mention that "tuplet" does not appear in the corpus.
 - What is a agreement-aware ensemble?
-    - The CLEF RAG system failed to differentiate "agreement-aware" vs "disagreement-aware", and answered using the definition for "disagreement-aware". "Agreement-aware" was never mentioned in the corpus.
+    - 25 of 27 runs used the correct term "disagreement-aware" without saying the question's term does not appear, and 2 repeated "agreement-aware" as if it were valid. 0 of 27 were correct.
 - What is the home address of paper6's lead author?
     - The CLEF RAG system identified the author's university affiliation's address as the author's home address. 
+    - This happened in 10 of 27 runs: 8 of the 9 runs at 0.2/0.8, and 2 of the 9 at 0.5/0.5 (both at K=3). At 0.8/0.2 all 9 runs abstained. 16 runs abstained and 1 returned "couldn't verify". The affiliation address sits in the page-1 chunk that is always placed at rank 1, so the weights cannot change whether it is in context. Treat the weight pattern as tentative because it rests on one question.
 - How does BERT improves upon DeBERTa-style encoders?
     - The CLEF RAG system did not explicitly say that BERT does not improve upon DeBERTa-style encoders. The CLEF RAG system did state that DeBERTa improves upon BERT-style encoders, which was what was mentioned in the corpus.
+    - Counted as wrong under the strict standard (the key detail "It does not" is missing) in 27 of 27 runs.
 
 # Discussion
-> 🚧 **Work in Progress:** This section is currently being updated.
 
-# Appendix: Few-shot experiment in Ollama with Gemma3:12B to improve answering "What is a agreement-aware ensemble?"
+## Effect of each parameter
+
+1. Top K has the clearest effect. 
+    - K=3 scored lowest (19.0%), K=6 scored 28.6% and K=9 scored 26.2%. 
+    - The 3-run gap between K=6 and K=9 comes from Question 1, where more K=6 answers include "four detectors". 
+    - K=3 loses on two-paper questions. This may be due to the page 1 prepending in the retrieval function. K=9 costs latency of about 0.5 s more than K=6.
+
+2. Candidate amount had a small effect. 
+    - The 5, 20 and 25 candidate settings scored 25.4%, 23.8% and 24.6%. Most of the difference is in Question 1, where the answer wording varies from run to run. 
+    - The 20 and 25 settings had identical retrieval metrics, so their one-run difference is probably generation variation, not retrieval. 
+    - 5 candidates also lost the JobBERT question at 0.5/0.5 for K=6 and K=9. 
+
+3. Weight pair effect depended on the questions. 
+    - Questions 1, 4 and 11 respond to the weights. 
+    - 0.2/0.8 answers question 4 at K=6 and K=9 but returns the institutional address on question 11 (correct in 1 of 9 runs). 
+    - 0.8/0.2 abstains correctly on question 11 but never answers question 4 correctly (0 of 9). 
+    - 0.5/0.5 gets questions 4 and 11 right at K=6 and K=9.
+    - Overall, 0.8/0.2 scored 25.4%, 0.2/0.8 scored 24.6% and 0.5/0.5 scored 23.8%.
+    - The differences could be due to the small question sets, so it could be well within the noise.
+
+## Changing Parameters Did Not Improve the CLEF RAG System
+
+The suggested changes (candidate count, hybrid weights, top K) change which passages are retrieved. The questions that cost the most points were not decided by retrieval. Nine of 14 questions fail in every configuration, and for at least two of them the gold page was retrieved in every run: question 6 (all 27 runs) and question 5 (at rank 3 in all nine 0.8/0.2 runs). The "agreement-aware" question also fails in all 27 runs even though the answers are built from the disagreement-aware passage. These failures follow from how gemma3:12b uses the evidence (see Appendix A below).
+
+The primary metric is the number of correct answers against the expected answers on the same 14 questions, as described in the methods section. There was one parameter configuration (5 candidates, K=9, 0.2/0.8) that scored 5 of 14 against the control's 4 of 14. There were twelve parameter configurations that tied the control. It is possible that this improvement is just noise due to the limited amount of questions, so it is not evidence of an improved system. Retrieval metrics did not change much across the parameter configurations.
+
+## Next Steps
+
+The following steps are suggested to see what further improvements can be made if time permits:
+
+1. Experiment on prompt wording. Based on the Appendix A - Supplementary Test 1, tweaking the prompt based on the type of question may yield the most improvements. If time permits, repeat the experiment with different types of prompts. Alternatively, add more routes in the pipeline depending on the type of questions.
+2. Route questions to adapt K. Appendix A - Supplementary Test 2 suggests fewer chunks help a single-fact lookup, but K=3 hurts two-paper questions, so the choice would need to depend on the question type.
+3. Re-run the experiment without prepending the first page. The retrieval pipeline prepends the first page which may have contributed to generating the wrong answer, as shown in Appendix - Supplementary Test 2.
+4. Filter retrieved evidence by the question's key term. Drop chunks that do not contain the key term (for example "agreement-aware") and abstain if none remain. This needs key-term extraction, which may require changes to tokenization and other parts of the pipeline.
+
+
+# Appendix A: Supplementary Single-Run Experiments in Ollama with Gemma3:12B
+The tests in this appendix (Supplementary Tests 1 and 2) are single runs typed into Ollama with hand-copied evidence. They are not part of the 27-configuration grid search, and their results are not in `questions.csv`.
+
+## Supplementary Test 1 (single runs, outside the grid search): Verifying gemma3:12b baseline performance on identifying agreement-aware ensemble vs disagreement-aware ensemble (Question 12).
+
+The results show that the LLM has a hard time differentiating similar terms (e.g. disagreement-aware vs agreement-aware). The LLM generally answers as if the terms were the same, or suggests there is a similar term that the user may be looking for. It will never say there is no evidence.
+
+- 2 of 11 met the expected behavior: they said they did not find exactly what was asked and then gave the disagreement-aware definition (transcripts 2 and 6).
+- 3 of 11 answered about "disagreement-aware" without saying the question's term was not found (1, 8 and 10).
+- 6 of 11 applied the question's term to the evidence's definition (3, 4, 5, 7, 9 and 11). In transcript 9 the analysis step wrongly stated that the term was in the evidence.
+
+The two acceptable runs came from prompts that did not tell the model to "include the exact term in the question". Every prompt that added that instruction (3, 4 and 5) gave the question's term with the evidence's definition. This suggests the model can sometimes tell the terms apart and that prompt wording matters, but it does not do so reliably.
+
 
 ```
-Experiment 1:
 >>> Answer my question using only information from the evidence.
 ... Evidence: [evidences obtained from retrieval], 
 ... QUESTION: What is an agreement-aware ensemble?
@@ -139,7 +249,6 @@ features, encoding the degree of inter-detector inconsistency."
 ```
 
 ```
-(base) PS C:\Users\david> ollama run gemma3:12b
 >>> Answer my question using the only information provided from the evidence. Do not hallucinate the answer, especially if the evidence contains information sim
 ... ilar to the question. If there is something that is similar to the question in the evidence, do not explicitly answer. Instead, say "I did not find exactly
 ... what you are looking for, but this may help" before answering. Include the exact term in the question and the term you found that may be relevant before ans
@@ -336,3 +445,96 @@ You are absolutely correct. My apologies. The evidence describes a "disagreement
 
 Therefore, the answer is: **Not enough evidence.**
 ```
+
+## Supplementary Test 2 (single runs, outside the grid search): gemma3:12b answering Question 6 with different evidence
+
+
+| Test | Evidence given | Result |
+| --- | --- | --- |
+| 1 | Gold chunk, first reformatted into a table by the model, then the question asked | Rank 38, ICM-Hard-Norm 0.5662 (correct) |
+| 2 | Gold chunk (`chunk_id 1357a800...`) alone | Rank 38, ICM-Hard-Norm 0.5662 (correct) |
+| 3 | Evidence from the eval file `02_eval_d768-c25_-k3_w0.8-0.2json` (K=3) | Rank 38, ICM-Hard-Norm 0.1312 (wrong column) |
+
+The results show that the LLM was able to correctly generate the answer when given just the gold chunk, indicating that something in the CLEF RAG pipeline (such as the extra retrieved chunks or prepended page-1 context) is causing it to generate the wrong answer.
+
+```
+>>> Identify the table from the following chunk of text and then format them into a table: [excerpt obtained from chunk_id 1357a800bbf92dee9dea33d75730b2069a436bb8d20e6869b7fe8f7db712f861]
+
+Okay, here's the table extracted from the provided text, formatted for readability.  I've included Table 5 only as
+it's the full table presented.
+
+**Table 5: Official EXIST 2026 Leaderboard: Task 3.1 (Sexism Identification) – Hard-Hard Evaluation (ALL
+instances)**
+
+| System Ranking | System Name                 | ICM-Hard | ICM-Hard Norm | F1     | YES   |
+|----------------|-----------------------------|----------|---------------|--------|-------|
+| 0              | EXIST2025-test-gold         | 0        | 0.9907        | 1.0000 | 1.0000 |
+| 1              | ELiRF-UPV_2                | 0.3307   | 0.6669        | 0.7627 |       |
+| 2              | German&Blai_3              | 0.3284   | 0.6657        | 0.7487 |       |
+| 3              | ELiRF-UPV_1                | 0.3195   | 0.6613        | 0.7504 |       |
+| 4              | Aegis-Athena_2             | 0.3096   | 0.6563        | 0.7528 |       |
+| 38             | NeverChorizoInMyPaella_3   | 0.1312   | 0.5662        | 0.6852 |       |
+| 74             | EXIST2025-test_majority-class | -0.4244  | 0.2858        | 0.0000 |       |
+| 75             | EXIST2025-test_minority-class | -0.6036  | 0.1954        | 0.6117 |       |
+
+**Notes:**
+
+*   The table represents the leaderboard for Task 3.1 (Sexism Identification) under the Hard-Hard evaluation
+paradigm.
+*   "ICM-Hard Norm" refers to a normalized ICM-Hard value.
+*   The "YES" column doesn't have associated values for all systems.
+*   The text states that the team's row would be bolded and shaded, but I can't represent formatting in this
+text-based response.
+
+>>> What rank and ICM-Hard-Norm score did the NeverChorizoInMyPaella team achieve on Task 3.1?
+According to the table, the NeverChorizoInMyPaella team achieved a rank of **38** and an ICM-Hard-Norm score of
+**0.5662** on Task 3.1.
+```
+
+```
+>>> Answer the following question based on the evidence: QUESTION: According to paper160's official EXIST 2026 leaderboa
+... rd results, what rank and ICM-Hard-Norm score did the NeverChorizoInMyPaella team achieve on Task 3.1? EVIDENCE: [evidence obtained from chunk_id 1357a800bbf92dee9dea33d75730b2069a436bb8d20e6869b7fe8f7db712f861]
+
+According to the provided evidence, the NeverChorizoInMyPaella team achieved **rank 38** and an **ICM-Hard-Norm
+score of 0.5662** on Task 3.1.
+```
+
+```
+>>> Answer the following question using the following evidence provided. QUESTION: According to paper160's official EXIS
+... T 2026 leaderboard results, what rank and ICM-Hard-Norm score did the NeverChorizoInMyPaella team achieve on Task 3.
+... 1? EVIDENCE:  [evidence obtained from file 02_eval_d768-c25_-k3_w0.8-0.2.json]
+
+According to the provided evidence, the NeverChorizoInMyPaella team achieved a rank of 38 and an ICM-Hard-Norm
+score of 0.1312 on Task 3.1.
+```
+
+# Appendix B: Tabulated Retrieval Metrics
+| Candidate Amount | Retrieval Depth | Weight Pair (semantic/lexical) | AP@1 | Hit@1 | MRR@1 | Precision@1 | Recall@1 | nDCG@1 | AP@3 | Hit@3 | MRR@3 | Precision@3 | Recall@3 | nDCG@3 | AP@6 | Hit@6 | MRR@6 | Precision@6 | Recall@6 | nDCG@6 | Gold Coverage Rate |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 5 | 3 | 0.2/0.8 | 0.250 | 0.333 | 0.333 | 0.333 | 0.250 | 0.333 | 0.590 | 0.833 | 0.583 | 0.361 | 0.833 | 0.654 | 0.590 | 0.833 | 0.583 | 0.181 | 0.833 | 0.654 | 0.769 |
+| 5 | 3 | 0.5/0.5 | 0.250 | 0.333 | 0.333 | 0.333 | 0.250 | 0.333 | 0.618 | 0.917 | 0.611 | 0.389 | 0.917 | 0.696 | 0.618 | 0.917 | 0.611 | 0.194 | 0.917 | 0.696 | 0.846 |
+| 5 | 3 | 0.8/0.2 | 0.250 | 0.333 | 0.333 | 0.333 | 0.250 | 0.333 | 0.618 | 0.917 | 0.611 | 0.389 | 0.917 | 0.696 | 0.618 | 0.917 | 0.611 | 0.194 | 0.917 | 0.696 | 0.846 |
+| 5 | 6 | 0.2/0.8 | 0.231 | 0.308 | 0.308 | 0.308 | 0.231 | 0.308 | 0.558 | 0.846 | 0.564 | 0.359 | 0.808 | 0.627 | 0.577 | 0.923 | 0.583 | 0.192 | 0.885 | 0.660 | 0.846 |
+| 5 | 6 | 0.5/0.5 | 0.231 | 0.308 | 0.308 | 0.308 | 0.231 | 0.308 | 0.583 | 0.923 | 0.590 | 0.385 | 0.885 | 0.666 | 0.615 | 1.000 | 0.609 | 0.218 | 1.000 | 0.716 | 1.000 |
+| 5 | 6 | 0.8/0.2 | 0.231 | 0.308 | 0.308 | 0.308 | 0.231 | 0.308 | 0.583 | 0.923 | 0.590 | 0.385 | 0.885 | 0.666 | 0.596 | 0.923 | 0.590 | 0.205 | 0.923 | 0.683 | 0.923 |
+| 5 | 9 | 0.2/0.8 | 0.231 | 0.308 | 0.308 | 0.308 | 0.231 | 0.308 | 0.558 | 0.846 | 0.564 | 0.359 | 0.808 | 0.627 | 0.577 | 0.923 | 0.583 | 0.192 | 0.885 | 0.660 | 0.923 |
+| 5 | 9 | 0.5/0.5 | 0.231 | 0.308 | 0.308 | 0.308 | 0.231 | 0.308 | 0.583 | 0.923 | 0.590 | 0.385 | 0.885 | 0.666 | 0.615 | 1.000 | 0.609 | 0.218 | 1.000 | 0.716 | 1.000 |
+| 5 | 9 | 0.8/0.2 | 0.231 | 0.308 | 0.308 | 0.308 | 0.231 | 0.308 | 0.583 | 0.923 | 0.590 | 0.385 | 0.885 | 0.666 | 0.612 | 1.000 | 0.605 | 0.218 | 1.000 | 0.712 | 1.000 |
+| 20 | 3 | 0.2/0.8 | 0.250 | 0.333 | 0.333 | 0.333 | 0.250 | 0.333 | 0.632 | 0.917 | 0.625 | 0.389 | 0.917 | 0.707 | 0.632 | 0.917 | 0.625 | 0.194 | 0.917 | 0.707 | 0.846 |
+| 20 | 3 | 0.5/0.5 | 0.250 | 0.333 | 0.333 | 0.333 | 0.250 | 0.333 | 0.590 | 0.833 | 0.583 | 0.361 | 0.833 | 0.654 | 0.590 | 0.833 | 0.583 | 0.181 | 0.833 | 0.654 | 0.769 |
+| 20 | 3 | 0.8/0.2 | 0.250 | 0.333 | 0.333 | 0.333 | 0.250 | 0.333 | 0.618 | 0.917 | 0.611 | 0.389 | 0.917 | 0.696 | 0.618 | 0.917 | 0.611 | 0.194 | 0.917 | 0.696 | 0.846 |
+| 20 | 6 | 0.2/0.8 | 0.231 | 0.308 | 0.308 | 0.308 | 0.231 | 0.308 | 0.596 | 0.923 | 0.603 | 0.385 | 0.885 | 0.676 | 0.609 | 1.000 | 0.615 | 0.205 | 0.962 | 0.703 | 0.923 |
+| 20 | 6 | 0.5/0.5 | 0.231 | 0.308 | 0.308 | 0.308 | 0.231 | 0.308 | 0.558 | 0.846 | 0.564 | 0.359 | 0.808 | 0.627 | 0.609 | 1.000 | 0.603 | 0.218 | 1.000 | 0.710 | 1.000 |
+| 20 | 6 | 0.8/0.2 | 0.231 | 0.308 | 0.308 | 0.308 | 0.231 | 0.308 | 0.583 | 0.923 | 0.590 | 0.385 | 0.885 | 0.666 | 0.596 | 0.923 | 0.590 | 0.205 | 0.923 | 0.683 | 0.923 |
+| 20 | 9 | 0.2/0.8 | 0.231 | 0.308 | 0.308 | 0.308 | 0.231 | 0.308 | 0.596 | 0.923 | 0.603 | 0.385 | 0.885 | 0.676 | 0.609 | 1.000 | 0.615 | 0.205 | 0.962 | 0.703 | 0.923 |
+| 20 | 9 | 0.5/0.5 | 0.231 | 0.308 | 0.308 | 0.308 | 0.231 | 0.308 | 0.558 | 0.846 | 0.564 | 0.359 | 0.808 | 0.627 | 0.609 | 1.000 | 0.603 | 0.218 | 1.000 | 0.710 | 1.000 |
+| 20 | 9 | 0.8/0.2 | 0.231 | 0.308 | 0.308 | 0.308 | 0.231 | 0.308 | 0.583 | 0.923 | 0.590 | 0.385 | 0.885 | 0.666 | 0.612 | 1.000 | 0.605 | 0.218 | 1.000 | 0.712 | 1.000 |
+| 25 | 3 | 0.2/0.8 | 0.250 | 0.333 | 0.333 | 0.333 | 0.250 | 0.333 | 0.632 | 0.917 | 0.625 | 0.389 | 0.917 | 0.707 | 0.632 | 0.917 | 0.625 | 0.194 | 0.917 | 0.707 | 0.846 |
+| 25 | 3 | 0.5/0.5 | 0.250 | 0.333 | 0.333 | 0.333 | 0.250 | 0.333 | 0.590 | 0.833 | 0.583 | 0.361 | 0.833 | 0.654 | 0.590 | 0.833 | 0.583 | 0.181 | 0.833 | 0.654 | 0.769 |
+| 25 | 3 | 0.8/0.2 | 0.250 | 0.333 | 0.333 | 0.333 | 0.250 | 0.333 | 0.618 | 0.917 | 0.611 | 0.389 | 0.917 | 0.696 | 0.618 | 0.917 | 0.611 | 0.194 | 0.917 | 0.696 | 0.846 |
+| 25 | 6 | 0.2/0.8 | 0.231 | 0.308 | 0.308 | 0.308 | 0.231 | 0.308 | 0.596 | 0.923 | 0.603 | 0.385 | 0.885 | 0.676 | 0.609 | 1.000 | 0.615 | 0.205 | 0.962 | 0.703 | 0.923 |
+| 25 | 6 | 0.5/0.5 | 0.231 | 0.308 | 0.308 | 0.308 | 0.231 | 0.308 | 0.558 | 0.846 | 0.564 | 0.359 | 0.808 | 0.627 | 0.609 | 1.000 | 0.603 | 0.218 | 1.000 | 0.710 | 1.000 |
+| 25 | 6 | 0.8/0.2 | 0.231 | 0.308 | 0.308 | 0.308 | 0.231 | 0.308 | 0.583 | 0.923 | 0.590 | 0.385 | 0.885 | 0.666 | 0.596 | 0.923 | 0.590 | 0.205 | 0.923 | 0.683 | 0.923 |
+| 25 | 9 | 0.2/0.8 | 0.231 | 0.308 | 0.308 | 0.308 | 0.231 | 0.308 | 0.596 | 0.923 | 0.603 | 0.385 | 0.885 | 0.676 | 0.609 | 1.000 | 0.615 | 0.205 | 0.962 | 0.703 | 0.923 |
+| 25 | 9 | 0.5/0.5 | 0.231 | 0.308 | 0.308 | 0.308 | 0.231 | 0.308 | 0.558 | 0.846 | 0.564 | 0.359 | 0.808 | 0.627 | 0.609 | 1.000 | 0.603 | 0.218 | 1.000 | 0.710 | 1.000 |
+| 25 | 9 | 0.8/0.2 | 0.231 | 0.308 | 0.308 | 0.308 | 0.231 | 0.308 | 0.583 | 0.923 | 0.590 | 0.385 | 0.885 | 0.666 | 0.612 | 1.000 | 0.605 | 0.218 | 1.000 | 0.712 | 1.000 |
