@@ -562,8 +562,8 @@ TABLES = [
 ]
 
 
-def write_summary():
-    runs = [json.loads(p.read_text()) for p in sorted(RESULTS.glob("*.json"))]
+def write_summary(results=RESULTS, summary=SUMMARY):
+    runs = [json.loads(p.read_text()) for p in sorted(results.glob("*.json"))]
     runs.sort(key=lambda r: (r["config"] != "baseline", r["config"], r["generate"]))
     lines = [
         "# RAG diagnostics",
@@ -594,7 +594,7 @@ def write_summary():
             values = run["summary"][section]
             cells = [fmt(values.get(key), kind) for _, key, kind in columns]
             lines.append(f"| {run['run']} | " + " | ".join(cells) + " |")
-    SUMMARY.write_text("\n".join(lines) + "\n")
+    summary.write_text("\n".join(lines) + "\n")
 
 
 # ---------------------------------------------------------------- main
@@ -657,13 +657,25 @@ def main():
     )
     parser.add_argument("--config-file", type=Path, default=HERE / "configs.toml")
     parser.add_argument("--index-dir", type=Path, default=STARTER / "index")
+    parser.add_argument(
+        "--questions",
+        type=Path,
+        help="Diagnose every config on this question file instead; results go to"
+        " results/diagnostics/<file stem>/",
+    )
     args = parser.parse_args()
 
     configs = load_configs(args.config_file)
     missing = set(args.configs) - set(configs)
     if missing:
         raise SystemExit(f"Unknown configs: {sorted(missing)}. Have: {sorted(configs)}")
-    RESULTS.mkdir(parents=True, exist_ok=True)
+    results, summary = RESULTS, SUMMARY
+    if args.questions:
+        for config in configs.values():
+            config["questions"] = str(args.questions.resolve())
+        results = RESULTS / args.questions.stem
+        summary = results / "summary.md"
+    results.mkdir(parents=True, exist_ok=True)
     models = LocalModels()
     with Index(args.index_dir.resolve()) as index:
         chunks = [source_record(d) for d in index.documents()]
@@ -672,10 +684,10 @@ def main():
         for name in args.configs or configs:
             print(f"{name}: {configs[name]['description']}")
             result = diagnose_config(name, configs[name], index, models, chunks, vocab, shape, args)
-            out = RESULTS / f"{result['run']}.json"
+            out = results / f"{result['run']}.json"
             out.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n")
-    write_summary()
-    print(f"Wrote {SUMMARY}")
+    write_summary(results, summary)
+    print(f"Wrote {summary}")
 
 
 if __name__ == "__main__":
