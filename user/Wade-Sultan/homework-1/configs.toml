@@ -1,0 +1,88 @@
+# Retrieval experiments. Run with: ./run.sh [config ...]   (no names = all configs)
+#
+# [defaults] matches the starter system. Each [configs.<name>] table is one
+# experiment and only needs the keys it changes; everything else is inherited.
+
+[defaults]
+# Question set, relative to this file. Only questions with gold_sources are scored.
+questions = "../../../homework-1/clef-rag/eval/questions.json"
+# Metric cutoffs. Rankings never go deeper than top_k, so k > top_k adds nothing.
+cutoffs = [1, 3, 6]
+
+# Retriever knobs (see retriever.py).
+candidates = 20        # dense and BM25 candidates each, before fusion
+semantic_weight = 0.5  # RRF weight for the dense (Chroma) retriever
+lexical_weight = 0.5   # RRF weight for BM25
+rrf_c = 60             # RRF smoothing constant
+top_k = 6              # passages kept after fusion
+prepend_intro = true   # force the leading paper's first passage to rank 1
+
+# Embedding-mismatch strategies (strategies.py); all off in the starter system.
+expand_query = false   # append titles for "paperN" and expand acronyms
+query_mode = "plain"   # "plain", "multi_query" or "hyde"
+rewrites = 3           # rewordings per question in multi_query mode
+doc2query_weight = 0.0 # RRF weight for doc2query's generated questions (needs ./doc2query.sh)
+rerank_depth = 0       # gemma3 reorders this many fused candidates; 0 = off
+
+# Evaluation knobs: whether a question's "papers"/"track" fields restrict retrieval.
+paper_filter = true
+track_filter = true
+
+[configs.baseline]
+description = "Starter system, unchanged"
+
+[configs.no-intro]
+description = "Disable the page-1 prepend"
+prepend_intro = false
+
+# Example of the format; uncomment or copy to add experiments.
+#
+# [configs.open-corpus]
+# description = "Ignore the question's paper filter and search all papers"
+# paper_filter = false
+
+# ---------------------------------------------------------------- embedding mismatch
+# One strategy at a time, then combinations. gemma3 outputs are cached in cache/,
+# so only the first run of an LLM strategy is slow.
+
+[configs.expand]
+description = "Append paper titles and expand acronyms"
+expand_query = true
+
+[configs.multi-query]
+description = "Search the question plus 3 gemma3 rewordings"
+query_mode = "multi_query"
+
+[configs.hyde]
+description = "Dense search on a gemma3 hypothetical answer (HyDE)"
+query_mode = "hyde"
+
+[configs.doc2query]
+description = "Also match questions generated from each abstract"
+doc2query_weight = 0.5
+
+[configs.rerank]
+description = "gemma3 reorders the top 20 fused candidates"
+rerank_depth = 20
+
+[configs.expand-multi-query]
+description = "Expansion, then multi-query"
+expand_query = true
+query_mode = "multi_query"
+
+[configs.expand-hyde]
+description = "Expansion, then HyDE"
+expand_query = true
+query_mode = "hyde"
+
+[configs.expand-doc2query]
+description = "Expansion plus doc2query"
+expand_query = true
+doc2query_weight = 0.5
+
+[configs.expand-doc2query-rerank]
+description = "Expansion plus doc2query, reranked by gemma3"
+expand_query = true
+doc2query_weight = 0.5
+rerank_depth = 20
+

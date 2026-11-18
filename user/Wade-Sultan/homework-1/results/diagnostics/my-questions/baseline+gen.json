@@ -1,0 +1,2683 @@
+{
+  "config": "baseline",
+  "run": "baseline+gen",
+  "generate": true,
+  "description": "Starter system, unchanged",
+  "run_at": "2026-11-18T02:15:28+00:00",
+  "settings": {
+    "questions": "/home/theatomicsultan/omscs/clef/hw1/user/Wade-Sultan/homework-1/my-questions.json",
+    "cutoffs": [
+      1,
+      3,
+      6
+    ],
+    "candidates": 20,
+    "semantic_weight": 0.5,
+    "lexical_weight": 0.5,
+    "rrf_c": 60,
+    "top_k": 6,
+    "prepend_intro": true,
+    "expand_query": false,
+    "query_mode": "plain",
+    "rewrites": 3,
+    "doc2query_weight": 0.0,
+    "rerank_depth": 0,
+    "paper_filter": true,
+    "track_filter": true
+  },
+  "changed_from_defaults": {},
+  "index": {
+    "generation": "build-b0d11cd06fb64d168d9ae66033aca1aa",
+    "created_at": "2026-10-04T22:53:29.530661+00:00",
+    "embedding_model": "embeddinggemma:300m",
+    "chunk_bytes": 1400,
+    "overlap_bytes": 250
+  },
+  "questions": 20,
+  "errors": 0,
+  "summary": {
+    "chunking": {
+      "chunks": 21046,
+      "median_bytes": 1282.0,
+      "fragment_rate": 0.052979188444359976,
+      "mid_sentence_rate": 0.0014627011214041932,
+      "page_break_cut_rate": 0.2610032362459547,
+      "section_span_rate": 0.29806138933764137,
+      "retrieved_fragments": 0.058823529411764705,
+      "quotes": {
+        "retrieved": 0,
+        "not_retrieved": 0,
+        "split": 0,
+        "missing": 0
+      }
+    },
+    "embedding": {
+      "hit_fused": 0.47058823529411764,
+      "hit_dense": 0.29411764705882354,
+      "hit_lexical": 0.5294117647058824,
+      "mrr_fused": 0.22941176470588234,
+      "mrr_dense": 0.17647058823529413,
+      "mrr_lexical": 0.36274509803921573,
+      "unmatched_questions": 0,
+      "gold_overlap": 0.6313958916900093,
+      "paraphrases": 0,
+      "paraphrase_hit_fused": null,
+      "paraphrase_hit_dense": null
+    },
+    "noise": {
+      "precision": 0.0980392156862745,
+      "off_target_rate": 0.5784313725490197,
+      "distinct_papers": 3.0588235294117645,
+      "rank1_gold": 0.11764705882352941,
+      "supported_clean": 0.5882352941176471,
+      "supported_noisy": 0.7058823529411765,
+      "recall_clean": 0.34546454451345754,
+      "recall_noisy": 0.30069169960474307,
+      "cited_distractor": 0.23529411764705882
+    },
+    "context": {
+      "mean_dropped": 0.0,
+      "questions_dropping": 0,
+      "gold_lost": 0,
+      "max_budget_used": 0.9843566021867115,
+      "max_est_prompt_tokens": 3000,
+      "context_tokens": 8192,
+      "recall_first": 0.661715367965368,
+      "recall_middle": 0.6206439393939394,
+      "recall_last": 0.40625,
+      "cited_gold_first": 0.875,
+      "cited_gold_middle": 0.75,
+      "cited_gold_last": 0.375
+    },
+    "hallucination": {
+      "answered": 0.5882352941176471,
+      "expected_recall": 0.34546454451345754,
+      "ungrounded_number_answers": 0,
+      "ungrounded_term_rate": 0.08104536064144388,
+      "abstained": 1.0,
+      "errors": 1
+    }
+  },
+  "results": [
+    {
+      "id": "detail-1",
+      "category": "detail",
+      "question": "How many unique generator models were used to generate the machine-generated portion of the PAN dataset?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper422",
+          "page": 1,
+          "id": "08620edee426bb10f89fec13aac73e5d1980cf860034d00bdedafd916d84a110"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper422",
+          "page": 3,
+          "id": "83742eb4cc9b597c5fa0790ce49355137b75044e08860b8e1111760aa69b9075"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper389",
+          "page": 4,
+          "id": "e149c7c4f801efb7dd9dc1c24baf9f132b4090f241d8fcb5ac6dccafbf1decd8"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper95",
+          "page": 8,
+          "id": "19642c58c54683e971fc94f966ac3305f7c3095765179577be656305e3e731ec"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper419",
+          "page": 3,
+          "id": "9b845e367982f3fa08d3628d13a1feb4cb55f2c4df5f8341995eb2a7704f4e51"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper390",
+          "page": 3,
+          "id": "dd38cf03e395a8a11f5cb0e36122dad24048e04dbd9324177ccba4b40a136a18"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": null,
+          "dense": null,
+          "lexical": null
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.5454545454545454,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.0,
+        "off_target": 6,
+        "passages": 6,
+        "distinct_papers": 5,
+        "rank1_gold": false
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.9463685272360457,
+        "est_prompt_tokens": 2987
+      },
+      "generation": {
+        "base": {
+          "supported": true,
+          "answer": "The dataset contained machine texts generated by twenty-two generators spanning eight model families. [S2]\n\nThe machine-generated portion of the dataset included texts from models such as gemini-pro-paraphrase and gpt-4-turbo-paraphrase. [S2]\n\nThe LLM-generated portion of the Source Detection dataset was produced by models including K2-Think V2, GPT-5 Nano, Gemini-3 Flash, and DeepSeek R1. [S6]",
+          "cited": [
+            {
+              "source_id": "S2",
+              "document_id": "paper422",
+              "page": 3,
+              "id": "83742eb4cc9b597c5fa0790ce49355137b75044e08860b8e1111760aa69b9075"
+            },
+            {
+              "source_id": "S6",
+              "document_id": "paper390",
+              "page": 3,
+              "id": "dd38cf03e395a8a11f5cb0e36122dad24048e04dbd9324177ccba4b40a136a18"
+            }
+          ],
+          "cited_gold": false,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [
+            "spanning",
+            "such"
+          ],
+          "ungrounded_term_rate": 0.045454545454545456,
+          "expected_recall": 0.0
+        },
+        "noisy": {
+          "supported": true,
+          "answer": "The dataset contains machine-generated texts from twenty-two generators. [S3]\n\nThese twenty-two generators span eight model families. [S3]",
+          "cited": [
+            {
+              "source_id": "S3",
+              "document_id": "paper422",
+              "page": 3,
+              "id": "83742eb4cc9b597c5fa0790ce49355137b75044e08860b8e1111760aa69b9075"
+            }
+          ],
+          "cited_gold": false,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [],
+          "ungrounded_term_rate": 0.0,
+          "expected_recall": 0.0,
+          "distractors": 3,
+          "cited_distractor": false
+        }
+      }
+    },
+    {
+      "id": "detail-2",
+      "category": "detail",
+      "question": "How many text samples are in the Kaggle Academic out-of-distribution dataset?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper446",
+          "page": 1,
+          "id": "ef0347db9a59de68ee8ce4ee31600ba1c82a36310692a3f6b2a090a06e097ba2"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper446",
+          "page": 2,
+          "id": "a8c014c3cae1c2819aa575e320307199df25b9a33b9449bf3f4dbe4659a0b3b0"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper272",
+          "page": 3,
+          "id": "8975c9a9473d00dfc124d3c14b7d94396bc0828a12512c2ec7c919b8821e938c"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper450",
+          "page": 14,
+          "id": "a09af0a5ad1b4029390ca9124d952b9635f247a4047d1af0bc731e824af53a20"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper416",
+          "page": 3,
+          "id": "3461d66996272173e3544440bccb8d961c2e6fded55bcbc9127206b014af2217"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper343",
+          "page": 2,
+          "id": "72a4df3f836b09631f147f548fb8c1f4bd7b8fa73c12bc0ac182c957e0a5afe2"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 5,
+          "dense": null,
+          "lexical": 2
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.625,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.16666666666666666,
+        "off_target": 5,
+        "passages": 6,
+        "distinct_papers": 5,
+        "rank1_gold": false
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.9145349324834354,
+        "est_prompt_tokens": 2850
+      },
+      "generation": {
+        "base": {
+          "supported": false,
+          "answer": "I don't have enough evidence in the available corpus to answer this question.",
+          "cited": [],
+          "cited_gold": false,
+          "expected_recall": 0.0
+        },
+        "noisy": {
+          "supported": false,
+          "answer": "I don't have enough evidence in the available corpus to answer this question.",
+          "cited": [],
+          "cited_gold": false,
+          "expected_recall": 0.0,
+          "distractors": 3,
+          "cited_distractor": false
+        },
+        "position": {
+          "first": {
+            "supported": true,
+            "answer": "The Kaggle Academic dataset contains 6,069 text samples. [S1]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper416",
+                "page": 3,
+                "id": "3461d66996272173e3544440bccb8d961c2e6fded55bcbc9127206b014af2217"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [
+              "contains"
+            ],
+            "ungrounded_term_rate": 0.16666666666666666,
+            "expected_recall": 1.0
+          },
+          "middle": {
+            "supported": true,
+            "answer": "The Kaggle Academic dataset contains 6,069 text samples. [S3]",
+            "cited": [
+              {
+                "source_id": "S3",
+                "document_id": "paper416",
+                "page": 3,
+                "id": "3461d66996272173e3544440bccb8d961c2e6fded55bcbc9127206b014af2217"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [
+              "contains"
+            ],
+            "ungrounded_term_rate": 0.16666666666666666,
+            "expected_recall": 1.0
+          },
+          "last": {
+            "supported": false,
+            "answer": "I don't have enough evidence in the available corpus to answer this question.",
+            "cited": [],
+            "cited_gold": false,
+            "expected_recall": 0.0
+          }
+        }
+      }
+    },
+    {
+      "id": "detail-3",
+      "category": "detail",
+      "question": "What GPU did the HULAT-HAI authors run their models on?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper468",
+          "page": 1,
+          "id": "aba96abd89563dcab32e411852abc145f221175c4c113a7576eb020d379bc1a8"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper468",
+          "page": 4,
+          "id": "338dff86d2234e7428e2f6d290d78bcd266c8b1547cc7ecfdb1ecb47bca1d07f"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper468",
+          "page": 5,
+          "id": "9525e64d06db9112c652c258ebf1d47271e934d5535e1d0d577eb24c85556a22"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper468",
+          "page": 1,
+          "id": "e5ce4972089a4c7e5e6bf338f12553cb0d5a5893a5277f7af37505e262467165"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper220",
+          "page": 17,
+          "id": "5744796927c9a6bafbed1b32d1b0ee0949cbf5f3397339add3a452f1c37745c6"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper221",
+          "page": 5,
+          "id": "3407c1c1ad297533a1167d4ccfc009a265f6a22c6d77834083d074d97329bed8"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 2,
+          "dense": 1,
+          "lexical": 2
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.5,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.16666666666666666,
+        "off_target": 2,
+        "passages": 6,
+        "distinct_papers": 3,
+        "rank1_gold": false
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.9415655085809962,
+        "est_prompt_tokens": 2919
+      },
+      "generation": {
+        "base": {
+          "supported": true,
+          "answer": "The HULAT-HAI authors ran their models on an NVIDIA L4 GPU. [S2]\n\nAll inference runs exclusively used an NVIDIA L4 GPU when selecting models. [S3]",
+          "cited": [
+            {
+              "source_id": "S2",
+              "document_id": "paper468",
+              "page": 4,
+              "id": "338dff86d2234e7428e2f6d290d78bcd266c8b1547cc7ecfdb1ecb47bca1d07f"
+            },
+            {
+              "source_id": "S3",
+              "document_id": "paper468",
+              "page": 5,
+              "id": "9525e64d06db9112c652c258ebf1d47271e934d5535e1d0d577eb24c85556a22"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [
+            "ran",
+            "selecting"
+          ],
+          "ungrounded_term_rate": 0.1111111111111111,
+          "expected_recall": 1.0
+        },
+        "noisy": {
+          "supported": true,
+          "answer": "The HULAT-HAI authors ran their models on an NVIDIA L4 GPU. [S2]\n\nAll inference runs for model selection were exclusively on an NVIDIA L4 GPU. [S3]",
+          "cited": [
+            {
+              "source_id": "S2",
+              "document_id": "paper468",
+              "page": 4,
+              "id": "338dff86d2234e7428e2f6d290d78bcd266c8b1547cc7ecfdb1ecb47bca1d07f"
+            },
+            {
+              "source_id": "S3",
+              "document_id": "paper468",
+              "page": 5,
+              "id": "9525e64d06db9112c652c258ebf1d47271e934d5535e1d0d577eb24c85556a22"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [
+            "ran"
+          ],
+          "ungrounded_term_rate": 0.058823529411764705,
+          "expected_recall": 1.0,
+          "distractors": 3,
+          "cited_distractor": false
+        },
+        "position": {
+          "first": {
+            "supported": true,
+            "answer": "The HULAT-HAI authors ran their models on an NVIDIA L4 GPU. [S1]\n\nAll inference runs exclusively used an NVIDIA L4 GPU for model selection. [S3]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper468",
+                "page": 4,
+                "id": "338dff86d2234e7428e2f6d290d78bcd266c8b1547cc7ecfdb1ecb47bca1d07f"
+              },
+              {
+                "source_id": "S3",
+                "document_id": "paper468",
+                "page": 5,
+                "id": "9525e64d06db9112c652c258ebf1d47271e934d5535e1d0d577eb24c85556a22"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [
+              "ran"
+            ],
+            "ungrounded_term_rate": 0.05555555555555555,
+            "expected_recall": 1.0
+          },
+          "middle": {
+            "supported": true,
+            "answer": "The HULAT-HAI authors ran their models on an NVIDIA L4 GPU. [S3]\n\nThe Gemma 3 27B model, used by HULAT-HAI, was run on an NVIDIA L4 GPU. [S2]",
+            "cited": [
+              {
+                "source_id": "S2",
+                "document_id": "paper468",
+                "page": 5,
+                "id": "9525e64d06db9112c652c258ebf1d47271e934d5535e1d0d577eb24c85556a22"
+              },
+              {
+                "source_id": "S3",
+                "document_id": "paper468",
+                "page": 4,
+                "id": "338dff86d2234e7428e2f6d290d78bcd266c8b1547cc7ecfdb1ecb47bca1d07f"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [
+              "ran"
+            ],
+            "ungrounded_term_rate": 0.05555555555555555,
+            "expected_recall": 1.0
+          },
+          "last": {
+            "supported": true,
+            "answer": "The HULAT-HAI authors ran their models on an NVIDIA L4 GPU. [S2]\n\nThe HULAT-HAI system used Gemma 3 27B as its backbone model. [S2]",
+            "cited": [
+              {
+                "source_id": "S2",
+                "document_id": "paper468",
+                "page": 5,
+                "id": "9525e64d06db9112c652c258ebf1d47271e934d5535e1d0d577eb24c85556a22"
+              }
+            ],
+            "cited_gold": false,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [
+              "backbone",
+              "ran",
+              "used"
+            ],
+            "ungrounded_term_rate": 0.1875,
+            "expected_recall": 1.0
+          }
+        }
+      }
+    },
+    {
+      "id": "detail-4",
+      "category": "detail",
+      "question": "What low-resource language did the main dataset for the ELOQUENT 2026 task use as the anchor?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper98",
+          "page": 1,
+          "id": "3ab74a33de5dd6062670d25c89523826930aa39d3940bf2cd7535c23d86a3142"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper98",
+          "page": 5,
+          "id": "222f83a5dc1995b8391afa84f8d3cd3bfc43193d66273a781adff48a30f8ca8a"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper98",
+          "page": 5,
+          "id": "c70ea3d0daa3e079f884f30ba5bf9e460d052c827868d2d4330d56cc0a02a417"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper98",
+          "page": 29,
+          "id": "903f39464c1c38bef5c313d69577330be369f502c1becb68a9448654130fabf7"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper96",
+          "page": 3,
+          "id": "98fd8dfdafd856e289e24769b683b6f63258b67df24691349aa3f1f71b1669c6"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper386",
+          "page": 3,
+          "id": "b1b1ccc0a495419381f1bdcf8b2146dd06452f2694505e0dcc9e1b2c304d6b83"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 6,
+          "dense": null,
+          "lexical": 1
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.7,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.16666666666666666,
+        "off_target": 5,
+        "passages": 6,
+        "distinct_papers": 3,
+        "rank1_gold": false
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.9369278575627782,
+        "est_prompt_tokens": 2941
+      },
+      "generation": {
+        "base": {
+          "supported": true,
+          "answer": "The ELOQUENT 2026 Sensemaking task's main dataset included a PISA test that incorporated genuine student responses from across Europe. [S1]\n\nTibetan was chosen as the low-resource anchor language for obfuscation in the Voight-Kampff task. [S6]\n\nIrish is the only language classified as category 2, indicating a weak Internet presence and a small set of labelled datasets. [S4]",
+          "cited": [
+            {
+              "source_id": "S1",
+              "document_id": "paper98",
+              "page": 1,
+              "id": "3ab74a33de5dd6062670d25c89523826930aa39d3940bf2cd7535c23d86a3142"
+            },
+            {
+              "source_id": "S4",
+              "document_id": "paper98",
+              "page": 29,
+              "id": "903f39464c1c38bef5c313d69577330be369f502c1becb68a9448654130fabf7"
+            },
+            {
+              "source_id": "S6",
+              "document_id": "paper386",
+              "page": 3,
+              "id": "b1b1ccc0a495419381f1bdcf8b2146dd06452f2694505e0dcc9e1b2c304d6b83"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [
+            "chosen",
+            "incorporated",
+            "indicating",
+            "kampff",
+            "labelled",
+            "small",
+            "voight",
+            "weak"
+          ],
+          "ungrounded_term_rate": 0.21052631578947367,
+          "expected_recall": 1.0
+        },
+        "noisy": {
+          "supported": true,
+          "answer": "Irish is the only language classified as category 2. [S2][S4][S5]\n\nIrish has a low number of resources and a low number of native speakers. [S4][S5]",
+          "cited": [
+            {
+              "source_id": "S2",
+              "document_id": "paper98",
+              "page": 5,
+              "id": "222f83a5dc1995b8391afa84f8d3cd3bfc43193d66273a781adff48a30f8ca8a"
+            },
+            {
+              "source_id": "S4",
+              "document_id": "paper98",
+              "page": 5,
+              "id": "c70ea3d0daa3e079f884f30ba5bf9e460d052c827868d2d4330d56cc0a02a417"
+            },
+            {
+              "source_id": "S5",
+              "document_id": "paper98",
+              "page": 29,
+              "id": "903f39464c1c38bef5c313d69577330be369f502c1becb68a9448654130fabf7"
+            }
+          ],
+          "cited_gold": false,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [],
+          "ungrounded_term_rate": 0.0,
+          "expected_recall": 0.0,
+          "distractors": 3,
+          "cited_distractor": false
+        },
+        "position": {
+          "first": {
+            "supported": true,
+            "answer": "The main dataset for the ELOQUENT 2026 task used Tibetan as the anchor language for round-trip translation obfuscation. [S1]\n\nThe Tibetan language uses a segmental writing system (abugida). [S1]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper386",
+                "page": 3,
+                "id": "b1b1ccc0a495419381f1bdcf8b2146dd06452f2694505e0dcc9e1b2c304d6b83"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [
+              "used"
+            ],
+            "ungrounded_term_rate": 0.05263157894736842,
+            "expected_recall": 1.0
+          },
+          "middle": {
+            "supported": true,
+            "answer": "The main dataset for the ELOQUENT 2026 Sensemaking task included PISA tests and genuine student responses from across Europe. [S1]\n\nTibetan was chosen as the low-resource anchor language for round-trip translation obfuscation. [S3]\n\nRomanian was also a low-resource language with a limited number of answers available. [S2][S5]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper98",
+                "page": 1,
+                "id": "3ab74a33de5dd6062670d25c89523826930aa39d3940bf2cd7535c23d86a3142"
+              },
+              {
+                "source_id": "S2",
+                "document_id": "paper98",
+                "page": 5,
+                "id": "222f83a5dc1995b8391afa84f8d3cd3bfc43193d66273a781adff48a30f8ca8a"
+              },
+              {
+                "source_id": "S3",
+                "document_id": "paper386",
+                "page": 3,
+                "id": "b1b1ccc0a495419381f1bdcf8b2146dd06452f2694505e0dcc9e1b2c304d6b83"
+              },
+              {
+                "source_id": "S5",
+                "document_id": "paper98",
+                "page": 29,
+                "id": "903f39464c1c38bef5c313d69577330be369f502c1becb68a9448654130fabf7"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [
+              "chosen",
+              "limited"
+            ],
+            "ungrounded_term_rate": 0.0625,
+            "expected_recall": 1.0
+          },
+          "last": {
+            "supported": true,
+            "answer": "The ELOQUENT 2026 Sensemaking task's main dataset included a PISA test that incorporated genuine student responses from across Europe. [S1]\n\nTibetan was chosen as the low-resource anchor language for obfuscation in the Voight-Kampff task. [S6]\n\nIrish is the only language classified as category 2, indicating a weak Internet presence and a small set of labelled datasets. [S4]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper98",
+                "page": 1,
+                "id": "3ab74a33de5dd6062670d25c89523826930aa39d3940bf2cd7535c23d86a3142"
+              },
+              {
+                "source_id": "S4",
+                "document_id": "paper98",
+                "page": 29,
+                "id": "903f39464c1c38bef5c313d69577330be369f502c1becb68a9448654130fabf7"
+              },
+              {
+                "source_id": "S6",
+                "document_id": "paper386",
+                "page": 3,
+                "id": "b1b1ccc0a495419381f1bdcf8b2146dd06452f2694505e0dcc9e1b2c304d6b83"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [
+              "chosen",
+              "incorporated",
+              "indicating",
+              "kampff",
+              "labelled",
+              "small",
+              "voight",
+              "weak"
+            ],
+            "ungrounded_term_rate": 0.21052631578947367,
+            "expected_recall": 1.0
+          }
+        }
+      }
+    },
+    {
+      "id": "detail-5",
+      "category": "detail",
+      "question": "What token limit did the DS@GT team on the PAN 2026 task set?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper399",
+          "page": 1,
+          "id": "919cd3fac17b37b600b86e7c1e68b06022dac753ad1ef65cc03a428318a586ca"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper399",
+          "page": 9,
+          "id": "41c248c4db82e53c33a8cf848cfb63d29ee374c70e080f995dc084f418ef182e"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper404",
+          "page": 3,
+          "id": "ece7b3905eed14cea46add77212720ac7aa529e81b6619da4db3e89fcc124b28"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper397",
+          "page": 1,
+          "id": "95d4f679e875ba07c827aba3d0645cc71a8aca2b31c8be2544a87f2659d1804c"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper389",
+          "page": 10,
+          "id": "3371034898a45599781b20927f8b7d9fd75fd9a83089aaa476651e9471263df9"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper397",
+          "page": 1,
+          "id": "2d139f92ebb16d67a3760474177fed76a94f06773de1f9df1f340d0dce8598e7"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": null,
+          "dense": null,
+          "lexical": 3
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.4444444444444444,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.0,
+        "off_target": 4,
+        "passages": 6,
+        "distinct_papers": 4,
+        "rank1_gold": false
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.8815646201524415,
+        "est_prompt_tokens": 2769
+      },
+      "generation": {
+        "base": {
+          "supported": false,
+          "answer": "I don't have enough evidence in the available corpus to answer this question.",
+          "cited": [],
+          "cited_gold": false,
+          "expected_recall": 0.0
+        },
+        "noisy": {
+          "supported": false,
+          "error": "The answer hit its output limit. Try a narrower question.",
+          "distractors": 3,
+          "cited_distractor": false
+        }
+      }
+    },
+    {
+      "id": "detail-6",
+      "category": "detail",
+      "question": "What is the name of the metric that assigns a score equal to the reciprocal rank of an item by relevance, considering only the top 5 documents?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper61",
+          "page": 1,
+          "id": "c30cf8cb5099fe40aabc463c08100a4cd1dfaa21c061de256f3f6221fe2ef02b"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper61",
+          "page": 7,
+          "id": "b84f6b9cfbe3e9ed65c42621ab65b9c3a9ba64022b04f04c9487e96a1d930096"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper389",
+          "page": 5,
+          "id": "1ba5644d94e1f10dd8a10d8033d987145a51a2fed1b73f2e3db016e217cb9edb"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper45",
+          "page": 3,
+          "id": "e06309c1ee233f5bf9893b4976845cd7535dea8c6f2a914249a72b82a12c2038"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper389",
+          "page": 5,
+          "id": "c07ae2464a09b313895557f69c82865ad465d7e3a69f6ff9b3899716cae728a9"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper8",
+          "page": 6,
+          "id": "772fe62eb76b129320a3002f34bbe097d0411e4164c50822b2ff70ed6dadab75"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": null,
+          "dense": null,
+          "lexical": 1
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.8571428571428571,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.0,
+        "off_target": 6,
+        "passages": 6,
+        "distinct_papers": 4,
+        "rank1_gold": false
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.950409041072784,
+        "est_prompt_tokens": 2934
+      },
+      "generation": {
+        "base": {
+          "supported": true,
+          "answer": "The metric assigns a score equal to the reciprocal rank of an item by relevance, considering only the top 5 documents. [S2]",
+          "cited": [
+            {
+              "source_id": "S2",
+              "document_id": "paper61",
+              "page": 7,
+              "id": "b84f6b9cfbe3e9ed65c42621ab65b9c3a9ba64022b04f04c9487e96a1d930096"
+            }
+          ],
+          "cited_gold": false,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [],
+          "ungrounded_term_rate": 0.0,
+          "expected_recall": 0.5
+        },
+        "noisy": {
+          "supported": true,
+          "answer": "The official evaluation metric for the task is the Mean Reciprocal Rank at cutoff 5 (MRR@5). [S2]\n\nThe reciprocal rank for a single query is defined as: 𝑅𝑅@5 = {︃ 1 𝑟𝑎𝑛𝑘𝑖 if𝑟𝑎𝑛𝑘 𝑖≤5 0otherwise. [S2]",
+          "cited": [
+            {
+              "source_id": "S2",
+              "document_id": "paper61",
+              "page": 7,
+              "id": "b84f6b9cfbe3e9ed65c42621ab65b9c3a9ba64022b04f04c9487e96a1d930096"
+            }
+          ],
+          "cited_gold": false,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [],
+          "ungrounded_term_rate": 0.0,
+          "expected_recall": 1.0,
+          "distractors": 3,
+          "cited_distractor": false
+        }
+      }
+    },
+    {
+      "id": "detail-7",
+      "category": "detail",
+      "question": "How many independent fine tuning runs did the GetGut@AAU team perform on each dataset?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper17",
+          "page": 1,
+          "id": "11fb20713b4bf63f73de20f51a828da203764faf2cfb4806bc4801a34c67c6bc"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper17",
+          "page": 17,
+          "id": "5bac3f72f172d44d0781ed79fb213c085270705dd1750a3201fe3ec253344f18"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper17",
+          "page": 12,
+          "id": "0ddcfb493a5de1ec5684d750e09c1258d59b2f4174ce72619c35965ede71c7ea"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper5",
+          "page": 20,
+          "id": "6df7b3395133b6f71da146b8cc0be20ddb00d458d94f0898d645a67c0d757e4e"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper5",
+          "page": 17,
+          "id": "ff2f1babb95ce898707252257510a25f87c3b678c67382a087ea8f8fd9ccb228"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper17",
+          "page": 16,
+          "id": "d9fc6faa99faf4091d906f5ba92f788b854eba94674e8574a0d4f25e8ce116ea"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": null,
+          "dense": null,
+          "lexical": null
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.5454545454545454,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.0,
+        "off_target": 2,
+        "passages": 6,
+        "distinct_papers": 2,
+        "rank1_gold": false
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.9160651334564378,
+        "est_prompt_tokens": 2821
+      },
+      "generation": {
+        "base": {
+          "supported": false,
+          "answer": "I don't have enough evidence in the available corpus to answer this question.",
+          "cited": [],
+          "cited_gold": false,
+          "expected_recall": 0.0
+        },
+        "noisy": {
+          "supported": false,
+          "answer": "I don't have enough evidence in the available corpus to answer this question.",
+          "cited": [],
+          "cited_gold": false,
+          "expected_recall": 0.0,
+          "distractors": 3,
+          "cited_distractor": false
+        }
+      }
+    },
+    {
+      "id": "detail-8",
+      "category": "detail",
+      "question": "What context retrieval method did the gfreitas team say helped most?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper510",
+          "page": 1,
+          "id": "9e817cd30b19033581be90a7551c07ce7632e9c621c136fe669b6d6fc2030952"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper510",
+          "page": 11,
+          "id": "a3a3cf3ca697e8d9ed3eb7eecdf379ef8c548565f0f9484eb1ced7b9ade4bc18"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper255",
+          "page": 1,
+          "id": "7648e81c59e27343040da2fe042ff62b4f5433f63f58e983f7d4ad3d5d66e4cc"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper510",
+          "page": 10,
+          "id": "572a6e0bbb65b85f36eb666b2f047e771efdba78cafc439c582796fad6fe4824"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper437",
+          "page": 11,
+          "id": "7e9b12f72c72d0f6d0d1239c6e621fa58ecc4611fbef13556dd7c44fe83b25c7"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper510",
+          "page": 7,
+          "id": "2d1555cee356112c13b3c0ef382ee997a25ef772f3b7a239dffb14339e38ad09"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": null,
+          "dense": null,
+          "lexical": null
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.25,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.0,
+        "off_target": 5,
+        "passages": 6,
+        "distinct_papers": 3,
+        "rank1_gold": false
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.8247569560844787,
+        "est_prompt_tokens": 2569
+      },
+      "generation": {
+        "base": {
+          "supported": true,
+          "answer": "The gfreitas team reported that adding the argument definition lifted average macro-F1 by 0.10 to 0.15. [S2]\n\nThe gfreitas team found that document context is situational and helps where the rule explicitly demands it. [S2]",
+          "cited": [
+            {
+              "source_id": "S2",
+              "document_id": "paper510",
+              "page": 11,
+              "id": "a3a3cf3ca697e8d9ed3eb7eecdf379ef8c548565f0f9484eb1ced7b9ade4bc18"
+            }
+          ],
+          "cited_gold": false,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [
+            "found",
+            "reported"
+          ],
+          "ungrounded_term_rate": 0.1,
+          "expected_recall": 0.3333333333333333
+        },
+        "noisy": {
+          "supported": true,
+          "answer": "The gfreitas team found that adding the argument definition lifted average macro-F1 by 0.10 to 0.15 across all three models. [S4]",
+          "cited": [
+            {
+              "source_id": "S4",
+              "document_id": "paper510",
+              "page": 11,
+              "id": "a3a3cf3ca697e8d9ed3eb7eecdf379ef8c548565f0f9484eb1ced7b9ade4bc18"
+            }
+          ],
+          "cited_gold": false,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [
+            "found"
+          ],
+          "ungrounded_term_rate": 0.07142857142857142,
+          "expected_recall": 0.0,
+          "distractors": 3,
+          "cited_distractor": false
+        }
+      }
+    },
+    {
+      "id": "wording-1",
+      "category": "wording",
+      "question": "How did the clinical summarization team that used group-relative reinforcement learning do compared with the baselines?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper47",
+          "page": 1,
+          "id": "c71bd5bed2801a76ddd57ea84292f41f2a4b6f03d54ca771720ce5661e99ce18"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper47",
+          "page": 2,
+          "id": "ce2e0a57ca48a69ae1632e357ed16b7a347591db22a5cc687ab0f93beca848b8"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper2",
+          "page": 12,
+          "id": "97b3e017e8a57907d09039afdf264d8ee63eafeffb68bb875c46cc12ed9f4261"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper47",
+          "page": 5,
+          "id": "e34a201ad943a22be422cd7a6e60c84792fb0262cd352afb8debd16eacc9e774"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper47",
+          "page": 2,
+          "id": "b5b9a017667866e3fba7bd82b90b30272401fb128f095229de5847cea9afec61"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper47",
+          "page": 5,
+          "id": "8f8a1f2933876113feb390db78a90a7590aa11f061b07b024898b15cbf0d167d"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": null,
+          "dense": null,
+          "lexical": null
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.6,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.0,
+        "off_target": 5,
+        "passages": 6,
+        "distinct_papers": 2,
+        "rank1_gold": false
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.9443649524450803,
+        "est_prompt_tokens": 2917
+      },
+      "generation": {
+        "base": {
+          "supported": true,
+          "answer": "The ixa-sum team used a Group Relative Policy Optimization (GRPO) approach to optimize output by integrating multiple performance signals such as ROUGE and entailment-based fact-checking metrics. [S1][S3]\n\nThe GRPO models optimized via alignment scored significantly better under LLM-as-a-judge evaluations focusing on coverage and faithfulness. [S3]",
+          "cited": [
+            {
+              "source_id": "S1",
+              "document_id": "paper47",
+              "page": 1,
+              "id": "c71bd5bed2801a76ddd57ea84292f41f2a4b6f03d54ca771720ce5661e99ce18"
+            },
+            {
+              "source_id": "S3",
+              "document_id": "paper2",
+              "page": 12,
+              "id": "97b3e017e8a57907d09039afdf264d8ee63eafeffb68bb875c46cc12ed9f4261"
+            }
+          ],
+          "cited_gold": false,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [],
+          "ungrounded_term_rate": 0.0,
+          "expected_recall": 0.10714285714285714
+        },
+        "noisy": {
+          "supported": true,
+          "answer": "The ixa-sum team used a Group Relative Policy Optimization (GRPO) approach that optimizes output by integrating multiple performance signals such as ROUGE and entailment-based fact-checking metrics. [S1][S2][S5]\n\nThe GRPO-optimized Gemma models scored significantly better under LLM-as-a-judge evaluations focusing on coverage and faithfulness. [S5]",
+          "cited": [
+            {
+              "source_id": "S1",
+              "document_id": "paper47",
+              "page": 1,
+              "id": "c71bd5bed2801a76ddd57ea84292f41f2a4b6f03d54ca771720ce5661e99ce18"
+            },
+            {
+              "source_id": "S2",
+              "document_id": "paper47",
+              "page": 2,
+              "id": "ce2e0a57ca48a69ae1632e357ed16b7a347591db22a5cc687ab0f93beca848b8"
+            },
+            {
+              "source_id": "S5",
+              "document_id": "paper2",
+              "page": 12,
+              "id": "97b3e017e8a57907d09039afdf264d8ee63eafeffb68bb875c46cc12ed9f4261"
+            }
+          ],
+          "cited_gold": false,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [],
+          "ungrounded_term_rate": 0.0,
+          "expected_recall": 0.10714285714285714,
+          "distractors": 3,
+          "cited_distractor": false
+        }
+      }
+    },
+    {
+      "id": "wording-2",
+      "category": "wording",
+      "question": "For the BioASQ team that had an LLM refine its own keyword searches, did merging the rankings of three queries beat a single query?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper7",
+          "page": 1,
+          "id": "e9838e15b1edd140eb4386b83a0fa7d516b3cd300c2f09beab83facc51535dcd"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper7",
+          "page": 11,
+          "id": "9e4c11f37a75cd108ef10db78810b47e3e9d8e1999f9dda2eeeac2f3be399c68"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper7",
+          "page": 2,
+          "id": "ae4ac383a17bbdc222b6d3165bab2732e9c4f35c35f8772b05084f825cb7889f"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper7",
+          "page": 5,
+          "id": "4b8d138ea869e06822b4b5de760958fd06d4783bf738b0eec91805e747424bef"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper7",
+          "page": 3,
+          "id": "3fab6f75a2b03946f9a6af7803684d47dc68077618f6445491c94041fe6d952c"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper7",
+          "page": 8,
+          "id": "dfa7c2d1d193c9229b4943cc6aef84e642e347253943b5739622a6737ae929f1"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": null,
+          "dense": null,
+          "lexical": null
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.2,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.0,
+        "off_target": 0,
+        "passages": 6,
+        "distinct_papers": 1,
+        "rank1_gold": false
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.9064790631055691,
+        "est_prompt_tokens": 2790
+      },
+      "generation": {
+        "base": {
+          "supported": true,
+          "answer": "Reciprocal Rank Fusion (RRF) of three different search strategies achieved significantly higher recall@50 after refinement and beat the prior single query baseline. [S1]\n\nThe refined 3-RRF systems achieved the strongest Phase A retrieval results. [S2]\n\nThe strategy-refinement loop used Reciprocal Rank Fusion (RRF) to combine results from multiple LLM-generated query strategies. [S3]",
+          "cited": [
+            {
+              "source_id": "S1",
+              "document_id": "paper7",
+              "page": 1,
+              "id": "e9838e15b1edd140eb4386b83a0fa7d516b3cd300c2f09beab83facc51535dcd"
+            },
+            {
+              "source_id": "S2",
+              "document_id": "paper7",
+              "page": 11,
+              "id": "9e4c11f37a75cd108ef10db78810b47e3e9d8e1999f9dda2eeeac2f3be399c68"
+            },
+            {
+              "source_id": "S3",
+              "document_id": "paper7",
+              "page": 2,
+              "id": "ae4ac383a17bbdc222b6d3165bab2732e9c4f35c35f8772b05084f825cb7889f"
+            }
+          ],
+          "cited_gold": false,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [
+            "loop"
+          ],
+          "ungrounded_term_rate": 0.023809523809523808,
+          "expected_recall": 0.08695652173913043
+        },
+        "noisy": {
+          "supported": true,
+          "answer": "Reciprocal Rank Fusion (RRF) of three different search strategies achieved significantly higher recall@50 after refinement and beat the prior single query baseline. [S1]\n\nThe refined 3-RRF systems achieved the strongest Phase A retrieval results. [S2]\n\nThe strategy-refinement loop used Reciprocal Rank Fusion (RRF) to combine results from multiple LLM-generated query strategies. [S3]",
+          "cited": [
+            {
+              "source_id": "S1",
+              "document_id": "paper7",
+              "page": 1,
+              "id": "e9838e15b1edd140eb4386b83a0fa7d516b3cd300c2f09beab83facc51535dcd"
+            },
+            {
+              "source_id": "S2",
+              "document_id": "paper7",
+              "page": 11,
+              "id": "9e4c11f37a75cd108ef10db78810b47e3e9d8e1999f9dda2eeeac2f3be399c68"
+            },
+            {
+              "source_id": "S3",
+              "document_id": "paper7",
+              "page": 2,
+              "id": "ae4ac383a17bbdc222b6d3165bab2732e9c4f35c35f8772b05084f825cb7889f"
+            }
+          ],
+          "cited_gold": false,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [
+            "loop"
+          ],
+          "ungrounded_term_rate": 0.023809523809523808,
+          "expected_recall": 0.08695652173913043,
+          "distractors": 0,
+          "cited_distractor": false
+        }
+      }
+    },
+    {
+      "id": "wording-3",
+      "category": "wording",
+      "question": "How much did evolving the prompt automatically improve English results over the stock model for the HIPE team?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper220",
+          "page": 1,
+          "id": "086df66b134ff8743a91a739f8cdb8d99111221bc7a48f773f4708ab28cf9a24"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper220",
+          "page": 15,
+          "id": "bb70b8cfbcb3f035f560e45071523199e2e3f6b692b91db2325795086dff19b2"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper226",
+          "page": 7,
+          "id": "e97b24e0faad84fea0c896f0e04e5c99c08f2f43a6e7824f6685e8048a9f24e7"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper219",
+          "page": 6,
+          "id": "27e231e7c3a63732aed57286201cc5c6d87742770bfdfbaf16806a37bb40a0b7"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper219",
+          "page": 13,
+          "id": "dcd77ee35b1c88a96cffb7d8430e64f4cb786710b03a44b49a7f95d57542239b"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper93",
+          "page": 8,
+          "id": "61e2e3a86ce6b8516cd2ff93130bf3dff3575dda299aa091a111a69d1143bf09"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": null,
+          "dense": null,
+          "lexical": 3
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.5833333333333334,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.0,
+        "off_target": 6,
+        "passages": 6,
+        "distinct_papers": 4,
+        "rank1_gold": false
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.9843566021867115,
+        "est_prompt_tokens": 3000
+      },
+      "generation": {
+        "base": {
+          "supported": false,
+          "error": "The answer hit its output limit. Try a narrower question."
+        },
+        "noisy": {
+          "supported": false,
+          "error": "The answer hit its output limit. Try a narrower question.",
+          "distractors": 3,
+          "cited_distractor": false
+        }
+      }
+    },
+    {
+      "id": "wording-4",
+      "category": "wording",
+      "question": "Which task asks for teams to improve the detection of sexism via multimodal contextual, visual, and social cues?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper157",
+          "page": 1,
+          "id": "36f9caabd3f18142bc8d62eba6510db58469ff42066c644e6f4fe9d5eca7f5d0"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper157",
+          "page": 4,
+          "id": "cb8ae013f30e4cde401e28f0fd4de69121bb91fe69aa111ad03aeee194a8c604"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper157",
+          "page": 2,
+          "id": "09692e43fa999cce9e1b39e4041de31bb863179958f18bdc4b9f849efd587cef"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper158",
+          "page": 1,
+          "id": "6b0548d2c3922d1332991b048362f2306e876f20624f0ba3be4beb5047bab8d0"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper175",
+          "page": 2,
+          "id": "c0bdef91782a2efb48af33c67316b1f254372dffdb75130e20ae359dfec21441"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper175",
+          "page": 10,
+          "id": "d666a0e7bd4243238135a7ed1d5c9fce7e4a8c6c18437837c21db1086d7cd698"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": null,
+          "dense": null,
+          "lexical": null
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.75,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.0,
+        "off_target": 6,
+        "passages": 6,
+        "distinct_papers": 3,
+        "rank1_gold": false
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.9157133243606999,
+        "est_prompt_tokens": 2878
+      },
+      "generation": {
+        "base": {
+          "supported": true,
+          "answer": "The EXIST 2026 Lab at CLEF addresses multimodal sexism identification and characterization in memes and short-form videos (Task 2 and Task 3). [S1]\n\nThe task requires models to account for dynamic visual content, speech or captions, and possibly audio-visual cues. [S1]",
+          "cited": [
+            {
+              "source_id": "S1",
+              "document_id": "paper157",
+              "page": 1,
+              "id": "36f9caabd3f18142bc8d62eba6510db58469ff42066c644e6f4fe9d5eca7f5d0"
+            }
+          ],
+          "cited_gold": false,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [
+            "account",
+            "audio",
+            "captions",
+            "content",
+            "dynamic",
+            "possibly",
+            "requires",
+            "speech"
+          ],
+          "ungrounded_term_rate": 0.2962962962962963,
+          "expected_recall": 1.0
+        },
+        "noisy": {
+          "supported": true,
+          "answer": "EXIST 2026 Task 2.1 asks for teams to improve the detection of sexism in social media memes. [S1]\n\nThe task involves improving detection using multimodal contextual, visual, and physiological cues. [S1][S5]",
+          "cited": [
+            {
+              "source_id": "S1",
+              "document_id": "paper175",
+              "page": 10,
+              "id": "e80b4d1c5605f00f230a1f6bf5ceb0290b292dbaf1a895486d38de7bf41fc909"
+            },
+            {
+              "source_id": "S5",
+              "document_id": "paper157",
+              "page": 2,
+              "id": "09692e43fa999cce9e1b39e4041de31bb863179958f18bdc4b9f849efd587cef"
+            }
+          ],
+          "cited_gold": false,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [
+            "involves"
+          ],
+          "ungrounded_term_rate": 0.05,
+          "expected_recall": 1.0,
+          "distractors": 3,
+          "cited_distractor": true
+        }
+      }
+    },
+    {
+      "id": "wording-5",
+      "category": "wording",
+      "question": "Which run achieve the best Average Difference between Overall Depression Levels?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper111",
+          "page": 1,
+          "id": "f2d866db85b1d7189edc20905e5efdfdcf88027644b111a2425c143ad6b77950"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper111",
+          "page": 5,
+          "id": "c14dc915e9ca049412a5645ccf8aa2f6305cc07bb67a48fa19fadda62d47a4f6"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper147",
+          "page": 5,
+          "id": "d4388887db5caa2afba4a0a8a1db40a9d1ec00762237781a57cb278ff5f841b1"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper129",
+          "page": 9,
+          "id": "e661cb938e9d7699477334fa3e45d94a2626d2d4568eac0ac2ecfabca5ddd718"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper134",
+          "page": 2,
+          "id": "3067a7eec7465c60ec1c4064b902c54529e34ca62d1f4c83cc2d1b7fed249867"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper136",
+          "page": 8,
+          "id": "a29e24e1d7eee7f226a06780f1f512d157bad8ddfdf79214032a1a9979a0229c"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 3,
+          "dense": 4,
+          "lexical": null
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.7777777777777778,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.16666666666666666,
+        "off_target": 5,
+        "passages": 6,
+        "distinct_papers": 5,
+        "rank1_gold": false
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.8977348993288591,
+        "est_prompt_tokens": 2822
+      },
+      "generation": {
+        "base": {
+          "supported": true,
+          "answer": "Run 3 of pjmathematician achieved an ADODL of 0.9254. [S3]\n\npjmathematician ranked first on the ADODL metric. [S3]",
+          "cited": [
+            {
+              "source_id": "S3",
+              "document_id": "paper147",
+              "page": 5,
+              "id": "d4388887db5caa2afba4a0a8a1db40a9d1ec00762237781a57cb278ff5f841b1"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [],
+          "ungrounded_term_rate": 0.0,
+          "expected_recall": 1.0
+        },
+        "noisy": {
+          "supported": true,
+          "answer": "pjmathematician achieved the best overall ADODL of 0.9254. [S4]\n\nDS@GT achieved an ADODL score of 0.9063, ranking second overall. [S5]",
+          "cited": [
+            {
+              "source_id": "S4",
+              "document_id": "paper147",
+              "page": 5,
+              "id": "d4388887db5caa2afba4a0a8a1db40a9d1ec00762237781a57cb278ff5f841b1"
+            },
+            {
+              "source_id": "S5",
+              "document_id": "paper129",
+              "page": 9,
+              "id": "904b721b0c36a0bae8196c75635f11f2d950e559c4f90aff47ef5a6ae36297f3"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [
+            "second"
+          ],
+          "ungrounded_term_rate": 0.07692307692307693,
+          "expected_recall": 0.0,
+          "distractors": 3,
+          "cited_distractor": true
+        },
+        "position": {
+          "first": {
+            "supported": true,
+            "answer": "Run 3 of pjmathematician achieved the best Average Difference between Overall Depression Levels (ADODL) of 0.9254. [S1]\n\npjmathematician ranked first overall. [S1]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper147",
+                "page": 5,
+                "id": "d4388887db5caa2afba4a0a8a1db40a9d1ec00762237781a57cb278ff5f841b1"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [],
+            "ungrounded_term_rate": 0.0,
+            "expected_recall": 1.0
+          },
+          "middle": {
+            "supported": true,
+            "answer": "Run 3 of pjmathematician achieved an ADODL of 0.9254. [S3]\n\npjmathematician ranked first on the ADODL metric. [S3]",
+            "cited": [
+              {
+                "source_id": "S3",
+                "document_id": "paper147",
+                "page": 5,
+                "id": "d4388887db5caa2afba4a0a8a1db40a9d1ec00762237781a57cb278ff5f841b1"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [],
+            "ungrounded_term_rate": 0.0,
+            "expected_recall": 1.0
+          },
+          "last": {
+            "supported": true,
+            "answer": "DS@GT Run 3 achieved the third-place finish with an ADODL of 0.9063. [S3]\n\npjmathematician Run 3 achieved the best overall ADODL of 0.9254. [S6]",
+            "cited": [
+              {
+                "source_id": "S3",
+                "document_id": "paper129",
+                "page": 9,
+                "id": "e661cb938e9d7699477334fa3e45d94a2626d2d4568eac0ac2ecfabca5ddd718"
+              },
+              {
+                "source_id": "S6",
+                "document_id": "paper147",
+                "page": 5,
+                "id": "d4388887db5caa2afba4a0a8a1db40a9d1ec00762237781a57cb278ff5f841b1"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [],
+            "ungrounded_term_rate": 0.0,
+            "expected_recall": 1.0
+          }
+        }
+      }
+    },
+    {
+      "id": "comparison-1",
+      "category": "comparison",
+      "question": "Which PlantCLEF teams tried retrieval-augmented classification, and did it help?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper320",
+          "page": 1,
+          "id": "22a416ba81e0e21dce678abdf288cbce6ee0d4d490f401f09a7cb391f44d44c7"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper320",
+          "page": 10,
+          "id": "59a88dfd8d9c305589c7bbad3c2c6d6e78a9f686dedb2de0de608bc740dc43df"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper360",
+          "page": 9,
+          "id": "ca2b310cf620d2504f331d6227ea4cb3494c264244d5da8cab57cad9294b615b"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper337",
+          "page": 1,
+          "id": "7f288ee3491ff92be7bd949e0cad77daccef9579d1d9a0a6221c457f7241a776"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper320",
+          "page": 7,
+          "id": "4cd1bdb05da74294aed05be9033c13908c0f321d15f1225af149361a1c246c07"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper320",
+          "page": 7,
+          "id": "732f3e31d2bea3e2a1e6adb5bc7df1ceff99c151e6dd05201ddd930817fa354a"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 2,
+          "dense": 2,
+          "lexical": 1
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.8571428571428571,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.3333333333333333,
+        "off_target": 1,
+        "passages": 6,
+        "distinct_papers": 3,
+        "rank1_gold": false
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.9619127516778524,
+        "est_prompt_tokens": 2979
+      },
+      "generation": {
+        "base": {
+          "supported": true,
+          "answer": "Several teams integrated non-parametric retrieval modules to improve parametric models by blending visual similarity scores with model logits. [S2]\n\nDS@GT ARC implemented a kNN-based retrieval classifier and fused tile-level predictions with it. [S5]\n\nOne team tried a retrieval-augmented classification at inference time, adding nearest-neighbor species evidence to the classifier prediction. [S3]",
+          "cited": [
+            {
+              "source_id": "S2",
+              "document_id": "paper320",
+              "page": 10,
+              "id": "59a88dfd8d9c305589c7bbad3c2c6d6e78a9f686dedb2de0de608bc740dc43df"
+            },
+            {
+              "source_id": "S3",
+              "document_id": "paper360",
+              "page": 9,
+              "id": "ca2b310cf620d2504f331d6227ea4cb3494c264244d5da8cab57cad9294b615b"
+            },
+            {
+              "source_id": "S5",
+              "document_id": "paper320",
+              "page": 7,
+              "id": "4cd1bdb05da74294aed05be9033c13908c0f321d15f1225af149361a1c246c07"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [
+            "one"
+          ],
+          "ungrounded_term_rate": 0.023255813953488372,
+          "expected_recall": 0.5
+        },
+        "noisy": {
+          "supported": true,
+          "answer": "The TUKE team embedded retrieval-augmented classification with a Delabastita-based pun-type classifier. [S1]\n\nSeveral teams integrated non-parametric retrieval modules to improve parametric models by blending visual similarity scores with model logits. [S4]\n\nThe DSGT-ARC team used a retrieval-augmented classification stage that adds nearest-neighbor species evidence to the classifier prediction. [S5]",
+          "cited": [
+            {
+              "source_id": "S1",
+              "document_id": "paper312",
+              "page": 8,
+              "id": "bbed4e6a9c26a6623b9293117c01d17f288260bc1cc18c77876a0afac14cb1e6"
+            },
+            {
+              "source_id": "S4",
+              "document_id": "paper320",
+              "page": 10,
+              "id": "59a88dfd8d9c305589c7bbad3c2c6d6e78a9f686dedb2de0de608bc740dc43df"
+            },
+            {
+              "source_id": "S5",
+              "document_id": "paper360",
+              "page": 9,
+              "id": "ca2b310cf620d2504f331d6227ea4cb3494c264244d5da8cab57cad9294b615b"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [
+            "arc",
+            "dsgt",
+            "tuke"
+          ],
+          "ungrounded_term_rate": 0.07142857142857142,
+          "expected_recall": 0.35,
+          "distractors": 3,
+          "cited_distractor": true
+        },
+        "position": {
+          "first": {
+            "supported": true,
+            "answer": "Several teams integrated non-parametric retrieval modules, comparing tile features against kNN indices or global prototypes built from training data to guide classification. [S1]\n\nOne team implemented a retrieval-augmented classification stage that adds nearest-neighbor species evidence to the classifier prediction and combines both outputs at tile level. [S2]\n\nDS@GT ARC used a kNN-based retrieval classifier to fuse tile-level predictions. [S5]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper320",
+                "page": 10,
+                "id": "59a88dfd8d9c305589c7bbad3c2c6d6e78a9f686dedb2de0de608bc740dc43df"
+              },
+              {
+                "source_id": "S2",
+                "document_id": "paper360",
+                "page": 9,
+                "id": "ca2b310cf620d2504f331d6227ea4cb3494c264244d5da8cab57cad9294b615b"
+              },
+              {
+                "source_id": "S5",
+                "document_id": "paper320",
+                "page": 7,
+                "id": "4cd1bdb05da74294aed05be9033c13908c0f321d15f1225af149361a1c246c07"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [
+              "one"
+            ],
+            "ungrounded_term_rate": 0.0196078431372549,
+            "expected_recall": 0.35
+          },
+          "middle": {
+            "supported": true,
+            "answer": "Several teams integrated non-parametric retrieval modules, blending visual similarity scores with model logits to resolve local ambiguities. [S3]\n\nDS@GT ARC used a kNN-based retrieval classifier fused with tile-level predictions. [S5]\n\nThe ANU team tested enriching BioCLIP 2.5 features with those extracted from DINOv3 or ConvNeXt-V2-L pre-trained models. [S6]",
+            "cited": [
+              {
+                "source_id": "S3",
+                "document_id": "paper320",
+                "page": 10,
+                "id": "59a88dfd8d9c305589c7bbad3c2c6d6e78a9f686dedb2de0de608bc740dc43df"
+              },
+              {
+                "source_id": "S5",
+                "document_id": "paper320",
+                "page": 7,
+                "id": "4cd1bdb05da74294aed05be9033c13908c0f321d15f1225af149361a1c246c07"
+              },
+              {
+                "source_id": "S6",
+                "document_id": "paper320",
+                "page": 7,
+                "id": "732f3e31d2bea3e2a1e6adb5bc7df1ceff99c151e6dd05201ddd930817fa354a"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [
+              "used"
+            ],
+            "ungrounded_term_rate": 0.023255813953488372,
+            "expected_recall": 0.45
+          },
+          "last": {
+            "supported": true,
+            "answer": "Teams DS@GT ARC and ANU integrated non-parametric retrieval modules to improve parametric models. [S5]\n\nThe DS@GT ARC team used a kNN-based retrieval classifier to fuse tile-level predictions. [S3]\n\nThe ANU team utilized a 4x4 grid of tiles evaluated at dual resolutions, followed by a softmax-mean aggregation. [S4]",
+            "cited": [
+              {
+                "source_id": "S3",
+                "document_id": "paper320",
+                "page": 7,
+                "id": "4cd1bdb05da74294aed05be9033c13908c0f321d15f1225af149361a1c246c07"
+              },
+              {
+                "source_id": "S4",
+                "document_id": "paper320",
+                "page": 7,
+                "id": "732f3e31d2bea3e2a1e6adb5bc7df1ceff99c151e6dd05201ddd930817fa354a"
+              },
+              {
+                "source_id": "S5",
+                "document_id": "paper320",
+                "page": 10,
+                "id": "59a88dfd8d9c305589c7bbad3c2c6d6e78a9f686dedb2de0de608bc740dc43df"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [
+              "used"
+            ],
+            "ungrounded_term_rate": 0.02564102564102564,
+            "expected_recall": 0.25
+          }
+        }
+      }
+    },
+    {
+      "id": "comparison-2",
+      "category": "comparison",
+      "question": "How do the JANZZ.technology and SBERT contrastive fine-tuning systems for TalentCLEF Task B differ?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper477",
+          "page": 1,
+          "id": "9f720072b52f1788ee887f63c2e6bf9944929063a1e02544a9acbf9861219312"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper477",
+          "page": 3,
+          "id": "179484091a844e28edf970adf212173428c26140a1a5c646da7717f9c894637e"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper477",
+          "page": 3,
+          "id": "a13f9c3c2e5300c811a40e534a287280b5ccdcfd384acb9519e5cfeb06dfea5a"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper477",
+          "page": 7,
+          "id": "05d9d5bf6c59d33e9067271e82581bfe743c1ea7da551256919eb7b1eac26e93"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper477",
+          "page": 1,
+          "id": "9301740603cbeba2a732f2347eb7e27f28b91271c6a25f40a721af9028200b62"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper477",
+          "page": 2,
+          "id": "ac255032a464591531dd5a1a50d5dc489bc3e512ec3e1e780f9ded50db8805b8"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 1,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 1,
+          "dense": null,
+          "lexical": 2
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.9090909090909091,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.16666666666666666,
+        "off_target": 0,
+        "passages": 6,
+        "distinct_papers": 1,
+        "rank1_gold": true
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.8867322073775313,
+        "est_prompt_tokens": 2735
+      },
+      "generation": {
+        "base": {
+          "supported": false,
+          "answer": "I don't have enough evidence in the available corpus to answer this question.",
+          "cited": [],
+          "cited_gold": false,
+          "expected_recall": 0.0
+        },
+        "noisy": {
+          "supported": true,
+          "answer": "The JANZZ.technology system used in-domain contrastive fine-tuning of a Sentence-BERT bi-encoder (all-mpnet-base-v2) with Multiple Negatives Ranking Loss over alias-enriched ESCO skill representations. [S1]\n\nThe SBERT system used in TalentCLEF 2026 Task B employed a bi-encoder model with the all-mpnet-base-v2 architecture. [S1][S2]",
+          "cited": [
+            {
+              "source_id": "S1",
+              "document_id": "paper477",
+              "page": 1,
+              "id": "9f720072b52f1788ee887f63c2e6bf9944929063a1e02544a9acbf9861219312"
+            },
+            {
+              "source_id": "S2",
+              "document_id": "paper477",
+              "page": 3,
+              "id": "179484091a844e28edf970adf212173428c26140a1a5c646da7717f9c894637e"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [
+            "architecture",
+            "employed",
+            "model",
+            "used"
+          ],
+          "ungrounded_term_rate": 0.12195121951219512,
+          "expected_recall": 0.39285714285714285,
+          "distractors": 3,
+          "cited_distractor": false
+        },
+        "position": {
+          "first": {
+            "supported": false,
+            "answer": "I don't have enough evidence in the available corpus to answer this question.",
+            "cited": [],
+            "cited_gold": false,
+            "expected_recall": 0.0
+          },
+          "middle": {
+            "supported": false,
+            "answer": "I don't have enough evidence in the available corpus to answer this question.",
+            "cited": [],
+            "cited_gold": false,
+            "expected_recall": 0.0
+          },
+          "last": {
+            "supported": false,
+            "answer": "I don't have enough evidence in the available corpus to answer this question.",
+            "cited": [],
+            "cited_gold": false,
+            "expected_recall": 0.0
+          }
+        }
+      }
+    },
+    {
+      "id": "comparison-3",
+      "category": "comparison",
+      "question": "How do the DS@GT and zhengqiaozeng systems for Voight-Kampff AI detection differ?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper434",
+          "page": 1,
+          "id": "0c77caa60fbda37dc206e94fe01f352c8966cf1a8efc102e911e939449719ee2"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper434",
+          "page": 5,
+          "id": "54bb481b428c1c9f57e5d050fea5603796632bdc60c98fd120b5ec88dabef597"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper434",
+          "page": 1,
+          "id": "6648bd16a81317b59392873650d8da654660e26f0360870d95b78251b1846d4f"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper109",
+          "page": 2,
+          "id": "1fc9809e5e18330c95b18bf99af9515086437132a739bd59396acf1bd2c14d96"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper434",
+          "page": 2,
+          "id": "fbdeb2c7382b8238997ab95dcdd3cbaa678806727a44900ef1976f94d86585d7"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper397",
+          "page": 1,
+          "id": "95d4f679e875ba07c827aba3d0645cc71a8aca2b31c8be2544a87f2659d1804c"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 1,
+          "dense": 4,
+          "lexical": 1
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.8888888888888888,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.3333333333333333,
+        "off_target": 1,
+        "passages": 6,
+        "distinct_papers": 3,
+        "rank1_gold": true
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.9112341639399278,
+        "est_prompt_tokens": 2866
+      },
+      "generation": {
+        "base": {
+          "supported": false,
+          "answer": "I don't have enough evidence in the available corpus to answer this question.",
+          "cited": [],
+          "cited_gold": false,
+          "expected_recall": 0.0
+        },
+        "noisy": {
+          "supported": true,
+          "answer": "The zhengqiaozeng system utilizes a DeBERTa-v3-large model and a custom loss function combining cross-entropy, R-Drop regularization, and supervised contrastive learning. [S2][S4][S5]\n\nThe zhengqiaozeng system achieved mean scores of 0.952, 0.556, and 0.622 on the pan25-generative-ai-detection, pan26-generative-ai-detection, and eloquent datasets, respectively. [S2][S4]",
+          "cited": [
+            {
+              "source_id": "S2",
+              "document_id": "paper434",
+              "page": 1,
+              "id": "0c77caa60fbda37dc206e94fe01f352c8966cf1a8efc102e911e939449719ee2"
+            },
+            {
+              "source_id": "S4",
+              "document_id": "paper434",
+              "page": 1,
+              "id": "6648bd16a81317b59392873650d8da654660e26f0360870d95b78251b1846d4f"
+            },
+            {
+              "source_id": "S5",
+              "document_id": "paper386",
+              "page": 9,
+              "id": "d21e43fcb756577f2b84f739c9ac1f2f00431e8421f4fa3567bdf9c65349f9bb"
+            }
+          ],
+          "cited_gold": true,
+          "ungrounded_numbers": [],
+          "ungrounded_terms": [
+            "utilizes"
+          ],
+          "ungrounded_term_rate": 0.02857142857142857,
+          "expected_recall": 0.2727272727272727,
+          "distractors": 3,
+          "cited_distractor": true
+        },
+        "position": {
+          "first": {
+            "supported": true,
+            "answer": "The zhengqiaozeng system utilizes DeBERTa-v3-large as its backbone model and employs a custom loss function combining cross-entropy loss, R-Drop regularization loss, and supervised contrastive learning loss. [S1][S2]\n\nThe DS@GT system fine-tunes Qwen2.5-1.5B on the provided training dataset. [S3]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper434",
+                "page": 1,
+                "id": "0c77caa60fbda37dc206e94fe01f352c8966cf1a8efc102e911e939449719ee2"
+              },
+              {
+                "source_id": "S2",
+                "document_id": "paper434",
+                "page": 1,
+                "id": "6648bd16a81317b59392873650d8da654660e26f0360870d95b78251b1846d4f"
+              },
+              {
+                "source_id": "S3",
+                "document_id": "paper397",
+                "page": 1,
+                "id": "95d4f679e875ba07c827aba3d0645cc71a8aca2b31c8be2544a87f2659d1804c"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [
+              "utilizes"
+            ],
+            "ungrounded_term_rate": 0.029411764705882353,
+            "expected_recall": 0.5151515151515151
+          },
+          "middle": {
+            "supported": true,
+            "answer": "The zhengqiaozeng system utilizes DeBERTa-v3-large as its backbone model and employs a custom loss function combining cross-entropy loss, R-Drop regularization loss, and supervised contrastive learning loss. [S2][S3]\n\nThe DS@GT system fine-tunes Qwen2.5-1.5B on the provided training dataset. [S4]",
+            "cited": [
+              {
+                "source_id": "S2",
+                "document_id": "paper434",
+                "page": 1,
+                "id": "0c77caa60fbda37dc206e94fe01f352c8966cf1a8efc102e911e939449719ee2"
+              },
+              {
+                "source_id": "S3",
+                "document_id": "paper434",
+                "page": 1,
+                "id": "6648bd16a81317b59392873650d8da654660e26f0360870d95b78251b1846d4f"
+              },
+              {
+                "source_id": "S4",
+                "document_id": "paper397",
+                "page": 1,
+                "id": "95d4f679e875ba07c827aba3d0645cc71a8aca2b31c8be2544a87f2659d1804c"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [
+              "utilizes"
+            ],
+            "ungrounded_term_rate": 0.029411764705882353,
+            "expected_recall": 0.5151515151515151
+          },
+          "last": {
+            "supported": false,
+            "answer": "I don't have enough evidence in the available corpus to answer this question.",
+            "cited": [],
+            "cited_gold": false,
+            "expected_recall": 0.0
+          }
+        }
+      }
+    },
+    {
+      "id": "comparison-4",
+      "category": "comparison",
+      "question": "What do the PAN Reasoning Trajectory Detection and Touché labs have in common in how they evaluate submissions?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper390",
+          "page": 1,
+          "id": "1fae054d97fced073dabf56744c1951e4e26df739011f79c6081037ac44d3fa3"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper390",
+          "page": 12,
+          "id": "de63492b4ff0a37691fd283a76cef1c4a1b351fe3527c10a476140ebffe03b9c"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper390",
+          "page": 2,
+          "id": "6541b9c7cc69e25b77a11fcfcb22909ecaea757c64003f3efb68d0905cf877ff"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper390",
+          "page": 1,
+          "id": "c2b93c409edeff5152624ee637e3801db4f576e03b649882d5d6d2b1bcb0e561"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper390",
+          "page": 5,
+          "id": "8594613bbcabe9cb48f6d4d40d249d434d53f8fd299e902145d6815b0d06fd8e"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper390",
+          "page": 14,
+          "id": "ebe0fbae77051acbb6ffa89f48893e669121d60e9b12a036cec7bbd9a9ea59d7"
+        }
+      ],
+      "chunking": {
+        "retrieved_fragments": 0,
+        "quotes": []
+      },
+      "embedding": {
+        "first_gold_rank": {
+          "fused": 5,
+          "dense": 1,
+          "lexical": null
+        },
+        "unmatched_terms": [],
+        "gold_overlap": 0.7,
+        "paraphrases": []
+      },
+      "noise": {
+        "precision": 0.16666666666666666,
+        "off_target": 0,
+        "passages": 6,
+        "distinct_papers": 1,
+        "rank1_gold": false
+      },
+      "context": {
+        "dropped": 0,
+        "gold_dropped": 0,
+        "gold_lost": false,
+        "budget_used": 0.9456594885598923,
+        "est_prompt_tokens": 2987
+      },
+      "generation": {
+        "base": {
+          "supported": false,
+          "answer": "I don't have enough evidence in the available corpus to answer this question.",
+          "cited": [],
+          "cited_gold": false,
+          "expected_recall": 0.0
+        },
+        "noisy": {
+          "supported": false,
+          "error": "The answer hit its output limit. Try a narrower question.",
+          "distractors": 3,
+          "cited_distractor": false
+        },
+        "position": {
+          "first": {
+            "supported": true,
+            "answer": "Both the Reasoning Trajectory Detection and Touché labs used file-based submissions, enabling participants to use various hardware and software configurations while ensuring all predictions were evaluated with the same scripts. [S1]\n\nBoth labs evaluated submissions using macro-averaged F1 as a primary metric. [S1]",
+            "cited": [
+              {
+                "source_id": "S1",
+                "document_id": "paper390",
+                "page": 5,
+                "id": "8594613bbcabe9cb48f6d4d40d249d434d53f8fd299e902145d6815b0d06fd8e"
+              }
+            ],
+            "cited_gold": true,
+            "ungrounded_numbers": [],
+            "ungrounded_terms": [
+              "both",
+              "configurations",
+              "enabling",
+              "ensuring",
+              "software",
+              "used",
+              "using",
+              "various"
+            ],
+            "ungrounded_term_rate": 0.2647058823529412,
+            "expected_recall": 0.42857142857142855
+          },
+          "middle": {
+            "supported": false,
+            "answer": "I don't have enough evidence in the available corpus to answer this question.",
+            "cited": [],
+            "cited_gold": false,
+            "expected_recall": 0.0
+          },
+          "last": {
+            "supported": false,
+            "answer": "I don't have enough evidence in the available corpus to answer this question.",
+            "cited": [],
+            "cited_gold": false,
+            "expected_recall": 0.0
+          }
+        }
+      }
+    },
+    {
+      "id": "unsupported-1",
+      "category": "unsupported",
+      "question": "How much did the gfreitas team on ImageCLEF spend in AI API costs during evaluation?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper243",
+          "page": 1,
+          "id": "87a92ae706ba1f195a8ebf2217aa8440f9862ca8e7b1eda6cdf59cc03626134e"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper243",
+          "page": 4,
+          "id": "07b084e3d7c3496cad08c61f897d3027aebc938315d7aec77bfa338f368f5ecb"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper14",
+          "page": 8,
+          "id": "4644111673beb910988ee843f42c09efa741d473469e08eb01c45ac6a5bef07e"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper241",
+          "page": 10,
+          "id": "41dd1531e32b0372cca6b26332c9462299083bcc0f15f91872980a106089a1fa"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper243",
+          "page": 14,
+          "id": "e8744074b6a7038e64757d2cc89cef8037dc65129e4c30e0936c542ee5cf185a"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper241",
+          "page": 4,
+          "id": "8182b147ac72e31020774a5ca8f7385793ff097a3ad788a785bb13ad1637e2f4"
+        }
+      ],
+      "generation": {
+        "route": "content",
+        "abstained": true,
+        "base": {
+          "supported": false,
+          "answer": "I don't have enough evidence in the available corpus to answer this question.",
+          "cited": [],
+          "cited_gold": false,
+          "expected_recall": 0.0
+        }
+      }
+    },
+    {
+      "id": "unsupported-2",
+      "category": "unsupported",
+      "question": "How much time did the TalentCLEF organizers spend on annotation?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper475",
+          "page": 1,
+          "id": "6a3bf65bb3bec92217159ceea5b2941ff0579d6387e6c31739cfeecaf737b7a2"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper475",
+          "page": 17,
+          "id": "c4ddf3e47d41837c7f9de518d31cbccf2536a02b181b86bed8a3a248ee215637"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper475",
+          "page": 15,
+          "id": "d3d9fb13f2b5225aaafc41fc968b04c9044ce34c7f991c7c3d3ecd3c6c3ca95e"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper475",
+          "page": 6,
+          "id": "acde3f22ccd27edac5c419eecc10554734dd188d2b18834c72be893db33f213c"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper485",
+          "page": 11,
+          "id": "98ccc88bbb6c138afd2b52af0f1dcf2b678687d3b805188ab23cde130fb5f61d"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper352",
+          "page": 2,
+          "id": "a2eb4d7ac70ac2fd73fc57cee8f23b9fe7c24e98fb5791a090ec6f99a8f014d3"
+        }
+      ],
+      "generation": {
+        "route": "content",
+        "abstained": true,
+        "base": {
+          "supported": false,
+          "answer": "I don't have enough evidence in the available corpus to answer this question.",
+          "cited": [],
+          "cited_gold": false,
+          "expected_recall": 0.0
+        }
+      }
+    },
+    {
+      "id": "unsupported-3",
+      "category": "unsupported",
+      "question": "Which team will win TalentCLEF next year?",
+      "retrieved": [
+        {
+          "source_id": "S1",
+          "document_id": "paper474",
+          "page": 1,
+          "id": "650a2b04b544944cf92cc3dc55dfa60b96017b8859d2b22ed6bfb8e7ef4708ed"
+        },
+        {
+          "source_id": "S2",
+          "document_id": "paper474",
+          "page": 17,
+          "id": "5d460525d2b5087a5c8f06e6c7db89286fb619c0e3202e526225cd66d4ad6ae9"
+        },
+        {
+          "source_id": "S3",
+          "document_id": "paper474",
+          "page": 1,
+          "id": "daf187dc49885febaa4cc58d94694e0b319e5a3f764a48e542c9ace16ac824c0"
+        },
+        {
+          "source_id": "S4",
+          "document_id": "paper98",
+          "page": 33,
+          "id": "fb92b60efa00216546c475a807b135dd5a47fcc831defab08a295e066f660e3d"
+        },
+        {
+          "source_id": "S5",
+          "document_id": "paper475",
+          "page": 16,
+          "id": "2556d65dd1296b63ebc42b0072b636584fa41390360d6b099970e896c8e994d6"
+        },
+        {
+          "source_id": "S6",
+          "document_id": "paper475",
+          "page": 1,
+          "id": "b24605f7db964452aa7d93887a08491ed400b303b3952006d49eb409cc22b750"
+        }
+      ],
+      "generation": {
+        "route": "content",
+        "abstained": true,
+        "base": {
+          "supported": false,
+          "answer": "I don't have enough evidence in the available corpus to answer this question.",
+          "cited": [],
+          "cited_gold": false,
+          "expected_recall": 0.0
+        }
+      }
+    }
+  ]
+}
