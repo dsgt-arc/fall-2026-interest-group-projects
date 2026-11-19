@@ -10,7 +10,6 @@
 #SBATCH -q inferno                           # QoS
 #SBATCH -o logs/train-dsgt-fashion-fm-%j.out # Standard output log file
 #SBATCH --mail-type=END,FAIL                 # Mail events (NONE, BEGIN, END, FAIL, ALL)
-#SBATCH --mail-user=eric.regina@gatech.edu    # E-mail address to receive notifications
 
 set -euo pipefail # bash strict mode
 
@@ -29,8 +28,14 @@ cd "${SLURM_SUBMIT_DIR:-$PWD}"
 
 uv sync --locked
 
+uv run fashion-fm train --config configs/train.yml
+
+uv run fashion-fm generate
+
+exit 0
+
 # Make sure to use exec for the job to automatically stop!
-exec uv run fashion-fm train --config configs/train.yml
+# exec uv run fashion-fm train --config configs/train.yml
 
 # to run with profiling, using the following below
 
