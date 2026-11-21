@@ -5,6 +5,7 @@ from pathlib import Path
 
 import pytest
 from langchain_core.embeddings import Embeddings
+from langchain_core.documents import Document
 from pypdf import PdfWriter
 from pypdf.generic import DecodedStreamObject, DictionaryObject, NameObject
 
@@ -14,7 +15,7 @@ from clef_rag.config import EMBED_MODEL, RagError
 from clef_rag.index import Index
 from clef_rag.ingest import chunks_for_page, extract_pdf, ingest
 from clef_rag.models import EMBED_INPUT_BYTES, LocalModels, RetrievalEmbeddings
-from clef_rag.retrieve import Retriever, lexical_tokens, source_record
+from clef_rag.retrieve import Retriever, RetrievalSettings, lexical_tokens, source_record
 
 HTML = """<div class="CEURTOC"><ul><li id="preface"><a href="preface.pdf">Preface</a></li></ul>
 <h3><span class="CEURSESSION">BioASQ: Biomedical QA</span></h3><ul>
@@ -215,6 +216,49 @@ def test_changed_and_removed_papers_replace_old_search_content(corpus, monkeypat
         assert index.documents(["paper2"]) == []
         texts = [source_record(doc)["text"] for doc in index.documents(["paper1"])]
         assert texts == ["New revised retrieval method."]
+
+
+@pytest.mark.parametrize("mode", ["hybrid", "dense", "bm25"])
+def test_search_modes_use_existing_index(corpus, mode):
+    _, directory, _, models, _ = corpus
+    with Index(directory) as index:
+        calls = models.calls
+        results = Retriever(index, models, RetrievalSettings(
+            mode=mode, candidate_depth=40, top_k=10
+        )).search("sparse retrieval", paper_ids=["paper1"])
+        assert results and len(results) <= 10
+        assert all(result["document_id"] == "paper1" for result in results)
+        if mode == "bm25":
+            assert models.calls == calls
+        else:
+            assert models.calls > calls
+
+
+def test_comparison_respects_candidate_depth(monkeypatch):
+    class IndexStub:
+        db = None
+
+        def vectorstore(self, models):
+            return None
+
+        def documents(self, ids):
+            return [
+                Document(page_content="header\ntext", metadata={
+                    "document_id": paper, "page": i + 1, "start_char": 0,
+                    "end_char": 4, "chunk_id": f"{paper}-{i}",
+                })
+                for paper in ids for i in range(30)
+            ]
+
+    monkeypatch.setattr("clef_rag.retrieve.list_documents", lambda *args, **kwargs: [
+        {"id": paper, "status": "indexed"} for paper in ("paper1", "paper2")
+    ])
+    monkeypatch.setattr(Retriever, "_rank", lambda self, question, store, docs: docs)
+    index = IndexStub()
+    shallow = Retriever(index, None, RetrievalSettings(candidate_depth=20, top_k=60))
+    deep = Retriever(index, None, RetrievalSettings(candidate_depth=40, top_k=60))
+    assert len(shallow.search("q", paper_ids=["paper1", "paper2"])) == 40
+    assert len(deep.search("q", paper_ids=["paper1", "paper2"])) == 60
 
 
 def test_hybrid_search_filters_comparison_and_model_mismatch(corpus):
