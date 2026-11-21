@@ -44,4 +44,4 @@ exit 0
 #     --stats=true \
 #     uv run fashion-fm train --config configs/train.yml
 
-# exit 0 # you MUST have an exit signal for the job to automatically stop!
+exit 0 # you MUST have an exit signal for the job to automatically stop!

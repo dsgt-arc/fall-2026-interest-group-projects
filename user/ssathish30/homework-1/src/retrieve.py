@@ -1,0 +1,179 @@
+"""LangChain hybrid retrieval over Chroma and a BM25 retriever."""
+
+import random
+import re
+
+from langchain_classic.retrievers import EnsembleRetriever
+from langchain_community.retrievers import BM25Retriever
+from langsmith import tracing_context
+
+from clef_rag.catalog import list_documents
+from clef_rag.config import RagError
+
+
+def lexical_tokens(text):
+    return re.findall(r"\w+", text.casefold())
+
+
+def source_record(document):
+    return {
+        **document.metadata,
+        "id": document.metadata["chunk_id"],
+        "text": document.page_content.split("\n", 1)[1],
+    }
+
+
+def overlaps(left, right):
+    if left["id"] == right["id"]:
+        return True
+    if left["document_id"] != right["document_id"] or left["page"] != right["page"]:
+        return False
+    intersection = max(
+        0,
+        min(left["end_char"], right["end_char"])
+        - max(left["start_char"], right["start_char"]),
+    )
+    smaller = min(
+        left["end_char"] - left["start_char"], right["end_char"] - right["start_char"]
+    )
+    return intersection > 0.5 * smaller
+
+
+class Retriever:
+    def __init__(
+        self,
+        index,
+        models,
+        *,
+        weights=(0.5, 0.5),
+        rrf_c=60,
+        candidates=20,
+        introductions=True,
+        shuffle_seed=None,
+        rerank_depth=0,
+        rerank_models=None,
+    ):
+        self.index, self.models = index, models
+        self.weights = list(weights)
+        self.rrf_c = rrf_c
+        self.candidates = candidates
+        # Ablations disable the opening-context prepend, or destroy the fused
+        # order outright, so metrics reflect the ranking under test.
+        self.introductions = introductions
+        self.shuffle_seed = shuffle_seed
+        # Reranking reorders a deeper pool before it is cut to top_k.
+        self.rerank_depth = rerank_depth
+        self.rerank_models = rerank_models
+
+    def search(self, question, *, track=None, author=None, paper_ids=None, top_k=6):
+        if self.rerank_depth > top_k:
+            deep = self._select(
+                question, track=track, author=author, paper_ids=paper_ids,
+                top_k=self.rerank_depth)
+            from clef_rag.rerank import rerank
+            return rerank(self.rerank_models, question, deep, keep=top_k)
+        return self._select(
+            question, track=track, author=author, paper_ids=paper_ids, top_k=top_k)
+
+    def _select(self, question, *, track=None, author=None, paper_ids=None, top_k=6):
+        store = self.index.vectorstore(self.models)
+        catalog = list_documents(
+            self.index.db, track=track, author=author, paper_ids=paper_ids
+        )
+        if not catalog:
+            raise RagError("No documents match the selected filters.")
+        if paper_ids:
+            unavailable = [
+                d["id"] for d in catalog if d["status"] not in ("indexed", "partial")
+            ]
+            if unavailable:
+                raise RagError(
+                    "Full text is unavailable for "
+                    + ", ".join(unavailable)
+                    + ". Catalog metadata remains available."
+                )
+            if len(paper_ids) > top_k:
+                raise RagError(f"Compare at most {top_k} papers at once.")
+        chunks = self.index.documents([d["id"] for d in catalog])
+        if not chunks:
+            return []
+        if paper_ids and len(paper_ids) > 1:
+            groups = [
+                self._rank(
+                    question,
+                    store,
+                    [d for d in chunks if d.metadata["document_id"] == paper_id],
+                )
+                for paper_id in paper_ids
+            ]
+            ranked = [
+                group[i]
+                for i in range(self.candidates)
+                for group in groups
+                if len(group) > i
+            ]
+        else:
+            ranked = self._rank(question, store, chunks)
+        leading_ids = (
+            paper_ids or ([ranked[0].metadata["document_id"]] if ranked else [])
+            if self.introductions
+            else []
+        )
+        introductions = []
+        for document_id in leading_ids:
+            candidates = [d for d in chunks if d.metadata["document_id"] == document_id]
+            if candidates:
+                introductions.append(
+                    min(
+                        candidates,
+                        key=lambda d: (d.metadata["page"], d.metadata["start_char"]),
+                    )
+                )
+        selected = []
+        for document in introductions + ranked:
+            item = source_record(document)
+            if not any(overlaps(item, previous) for previous in selected):
+                item["source_id"] = f"S{len(selected) + 1}"
+                item["rank"] = len(selected) + 1
+                selected.append(item)
+            if len(selected) == top_k:
+                break
+        return selected
+
+    def _rank(self, question, store, documents):
+        if not documents:
+            return []
+        ids = sorted({d.metadata["document_id"] for d in documents})
+        depth = min(self.candidates, len(documents))
+        semantic = store.as_retriever(
+            search_kwargs={
+                "k": depth,
+                "filter": {"document_id": {"$in": ids}},
+            }
+        )
+        lexical = BM25Retriever.from_documents(
+            documents, k=depth, preprocess_func=lexical_tokens
+        )
+        # A zero weight still costs a retrieval call, so drop that arm entirely
+        # to isolate the other one.
+        arms = [
+            (retriever, weight)
+            for retriever, weight in ((semantic, self.weights[0]), (lexical, self.weights[1]))
+            if weight > 0
+        ]
+        if not arms:
+            raise RagError("At least one retriever weight must be greater than zero.")
+        ensemble = EnsembleRetriever(
+            retrievers=[retriever for retriever, _ in arms],
+            weights=[weight for _, weight in arms],
+            c=self.rrf_c,
+            id_key="chunk_id",
+        )
+        try:
+            with tracing_context(enabled=False):
+                ranked = ensemble.invoke(question)
+                if self.shuffle_seed is not None:
+                    random.Random(self.shuffle_seed).shuffle(ranked)
+                return ranked
+        except Exception as exc:
+            raise RagError(f"LangChain retrieval failed: {exc}") from exc

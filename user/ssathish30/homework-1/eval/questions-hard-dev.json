@@ -1,0 +1,797 @@
+[
+  {
+    "id": "catalog-2",
+    "category": "catalog",
+    "question": "How many papers are downloaded?",
+    "expected_counts": {
+      "downloaded_papers": 508,
+      "downloaded_supporting_documents": 1
+    },
+    "expected_answer": "508 papers plus one preface as of the initial corpus snapshot."
+  },
+  {
+    "id": "catalog-4",
+    "category": "catalog",
+    "question": "How many papers are in CheckThat!?",
+    "expected_counts": {
+      "listed_papers": 44
+    },
+    "expected_answer": "44 CheckThat! papers in the catalog."
+  },
+  {
+    "id": "catalog-3",
+    "category": "catalog",
+    "question": "How many papers are in BioASQ?",
+    "expected_counts": {
+      "listed_papers": 50
+    },
+    "expected_answer": "50 BioASQ papers in the catalog."
+  },
+  {
+    "id": "unsupported-4",
+    "category": "unsupported",
+    "question": "What private reviewer scores were assigned to paper6?",
+    "papers": [
+      "paper6"
+    ],
+    "expected_answer": "Insufficient evidence for private reviewer scores."
+  },
+  {
+    "id": "unsupported-3",
+    "category": "unsupported",
+    "question": "How many papers use retrieval-augmented generation?",
+    "expected_answer": "Cannot give an exhaustive method count from top-k retrieval; offer cited examples."
+  },
+  {
+    "id": "unsupported-2",
+    "category": "unsupported",
+    "question": "What will be the exact winning score at CLEF 2030?",
+    "expected_answer": "Insufficient evidence; no future prediction presented as fact."
+  },
+  {
+    "id": "cand-028",
+    "category": "paper",
+    "question": "What range of scalar temperatures was searched for during temperature scaling applied to each model?",
+    "expected_answer": "EfficientNet-B3",
+    "gold_sources": [
+      {
+        "paper": "paper289",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-026",
+    "category": "paper",
+    "question": "What was the maximum norm used for gradient clipping in the MediFact model?",
+    "expected_answer": "The official evaluation protocol provided by the ImageCLEFmed MEDIQA 2026 Task 02 organizers.",
+    "gold_sources": [
+      {
+        "paper": "paper286",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-060",
+    "category": "paper",
+    "question": "According to this text, what is the URL for the Gemma 4 model card?",
+    "expected_answer": "Natural language inference.",
+    "gold_sources": [
+      {
+        "paper": "paper500",
+        "pages": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-056",
+    "category": "paper",
+    "question": "What GPT model was used for parsing resumes and job descriptions in QTPride?",
+    "expected_answer": "multilingual-e5-large-instruct",
+    "gold_sources": [
+      {
+        "paper": "paper490",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-042",
+    "category": "paper",
+    "question": "What dimensionality feature space does MAC-XGBoost utilize?",
+    "expected_answer": "MAC-XGBoost operates within an 18-dimensional feature space.",
+    "gold_sources": [
+      {
+        "paper": "paper432",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-001",
+    "category": "paper",
+    "question": "What was the Ma-F1 score achieved by BERT-Experiment-3-A?",
+    "expected_answer": "78.76",
+    "gold_sources": [
+      {
+        "paper": "paper13",
+        "pages": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-011",
+    "category": "paper",
+    "question": "What open-weights model did WSE-Research use for their CLEF 2026 ELOQUENT Sensemaking system?",
+    "expected_answer": "Partial Credit.",
+    "gold_sources": [
+      {
+        "paper": "paper103",
+        "pages": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-055",
+    "category": "paper",
+    "question": "According to Skillberg's findings regarding Task A, what weighting of dense and sparse scores yielded a measurable lift over dense-only retrieval?",
+    "expected_answer": "0.6374",
+    "gold_sources": [
+      {
+        "paper": "paper491",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-012",
+    "category": "paper",
+    "question": "What was the QWK score for the WritersLogic mDeBERTa-v3 PoE model on the Additional test set?",
+    "expected_answer": "0.512\u00b1020",
+    "gold_sources": [
+      {
+        "paper": "paper98",
+        "pages": [
+          17
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-007",
+    "category": "paper",
+    "question": "For what task did SINAI-UGPLN use intfloat/multilingual-e5-large?",
+    "expected_answer": "The lexical strategy.",
+    "gold_sources": [
+      {
+        "paper": "paper88",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-010",
+    "category": "paper",
+    "question": "According to SRH-ReliableAI's experiments, what numerical improvement in CSP was observed when facts were translated into the prompt\u2019s language?",
+    "expected_answer": "One possible explanation is that it promotes language-frame consistency, allowing the model to avoid switching representations between the retrieved context and the question.",
+    "gold_sources": [
+      {
+        "paper": "paper107",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-052",
+    "category": "paper",
+    "question": "What specific LLM was used as 'LLM2' in the THM@SimpleText system?",
+    "expected_answer": "0.9",
+    "gold_sources": [
+      {
+        "paper": "paper456",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-008",
+    "category": "paper",
+    "question": "According to DS@GT ARC's evidence cleaning process for CheckThat!, what cosine similarity threshold is used to classify documents as boilerplate?",
+    "expected_answer": "0.25",
+    "gold_sources": [
+      {
+        "paper": "paper90",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-046",
+    "category": "paper",
+    "question": "By how much did Hybrid QA outperform the diagonal greedy baseline on Task 1B?",
+    "expected_answer": "Task 1B (feature selection) and Task 2 (instance selection)",
+    "gold_sources": [
+      {
+        "paper": "paper441",
+        "pages": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-019",
+    "category": "paper",
+    "question": "According to the 'fosu ltw @ FinMMEval 2026 Task 1' report, which issue ID was downgraded to low confidence in the Chinese track?",
+    "expected_answer": "English.",
+    "gold_sources": [
+      {
+        "paper": "paper202",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-027",
+    "category": "paper",
+    "question": "What algorithm was used to obtain the final one-to-one assignment?",
+    "expected_answer": "A compact DCGAN-style architecture.",
+    "gold_sources": [
+      {
+        "paper": "paper287",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-038",
+    "category": "paper",
+    "question": "What language model did all agents utilize in Experiment 1?",
+    "expected_answer": "0.35",
+    "gold_sources": [
+      {
+        "paper": "paper378",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-050",
+    "category": "paper",
+    "question": "What was the impact on SARI when a 129-entry medical lexicon was disabled in the Codabench submissions for Task 1?",
+    "expected_answer": "The output cleanup pass removed leading preamble phrases such as \u201chere\u2019s the simplified version:\u201d, \u201csimplified:\u201d, and \u201csure, \u201d.",
+    "gold_sources": [
+      {
+        "paper": "paper461",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-041",
+    "category": "paper",
+    "question": "What was Writerslogic's rank and soft F1 score on Subtask 2?",
+    "expected_answer": "0.31",
+    "gold_sources": [
+      {
+        "paper": "paper401",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-020",
+    "category": "paper",
+    "question": "According to TextSentinels @ FinMMEval 2026 Task 1, which model serves as the reasoning-oriented scorer?",
+    "expected_answer": "Groq\u2019s OpenAI-compatible API",
+    "gold_sources": [
+      {
+        "paper": "paper192",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-040",
+    "category": "paper",
+    "question": "What Qwen model is used as the basis for the dense retrieval component in QwenTemporalIR?",
+    "expected_answer": "To surface semantically relevant documents that may use different vocabulary from the query.",
+    "gold_sources": [
+      {
+        "paper": "paper379",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-013",
+    "category": "paper",
+    "question": "What cross-validation scheme was used to train the metalearners?",
+    "expected_answer": "To enhance reproducibility, all remaining hyperparameters were kept at their scikit-learn default values unless otherwise specified.",
+    "gold_sources": [
+      {
+        "paper": "paper159",
+        "pages": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-025",
+    "category": "paper",
+    "question": "What GitHub repository URL contains the inference code and checkpoint for the NeuroVietCH system?",
+    "expected_answer": "ChatGPT",
+    "gold_sources": [
+      {
+        "paper": "paper250",
+        "pages": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-045",
+    "category": "paper",
+    "question": "What are the names of the two unified formulations used by Team SYZYGY?",
+    "expected_answer": "\ud835\udc44\ud835\udc3c\ud835\udc3c+WMI 1 and \ud835\udc44\ud835\udc3c\ud835\udc3c+WMI 2.",
+    "gold_sources": [
+      {
+        "paper": "paper440",
+        "pages": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-047",
+    "category": "paper",
+    "question": "What nDCG@10 score did teamR2AI achieve?",
+    "expected_answer": "TeamFAST-NUCES adopted a QUBO formulation that combines collaborative relevance, separability, coverage, and redundancy signals extracted from both the Item Content Matrix and the User Rating Matrix.",
+    "gold_sources": [
+      {
+        "paper": "paper436",
+        "pages": [
+          11
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-002",
+    "category": "paper",
+    "question": "According to the study, which run achieved superior results in Catalan when evaluated using traditional ROUGE metrics?",
+    "expected_answer": "Run 2.",
+    "gold_sources": [
+      {
+        "paper": "paper47",
+        "pages": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-009",
+    "category": "paper",
+    "question": "According to the Toulouse IRIT Lab's participation in ELOQUENT at CLEF 2026, who performed the annotation of cluster labels?",
+    "expected_answer": "Domains like food items, family relationships, or clothing were used as descriptive labels when responses consistently referred to the same domain. Otherwise, a label best capturing the dominant theme was selected.",
+    "gold_sources": [
+      {
+        "paper": "paper104",
+        "pages": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-035",
+    "category": "paper",
+    "question": "What Technology Agency of the Czech Republic project number supported LP's work?",
+    "expected_answer": "https://www.kaggle.com/c/animal-clef-2026",
+    "gold_sources": [
+      {
+        "paper": "paper316",
+        "pages": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-048",
+    "category": "paper",
+    "question": "What proxy classifier was used for evaluating QA- and SA-selected subsets in Task 2?",
+    "expected_answer": "NYT Vader (20% injected noise)",
+    "gold_sources": [
+      {
+        "paper": "paper439",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-053",
+    "category": "paper",
+    "question": "What is Skillberg.app's Spanish score?",
+    "expected_answer": "Skillberg.app",
+    "gold_sources": [
+      {
+        "paper": "paper474",
+        "pages": [
+          11
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-054",
+    "category": "paper",
+    "question": "What Graded NDCG score did the final two-stage pipeline achieve on the official unseen test set?",
+    "expected_answer": "0.7399",
+    "gold_sources": [
+      {
+        "paper": "paper476",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-037",
+    "category": "paper",
+    "question": "What three metrics do LLM judges use to evaluate topics in the official LongEval Task 2 challenge?",
+    "expected_answer": "Alignment, Distinguishability, and Clarity.",
+    "gold_sources": [
+      {
+        "paper": "paper380",
+        "pages": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-032",
+    "category": "paper",
+    "question": "What was the MAP score of the XGBoost rank:ndcg model?",
+    "expected_answer": "Sparse-query failure, specifically for queries like 'a'.",
+    "gold_sources": [
+      {
+        "paper": "paper308",
+        "pages": [
+          11
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-034",
+    "category": "paper",
+    "question": "For which number of target species were prototypes computed using the PerchV2 embeddings?",
+    "expected_answer": "Focal BCE with \u03b1 = 0.25 and \u03b3 = 2.0.",
+    "gold_sources": [
+      {
+        "paper": "paper321",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-015",
+    "category": "paper",
+    "question": "What probability is used for dictionary-based synonym substitution in UniKo's data augmentation?",
+    "expected_answer": "class-weighted cross-entropy with label smoothing.",
+    "gold_sources": [
+      {
+        "paper": "paper167",
+        "pages": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-030",
+    "category": "paper",
+    "question": "What system submitted results using the run ID 'UAms_Task1_Anserini'?",
+    "expected_answer": "CodaBench",
+    "gold_sources": [
+      {
+        "paper": "paper302",
+        "pages": [
+          6
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-058",
+    "category": "paper",
+    "question": "According to the evaluation, how many records did the courtroom and BERT disagree on?",
+    "expected_answer": "+4.0 pp",
+    "gold_sources": [
+      {
+        "paper": "paper501",
+        "pages": [
+          8
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-005",
+    "category": "paper",
+    "question": "According to the paper, which LoRA variant was the strongest encoder-only?",
+    "expected_answer": "The passage states that LLaMA-3.2-3B QLoRA models produced the best local validation Recall@5 among the authors' own reruns.",
+    "gold_sources": [
+      {
+        "paper": "paper82",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cand-021",
+    "category": "paper",
+    "question": "According to Table 4, what was the macro recall score for Mistral 3.2 on the German training set?",
+    "expected_answer": "No, the combination had a negative effect on the English test set compared to the base model.",
+    "gold_sources": [
+      {
+        "paper": "paper217",
+        "pages": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "synth-010",
+    "category": "synthesis",
+    "question": "Comparing 'DS@GT ARC at LongEval' with 'Hybrid Evidence-Aware User Simulation for Scientific Search Sessions,' how do the priorities of frontier models like Claude Opus 4.7 Thinking contrast with those of a system designed to maximize faithfulness such as CRAG+CiteFix?",
+    "expected_answer": "CRAG+CiteFix prioritizes factual grounding and attribution accuracy, achieving high faithfulness scores, while frontier models like Claude Opus 4.7 Thinking prioritize answer relevancy even at the expense of strict citation integrity and faithfulness to the source material.",
+    "gold_sources": [
+      {
+        "paper": "paper381",
+        "pages": [
+          7
+        ]
+      },
+      {
+        "paper": "paper382",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "synth-013",
+    "category": "synthesis",
+    "question": "How do FutureMakers and MedCascade handle classification head training with respect to domain specificity?",
+    "expected_answer": "FutureMakers trains a single linear classification head for all categories using PubMedBERT-base, while MedCascade instantiates separate linear classification heads for each parent field, allowing for specialized feature learning within those domains.",
+    "gold_sources": [
+      {
+        "paper": "paper462",
+        "pages": [
+          3
+        ]
+      },
+      {
+        "paper": "paper448",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "synth-006",
+    "category": "synthesis",
+    "question": "How do Gemma-4-26B (MoE)'s prompt strategies and Mistral-Small-24B's approach to handling multilingual data differ in their reported performance on person-place relation extraction tasks?",
+    "expected_answer": "Gemma-4-26B (MoE) utilizes a tiered prompting strategy with varying shot counts (0, 3, 5, 10) and demonstrates improved results with higher shot counts, while Mistral-Small-24B primarily employs a single prompt configuration across its experiments using native language data.",
+    "gold_sources": [
+      {
+        "paper": "paper220",
+        "pages": [
+          15
+        ]
+      },
+      {
+        "paper": "paper224",
+        "pages": [
+          3
+        ]
+      }
+    ]
+  },
+  {
+    "id": "synth-012",
+    "category": "synthesis",
+    "question": "QUBO Based Quantum Annealing for Feature Selection utilizes binary decision variables to select samples, while Cluster-Aware QUBO Instance Selection employs a Pareto-frontier configuration identified through Bayesian optimization; how do these approaches differ in their method of determining which data instances are selected?",
+    "expected_answer": "The former uses direct assignment of binary variables and a defined budget per batch, whereas the latter leverages Bayesian optimization to find an optimal balance between Macro-F1 score and size reduction based on cluster count and other parameters.",
+    "gold_sources": [
+      {
+        "paper": "paper443",
+        "pages": [
+          6
+        ]
+      },
+      {
+        "paper": "paper437",
+        "pages": [
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "id": "synth-009",
+    "category": "synthesis",
+    "question": "Compared to the re-ranking approach in 'Calibrated Similarity and Graph Clustering,' which utilizes a combined Jaccard distance and an original pairwise distance controlled by parameter \u03bb, what optimization strategy was employed for weighting backbones in 'Rapid Exploration of Foundation Models and Supervised Contrastive Learning'?",
+    "expected_answer": "The system in 'Rapid Exploration...' optimized backbone weights using a grid search to maximize training-set ARI, with weight steps of 0.2 and threshold values between 0.3 and 0.7, whereas the other approach uses a parameter \u03bb to balance neighborhood-based and original pairwise distances.",
+    "gold_sources": [
+      {
+        "paper": "paper336",
+        "pages": [
+          7
+        ]
+      },
+      {
+        "paper": "paper339",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  },
+  {
+    "id": "synth-004",
+    "category": "synthesis",
+    "question": "According to both accounts, what base language model was utilized for text-based inputs, and how did each system handle visual content representation?",
+    "expected_answer": "Both systems employed XLM-RoBERTa-base for processing textual data; however, while the first approach directly incorporated CLIP image embeddings for visual content, the second used official OCR text for meme instances.",
+    "gold_sources": [
+      {
+        "paper": "paper157",
+        "pages": [
+          9
+        ]
+      },
+      {
+        "paper": "paper181",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "synth-015",
+    "category": "synthesis",
+    "question": "According to the reports, which language models achieved the highest individual performance in fallacy detection \u2013 Qwen3 embedding or Qwen2.5 \u2013 and what was the corresponding F1 score for each?",
+    "expected_answer": "Qwen2.5 achieved an F1 of 0.751, while Qwen3 embedding's performance is only referenced as a foundation model used for text embedding and reranking without a specific F1 score provided.",
+    "gold_sources": [
+      {
+        "paper": "paper508",
+        "pages": [
+          6
+        ]
+      },
+      {
+        "paper": "paper493",
+        "pages": [
+          4
+        ]
+      }
+    ]
+  },
+  {
+    "id": "synth-007",
+    "category": "synthesis",
+    "question": "Considering UIT_NEWRON's canonical post-processing and DenseNet-121\u2019s use of asymmetric loss (ASL), what contrasting observation was made regarding initialization strategies for improving performance?",
+    "expected_answer": "While ImageNet initialization proved beneficial for the DenseNet-121 system, medical-domain initialization with RadImageNet did not improve results and even led to less stable finetuning compared to using ImageNet.",
+    "gold_sources": [
+      {
+        "paper": "paper275",
+        "pages": [
+          8
+        ]
+      },
+      {
+        "paper": "paper297",
+        "pages": [
+          10
+        ]
+      }
+    ]
+  },
+  {
+    "id": "synth-005",
+    "category": "synthesis",
+    "question": "How do the approaches to handling low confidence predictions differ between the Multi-Agent Financial Intelligence Framework and the TrustMe team's discarded decision mechanisms?",
+    "expected_answer": "The Multi-Agent Financial Intelligence Framework converts low-confidence predictions into 'HOLD' recommendations alongside other safety constraints, while the TrustMe team found that a three-way majority vote system (with varying temperatures) consistently resulted in mostly 'HOLD' actions and was therefore abandoned.",
+    "gold_sources": [
+      {
+        "paper": "paper200",
+        "pages": [
+          10
+        ]
+      },
+      {
+        "paper": "paper201",
+        "pages": [
+          9
+        ]
+      }
+    ]
+  },
+  {
+    "id": "synth-011",
+    "category": "synthesis",
+    "question": "Compared to the approach taken by Team Asdkklkk's ModernBERT-Based Source Detection system, what method did Team Bit-by-Bit employ for selecting the decision threshold used in their Guardian Ensemble?",
+    "expected_answer": "Team Bit-by-Bit selected a hard decision threshold of 0.05 based on visual inspection of predicted probability histograms, whereas Team Asdkklkk performed a systematic threshold search on a validation set to determine the optimal value.",
+    "gold_sources": [
+      {
+        "paper": "paper399",
+        "pages": [
+          9
+        ]
+      },
+      {
+        "paper": "paper417",
+        "pages": [
+          5
+        ]
+      }
+    ]
+  }
+]

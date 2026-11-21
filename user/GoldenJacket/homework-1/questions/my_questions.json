@@ -1,0 +1,12 @@
+[
+  {"question": "What retrieval pipelines did BioASQ 2026 teams use to find relevant PubMed documents and snippets?", "track": "BioASQ"},
+  {"question": "How did teams use large language models to produce exact answers for factoid and list questions in BioASQ?", "track": "BioASQ"},
+  {"question": "Which BioASQ systems used retrieval-augmented generation, and which language models did they rely on?", "track": "BioASQ"},
+  {"question": "Did any biomedical question answering team report that reranking retrieved documents improved their results?"},
+  {"question": "What clinical summarization tasks were run at CLEF 2026, and how were the summaries evaluated?"},
+  {"question": "Which approaches were used to answer medical exam questions that include images?", "track": "ImageCLEF"},
+  {"question": "What methods did teams use to detect early signs of depression or other mental health risks from social media posts?", "track": "eRisk"},
+  {"question": "How did CheckThat! participants verify numerical claims?", "track": "CheckThat"},
+  {"question": "Which papers fine-tuned models with LoRA, and what did they fine-tune them for?"},
+  {"question": "What are common failure cases that teams reported when using LLMs for biomedical question answering?"}
+]

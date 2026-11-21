@@ -122,3 +122,13 @@ ankle boot.
 uv run pytest
 uv run ruff check .
 ```
+
+### Running on PACE Phoenix
+
+The `job.sbatch` is adapted for the ICE environment on PACE. If you wish to run in the Phoenix environment instead, you will need to modify the job script to add the following lines for the Phoenix environment:
+
+```bash
+#!/bin/bash
+#SBATCH -A paceship-clef2026_img_gans        # Account name
+#SBATCH -q inferno                           # QoS
+```

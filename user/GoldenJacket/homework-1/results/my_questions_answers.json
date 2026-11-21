@@ -1,0 +1,807 @@
+[
+  {
+    "question": "What retrieval pipelines did BioASQ 2026 teams use to find relevant PubMed documents and snippets?",
+    "track": "BioASQ",
+    "baseline": {
+      "answer": "The LLM-Guided RAG system used a large language model to extract biomedical keywords from user questions. [S1]\n\nThe Multi-Stage Retrieval pipeline used BM25 (Okapi) ranking function implemented via Pyserini, with parameters tuned through grid search. [S3]\n\nSynapFlow used Elasticsearch 8 to index the PubMed corpus of 40M documents using BM25. [S5]",
+      "supported": true,
+      "elapsed_seconds": 34.43,
+      "retrieved": [
+        {
+          "source": "S1",
+          "paper": "paper36",
+          "page": 1,
+          "title": "LLM-Guided RAG: A Biomedical Retrieval System for BioASQ Synergy 2026"
+        },
+        {
+          "source": "S2",
+          "paper": "paper36",
+          "page": 7,
+          "title": "LLM-Guided RAG: A Biomedical Retrieval System for BioASQ Synergy 2026"
+        },
+        {
+          "source": "S3",
+          "paper": "paper40",
+          "page": 4,
+          "title": "A Multi-Stage Retrieval and Ensemble-Based Answer Generation Pipeline for Biomedical QA in BioASQ Task 14b"
+        },
+        {
+          "source": "S4",
+          "paper": "paper41",
+          "page": 9,
+          "title": "RMC at BioASQ 2026: A local RAG approach for end-to-end Biomedical QA"
+        },
+        {
+          "source": "S5",
+          "paper": "paper18",
+          "page": 4,
+          "title": "SynapFlow at BioASQ@CLEF 2026: Retrieval-Augmented Generation with Diversity-Enhanced Hybrid Retrieval"
+        },
+        {
+          "source": "S6",
+          "paper": "paper18",
+          "page": 9,
+          "title": "SynapFlow at BioASQ@CLEF 2026: Retrieval-Augmented Generation with Diversity-Enhanced Hybrid Retrieval"
+        }
+      ],
+      "used_sources": null
+    },
+    "improved": {
+      "answer": "One team used BM25 (Okapi) ranking function implemented via Pyserini to index PubMed articles. [S2]\n\nAnother team used Elasticsearch 8 to index the PubMed corpus of 40M documents using BM25. [S4]\n\nOne team employed a two-stage pipeline consisting of sparse retrieval followed by neural reranking using BioXR-BGE and BioXR-GTE. [S2]",
+      "supported": true,
+      "elapsed_seconds": 37.78,
+      "retrieved": [
+        {
+          "source": "S1",
+          "paper": "paper36",
+          "page": 7,
+          "title": "LLM-Guided RAG: A Biomedical Retrieval System for BioASQ Synergy 2026"
+        },
+        {
+          "source": "S2",
+          "paper": "paper40",
+          "page": 4,
+          "title": "A Multi-Stage Retrieval and Ensemble-Based Answer Generation Pipeline for Biomedical QA in BioASQ Task 14b"
+        },
+        {
+          "source": "S3",
+          "paper": "paper41",
+          "page": 9,
+          "title": "RMC at BioASQ 2026: A local RAG approach for end-to-end Biomedical QA"
+        },
+        {
+          "source": "S4",
+          "paper": "paper18",
+          "page": 4,
+          "title": "SynapFlow at BioASQ@CLEF 2026: Retrieval-Augmented Generation with Diversity-Enhanced Hybrid Retrieval"
+        },
+        {
+          "source": "S5",
+          "paper": "paper18",
+          "page": 9,
+          "title": "SynapFlow at BioASQ@CLEF 2026: Retrieval-Augmented Generation with Diversity-Enhanced Hybrid Retrieval"
+        },
+        {
+          "source": "S6",
+          "paper": "paper36",
+          "page": 1,
+          "title": "LLM-Guided RAG: A Biomedical Retrieval System for BioASQ Synergy 2026"
+        }
+      ],
+      "used_sources": null
+    }
+  },
+  {
+    "question": "How did teams use large language models to produce exact answers for factoid and list questions in BioASQ?",
+    "track": "BioASQ",
+    "baseline": {
+      "answer": "Teams used few-shot prompting with carefully selected in-context examples to improve adherence to the format required for structured exact answers, particularly for factoid and list questions. [S1]\n\nSome teams used a multi-pass strategy where an exact answer is generated first and then used as additional context for generating a more comprehensive ideal answer. [S1]\n\nOne team used Llama-3.1-70B-Instruct6 to produce both exact and ideal answers, prompting the model differently depending on the question type and providing either snippets or full abstracts as context. [S3]",
+      "supported": true,
+      "elapsed_seconds": 41.52,
+      "retrieved": [
+        {
+          "source": "S1",
+          "paper": "paper6",
+          "page": 1,
+          "title": "Retrieval-Bound Generation: Lean RAG pipelines for Biomedical QA"
+        },
+        {
+          "source": "S2",
+          "paper": "paper6",
+          "page": 5,
+          "title": "Retrieval-Bound Generation: Lean RAG pipelines for Biomedical QA"
+        },
+        {
+          "source": "S3",
+          "paper": "paper8",
+          "page": 7,
+          "title": "MedCascade: A Multi-Stage Cascaded Retrieval and Generation System for Biomedical Question Answering"
+        },
+        {
+          "source": "S4",
+          "paper": "paper36",
+          "page": 7,
+          "title": "LLM-Guided RAG: A Biomedical Retrieval System for BioASQ Synergy 2026"
+        },
+        {
+          "source": "S5",
+          "paper": "paper37",
+          "page": 20,
+          "title": "BIT. UA at BioASQ 14B: Modular Retrieval with pg_textsearch and Qdrant, and Agent-Based Answer Generation"
+        },
+        {
+          "source": "S6",
+          "paper": "paper37",
+          "page": 8,
+          "title": "BIT. UA at BioASQ 14B: Modular Retrieval with pg_textsearch and Qdrant, and Agent-Based Answer Generation"
+        }
+      ],
+      "used_sources": null
+    },
+    "improved": {
+      "answer": "Teams used few-shot prompting with in-context examples to improve adherence to the required format for structured exact answers, particularly for factoid and list questions. [S1]\n\nSome teams employed multi-pass strategies, generating the exact answer first and then using it as context for generating a more comprehensive ideal answer. [S1]\n\nOne team used Llama-3.1-70B-Instruct6, prompted differently based on question type, to generate both exact and ideal answers, providing snippets or full abstracts as context. [S2]",
+      "supported": true,
+      "elapsed_seconds": 35.17,
+      "retrieved": [
+        {
+          "source": "S1",
+          "paper": "paper6",
+          "page": 5,
+          "title": "Retrieval-Bound Generation: Lean RAG pipelines for Biomedical QA"
+        },
+        {
+          "source": "S2",
+          "paper": "paper8",
+          "page": 7,
+          "title": "MedCascade: A Multi-Stage Cascaded Retrieval and Generation System for Biomedical Question Answering"
+        },
+        {
+          "source": "S3",
+          "paper": "paper36",
+          "page": 7,
+          "title": "LLM-Guided RAG: A Biomedical Retrieval System for BioASQ Synergy 2026"
+        },
+        {
+          "source": "S4",
+          "paper": "paper37",
+          "page": 20,
+          "title": "BIT. UA at BioASQ 14B: Modular Retrieval with pg_textsearch and Qdrant, and Agent-Based Answer Generation"
+        },
+        {
+          "source": "S5",
+          "paper": "paper37",
+          "page": 8,
+          "title": "BIT. UA at BioASQ 14B: Modular Retrieval with pg_textsearch and Qdrant, and Agent-Based Answer Generation"
+        },
+        {
+          "source": "S6",
+          "paper": "paper6",
+          "page": 1,
+          "title": "Retrieval-Bound Generation: Lean RAG pipelines for Biomedical QA"
+        }
+      ],
+      "used_sources": null
+    }
+  },
+  {
+    "question": "Which BioASQ systems used retrieval-augmented generation, and which language models did they rely on?",
+    "track": "BioASQ",
+    "baseline": {
+      "answer": "The Multi-Stage Retrieval and Ensemble-Based Answer Generation Pipeline system used Retrieval Augmented Generation (RAG). [S1][S2]\n\nThe IR systems from National Central University Taiwan used GPT and Gemini models, including GPT-5.4, GPT-5.5, and Gemini 3.1 Pro, within a RAG framework. [S3]\n\nThe MeSH system used GPT-4, Mixtral, and the DSPy framework for answer generation. [S4]",
+      "supported": true,
+      "elapsed_seconds": 42.33,
+      "retrieved": [
+        {
+          "source": "S1",
+          "paper": "paper40",
+          "page": 1,
+          "title": "A Multi-Stage Retrieval and Ensemble-Based Answer Generation Pipeline for Biomedical QA in BioASQ Task 14b"
+        },
+        {
+          "source": "S2",
+          "paper": "paper40",
+          "page": 3,
+          "title": "A Multi-Stage Retrieval and Ensemble-Based Answer Generation Pipeline for Biomedical QA in BioASQ Task 14b"
+        },
+        {
+          "source": "S3",
+          "paper": "paper1",
+          "page": 6,
+          "title": "Overview of BioASQ Tasks 14b and Synergy14 in CLEF2026"
+        },
+        {
+          "source": "S4",
+          "paper": "paper44",
+          "page": 3,
+          "title": "MeSH for BioASQ Task 14B : A Lightweight Knowledge‑Enhanced RAG Pipeline"
+        },
+        {
+          "source": "S5",
+          "paper": "paper6",
+          "page": 1,
+          "title": "Retrieval-Bound Generation: Lean RAG pipelines for Biomedical QA"
+        },
+        {
+          "source": "S6",
+          "paper": "paper18",
+          "page": 2,
+          "title": "SynapFlow at BioASQ@CLEF 2026: Retrieval-Augmented Generation with Diversity-Enhanced Hybrid Retrieval"
+        }
+      ],
+      "used_sources": null
+    },
+    "improved": {
+      "error": "The answer hit its output limit. Try a narrower question."
+    }
+  },
+  {
+    "question": "Did any biomedical question answering team report that reranking retrieved documents improved their results?",
+    "track": null,
+    "baseline": {
+      "answer": "The DS@GT ARC BioASQ team reported that neural reranking improved document ranking quality. [S1]\n\nThe DS@GT ARC BioASQ team found that refinement, including reranking, increased Recall@10 and MAP@10. [S2]",
+      "supported": true,
+      "elapsed_seconds": 26.53,
+      "retrieved": [
+        {
+          "source": "S1",
+          "paper": "paper50",
+          "page": 1,
+          "title": "Retrieval-Augmented Biomedical Question Answering with Weak-Question Recovery and Neural Reranking for BioASQ Task 14b"
+        },
+        {
+          "source": "S2",
+          "paper": "paper50",
+          "page": 10,
+          "title": "Retrieval-Augmented Biomedical Question Answering with Weak-Question Recovery and Neural Reranking for BioASQ Task 14b"
+        },
+        {
+          "source": "S3",
+          "paper": "paper19",
+          "page": 16,
+          "title": "NCU-IISR: BioASQ 14b Phase A/A+, and Phase B Challenge"
+        },
+        {
+          "source": "S4",
+          "paper": "paper19",
+          "page": 10,
+          "title": "NCU-IISR: BioASQ 14b Phase A/A+, and Phase B Challenge"
+        },
+        {
+          "source": "S5",
+          "paper": "paper23",
+          "page": 2,
+          "title": "Sparse Retrieval with Cross-Encoder Reranking and Heuristic Snippet Scoring for Biomedical Question Answering"
+        },
+        {
+          "source": "S6",
+          "paper": "paper45",
+          "page": 20,
+          "title": "BioASQ Phase B: Exploring Diverse Optimization Techniques and Testing Frameworks for Enhanced Bio-Answering Performance"
+        }
+      ],
+      "used_sources": null
+    },
+    "improved": {
+      "answer": "The DS@GT ARC team reported that neural reranking increased both Recall@10 and MAP@10 relative to a base retrieval configuration. [S1]\n\nChaturvedula et al. achieved significant improvement in precision by integrating a cross-encoder reranker into their retrieval pipeline. [S4]\n\nThe DS@GT ARC team reported that a lightweight reranking strategy improved MRR by +0.05 over the no-reranking baseline. [S5]",
+      "supported": true,
+      "elapsed_seconds": 28.64,
+      "retrieved": [
+        {
+          "source": "S1",
+          "paper": "paper50",
+          "page": 10,
+          "title": "Retrieval-Augmented Biomedical Question Answering with Weak-Question Recovery and Neural Reranking for BioASQ Task 14b"
+        },
+        {
+          "source": "S2",
+          "paper": "paper19",
+          "page": 16,
+          "title": "NCU-IISR: BioASQ 14b Phase A/A+, and Phase B Challenge"
+        },
+        {
+          "source": "S3",
+          "paper": "paper19",
+          "page": 10,
+          "title": "NCU-IISR: BioASQ 14b Phase A/A+, and Phase B Challenge"
+        },
+        {
+          "source": "S4",
+          "paper": "paper23",
+          "page": 2,
+          "title": "Sparse Retrieval with Cross-Encoder Reranking and Heuristic Snippet Scoring for Biomedical Question Answering"
+        },
+        {
+          "source": "S5",
+          "paper": "paper45",
+          "page": 20,
+          "title": "BioASQ Phase B: Exploring Diverse Optimization Techniques and Testing Frameworks for Enhanced Bio-Answering Performance"
+        },
+        {
+          "source": "S6",
+          "paper": "paper50",
+          "page": 1,
+          "title": "Retrieval-Augmented Biomedical Question Answering with Weak-Question Recovery and Neural Reranking for BioASQ Task 14b"
+        }
+      ],
+      "used_sources": null
+    }
+  },
+  {
+    "question": "What clinical summarization tasks were run at CLEF 2026, and how were the summaries evaluated?",
+    "track": null,
+    "baseline": {
+      "answer": "The task challenged participants to develop systems capable of automatically generating concise and clinically faithful summaries of clinical case reports. [S4]\n\nSummaries were evaluated using dimensions such as Faithfulness, Completeness, Fluency, and Consistency. [S3]\n\nThe completeness agent evaluated summaries based on the CARE (CAse REport) guidelines, scoring six clinically detailed dimensions on a 0–10 scale. [S2]",
+      "supported": true,
+      "elapsed_seconds": 31.9,
+      "retrieved": [
+        {
+          "source": "S1",
+          "paper": "paper2",
+          "page": 1,
+          "title": "Overview of MultiClinSum-2 at CLEF 2026: Data, Evaluation, and Results for Multilingual Clinical Case Report Summarization Across 15 Languages"
+        },
+        {
+          "source": "S2",
+          "paper": "paper2",
+          "page": 10,
+          "title": "Overview of MultiClinSum-2 at CLEF 2026: Data, Evaluation, and Results for Multilingual Clinical Case Report Summarization Across 15 Languages"
+        },
+        {
+          "source": "S3",
+          "paper": "paper2",
+          "page": 21,
+          "title": "Overview of MultiClinSum-2 at CLEF 2026: Data, Evaluation, and Results for Multilingual Clinical Case Report Summarization Across 15 Languages"
+        },
+        {
+          "source": "S4",
+          "paper": "paper2",
+          "page": 2,
+          "title": "Overview of MultiClinSum-2 at CLEF 2026: Data, Evaluation, and Results for Multilingual Clinical Case Report Summarization Across 15 Languages"
+        },
+        {
+          "source": "S5",
+          "paper": "paper2",
+          "page": 7,
+          "title": "Overview of MultiClinSum-2 at CLEF 2026: Data, Evaluation, and Results for Multilingual Clinical Case Report Summarization Across 15 Languages"
+        },
+        {
+          "source": "S6",
+          "paper": "paper2",
+          "page": 2,
+          "title": "Overview of MultiClinSum-2 at CLEF 2026: Data, Evaluation, and Results for Multilingual Clinical Case Report Summarization Across 15 Languages"
+        }
+      ],
+      "used_sources": null
+    },
+    "improved": {
+      "answer": "The task challenged participants to develop systems capable of automatically generating concise and clinically faithful summaries of clinical case reports. [S3]\n\nSummaries were evaluated using dimensions such as Faithfulness, Completeness, Fluency, and Consistency. [S2]\n\nCompleteness was evaluated using the CARE guidelines, scoring six dimensions (Patient demographics, Clinical presentation, Diagnosis, Intervention, Outcome, and Follow-up) on a 0–10 scale. [S1]",
+      "supported": true,
+      "elapsed_seconds": 30.08,
+      "retrieved": [
+        {
+          "source": "S1",
+          "paper": "paper2",
+          "page": 10,
+          "title": "Overview of MultiClinSum-2 at CLEF 2026: Data, Evaluation, and Results for Multilingual Clinical Case Report Summarization Across 15 Languages"
+        },
+        {
+          "source": "S2",
+          "paper": "paper2",
+          "page": 21,
+          "title": "Overview of MultiClinSum-2 at CLEF 2026: Data, Evaluation, and Results for Multilingual Clinical Case Report Summarization Across 15 Languages"
+        },
+        {
+          "source": "S3",
+          "paper": "paper2",
+          "page": 2,
+          "title": "Overview of MultiClinSum-2 at CLEF 2026: Data, Evaluation, and Results for Multilingual Clinical Case Report Summarization Across 15 Languages"
+        },
+        {
+          "source": "S4",
+          "paper": "paper2",
+          "page": 7,
+          "title": "Overview of MultiClinSum-2 at CLEF 2026: Data, Evaluation, and Results for Multilingual Clinical Case Report Summarization Across 15 Languages"
+        },
+        {
+          "source": "S5",
+          "paper": "paper2",
+          "page": 2,
+          "title": "Overview of MultiClinSum-2 at CLEF 2026: Data, Evaluation, and Results for Multilingual Clinical Case Report Summarization Across 15 Languages"
+        },
+        {
+          "source": "S6",
+          "paper": "paper2",
+          "page": 1,
+          "title": "Overview of MultiClinSum-2 at CLEF 2026: Data, Evaluation, and Results for Multilingual Clinical Case Report Summarization Across 15 Languages"
+        }
+      ],
+      "used_sources": null
+    }
+  },
+  {
+    "question": "Which approaches were used to answer medical exam questions that include images?",
+    "track": "ImageCLEF",
+    "baseline": {
+      "answer": "Participants in ImageCLEF 2026 were asked to solve four tracks: Visual MCQ, Textual MCQ, Visual OpenQA, and Textual OpenQA. [S1]\n\nThe Visual tracks contain questions with diagrams, graphs, tables, or other figures. [S3]\n\nParticipant systems used strategies including prompting, LoRA/QLoRA fine-tuning, self-consistency, test-time scaling, answer extraction, and multi-stage reasoning pipelines. [S4]",
+      "supported": true,
+      "elapsed_seconds": 32.61,
+      "retrieved": [
+        {
+          "source": "S1",
+          "paper": "paper235",
+          "page": 1,
+          "title": "Overview of the ImageCLEF 2026 Task on Multimodal Reasoning"
+        },
+        {
+          "source": "S2",
+          "paper": "paper235",
+          "page": 5,
+          "title": "Overview of the ImageCLEF 2026 Task on Multimodal Reasoning"
+        },
+        {
+          "source": "S3",
+          "paper": "paper235",
+          "page": 2,
+          "title": "Overview of the ImageCLEF 2026 Task on Multimodal Reasoning"
+        },
+        {
+          "source": "S4",
+          "paper": "paper235",
+          "page": 13,
+          "title": "Overview of the ImageCLEF 2026 Task on Multimodal Reasoning"
+        },
+        {
+          "source": "S5",
+          "paper": "paper272",
+          "page": 2,
+          "title": "DS@GT at ImageCLEF 2026 MultimodalReasoning: Visual Multiple Choice Question Reasoning with Vision-Language Models"
+        },
+        {
+          "source": "S6",
+          "paper": "paper252",
+          "page": 4,
+          "title": "FAU at ImageCLEF 2026 Task on Multimodal Reasoning: Robust Candidate Scoring and Concise Multilingual Visual Answering"
+        }
+      ],
+      "used_sources": null
+    },
+    "improved": {
+      "answer": "Systems used prompting, LoRA/QLoRA fine-tuning, self-consistency, test-time scaling, answer extraction, and multi-stage reasoning pipelines to answer questions. [S3]\n\nSome systems enhanced images for contrast and sharpness and resized them to 768 pixels. [S5]\n\nOne approach involved SFT+LoRA on a tiny VLM and GRPO on a normal-scale VLM. [S4]",
+      "supported": true,
+      "elapsed_seconds": 31.16,
+      "retrieved": [
+        {
+          "source": "S1",
+          "paper": "paper235",
+          "page": 5,
+          "title": "Overview of the ImageCLEF 2026 Task on Multimodal Reasoning"
+        },
+        {
+          "source": "S2",
+          "paper": "paper235",
+          "page": 2,
+          "title": "Overview of the ImageCLEF 2026 Task on Multimodal Reasoning"
+        },
+        {
+          "source": "S3",
+          "paper": "paper235",
+          "page": 13,
+          "title": "Overview of the ImageCLEF 2026 Task on Multimodal Reasoning"
+        },
+        {
+          "source": "S4",
+          "paper": "paper272",
+          "page": 2,
+          "title": "DS@GT at ImageCLEF 2026 MultimodalReasoning: Visual Multiple Choice Question Reasoning with Vision-Language Models"
+        },
+        {
+          "source": "S5",
+          "paper": "paper252",
+          "page": 4,
+          "title": "FAU at ImageCLEF 2026 Task on Multimodal Reasoning: Robust Candidate Scoring and Concise Multilingual Visual Answering"
+        },
+        {
+          "source": "S6",
+          "paper": "paper235",
+          "page": 1,
+          "title": "Overview of the ImageCLEF 2026 Task on Multimodal Reasoning"
+        }
+      ],
+      "used_sources": null
+    }
+  },
+  {
+    "question": "What methods did teams use to detect early signs of depression or other mental health risks from social media posts?",
+    "track": "eRisk",
+    "baseline": {
+      "answer": "Teams have used lexical and rule-based methods for detecting signs of depression from social media posts. [S2][S3][S6]\n\nSome teams employed deep learning models, including Convolutional Neural Networks and Long Short-Term Memory networks, for depression detection. [S5]\n\nOne team, Awakened, used DeBERTa embeddings and a temporal MLP classification to detect depression risk, incorporating contextual information from other users' language and behavior. [S4]",
+      "supported": true,
+      "elapsed_seconds": 28.3,
+      "retrieved": [
+        {
+          "source": "S1",
+          "paper": "paper143",
+          "page": 1,
+          "title": "Early Depression Detection from Contextualized Online Conversations using Sequential Modeling"
+        },
+        {
+          "source": "S2",
+          "paper": "paper143",
+          "page": 2,
+          "title": "Early Depression Detection from Contextualized Online Conversations using Sequential Modeling"
+        },
+        {
+          "source": "S3",
+          "paper": "paper121",
+          "page": 1,
+          "title": "Contextualized Early Detection of Depression on Social Media using BDI-II Guided Screening and MentalBERT Ensemble"
+        },
+        {
+          "source": "S4",
+          "paper": "paper118",
+          "page": 2,
+          "title": "Awakened at eRisk 2026: Contextualized Early Detection of Depression using DeBERTa Embeddings and Temporal MLP Classification"
+        },
+        {
+          "source": "S5",
+          "paper": "paper121",
+          "page": 2,
+          "title": "Contextualized Early Detection of Depression on Social Media using BDI-II Guided Screening and MentalBERT Ensemble"
+        },
+        {
+          "source": "S6",
+          "paper": "paper143",
+          "page": 2,
+          "title": "Early Depression Detection from Contextualized Online Conversations using Sequential Modeling"
+        }
+      ],
+      "used_sources": null
+    },
+    "improved": {
+      "answer": "Teams have used lexical and rule-based methods to detect signs of depression from social media posts. [S1][S5]\n\nSome teams employed deep learning models, such as Convolutional Neural Networks and Long Short-Term Memory networks. [S4]\n\nThe Awakened team used DeBERTa embeddings and a temporal MLP classification to detect depression risk. [S3]",
+      "supported": true,
+      "elapsed_seconds": 27.01,
+      "retrieved": [
+        {
+          "source": "S1",
+          "paper": "paper143",
+          "page": 2,
+          "title": "Early Depression Detection from Contextualized Online Conversations using Sequential Modeling"
+        },
+        {
+          "source": "S2",
+          "paper": "paper121",
+          "page": 1,
+          "title": "Contextualized Early Detection of Depression on Social Media using BDI-II Guided Screening and MentalBERT Ensemble"
+        },
+        {
+          "source": "S3",
+          "paper": "paper118",
+          "page": 2,
+          "title": "Awakened at eRisk 2026: Contextualized Early Detection of Depression using DeBERTa Embeddings and Temporal MLP Classification"
+        },
+        {
+          "source": "S4",
+          "paper": "paper121",
+          "page": 2,
+          "title": "Contextualized Early Detection of Depression on Social Media using BDI-II Guided Screening and MentalBERT Ensemble"
+        },
+        {
+          "source": "S5",
+          "paper": "paper143",
+          "page": 2,
+          "title": "Early Depression Detection from Contextualized Online Conversations using Sequential Modeling"
+        },
+        {
+          "source": "S6",
+          "paper": "paper143",
+          "page": 1,
+          "title": "Early Depression Detection from Contextualized Online Conversations using Sequential Modeling"
+        }
+      ],
+      "used_sources": null
+    }
+  },
+  {
+    "question": "How did CheckThat! participants verify numerical claims?",
+    "track": "CheckThat",
+    "baseline": {
+      "answer": "Participants trained a verifier model to rank reasoning paths based on their utility to lead to the right verdict. [S1][S2]\n\nParticipants were judged based on high performance on both macro F1 and Recall@ 𝑘. [S3][S5]",
+      "supported": true,
+      "elapsed_seconds": 36.16,
+      "retrieved": [
+        {
+          "source": "S1",
+          "paper": "paper52",
+          "page": 1,
+          "title": "Overview of the CLEF-2026 CheckThat! Lab Task 2 on Fact-Checking Numerical Claims"
+        },
+        {
+          "source": "S2",
+          "paper": "paper52",
+          "page": 2,
+          "title": "Overview of the CLEF-2026 CheckThat! Lab Task 2 on Fact-Checking Numerical Claims"
+        },
+        {
+          "source": "S3",
+          "paper": "paper52",
+          "page": 6,
+          "title": "Overview of the CLEF-2026 CheckThat! Lab Task 2 on Fact-Checking Numerical Claims"
+        },
+        {
+          "source": "S4",
+          "paper": "paper52",
+          "page": 1,
+          "title": "Overview of the CLEF-2026 CheckThat! Lab Task 2 on Fact-Checking Numerical Claims"
+        },
+        {
+          "source": "S5",
+          "paper": "paper52",
+          "page": 6,
+          "title": "Overview of the CLEF-2026 CheckThat! Lab Task 2 on Fact-Checking Numerical Claims"
+        },
+        {
+          "source": "S6",
+          "paper": "paper89",
+          "page": 3,
+          "title": "SINAI-UGPLN at CheckThat! 2026: Confidence-Aware Reasoning Trace Ranking for Numerical Claim Verification"
+        }
+      ],
+      "used_sources": null
+    },
+    "improved": {
+      "answer": "Participants generated multiple reasoning traces for claim verification using Large Language Models (LLMs). [S1]\n\nParticipants trained a verifier model to score the reasoning traces and rank them. [S2]",
+      "supported": true,
+      "elapsed_seconds": 49.42,
+      "retrieved": [
+        {
+          "source": "S1",
+          "paper": "paper52",
+          "page": 2,
+          "title": "Overview of the CLEF-2026 CheckThat! Lab Task 2 on Fact-Checking Numerical Claims"
+        },
+        {
+          "source": "S2",
+          "paper": "paper52",
+          "page": 6,
+          "title": "Overview of the CLEF-2026 CheckThat! Lab Task 2 on Fact-Checking Numerical Claims"
+        },
+        {
+          "source": "S3",
+          "paper": "paper52",
+          "page": 1,
+          "title": "Overview of the CLEF-2026 CheckThat! Lab Task 2 on Fact-Checking Numerical Claims"
+        },
+        {
+          "source": "S4",
+          "paper": "paper52",
+          "page": 6,
+          "title": "Overview of the CLEF-2026 CheckThat! Lab Task 2 on Fact-Checking Numerical Claims"
+        },
+        {
+          "source": "S5",
+          "paper": "paper89",
+          "page": 3,
+          "title": "SINAI-UGPLN at CheckThat! 2026: Confidence-Aware Reasoning Trace Ranking for Numerical Claim Verification"
+        },
+        {
+          "source": "S6",
+          "paper": "paper52",
+          "page": 1,
+          "title": "Overview of the CLEF-2026 CheckThat! Lab Task 2 on Fact-Checking Numerical Claims"
+        }
+      ],
+      "used_sources": null
+    }
+  },
+  {
+    "question": "Which papers fine-tuned models with LoRA, and what did they fine-tune them for?",
+    "track": null,
+    "baseline": {
+      "answer": "Counting methods or results across the corpus requires a full-corpus classification pass. I can find cited examples, but cannot provide an exhaustive count from passage search.",
+      "supported": null,
+      "elapsed_seconds": 2.41,
+      "retrieved": [],
+      "used_sources": null
+    },
+    "improved": {
+      "answer": "Counting methods or results across the corpus requires a full-corpus classification pass. I can find cited examples, but cannot provide an exhaustive count from passage search.",
+      "supported": null,
+      "elapsed_seconds": 0.99,
+      "retrieved": [],
+      "used_sources": null
+    }
+  },
+  {
+    "question": "What are common failure cases that teams reported when using LLMs for biomedical question answering?",
+    "track": null,
+    "baseline": {
+      "answer": "Teams observed that LLMs default to a negative or cautious answer when provided with documents lacking relevant content. [S4]\n\nSome teams found that LLMs may generate prose instead of the required entity string format for factoid answers, especially when relevant documents are not received. [S4]\n\nOne team's system retrieved snippets that matched broad concepts but lacked specific details needed to answer the question. [S3]",
+      "supported": true,
+      "elapsed_seconds": 36.35,
+      "retrieved": [
+        {
+          "source": "S1",
+          "paper": "paper8",
+          "page": 1,
+          "title": "MedCascade: A Multi-Stage Cascaded Retrieval and Generation System for Biomedical Question Answering"
+        },
+        {
+          "source": "S2",
+          "paper": "paper8",
+          "page": 3,
+          "title": "MedCascade: A Multi-Stage Cascaded Retrieval and Generation System for Biomedical Question Answering"
+        },
+        {
+          "source": "S3",
+          "paper": "paper41",
+          "page": 10,
+          "title": "RMC at BioASQ 2026: A local RAG approach for end-to-end Biomedical QA"
+        },
+        {
+          "source": "S4",
+          "paper": "paper18",
+          "page": 21,
+          "title": "SynapFlow at BioASQ@CLEF 2026: Retrieval-Augmented Generation with Diversity-Enhanced Hybrid Retrieval"
+        },
+        {
+          "source": "S5",
+          "paper": "paper45",
+          "page": 26,
+          "title": "BioASQ Phase B: Exploring Diverse Optimization Techniques and Testing Frameworks for Enhanced Bio-Answering Performance"
+        },
+        {
+          "source": "S6",
+          "paper": "paper45",
+          "page": 7,
+          "title": "BioASQ Phase B: Exploring Diverse Optimization Techniques and Testing Frameworks for Enhanced Bio-Answering Performance"
+        }
+      ],
+      "used_sources": null
+    },
+    "improved": {
+      "answer": "Teams observed that LLMs default to a negative/cautious answer when they receive documents that do not contain relevant content. [S3]\n\nOne failure case was that factoid answers were formatted as prose rather than entity strings when the LLM did not receive relevant documents. [S3]\n\nTeams also reported that LLMs sometimes over-specify answers (e.g., “amenable to exon 53 skipping” instead of “exon 53”) or hallucinate on null cases. [S5]",
+      "supported": true,
+      "elapsed_seconds": 31.47,
+      "retrieved": [
+        {
+          "source": "S1",
+          "paper": "paper8",
+          "page": 3,
+          "title": "MedCascade: A Multi-Stage Cascaded Retrieval and Generation System for Biomedical Question Answering"
+        },
+        {
+          "source": "S2",
+          "paper": "paper41",
+          "page": 10,
+          "title": "RMC at BioASQ 2026: A local RAG approach for end-to-end Biomedical QA"
+        },
+        {
+          "source": "S3",
+          "paper": "paper18",
+          "page": 21,
+          "title": "SynapFlow at BioASQ@CLEF 2026: Retrieval-Augmented Generation with Diversity-Enhanced Hybrid Retrieval"
+        },
+        {
+          "source": "S4",
+          "paper": "paper45",
+          "page": 26,
+          "title": "BioASQ Phase B: Exploring Diverse Optimization Techniques and Testing Frameworks for Enhanced Bio-Answering Performance"
+        },
+        {
+          "source": "S5",
+          "paper": "paper45",
+          "page": 7,
+          "title": "BioASQ Phase B: Exploring Diverse Optimization Techniques and Testing Frameworks for Enhanced Bio-Answering Performance"
+        },
+        {
+          "source": "S6",
+          "paper": "paper8",
+          "page": 1,
+          "title": "MedCascade: A Multi-Stage Cascaded Retrieval and Generation System for Biomedical Question Answering"
+        }
+      ],
+      "used_sources": null
+    }
+  }
+]
