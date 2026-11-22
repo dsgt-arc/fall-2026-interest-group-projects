@@ -1,6 +1,7 @@
 """LangChain hybrid retrieval over Chroma and a BM25 retriever."""
 
 import re
+from dataclasses import asdict, dataclass
 
 from langchain_classic.retrievers import EnsembleRetriever
 from langchain_community.retrievers import BM25Retriever
@@ -8,6 +9,28 @@ from langsmith import tracing_context
 
 from clef_rag.catalog import list_documents
 from clef_rag.config import RagError
+
+
+@dataclass(frozen=True)
+class RetrievalSettings:
+    mode: str = "hybrid"
+    dense_weight: float = 0.5
+    rrf_constant: int = 60
+    candidate_depth: int = 20
+    top_k: int = 6
+
+    def __post_init__(self):
+        if self.mode not in ("hybrid", "dense", "bm25"):
+            raise ValueError("Retrieval mode must be hybrid, dense, or bm25.")
+        if not 0 <= self.dense_weight <= 1:
+            raise ValueError("Dense weight must be between 0 and 1.")
+        if self.rrf_constant < 0 or self.candidate_depth < 1 or self.top_k < 1:
+            raise ValueError(
+                "RRF constant must be nonnegative and depths must be positive."
+            )
+
+    def to_dict(self):
+        return asdict(self)
 
 
 def lexical_tokens(text):
@@ -39,11 +62,17 @@ def overlaps(left, right):
 
 
 class Retriever:
-    def __init__(self, index, models):
+    def __init__(self, index, models, settings=None):
         self.index, self.models = index, models
+        self.settings = settings or RetrievalSettings()
 
-    def search(self, question, *, track=None, author=None, paper_ids=None, top_k=6):
-        store = self.index.vectorstore(self.models)
+    def search(self, question, *, track=None, author=None, paper_ids=None, top_k=None):
+        top_k = self.settings.top_k if top_k is None else top_k
+        store = (
+            self.index.vectorstore(self.models)
+            if self.settings.mode != "bm25"
+            else None
+        )
         catalog = list_documents(
             self.index.db, track=track, author=author, paper_ids=paper_ids
         )
@@ -73,7 +102,10 @@ class Retriever:
                 )
                 for paper_id in paper_ids
             ]
-            ranked = [group[i] for i in range(20) for group in groups if len(group) > i]
+            ranked = [
+                group[i] for i in range(self.settings.candidate_depth)
+                for group in groups if len(group) > i
+            ]
         else:
             ranked = self._rank(question, store, chunks)
         leading_ids = paper_ids or (
@@ -104,20 +136,28 @@ class Retriever:
         if not documents:
             return []
         ids = sorted({d.metadata["document_id"] for d in documents})
-        semantic = store.as_retriever(
-            search_kwargs={
-                "k": min(20, len(documents)),
-                "filter": {"document_id": {"$in": ids}},
-            }
-        )
-        lexical = BM25Retriever.from_documents(
-            documents, k=min(20, len(documents)), preprocess_func=lexical_tokens
-        )
-        ensemble = EnsembleRetriever(
-            retrievers=[semantic, lexical], weights=[0.5, 0.5], c=60, id_key="chunk_id"
-        )
+        depth = min(self.settings.candidate_depth, len(documents))
+        semantic = None
+        lexical = None
+        if self.settings.mode != "bm25":
+            semantic = store.as_retriever(
+                search_kwargs={"k": depth, "filter": {"document_id": {"$in": ids}}}
+            )
+        if self.settings.mode != "dense":
+            lexical = BM25Retriever.from_documents(
+                documents, k=depth, preprocess_func=lexical_tokens
+            )
+        if self.settings.mode == "hybrid":
+            retriever = EnsembleRetriever(
+                retrievers=[semantic, lexical],
+                weights=[self.settings.dense_weight, 1 - self.settings.dense_weight],
+                c=self.settings.rrf_constant,
+                id_key="chunk_id",
+            )
+        else:
+            retriever = semantic if self.settings.mode == "dense" else lexical
         try:
             with tracing_context(enabled=False):
-                return ensemble.invoke(question)
+                return retriever.invoke(question)
         except Exception as exc:
             raise RagError(f"LangChain retrieval failed: {exc}") from exc

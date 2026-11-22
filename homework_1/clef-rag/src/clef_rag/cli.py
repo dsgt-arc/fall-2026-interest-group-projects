@@ -14,13 +14,27 @@ from clef_rag.config import CHAT_MODELS, RagError
 from clef_rag.index import Index
 from clef_rag.ingest import ingest
 from clef_rag.models import LocalModels
-from clef_rag.retrieve import Retriever
+from clef_rag.retrieve import Retriever, RetrievalSettings
 
 
 def positive(value):
     number = int(value)
     if number < 1:
         raise argparse.ArgumentTypeError("must be at least 1")
+    return number
+
+
+def nonnegative(value):
+    number = int(value)
+    if number < 0:
+        raise argparse.ArgumentTypeError("must be nonnegative")
+    return number
+
+
+def weight(value):
+    number = float(value)
+    if not 0 <= number <= 1:
+        raise argparse.ArgumentTypeError("must be between 0 and 1")
     return number
 
 
@@ -69,7 +83,13 @@ def parser():
             command.add_argument("--title", help="Title substring")
         if name in ("search", "ask"):
             command.add_argument("question")
-        if name == "search":
+        if name in ("search", "ask", "evaluate"):
+            command.add_argument(
+                "--retrieval-mode", choices=("hybrid", "dense", "bm25"), default="hybrid"
+            )
+            command.add_argument("--dense-weight", type=weight, default=0.5)
+            command.add_argument("--rrf-constant", type=nonnegative, default=60)
+            command.add_argument("--candidate-depth", type=positive, default=20)
             command.add_argument("--top-k", type=positive, default=6)
         if name in ("ask", "evaluate"):
             command.add_argument("--model", choices=CHAT_MODELS, default=CHAT_MODELS[0])
@@ -107,6 +127,14 @@ def main(argv=None):
     logging.getLogger("pypdf").setLevel(logging.ERROR)
     started = time.perf_counter()
     try:
+        settings = (
+            RetrievalSettings(
+                args.retrieval_mode, args.dense_weight, args.rrf_constant,
+                args.candidate_depth, args.top_k,
+            )
+            if args.command in ("search", "ask", "evaluate")
+            else None
+        )
         if args.command == "ingest":
             result = ingest(
                 args.data_dir,
@@ -155,7 +183,7 @@ def main(argv=None):
                     print(result["answer"])
             elif args.command == "search":
                 ids = resolve_papers(index.db, args.paper) if args.paper else None
-                sources = Retriever(index, LocalModels()).search(
+                sources = Retriever(index, LocalModels(), settings).search(
                     args.question,
                     track=args.track,
                     author=args.author,
@@ -178,6 +206,7 @@ def main(argv=None):
                     track=args.track,
                     author=args.author,
                     paper_refs=args.paper,
+                    retrieval_settings=settings,
                 )
                 if not args.json:
                     print(result["answer"])
@@ -192,6 +221,7 @@ def main(argv=None):
                     args.output,
                     args.retrieval_only,
                     cutoffs=args.k,
+                    retrieval_settings=settings,
                 )
                 if not args.json:
                     print(json.dumps(result["summary"], indent=2))

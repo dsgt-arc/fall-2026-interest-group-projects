@@ -1,6 +1,8 @@
 """Record retrieval checks and generated answers for manual citation review."""
 
 import json
+import math
+import statistics
 import time
 
 from clef_rag.answer import ask
@@ -13,7 +15,7 @@ from clef_rag.metrics import (
     page_run,
     retrieval_metrics,
 )
-from clef_rag.retrieve import Retriever
+from clef_rag.retrieve import Retriever, RetrievalSettings
 
 
 def evaluate(
@@ -24,12 +26,15 @@ def evaluate(
     retrieval_only=False,
     *,
     cutoffs=DEFAULT_CUTOFFS,
+    retrieval_settings=None,
 ):
     cutoffs = normalize_cutoffs(cutoffs)
+    retrieval_settings = retrieval_settings or RetrievalSettings()
     cases = json.loads(questions_path.read_text())
     output = {
         "index": index.manifest,
         "model": models.chat_model,
+        "retrieval_settings": retrieval_settings.to_dict(),
         "retrieval_evaluation": {
             "implementation": "ir-measures",
             "cutoffs": list(cutoffs),
@@ -58,7 +63,7 @@ def evaluate(
                 ]
             if retrieval_only:
                 ids = resolve_papers(index.db, case.get("papers", [])) or None
-                sources = Retriever(index, models).search(
+                sources = Retriever(index, models, retrieval_settings).search(
                     case["question"], paper_ids=ids, track=case.get("track")
                 )
                 row["retrieved_sources"] = sources
@@ -69,6 +74,7 @@ def evaluate(
                     case["question"],
                     paper_refs=case.get("papers"),
                     track=case.get("track"),
+                    retrieval_settings=retrieval_settings,
                 )
                 row.update(result)
                 sources = result.get("retrieved_sources", [])
@@ -128,5 +134,12 @@ def evaluate(
     output["summary"]["retrieval_unscored"] = (
         output["summary"]["retrieval_eligible"] - output["summary"]["retrieval_checked"]
     )
+    durations = sorted(row["elapsed_seconds"] for row in rows if "error" not in row)
+    output["summary"]["latency_seconds"] = {
+        "scope": "retrieval evaluation" if retrieval_only else "full question evaluation",
+        "count": len(durations),
+        "median": statistics.median(durations) if durations else None,
+        "p95": durations[math.ceil(0.95 * len(durations)) - 1] if durations else None,
+    }
     output_path.write_text(json.dumps(output, indent=2, ensure_ascii=False) + "\n")
     return output

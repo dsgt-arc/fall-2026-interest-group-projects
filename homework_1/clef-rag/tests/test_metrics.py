@@ -7,6 +7,7 @@ import pytest
 from clef_rag.cli import parser
 from clef_rag.evaluate import evaluate
 from clef_rag.metrics import aggregate_retrieval_metrics, retrieval_metrics
+from clef_rag.retrieve import RetrievalSettings
 
 
 def source(paper, page):
@@ -192,3 +193,35 @@ def test_cli_metric_cutoffs():
     assert parser().parse_args(["evaluate", "--k", "1", "4"]).k == [1, 4]
     with pytest.raises(SystemExit):
         parser().parse_args(["evaluate", "--k", "0"])
+
+
+def test_retrieval_settings_are_recorded_and_propagated(tmp_path, monkeypatch):
+    settings = RetrievalSettings("bm25", 0.75, 10, 40, 15)
+    questions, output = tmp_path / "questions.json", tmp_path / "report.json"
+    questions.write_text(json.dumps([
+        {"id": "q", "category": "paper", "question": "q",
+         "gold_sources": [{"paper": "a", "pages": [1]}]}
+    ]))
+    seen = []
+
+    def search(self, question, **kwargs):
+        seen.append(self.settings)
+        return [source("a", 1)]
+
+    monkeypatch.setattr("clef_rag.evaluate.Retriever.search", search)
+    report = evaluate(SimpleNamespace(manifest={}, db=None),
+                      SimpleNamespace(chat_model="gemma3:4b"), questions, output,
+                      True, retrieval_settings=settings)
+    assert seen == [settings]
+    assert report["retrieval_settings"] == settings.to_dict()
+    assert report["summary"]["latency_seconds"]["count"] == 1
+
+
+def test_cli_rejects_invalid_retrieval_settings():
+    args = parser().parse_args(["evaluate", "--retrieval-mode", "dense",
+                                "--candidate-depth", "40", "--top-k", "10"])
+    assert (args.retrieval_mode, args.candidate_depth, args.top_k) == ("dense", 40, 10)
+    for option, value in [("--dense-weight", "1.1"), ("--rrf-constant", "-1"),
+                          ("--candidate-depth", "0"), ("--top-k", "0")]:
+        with pytest.raises(SystemExit):
+            parser().parse_args(["evaluate", option, value])

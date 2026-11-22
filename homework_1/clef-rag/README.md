@@ -129,3 +129,52 @@ Here are some suggestions for improving the system:
 The most important question you should be prepared to answer about your work:
 
 - How do you know your RAG system is better? What metrics or evaluation methods did you use to determine improvement and why?
+
+## Retrieval experiments
+
+`search`, `ask`, and `evaluate` accept `--retrieval-mode hybrid|dense|bm25`,
+`--candidate-depth`, `--top-k`, `--dense-weight`, and `--rrf-constant`. Defaults
+preserve the baseline: hybrid, depth 20, six passages, dense weight 0.5 and
+RRF constant 60. BM25 weight is one minus the dense weight; weights and the RRF
+constant affect hybrid retrieval only. These options reuse the existing index.
+The opening-context selection policy remains active in all modes.
+
+`sbatch sweep.sbatch` runs 220 retrieval-only configurations against the pilot
+questions. It starts a job-local Ollama process on port 11434; the job fails
+if the port is occupied rather than using another server. Reports, input hashes,
+source and pilot-question snapshots are saved under `results/sweep-JOBID/`.
+Slurm output is `clef-sweep-JOBID.out` in the submission directory.
+
+To resume an interrupted sweep, use the **original** job ID:
+
+```sh
+sbatch --export=ALL,CLEF_RESUME_JOB_ID=ORIGINAL_JOB_ID sweep.sbatch
+```
+
+The new job verifies source, question, script, dependency lock and index
+metadata hashes, then skips verified completed configurations. A configuration
+interrupted mid-run is rerun from its first question; its `.partial-*.json` file
+is retained. An invalid completed report causes the job to stop rather than
+overwrite it. Only one job can use a sweep directory at a time. Do not edit the
+inputs while it runs, and do not assume resumed timings are comparable across
+different GPU types or node conditions.
+
+For a two-configuration test, submit
+`sbatch --export=ALL,CLEF_SWEEP_SMOKE=1 sweep.sbatch`. To resume that test,
+also pass `CLEF_SWEEP_SMOKE=1` along with `CLEF_RESUME_JOB_ID`.
+Ollama logs are named `ollama-JOBID.log` inside the original result directory.
+
+Reports include per-question elapsed time and median/p95 over successful
+questions. Retrieval-only timings include evaluation overhead and do not measure
+answer generation; compare repeated, warmed-up runs on equivalent hardware.
+Metric cutoffs are unique pages and do not set the number of retrieved passages.
+High cutoffs may exceed the number of unique pages returned.
+Full evaluation also uses question routing and may choose different filters
+than the direct retrieval-only evaluation.
+
+`eval/questions_student.json` is a held-out set: select the best configuration
+using the pilot set, then run both the baseline and selected configuration on
+the student set without further tuning on it. Run full evaluations for those
+two configurations, review answers and page citations manually, and compare
+their end-to-end question timings. The held-out gold labels are incomplete:
+other unlisted pages may also contain useful evidence.
