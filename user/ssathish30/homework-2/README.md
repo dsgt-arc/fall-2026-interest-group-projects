@@ -20,4 +20,18 @@ All methods searched the same 5,183 abstracts. The notebook used 647 claims for 
 
 EmbeddingGemma remains unmeasured. The pinned model requires Hugging Face access to its weights. The other five rows are recorded at full precision in [text-comparison.csv](text-comparison.csv).
 
+## Image retrieval on GPR1200
+
+The six models each embedded 1,250 original images and 1,000 edited copies. The experiment used the instructor’s November 9 vision notebook. [Notebook](https://github.com/dsgt-arc/fall-2026-interest-group-projects/blob/322c07e/homework_2/vision_ir/teaching.ipynb) · [Run summary](summary.csv)
+
+1. **Domains and mistakes.** Landmarks and Products were the two highest-scoring domains for every model. The widest spread was on Sketches (0.146–0.898 mAP), followed by Nature (0.172–0.912). Objects also separated ConvNeXt (0.775) from DiT (0.203). In the Nature example, the query shows a dragonfly on a branch against blue sky. DINOv2 returned five dragonflies. ViT’s first hit was a bird perched against blue sky. In the landmark example, I-JEPA’s first four hits showed a different statue. ViT retrieved five views of the building behind the query statue.
+
+2. **Sketches and pretraining.** DINOv2 led on Sketches (0.898 mAP), followed by ConvNeXt (0.856) and ViT (0.682). DiT received ImageNet labels as inputs during denoising and scored 0.146. The classifiers beat both JEPA models (0.292 each). The overall leader trained without class labels. The sketch classes overlap with ImageNet, and DINOv2’s pretraining data included landmark imagery. These overlaps could favor familiar subjects across models and prevent attributing the differences to labels alone.
+
+3. **Edits and misses.** As its grayscale training augmentation suggested, DINOv2 found all 125 grayscale originals. I-JEPA found 120 of 125 blurred originals despite having no explicit blur augmentation. When the first result was wrong, it still belonged to the correct group in 67% of ViT misses, 61% of ConvNeXt misses and 75% of DINOv2 misses. The shares were 29% for I-JEPA, 27% for V-JEPA 2 and 24% for DiT.
+
+4. **Depth and pooling.** Among the sampled depths, ViT and DINOv2 peaked at block 12/12, ConvNeXt at stage 4/4, I-JEPA at 28/32, V-JEPA 2 at 21/24 and DiT at 14/28. One explanation is that later layers specialize in the training target. A detail useful for reconstructing a noisy patch or predicting a hidden region can vary between two photos of the same object. Averaging final patch tokens gave ViT 0.691 mAP and DINOv2 0.718. Their final CLS vectors scored 0.797 and 0.877 respectively, so pooling accounted for a substantial gap even at the same depth.
+
+5. **Vector crowding and cost.** DiT’s average cosine between different images was 0.995. Standardization lifted its mAP from 0.378 to 0.471. It ranked sixth both ways, and every other model also kept its rank. Rescaling helped DiT, but its standardized mAP still trailed the next model by 0.068. DINOv2 embedded the full set in 429 seconds and scored 0.877 mAP. I-JEPA took 4,852 seconds for 0.532, and DiT took 16,348 seconds for 0.378. Their larger models also scored lower on exact-copy retrieval (0.763 and 0.681 versus 0.895). These wall times include competing work on the same CPU.
+
 **Work performed.** The course staff supplied the notebooks and model implementations. Codex executed the experiments, checked the outputs, and drafted the responses for Sarvesh's review.
