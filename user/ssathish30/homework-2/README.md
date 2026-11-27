@@ -8,6 +8,7 @@ The course notebook ranked 5,183 abstracts for each of 162 validation claims. It
 | --- | ---: | ---: | ---: |
 | BM25 | 0.6965 | 0.8488 | 0.7313 |
 | TF-IDF | 0.5743 | 0.8241 | 0.6313 |
+| Custom model | 0.5552 | 0.6317 | 0.5652 |
 
 BM25 put a relevant abstract first for 101 of 162 claims, compared with 73 for TF-IDF. At depth ten, 140 claims had at least one relevant result with BM25 and 136 with TF-IDF. Most of the difference was in which paper the reader saw first. To choose a system for a reader who needs one paper, I would compare MRR. For a reviewer collecting evidence, I would compare recall. Even BM25 left about 15% of the labeled evidence outside the top ten on average.
 
