@@ -1,0 +1,1695 @@
+{
+  "index": {
+    "schema_version": 2,
+    "generation": "build-969acdd9096d4f459a10bf66032edecd",
+    "created_at": "2026-09-20T01:39:02.969154+00:00",
+    "catalog_snapshot": "/home/david/projects/cs8903-arc/fall-2026-interest-group-projects/homework-1/clef-rag/index/snapshots/20260920T011803516296Z-426780f126.html",
+    "data_dir": "/home/david/projects/cs8903-arc/fall-2026-interest-group-projects/homework-1/clef-rag/data",
+    "embedding_model": "embeddinggemma:300m",
+    "embedding_digest": "85462619ee721b466c5927d109d4cb765861907d5417b9109caebc4e614679f1",
+    "vector_store": "chromadb",
+    "collection": "clef_papers",
+    "chunks": 21046,
+    "documents": 512,
+    "extraction_version": "langchain-pypdf-pages-v1",
+    "splitter": "RecursiveCharacterTextSplitter",
+    "chunk_bytes": 1400,
+    "overlap_bytes": 250,
+    "extracted_documents": 509,
+    "reused_extractions": 0,
+    "new_embeddings": 21044,
+    "reused_embeddings": 2,
+    "ingestion_seconds": 1233.37
+  },
+  "model": "gemma3:12b",
+  "retrieval_evaluation": {
+    "implementation": "ir-measures",
+    "cutoffs": [
+      1,
+      3,
+      6
+    ],
+    "retriever weights [semantic, lexical]": [
+      0.3,
+      0.7
+    ],
+    "max candidate to retrieve:": 30,
+    "search top k (retrieval depth)": 3,
+    "unit": "unique paper/PDF-page pair, ordered by first retrieved occurrence",
+    "relevance": "binary; every listed gold page is relevant; unlisted pages score zero",
+    "ranking": "final retrieved passages, before answer context selection; no extra retrieval for larger cutoffs",
+    "aggregation": "macro mean over successfully scored questions with gold pages; errors excluded and counted"
+  },
+  "results": [
+    {
+      "id": "paper-9",
+      "category": "paper",
+      "question": "What is disagreement-aware ensemble?",
+      "gold_pages": [
+        [
+          "paper408",
+          1
+        ]
+      ],
+      "kind": "content",
+      "answer": "Disagreement-aware ensemble measures disagreement among component detectors as variance and range of their output scores. [S1]\n\nThe system fuses component scores with disagreement signals using a LightGBM meta-learner. [S1][S2]\n\nDisagreement features (variance and range) improve mean score over meta-learning on component scores alone. [S3]",
+      "supported": true,
+      "sources": [
+        {
+          "filename": "paper408.pdf",
+          "document_id": "paper408",
+          "proceedings_pages": "5535-5546",
+          "url": "https://clef-staging.pages.dev/paper408.pdf",
+          "track": "PAN: Digital Text Forensics and Stylometry",
+          "start_char": 0,
+          "title": "Team aimoment at PAN 2026: Disagreement-Aware Ensemble for Robust AI Text Detection",
+          "end_char": 1309,
+          "page": 1,
+          "chunk_id": "b475da88da9833af0554206f05f046c6454ba6faeb3745d9238a4fb8fc9cdad7",
+          "id": "b475da88da9833af0554206f05f046c6454ba6faeb3745d9238a4fb8fc9cdad7",
+          "text": "Team aimoment at PAN 2026: Disagreement-Aware Ensemble for Robust AI Text Detection Notebook for the PAN Lab at CLEF 2026 Momen Ibrahim1,*, Nagwa El-Makky 1 and Marwan Torki 1 1Computer and Systems Engineering Department, Faculty of Engineering, Alexandria University, Alexandria, Egypt Abstract Adversarial obfuscation — deliberately rewriting AI-generated text to defeat detection — creates a predictable property: different detector families failinconsistently. A paraphrased text that fools a lexical 𝑛-gram classifier may still reveal itself through perplexity anomalies; a vocabulary-erased text that defeats statistical detectors may preserve structural regularities visible to stylometric analysis. We exploit this inconsistency directly:disagreement among component detectors, measured as the variance and range of their output scores, becomes a first-class feature for the ensemble meta-learner. Our system combines fine-tuned ModernBERT [1], a TF-IDF lexical prior, a 54-feature stylometric detector with SBERT-based coherence [2, 3], and the Binoculars cross-model perplexity ratio [ 4]. A LightGBM metalearner [5, 6] fuses component scores with disagreement signals, calibrated via temperature scaling [ 7] and filtered by two-dimensional abstention thresholds optimised over all five PAN metrics",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "track": "PAN: Digital Text Forensics and Stylometry",
+          "end_char": 1229,
+          "page": 5,
+          "start_char": 0,
+          "document_id": "paper408",
+          "title": "Team aimoment at PAN 2026: Disagreement-Aware Ensemble for Robust AI Text Detection",
+          "proceedings_pages": "5535-5546",
+          "filename": "paper408.pdf",
+          "url": "https://clef-staging.pages.dev/paper408.pdf",
+          "chunk_id": "f4c59daa70d2d98f0d12551f010368e1bdf0610bd09d315411e52e6909396e25",
+          "id": "f4c59daa70d2d98f0d12551f010368e1bdf0610bd09d315411e52e6909396e25",
+          "text": "Input text Modern BERT TF-IDF +LR Stylo. +LGBM Binoculars +T5 paraphrase +SBERT coh. 𝑝1 𝑝2 𝑝3 𝑝4 disagreement:var(𝑝 1. . .𝑝4),range(𝑝 1. . .𝑝4) LightGBM Meta-Learner [𝑝 1, 𝑝2, 𝑝3, 𝑝4,var,range ] Temperature Scaling (grid-search𝑇on Brier Score) 2-D Abstention:|𝑠−0.5|<𝜃 𝑠 orvar(𝑝)>𝜃 𝑣 Final score𝑠∈[0,1] Figure 3:System pipeline. Four detectors produce scores 𝑝1...𝑝 4; variance and range are computed as explicit disagreement features and passed alongside the scores to the meta-learner. High disagreement under obfuscation is the central detection signal. Table 4 Principal weakness of each detector. Simultaneous defeat of all four suppresses the disagreement signal. Detector What breaks it ModernBERT (fine-tuned) Paraphrase erasing vocabulary signatures TF-IDF𝑛-grams (lexical) Any lexical rewrite Stylometric + LGBM Full style transfer replicating human structure Binoculars Reference LM from a different training family component scores to a LightGBM meta-learner, followed by temperature scaling and two-dimensional abstention. Table 4 summarises how each component fails under adversarial attack, motivating the ensemble: an obfuscation attack must simultaneously defeat all four to suppress the disagreement signal. 4.1",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "document_id": "paper408",
+          "chunk_id": "be3b02d1be5d51739d211ee649a764f5a36634d73515a76311cf478a7af5d8ed",
+          "start_char": 1156,
+          "end_char": 2437,
+          "title": "Team aimoment at PAN 2026: Disagreement-Aware Ensemble for Robust AI Text Detection",
+          "track": "PAN: Digital Text Forensics and Stylometry",
+          "filename": "paper408.pdf",
+          "url": "https://clef-staging.pages.dev/paper408.pdf",
+          "page": 8,
+          "proceedings_pages": "5535-5546",
+          "id": "be3b02d1be5d51739d211ee649a764f5a36634d73515a76311cf478a7af5d8ed",
+          "text": ". Because only the meta-learner is trained on this set, individual component scores are unbiased estimates. Table 7 shows the progressive contribution of each design decision, estimated via 5-fold cross-validation within the validation set. Figure 4 visualises the progressive mean-score improvement of each design decision. The disagreement features (variance and range) improve mean score over meta-learning on component scores alone, and this improvement is consistent across all five folds, confirming that inter-detector inconsistency carries genuine signal beyond what the individual scores provide rather than arising from a single favourable split. Notably, Binoculars is the weakest individual component (0.724 mean) but improves ensemble ROC-AUC by approximately 0.008 when added — its orthogonal failure mode recovers cases where the three supervised components agree incorrectly. 7. Results Both systems were evaluated across three test sets available on TIRA: the official PAN 2026 test set (adversarial), the PAN 2025 cross-year test set, and the ELOQUENT cross-domain test set. Table 8 reports all five evaluation metrics and their mean for each system–dataset combination. Figure 5 visualises the mean scores for both systems across all four evaluation scenarios. 8",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "filename": "paper408.pdf",
+          "document_id": "paper408",
+          "proceedings_pages": "5535-5546",
+          "url": "https://clef-staging.pages.dev/paper408.pdf",
+          "track": "PAN: Digital Text Forensics and Stylometry",
+          "start_char": 0,
+          "title": "Team aimoment at PAN 2026: Disagreement-Aware Ensemble for Robust AI Text Detection",
+          "end_char": 1309,
+          "page": 1,
+          "chunk_id": "b475da88da9833af0554206f05f046c6454ba6faeb3745d9238a4fb8fc9cdad7",
+          "id": "b475da88da9833af0554206f05f046c6454ba6faeb3745d9238a4fb8fc9cdad7",
+          "text": "Team aimoment at PAN 2026: Disagreement-Aware Ensemble for Robust AI Text Detection Notebook for the PAN Lab at CLEF 2026 Momen Ibrahim1,*, Nagwa El-Makky 1 and Marwan Torki 1 1Computer and Systems Engineering Department, Faculty of Engineering, Alexandria University, Alexandria, Egypt Abstract Adversarial obfuscation — deliberately rewriting AI-generated text to defeat detection — creates a predictable property: different detector families failinconsistently. A paraphrased text that fools a lexical 𝑛-gram classifier may still reveal itself through perplexity anomalies; a vocabulary-erased text that defeats statistical detectors may preserve structural regularities visible to stylometric analysis. We exploit this inconsistency directly:disagreement among component detectors, measured as the variance and range of their output scores, becomes a first-class feature for the ensemble meta-learner. Our system combines fine-tuned ModernBERT [1], a TF-IDF lexical prior, a 54-feature stylometric detector with SBERT-based coherence [2, 3], and the Binoculars cross-model perplexity ratio [ 4]. A LightGBM metalearner [5, 6] fuses component scores with disagreement signals, calibrated via temperature scaling [ 7] and filtered by two-dimensional abstention thresholds optimised over all five PAN metrics",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "track": "PAN: Digital Text Forensics and Stylometry",
+          "end_char": 1229,
+          "page": 5,
+          "start_char": 0,
+          "document_id": "paper408",
+          "title": "Team aimoment at PAN 2026: Disagreement-Aware Ensemble for Robust AI Text Detection",
+          "proceedings_pages": "5535-5546",
+          "filename": "paper408.pdf",
+          "url": "https://clef-staging.pages.dev/paper408.pdf",
+          "chunk_id": "f4c59daa70d2d98f0d12551f010368e1bdf0610bd09d315411e52e6909396e25",
+          "id": "f4c59daa70d2d98f0d12551f010368e1bdf0610bd09d315411e52e6909396e25",
+          "text": "Input text Modern BERT TF-IDF +LR Stylo. +LGBM Binoculars +T5 paraphrase +SBERT coh. 𝑝1 𝑝2 𝑝3 𝑝4 disagreement:var(𝑝 1. . .𝑝4),range(𝑝 1. . .𝑝4) LightGBM Meta-Learner [𝑝 1, 𝑝2, 𝑝3, 𝑝4,var,range ] Temperature Scaling (grid-search𝑇on Brier Score) 2-D Abstention:|𝑠−0.5|<𝜃 𝑠 orvar(𝑝)>𝜃 𝑣 Final score𝑠∈[0,1] Figure 3:System pipeline. Four detectors produce scores 𝑝1...𝑝 4; variance and range are computed as explicit disagreement features and passed alongside the scores to the meta-learner. High disagreement under obfuscation is the central detection signal. Table 4 Principal weakness of each detector. Simultaneous defeat of all four suppresses the disagreement signal. Detector What breaks it ModernBERT (fine-tuned) Paraphrase erasing vocabulary signatures TF-IDF𝑛-grams (lexical) Any lexical rewrite Stylometric + LGBM Full style transfer replicating human structure Binoculars Reference LM from a different training family component scores to a LightGBM meta-learner, followed by temperature scaling and two-dimensional abstention. Table 4 summarises how each component fails under adversarial attack, motivating the ensemble: an obfuscation attack must simultaneously defeat all four to suppress the disagreement signal. 4.1",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "document_id": "paper408",
+          "chunk_id": "be3b02d1be5d51739d211ee649a764f5a36634d73515a76311cf478a7af5d8ed",
+          "start_char": 1156,
+          "end_char": 2437,
+          "title": "Team aimoment at PAN 2026: Disagreement-Aware Ensemble for Robust AI Text Detection",
+          "track": "PAN: Digital Text Forensics and Stylometry",
+          "filename": "paper408.pdf",
+          "url": "https://clef-staging.pages.dev/paper408.pdf",
+          "page": 8,
+          "proceedings_pages": "5535-5546",
+          "id": "be3b02d1be5d51739d211ee649a764f5a36634d73515a76311cf478a7af5d8ed",
+          "text": ". Because only the meta-learner is trained on this set, individual component scores are unbiased estimates. Table 7 shows the progressive contribution of each design decision, estimated via 5-fold cross-validation within the validation set. Figure 4 visualises the progressive mean-score improvement of each design decision. The disagreement features (variance and range) improve mean score over meta-learning on component scores alone, and this improvement is consistent across all five folds, confirming that inter-detector inconsistency carries genuine signal beyond what the individual scores provide rather than arising from a single favourable split. Notably, Binoculars is the weakest individual component (0.724 mean) but improves ensemble ROC-AUC by approximately 0.008 when added — its orthogonal failure mode recovers cases where the three supervised components agree incorrectly. 7. Results Both systems were evaluated across three test sets available on TIRA: the official PAN 2026 test set (adversarial), the PAN 2025 cross-year test set, and the ELOQUENT cross-domain test set. Table 8 reports all five evaluation metrics and their mean for each system–dataset combination. Figure 5 visualises the mean scores for both systems across all four evaluation scenarios. 8",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "four detectors with fundamentally different assumptions are fused by a meta-learner that receives not just their individual scores but their variance and range as explicit features, encoding the degree of inter-detector inconsistency",
+      "retrieved_pages": [
+        [
+          "paper408",
+          1
+        ],
+        [
+          "paper408",
+          5
+        ],
+        [
+          "paper408",
+          8
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "6": {
+          "precision": 0.16666666666666666,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "retrieval_pass": true,
+      "elapsed_seconds": 36.881
+    },
+    {
+      "id": "paper-10",
+      "category": "paper",
+      "question": "How does DeBERTa improves upon BERT-style encoders?",
+      "gold_pages": [
+        [
+          "420",
+          3
+        ]
+      ],
+      "kind": "content",
+      "answer": "DeBERTa improves upon BERT-style encoders through disentangled attention and enhanced decoding pre-training. [S2]",
+      "supported": true,
+      "sources": [
+        {
+          "start_char": 0,
+          "end_char": 1298,
+          "chunk_id": "766dd73e6bd40bc09d695e3cba3b37a899d7412d40bff5123880b2b76d3fbc03",
+          "page": 3,
+          "title": "Team ChatOnly at PAN 2026: Hybrid N-Gram and DeBERTa AI Detection",
+          "url": "https://clef-staging.pages.dev/paper420.pdf",
+          "document_id": "paper420",
+          "proceedings_pages": "5649-5654",
+          "filename": "paper420.pdf",
+          "track": "PAN: Digital Text Forensics and Stylometry",
+          "id": "766dd73e6bd40bc09d695e3cba3b37a899d7412d40bff5123880b2b76d3fbc03",
+          "text": "N-grams are useful for capturing punctuation habits, whitespace-adjacent patterns, suffixes, and microstyle effects, while word N-grams capture phrase-level preferences and topic-independent formulaic expressions. 5. DeBERTa Classifier The second component is a fine-tuned transformer classifier based on DeBERTa-v3-small. DeBERTa improves upon BERT-style encoders through disentangled attention and enhanced decoding pre-training [4]. In our setup, the model is fine-tuned as a two-class sequence classifier using the Hugging Face Transformers library [7]. Texts are tokenized with truncation to 512 tokens. Training uses two epochs, a learning rate of 2×10 −5, weight decay 0.01, mini-batches of size 8, gradient accumulation over 2 steps, and mixed precision on GPU. For submission, the selected checkpoint is stored in the final DeBERTa checkpoint directory. The Docker build copies only the inference-relevant files: the model configuration, the model weights, and the tokenizer vocabulary and metadata. Optimizer states, scheduler states, and other training-only files are excluded from the submission image. 6. Inference and Submission Packaging The inference entry point is predict.py. It accepts two positional arguments: the path to an input JSONL file and the path to an output directory",
+          "source_id": "S2",
+          "rank": 2
+        }
+      ],
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "page": 1,
+          "title": "Team ChatOnly at PAN 2026: Hybrid N-Gram and DeBERTa AI Detection",
+          "url": "https://clef-staging.pages.dev/paper420.pdf",
+          "track": "PAN: Digital Text Forensics and Stylometry",
+          "document_id": "paper420",
+          "end_char": 1367,
+          "filename": "paper420.pdf",
+          "chunk_id": "fc5f2bc8fbd2477aa4772ccfd0677c5be450127bd332a54fae10c165b4613293",
+          "start_char": 0,
+          "proceedings_pages": "5649-5654",
+          "id": "fc5f2bc8fbd2477aa4772ccfd0677c5be450127bd332a54fae10c165b4613293",
+          "text": "Team ChatOnly at PAN 2026: Hybrid N-Gram and DeBERTa AI Detection Notebook for the PAN Lab at CLEF 2026 Tomas Nagy1, Lukas Skopar 1 1Technical University of Kosice, Slovakia Abstract This notebook describes the Team ChatOnly submission to the PAN 2026 Voight-Kampff Generative AI Detection task. The task requires a standalone Dockerized system that receives newline-delimited JSON records containing text documents and returns calibrated confidence scores indicating whether each text was written by a machine. Our final system combines two complementary supervised detectors: a high-dimensional TF-IDF N-gram logistic regression model and a fine-tuned DeBERTa-v3-small sequence classifier. The N-gram model captures lexical and character-level regularities, while the transformer captures semantic and contextual patterns. At inference time both models are loaded from serialized artifacts inside the Docker image and their probabilities are combined by weighted soft voting. The system is designed to satisfy the PAN/TIRA submission constraints: no training on TIRA, no network access during evaluation, independent processing of each test case, and exactly one JSONL output file containing one probability score per input identifier. On the provided validation split, the final blend reaches a mean validation score of 0.9945 across the official PAN-style metrics",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "start_char": 0,
+          "end_char": 1298,
+          "chunk_id": "766dd73e6bd40bc09d695e3cba3b37a899d7412d40bff5123880b2b76d3fbc03",
+          "page": 3,
+          "title": "Team ChatOnly at PAN 2026: Hybrid N-Gram and DeBERTa AI Detection",
+          "url": "https://clef-staging.pages.dev/paper420.pdf",
+          "document_id": "paper420",
+          "proceedings_pages": "5649-5654",
+          "filename": "paper420.pdf",
+          "track": "PAN: Digital Text Forensics and Stylometry",
+          "id": "766dd73e6bd40bc09d695e3cba3b37a899d7412d40bff5123880b2b76d3fbc03",
+          "text": "N-grams are useful for capturing punctuation habits, whitespace-adjacent patterns, suffixes, and microstyle effects, while word N-grams capture phrase-level preferences and topic-independent formulaic expressions. 5. DeBERTa Classifier The second component is a fine-tuned transformer classifier based on DeBERTa-v3-small. DeBERTa improves upon BERT-style encoders through disentangled attention and enhanced decoding pre-training [4]. In our setup, the model is fine-tuned as a two-class sequence classifier using the Hugging Face Transformers library [7]. Texts are tokenized with truncation to 512 tokens. Training uses two epochs, a learning rate of 2×10 −5, weight decay 0.01, mini-batches of size 8, gradient accumulation over 2 steps, and mixed precision on GPU. For submission, the selected checkpoint is stored in the final DeBERTa checkpoint directory. The Docker build copies only the inference-relevant files: the model configuration, the model weights, and the tokenizer vocabulary and metadata. Optimizer states, scheduler states, and other training-only files are excluded from the submission image. 6. Inference and Submission Packaging The inference entry point is predict.py. It accepts two positional arguments: the path to an input JSONL file and the path to an output directory",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "page": 3,
+          "url": "https://clef-staging.pages.dev/paper420.pdf",
+          "proceedings_pages": "5649-5654",
+          "end_char": 2323,
+          "start_char": 1113,
+          "track": "PAN: Digital Text Forensics and Stylometry",
+          "chunk_id": "625b21bdd7c88bc6009a17de7c2ded64e0cef420fbb8e4c65d4b62667742820c",
+          "document_id": "paper420",
+          "title": "Team ChatOnly at PAN 2026: Hybrid N-Gram and DeBERTa AI Detection",
+          "filename": "paper420.pdf",
+          "id": "625b21bdd7c88bc6009a17de7c2ded64e0cef420fbb8e4c65d4b62667742820c",
+          "text": ". 6. Inference and Submission Packaging The inference entry point is predict.py. It accepts two positional arguments: the path to an input JSONL file and the path to an output directory. The script reads all non-empty input lines, validates that each line contains id and text, and ignores any additional fields. This is important because validation data includes labels and metadata, whereas the test data does not. The DeBERTa model is loaded from /app/models/deberta inside the container. The N-gram model is loaded from /app/models/ngram_pipeline.joblib. DeBERTa predictions are computed in batches, using CUDA when available and CPU otherwise. N-gram predictions are computed with the serialized scikit-learn pipeline. The final probability is clipped to the range [0, 1] before writing. The Dockerfile is based on the official PAN generative-authorship baseline image and installs the small additional tokenizer dependencies required by the DeBERTa checkpoint. It then copies the inference script, validation script, serialized N-gram model, and DeBERTa checkpoint into /app. The container entry point is: ENTRYPOINT [\"python3\", \"/app/predict.py\"] The model artifacts are stored with the software package",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "Through disentangled attention and enhanced decoding pre-training.",
+      "retrieved_pages": [
+        [
+          "paper420",
+          1
+        ],
+        [
+          "paper420",
+          3
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "3": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "6": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        }
+      },
+      "retrieval_pass": false,
+      "elapsed_seconds": 18.951
+    },
+    {
+      "id": "paper-11",
+      "category": "paper",
+      "question": "What does the result show about JobBERT in paper484?",
+      "gold_pages": [
+        [
+          "paper484",
+          3
+        ]
+      ],
+      "kind": "content",
+      "answer": "JobBERT is a strong dense baseline. [S2]\n\nRe-ranking with SPLADE yields the best overall MAP in both English and Spanish. [S2]",
+      "supported": true,
+      "sources": [
+        {
+          "document_id": "paper484",
+          "title": "Hybrid Dense-Sparse Retrieval and Re-Ranking for Multilingual Resume Retrieval from Job Descriptions",
+          "page": 3,
+          "filename": "paper484.pdf",
+          "url": "https://clef-staging.pages.dev/paper484.pdf",
+          "chunk_id": "19e63f41216dd911e917f3bbee31c711393144eb19eac67699e3e5a9682d9cdd",
+          "end_char": 3147,
+          "track": "TalentCLEF: Skill and Job Title Intelligence for Human Capital Management",
+          "start_char": 2266,
+          "proceedings_pages": "6392-6397",
+          "id": "19e63f41216dd911e917f3bbee31c711393144eb19eac67699e3e5a9682d9cdd",
+          "text": ". 5.2. Implementation JobBERT retrieval is implemented with SentenceTransformers [13]. PyTerrier is used for sparse retrieval experiments, and the SPLADE re-ranker is implemented through the pyt_splade stack. The lateinteraction re-ranker is implemented with a pretrained multilingual ColBERT model through the PyLate stack. All official submissions output the top 100 documents per query in TREC format. 6. Results 6.1. Development Results Table 1 summarizes the main development results used for model selection. The results show that JobBERT is already a strong dense baseline. Re-ranking with SPLADE yields the best overall MAP in both English and Spanish. The ColBERT re-ranker does not surpass the SPLADE re-ranker overall, but in Spanish it is nearly tied in MAP and slightly stronger in nDCG. This makes ColBERT an attractive additional variant for analysis and submission.",
+          "source_id": "S2",
+          "rank": 2
+        }
+      ],
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "page": 1,
+          "start_char": 0,
+          "proceedings_pages": "6392-6397",
+          "title": "Hybrid Dense-Sparse Retrieval and Re-Ranking for Multilingual Resume Retrieval from Job Descriptions",
+          "track": "TalentCLEF: Skill and Job Title Intelligence for Human Capital Management",
+          "chunk_id": "c1224ef917a1b3c6895d7482a745d87f3f4429e67b2ca2f9abebf878297eca91",
+          "document_id": "paper484",
+          "end_char": 1321,
+          "url": "https://clef-staging.pages.dev/paper484.pdf",
+          "filename": "paper484.pdf",
+          "id": "c1224ef917a1b3c6895d7482a745d87f3f4429e67b2ca2f9abebf878297eca91",
+          "text": "Hybrid Dense-Sparse Retrieval and Re-Ranking for Multilingual Resume Retrieval from Job Descriptions⋆ Working Notes for TalentCLEF 2026 Task A Alonso Palomino1,* 1Independent Researcher Abstract This paper describes a submission to TalentCLEF 2026 Task A, the contextualized job-person matching task. The objective is to rank candidate resumes for a given job description in a multilingual setting. The study evaluates a two-stage retrieval architecture based on JobBERT as the first-stage dense retriever and compares two re-ranking strategies: a sparse lexical re-ranker based on SPLADE and a late-interaction re-ranker based on multilingual ColBERT. On the official development split, the strongest overall system is obtained with JobBERT followed by SPLADE-based reciprocal-rank-fusion re-ranking. ColBERT remains competitive in Spanish and provides a more interaction-rich alternative for long-form resume matching. The best dense-sparse system is used as the primary run. Keywords TalentCLEF, job-person matching, resume retrieval, dense retrieval, SPLADE, ColBERT, multilingual information retrieval 1. Introduction TalentCLEF 2026 Task A focuses on contextualized job-person matching, where each query is a full job description and the objective is to retrieve and rank the most relevant candidate resumes [ 1, 2]",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "document_id": "paper484",
+          "title": "Hybrid Dense-Sparse Retrieval and Re-Ranking for Multilingual Resume Retrieval from Job Descriptions",
+          "page": 3,
+          "filename": "paper484.pdf",
+          "url": "https://clef-staging.pages.dev/paper484.pdf",
+          "chunk_id": "19e63f41216dd911e917f3bbee31c711393144eb19eac67699e3e5a9682d9cdd",
+          "end_char": 3147,
+          "track": "TalentCLEF: Skill and Job Title Intelligence for Human Capital Management",
+          "start_char": 2266,
+          "proceedings_pages": "6392-6397",
+          "id": "19e63f41216dd911e917f3bbee31c711393144eb19eac67699e3e5a9682d9cdd",
+          "text": ". 5.2. Implementation JobBERT retrieval is implemented with SentenceTransformers [13]. PyTerrier is used for sparse retrieval experiments, and the SPLADE re-ranker is implemented through the pyt_splade stack. The lateinteraction re-ranker is implemented with a pretrained multilingual ColBERT model through the PyLate stack. All official submissions output the top 100 documents per query in TREC format. 6. Results 6.1. Development Results Table 1 summarizes the main development results used for model selection. The results show that JobBERT is already a strong dense baseline. Re-ranking with SPLADE yields the best overall MAP in both English and Spanish. The ColBERT re-ranker does not surpass the SPLADE re-ranker overall, but in Spanish it is nearly tied in MAP and slightly stronger in nDCG. This makes ColBERT an attractive additional variant for analysis and submission.",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "proceedings_pages": "6392-6397",
+          "url": "https://clef-staging.pages.dev/paper484.pdf",
+          "page": 5,
+          "title": "Hybrid Dense-Sparse Retrieval and Re-Ranking for Multilingual Resume Retrieval from Job Descriptions",
+          "track": "TalentCLEF: Skill and Job Title Intelligence for Human Capital Management",
+          "document_id": "paper484",
+          "start_char": 1128,
+          "end_char": 2366,
+          "chunk_id": "88579d4c4e0d1f95ab90a77fd1b5aa7ba0a465b97578e3eb40eea0a499fdfeda",
+          "filename": "paper484.pdf",
+          "id": "88579d4c4e0d1f95ab90a77fd1b5aa7ba0a465b97578e3eb40eea0a499fdfeda",
+          "text": ". Standalone sparse retrieval was clearly weaker than JobBERT, long query augmentations were often neutral because they were truncated by the encoder, and compact rewrite variants were not robust, especially in Spanish. These negative results suggest that extra complexity is useful only when the added signal is both informative and compatible with the retrieval model’s input limits. 8. Limitations This work has several limitations. The public development set is small, which makes model selection fragile; the public data does not expose gender labels, which limits direct fairness analysis; and Col- BERT was not fine-tuned because public supervision is limited and zero-shot re-ranking was already computationally demanding. 9. Conclusion A two-stage retrieval framework for TalentCLEF 2026 Task A was presented based on JobBERT firststage retrieval and alternative re-ranking strategies. The best development results were obtained with a hybrid dense-sparse re-ranking approach using SPLADE, while multilingual ColBERT provided a competitive and more distinctive late-interaction alternative, especially in Spanish. On the official test set, the primary dense-sparse run achieved an average MAP of 0.5055 across English and Spanish",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "The results show that JobBERT is already a strong dense baseline.",
+      "retrieved_pages": [
+        [
+          "paper484",
+          1
+        ],
+        [
+          "paper484",
+          3
+        ],
+        [
+          "paper484",
+          5
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "3": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 0.5,
+          "average_precision": 0.5,
+          "ndcg": 0.6309297535714575
+        },
+        "6": {
+          "precision": 0.16666666666666666,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 0.5,
+          "average_precision": 0.5,
+          "ndcg": 0.6309297535714575
+        }
+      },
+      "retrieval_pass": true,
+      "elapsed_seconds": 25.001
+    },
+    {
+      "id": "paper-12",
+      "category": "paper",
+      "question": "A teacher ensemble of the triplet members labelled what in paper333?",
+      "gold_pages": [
+        [
+          "paper333",
+          6
+        ]
+      ],
+      "kind": "content",
+      "answer": "A teacher ensemble of the triplet members labelled the soundscape, training, and prior-year windows. [S3]",
+      "supported": true,
+      "sources": [
+        {
+          "title": "Offline Soundscape Validation and Rank-Blended CNN Ensembles for BirdCLEF+ 2026",
+          "end_char": 2617,
+          "filename": "paper333.pdf",
+          "start_char": 1243,
+          "page": 6,
+          "chunk_id": "178d77d8ce89b309a2d96a625c09729ddb0c78433344a2651747fed0a7b5f44a",
+          "track": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+          "url": "https://clef-staging.pages.dev/paper333.pdf",
+          "document_id": "paper333",
+          "proceedings_pages": "4554-4565",
+          "id": "178d77d8ce89b309a2d96a625c09729ddb0c78433344a2651747fed0a7b5f44a",
+          "text": ". Prior BirdCLEF winning solutions reach higher with a deeper data pipeline rather than a different blend, so we pursued that pipeline in parallel. Cross-year corpus (completed).We assembled a pretraining corpus from the current and prior editions: the 2026 training audio (35 549 recordings) and a small extra set (1 020 recordings) merged with the full 2025 training set (28 564 recordings across 206 species, 7.23 GB), for 65 133 recordings in total. Of these, 50 288 carry labels mappable to the 234 target classes (covering 231 of them); the remaining prior-year recordings retain their own labels. The pretraining label space is the union of the 234 target classes and 163 unmapped prior-year classes (397 classes), on the principle that the unmapped audio still teaches transferable acoustic features. Multi-hot pseudo-labels (completed).A teacher ensemble of the triplet members labelled the soundscape, training, and prior-year windows. The teacher produced per-class probabilities for 482 981 windows, stored as multi-hot targets at several thresholds. We selected a threshold of 0.7 for the first fine-tuning pass, which yields 315 087 positive (window, class) entries with at least one positive in 228 of the 234 classes, retaining multi-species structure in the soundscape windows (3.8 positives per window) while filtering teacher noise on the focal recordings",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "track": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+          "title": "Offline Soundscape Validation and Rank-Blended CNN Ensembles for BirdCLEF+ 2026",
+          "chunk_id": "3cdb42a979456da40e875ec8583942b29327d0b87d158536151be0fbac7b0ee6",
+          "filename": "paper333.pdf",
+          "end_char": 1171,
+          "proceedings_pages": "4554-4565",
+          "start_char": 0,
+          "page": 1,
+          "document_id": "paper333",
+          "url": "https://clef-staging.pages.dev/paper333.pdf",
+          "id": "3cdb42a979456da40e875ec8583942b29327d0b87d158536151be0fbac7b0ee6",
+          "text": "Offline Soundscape Validation and Rank-Blended CNN Ensembles for BirdCLEF+ 2026 Gilles Colling1,2 1Division of BioInvasions, Global Change & Macroecology, Department of Botany and Biodiversity Research, University of Vienna, Vienna, Austria 2Vienna Doctoral School of Ecology and Evolution, University of Vienna, Vienna, Austria Abstract BirdCLEF+ 2026 evaluates multi-taxon acoustic species identification across 234 classes spanning birds, amphibians, insects, and reptiles, scored by macro-averaged ROC-AUC on a hidden soundscape test set whose public leaderboard is computed on only part of that set during the competition. A single competitor sees a few public-leaderboard readings per day, which raises two practical questions: how to evaluate candidate systems without spending that budget, and how far a public score predicts the private one. We report a single-author entry, built on public resources, that addresses both. The submitted system rank-blends a publicly shared acoustic baseline (a Perch-embedding branch and a five-fold sound-event-detection ensemble) with a weighted triplet of our own soundscape-fine-tuned convolutional networks at weightα= 0.10",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "page": 4,
+          "chunk_id": "cdc2e5e5fdf1da58c75ee8105200c7996951cc7e8f50da7120dcef0602a0c5d3",
+          "filename": "paper333.pdf",
+          "document_id": "paper333",
+          "start_char": 1303,
+          "url": "https://clef-staging.pages.dev/paper333.pdf",
+          "end_char": 2586,
+          "title": "Offline Soundscape Validation and Rank-Blended CNN Ensembles for BirdCLEF+ 2026",
+          "proceedings_pages": "4554-4565",
+          "track": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+          "id": "cdc2e5e5fdf1da58c75ee8105200c7996951cc7e8f50da7120dcef0602a0c5d3",
+          "text": ". The clip-level stage uses an asymmetric loss [11] over the multi-label targets. The soundscape fine-tuning stage trains on the labelled soundscape windows. Triplet weights.The members are combined by a rank-mean with weights 0.45 (B3), 0.40 (pseudorefined B3), and 0.15 (ConvNeXt-Small). These weights were tuned on the local validation harness of Section 7 rather than on the leaderboard. An equal-weight rank-mean of the same three members scored within0.0001of the weighted triplet on the public leaderboard (Table 3), so the weighting is a small effect; we report it for reproducibility. 6. The Public Baseline Branch The baseline branch is a publicly shared community pipeline that we adopted and did not modify, and we describe it here for completeness and to be clear about provenance. It has two components. The first is an embedding branch built on the Perch bird-vocalisation model [7]: Perch embeddings feed a probe-classifier ensemble whose outputs are corrected by a small state-space model, contributing a weight of 0.7 to the baseline. The second is a five-fold EfficientNet-B0 SED ensemble [9] trained with log-sum-exp pooling and pseudo-labels, contributing a weight of 0.3. The two are rank-blended to form the baseline prediction onto which our triplet is added.",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "title": "Offline Soundscape Validation and Rank-Blended CNN Ensembles for BirdCLEF+ 2026",
+          "end_char": 2617,
+          "filename": "paper333.pdf",
+          "start_char": 1243,
+          "page": 6,
+          "chunk_id": "178d77d8ce89b309a2d96a625c09729ddb0c78433344a2651747fed0a7b5f44a",
+          "track": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+          "url": "https://clef-staging.pages.dev/paper333.pdf",
+          "document_id": "paper333",
+          "proceedings_pages": "4554-4565",
+          "id": "178d77d8ce89b309a2d96a625c09729ddb0c78433344a2651747fed0a7b5f44a",
+          "text": ". Prior BirdCLEF winning solutions reach higher with a deeper data pipeline rather than a different blend, so we pursued that pipeline in parallel. Cross-year corpus (completed).We assembled a pretraining corpus from the current and prior editions: the 2026 training audio (35 549 recordings) and a small extra set (1 020 recordings) merged with the full 2025 training set (28 564 recordings across 206 species, 7.23 GB), for 65 133 recordings in total. Of these, 50 288 carry labels mappable to the 234 target classes (covering 231 of them); the remaining prior-year recordings retain their own labels. The pretraining label space is the union of the 234 target classes and 163 unmapped prior-year classes (397 classes), on the principle that the unmapped audio still teaches transferable acoustic features. Multi-hot pseudo-labels (completed).A teacher ensemble of the triplet members labelled the soundscape, training, and prior-year windows. The teacher produced per-class probabilities for 482 981 windows, stored as multi-hot targets at several thresholds. We selected a threshold of 0.7 for the first fine-tuning pass, which yields 315 087 positive (window, class) entries with at least one positive in 228 of the 234 classes, retaining multi-species structure in the soundscape windows (3.8 positives per window) while filtering teacher noise on the focal recordings",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "Soundscape, training, and prior-year windows.",
+      "retrieved_pages": [
+        [
+          "paper333",
+          1
+        ],
+        [
+          "paper333",
+          4
+        ],
+        [
+          "paper333",
+          6
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "3": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "average_precision": 0.3333333333333333,
+          "ndcg": 0.5
+        },
+        "6": {
+          "precision": 0.16666666666666666,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 0.3333333333333333,
+          "average_precision": 0.3333333333333333,
+          "ndcg": 0.5
+        }
+      },
+      "retrieval_pass": true,
+      "elapsed_seconds": 23.302
+    },
+    {
+      "id": "paper-13",
+      "category": "paper",
+      "question": "How many references were cited in paper501?",
+      "gold_pages": [
+        [
+          "501",
+          11
+        ]
+      ],
+      "kind": "catalog",
+      "answer": "Listed papers: 0\nDownloaded papers: 0\nIndexed papers: 0\nSupporting documents: 0 downloaded / 0 listed\n\nCatalog snapshot: /home/david/projects/cs8903-arc/fall-2026-interest-group-projects/homework-1/clef-rag/index/snapshots/20260920T011803516296Z-426780f126.html\nIndex built: 2026-09-20T01:39:02.969154+00:00",
+      "data": {
+        "listed_papers": 0,
+        "downloaded_papers": 0,
+        "indexed_papers": 0,
+        "supporting_documents": 0,
+        "downloaded_supporting_documents": 0,
+        "indexed_supporting_documents": 0,
+        "missing_papers": [],
+        "extraction_issues": [],
+        "tracks": {}
+      },
+      "sources": [],
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "17 references cited.",
+      "retrieved_pages": [],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "3": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "6": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        }
+      },
+      "retrieval_pass": false,
+      "elapsed_seconds": 3.135
+    },
+    {
+      "id": "paper-14",
+      "category": "paper",
+      "question": "According to paper160's official EXIST 2026 leaderboard results, what rank and ICM-Hard-Norm score did the NeverChorizoInMyPaella team achieve on Task 3.1?",
+      "gold_pages": [
+        [
+          "paper160",
+          9
+        ]
+      ],
+      "kind": "content",
+      "answer": "According to the EXIST 2026 leaderboard, the NeverChorizoInMyPaella team achieved a rank of 38 on Task 3.1. [S2]\n\nThe NeverChorizoInMyPaella team's ICM-Hard-Norm score on Task 3.1 was 0.1312. [S2]",
+      "supported": true,
+      "sources": [
+        {
+          "start_char": 0,
+          "url": "https://clef-staging.pages.dev/paper160.pdf",
+          "filename": "paper160.pdf",
+          "document_id": "paper160",
+          "proceedings_pages": "2202-2215",
+          "title": "NeverChorizoInMyPaella at EXIST 2026: Multimodal Sexism Identification and Categorisation in TikTok Videos via Sequential Cascade Training and Visual Cross-Attention",
+          "page": 9,
+          "chunk_id": "1357a800bbf92dee9dea33d75730b2069a436bb8d20e6869b7fe8f7db712f861",
+          "end_char": 1183,
+          "track": "EXIST: sEXism Identification in Social neTworks",
+          "id": "1357a800bbf92dee9dea33d75730b2069a436bb8d20e6869b7fe8f7db712f861",
+          "text": "the organizers’ baseline, and our highest-ranked run to contextualize our performance within the final leaderboard. The leaderboards are sorted according to the raw ICM value, ICM-Hard or ICM-Soft, depending on the evaluation paradigm. 5.3.1. Hard-Hard Evaluation Paradigm Tables 5, 6, and 7 show the leaderboards for Tasks 3.1, 3.2, and 3.3 under the traditional discrete consensus framework. In these leaderboard tables, our team’s row is both bolded and shaded in light gray, to distinguish it from the plain bold used in Tables 3 and 4 to mark the best score per row. Table 5 Official EXIST 2026 Leaderboard: Task 3.1 (Sexism Identification) – Hard-Hard Evaluation (ALLinstances). System Ranking ICM-Hard ICM-Hard Norm F1 YES EXIST2025-test-gold 0 0.9907 1.0000 1.0000 ELiRF-UPV_2 1 0.3307 0.6669 0.7627 German&Blai_3 2 0.3284 0.6657 0.7487 ELiRF-UPV_1 3 0.3195 0.6613 0.7504 Aegis-Athena_2 4 0.3096 0.6563 0.7528 NeverChorizoInMyPaella_3 38 0.1312 0.5662 0.6852 EXIST2025-test_majority-class 74 -0.4244 0.2858 0.0000 EXIST2025-test_minority-class 75 -0.6036 0.1954 0.6117 Table 6 Official EXIST 2026 Leaderboard: Task 3.2 (Source Intention) – Hard-Hard Evaluation (ALLinstances)",
+          "source_id": "S2",
+          "rank": 2
+        }
+      ],
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "url": "https://clef-staging.pages.dev/paper160.pdf",
+          "end_char": 1182,
+          "filename": "paper160.pdf",
+          "document_id": "paper160",
+          "proceedings_pages": "2202-2215",
+          "page": 1,
+          "track": "EXIST: sEXism Identification in Social neTworks",
+          "title": "NeverChorizoInMyPaella at EXIST 2026: Multimodal Sexism Identification and Categorisation in TikTok Videos via Sequential Cascade Training and Visual Cross-Attention",
+          "start_char": 0,
+          "chunk_id": "c0f59c9cb7da07eea2897c71a55d7dc40cf760076c4ab8b057b272da14cf997b",
+          "id": "c0f59c9cb7da07eea2897c71a55d7dc40cf760076c4ab8b057b272da14cf997b",
+          "text": "NeverChorizoInMyPaella at EXIST 2026: Multimodal Sexism Identification and Categorisation in TikTok Videos via Sequential Cascade Training and Visual Cross-Attention Notebook for the EXIST Lab at CLEF 2026 Giuseppe Di-Palma1,†, Raúl Hernández-López 2,*,† 1University of Pisa, Largo Bruno Pontecorvo 3, 56127 Pisa, Italy 2Universitat Politècnica de València, Camino de Vera s/n, 46022 Valencia, Spain Abstract This paper describes the participation of theNeverChorizoInMyPaellateam in the EXIST 2026 competitive challenge, specifically focusing on Tasks 3.1, 3.2, and 3.3 for sexism identification and categorisation in TikTok videos under the Learning with Disagreement paradigm. Building upon insights gathered from preliminary social media benchmarks on tweets and memes, we propose a multimodal framework that integrates textual OCR features, filtered automatic speech recognition (ASR) transcripts, key visual frames, and physiological signals (Eye-Tracking, Heart Rate, and EEG). To mitigate computational inefficiencies and leverage the hierarchical dependencies between the tasks, we implement a Sequential Cascade Training pipeline in combination with Visual Cross-Attention",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "start_char": 0,
+          "url": "https://clef-staging.pages.dev/paper160.pdf",
+          "filename": "paper160.pdf",
+          "document_id": "paper160",
+          "proceedings_pages": "2202-2215",
+          "title": "NeverChorizoInMyPaella at EXIST 2026: Multimodal Sexism Identification and Categorisation in TikTok Videos via Sequential Cascade Training and Visual Cross-Attention",
+          "page": 9,
+          "chunk_id": "1357a800bbf92dee9dea33d75730b2069a436bb8d20e6869b7fe8f7db712f861",
+          "end_char": 1183,
+          "track": "EXIST: sEXism Identification in Social neTworks",
+          "id": "1357a800bbf92dee9dea33d75730b2069a436bb8d20e6869b7fe8f7db712f861",
+          "text": "the organizers’ baseline, and our highest-ranked run to contextualize our performance within the final leaderboard. The leaderboards are sorted according to the raw ICM value, ICM-Hard or ICM-Soft, depending on the evaluation paradigm. 5.3.1. Hard-Hard Evaluation Paradigm Tables 5, 6, and 7 show the leaderboards for Tasks 3.1, 3.2, and 3.3 under the traditional discrete consensus framework. In these leaderboard tables, our team’s row is both bolded and shaded in light gray, to distinguish it from the plain bold used in Tables 3 and 4 to mark the best score per row. Table 5 Official EXIST 2026 Leaderboard: Task 3.1 (Sexism Identification) – Hard-Hard Evaluation (ALLinstances). System Ranking ICM-Hard ICM-Hard Norm F1 YES EXIST2025-test-gold 0 0.9907 1.0000 1.0000 ELiRF-UPV_2 1 0.3307 0.6669 0.7627 German&Blai_3 2 0.3284 0.6657 0.7487 ELiRF-UPV_1 3 0.3195 0.6613 0.7504 Aegis-Athena_2 4 0.3096 0.6563 0.7528 NeverChorizoInMyPaella_3 38 0.1312 0.5662 0.6852 EXIST2025-test_majority-class 74 -0.4244 0.2858 0.0000 EXIST2025-test_minority-class 75 -0.6036 0.1954 0.6117 Table 6 Official EXIST 2026 Leaderboard: Task 3.2 (Source Intention) – Hard-Hard Evaluation (ALLinstances)",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "start_char": 0,
+          "filename": "paper160.pdf",
+          "document_id": "paper160",
+          "url": "https://clef-staging.pages.dev/paper160.pdf",
+          "track": "EXIST: sEXism Identification in Social neTworks",
+          "page": 10,
+          "end_char": 1383,
+          "title": "NeverChorizoInMyPaella at EXIST 2026: Multimodal Sexism Identification and Categorisation in TikTok Videos via Sequential Cascade Training and Visual Cross-Attention",
+          "chunk_id": "99c57595d5fe0c3dd9efeb2134525f14d82b5874d16d1b32d8abae8cc121a837",
+          "proceedings_pages": "2202-2215",
+          "id": "99c57595d5fe0c3dd9efeb2134525f14d82b5874d16d1b32d8abae8cc121a837",
+          "text": "A similar outcome can be observed in Task 3.2 (Table 6), where our OCR-only setup (Run 2 ) ranked 37th with an ICM-Hard Norm of 0.4823, compared to the top score of 0.6262 set byAIdonnow_2. The gap shrinks significantly in Task 3.3 (Table 7), where our multimodal ensemble (Run 3) climbed up to the 21st position with an ICM-Hard Norm of 0.3860 and an𝐹 1 score of 0.4097, suggesting that combining filtered transcripts and visual frames stabilizes cascading errors even when evaluating hard targets. 5.3.2. Soft-Soft Evaluation Paradigm By contrast, our approach performed considerably better under theLearning with Disagreementevaluation setup. Tables 8, 9, and 10 detail the soft distribution results, again with our team’s row bolded and shaded in light gray. Table 8 Official EXIST 2026 Leaderboard: Task 3.1 (Sexism Identification) – Soft-Soft Evaluation (ALLinstances). System Ranking ICM-Soft ICM-Soft Norm Cross Entropy EXIST2025-test-gold 0 2.8488 1.0000 0.1962 German&Blai_2 1 0.5358 0.5940 1.2302 Dominican-Papi_2 2 0.4586 0.5805 0.8305 German&Blai_3 3 0.4549 0.5798 0.7784 AIdonnow_1 4 0.4505 0.5791 0.8436 NeverChorizoInMyPaella_3 7 0.2675 0.5469 1.3183 EXIST2025-test_majority-class 57 -1.2877 0.2740 4.4285 EXIST2025-test_minority-class 60 -2.0051 0.1481 5.5402 Table 9 Official EXIST 2026 Leaderboard: Task 3.2 (Source Intention) – Soft-Soft Evaluation (ALLinstances)",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "Rank 38th, with an ICM-Hard Norm of 0.5662.",
+      "retrieved_pages": [
+        [
+          "paper160",
+          1
+        ],
+        [
+          "paper160",
+          9
+        ],
+        [
+          "paper160",
+          10
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "3": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 0.5,
+          "average_precision": 0.5,
+          "ndcg": 0.6309297535714575
+        },
+        "6": {
+          "precision": 0.16666666666666666,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 0.5,
+          "average_precision": 0.5,
+          "ndcg": 0.6309297535714575
+        }
+      },
+      "retrieval_pass": true,
+      "elapsed_seconds": 63.975
+    },
+    {
+      "id": "synthesis-5",
+      "category": "synthesis",
+      "question": "Which team ranked higher in the official EXIST 2026 leaderboard for Task 3.1 hard-hard, the team for paper160 or the team for paper163?",
+      "gold_pages": [
+        [
+          "paper160",
+          9
+        ],
+        [
+          "paper163",
+          13
+        ]
+      ],
+      "error": "The answer hit its output limit. Try a narrower question.",
+      "elapsed_seconds": 24.06
+    },
+    {
+      "id": "synthesis-6",
+      "category": "synthesis",
+      "question": "Which team ranked lower in the FinMMEval 2026 Task 2 leaderboard, the team for paper187 or the team for paper190?",
+      "gold_pages": [
+        [
+          "paper187",
+          1
+        ],
+        [
+          "paper190",
+          1
+        ]
+      ],
+      "kind": "content",
+      "answer": "The HU_LLM_Fin team (paper187) ranked 10th in the FinMMEval 2026 Task 2 leaderboard. [S1][S3]\n\nThe IGT team (paper190) ranked 3rd in the FinMMEval 2026 Task 2 leaderboard. [S2]",
+      "supported": true,
+      "sources": [
+        {
+          "document_id": "paper187",
+          "start_char": 0,
+          "title": "HU_LLM_Fin @ FinMMEval 2026 Task 2: A Structure-Aware Hybrid RAG Pipeline utilizing Mixture-of-Experts",
+          "url": "https://clef-staging.pages.dev/paper187.pdf",
+          "track": "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems",
+          "end_char": 1384,
+          "page": 1,
+          "proceedings_pages": "2552-2558",
+          "chunk_id": "85a3d5474264176708be7275c7d133e95bc1397c8af70af054084ad83dd027c6",
+          "filename": "paper187.pdf",
+          "id": "85a3d5474264176708be7275c7d133e95bc1397c8af70af054084ad83dd027c6",
+          "text": "HU_LLM_Fin @ FinMMEval 2026 Task 2: A Structure-Aware Hybrid RAG Pipeline utilizing Mixture-of-Experts FinMMEval Lab at CLEF 2026 Muhammad Affan1,*,†, Muhammad Bilal Qureshi 1,†, Muhammad Hassan Shahzad 1,†, Faisal Alvi1 and Abdul Samad 1 1Department of Computer Science, Dhanani School of Science and Engineering, Habib University, Karachi, Pakistan Abstract The CLEF-2026 FinMMEval Lab addresses the critical limitations of monolingual, text-only financial AI by introducing a multimodal and multilingual evaluation framework [1]. This paper details the HU_LLM_Fin team’s submission for Task 2 (PolyFiQA) [2], which challenges models to perform complex cross-lingual reasoning over a hybrid of structured SEC financial tables and unstructured multilingual news. To address the inherent spatial degradation of tabular data in standard retrieval systems, we engineered a Structure-Aware Hybrid RAG pipeline utilizing a custom Row-Aware Chunking algorithm. For document retrieval, we implemented a Partitioned Two-Stage pipeline combining a dual-engine base (multilingual-e5-small and BM25) with high-precision Cross- Encoder reranking (bge-reranker-v2-m3). By deploying an unconstrained Llama-4-Scout-17B Mixture-of-Experts (MoE) generation layer to bypass dense-model API context truncation limits, our architecture achieved a global 10th place ranking on the official blind test set",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "proceedings_pages": "2606-2622",
+          "end_char": 1285,
+          "filename": "paper190.pdf",
+          "chunk_id": "9647392ff1276d761f1650b007058162dbb1fa17ab586302f1ba6350b406f269",
+          "title": "IGT @ FinMMEval 2026 Task 2: Question-Type Prompting with Targeted Extraction for Multilingual Financial QA",
+          "document_id": "paper190",
+          "url": "https://clef-staging.pages.dev/paper190.pdf",
+          "track": "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems",
+          "page": 1,
+          "start_char": 0,
+          "id": "9647392ff1276d761f1650b007058162dbb1fa17ab586302f1ba6350b406f269",
+          "text": "IGT @ FinMMEval 2026 Task 2: Question-Type Prompting with Targeted Extraction for Multilingual Financial QA Yuwen Chiu1,* 1Georgia Institute of Technology, North Ave NW, Atlanta, GA 30332 Abstract We present the IGT system for PolyFiQA Task 2 of the FinMMEval Lab at CLEF 2026, a multilingual financial question answering task over English SEC filings and multilingual news articles (English, Chinese, Japanese, Spanish, Greek) for four companies. Our central observation is that the344 development questions divide into two families requiring fundamentally different approaches: structured numeric types (R&D ratio, cash flow, capital expenditure) are best answered by direct keyword extraction on filing text, while synthesis types (investment strategy, capital allocation, top-three revenue focuses) require rule-based multilingual news passage selection. A dataset analysis reveals that 17–18 of 19 ground-truth reference answers per synthesis type share an exact evidence label prefix, whose unigram tokens contribute directly to ROUGE-1 overlap. The final system achieves development ROUGE-1 ≈ 0.395, a 60% relative improvement over a generic RAG baseline (∼0.247), and ranks 3rd of 12 teams on the official test set with ROUGE-1 = 0.3071, Precision = 0.2821, and Recall = 0.4044",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "proceedings_pages": "2552-2558",
+          "start_char": 1045,
+          "filename": "paper187.pdf",
+          "end_char": 2263,
+          "title": "HU_LLM_Fin @ FinMMEval 2026 Task 2: A Structure-Aware Hybrid RAG Pipeline utilizing Mixture-of-Experts",
+          "page": 5,
+          "document_id": "paper187",
+          "track": "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems",
+          "url": "https://clef-staging.pages.dev/paper187.pdf",
+          "chunk_id": "ad67d6dc72b92874a6d86e596a9d51fc8f48c7ee78bb8ed94e2d567d80a3102b",
+          "id": "ad67d6dc72b92874a6d86e596a9d51fc8f48c7ee78bb8ed94e2d567d80a3102b",
+          "text": ". As detailed in Table 2, the HU_LLM_Fin submission achieved the10th rank globallyon the final leaderboard. Table 2 Official FinMMEval Task 2 Blind Test Set Results Team Name ROUGE-1 F1 Precision Recall HU_LLM_Fin (Ours) 0.2289 0.2581 0.2803 5. Qualitative Error Analysis To provide deeper insight into the limitations of current hybrid RAG pipelines, we conducted a qualitative error analysis of our internal test logs generated by the <scratchpad> traces. Despite unconstrained context routing, the LLM exhibited specific failure modes tied to parametric reasoning limits. 5.1. The Mathematical Hallucination (Task ID: easy_0064) A critical vulnerability in LLMs is their tendency to override mathematically sound logic with hallucinated priors. In this instance, the model was tasked with calculating an R&D/revenue ratio. <scratchpad> - R&D expenses (Q1 2024): $360M - Total revenue (Q1 2024): $9.105B - R&D ratio = 360 / 9,105 3.95%, however, the closest or proper ratio or other information given: 14.0% </scratchpad> <answer> 14.0% </answer> Observation:This trace proves our retrieval pipeline functioned perfectly: the model successfully extracted $360M and $9.105B and performed the correct division ( 3.95%)",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "document_id": "paper187",
+          "start_char": 0,
+          "title": "HU_LLM_Fin @ FinMMEval 2026 Task 2: A Structure-Aware Hybrid RAG Pipeline utilizing Mixture-of-Experts",
+          "url": "https://clef-staging.pages.dev/paper187.pdf",
+          "track": "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems",
+          "end_char": 1384,
+          "page": 1,
+          "proceedings_pages": "2552-2558",
+          "chunk_id": "85a3d5474264176708be7275c7d133e95bc1397c8af70af054084ad83dd027c6",
+          "filename": "paper187.pdf",
+          "id": "85a3d5474264176708be7275c7d133e95bc1397c8af70af054084ad83dd027c6",
+          "text": "HU_LLM_Fin @ FinMMEval 2026 Task 2: A Structure-Aware Hybrid RAG Pipeline utilizing Mixture-of-Experts FinMMEval Lab at CLEF 2026 Muhammad Affan1,*,†, Muhammad Bilal Qureshi 1,†, Muhammad Hassan Shahzad 1,†, Faisal Alvi1 and Abdul Samad 1 1Department of Computer Science, Dhanani School of Science and Engineering, Habib University, Karachi, Pakistan Abstract The CLEF-2026 FinMMEval Lab addresses the critical limitations of monolingual, text-only financial AI by introducing a multimodal and multilingual evaluation framework [1]. This paper details the HU_LLM_Fin team’s submission for Task 2 (PolyFiQA) [2], which challenges models to perform complex cross-lingual reasoning over a hybrid of structured SEC financial tables and unstructured multilingual news. To address the inherent spatial degradation of tabular data in standard retrieval systems, we engineered a Structure-Aware Hybrid RAG pipeline utilizing a custom Row-Aware Chunking algorithm. For document retrieval, we implemented a Partitioned Two-Stage pipeline combining a dual-engine base (multilingual-e5-small and BM25) with high-precision Cross- Encoder reranking (bge-reranker-v2-m3). By deploying an unconstrained Llama-4-Scout-17B Mixture-of-Experts (MoE) generation layer to bypass dense-model API context truncation limits, our architecture achieved a global 10th place ranking on the official blind test set",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "proceedings_pages": "2606-2622",
+          "end_char": 1285,
+          "filename": "paper190.pdf",
+          "chunk_id": "9647392ff1276d761f1650b007058162dbb1fa17ab586302f1ba6350b406f269",
+          "title": "IGT @ FinMMEval 2026 Task 2: Question-Type Prompting with Targeted Extraction for Multilingual Financial QA",
+          "document_id": "paper190",
+          "url": "https://clef-staging.pages.dev/paper190.pdf",
+          "track": "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems",
+          "page": 1,
+          "start_char": 0,
+          "id": "9647392ff1276d761f1650b007058162dbb1fa17ab586302f1ba6350b406f269",
+          "text": "IGT @ FinMMEval 2026 Task 2: Question-Type Prompting with Targeted Extraction for Multilingual Financial QA Yuwen Chiu1,* 1Georgia Institute of Technology, North Ave NW, Atlanta, GA 30332 Abstract We present the IGT system for PolyFiQA Task 2 of the FinMMEval Lab at CLEF 2026, a multilingual financial question answering task over English SEC filings and multilingual news articles (English, Chinese, Japanese, Spanish, Greek) for four companies. Our central observation is that the344 development questions divide into two families requiring fundamentally different approaches: structured numeric types (R&D ratio, cash flow, capital expenditure) are best answered by direct keyword extraction on filing text, while synthesis types (investment strategy, capital allocation, top-three revenue focuses) require rule-based multilingual news passage selection. A dataset analysis reveals that 17–18 of 19 ground-truth reference answers per synthesis type share an exact evidence label prefix, whose unigram tokens contribute directly to ROUGE-1 overlap. The final system achieves development ROUGE-1 ≈ 0.395, a 60% relative improvement over a generic RAG baseline (∼0.247), and ranks 3rd of 12 teams on the official test set with ROUGE-1 = 0.3071, Precision = 0.2821, and Recall = 0.4044",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "proceedings_pages": "2552-2558",
+          "start_char": 1045,
+          "filename": "paper187.pdf",
+          "end_char": 2263,
+          "title": "HU_LLM_Fin @ FinMMEval 2026 Task 2: A Structure-Aware Hybrid RAG Pipeline utilizing Mixture-of-Experts",
+          "page": 5,
+          "document_id": "paper187",
+          "track": "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems",
+          "url": "https://clef-staging.pages.dev/paper187.pdf",
+          "chunk_id": "ad67d6dc72b92874a6d86e596a9d51fc8f48c7ee78bb8ed94e2d567d80a3102b",
+          "id": "ad67d6dc72b92874a6d86e596a9d51fc8f48c7ee78bb8ed94e2d567d80a3102b",
+          "text": ". As detailed in Table 2, the HU_LLM_Fin submission achieved the10th rank globallyon the final leaderboard. Table 2 Official FinMMEval Task 2 Blind Test Set Results Team Name ROUGE-1 F1 Precision Recall HU_LLM_Fin (Ours) 0.2289 0.2581 0.2803 5. Qualitative Error Analysis To provide deeper insight into the limitations of current hybrid RAG pipelines, we conducted a qualitative error analysis of our internal test logs generated by the <scratchpad> traces. Despite unconstrained context routing, the LLM exhibited specific failure modes tied to parametric reasoning limits. 5.1. The Mathematical Hallucination (Task ID: easy_0064) A critical vulnerability in LLMs is their tendency to override mathematically sound logic with hallucinated priors. In this instance, the model was tasked with calculating an R&D/revenue ratio. <scratchpad> - R&D expenses (Q1 2024): $360M - Total revenue (Q1 2024): $9.105B - R&D ratio = 360 / 9,105 3.95%, however, the closest or proper ratio or other information given: 14.0% </scratchpad> <answer> 14.0% </answer> Observation:This trace proves our retrieval pipeline functioned perfectly: the model successfully extracted $360M and $9.105B and performed the correct division ( 3.95%)",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "HU_LLM_Fin in paper187 ranked lower.",
+      "retrieved_pages": [
+        [
+          "paper187",
+          1
+        ],
+        [
+          "paper190",
+          1
+        ],
+        [
+          "paper187",
+          5
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 0.5,
+          "ndcg": 1.0
+        },
+        "3": {
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "6": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "retrieval_pass": true,
+      "elapsed_seconds": 36.555
+    },
+    {
+      "id": "synthesis-7",
+      "category": "synthesis",
+      "question": "Did the team in paper172 rank higher than the team in paper173 in the official EXIST 2026 leaderboard for Task 2.1 ALL? Compare the F1-YES score difference.",
+      "gold_pages": [
+        [
+          "paper172",
+          6
+        ],
+        [
+          "paper173",
+          1
+        ]
+      ],
+      "kind": "content",
+      "answer": "I don't have enough evidence in the available corpus to answer this question.",
+      "sources": [],
+      "supported": false,
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "end_char": 1264,
+          "proceedings_pages": "2360-2367",
+          "title": "FourBytes at EXIST 2026: Cross-Attention Multimodal Fusion for Sexism Detection in Memes",
+          "track": "EXIST: sEXism Identification in Social neTworks",
+          "filename": "paper172.pdf",
+          "start_char": 0,
+          "url": "https://clef-staging.pages.dev/paper172.pdf",
+          "chunk_id": "9f4276949e2cd3b532a176f033c5cc2860966ca21b7c502f0eeb8a0414bcc18e",
+          "document_id": "paper172",
+          "page": 1,
+          "id": "9f4276949e2cd3b532a176f033c5cc2860966ca21b7c502f0eeb8a0414bcc18e",
+          "text": "FourBytes at EXIST 2026: Cross-Attention Multimodal Fusion for Sexism Detection in Memes Notebook for the EXIST Lab at CLEF 2026 Sujaudeen Nannai John1, Thirumurugan Ravialagappan 2, Shrika Thota 3, Vishal Muralidharan4 and Shanmugam Karthikeyen Shivaanee 5 1Department of Computer Science and Engineering, Sri Sivasubramaniya Nadar College of Engineering, Chennai 603110, Tamil Nadu, India Abstract We describe our submission to EXIST 2026 Task 2.1, where systems must detect sexism in multilingual multimodal memes under both hard and soft evaluation settings. Our model combines XLM-T text representations with SigLIP image features through a cross-attention dual-encoder architecture and is trained on soft labels derived from annotator votes. The submitted run reaches an ICM score of -0.0188 (ranking 110th) on the Hard-hard evaluation over all instances, and an ICM score of -0.4376 (ranking 56th) on the Soft-soft evaluation leaderboard, with better results on English memes than on Spanish ones. Keywords multimodal sexism detection, meme classification, cross-attention fusion, multilingual transformers, EXIST 2026 1. Introduction The EXIST lab at CLEF 2026 studies automated sexism detection in social media under multilingual and multimodal conditions",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "url": "https://clef-staging.pages.dev/paper173.pdf",
+          "proceedings_pages": "2368-2377",
+          "chunk_id": "1aed994afa05773d7c7dec8ce2ecc6b5a059ab1f0fbbb5466d75177b9365cd2c",
+          "filename": "paper173.pdf",
+          "end_char": 1288,
+          "document_id": "paper173",
+          "title": "MathAddicts at EXIST 2026: Heterogeneous Vision-Language Ensembles with Diverse PEFT Adapters for Multimodal Sexism Detection",
+          "page": 1,
+          "start_char": 0,
+          "track": "EXIST: sEXism Identification in Social neTworks",
+          "id": "1aed994afa05773d7c7dec8ce2ecc6b5a059ab1f0fbbb5466d75177b9365cd2c",
+          "text": "MathAddicts at EXIST 2026: Heterogeneous Vision-Language Ensembles with Diverse PEFT Adapters for Multimodal Sexism Detection MathAddicts at CLEF 2026 Ali Yıldız1,2,∗, Yusuf Hasan Onkun 1,∗, Ahmet Nedim Kocatürk 1, Haktan Cebeci 1, Ya¸ sar Cengizhan Açıcı1, Ahmet Sadık Demirci 1, Alperen Korkmaz 1 and Can Ekkazan 2 1Istanbul Technical University, Ayaza˘ ga, Sarıyer, Istanbul, Turkey 2Optdcom Technology, Be¸ sikta¸ s, Istanbul, Turkey Abstract This paper presents our system for the EXIST 2026 shared task (Task 2), targeting the detection and characterization of sexism in memes across English and Spanish. Our approach deploys a heterogeneous ensemble of three Vision-Language Models (VLMs): Qwen 3.5 4B, GLM-4.6V-Flash, and Qwen 3.5 9B. Each of them is fine-tuned from base weights using 4-bit quantized parameter-efficient fine-tuning (PEFT) methods: QLoRA for Qwen 3.5 4B and GLM-4.6V-Flash, and QDoRA for Qwen 3.5 9B. All models process memes through a sequential zero-shot pipeline covering three subtasks: binary sexism identification (Subtask 2.1), source-intention classification (Subtask 2.2), and multi-label sexism categorization (Subtask 2.3). Ensemble predictions are consolidated via majority voting for Subtasks 2.1 and 2.2, and via at-least-one voting for Subtask 2.3",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "url": "https://clef-staging.pages.dev/paper172.pdf",
+          "page": 6,
+          "document_id": "paper172",
+          "track": "EXIST: sEXism Identification in Social neTworks",
+          "proceedings_pages": "2360-2367",
+          "start_char": 0,
+          "chunk_id": "63b4fbdce684a465d223d352735e3ec8150625ad3a843b5639423dc6fa4638f2",
+          "title": "FourBytes at EXIST 2026: Cross-Attention Multimodal Fusion for Sexism Detection in Memes",
+          "filename": "paper172.pdf",
+          "end_char": 1305,
+          "id": "63b4fbdce684a465d223d352735e3ec8150625ad3a843b5639423dc6fa4638f2",
+          "text": "Table 2 Official leaderboard results for FourBytes_1 on EXIST 2026 Task 2.1. Split Hard-hard Rank Hard-hard ICM Hard-hard F1 YES Soft-soft Rank Soft-soft ICM Soft-soft Cross Entropy ALL 110 -0.0188 0.7323 56 -0.4376 0.9524 EN 68 0.1357 0.7633 47 -0.2789 0.9112 ES 151 -0.1732 0.7050 61 -0.6107 0.9915 controlled language-specific ablations, so we leave these as working explanations rather than firm claims. Figure 2:Leaderboard trends for FourBytes_1 across the ALL, EN, and ES splits. The left column shows the official ICM scores for the Hard-hard (top) and Soft-soft (bottom) evaluations, while the right column shows the corresponding leaderboard ranks. English is consistently the strongest split, while Spanish remains the most difficult condition. A separate issue is calibration. The Soft-soft evaluation rank is notably better than the Hardhard evaluation rank, yet the negative Soft-soft ICM values and relatively high cross-entropy show that the predicted distributions are still not well calibrated. That matches the way the system was trained: it is optimized mainly for classification quality and only adjusted afterward through thresholdbased rescaling. A stronger calibration step, such as temperature scaling or direct optimization of a distributional objective, would probably help here",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "No, the team in paper172 ranked lower than the team in paper173. The F1-YES score difference was 0.0191.",
+      "retrieved_pages": [
+        [
+          "paper172",
+          1
+        ],
+        [
+          "paper173",
+          1
+        ],
+        [
+          "paper172",
+          6
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "3": {
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 0.5,
+          "average_precision": 0.5833333333333333,
+          "ndcg": 0.6934264036172708
+        },
+        "6": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 0.5,
+          "average_precision": 0.5833333333333333,
+          "ndcg": 0.6934264036172708
+        }
+      },
+      "retrieval_pass": true,
+      "elapsed_seconds": 15.672
+    },
+    {
+      "id": "synthesis-",
+      "category": "synthesis",
+      "question": "Are the authors in paper241 and paper242 written by the same author?",
+      "gold_pages": [
+        [
+          "paper241",
+          1
+        ],
+        [
+          "paper242",
+          1
+        ]
+      ],
+      "kind": "content",
+      "answer": "Paper241 and paper242 both list Anubhav as an author. [S1][S2]",
+      "supported": true,
+      "sources": [
+        {
+          "page": 1,
+          "document_id": "paper241",
+          "proceedings_pages": "3300-3342",
+          "chunk_id": "4cb3c5f71707b0715c2429fac8d8310f8f7ad817dc5b19f05fbb97f27861fde0",
+          "end_char": 1302,
+          "start_char": 0,
+          "track": "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security",
+          "url": "https://clef-staging.pages.dev/paper241.pdf",
+          "title": "Brihadaranyaka at ImageCLEF-Deepfake 2026: A Unified System for Generation and Detection with Anchor-Aligned Ensemble Calibration",
+          "filename": "paper241.pdf",
+          "id": "4cb3c5f71707b0715c2429fac8d8310f8f7ad817dc5b19f05fbb97f27861fde0",
+          "text": "Brihadaranyaka at ImageCLEF-Deepfake 2026: A Unified System for Generation and Detection with Anchor-Aligned Ensemble Calibration Brihadaranyaka at CLEF 2026 Anubhav1,* 1Brihadaranyaka, Bokaro Steel City, Jharkhand, India Abstract We describe Brihadaranyaka’s participation in both subtasks of the ImageCLEF-Deepfake 2026 challenge: Generation and Detection. For Generation, we submit three landmark-constrained deepfake image runs (affine warping with adversarial perturbation, and two InstantID variants) and a zero-shot voice-cloning submission built on a three-model TTS ensemble with per-utterance speaker-similarity selection. For Detection, we submit two complementary ensembles over public detectors: a rank-normalised aggregate, and an anchor-aligned variant whose orientation-corrected detector scores feed a calibrated logistic-regression meta-learner, with an LLM rescoring tier for the most uncertain images. We treat the two subtasks as one system rather than two independent submissions, and use the controlled experiments each enables to study why specific design choices succeeded or failed. Our official final scores are 0.4364 (Image Generation) and 0.3461 (Audio Generation) for the generation track, and 0.5358 (Image Detection) and 0.5092 (Audio Detection) for the detection track",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "start_char": 0,
+          "chunk_id": "94097bedd7f98c9cc1c7d4c1980e231e8902f0f8a411097ddc4cd413284f85c9",
+          "track": "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security",
+          "title": "Brihadaranyaka at MEDIQA-CORE-Task-1 2026: A Frozen-Encoder Multimodal Ensemble with LLM Few-Shot Reasoning for Brain Tumor Subtype Classification under Modality Sparsity",
+          "page": 1,
+          "end_char": 1272,
+          "document_id": "paper242",
+          "url": "https://clef-staging.pages.dev/paper242.pdf",
+          "filename": "paper242.pdf",
+          "proceedings_pages": "3343-3359",
+          "id": "94097bedd7f98c9cc1c7d4c1980e231e8902f0f8a411097ddc4cd413284f85c9",
+          "text": "Brihadaranyaka at MEDIQA-CORE-Task-1 2026: A Frozen-Encoder Multimodal Ensemble with LLM Few-Shot Reasoning for Brain Tumor Subtype Classification under Modality Sparsity Anubhav1,* 1Independent Researcher, Bokaro Steel City, Jharkhand, India Abstract We describe Brihadaranyaka’s submission to MEDIQA-CORE 2026 Task 1 (Brain Tumor Subtype Classification on the CoRe-BT benchmark [1, 2]). Our system is a frozen-encoder multimodal feature ensemble (NeuroVFM for 3D MRI, CONCH and GigaPath for histopathology, Bio_ClinicalBERT and RadBERT for clinical text) feeding into eight per-task heads organized by modality coverage (unimodal, bimodal, and trimodal) and aggregation strategy, combined through a Dirichlet-weighted search (validation mean macro-F1 = 0.7246 ), with a final claude-opus-4-7 few-shot reasoning override conditioned on six programmatically picked exemplars. We report theofficialresults computed by the organizers after code verification and re-execution of every submission under all modality-availability conditions. On Test Set 1 (36 subjects, all modalities present) our system reaches macro-F1 of 0.837 (Level 1 Molecular Type), 0.649 (WHO Grade), and 0.800 (LGG vs. HGG), averaging 0.762 and ranking 5th of 6 teams in the fully multimodal condition",
+          "source_id": "S2",
+          "rank": 2
+        }
+      ],
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "page": 1,
+          "document_id": "paper241",
+          "proceedings_pages": "3300-3342",
+          "chunk_id": "4cb3c5f71707b0715c2429fac8d8310f8f7ad817dc5b19f05fbb97f27861fde0",
+          "end_char": 1302,
+          "start_char": 0,
+          "track": "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security",
+          "url": "https://clef-staging.pages.dev/paper241.pdf",
+          "title": "Brihadaranyaka at ImageCLEF-Deepfake 2026: A Unified System for Generation and Detection with Anchor-Aligned Ensemble Calibration",
+          "filename": "paper241.pdf",
+          "id": "4cb3c5f71707b0715c2429fac8d8310f8f7ad817dc5b19f05fbb97f27861fde0",
+          "text": "Brihadaranyaka at ImageCLEF-Deepfake 2026: A Unified System for Generation and Detection with Anchor-Aligned Ensemble Calibration Brihadaranyaka at CLEF 2026 Anubhav1,* 1Brihadaranyaka, Bokaro Steel City, Jharkhand, India Abstract We describe Brihadaranyaka’s participation in both subtasks of the ImageCLEF-Deepfake 2026 challenge: Generation and Detection. For Generation, we submit three landmark-constrained deepfake image runs (affine warping with adversarial perturbation, and two InstantID variants) and a zero-shot voice-cloning submission built on a three-model TTS ensemble with per-utterance speaker-similarity selection. For Detection, we submit two complementary ensembles over public detectors: a rank-normalised aggregate, and an anchor-aligned variant whose orientation-corrected detector scores feed a calibrated logistic-regression meta-learner, with an LLM rescoring tier for the most uncertain images. We treat the two subtasks as one system rather than two independent submissions, and use the controlled experiments each enables to study why specific design choices succeeded or failed. Our official final scores are 0.4364 (Image Generation) and 0.3461 (Audio Generation) for the generation track, and 0.5358 (Image Detection) and 0.5092 (Audio Detection) for the detection track",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "start_char": 0,
+          "chunk_id": "94097bedd7f98c9cc1c7d4c1980e231e8902f0f8a411097ddc4cd413284f85c9",
+          "track": "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security",
+          "title": "Brihadaranyaka at MEDIQA-CORE-Task-1 2026: A Frozen-Encoder Multimodal Ensemble with LLM Few-Shot Reasoning for Brain Tumor Subtype Classification under Modality Sparsity",
+          "page": 1,
+          "end_char": 1272,
+          "document_id": "paper242",
+          "url": "https://clef-staging.pages.dev/paper242.pdf",
+          "filename": "paper242.pdf",
+          "proceedings_pages": "3343-3359",
+          "id": "94097bedd7f98c9cc1c7d4c1980e231e8902f0f8a411097ddc4cd413284f85c9",
+          "text": "Brihadaranyaka at MEDIQA-CORE-Task-1 2026: A Frozen-Encoder Multimodal Ensemble with LLM Few-Shot Reasoning for Brain Tumor Subtype Classification under Modality Sparsity Anubhav1,* 1Independent Researcher, Bokaro Steel City, Jharkhand, India Abstract We describe Brihadaranyaka’s submission to MEDIQA-CORE 2026 Task 1 (Brain Tumor Subtype Classification on the CoRe-BT benchmark [1, 2]). Our system is a frozen-encoder multimodal feature ensemble (NeuroVFM for 3D MRI, CONCH and GigaPath for histopathology, Bio_ClinicalBERT and RadBERT for clinical text) feeding into eight per-task heads organized by modality coverage (unimodal, bimodal, and trimodal) and aggregation strategy, combined through a Dirichlet-weighted search (validation mean macro-F1 = 0.7246 ), with a final claude-opus-4-7 few-shot reasoning override conditioned on six programmatically picked exemplars. We report theofficialresults computed by the organizers after code verification and re-execution of every submission under all modality-availability conditions. On Test Set 1 (36 subjects, all modalities present) our system reaches macro-F1 of 0.837 (Level 1 Molecular Type), 0.649 (WHO Grade), and 0.800 (LGG vs. HGG), averaging 0.762 and ranking 5th of 6 teams in the fully multimodal condition",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "url": "https://clef-staging.pages.dev/paper241.pdf",
+          "filename": "paper241.pdf",
+          "end_char": 2659,
+          "page": 41,
+          "document_id": "paper241",
+          "title": "Brihadaranyaka at ImageCLEF-Deepfake 2026: A Unified System for Generation and Detection with Anchor-Aligned Ensemble Calibration",
+          "start_char": 1268,
+          "proceedings_pages": "3300-3342",
+          "track": "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security",
+          "chunk_id": "c96d10ee89d8b35dd98d6f0946464250607c5989af547a3b22f52ad1ceecb79d",
+          "id": "c96d10ee89d8b35dd98d6f0946464250607c5989af547a3b22f52ad1ceecb79d",
+          "text": ". The author also used Claude Sonnet 4.6 directly inside the Detection v2 system as the LLM-tier component (Section 5.6); that deployment is described as part of the system rather than as a preparation tool. The prose was further edited with a researchprose humanizer skill (banlist sweep, structural rewrite, specificity audit, numeric self-audit) before submission. All scientific claims, citations, numerical values, table entries, and figures were verified by the author against primary sources (notebook outputs, official ImageCLEF organiser email of 14 May 2026, public Hugging Face model cards, and the cited references). AI assistance was not used for ideation of contributions, experimental design, data collection, or data analysis. After using these tools, the author reviewed and edited all content and takes full responsibility for the publication’s content. References [1] B. Ionescu, H. Müller, D. Stanciu, A. Radu, R. Bolborici, M. Negru, A. Ene, V. Vasilescu, A.-A. Nicolae, L. Ştefan, M. Constantin, M. Dogariu, A. Andrei, H. Damm, T. M. G. Pakull, A. Ben Abacha, A. García Seco de Herrera, C. M. Friedrich, R. Brüngel, L. Reinartz, H. Schäfer, C. S. Schmidt, B. Bracke, P. Nath, B. Eryılmaz, M. Hjuler, D. Fabre, C. Lemaire, B. Lecouteux, D. Schwab, D. Dimitrov, M. S. Hee, M. Ahsan, S. Ahmad, D. Zlatkova, G. Pachov, Z. Xie, P. Nakov, I. Koychev, J. E. Heras Rivera, D. K",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "Yes, they are both written by Anubhav.",
+      "retrieved_pages": [
+        [
+          "paper241",
+          1
+        ],
+        [
+          "paper242",
+          1
+        ],
+        [
+          "paper241",
+          41
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 0.5,
+          "ndcg": 1.0
+        },
+        "3": {
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "6": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "retrieval_pass": true,
+      "elapsed_seconds": 20.317
+    },
+    {
+      "id": "unsupported-5",
+      "category": "unsupported",
+      "question": "What is the home address of paper6's lead author?",
+      "kind": "content",
+      "answer": "I don't have enough evidence in the available corpus to answer this question.",
+      "sources": [],
+      "supported": false,
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "document_id": "paper8",
+          "title": "MedCascade: A Multi-Stage Cascaded Retrieval and Generation System for Biomedical Question Answering",
+          "url": "https://clef-staging.pages.dev/paper8.pdf",
+          "chunk_id": "e597280b498fedfad1a1ef1bf367efd7b723ace2d11ef3935eac9959bf001d2e",
+          "filename": "paper8.pdf",
+          "proceedings_pages": "160-175",
+          "end_char": 1398,
+          "page": 1,
+          "start_char": 0,
+          "id": "e597280b498fedfad1a1ef1bf367efd7b723ace2d11ef3935eac9959bf001d2e",
+          "text": "MedCascade: A Multi-Stage Cascaded Retrieval and Generation System for Biomedical Question Answering ⋆ BioASQ at CLEF 2026 Artem Avdeiko1,2, Pelinsu Topaloglu 1,2, Teresa Vaccari 1,2 and Georgios Peikos 2,* 1University of Pavia, 27100 Pavia, Italy 2University of Milano-Bicocca (DISCo), 20126 Milan, Italy Abstract This paper presents MedCascade, our submission to BioASQ task 14B for biomedical question answering. The task evaluates systems across document and snippet retrieval, exact answer generation, and ideal answer generation. MedCascade combines LLM-based query expansion, sparse retrieval, neural reranking, LLM-based listwise reranking, Dense PRF reranking, snippet extraction, and LLM-based answer generation. Across the submitted batches, MedCascade-v1 achieved the strongest performance among our submitted systems. In Phase A, it ranked 9th and 4th for document retrieval in batches 3 and 4, respectively, and 8th and 7th for snippet retrieval. In Phase A+, it ranked 3rd for both exact and ideal answers in batch 3, and 1st for ideal answers in batch 4. The results suggest that high-quality evidence retrieval is important for biomedical QA, while exact answer generation remains sensitive to question type and output format. Keywords Biomedical question answering, BioASQ, Information retrieval, Retrieval augmented generation, Neural reranking, Dense pseudo relevance feedback 1",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "document_id": "paper6",
+          "chunk_id": "1aede7238bdd439cb25eb8372936252161c5577bb311765bcb243e0e089f82a3",
+          "url": "https://clef-staging.pages.dev/paper6.pdf",
+          "filename": "paper6.pdf",
+          "title": "Retrieval-Bound Generation: Lean RAG pipelines for Biomedical QA",
+          "proceedings_pages": "123-145",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "page": 1,
+          "start_char": 0,
+          "end_char": 1300,
+          "id": "1aede7238bdd439cb25eb8372936252161c5577bb311765bcb243e0e089f82a3",
+          "text": "Retrieval-Bound Generation: Lean RAG pipelines for Biomedical QA Notebook for the BioASQ Lab at CLEF 2026. Diogo M. C.Antunes1,∗, Paulo R. C.Lopes1 and Francisco M.Couto1 1LASIGE, Departamento de Informática, Faculdade de Ciências, Universidade de Lisboa, 1749-016 Lisboa, Portugal Abstract Biomedical question answering requires retrieving relevant evidence from large literature collections and generating accurate answers grounded in the retrieved evidence, a task made challenging by the scale of PubMed and the characteristics of biomedical terminology. In this work we describe our participation in BioASQ Task 14b, covering all three phases of the challenge (A, A+, and B), with a focus on lean, locally deployable Retrieval-Augmented Generation. We developed four retrieval pipeline variants that share a common query expansion, snippet extraction, and cross-encoder re-ranking stage, differing in their retrieval strategy: sparse-only, sparse-dense hybrid, dense pseudo-relevance feedback, and a cross-encoder ensemble. For answer generation, we used lean and instruction-tuned large language models under a few-shot prompting strategy with a few-pass inference scheme, in which an exact answer is generated first and then used to condition a more comprehensive ideal natural language answer",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "document_id": "paper8",
+          "end_char": 3752,
+          "title": "MedCascade: A Multi-Stage Cascaded Retrieval and Generation System for Biomedical Question Answering",
+          "url": "https://clef-staging.pages.dev/paper8.pdf",
+          "page": 1,
+          "proceedings_pages": "160-175",
+          "filename": "paper8.pdf",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "chunk_id": "7193f0ce6a1e731fb4a56de8d14121f43a84b5341b1ecc148563e6a0d11b6c27",
+          "start_char": 2395,
+          "id": "7193f0ce6a1e731fb4a56de8d14121f43a84b5341b1ecc148563e6a0d11b6c27",
+          "text": ". Recent systems also use model adaptation methods, such as parameter-efficient fine-tuning, to improve the use of biomedical evidence and the quality of generated answers [7]. Retrieval augmented generation (RAG) has become an important direction in this space, as it allows systems to retrieve relevant biomedical evidence before generating answers [7]. This direction is also reflected in recent systems submitted to the BioASQ evaluation labs, which combine traditional information retrieval methods with LLMs, leverage query expansion, use knowledge resources, and perform RAG-based generation [ 8]. Nevertheless, recent BioASQ results show that access to relevant evidence substantially improves answer quality, suggesting that retrieval quality remains a key factor for the effectiveness of RAG-based biomedical QA systems [1]. CLEF 2026 Working Notes, 21 – 24 September 2026, Jena, Germany *Corresponding author. † These authors contributed equally. /envel⌢pe-⌢penartem.avdeiko01@universitadipavia.it (A. Avdeiko); pelinsu.topaloglu01@universitadipavia.it (P. Topaloglu); teresa.vaccari01@universitadipavia.it (T. Vaccari); georgios.peikos@unimib.it (G. Peikos) /orcid0009-0004-7448-9272 (A. Avdeiko); 0000-0002-0877-7063 (P. Topaloglu); 0000-0001-7116-9338 (T. Vaccari); 0000-0002-2862-8209 (G. Peikos) ©2026 Copyright for this paper by its authors",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "abstention_pass": true,
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "Insufficient evidence.",
+      "elapsed_seconds": 13.139
+    },
+    {
+      "id": "unsupported-6",
+      "category": "unsupported",
+      "question": "What is a agreement-aware ensemble?",
+      "gold_pages": [
+        [
+          "paper408",
+          1
+        ]
+      ],
+      "kind": "content",
+      "answer": "A disagreement-aware ensemble uses variance and range of output scores from component detectors as features. [S1]\n\nThe ensemble combines scores from ModernBERT, TF-IDF, a stylometric detector, and Binoculars with disagreement signals using a LightGBM meta-learner. [S1]",
+      "supported": true,
+      "sources": [
+        {
+          "page": 1,
+          "proceedings_pages": "5535-5546",
+          "filename": "paper408.pdf",
+          "url": "https://clef-staging.pages.dev/paper408.pdf",
+          "title": "Team aimoment at PAN 2026: Disagreement-Aware Ensemble for Robust AI Text Detection",
+          "end_char": 1309,
+          "chunk_id": "b475da88da9833af0554206f05f046c6454ba6faeb3745d9238a4fb8fc9cdad7",
+          "document_id": "paper408",
+          "start_char": 0,
+          "track": "PAN: Digital Text Forensics and Stylometry",
+          "id": "b475da88da9833af0554206f05f046c6454ba6faeb3745d9238a4fb8fc9cdad7",
+          "text": "Team aimoment at PAN 2026: Disagreement-Aware Ensemble for Robust AI Text Detection Notebook for the PAN Lab at CLEF 2026 Momen Ibrahim1,*, Nagwa El-Makky 1 and Marwan Torki 1 1Computer and Systems Engineering Department, Faculty of Engineering, Alexandria University, Alexandria, Egypt Abstract Adversarial obfuscation — deliberately rewriting AI-generated text to defeat detection — creates a predictable property: different detector families failinconsistently. A paraphrased text that fools a lexical 𝑛-gram classifier may still reveal itself through perplexity anomalies; a vocabulary-erased text that defeats statistical detectors may preserve structural regularities visible to stylometric analysis. We exploit this inconsistency directly:disagreement among component detectors, measured as the variance and range of their output scores, becomes a first-class feature for the ensemble meta-learner. Our system combines fine-tuned ModernBERT [1], a TF-IDF lexical prior, a 54-feature stylometric detector with SBERT-based coherence [2, 3], and the Binoculars cross-model perplexity ratio [ 4]. A LightGBM metalearner [5, 6] fuses component scores with disagreement signals, calibrated via temperature scaling [ 7] and filtered by two-dimensional abstention thresholds optimised over all five PAN metrics",
+          "source_id": "S1",
+          "rank": 1
+        }
+      ],
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "page": 1,
+          "proceedings_pages": "5535-5546",
+          "filename": "paper408.pdf",
+          "url": "https://clef-staging.pages.dev/paper408.pdf",
+          "title": "Team aimoment at PAN 2026: Disagreement-Aware Ensemble for Robust AI Text Detection",
+          "end_char": 1309,
+          "chunk_id": "b475da88da9833af0554206f05f046c6454ba6faeb3745d9238a4fb8fc9cdad7",
+          "document_id": "paper408",
+          "start_char": 0,
+          "track": "PAN: Digital Text Forensics and Stylometry",
+          "id": "b475da88da9833af0554206f05f046c6454ba6faeb3745d9238a4fb8fc9cdad7",
+          "text": "Team aimoment at PAN 2026: Disagreement-Aware Ensemble for Robust AI Text Detection Notebook for the PAN Lab at CLEF 2026 Momen Ibrahim1,*, Nagwa El-Makky 1 and Marwan Torki 1 1Computer and Systems Engineering Department, Faculty of Engineering, Alexandria University, Alexandria, Egypt Abstract Adversarial obfuscation — deliberately rewriting AI-generated text to defeat detection — creates a predictable property: different detector families failinconsistently. A paraphrased text that fools a lexical 𝑛-gram classifier may still reveal itself through perplexity anomalies; a vocabulary-erased text that defeats statistical detectors may preserve structural regularities visible to stylometric analysis. We exploit this inconsistency directly:disagreement among component detectors, measured as the variance and range of their output scores, becomes a first-class feature for the ensemble meta-learner. Our system combines fine-tuned ModernBERT [1], a TF-IDF lexical prior, a 54-feature stylometric detector with SBERT-based coherence [2, 3], and the Binoculars cross-model perplexity ratio [ 4]. A LightGBM metalearner [5, 6] fuses component scores with disagreement signals, calibrated via temperature scaling [ 7] and filtered by two-dimensional abstention thresholds optimised over all five PAN metrics",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "start_char": 1156,
+          "url": "https://clef-staging.pages.dev/paper408.pdf",
+          "page": 8,
+          "document_id": "paper408",
+          "proceedings_pages": "5535-5546",
+          "end_char": 2437,
+          "track": "PAN: Digital Text Forensics and Stylometry",
+          "filename": "paper408.pdf",
+          "title": "Team aimoment at PAN 2026: Disagreement-Aware Ensemble for Robust AI Text Detection",
+          "chunk_id": "be3b02d1be5d51739d211ee649a764f5a36634d73515a76311cf478a7af5d8ed",
+          "id": "be3b02d1be5d51739d211ee649a764f5a36634d73515a76311cf478a7af5d8ed",
+          "text": ". Because only the meta-learner is trained on this set, individual component scores are unbiased estimates. Table 7 shows the progressive contribution of each design decision, estimated via 5-fold cross-validation within the validation set. Figure 4 visualises the progressive mean-score improvement of each design decision. The disagreement features (variance and range) improve mean score over meta-learning on component scores alone, and this improvement is consistent across all five folds, confirming that inter-detector inconsistency carries genuine signal beyond what the individual scores provide rather than arising from a single favourable split. Notably, Binoculars is the weakest individual component (0.724 mean) but improves ensemble ROC-AUC by approximately 0.008 when added — its orthogonal failure mode recovers cases where the three supervised components agree incorrectly. 7. Results Both systems were evaluated across three test sets available on TIRA: the official PAN 2026 test set (adversarial), the PAN 2025 cross-year test set, and the ELOQUENT cross-domain test set. Table 8 reports all five evaluation metrics and their mean for each system–dataset combination. Figure 5 visualises the mean scores for both systems across all four evaluation scenarios. 8",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "chunk_id": "f4c59daa70d2d98f0d12551f010368e1bdf0610bd09d315411e52e6909396e25",
+          "document_id": "paper408",
+          "url": "https://clef-staging.pages.dev/paper408.pdf",
+          "page": 5,
+          "start_char": 0,
+          "proceedings_pages": "5535-5546",
+          "title": "Team aimoment at PAN 2026: Disagreement-Aware Ensemble for Robust AI Text Detection",
+          "track": "PAN: Digital Text Forensics and Stylometry",
+          "end_char": 1229,
+          "filename": "paper408.pdf",
+          "id": "f4c59daa70d2d98f0d12551f010368e1bdf0610bd09d315411e52e6909396e25",
+          "text": "Input text Modern BERT TF-IDF +LR Stylo. +LGBM Binoculars +T5 paraphrase +SBERT coh. 𝑝1 𝑝2 𝑝3 𝑝4 disagreement:var(𝑝 1. . .𝑝4),range(𝑝 1. . .𝑝4) LightGBM Meta-Learner [𝑝 1, 𝑝2, 𝑝3, 𝑝4,var,range ] Temperature Scaling (grid-search𝑇on Brier Score) 2-D Abstention:|𝑠−0.5|<𝜃 𝑠 orvar(𝑝)>𝜃 𝑣 Final score𝑠∈[0,1] Figure 3:System pipeline. Four detectors produce scores 𝑝1...𝑝 4; variance and range are computed as explicit disagreement features and passed alongside the scores to the meta-learner. High disagreement under obfuscation is the central detection signal. Table 4 Principal weakness of each detector. Simultaneous defeat of all four suppresses the disagreement signal. Detector What breaks it ModernBERT (fine-tuned) Paraphrase erasing vocabulary signatures TF-IDF𝑛-grams (lexical) Any lexical rewrite Stylometric + LGBM Full style transfer replicating human structure Binoculars Reference LM from a different training family component scores to a LightGBM meta-learner, followed by temperature scaling and two-dimensional abstention. Table 4 summarises how each component fails under adversarial attack, motivating the ensemble: an obfuscation attack must simultaneously defeat all four to suppress the disagreement signal. 4.1",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "abstention_pass": false,
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "No such term in the paper; the paper describes disagreement-aware ensemble.",
+      "retrieved_pages": [
+        [
+          "paper408",
+          1
+        ],
+        [
+          "paper408",
+          8
+        ],
+        [
+          "paper408",
+          5
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "6": {
+          "precision": 0.16666666666666666,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "retrieval_pass": true,
+      "elapsed_seconds": 29.696
+    },
+    {
+      "id": "unsupported-7",
+      "category": "unsupported",
+      "question": "How does BERT improves upon DeBERTa-style encoders?",
+      "gold_pages": [
+        [
+          "420",
+          3
+        ]
+      ],
+      "kind": "content",
+      "answer": "DeBERTa improves upon BERT-style encoders through disentangled attention and enhanced decoding pre-training. [S2]",
+      "supported": true,
+      "sources": [
+        {
+          "filename": "paper420.pdf",
+          "track": "PAN: Digital Text Forensics and Stylometry",
+          "page": 3,
+          "proceedings_pages": "5649-5654",
+          "end_char": 1298,
+          "start_char": 0,
+          "chunk_id": "766dd73e6bd40bc09d695e3cba3b37a899d7412d40bff5123880b2b76d3fbc03",
+          "url": "https://clef-staging.pages.dev/paper420.pdf",
+          "title": "Team ChatOnly at PAN 2026: Hybrid N-Gram and DeBERTa AI Detection",
+          "document_id": "paper420",
+          "id": "766dd73e6bd40bc09d695e3cba3b37a899d7412d40bff5123880b2b76d3fbc03",
+          "text": "N-grams are useful for capturing punctuation habits, whitespace-adjacent patterns, suffixes, and microstyle effects, while word N-grams capture phrase-level preferences and topic-independent formulaic expressions. 5. DeBERTa Classifier The second component is a fine-tuned transformer classifier based on DeBERTa-v3-small. DeBERTa improves upon BERT-style encoders through disentangled attention and enhanced decoding pre-training [4]. In our setup, the model is fine-tuned as a two-class sequence classifier using the Hugging Face Transformers library [7]. Texts are tokenized with truncation to 512 tokens. Training uses two epochs, a learning rate of 2×10 −5, weight decay 0.01, mini-batches of size 8, gradient accumulation over 2 steps, and mixed precision on GPU. For submission, the selected checkpoint is stored in the final DeBERTa checkpoint directory. The Docker build copies only the inference-relevant files: the model configuration, the model weights, and the tokenizer vocabulary and metadata. Optimizer states, scheduler states, and other training-only files are excluded from the submission image. 6. Inference and Submission Packaging The inference entry point is predict.py. It accepts two positional arguments: the path to an input JSONL file and the path to an output directory",
+          "source_id": "S2",
+          "rank": 2
+        }
+      ],
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "end_char": 1367,
+          "title": "Team ChatOnly at PAN 2026: Hybrid N-Gram and DeBERTa AI Detection",
+          "page": 1,
+          "document_id": "paper420",
+          "proceedings_pages": "5649-5654",
+          "start_char": 0,
+          "url": "https://clef-staging.pages.dev/paper420.pdf",
+          "track": "PAN: Digital Text Forensics and Stylometry",
+          "filename": "paper420.pdf",
+          "chunk_id": "fc5f2bc8fbd2477aa4772ccfd0677c5be450127bd332a54fae10c165b4613293",
+          "id": "fc5f2bc8fbd2477aa4772ccfd0677c5be450127bd332a54fae10c165b4613293",
+          "text": "Team ChatOnly at PAN 2026: Hybrid N-Gram and DeBERTa AI Detection Notebook for the PAN Lab at CLEF 2026 Tomas Nagy1, Lukas Skopar 1 1Technical University of Kosice, Slovakia Abstract This notebook describes the Team ChatOnly submission to the PAN 2026 Voight-Kampff Generative AI Detection task. The task requires a standalone Dockerized system that receives newline-delimited JSON records containing text documents and returns calibrated confidence scores indicating whether each text was written by a machine. Our final system combines two complementary supervised detectors: a high-dimensional TF-IDF N-gram logistic regression model and a fine-tuned DeBERTa-v3-small sequence classifier. The N-gram model captures lexical and character-level regularities, while the transformer captures semantic and contextual patterns. At inference time both models are loaded from serialized artifacts inside the Docker image and their probabilities are combined by weighted soft voting. The system is designed to satisfy the PAN/TIRA submission constraints: no training on TIRA, no network access during evaluation, independent processing of each test case, and exactly one JSONL output file containing one probability score per input identifier. On the provided validation split, the final blend reaches a mean validation score of 0.9945 across the official PAN-style metrics",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "filename": "paper420.pdf",
+          "track": "PAN: Digital Text Forensics and Stylometry",
+          "page": 3,
+          "proceedings_pages": "5649-5654",
+          "end_char": 1298,
+          "start_char": 0,
+          "chunk_id": "766dd73e6bd40bc09d695e3cba3b37a899d7412d40bff5123880b2b76d3fbc03",
+          "url": "https://clef-staging.pages.dev/paper420.pdf",
+          "title": "Team ChatOnly at PAN 2026: Hybrid N-Gram and DeBERTa AI Detection",
+          "document_id": "paper420",
+          "id": "766dd73e6bd40bc09d695e3cba3b37a899d7412d40bff5123880b2b76d3fbc03",
+          "text": "N-grams are useful for capturing punctuation habits, whitespace-adjacent patterns, suffixes, and microstyle effects, while word N-grams capture phrase-level preferences and topic-independent formulaic expressions. 5. DeBERTa Classifier The second component is a fine-tuned transformer classifier based on DeBERTa-v3-small. DeBERTa improves upon BERT-style encoders through disentangled attention and enhanced decoding pre-training [4]. In our setup, the model is fine-tuned as a two-class sequence classifier using the Hugging Face Transformers library [7]. Texts are tokenized with truncation to 512 tokens. Training uses two epochs, a learning rate of 2×10 −5, weight decay 0.01, mini-batches of size 8, gradient accumulation over 2 steps, and mixed precision on GPU. For submission, the selected checkpoint is stored in the final DeBERTa checkpoint directory. The Docker build copies only the inference-relevant files: the model configuration, the model weights, and the tokenizer vocabulary and metadata. Optimizer states, scheduler states, and other training-only files are excluded from the submission image. 6. Inference and Submission Packaging The inference entry point is predict.py. It accepts two positional arguments: the path to an input JSONL file and the path to an output directory",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "document_id": "paper420",
+          "page": 3,
+          "chunk_id": "625b21bdd7c88bc6009a17de7c2ded64e0cef420fbb8e4c65d4b62667742820c",
+          "title": "Team ChatOnly at PAN 2026: Hybrid N-Gram and DeBERTa AI Detection",
+          "start_char": 1113,
+          "filename": "paper420.pdf",
+          "proceedings_pages": "5649-5654",
+          "track": "PAN: Digital Text Forensics and Stylometry",
+          "url": "https://clef-staging.pages.dev/paper420.pdf",
+          "end_char": 2323,
+          "id": "625b21bdd7c88bc6009a17de7c2ded64e0cef420fbb8e4c65d4b62667742820c",
+          "text": ". 6. Inference and Submission Packaging The inference entry point is predict.py. It accepts two positional arguments: the path to an input JSONL file and the path to an output directory. The script reads all non-empty input lines, validates that each line contains id and text, and ignores any additional fields. This is important because validation data includes labels and metadata, whereas the test data does not. The DeBERTa model is loaded from /app/models/deberta inside the container. The N-gram model is loaded from /app/models/ngram_pipeline.joblib. DeBERTa predictions are computed in batches, using CUDA when available and CPU otherwise. N-gram predictions are computed with the serialized scikit-learn pipeline. The final probability is clipped to the range [0, 1] before writing. The Dockerfile is based on the official PAN generative-authorship baseline image and installs the small additional tokenizer dependencies required by the DeBERTa checkpoint. It then copies the inference script, validation script, serialized N-gram model, and DeBERTa checkpoint into /app. The container entry point is: ENTRYPOINT [\"python3\", \"/app/predict.py\"] The model artifacts are stored with the software package",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "abstention_pass": false,
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "It does not; DeBERTa improves upon BERT-style encoders.",
+      "retrieved_pages": [
+        [
+          "paper420",
+          1
+        ],
+        [
+          "paper420",
+          3
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "3": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "6": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        }
+      },
+      "retrieval_pass": false,
+      "elapsed_seconds": 19.337
+    },
+    {
+      "id": "unsupported-8",
+      "category": "unsupported",
+      "question": "What ensemble of the tuplet members labelled the soundscape, training, and prior-year windows in paper333.",
+      "gold_pages": [
+        [
+          "paper333",
+          6
+        ]
+      ],
+      "kind": "content",
+      "answer": "A teacher ensemble of the triplet members labelled the soundscape, training, and prior-year windows. [S2]",
+      "supported": true,
+      "sources": [
+        {
+          "document_id": "paper333",
+          "proceedings_pages": "4554-4565",
+          "title": "Offline Soundscape Validation and Rank-Blended CNN Ensembles for BirdCLEF+ 2026",
+          "filename": "paper333.pdf",
+          "end_char": 2617,
+          "start_char": 1243,
+          "chunk_id": "178d77d8ce89b309a2d96a625c09729ddb0c78433344a2651747fed0a7b5f44a",
+          "url": "https://clef-staging.pages.dev/paper333.pdf",
+          "track": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+          "page": 6,
+          "id": "178d77d8ce89b309a2d96a625c09729ddb0c78433344a2651747fed0a7b5f44a",
+          "text": ". Prior BirdCLEF winning solutions reach higher with a deeper data pipeline rather than a different blend, so we pursued that pipeline in parallel. Cross-year corpus (completed).We assembled a pretraining corpus from the current and prior editions: the 2026 training audio (35 549 recordings) and a small extra set (1 020 recordings) merged with the full 2025 training set (28 564 recordings across 206 species, 7.23 GB), for 65 133 recordings in total. Of these, 50 288 carry labels mappable to the 234 target classes (covering 231 of them); the remaining prior-year recordings retain their own labels. The pretraining label space is the union of the 234 target classes and 163 unmapped prior-year classes (397 classes), on the principle that the unmapped audio still teaches transferable acoustic features. Multi-hot pseudo-labels (completed).A teacher ensemble of the triplet members labelled the soundscape, training, and prior-year windows. The teacher produced per-class probabilities for 482 981 windows, stored as multi-hot targets at several thresholds. We selected a threshold of 0.7 for the first fine-tuning pass, which yields 315 087 positive (window, class) entries with at least one positive in 228 of the 234 classes, retaining multi-species structure in the soundscape windows (3.8 positives per window) while filtering teacher noise on the focal recordings",
+          "source_id": "S2",
+          "rank": 2
+        }
+      ],
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "proceedings_pages": "4554-4565",
+          "chunk_id": "3cdb42a979456da40e875ec8583942b29327d0b87d158536151be0fbac7b0ee6",
+          "title": "Offline Soundscape Validation and Rank-Blended CNN Ensembles for BirdCLEF+ 2026",
+          "page": 1,
+          "start_char": 0,
+          "filename": "paper333.pdf",
+          "track": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+          "url": "https://clef-staging.pages.dev/paper333.pdf",
+          "end_char": 1171,
+          "document_id": "paper333",
+          "id": "3cdb42a979456da40e875ec8583942b29327d0b87d158536151be0fbac7b0ee6",
+          "text": "Offline Soundscape Validation and Rank-Blended CNN Ensembles for BirdCLEF+ 2026 Gilles Colling1,2 1Division of BioInvasions, Global Change & Macroecology, Department of Botany and Biodiversity Research, University of Vienna, Vienna, Austria 2Vienna Doctoral School of Ecology and Evolution, University of Vienna, Vienna, Austria Abstract BirdCLEF+ 2026 evaluates multi-taxon acoustic species identification across 234 classes spanning birds, amphibians, insects, and reptiles, scored by macro-averaged ROC-AUC on a hidden soundscape test set whose public leaderboard is computed on only part of that set during the competition. A single competitor sees a few public-leaderboard readings per day, which raises two practical questions: how to evaluate candidate systems without spending that budget, and how far a public score predicts the private one. We report a single-author entry, built on public resources, that addresses both. The submitted system rank-blends a publicly shared acoustic baseline (a Perch-embedding branch and a five-fold sound-event-detection ensemble) with a weighted triplet of our own soundscape-fine-tuned convolutional networks at weightα= 0.10",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "document_id": "paper333",
+          "proceedings_pages": "4554-4565",
+          "title": "Offline Soundscape Validation and Rank-Blended CNN Ensembles for BirdCLEF+ 2026",
+          "filename": "paper333.pdf",
+          "end_char": 2617,
+          "start_char": 1243,
+          "chunk_id": "178d77d8ce89b309a2d96a625c09729ddb0c78433344a2651747fed0a7b5f44a",
+          "url": "https://clef-staging.pages.dev/paper333.pdf",
+          "track": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+          "page": 6,
+          "id": "178d77d8ce89b309a2d96a625c09729ddb0c78433344a2651747fed0a7b5f44a",
+          "text": ". Prior BirdCLEF winning solutions reach higher with a deeper data pipeline rather than a different blend, so we pursued that pipeline in parallel. Cross-year corpus (completed).We assembled a pretraining corpus from the current and prior editions: the 2026 training audio (35 549 recordings) and a small extra set (1 020 recordings) merged with the full 2025 training set (28 564 recordings across 206 species, 7.23 GB), for 65 133 recordings in total. Of these, 50 288 carry labels mappable to the 234 target classes (covering 231 of them); the remaining prior-year recordings retain their own labels. The pretraining label space is the union of the 234 target classes and 163 unmapped prior-year classes (397 classes), on the principle that the unmapped audio still teaches transferable acoustic features. Multi-hot pseudo-labels (completed).A teacher ensemble of the triplet members labelled the soundscape, training, and prior-year windows. The teacher produced per-class probabilities for 482 981 windows, stored as multi-hot targets at several thresholds. We selected a threshold of 0.7 for the first fine-tuning pass, which yields 315 087 positive (window, class) entries with at least one positive in 228 of the 234 classes, retaining multi-species structure in the soundscape windows (3.8 positives per window) while filtering teacher noise on the focal recordings",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "title": "Offline Soundscape Validation and Rank-Blended CNN Ensembles for BirdCLEF+ 2026",
+          "track": "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management",
+          "page": 6,
+          "start_char": 2617,
+          "document_id": "paper333",
+          "proceedings_pages": "4554-4565",
+          "url": "https://clef-staging.pages.dev/paper333.pdf",
+          "end_char": 4016,
+          "chunk_id": "5eed3dd1c949f500a5c017d493b8d1ef973acd772f0006359b55d1c3a44dd5e0",
+          "filename": "paper333.pdf",
+          "id": "5eed3dd1c949f500a5c017d493b8d1ef973acd772f0006359b55d1c3a44dd5e0",
+          "text": ". A second pseudo round, with the development models as teacher, produced 282 537 windows. Pretrain-then-fine-tune zoo (partially completed).The trainer uses a dual-head architecture, a clip-level attention head and a max-segment head pooled over the strongest frames, with loss weights1.0 and 0.5 and label smoothing 0.1, following the dual-objective recipe of prior solutions. The loss schedule runs dual binary cross-entropy for the bulk of training and switches to a pairwise AUC-surrogate loss for the final five epochs of each stage. Augmentation combines waveform mixup, spectrogram mixup and cutmix, SpecAugment-style time and frequency masking [12], and background-noise injection sampled from the soundscape recordings. Stage 1 pretrains on the 397-class corpus; Stage 2 fine-tunes at window granularity on the 234 classes with ground-truth labels unioned with the multi-hot pseudo-targets. Of the four backbones planned for this zoo (EfficientNet-B3, EfficientNet-V2-S, ECA-NFNet-L0, ConvNeXt-Small), only the EfficientNet-B3 line and a ResNeSt fine-tune were carried to completion before the deadline. The B3 reached a pretraining macro-AUC of 0.964, and its soundscape-dominant fine-tune (using 116 970 soundscape windows in place of the original 783) reached a within-training macro-AUC of 0.974. This model was submitted both on its own and as a fourth anchor in the triplet (Table 3)",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "abstention_pass": false,
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "Cannot answer; no tuplet members mentioned.",
+      "retrieved_pages": [
+        [
+          "paper333",
+          1
+        ],
+        [
+          "paper333",
+          6
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "hit": 0.0,
+          "reciprocal_rank": 0.0,
+          "average_precision": 0.0,
+          "ndcg": 0.0
+        },
+        "3": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 0.5,
+          "average_precision": 0.5,
+          "ndcg": 0.6309297535714575
+        },
+        "6": {
+          "precision": 0.16666666666666666,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 0.5,
+          "average_precision": 0.5,
+          "ndcg": 0.6309297535714575
+        }
+      },
+      "retrieval_pass": true,
+      "elapsed_seconds": 19.459
+    }
+  ],
+  "summary": {
+    "cases_run": 14,
+    "errors": 1,
+    "retrieval_passed": 9,
+    "retrieval_eligible": 13,
+    "retrieval_checked": 12,
+    "retrieval_metrics": {
+      "1": {
+        "precision": 0.3333333333333333,
+        "recall": 0.25,
+        "hit_rate": 0.3333333333333333,
+        "mrr": 0.3333333333333333,
+        "map": 0.25,
+        "ndcg": 0.3333333333333333
+      },
+      "3": {
+        "precision": 0.3333333333333333,
+        "recall": 0.75,
+        "hit_rate": 0.75,
+        "mrr": 0.5277777777777778,
+        "map": 0.5347222222222222,
+        "ndcg": 0.5905179720276369
+      },
+      "6": {
+        "precision": 0.16666666666666666,
+        "recall": 0.75,
+        "hit_rate": 0.75,
+        "mrr": 0.5277777777777778,
+        "map": 0.5347222222222222,
+        "ndcg": 0.5905179720276369
+      }
+    },
+    "catalog_passed": 0,
+    "abstention_passed": 1,
+    "answerable_questions_supported": 7,
+    "manual_claim_review": "Required; automatic checks do not establish factual correctness.",
+    "retrieval_unscored": 1
+  }
+}

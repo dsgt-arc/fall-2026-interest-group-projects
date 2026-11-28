@@ -13,7 +13,7 @@ from clef_rag.metrics import (
     page_run,
     retrieval_metrics,
 )
-from clef_rag.retrieve import Retriever
+from clef_rag.retrieve import Retriever, WeightedRetriever
 
 
 def evaluate(
@@ -24,6 +24,9 @@ def evaluate(
     retrieval_only=False,
     *,
     cutoffs=DEFAULT_CUTOFFS,
+    retriever_weights=(0.5, 0.5),
+    top_k=6,
+    max_candidates=20
 ):
     cutoffs = normalize_cutoffs(cutoffs)
     cases = json.loads(questions_path.read_text())
@@ -33,6 +36,9 @@ def evaluate(
         "retrieval_evaluation": {
             "implementation": "ir-measures",
             "cutoffs": list(cutoffs),
+            "retriever weights [semantic, lexical]": list(retriever_weights),
+            "max candidate to retrieve:": max_candidates,
+            "search top k (retrieval depth)": top_k,
             "unit": "unique paper/PDF-page pair, ordered by first retrieved occurrence",
             "relevance": "binary; every listed gold page is relevant; unlisted pages score zero",
             "ranking": "final retrieved passages, before answer context selection; no extra retrieval for larger cutoffs",
@@ -58,8 +64,8 @@ def evaluate(
                 ]
             if retrieval_only:
                 ids = resolve_papers(index.db, case.get("papers", [])) or None
-                sources = Retriever(index, models).search(
-                    case["question"], paper_ids=ids, track=case.get("track")
+                sources = WeightedRetriever(index, models, retriever_weights, max_candidates).search(
+                    case["question"], paper_ids=ids, track=case.get("track"), top_k=top_k, 
                 )
                 row["retrieved_sources"] = sources
             else:
@@ -69,6 +75,9 @@ def evaluate(
                     case["question"],
                     paper_refs=case.get("papers"),
                     track=case.get("track"),
+                    retriever_weights=retriever_weights,
+                    top_k=top_k,
+                    max_candidates=max_candidates
                 )
                 row.update(result)
                 sources = result.get("retrieved_sources", [])

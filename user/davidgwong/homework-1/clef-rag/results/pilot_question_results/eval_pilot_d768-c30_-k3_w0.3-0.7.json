@@ -1,0 +1,2283 @@
+{
+  "index": {
+    "schema_version": 2,
+    "generation": "build-969acdd9096d4f459a10bf66032edecd",
+    "created_at": "2026-09-20T01:39:02.969154+00:00",
+    "catalog_snapshot": "/home/david/projects/cs8903-arc/fall-2026-interest-group-projects/homework-1/clef-rag/index/snapshots/20260920T011803516296Z-426780f126.html",
+    "data_dir": "/home/david/projects/cs8903-arc/fall-2026-interest-group-projects/homework-1/clef-rag/data",
+    "embedding_model": "embeddinggemma:300m",
+    "embedding_digest": "85462619ee721b466c5927d109d4cb765861907d5417b9109caebc4e614679f1",
+    "vector_store": "chromadb",
+    "collection": "clef_papers",
+    "chunks": 21046,
+    "documents": 512,
+    "extraction_version": "langchain-pypdf-pages-v1",
+    "splitter": "RecursiveCharacterTextSplitter",
+    "chunk_bytes": 1400,
+    "overlap_bytes": 250,
+    "extracted_documents": 509,
+    "reused_extractions": 0,
+    "new_embeddings": 21044,
+    "reused_embeddings": 2,
+    "ingestion_seconds": 1233.37
+  },
+  "model": "gemma3:12b",
+  "retrieval_evaluation": {
+    "implementation": "ir-measures",
+    "cutoffs": [
+      1,
+      3,
+      6
+    ],
+    "retriever weights [semantic, lexical]": [
+      0.3,
+      0.7
+    ],
+    "max candidate to retrieve:": 30,
+    "search top k (retrieval depth)": 3,
+    "unit": "unique paper/PDF-page pair, ordered by first retrieved occurrence",
+    "relevance": "binary; every listed gold page is relevant; unlisted pages score zero",
+    "ranking": "final retrieved passages, before answer context selection; no extra retrieval for larger cutoffs",
+    "aggregation": "macro mean over successfully scored questions with gold pages; errors excluded and counted"
+  },
+  "results": [
+    {
+      "id": "catalog-1",
+      "category": "catalog",
+      "question": "How many papers are listed in the corpus?",
+      "kind": "catalog",
+      "answer": "Listed papers: 511\nDownloaded papers: 508\nIndexed papers: 508\nSupporting documents: 1 downloaded / 1 listed\n- BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering: 50 listed, 50 downloaded, 50 indexed\n- CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles: 44 listed, 44 downloaded, 44 indexed\n- ELOQUENT: Evaluation of Generative Language Model Quality: 16 listed, 16 downloaded, 16 indexed\n- eRisk: Early Risk Prediction on the Internet: 41 listed, 41 downloaded, 41 indexed\n- EXIST: sEXism Identification in Social neTworks: 32 listed, 32 downloaded, 32 indexed\n- FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems: 28 listed, 28 downloaded, 28 indexed\n- HIPE: Evaluating Accurate and Efficient Person–Place Relation Extraction from Multilingual Historical Texts: 17 listed, 17 downloaded, 17 indexed\n- ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security: 73 listed, 72 downloaded, 72 indexed\n- JOKER: Humor Detection, Search, and Translation: 14 listed, 14 downloaded, 14 indexed\n- LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management: 58 listed, 56 downloaded, 56 indexed\n- LongEval: Longitudinal Evaluation of IR Model Performance: 12 listed, 12 downloaded, 12 indexed\n- PAN: Digital Text Forensics and Stylometry: 50 listed, 50 downloaded, 50 indexed\n- QuantumCLEF: Quantum Computing, Information Retrieval and Recommender Systems: 8 listed, 8 downloaded, 8 indexed\n- SimpleText: Simplify Scientific Text (and Nothing More): 30 listed, 30 downloaded, 30 indexed\n- TalentCLEF: Skill and Job Title Intelligence for Human Capital Management: 18 listed, 18 downloaded, 18 indexed\n- Touché: Argumentation Systems: 20 listed, 20 downloaded, 20 indexed\n\nCatalog snapshot: /home/david/projects/cs8903-arc/fall-2026-interest-group-projects/homework-1/clef-rag/index/snapshots/20260920T011803516296Z-426780f126.html\nIndex built: 2026-09-20T01:39:02.969154+00:00",
+      "data": {
+        "listed_papers": 511,
+        "downloaded_papers": 508,
+        "indexed_papers": 508,
+        "supporting_documents": 1,
+        "downloaded_supporting_documents": 1,
+        "indexed_supporting_documents": 1,
+        "missing_papers": [
+          "paper236",
+          "paper318",
+          "paper345"
+        ],
+        "extraction_issues": [
+          {
+            "id": "paper14",
+            "status": "partial",
+            "error": "",
+            "warnings": [
+              "PDF page 15: little or no extractable text"
+            ]
+          },
+          {
+            "id": "paper298",
+            "status": "partial",
+            "error": "",
+            "warnings": [
+              "PDF page 6: little or no extractable text"
+            ]
+          },
+          {
+            "id": "paper404",
+            "status": "partial",
+            "error": "",
+            "warnings": [
+              "PDF page 6: little or no extractable text"
+            ]
+          },
+          {
+            "id": "paper426",
+            "status": "partial",
+            "error": "",
+            "warnings": [
+              "PDF page 15: little or no extractable text"
+            ]
+          }
+        ],
+        "tracks": {
+          "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering": {
+            "listed": 50,
+            "downloaded": 50,
+            "indexed": 50
+          },
+          "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles": {
+            "listed": 44,
+            "downloaded": 44,
+            "indexed": 44
+          },
+          "ELOQUENT: Evaluation of Generative Language Model Quality": {
+            "listed": 16,
+            "downloaded": 16,
+            "indexed": 16
+          },
+          "eRisk: Early Risk Prediction on the Internet": {
+            "listed": 41,
+            "downloaded": 41,
+            "indexed": 41
+          },
+          "EXIST: sEXism Identification in Social neTworks": {
+            "listed": 32,
+            "downloaded": 32,
+            "indexed": 32
+          },
+          "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems": {
+            "listed": 28,
+            "downloaded": 28,
+            "indexed": 28
+          },
+          "HIPE: Evaluating Accurate and Efficient Person–Place Relation Extraction from Multilingual Historical Texts": {
+            "listed": 17,
+            "downloaded": 17,
+            "indexed": 17
+          },
+          "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security": {
+            "listed": 73,
+            "downloaded": 72,
+            "indexed": 72
+          },
+          "JOKER: Humor Detection, Search, and Translation": {
+            "listed": 14,
+            "downloaded": 14,
+            "indexed": 14
+          },
+          "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management": {
+            "listed": 58,
+            "downloaded": 56,
+            "indexed": 56
+          },
+          "LongEval: Longitudinal Evaluation of IR Model Performance": {
+            "listed": 12,
+            "downloaded": 12,
+            "indexed": 12
+          },
+          "PAN: Digital Text Forensics and Stylometry": {
+            "listed": 50,
+            "downloaded": 50,
+            "indexed": 50
+          },
+          "QuantumCLEF: Quantum Computing, Information Retrieval and Recommender Systems": {
+            "listed": 8,
+            "downloaded": 8,
+            "indexed": 8
+          },
+          "SimpleText: Simplify Scientific Text (and Nothing More)": {
+            "listed": 30,
+            "downloaded": 30,
+            "indexed": 30
+          },
+          "TalentCLEF: Skill and Job Title Intelligence for Human Capital Management": {
+            "listed": 18,
+            "downloaded": 18,
+            "indexed": 18
+          },
+          "Touché: Argumentation Systems": {
+            "listed": 20,
+            "downloaded": 20,
+            "indexed": 20
+          }
+        }
+      },
+      "sources": [],
+      "catalog_pass": true,
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "511 listed papers; the preface is a separate supporting document.",
+      "elapsed_seconds": 0.005
+    },
+    {
+      "id": "catalog-2",
+      "category": "catalog",
+      "question": "How many papers are downloaded?",
+      "kind": "catalog",
+      "answer": "Listed papers: 511\nDownloaded papers: 508\nIndexed papers: 508\nSupporting documents: 1 downloaded / 1 listed\n- BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering: 50 listed, 50 downloaded, 50 indexed\n- CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles: 44 listed, 44 downloaded, 44 indexed\n- ELOQUENT: Evaluation of Generative Language Model Quality: 16 listed, 16 downloaded, 16 indexed\n- eRisk: Early Risk Prediction on the Internet: 41 listed, 41 downloaded, 41 indexed\n- EXIST: sEXism Identification in Social neTworks: 32 listed, 32 downloaded, 32 indexed\n- FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems: 28 listed, 28 downloaded, 28 indexed\n- HIPE: Evaluating Accurate and Efficient Person–Place Relation Extraction from Multilingual Historical Texts: 17 listed, 17 downloaded, 17 indexed\n- ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security: 73 listed, 72 downloaded, 72 indexed\n- JOKER: Humor Detection, Search, and Translation: 14 listed, 14 downloaded, 14 indexed\n- LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management: 58 listed, 56 downloaded, 56 indexed\n- LongEval: Longitudinal Evaluation of IR Model Performance: 12 listed, 12 downloaded, 12 indexed\n- PAN: Digital Text Forensics and Stylometry: 50 listed, 50 downloaded, 50 indexed\n- QuantumCLEF: Quantum Computing, Information Retrieval and Recommender Systems: 8 listed, 8 downloaded, 8 indexed\n- SimpleText: Simplify Scientific Text (and Nothing More): 30 listed, 30 downloaded, 30 indexed\n- TalentCLEF: Skill and Job Title Intelligence for Human Capital Management: 18 listed, 18 downloaded, 18 indexed\n- Touché: Argumentation Systems: 20 listed, 20 downloaded, 20 indexed\n\nCatalog snapshot: /home/david/projects/cs8903-arc/fall-2026-interest-group-projects/homework-1/clef-rag/index/snapshots/20260920T011803516296Z-426780f126.html\nIndex built: 2026-09-20T01:39:02.969154+00:00",
+      "data": {
+        "listed_papers": 511,
+        "downloaded_papers": 508,
+        "indexed_papers": 508,
+        "supporting_documents": 1,
+        "downloaded_supporting_documents": 1,
+        "indexed_supporting_documents": 1,
+        "missing_papers": [
+          "paper236",
+          "paper318",
+          "paper345"
+        ],
+        "extraction_issues": [
+          {
+            "id": "paper14",
+            "status": "partial",
+            "error": "",
+            "warnings": [
+              "PDF page 15: little or no extractable text"
+            ]
+          },
+          {
+            "id": "paper298",
+            "status": "partial",
+            "error": "",
+            "warnings": [
+              "PDF page 6: little or no extractable text"
+            ]
+          },
+          {
+            "id": "paper404",
+            "status": "partial",
+            "error": "",
+            "warnings": [
+              "PDF page 6: little or no extractable text"
+            ]
+          },
+          {
+            "id": "paper426",
+            "status": "partial",
+            "error": "",
+            "warnings": [
+              "PDF page 15: little or no extractable text"
+            ]
+          }
+        ],
+        "tracks": {
+          "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering": {
+            "listed": 50,
+            "downloaded": 50,
+            "indexed": 50
+          },
+          "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles": {
+            "listed": 44,
+            "downloaded": 44,
+            "indexed": 44
+          },
+          "ELOQUENT: Evaluation of Generative Language Model Quality": {
+            "listed": 16,
+            "downloaded": 16,
+            "indexed": 16
+          },
+          "eRisk: Early Risk Prediction on the Internet": {
+            "listed": 41,
+            "downloaded": 41,
+            "indexed": 41
+          },
+          "EXIST: sEXism Identification in Social neTworks": {
+            "listed": 32,
+            "downloaded": 32,
+            "indexed": 32
+          },
+          "FinMMEval: Multilingual and Multimodal Evaluation of Financial AI Systems": {
+            "listed": 28,
+            "downloaded": 28,
+            "indexed": 28
+          },
+          "HIPE: Evaluating Accurate and Efficient Person–Place Relation Extraction from Multilingual Historical Texts": {
+            "listed": 17,
+            "downloaded": 17,
+            "indexed": 17
+          },
+          "ImageCLEF: Multimodal Challenges in Medicine, Science, Agritech, and Security": {
+            "listed": 73,
+            "downloaded": 72,
+            "indexed": 72
+          },
+          "JOKER: Humor Detection, Search, and Translation": {
+            "listed": 14,
+            "downloaded": 14,
+            "indexed": 14
+          },
+          "LifeCLEF: AI Challenges for Biodiversity Understanding and Ecosystem Management": {
+            "listed": 58,
+            "downloaded": 56,
+            "indexed": 56
+          },
+          "LongEval: Longitudinal Evaluation of IR Model Performance": {
+            "listed": 12,
+            "downloaded": 12,
+            "indexed": 12
+          },
+          "PAN: Digital Text Forensics and Stylometry": {
+            "listed": 50,
+            "downloaded": 50,
+            "indexed": 50
+          },
+          "QuantumCLEF: Quantum Computing, Information Retrieval and Recommender Systems": {
+            "listed": 8,
+            "downloaded": 8,
+            "indexed": 8
+          },
+          "SimpleText: Simplify Scientific Text (and Nothing More)": {
+            "listed": 30,
+            "downloaded": 30,
+            "indexed": 30
+          },
+          "TalentCLEF: Skill and Job Title Intelligence for Human Capital Management": {
+            "listed": 18,
+            "downloaded": 18,
+            "indexed": 18
+          },
+          "Touché: Argumentation Systems": {
+            "listed": 20,
+            "downloaded": 20,
+            "indexed": 20
+          }
+        }
+      },
+      "sources": [],
+      "catalog_pass": true,
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "508 papers plus one preface as of the initial corpus snapshot.",
+      "elapsed_seconds": 0.002
+    },
+    {
+      "id": "catalog-3",
+      "category": "catalog",
+      "question": "How many papers are in BioASQ?",
+      "kind": "catalog",
+      "answer": "Listed papers: 50\nDownloaded papers: 50\nIndexed papers: 50\nSupporting documents: 0 downloaded / 0 listed\n- BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering: 50 listed, 50 downloaded, 50 indexed\n\nCatalog snapshot: /home/david/projects/cs8903-arc/fall-2026-interest-group-projects/homework-1/clef-rag/index/snapshots/20260920T011803516296Z-426780f126.html\nIndex built: 2026-09-20T01:39:02.969154+00:00",
+      "data": {
+        "listed_papers": 50,
+        "downloaded_papers": 50,
+        "indexed_papers": 50,
+        "supporting_documents": 0,
+        "downloaded_supporting_documents": 0,
+        "indexed_supporting_documents": 0,
+        "missing_papers": [],
+        "extraction_issues": [
+          {
+            "id": "paper14",
+            "status": "partial",
+            "error": "",
+            "warnings": [
+              "PDF page 15: little or no extractable text"
+            ]
+          }
+        ],
+        "tracks": {
+          "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering": {
+            "listed": 50,
+            "downloaded": 50,
+            "indexed": 50
+          }
+        }
+      },
+      "sources": [],
+      "catalog_pass": true,
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "50 BioASQ papers in the catalog.",
+      "elapsed_seconds": 0.001
+    },
+    {
+      "id": "catalog-4",
+      "category": "catalog",
+      "question": "How many papers are in CheckThat!?",
+      "kind": "catalog",
+      "answer": "Listed papers: 44\nDownloaded papers: 44\nIndexed papers: 44\nSupporting documents: 0 downloaded / 0 listed\n- CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles: 44 listed, 44 downloaded, 44 indexed\n\nCatalog snapshot: /home/david/projects/cs8903-arc/fall-2026-interest-group-projects/homework-1/clef-rag/index/snapshots/20260920T011803516296Z-426780f126.html\nIndex built: 2026-09-20T01:39:02.969154+00:00",
+      "data": {
+        "listed_papers": 44,
+        "downloaded_papers": 44,
+        "indexed_papers": 44,
+        "supporting_documents": 0,
+        "downloaded_supporting_documents": 0,
+        "indexed_supporting_documents": 0,
+        "missing_papers": [],
+        "extraction_issues": [],
+        "tracks": {
+          "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles": {
+            "listed": 44,
+            "downloaded": 44,
+            "indexed": 44
+          }
+        }
+      },
+      "sources": [],
+      "catalog_pass": true,
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "44 CheckThat! papers in the catalog.",
+      "elapsed_seconds": 0.001
+    },
+    {
+      "id": "paper-1",
+      "category": "paper",
+      "question": "Which two biomedical QA tasks are covered by paper1?",
+      "gold_pages": [
+        [
+          "paper1",
+          1
+        ]
+      ],
+      "kind": "content",
+      "answer": "Paper1 covers task 14b on biomedical QA. [S1][S3]\n\nPaper1 covers task Synergy14 on QA about developing biomedical topics. [S1][S3]",
+      "supported": true,
+      "sources": [
+        {
+          "filename": "paper1.pdf",
+          "document_id": "paper1",
+          "page": 1,
+          "proceedings_pages": "1-19",
+          "end_char": 1397,
+          "title": "Overview of BioASQ Tasks 14b and Synergy14 in CLEF2026",
+          "chunk_id": "5b9a2f963ac046bc4cb2c59104ffe59fa63cc1a851b4f9e7966799d17d9ad7a2",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "url": "https://clef-staging.pages.dev/paper1.pdf",
+          "start_char": 0,
+          "id": "5b9a2f963ac046bc4cb2c59104ffe59fa63cc1a851b4f9e7966799d17d9ad7a2",
+          "text": "Overview of BioASQ Tasks 14b and Synergy14 in CLEF2026 Anastasios Nentidis1, Georgios Katsimpras 1, Anastasia Krithara 1 and Georgios Paliouras 1 1NCSR Demokritos, Athens, Greece Abstract This paper provides an overview of the Question Answering (QA) tasks in the fourteenth edition of the BioASQ challenge (BioASQ 14), on large-scale biomedical semantic indexing and QA, which is organised as part of the Conference and Labs of the Evaluation Forum (CLEF) 2026. Over more than a decade, BioASQ has acted as a central venue for advancing the state-of-the-art in semantic indexing, information extraction, information retrieval, and QA in biomedicine. This year, 48 teams participated in the biomedical QA tasks 14b, and Synergy14, developing more than 150 systems. In particular, 45 of them took part in task 14b, on biomedical semantic QA, and 7 on task Synergy14, on QA about developing biomedical topics where the questions may still miss a definite answer. The strong performance reached by several of the participating systems in the QA tasks of BioASQ 14 confirms the steady progress of state-of-the-art methods in the field, consistent with earlier editions of the tasks. Keywords Biomedical knowledge, Semantic Indexing, Question Answering 1. Introduction This paper gives an overview of the fourteenth BioASQ challenge (2026), with a particular focus on the shared tasks 14b and Synergy14",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "chunk_id": "267b0046c9ea71954e57c8fa832ea55490afe254eefb93d215f005f945ba12e5",
+          "filename": "paper1.pdf",
+          "title": "Overview of BioASQ Tasks 14b and Synergy14 in CLEF2026",
+          "page": 1,
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "start_char": 1685,
+          "url": "https://clef-staging.pages.dev/paper1.pdf",
+          "proceedings_pages": "1-19",
+          "document_id": "paper1",
+          "end_char": 3054,
+          "id": "267b0046c9ea71954e57c8fa832ea55490afe254eefb93d215f005f945ba12e5",
+          "text": ". A more detailed analysis of the approaches adopted by the participating systems will appear in the proceedings of the fourteenth BioASQ workshop [1]. The paper closes with a brief discussion of our main observations. 2. Overview of the Tasks The fourteenth edition of the BioASQ challenge ws structured into six main tasks: (1) task 14b on biomedical QA, (2) task Synergy 14 on biomedical QA for open developing issues, (3) task MultiClinSum- 2: the second edition of the task on multilingual summarization of clinical documents, (4) task BioNNE-R on extracting relations between nested named entities in English and Russian, (5) task ELCardioCC: the second edition of the task on automatic clinical coding in cardiology from Greek discharge letters, and (6) task GutBrainIE: the second edition of the task on extracting structured information from biomedical abstracts related to the gut-brain axis [2]. In this paper, we focus on the current versions of the first two well-established biomedical QA tasks in English, denoting them as task 14b and task Synergy14 in the context of the fourteenth BioASQ edition. Detailed descriptions of the MultiClinSum-2, BioNNE-R, ELCardioCC, and GutBrainIE tasks are available in [3], [4], [5], and [6], respectively. In addition, an extensive introduction to the BioASQ challenge and its original task design can be found in [7]",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "filename": "paper1.pdf",
+          "document_id": "paper1",
+          "page": 1,
+          "proceedings_pages": "1-19",
+          "end_char": 1397,
+          "title": "Overview of BioASQ Tasks 14b and Synergy14 in CLEF2026",
+          "chunk_id": "5b9a2f963ac046bc4cb2c59104ffe59fa63cc1a851b4f9e7966799d17d9ad7a2",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "url": "https://clef-staging.pages.dev/paper1.pdf",
+          "start_char": 0,
+          "id": "5b9a2f963ac046bc4cb2c59104ffe59fa63cc1a851b4f9e7966799d17d9ad7a2",
+          "text": "Overview of BioASQ Tasks 14b and Synergy14 in CLEF2026 Anastasios Nentidis1, Georgios Katsimpras 1, Anastasia Krithara 1 and Georgios Paliouras 1 1NCSR Demokritos, Athens, Greece Abstract This paper provides an overview of the Question Answering (QA) tasks in the fourteenth edition of the BioASQ challenge (BioASQ 14), on large-scale biomedical semantic indexing and QA, which is organised as part of the Conference and Labs of the Evaluation Forum (CLEF) 2026. Over more than a decade, BioASQ has acted as a central venue for advancing the state-of-the-art in semantic indexing, information extraction, information retrieval, and QA in biomedicine. This year, 48 teams participated in the biomedical QA tasks 14b, and Synergy14, developing more than 150 systems. In particular, 45 of them took part in task 14b, on biomedical semantic QA, and 7 on task Synergy14, on QA about developing biomedical topics where the questions may still miss a definite answer. The strong performance reached by several of the participating systems in the QA tasks of BioASQ 14 confirms the steady progress of state-of-the-art methods in the field, consistent with earlier editions of the tasks. Keywords Biomedical knowledge, Semantic Indexing, Question Answering 1. Introduction This paper gives an overview of the fourteenth BioASQ challenge (2026), with a particular focus on the shared tasks 14b and Synergy14",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "chunk_id": "a2102d0157c93fc96cf93f6cbc0229f3a89db8c679c55e40640c1a67a49cc145",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "document_id": "paper1",
+          "filename": "paper1.pdf",
+          "start_char": 2266,
+          "page": 3,
+          "end_char": 2581,
+          "url": "https://clef-staging.pages.dev/paper1.pdf",
+          "title": "Overview of BioASQ Tasks 14b and Synergy14 in CLEF2026",
+          "proceedings_pages": "1-19",
+          "id": "a2102d0157c93fc96cf93f6cbc0229f3a89db8c679c55e40640c1a67a49cc145",
+          "text": ". Moreover, the evaluation of the systems relies on the same measures as task 14b. 3. Overview of participation Across all six shared tasks of BioASQ 14, 87 distinct teams took part in the challenge. In the two QA tasks 14b and Synergy14 covered by this paper, more than 150 distinct systems participated, developed",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "chunk_id": "267b0046c9ea71954e57c8fa832ea55490afe254eefb93d215f005f945ba12e5",
+          "filename": "paper1.pdf",
+          "title": "Overview of BioASQ Tasks 14b and Synergy14 in CLEF2026",
+          "page": 1,
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "start_char": 1685,
+          "url": "https://clef-staging.pages.dev/paper1.pdf",
+          "proceedings_pages": "1-19",
+          "document_id": "paper1",
+          "end_char": 3054,
+          "id": "267b0046c9ea71954e57c8fa832ea55490afe254eefb93d215f005f945ba12e5",
+          "text": ". A more detailed analysis of the approaches adopted by the participating systems will appear in the proceedings of the fourteenth BioASQ workshop [1]. The paper closes with a brief discussion of our main observations. 2. Overview of the Tasks The fourteenth edition of the BioASQ challenge ws structured into six main tasks: (1) task 14b on biomedical QA, (2) task Synergy 14 on biomedical QA for open developing issues, (3) task MultiClinSum- 2: the second edition of the task on multilingual summarization of clinical documents, (4) task BioNNE-R on extracting relations between nested named entities in English and Russian, (5) task ELCardioCC: the second edition of the task on automatic clinical coding in cardiology from Greek discharge letters, and (6) task GutBrainIE: the second edition of the task on extracting structured information from biomedical abstracts related to the gut-brain axis [2]. In this paper, we focus on the current versions of the first two well-established biomedical QA tasks in English, denoting them as task 14b and task Synergy14 in the context of the fourteenth BioASQ edition. Detailed descriptions of the MultiClinSum-2, BioNNE-R, ELCardioCC, and GutBrainIE tasks are available in [3], [4], [5], and [6], respectively. In addition, an extensive introduction to the BioASQ challenge and its original task design can be found in [7]",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "BioASQ 14b and Synergy14.",
+      "retrieved_pages": [
+        [
+          "paper1",
+          1
+        ],
+        [
+          "paper1",
+          3
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "6": {
+          "precision": 0.16666666666666666,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "retrieval_pass": true,
+      "elapsed_seconds": 29.424
+    },
+    {
+      "id": "paper-2",
+      "category": "paper",
+      "question": "How many languages does MultiClinSum-2 cover, and what does it summarize?",
+      "gold_pages": [
+        [
+          "paper2",
+          1
+        ]
+      ],
+      "kind": "content",
+      "answer": "MultiClinSum-2 covers 15 languages. [S2]\n\nMultiClinSum-2 summarizes clinical case reports. [S1]",
+      "supported": true,
+      "sources": [
+        {
+          "url": "https://clef-staging.pages.dev/paper2.pdf",
+          "page": 1,
+          "document_id": "paper2",
+          "proceedings_pages": "20-64",
+          "start_char": 0,
+          "filename": "paper2.pdf",
+          "end_char": 1117,
+          "chunk_id": "5a181deefcc6cb7c54e78b51c1c622684131a3c5ed3533efd3578696a3e3edea",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "title": "Overview of MultiClinSum-2 at CLEF 2026: Data, Evaluation, and Results for Multilingual Clinical Case Report Summarization Across 15 Languages",
+          "id": "5a181deefcc6cb7c54e78b51c1c622684131a3c5ed3533efd3578696a3e3edea",
+          "text": "Overview of MultiClinSum-2 at CLEF 2026: Data, Evaluation, and Results for Multilingual Clinical Case Report Summarization Across 15 Languages Miguel Rodríguez-Ortega1,*, Eduard Rodríguez-López 1, Salvador Lima-López 1, Audrey Mash1 and Martin Krallinger 1 1Barcelona Supercomputing Center, Plaça Eusebi Güell, 1-3, 08034 Barcelona, Spain Abstract Rapid digitalization of healthcare systems has led to an unprecedented accumulation of clinical documentation across diverse sources, including clinical case reports, discharge summaries, laboratory results, and diagnostic documents, generating large volumes of both structured and unstructured data that present significant challenges for efficient processing. Among these, clinical case reports are of particular interest, as they document individual patient histories in rich detail, describing patient demographics, symptoms, clinical findings, procedures, and follow-up information. Despite their clinical value, the dense and lengthy nature of these documents makes efficient information extraction and interpretation a demanding task for healthcare professionals",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "document_id": "paper2",
+          "proceedings_pages": "20-64",
+          "filename": "paper2.pdf",
+          "end_char": 2500,
+          "url": "https://clef-staging.pages.dev/paper2.pdf",
+          "page": 3,
+          "title": "Overview of MultiClinSum-2 at CLEF 2026: Data, Evaluation, and Results for Multilingual Clinical Case Report Summarization Across 15 Languages",
+          "chunk_id": "719b597a9b1ea1a6d2776b6be240e92c997b516422fae50332d3c48e643a0450",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "start_char": 1195,
+          "id": "719b597a9b1ea1a6d2776b6be240e92c997b516422fae50332d3c48e643a0450",
+          "text": ". This additional evaluation framework assesses dimensions such as clinical coherence, hallucination, completeness, and preservation of key diagnostic and therapeutic information, going beyond surface-level string matching to capture the clinical fidelity of generated summaries. Task sub-tracks To promote the development of reliable clinical summarization models across diverse linguistic contexts, MultiClinSum-2 is organized into 15 independent language sub-tracks, one for each of the supported languages:MultiClinSum2-en(English),MultiClinSum2-es(Spanish),MultiClinSum2-fr(French), MultiClinSum2-pt(Portuguese),MultiClinSum2-it(Italian),MultiClinSum2-ru(Russian),MultiClinSum2ca(Catalan),MultiClinSum2-nb(Norwegian),MultiClinSum2-da(Danish),MultiClinSum2-ro(Romanian), MultiClinSum2-de(German),MultiClinSum2-el(Greek),MultiClinSum2-nl(Dutch),MultiClinSum2-cs (Czech), andMultiClinSum2-sv(Swedish). Each sub-track focused on the automatic summarization of clinical case reports in the given language and is evaluated independently, allowing for a precise assessment of system performance within each linguistic context. The task adopted a flexible participation mode, allowing teams to choose how many sub-tracks they want to participate in, with no requirement to submit results for all 15 languages",
+          "source_id": "S2",
+          "rank": 2
+        }
+      ],
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "url": "https://clef-staging.pages.dev/paper2.pdf",
+          "page": 1,
+          "document_id": "paper2",
+          "proceedings_pages": "20-64",
+          "start_char": 0,
+          "filename": "paper2.pdf",
+          "end_char": 1117,
+          "chunk_id": "5a181deefcc6cb7c54e78b51c1c622684131a3c5ed3533efd3578696a3e3edea",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "title": "Overview of MultiClinSum-2 at CLEF 2026: Data, Evaluation, and Results for Multilingual Clinical Case Report Summarization Across 15 Languages",
+          "id": "5a181deefcc6cb7c54e78b51c1c622684131a3c5ed3533efd3578696a3e3edea",
+          "text": "Overview of MultiClinSum-2 at CLEF 2026: Data, Evaluation, and Results for Multilingual Clinical Case Report Summarization Across 15 Languages Miguel Rodríguez-Ortega1,*, Eduard Rodríguez-López 1, Salvador Lima-López 1, Audrey Mash1 and Martin Krallinger 1 1Barcelona Supercomputing Center, Plaça Eusebi Güell, 1-3, 08034 Barcelona, Spain Abstract Rapid digitalization of healthcare systems has led to an unprecedented accumulation of clinical documentation across diverse sources, including clinical case reports, discharge summaries, laboratory results, and diagnostic documents, generating large volumes of both structured and unstructured data that present significant challenges for efficient processing. Among these, clinical case reports are of particular interest, as they document individual patient histories in rich detail, describing patient demographics, symptoms, clinical findings, procedures, and follow-up information. Despite their clinical value, the dense and lengthy nature of these documents makes efficient information extraction and interpretation a demanding task for healthcare professionals",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "document_id": "paper2",
+          "proceedings_pages": "20-64",
+          "filename": "paper2.pdf",
+          "end_char": 2500,
+          "url": "https://clef-staging.pages.dev/paper2.pdf",
+          "page": 3,
+          "title": "Overview of MultiClinSum-2 at CLEF 2026: Data, Evaluation, and Results for Multilingual Clinical Case Report Summarization Across 15 Languages",
+          "chunk_id": "719b597a9b1ea1a6d2776b6be240e92c997b516422fae50332d3c48e643a0450",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "start_char": 1195,
+          "id": "719b597a9b1ea1a6d2776b6be240e92c997b516422fae50332d3c48e643a0450",
+          "text": ". This additional evaluation framework assesses dimensions such as clinical coherence, hallucination, completeness, and preservation of key diagnostic and therapeutic information, going beyond surface-level string matching to capture the clinical fidelity of generated summaries. Task sub-tracks To promote the development of reliable clinical summarization models across diverse linguistic contexts, MultiClinSum-2 is organized into 15 independent language sub-tracks, one for each of the supported languages:MultiClinSum2-en(English),MultiClinSum2-es(Spanish),MultiClinSum2-fr(French), MultiClinSum2-pt(Portuguese),MultiClinSum2-it(Italian),MultiClinSum2-ru(Russian),MultiClinSum2ca(Catalan),MultiClinSum2-nb(Norwegian),MultiClinSum2-da(Danish),MultiClinSum2-ro(Romanian), MultiClinSum2-de(German),MultiClinSum2-el(Greek),MultiClinSum2-nl(Dutch),MultiClinSum2-cs (Czech), andMultiClinSum2-sv(Swedish). Each sub-track focused on the automatic summarization of clinical case reports in the given language and is evaluated independently, allowing for a precise assessment of system performance within each linguistic context. The task adopted a flexible participation mode, allowing teams to choose how many sub-tracks they want to participate in, with no requirement to submit results for all 15 languages",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "start_char": 2101,
+          "url": "https://clef-staging.pages.dev/paper2.pdf",
+          "document_id": "paper2",
+          "end_char": 2788,
+          "page": 16,
+          "proceedings_pages": "20-64",
+          "title": "Overview of MultiClinSum-2 at CLEF 2026: Data, Evaluation, and Results for Multilingual Clinical Case Report Summarization Across 15 Languages",
+          "filename": "paper2.pdf",
+          "chunk_id": "369408717b2bb25fb8b836d0b54ddd876164cb980c4465ed3699669fb95c0e58",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "id": "369408717b2bb25fb8b836d0b54ddd876164cb980c4465ed3699669fb95c0e58",
+          "text": ". Overall, the close alignment between the two systems across baselines suggests that the summarization performance observed in MultiClinSum-2 was not affected by the choice of machine translation system and that the employed translation pipeline does not introduce biases that would affect the results of the evaluation. Figure 4:Chart comparison of evaluation metrics for three baseline systems (LLaMA-3.1-8B (ZS), MCS-mT5- 2epoch, and Qwen2.5-7B (ZS)) when applied to clinical case reports translated by two different machine translation systems: System 1 (SalamandraTA-7B-Instruct, primary translation used in the official task release) and System 2 (alternative translation system).",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "15 languages; clinical case reports.",
+      "retrieved_pages": [
+        [
+          "paper2",
+          1
+        ],
+        [
+          "paper2",
+          3
+        ],
+        [
+          "paper2",
+          16
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "6": {
+          "precision": 0.16666666666666666,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "retrieval_pass": true,
+      "elapsed_seconds": 40.149
+    },
+    {
+      "id": "paper-3",
+      "category": "paper",
+      "question": "Which languages and entity/relation type counts does paper3 describe for BioNNE-R?",
+      "gold_pages": [
+        [
+          "paper3",
+          1
+        ]
+      ],
+      "kind": "content",
+      "answer": "BioNNE-R requires systems to extract semantic relations between nested biomedical entities in English and Russian. [S1]\n\nThe task covers 8 entity types and 14 relation types. [S1]",
+      "supported": true,
+      "sources": [
+        {
+          "chunk_id": "e4dd05c34edf8f18b0370e0764cc74d80acdc4b919acb6d29215ccbe4db0d0a4",
+          "start_char": 0,
+          "filename": "paper3.pdf",
+          "url": "https://clef-staging.pages.dev/paper3.pdf",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "title": "Overview of the BioASQ BioNNE-R Task on Nested Biomedical Relation Extraction at CLEF 2026",
+          "page": 1,
+          "end_char": 1180,
+          "proceedings_pages": "65-74",
+          "document_id": "paper3",
+          "id": "e4dd05c34edf8f18b0370e0764cc74d80acdc4b919acb6d29215ccbe4db0d0a4",
+          "text": "Overview of the BioASQ BioNNE-R Task on Nested Biomedical Relation Extraction at CLEF 2026 Igor Rozhkov1,∗, Natalia Loukachevitch1 and Elena Tutubalina2,3 1Lomonosov Moscow State University, Russia 2HSE University, Russia 3Artificial Intelligence Research Institute, Russia Abstract Biomedical relation extraction is typically studied under flat named entities, keeping only relations that involve nested named entities, where one entity is contained within another, unexplored. This paper presents an overview of the BioNNE-R shared task on biomedical nested relation extraction, organized within the BioASQ 2026 workshop at CLEF. Building on the NEREL-BIO corpus and the earlier BioNNE and BioNNE-L shared tasks, BioNNE-R requires systems to extract semantic relations between nested biomedical entities in English and Russian PubMed abstracts. The task covers 8 entity types and 14 relation types and is organized into three subtasks under two evaluation tracks: a monolingual track, with separate English and Russian subtasks, and a bilingual track combining both languages. We received 20 Codabench registrations, and 7 teams submitted predictions during the evaluation phase",
+          "source_id": "S1",
+          "rank": 1
+        }
+      ],
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "chunk_id": "e4dd05c34edf8f18b0370e0764cc74d80acdc4b919acb6d29215ccbe4db0d0a4",
+          "start_char": 0,
+          "filename": "paper3.pdf",
+          "url": "https://clef-staging.pages.dev/paper3.pdf",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "title": "Overview of the BioASQ BioNNE-R Task on Nested Biomedical Relation Extraction at CLEF 2026",
+          "page": 1,
+          "end_char": 1180,
+          "proceedings_pages": "65-74",
+          "document_id": "paper3",
+          "id": "e4dd05c34edf8f18b0370e0764cc74d80acdc4b919acb6d29215ccbe4db0d0a4",
+          "text": "Overview of the BioASQ BioNNE-R Task on Nested Biomedical Relation Extraction at CLEF 2026 Igor Rozhkov1,∗, Natalia Loukachevitch1 and Elena Tutubalina2,3 1Lomonosov Moscow State University, Russia 2HSE University, Russia 3Artificial Intelligence Research Institute, Russia Abstract Biomedical relation extraction is typically studied under flat named entities, keeping only relations that involve nested named entities, where one entity is contained within another, unexplored. This paper presents an overview of the BioNNE-R shared task on biomedical nested relation extraction, organized within the BioASQ 2026 workshop at CLEF. Building on the NEREL-BIO corpus and the earlier BioNNE and BioNNE-L shared tasks, BioNNE-R requires systems to extract semantic relations between nested biomedical entities in English and Russian PubMed abstracts. The task covers 8 entity types and 14 relation types and is organized into three subtasks under two evaluation tracks: a monolingual track, with separate English and Russian subtasks, and a bilingual track combining both languages. We received 20 Codabench registrations, and 7 teams submitted predictions during the evaluation phase",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "start_char": 0,
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "proceedings_pages": "65-74",
+          "document_id": "paper3",
+          "filename": "paper3.pdf",
+          "url": "https://clef-staging.pages.dev/paper3.pdf",
+          "title": "Overview of the BioASQ BioNNE-R Task on Nested Biomedical Relation Extraction at CLEF 2026",
+          "end_char": 1362,
+          "page": 4,
+          "chunk_id": "75d476c64669850c1b5bf97dbb902b6bbdddb41887faa8e2b69df3de0bb3880c",
+          "id": "75d476c64669850c1b5bf97dbb902b6bbdddb41887faa8e2b69df3de0bb3880c",
+          "text": "This same-type constraint holds without exception across the 20,428 gold annotations of these four relation types in both languages and all splits. Other relation types are constrained to specific entitytype combinations. For example, PHYSIOLOGY_OF connects only PHYS →ANATOMY pairs, and FINDING_OF only links FINDING entities to INJURY_POISONING or PHYS entities. In total, the 14 relation types use only 39 of the 64 possible (head_type, tail_type) entity-type pairs, providing a strong schema constraint that systems can use to prune the candidate set at inference time. Across all splits and languages, 97.7% of relations are intra-sentential, with both entity mentions in the same sentence; the remaining 2.3% require cross-sentence reasoning. 3. Experiments 3.1. Evaluation metrics Systems are evaluated against the gold relation annotations using precision, recall, and F1-score. A predicted relation is correct when it matches a gold relation in document identifier, head and tail entity spans, head and tail entity types, and relation type. Because the relation-type distribution is highly imbalanced, macro-averaged F1 over the 14 relation types is the official ranking metric, computed independently for each subtask. In addition, we report micro-averaged precision, recall, and F1 for the baseline, together with a per-relation F1 breakdown (Table 4)",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "start_char": 1192,
+          "document_id": "paper3",
+          "chunk_id": "5870fe31e6fc8aec941016376145992b6b3004de172aedcd1c5ff30f72b730e5",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "url": "https://clef-staging.pages.dev/paper3.pdf",
+          "end_char": 2340,
+          "proceedings_pages": "65-74",
+          "page": 2,
+          "title": "Overview of the BioASQ BioNNE-R Task on Nested Biomedical Relation Extraction at CLEF 2026",
+          "filename": "paper3.pdf",
+          "id": "5870fe31e6fc8aec941016376145992b6b3004de172aedcd1c5ff30f72b730e5",
+          "text": ". All BioNNE-R materials can be found on the shared task’s GitHub 1 and Codabench pages 2. The paper is organized as follows. Section 2 describes the BioNNE-R task formulation and dataset construction. Section 3 presents the evaluation methodology, baselines and summarizes participating systems and experimental results. Finally, Section 4 concludes the paper and discusses future directions for multilingual nested biomedical relation extraction. 2. Dataset Training and validation sets for the BioNNE-R competition are based on the NEREL-BIO dataset [ 15] and additional annotated texts for the BioNNE competition. NEREL-BIO is a corpus of PubMed abstracts written in Russian and English. It enhances the NEREL [ 16] dataset, which was originally developed for the general domain, with biomedical entity types defined according to the Unified Medical Language System (UMLS) [20]. All abstracts are annotated in the BRAT standoff format [ 21]. An example of nested named entity relations in the BioNNE-R dataset is illustrated in Figure 1. 1https://github.com/nerel-ds/NEREL-BIO/tree/master/BioNNE-R 2https://www.codabench.org/competitions/13132/",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "English and Russian; 8 entity types and 14 relation types.",
+      "retrieved_pages": [
+        [
+          "paper3",
+          1
+        ],
+        [
+          "paper3",
+          4
+        ],
+        [
+          "paper3",
+          2
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "6": {
+          "precision": 0.16666666666666666,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "retrieval_pass": true,
+      "elapsed_seconds": 23.753
+    },
+    {
+      "id": "paper-4",
+      "category": "paper",
+      "question": "What language and document type does ELCardioCC 2026 use in paper4?",
+      "gold_pages": [
+        [
+          "paper4",
+          1
+        ]
+      ],
+      "kind": "content",
+      "answer": "ELCardioCC 2026 uses the Greek language. [S1][S2]\n\nThe document type is cardiology hospital discharge letters. [S1][S2]",
+      "supported": true,
+      "sources": [
+        {
+          "end_char": 1287,
+          "title": "Overview of ELCardioCC Task on Clinical Coding in Cardiology at BioASQ 2026",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "page": 1,
+          "chunk_id": "a0f6412087bf1a2661cffe30336eb6855cd39e8a1ebbda22f0bea9547b50dd81",
+          "document_id": "paper4",
+          "url": "https://clef-staging.pages.dev/paper4.pdf",
+          "filename": "paper4.pdf",
+          "proceedings_pages": "75-86",
+          "start_char": 0,
+          "id": "a0f6412087bf1a2661cffe30336eb6855cd39e8a1ebbda22f0bea9547b50dd81",
+          "text": "Overview of ELCardioCC Task on Clinical Coding in Cardiology at BioASQ 2026 BioASQ at CLEF 2026 Dimitris Dimitriadis1,*, Vasiliki Patsiou 2, Eleonora Stoikopoulou 1,†, Achilleas Toumpas 1,†, Alexandra Bekiaridou2, Athanasios Samaras 1, George Giannakoulas 1 and Grigorios Tsoumakas1,3 1Aristotle University of Thessaloniki, Greece 2Elmezzi Graduate School of Molecular Medicine, Northwell Health, Manhasset, NY, USA 3Archimedes, Athena Research Center, Greece Abstract While automated clinical coding via standardized frameworks like ICD-10 has revolutionized electronic health record (EHR) analytics, the vast majority of progress remains confined to English-language narratives within general medicine, leaving cardiovascular and low-resource settings comparatively underexplored. To address this linguistic disparity in low-resource medical NLP, we present the second iteration of the ELCardioCC 2026 shared task, organized within the BioASQ challenge. Building upon the foundational insights of the first year 2025 task, where participants focused extensively on localized clinical text spans, the 2026 edition pivots to a macro-level objective, evaluating participating systems exclusively on document-level diagnostic code assignment for Greek cardiology hospital discharge letters",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "url": "https://clef-staging.pages.dev/paper4.pdf",
+          "start_char": 3131,
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "document_id": "paper4",
+          "page": 10,
+          "chunk_id": "037574fede2af415c68f0ac9f3185cfa2bb76a6b499305244da88c12358c7a33",
+          "title": "Overview of ELCardioCC Task on Clinical Coding in Cardiology at BioASQ 2026",
+          "filename": "paper4.pdf",
+          "proceedings_pages": "75-86",
+          "end_char": 4507,
+          "id": "037574fede2af415c68f0ac9f3185cfa2bb76a6b499305244da88c12358c7a33",
+          "text": ". In this context, the first version of the ELCardioCC shared task that took place in 2025 [8] followed the general direction and ambition of multilingual-focused related work and introduced two novel aspects: it involved a clinical dataset containing discharge letters in the Greek language, and incorporated both multi-label learning and explainable AI for automatic clinical coding. The current second iteration of the ElCardioCC shared task aims to build on these foundations and scale-up the evaluation of modern clinical NLP architectures in a non-English setting, by featuring a substantially larger corpus of cardiology hospital discharge letters in the Greek language. 7. Conclusion This paper presented the second edition of the ELCardioCC Shared Task, which focused on automatic ICD-10 coding of Greek cardiology discharge summaries as a document-level multi-label classification problem. By concentrating on the end-to-end coding task, the challenge encouraged the development of systems capable of assigning complete sets of ICD-10 codes directly from clinical narratives, providing a realistic benchmark that closely resembles real-world clinical coding workflows. The shared task attracted diverse methodological approaches, ranging from two-stage Named Entity Recognition and Entity Linking pipelines to end-to-end transformer-based multi-label classifiers and",
+          "source_id": "S2",
+          "rank": 2
+        }
+      ],
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "end_char": 1287,
+          "title": "Overview of ELCardioCC Task on Clinical Coding in Cardiology at BioASQ 2026",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "page": 1,
+          "chunk_id": "a0f6412087bf1a2661cffe30336eb6855cd39e8a1ebbda22f0bea9547b50dd81",
+          "document_id": "paper4",
+          "url": "https://clef-staging.pages.dev/paper4.pdf",
+          "filename": "paper4.pdf",
+          "proceedings_pages": "75-86",
+          "start_char": 0,
+          "id": "a0f6412087bf1a2661cffe30336eb6855cd39e8a1ebbda22f0bea9547b50dd81",
+          "text": "Overview of ELCardioCC Task on Clinical Coding in Cardiology at BioASQ 2026 BioASQ at CLEF 2026 Dimitris Dimitriadis1,*, Vasiliki Patsiou 2, Eleonora Stoikopoulou 1,†, Achilleas Toumpas 1,†, Alexandra Bekiaridou2, Athanasios Samaras 1, George Giannakoulas 1 and Grigorios Tsoumakas1,3 1Aristotle University of Thessaloniki, Greece 2Elmezzi Graduate School of Molecular Medicine, Northwell Health, Manhasset, NY, USA 3Archimedes, Athena Research Center, Greece Abstract While automated clinical coding via standardized frameworks like ICD-10 has revolutionized electronic health record (EHR) analytics, the vast majority of progress remains confined to English-language narratives within general medicine, leaving cardiovascular and low-resource settings comparatively underexplored. To address this linguistic disparity in low-resource medical NLP, we present the second iteration of the ELCardioCC 2026 shared task, organized within the BioASQ challenge. Building upon the foundational insights of the first year 2025 task, where participants focused extensively on localized clinical text spans, the 2026 edition pivots to a macro-level objective, evaluating participating systems exclusively on document-level diagnostic code assignment for Greek cardiology hospital discharge letters",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "url": "https://clef-staging.pages.dev/paper4.pdf",
+          "start_char": 3131,
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "document_id": "paper4",
+          "page": 10,
+          "chunk_id": "037574fede2af415c68f0ac9f3185cfa2bb76a6b499305244da88c12358c7a33",
+          "title": "Overview of ELCardioCC Task on Clinical Coding in Cardiology at BioASQ 2026",
+          "filename": "paper4.pdf",
+          "proceedings_pages": "75-86",
+          "end_char": 4507,
+          "id": "037574fede2af415c68f0ac9f3185cfa2bb76a6b499305244da88c12358c7a33",
+          "text": ". In this context, the first version of the ELCardioCC shared task that took place in 2025 [8] followed the general direction and ambition of multilingual-focused related work and introduced two novel aspects: it involved a clinical dataset containing discharge letters in the Greek language, and incorporated both multi-label learning and explainable AI for automatic clinical coding. The current second iteration of the ElCardioCC shared task aims to build on these foundations and scale-up the evaluation of modern clinical NLP architectures in a non-English setting, by featuring a substantially larger corpus of cardiology hospital discharge letters in the Greek language. 7. Conclusion This paper presented the second edition of the ELCardioCC Shared Task, which focused on automatic ICD-10 coding of Greek cardiology discharge summaries as a document-level multi-label classification problem. By concentrating on the end-to-end coding task, the challenge encouraged the development of systems capable of assigning complete sets of ICD-10 codes directly from clinical narratives, providing a realistic benchmark that closely resembles real-world clinical coding workflows. The shared task attracted diverse methodological approaches, ranging from two-stage Named Entity Recognition and Entity Linking pipelines to end-to-end transformer-based multi-label classifiers and",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "end_char": 4125,
+          "proceedings_pages": "75-86",
+          "document_id": "paper4",
+          "title": "Overview of ELCardioCC Task on Clinical Coding in Cardiology at BioASQ 2026",
+          "url": "https://clef-staging.pages.dev/paper4.pdf",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "start_char": 3571,
+          "filename": "paper4.pdf",
+          "chunk_id": "49c861449f1c663bd97bcb21788199f76994cdc64b000efbde2074153e979c76",
+          "page": 1,
+          "id": "49c861449f1c663bd97bcb21788199f76994cdc64b000efbde2074153e979c76",
+          "text": ". Tsoumakas) /gl⌢behttps://dndimitri.eu (D. Dimitriadis); https://intelligence.csd.auth.gr/people/tsoumakas/ (G. Tsoumakas) /orcid0000-0002-9404-0331 (D. Dimitriadis); 0000-0002-3444-4537 (V. Patsiou); 0009-0009-7157-0725 (E. Stoikopoulou); 0009-0008-6028-5622 (A. Toumpas); 0000-0002-1143-2293 (A. Bekiaridou); 0000-0002-3404-2749 (A. Samaras); 0000-0001-7491-6319 (G. Giannakoulas); 0000-0002-7879-669X (G. Tsoumakas) ©2026 Copyright for this paper by its authors. Use permitted under Creative Commons License Attribution 4.0 International (CC BY 4.0).",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "Greek cardiology hospital discharge letters; document-level diagnostic code assignment.",
+      "retrieved_pages": [
+        [
+          "paper4",
+          1
+        ],
+        [
+          "paper4",
+          10
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "6": {
+          "precision": 0.16666666666666666,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "retrieval_pass": true,
+      "elapsed_seconds": 27.362
+    },
+    {
+      "id": "paper-5",
+      "category": "paper",
+      "question": "What are the four GutBrainIE subtasks described in paper5?",
+      "gold_pages": [
+        [
+          "paper5",
+          1
+        ]
+      ],
+      "kind": "content",
+      "answer": "The GutBrainIE subtasks include Named Entity Recognition (NER). [S3]\n\nTwo GutBrainIE subtasks concern semantic relations. [S3]\n\nThe number of GutBrainIE subtasks is fixed at four. [S3]",
+      "supported": true,
+      "sources": [
+        {
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "end_char": 2464,
+          "proceedings_pages": "87-122",
+          "filename": "paper5.pdf",
+          "document_id": "paper5",
+          "start_char": 1208,
+          "chunk_id": "9fda907b146c8ec566623e6ce120947a10e86fde7577f5625e8be170effcf1cb",
+          "page": 2,
+          "title": "Overview of GutBrainIE@CLEF 2026: Gut-Brain Interplay Information Extraction",
+          "url": "https://clef-staging.pages.dev/paper5.pdf",
+          "id": "9fda907b146c8ec566623e6ce120947a10e86fde7577f5625e8be170effcf1cb",
+          "text": ". The final goal of this task is to support the automatic and scalable processing of scientific literature and extraction of information, thereby contributing to biomedical knowledge discovery and, in the long term, informed clinical decision-making. Figure 1: Annual rate of biomedical publications on PubMed related to the gut–brain axis, retrieved with the query ((gut) AND (microbiota OR microbiome)) AND (dementia OR Alzheimer OR multiple sclerosis OR Amyotrophic lateral sclerosis) on June 10, 2026. Purple bars highlight years with more than 400 records. GutBrainIE-2026 is the second iteration of the task, in which we kept the number of subtasks fixed at four, with two subtasks remaining the same as in the previous iteration and the other two being replaced. In particular, we added annotations for concept-level links, which enabled subtasks requiring the linkage of entity mentions to concepts from reference vocabularies. Of the four proposed subtasks, two concern entity mentions and the other two concern semantic relations: • Subtask 6.1.1 – Named Entity Recognition ( NER): participants are asked to identify and classify specific text spans (entity mentions) into one of the 13 predefined categories (e.g.,bacteria, chemical, microbiota)",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "title": "Overview of GutBrainIE@CLEF 2026: Gut-Brain Interplay Information Extraction",
+          "start_char": 0,
+          "proceedings_pages": "87-122",
+          "page": 1,
+          "document_id": "paper5",
+          "url": "https://clef-staging.pages.dev/paper5.pdf",
+          "end_char": 1369,
+          "chunk_id": "c553c75f857a13cd100af8f93ba389bc431363fb18d2f78b7522b478cfd44638",
+          "filename": "paper5.pdf",
+          "id": "c553c75f857a13cd100af8f93ba389bc431363fb18d2f78b7522b478cfd44638",
+          "text": "Overview of GutBrainIE@CLEF 2026: Gut-Brain Interplay Information Extraction Marco Martinelli1,∗, VanessaBonato2, Giorgio MariaDi Nunzio1, Guglielmo Faggioli1, Nicola Ferro1, Benedikt Kantz3, Ornella Irrera1, Stefano Marchesin1, Simone Merlo1, Laura Menotti1, Riccardo Michelotto1, Gaia Tussardi1, Federica Vezzani2, Peter Waldert3 and Gianmaria Silvello1 1Department of Information Engineering, University of Padua, Italy 2Department of Linguistic and Literary Studies, University of Padua, Italy 3Graz University of Technology, Austria Abstract Recent studies link the gut microbiota to mental health conditions and to neurodegenerative diseases such as Parkinson’s, Alzheimer’s, and Sclerosis. However, the rapid pace at which this research field is evolving presents a significant challenge for clinicians and researchers who need to stay up to date with new findings and discoveries. In this context, Information Extraction (IE) systems are becoming essential for automatically extracting and structuring information from scientific texts, aiming to support and enhance the understanding of the gut-brain axis. GutBrainIE promotes the development of Natural Language Processing (NLP) systems capable of extracting structured specialized knowledge from biomedical texts related to the gut-brain axis, aiming to accelerate biomedical discoveries through automated IE",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "end_char": 2437,
+          "filename": "paper5.pdf",
+          "title": "Overview of GutBrainIE@CLEF 2026: Gut-Brain Interplay Information Extraction",
+          "url": "https://clef-staging.pages.dev/paper5.pdf",
+          "proceedings_pages": "87-122",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "chunk_id": "a1cec1ea028377d5f1fa632ffe9817fc67900a1923662b0ce87c80c3ba7cf1f1",
+          "document_id": "paper5",
+          "start_char": 1061,
+          "page": 3,
+          "id": "a1cec1ea028377d5f1fa632ffe9817fc67900a1923662b0ce87c80c3ba7cf1f1",
+          "text": ". The dataset is split into Training, Development, and Test sets, with the latter two containing only expert annotations from the gold-quality fold. Submissions are evaluated using standard macro- and micro-averaged Precision, Recall, and F1 metrics. Results are compared against a baseline system shared with participants at the beginning of the challenge to provide a reference baseline. As in last year’s iteration, these tasks are proposed in an end-to-end setting, meaning that no gold labels for the test set was provided. Therefore, participants wishing to submit toNERD needed first to performNER. Similarly, for participating in the Relation Extraction (RE) subtasks, they needed to first perform entity detection. This paper provides a comprehensive overview of the GutBrainIE-2026 task. Section2 presents the subtasks and their structure; Section3 introduces the dataset structure and annotation schema; Section 4 presents participating teams and evaluation procedures; Section5 reports the results and leaderboards across subtasks; Section6 describes the systems, models, and approaches employed by participating teams; finally, Section7 concludes the paper and proposes future directions. 2. Task Overview In its second iteration, GutBrainIE-2026 proposed four subtasks: 1. Named Entity Recognition (NER), 2. Named Entity Recognition and Disambiguation (NERD) , 3",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "end_char": 2464,
+          "proceedings_pages": "87-122",
+          "filename": "paper5.pdf",
+          "document_id": "paper5",
+          "start_char": 1208,
+          "chunk_id": "9fda907b146c8ec566623e6ce120947a10e86fde7577f5625e8be170effcf1cb",
+          "page": 2,
+          "title": "Overview of GutBrainIE@CLEF 2026: Gut-Brain Interplay Information Extraction",
+          "url": "https://clef-staging.pages.dev/paper5.pdf",
+          "id": "9fda907b146c8ec566623e6ce120947a10e86fde7577f5625e8be170effcf1cb",
+          "text": ". The final goal of this task is to support the automatic and scalable processing of scientific literature and extraction of information, thereby contributing to biomedical knowledge discovery and, in the long term, informed clinical decision-making. Figure 1: Annual rate of biomedical publications on PubMed related to the gut–brain axis, retrieved with the query ((gut) AND (microbiota OR microbiome)) AND (dementia OR Alzheimer OR multiple sclerosis OR Amyotrophic lateral sclerosis) on June 10, 2026. Purple bars highlight years with more than 400 records. GutBrainIE-2026 is the second iteration of the task, in which we kept the number of subtasks fixed at four, with two subtasks remaining the same as in the previous iteration and the other two being replaced. In particular, we added annotations for concept-level links, which enabled subtasks requiring the linkage of entity mentions to concepts from reference vocabularies. Of the four proposed subtasks, two concern entity mentions and the other two concern semantic relations: • Subtask 6.1.1 – Named Entity Recognition ( NER): participants are asked to identify and classify specific text spans (entity mentions) into one of the 13 predefined categories (e.g.,bacteria, chemical, microbiota)",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "Named entity recognition; named entity recognition and disambiguation; mention-level relation extraction; concept-level relation extraction.",
+      "retrieved_pages": [
+        [
+          "paper5",
+          1
+        ],
+        [
+          "paper5",
+          3
+        ],
+        [
+          "paper5",
+          2
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "6": {
+          "precision": 0.16666666666666666,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "retrieval_pass": true,
+      "elapsed_seconds": 42.785
+    },
+    {
+      "id": "paper-6",
+      "category": "paper",
+      "question": "What four retrieval variants are described in paper6?",
+      "gold_pages": [
+        [
+          "paper6",
+          1
+        ]
+      ],
+      "kind": "content",
+      "answer": "The four retrieval pipeline variants are sparse-only, sparse-dense hybrid, dense pseudo-relevance feedback, and a cross-encoder ensemble. [S1]",
+      "supported": true,
+      "sources": [
+        {
+          "end_char": 1300,
+          "chunk_id": "1aede7238bdd439cb25eb8372936252161c5577bb311765bcb243e0e089f82a3",
+          "title": "Retrieval-Bound Generation: Lean RAG pipelines for Biomedical QA",
+          "start_char": 0,
+          "url": "https://clef-staging.pages.dev/paper6.pdf",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "filename": "paper6.pdf",
+          "document_id": "paper6",
+          "page": 1,
+          "proceedings_pages": "123-145",
+          "id": "1aede7238bdd439cb25eb8372936252161c5577bb311765bcb243e0e089f82a3",
+          "text": "Retrieval-Bound Generation: Lean RAG pipelines for Biomedical QA Notebook for the BioASQ Lab at CLEF 2026. Diogo M. C.Antunes1,∗, Paulo R. C.Lopes1 and Francisco M.Couto1 1LASIGE, Departamento de Informática, Faculdade de Ciências, Universidade de Lisboa, 1749-016 Lisboa, Portugal Abstract Biomedical question answering requires retrieving relevant evidence from large literature collections and generating accurate answers grounded in the retrieved evidence, a task made challenging by the scale of PubMed and the characteristics of biomedical terminology. In this work we describe our participation in BioASQ Task 14b, covering all three phases of the challenge (A, A+, and B), with a focus on lean, locally deployable Retrieval-Augmented Generation. We developed four retrieval pipeline variants that share a common query expansion, snippet extraction, and cross-encoder re-ranking stage, differing in their retrieval strategy: sparse-only, sparse-dense hybrid, dense pseudo-relevance feedback, and a cross-encoder ensemble. For answer generation, we used lean and instruction-tuned large language models under a few-shot prompting strategy with a few-pass inference scheme, in which an exact answer is generated first and then used to condition a more comprehensive ideal natural language answer",
+          "source_id": "S1",
+          "rank": 1
+        }
+      ],
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "end_char": 1300,
+          "chunk_id": "1aede7238bdd439cb25eb8372936252161c5577bb311765bcb243e0e089f82a3",
+          "title": "Retrieval-Bound Generation: Lean RAG pipelines for Biomedical QA",
+          "start_char": 0,
+          "url": "https://clef-staging.pages.dev/paper6.pdf",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "filename": "paper6.pdf",
+          "document_id": "paper6",
+          "page": 1,
+          "proceedings_pages": "123-145",
+          "id": "1aede7238bdd439cb25eb8372936252161c5577bb311765bcb243e0e089f82a3",
+          "text": "Retrieval-Bound Generation: Lean RAG pipelines for Biomedical QA Notebook for the BioASQ Lab at CLEF 2026. Diogo M. C.Antunes1,∗, Paulo R. C.Lopes1 and Francisco M.Couto1 1LASIGE, Departamento de Informática, Faculdade de Ciências, Universidade de Lisboa, 1749-016 Lisboa, Portugal Abstract Biomedical question answering requires retrieving relevant evidence from large literature collections and generating accurate answers grounded in the retrieved evidence, a task made challenging by the scale of PubMed and the characteristics of biomedical terminology. In this work we describe our participation in BioASQ Task 14b, covering all three phases of the challenge (A, A+, and B), with a focus on lean, locally deployable Retrieval-Augmented Generation. We developed four retrieval pipeline variants that share a common query expansion, snippet extraction, and cross-encoder re-ranking stage, differing in their retrieval strategy: sparse-only, sparse-dense hybrid, dense pseudo-relevance feedback, and a cross-encoder ensemble. For answer generation, we used lean and instruction-tuned large language models under a few-shot prompting strategy with a few-pass inference scheme, in which an exact answer is generated first and then used to condition a more comprehensive ideal natural language answer",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "end_char": 1297,
+          "page": 6,
+          "start_char": 0,
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "filename": "paper6.pdf",
+          "proceedings_pages": "123-145",
+          "chunk_id": "97f470207975579347076bdf4f299e0ffcbd0ae528e32999bc98907866ebcc40",
+          "document_id": "paper6",
+          "url": "https://clef-staging.pages.dev/paper6.pdf",
+          "title": "Retrieval-Bound Generation: Lean RAG pipelines for Biomedical QA",
+          "id": "97f470207975579347076bdf4f299e0ffcbd0ae528e32999bc98907866ebcc40",
+          "text": "3.2. Phase A: Retrieval Pipelines 3.2.1. Query Expansion All BioASQ questions are natural language interrogatives, which contain auxiliary and interrogative words (”are”, ”what”, ”does”, ”which”) that carry no discriminative retrieval signal and dilute the term-frequency weight of the relevant biomedical entities under the BM25 scoring function. To address this, prior to BM25 retrieval a simple type-specific query expansion strategy is applied. A regular expression strips auxiliary and interrogative words from the question body, isolating the key entity terms, which are then appended to the original query with a repetition frequency that varies by question type: factoid questions receive the key terms appended twice, yes/no and list questions receive the key terms appended once and summary questions receive no expansion. The intuition behind this strategy is to try compensate for the structural mismatch between interrogative natural language and the declarative style of biomedical abstracts. 3.2.2. Pipeline Variants We developed four Phase A pipeline variants, sharing the corpus management, query expansion, snippet extraction, and cross-encoder re-ranking components. The variants differ only in how candidate documents are retrieved and fused prior to the final re-ranking stage",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "filename": "paper6.pdf",
+          "proceedings_pages": "123-145",
+          "end_char": 2422,
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "page": 4,
+          "chunk_id": "1a31a28e89cdd26c4bf09444fd81c9efa439c847a4d7b0bab0e699d8b393ddcb",
+          "url": "https://clef-staging.pages.dev/paper6.pdf",
+          "title": "Retrieval-Bound Generation: Lean RAG pipelines for Biomedical QA",
+          "document_id": "paper6",
+          "start_char": 1101,
+          "id": "1a31a28e89cdd26c4bf09444fd81c9efa439c847a4d7b0bab0e699d8b393ddcb",
+          "text": ". A practical consequence is that the choice of cross-encoder model has a disproportionate impact on final retrieval quality, motivating careful selection based on training domain, parameter count, and contextwindow. ModelstrainedonMSMARCOprovidestronggeneral-purposebaselines,while domain-adapted variants based on ModernBERT can offer better alignment with biomedical terminology at comparable parameter scales [17, 15]. A natural extension of the single reranker design is to run multiple cross-encoders in parallel over the same candidate pool and combine their rankings. The intuition is that re-rankers trained on different domains (or even just different datasets) and with different architectures make complementary reasoning, this meaning, documents ranked highly by all models are more reliably relevant than documents favored by any single model in isolation. 2.5. Dense Pseudo Relevance Feedback (DPRF) Pseudo-Relevance Feedback is a classical query expansion technique with origins predating modern neural retrieval [18, 19]. The core assumption is that the top-ranked documents from an initial retrieval pass, while not yet verified as relevant, contain useful signal about what relevant documents look like for the given query. Dense Pseudo-Relevance Feedback (DPRF) adapts this idea to the embedding space",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "Sparse-only, sparse-dense hybrid, dense pseudo-relevance feedback, and a cross-encoder ensemble.",
+      "retrieved_pages": [
+        [
+          "paper6",
+          1
+        ],
+        [
+          "paper6",
+          6
+        ],
+        [
+          "paper6",
+          4
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "6": {
+          "precision": 0.16666666666666666,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "retrieval_pass": true,
+      "elapsed_seconds": 18.952
+    },
+    {
+      "id": "paper-7",
+      "category": "paper",
+      "question": "How large was the question subset used for keyword search refinement in paper7?",
+      "gold_pages": [
+        [
+          "paper7",
+          1
+        ]
+      ],
+      "kind": "content",
+      "answer": "The question subset used for keyword search refinement in paper7 was 24 questions. [S1]",
+      "supported": true,
+      "sources": [
+        {
+          "filename": "paper7.pdf",
+          "title": "Can LLMs Refine Their Own Keyword Search Strategies for Biomedical RAG?",
+          "start_char": 0,
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "document_id": "paper7",
+          "url": "https://clef-staging.pages.dev/paper7.pdf",
+          "chunk_id": "e9838e15b1edd140eb4386b83a0fa7d516b3cd300c2f09beab83facc51535dcd",
+          "page": 1,
+          "end_char": 1202,
+          "proceedings_pages": "146-159",
+          "id": "e9838e15b1edd140eb4386b83a0fa7d516b3cd300c2f09beab83facc51535dcd",
+          "text": "Can LLMs Refine Their Own Keyword Search Strategies for Biomedical RAG? BioASQ at CLEF 2026 Samy Ateia1, Udo Kruschwitz 1 1Information Science, University of Regensburg, Universitätsstraße 31, 93053, Regensburg, Germany Abstract In biomedical contexts, transparent and reproducible retrieval of evidence often matters for clinical question answering or conducting systematic reviews. But purely keyword-based generated Boolean search queries often do not reach the same retrieval performance as dense embedding-based retrieval and reranking. We explored the ability of current Large Language Models (LLMs) to iterate and refine their own transparent keyword search strategies. We used a small subset (24 questions) of the BioASQ training data, which is a biomedical retrieval augmented generation (RAG) based biomedical question-answering challenge. We demonstrate that Reciprocal Rank Fusion (RRF) of three different search strategies can achieve significantly higher recall@50 after refinement and also beat our prior single query baseline. Keywords Retrieval Augmented Generation, Large Language Models, Biomedical Question Answering, Professional Search, Query Refinement, Query Expansion, BioASQ 1",
+          "source_id": "S1",
+          "rank": 1
+        }
+      ],
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "filename": "paper7.pdf",
+          "title": "Can LLMs Refine Their Own Keyword Search Strategies for Biomedical RAG?",
+          "start_char": 0,
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "document_id": "paper7",
+          "url": "https://clef-staging.pages.dev/paper7.pdf",
+          "chunk_id": "e9838e15b1edd140eb4386b83a0fa7d516b3cd300c2f09beab83facc51535dcd",
+          "page": 1,
+          "end_char": 1202,
+          "proceedings_pages": "146-159",
+          "id": "e9838e15b1edd140eb4386b83a0fa7d516b3cd300c2f09beab83facc51535dcd",
+          "text": "Can LLMs Refine Their Own Keyword Search Strategies for Biomedical RAG? BioASQ at CLEF 2026 Samy Ateia1, Udo Kruschwitz 1 1Information Science, University of Regensburg, Universitätsstraße 31, 93053, Regensburg, Germany Abstract In biomedical contexts, transparent and reproducible retrieval of evidence often matters for clinical question answering or conducting systematic reviews. But purely keyword-based generated Boolean search queries often do not reach the same retrieval performance as dense embedding-based retrieval and reranking. We explored the ability of current Large Language Models (LLMs) to iterate and refine their own transparent keyword search strategies. We used a small subset (24 questions) of the BioASQ training data, which is a biomedical retrieval augmented generation (RAG) based biomedical question-answering challenge. We demonstrate that Reciprocal Rank Fusion (RRF) of three different search strategies can achieve significantly higher recall@50 after refinement and also beat our prior single query baseline. Keywords Retrieval Augmented Generation, Large Language Models, Biomedical Question Answering, Professional Search, Query Refinement, Query Expansion, BioASQ 1",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "proceedings_pages": "146-159",
+          "page": 11,
+          "chunk_id": "9e4c11f37a75cd108ef10db78810b47e3e9d8e1999f9dda2eeeac2f3be399c68",
+          "document_id": "paper7",
+          "start_char": 1957,
+          "title": "Can LLMs Refine Their Own Keyword Search Strategies for Biomedical RAG?",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "filename": "paper7.pdf",
+          "end_char": 3256,
+          "url": "https://clef-staging.pages.dev/paper7.pdf",
+          "id": "9e4c11f37a75cd108ef10db78810b47e3e9d8e1999f9dda2eeeac2f3be399c68",
+          "text": ". The downstream Phase A metrics followed the same direction but were less statistically stable than recall@50, suggesting that the refinement primarily improved candidate coverage. Overall, the explored strategy-refinement approach for query generation with LLMs seems promising. Future work could investigate what upper bounds for this refinement exist and if there are optimal parameters, such as the number of initial questions or rounds that maximize the potential recall gains efficiently. 6. Conclusion We presented a strategy-refinement approach in which LLMs iteratively improve reusable, textual keyword-search instructions for biomedical retrieval. Rather than fine-tuning model weights or optimizing individual queries, the method optimizes prompt-level search strategies that can be inspected and reused to generate Boolean queries as transparent keyword searches. In the preliminary BioASQ14 results3, the refined 3-RRF systems achieved our strongest Phase A retrieval results and high-ranking snippet MAP scores. However, improvements in retrieval did not consistently lead to better Phase A+ or Phase B answer metrics, indicating that further refinements for our snippet reranking and questionanswering approaches are needed. 3https://participants-area.bioasq.org/results/14b/phaseA/",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "proceedings_pages": "146-159",
+          "chunk_id": "923fd001e26f97e9a2bba07ae17ae8b1dcb9813396258b6499238afd013ffa02",
+          "url": "https://clef-staging.pages.dev/paper7.pdf",
+          "page": 2,
+          "start_char": 1077,
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "document_id": "paper7",
+          "filename": "paper7.pdf",
+          "title": "Can LLMs Refine Their Own Keyword Search Strategies for Biomedical RAG?",
+          "end_char": 2393,
+          "id": "923fd001e26f97e9a2bba07ae17ae8b1dcb9813396258b6499238afd013ffa02",
+          "text": ". With the emergence of LLM-aided discovery and dense retrieval methods, we explore how the semantic knowledge of LLMs can be leveraged to create auditable and reproducible Boolean keyword search queries that can be used in these rigorous processes. Prior work has explored automatic Boolean query formulation and refinement for systematic-review search. Existing approaches include transforming and refining Boolean queries through expansion and reduction [7, 8] as well as generating queries directly from review protocols using concept extraction and terminology expansion [9]. Our work focuses on refining reusable LLM-generated search strategies rather than modifying a single existing query. Biomedical retrieval often combines free-text search with controlled vocabularies such as MeSH. Existing research has investigated automated MeSH term suggestion to support query formulation [10]. Similarly, our approach can incorporate MeSH terms but treats them as one component within broader retrieval strategies that also leverage title and abstract terminology. Recent studies have evaluated LLMs for Boolean query generation in systematic-review search [11, 12]. Subsequent work highlighted the importance of factors such as prompt design, query validation, and model selection for retrieval effectiveness [ 13]",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "24 questions from BioASQ training data.",
+      "retrieved_pages": [
+        [
+          "paper7",
+          1
+        ],
+        [
+          "paper7",
+          11
+        ],
+        [
+          "paper7",
+          2
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "6": {
+          "precision": 0.16666666666666666,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "retrieval_pass": true,
+      "elapsed_seconds": 16.5
+    },
+    {
+      "id": "paper-8",
+      "category": "paper",
+      "question": "What are the main pipeline components of MedCascade in paper8?",
+      "gold_pages": [
+        [
+          "paper8",
+          1
+        ]
+      ],
+      "kind": "content",
+      "answer": "MedCascade combines LLM-based query expansion, sparse retrieval, neural reranking, LLM-based listwise reranking, Dense PRF reranking, snippet extraction, and LLM-based answer generation. [S1]\n\nThe pipeline includes BM25 first-stage retrieval. [S3]\n\nMedCascade uses LLM-based listwise reranking to the current top 20 documents. [S3]",
+      "supported": true,
+      "sources": [
+        {
+          "document_id": "paper8",
+          "filename": "paper8.pdf",
+          "page": 1,
+          "start_char": 0,
+          "proceedings_pages": "160-175",
+          "chunk_id": "e597280b498fedfad1a1ef1bf367efd7b723ace2d11ef3935eac9959bf001d2e",
+          "url": "https://clef-staging.pages.dev/paper8.pdf",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "end_char": 1398,
+          "title": "MedCascade: A Multi-Stage Cascaded Retrieval and Generation System for Biomedical Question Answering",
+          "id": "e597280b498fedfad1a1ef1bf367efd7b723ace2d11ef3935eac9959bf001d2e",
+          "text": "MedCascade: A Multi-Stage Cascaded Retrieval and Generation System for Biomedical Question Answering ⋆ BioASQ at CLEF 2026 Artem Avdeiko1,2, Pelinsu Topaloglu 1,2, Teresa Vaccari 1,2 and Georgios Peikos 2,* 1University of Pavia, 27100 Pavia, Italy 2University of Milano-Bicocca (DISCo), 20126 Milan, Italy Abstract This paper presents MedCascade, our submission to BioASQ task 14B for biomedical question answering. The task evaluates systems across document and snippet retrieval, exact answer generation, and ideal answer generation. MedCascade combines LLM-based query expansion, sparse retrieval, neural reranking, LLM-based listwise reranking, Dense PRF reranking, snippet extraction, and LLM-based answer generation. Across the submitted batches, MedCascade-v1 achieved the strongest performance among our submitted systems. In Phase A, it ranked 9th and 4th for document retrieval in batches 3 and 4, respectively, and 8th and 7th for snippet retrieval. In Phase A+, it ranked 3rd for both exact and ideal answers in batch 3, and 1st for ideal answers in batch 4. The results suggest that high-quality evidence retrieval is important for biomedical QA, while exact answer generation remains sensitive to question type and output format. Keywords Biomedical question answering, BioASQ, Information retrieval, Retrieval augmented generation, Neural reranking, Dense pseudo relevance feedback 1",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "url": "https://clef-staging.pages.dev/paper8.pdf",
+          "page": 4,
+          "chunk_id": "9297e84d6c92938d5c2acfaddb89fb8635c8355cc0e3a99194746007b0fc5c2d",
+          "filename": "paper8.pdf",
+          "start_char": 0,
+          "title": "MedCascade: A Multi-Stage Cascaded Retrieval and Generation System for Biomedical Question Answering",
+          "end_char": 1334,
+          "proceedings_pages": "160-175",
+          "document_id": "paper8",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "id": "9297e84d6c92938d5c2acfaddb89fb8635c8355cc0e3a99194746007b0fc5c2d",
+          "text": "Overall, prior work shows that biomedical QA systems increasingly rely on multi-stage architectures that combine retrieval, reranking, query expansion, PRF, and LLM-based answer generation. MedCascade follows this direction, focusing on the progressive refinement of retrieved evidence before answer generation. 3. MedCascade System Overview MedCascade is a multi-stage biomedical QA system designed to balance high-recall first-stage retrieval with high-precision evidence refinement through successive reranking stages. 1 The system starts from a large candidate set retrieved from the indexed PubMed corpus2 and progressively applies more selective reranking stages to improve the precision of the final ranked list. The pipeline combines LLM-based query expansion, BM25 first-stage retrieval, intermediate neural reranking, LLM-based listwise reranking, Dense PRF reranking, score fusion, snippet extraction, and LLM-based answer generation. The main retrieval objective is to improve the quality of the top-ranked documents used for snippet extraction and answer generation. In the final retrieval stage, MedCascade operates on the top 1000 candidates, applies LLM-based listwise reranking to the current top 20 documents, uses the top𝑘= 3 documents as pseudo relevant feedback, and then re-scores the full top-1000 candidate set",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "document_id": "paper8",
+          "filename": "paper8.pdf",
+          "page": 1,
+          "start_char": 0,
+          "proceedings_pages": "160-175",
+          "chunk_id": "e597280b498fedfad1a1ef1bf367efd7b723ace2d11ef3935eac9959bf001d2e",
+          "url": "https://clef-staging.pages.dev/paper8.pdf",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "end_char": 1398,
+          "title": "MedCascade: A Multi-Stage Cascaded Retrieval and Generation System for Biomedical Question Answering",
+          "id": "e597280b498fedfad1a1ef1bf367efd7b723ace2d11ef3935eac9959bf001d2e",
+          "text": "MedCascade: A Multi-Stage Cascaded Retrieval and Generation System for Biomedical Question Answering ⋆ BioASQ at CLEF 2026 Artem Avdeiko1,2, Pelinsu Topaloglu 1,2, Teresa Vaccari 1,2 and Georgios Peikos 2,* 1University of Pavia, 27100 Pavia, Italy 2University of Milano-Bicocca (DISCo), 20126 Milan, Italy Abstract This paper presents MedCascade, our submission to BioASQ task 14B for biomedical question answering. The task evaluates systems across document and snippet retrieval, exact answer generation, and ideal answer generation. MedCascade combines LLM-based query expansion, sparse retrieval, neural reranking, LLM-based listwise reranking, Dense PRF reranking, snippet extraction, and LLM-based answer generation. Across the submitted batches, MedCascade-v1 achieved the strongest performance among our submitted systems. In Phase A, it ranked 9th and 4th for document retrieval in batches 3 and 4, respectively, and 8th and 7th for snippet retrieval. In Phase A+, it ranked 3rd for both exact and ideal answers in batch 3, and 1st for ideal answers in batch 4. The results suggest that high-quality evidence retrieval is important for biomedical QA, while exact answer generation remains sensitive to question type and output format. Keywords Biomedical question answering, BioASQ, Information retrieval, Retrieval augmented generation, Neural reranking, Dense pseudo relevance feedback 1",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "end_char": 2554,
+          "document_id": "paper8",
+          "start_char": 1154,
+          "page": 2,
+          "url": "https://clef-staging.pages.dev/paper8.pdf",
+          "filename": "paper8.pdf",
+          "proceedings_pages": "160-175",
+          "chunk_id": "aff1cc7f065f724bb1c31ca9673662e3a38bfa48721034df0ac383bd04af45ab",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "title": "MedCascade: A Multi-Stage Cascaded Retrieval and Generation System for Biomedical Question Answering",
+          "id": "aff1cc7f065f724bb1c31ca9673662e3a38bfa48721034df0ac383bd04af45ab",
+          "text": ". MedCascade is an effectiveness-oriented biomedical QA system that prioritizes retrieval quality over latency, with the most computationally demanding reranking stages parallelized across multiple GPUs to reduce execution time. Overall, MedCascade is best viewed as an effectiveness-oriented integration of established retrieval and reranking components, empirically validated in a biomedical QA setting. We participated in BioASQ task 14B [10] test batches 2, 3, and 4, submitting several systems and MedCascade variants that differed in their retrieval, reranking, and generation components. Our submissions are summarized in Table 1, while the methodology section describes the MedCascade configuration that achieved the strongest overall performance among our submissions. The results section then reports the performance of the submitted systems across the relevant BioASQ phases and test batches. 2. Related Work MedCascade builds on prior work in biomedical QA that combines lexical retrieval, neural reranking, LLM-based query expansion, PRF, and LLM-based answer generation. This section reviews these directions, focusing on retrieval, reranking, query reformulation, and retrieval-augmented answer generation in biomedical QA. 2.1. Biomedical Evidence Retrieval First-stage retrieval in biomedical QA systems is commonly based on sparse, dense, or hybrid retrieval approaches [11, 12, 13]",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "url": "https://clef-staging.pages.dev/paper8.pdf",
+          "page": 4,
+          "chunk_id": "9297e84d6c92938d5c2acfaddb89fb8635c8355cc0e3a99194746007b0fc5c2d",
+          "filename": "paper8.pdf",
+          "start_char": 0,
+          "title": "MedCascade: A Multi-Stage Cascaded Retrieval and Generation System for Biomedical Question Answering",
+          "end_char": 1334,
+          "proceedings_pages": "160-175",
+          "document_id": "paper8",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "id": "9297e84d6c92938d5c2acfaddb89fb8635c8355cc0e3a99194746007b0fc5c2d",
+          "text": "Overall, prior work shows that biomedical QA systems increasingly rely on multi-stage architectures that combine retrieval, reranking, query expansion, PRF, and LLM-based answer generation. MedCascade follows this direction, focusing on the progressive refinement of retrieved evidence before answer generation. 3. MedCascade System Overview MedCascade is a multi-stage biomedical QA system designed to balance high-recall first-stage retrieval with high-precision evidence refinement through successive reranking stages. 1 The system starts from a large candidate set retrieved from the indexed PubMed corpus2 and progressively applies more selective reranking stages to improve the precision of the final ranked list. The pipeline combines LLM-based query expansion, BM25 first-stage retrieval, intermediate neural reranking, LLM-based listwise reranking, Dense PRF reranking, score fusion, snippet extraction, and LLM-based answer generation. The main retrieval objective is to improve the quality of the top-ranked documents used for snippet extraction and answer generation. In the final retrieval stage, MedCascade operates on the top 1000 candidates, applies LLM-based listwise reranking to the current top 20 documents, uses the top𝑘= 3 documents as pseudo relevant feedback, and then re-scores the full top-1000 candidate set",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "LLM query expansion, sparse retrieval, neural and LLM listwise reranking, dense PRF reranking, snippet extraction, and LLM answer generation.",
+      "retrieved_pages": [
+        [
+          "paper8",
+          1
+        ],
+        [
+          "paper8",
+          2
+        ],
+        [
+          "paper8",
+          4
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "6": {
+          "precision": 0.16666666666666666,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "retrieval_pass": true,
+      "elapsed_seconds": 39.245
+    },
+    {
+      "id": "synthesis-1",
+      "category": "synthesis",
+      "question": "Compare the retrieval approaches in paper6 and paper8.",
+      "gold_pages": [
+        [
+          "paper6",
+          1
+        ],
+        [
+          "paper8",
+          1
+        ]
+      ],
+      "kind": "content",
+      "answer": "Paper6 developed four retrieval pipeline variants including sparse-only, sparse-dense hybrid, dense pseudo-relevance feedback, and a cross-encoder ensemble. [S1]\n\nPaper8 combined LLM-based query expansion, sparse retrieval, neural reranking, LLM-based listwise reranking, Dense PRF reranking, snippet extraction, and LLM-based answer generation. [S2]",
+      "supported": true,
+      "sources": [
+        {
+          "url": "https://clef-staging.pages.dev/paper6.pdf",
+          "title": "Retrieval-Bound Generation: Lean RAG pipelines for Biomedical QA",
+          "proceedings_pages": "123-145",
+          "start_char": 0,
+          "chunk_id": "1aede7238bdd439cb25eb8372936252161c5577bb311765bcb243e0e089f82a3",
+          "page": 1,
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "end_char": 1300,
+          "document_id": "paper6",
+          "filename": "paper6.pdf",
+          "id": "1aede7238bdd439cb25eb8372936252161c5577bb311765bcb243e0e089f82a3",
+          "text": "Retrieval-Bound Generation: Lean RAG pipelines for Biomedical QA Notebook for the BioASQ Lab at CLEF 2026. Diogo M. C.Antunes1,∗, Paulo R. C.Lopes1 and Francisco M.Couto1 1LASIGE, Departamento de Informática, Faculdade de Ciências, Universidade de Lisboa, 1749-016 Lisboa, Portugal Abstract Biomedical question answering requires retrieving relevant evidence from large literature collections and generating accurate answers grounded in the retrieved evidence, a task made challenging by the scale of PubMed and the characteristics of biomedical terminology. In this work we describe our participation in BioASQ Task 14b, covering all three phases of the challenge (A, A+, and B), with a focus on lean, locally deployable Retrieval-Augmented Generation. We developed four retrieval pipeline variants that share a common query expansion, snippet extraction, and cross-encoder re-ranking stage, differing in their retrieval strategy: sparse-only, sparse-dense hybrid, dense pseudo-relevance feedback, and a cross-encoder ensemble. For answer generation, we used lean and instruction-tuned large language models under a few-shot prompting strategy with a few-pass inference scheme, in which an exact answer is generated first and then used to condition a more comprehensive ideal natural language answer",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "title": "MedCascade: A Multi-Stage Cascaded Retrieval and Generation System for Biomedical Question Answering",
+          "chunk_id": "e597280b498fedfad1a1ef1bf367efd7b723ace2d11ef3935eac9959bf001d2e",
+          "filename": "paper8.pdf",
+          "start_char": 0,
+          "page": 1,
+          "url": "https://clef-staging.pages.dev/paper8.pdf",
+          "document_id": "paper8",
+          "proceedings_pages": "160-175",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "end_char": 1398,
+          "id": "e597280b498fedfad1a1ef1bf367efd7b723ace2d11ef3935eac9959bf001d2e",
+          "text": "MedCascade: A Multi-Stage Cascaded Retrieval and Generation System for Biomedical Question Answering ⋆ BioASQ at CLEF 2026 Artem Avdeiko1,2, Pelinsu Topaloglu 1,2, Teresa Vaccari 1,2 and Georgios Peikos 2,* 1University of Pavia, 27100 Pavia, Italy 2University of Milano-Bicocca (DISCo), 20126 Milan, Italy Abstract This paper presents MedCascade, our submission to BioASQ task 14B for biomedical question answering. The task evaluates systems across document and snippet retrieval, exact answer generation, and ideal answer generation. MedCascade combines LLM-based query expansion, sparse retrieval, neural reranking, LLM-based listwise reranking, Dense PRF reranking, snippet extraction, and LLM-based answer generation. Across the submitted batches, MedCascade-v1 achieved the strongest performance among our submitted systems. In Phase A, it ranked 9th and 4th for document retrieval in batches 3 and 4, respectively, and 8th and 7th for snippet retrieval. In Phase A+, it ranked 3rd for both exact and ideal answers in batch 3, and 1st for ideal answers in batch 4. The results suggest that high-quality evidence retrieval is important for biomedical QA, while exact answer generation remains sensitive to question type and output format. Keywords Biomedical question answering, BioASQ, Information retrieval, Retrieval augmented generation, Neural reranking, Dense pseudo relevance feedback 1",
+          "source_id": "S2",
+          "rank": 2
+        }
+      ],
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "url": "https://clef-staging.pages.dev/paper6.pdf",
+          "title": "Retrieval-Bound Generation: Lean RAG pipelines for Biomedical QA",
+          "proceedings_pages": "123-145",
+          "start_char": 0,
+          "chunk_id": "1aede7238bdd439cb25eb8372936252161c5577bb311765bcb243e0e089f82a3",
+          "page": 1,
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "end_char": 1300,
+          "document_id": "paper6",
+          "filename": "paper6.pdf",
+          "id": "1aede7238bdd439cb25eb8372936252161c5577bb311765bcb243e0e089f82a3",
+          "text": "Retrieval-Bound Generation: Lean RAG pipelines for Biomedical QA Notebook for the BioASQ Lab at CLEF 2026. Diogo M. C.Antunes1,∗, Paulo R. C.Lopes1 and Francisco M.Couto1 1LASIGE, Departamento de Informática, Faculdade de Ciências, Universidade de Lisboa, 1749-016 Lisboa, Portugal Abstract Biomedical question answering requires retrieving relevant evidence from large literature collections and generating accurate answers grounded in the retrieved evidence, a task made challenging by the scale of PubMed and the characteristics of biomedical terminology. In this work we describe our participation in BioASQ Task 14b, covering all three phases of the challenge (A, A+, and B), with a focus on lean, locally deployable Retrieval-Augmented Generation. We developed four retrieval pipeline variants that share a common query expansion, snippet extraction, and cross-encoder re-ranking stage, differing in their retrieval strategy: sparse-only, sparse-dense hybrid, dense pseudo-relevance feedback, and a cross-encoder ensemble. For answer generation, we used lean and instruction-tuned large language models under a few-shot prompting strategy with a few-pass inference scheme, in which an exact answer is generated first and then used to condition a more comprehensive ideal natural language answer",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "title": "MedCascade: A Multi-Stage Cascaded Retrieval and Generation System for Biomedical Question Answering",
+          "chunk_id": "e597280b498fedfad1a1ef1bf367efd7b723ace2d11ef3935eac9959bf001d2e",
+          "filename": "paper8.pdf",
+          "start_char": 0,
+          "page": 1,
+          "url": "https://clef-staging.pages.dev/paper8.pdf",
+          "document_id": "paper8",
+          "proceedings_pages": "160-175",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "end_char": 1398,
+          "id": "e597280b498fedfad1a1ef1bf367efd7b723ace2d11ef3935eac9959bf001d2e",
+          "text": "MedCascade: A Multi-Stage Cascaded Retrieval and Generation System for Biomedical Question Answering ⋆ BioASQ at CLEF 2026 Artem Avdeiko1,2, Pelinsu Topaloglu 1,2, Teresa Vaccari 1,2 and Georgios Peikos 2,* 1University of Pavia, 27100 Pavia, Italy 2University of Milano-Bicocca (DISCo), 20126 Milan, Italy Abstract This paper presents MedCascade, our submission to BioASQ task 14B for biomedical question answering. The task evaluates systems across document and snippet retrieval, exact answer generation, and ideal answer generation. MedCascade combines LLM-based query expansion, sparse retrieval, neural reranking, LLM-based listwise reranking, Dense PRF reranking, snippet extraction, and LLM-based answer generation. Across the submitted batches, MedCascade-v1 achieved the strongest performance among our submitted systems. In Phase A, it ranked 9th and 4th for document retrieval in batches 3 and 4, respectively, and 8th and 7th for snippet retrieval. In Phase A+, it ranked 3rd for both exact and ideal answers in batch 3, and 1st for ideal answers in batch 4. The results suggest that high-quality evidence retrieval is important for biomedical QA, while exact answer generation remains sensitive to question type and output format. Keywords Biomedical question answering, BioASQ, Information retrieval, Retrieval augmented generation, Neural reranking, Dense pseudo relevance feedback 1",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "url": "https://clef-staging.pages.dev/paper6.pdf",
+          "page": 12,
+          "proceedings_pages": "123-145",
+          "end_char": 2205,
+          "chunk_id": "0a7bbe85dbc0070a92ebb7dcd160335104c7015708a4cc1801f934e3b3d9f155",
+          "title": "Retrieval-Bound Generation: Lean RAG pipelines for Biomedical QA",
+          "filename": "paper6.pdf",
+          "document_id": "paper6",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "start_char": 1117,
+          "id": "0a7bbe85dbc0070a92ebb7dcd160335104c7015708a4cc1801f934e3b3d9f155",
+          "text": ". The two metrics measure different aspects of retrieval quality, and our design deliberately optimizes precision. This behavior is not confined to batch 4. Across all batches our systems sit in the upper range of submissions on mean precision while trailing on recall, a direct consequence of favoring high-confidence documents over recall maximization at the re-ranking stage. Batch 4 simply makes the trade-off explicit, because it is the only batch in which the cutoff was active. Snippet retrieval follows a similar pattern to document retrieval, with MAP values ranging from 0.02 to 0.06 across batches. The gap between snippet and document performance is structural, snippet extraction operates over the candidate pool produced by document retrieval, so any weakness in document Recall propagates directly into snippet quality. Among the pipeline variants, differences in snippet MAP within the same batch are negligible, reinforcing the conclusion that the first-stage retrieval, not the re-ranking or snippet extraction stage, is the primary bottleneck for snippet retrieval too.",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "Paper6 compares four variants for lean local RAG; paper8 combines multiple retrieval/reranking stages in MedCascade. Both include query expansion and reranking.",
+      "retrieved_pages": [
+        [
+          "paper6",
+          1
+        ],
+        [
+          "paper8",
+          1
+        ],
+        [
+          "paper6",
+          12
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 0.5,
+          "ndcg": 1.0
+        },
+        "3": {
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "6": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "retrieval_pass": true,
+      "elapsed_seconds": 38.74
+    },
+    {
+      "id": "synthesis-2",
+      "category": "synthesis",
+      "question": "How do the tasks and languages differ between paper3 and paper4?",
+      "gold_pages": [
+        [
+          "paper3",
+          1
+        ],
+        [
+          "paper4",
+          1
+        ]
+      ],
+      "kind": "content",
+      "answer": "Paper3's BioNNE-R task focuses on nested biomedical relation extraction in English and Russian PubMed abstracts. [S1]\n\nPaper4's ELCardioCC task focuses on document-level diagnostic code assignment for Greek cardiology hospital discharge letters. [S2]",
+      "supported": true,
+      "sources": [
+        {
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "url": "https://clef-staging.pages.dev/paper3.pdf",
+          "end_char": 1180,
+          "chunk_id": "e4dd05c34edf8f18b0370e0764cc74d80acdc4b919acb6d29215ccbe4db0d0a4",
+          "proceedings_pages": "65-74",
+          "filename": "paper3.pdf",
+          "title": "Overview of the BioASQ BioNNE-R Task on Nested Biomedical Relation Extraction at CLEF 2026",
+          "page": 1,
+          "document_id": "paper3",
+          "start_char": 0,
+          "id": "e4dd05c34edf8f18b0370e0764cc74d80acdc4b919acb6d29215ccbe4db0d0a4",
+          "text": "Overview of the BioASQ BioNNE-R Task on Nested Biomedical Relation Extraction at CLEF 2026 Igor Rozhkov1,∗, Natalia Loukachevitch1 and Elena Tutubalina2,3 1Lomonosov Moscow State University, Russia 2HSE University, Russia 3Artificial Intelligence Research Institute, Russia Abstract Biomedical relation extraction is typically studied under flat named entities, keeping only relations that involve nested named entities, where one entity is contained within another, unexplored. This paper presents an overview of the BioNNE-R shared task on biomedical nested relation extraction, organized within the BioASQ 2026 workshop at CLEF. Building on the NEREL-BIO corpus and the earlier BioNNE and BioNNE-L shared tasks, BioNNE-R requires systems to extract semantic relations between nested biomedical entities in English and Russian PubMed abstracts. The task covers 8 entity types and 14 relation types and is organized into three subtasks under two evaluation tracks: a monolingual track, with separate English and Russian subtasks, and a bilingual track combining both languages. We received 20 Codabench registrations, and 7 teams submitted predictions during the evaluation phase",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "document_id": "paper4",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "proceedings_pages": "75-86",
+          "filename": "paper4.pdf",
+          "end_char": 1287,
+          "title": "Overview of ELCardioCC Task on Clinical Coding in Cardiology at BioASQ 2026",
+          "url": "https://clef-staging.pages.dev/paper4.pdf",
+          "start_char": 0,
+          "page": 1,
+          "chunk_id": "a0f6412087bf1a2661cffe30336eb6855cd39e8a1ebbda22f0bea9547b50dd81",
+          "id": "a0f6412087bf1a2661cffe30336eb6855cd39e8a1ebbda22f0bea9547b50dd81",
+          "text": "Overview of ELCardioCC Task on Clinical Coding in Cardiology at BioASQ 2026 BioASQ at CLEF 2026 Dimitris Dimitriadis1,*, Vasiliki Patsiou 2, Eleonora Stoikopoulou 1,†, Achilleas Toumpas 1,†, Alexandra Bekiaridou2, Athanasios Samaras 1, George Giannakoulas 1 and Grigorios Tsoumakas1,3 1Aristotle University of Thessaloniki, Greece 2Elmezzi Graduate School of Molecular Medicine, Northwell Health, Manhasset, NY, USA 3Archimedes, Athena Research Center, Greece Abstract While automated clinical coding via standardized frameworks like ICD-10 has revolutionized electronic health record (EHR) analytics, the vast majority of progress remains confined to English-language narratives within general medicine, leaving cardiovascular and low-resource settings comparatively underexplored. To address this linguistic disparity in low-resource medical NLP, we present the second iteration of the ELCardioCC 2026 shared task, organized within the BioASQ challenge. Building upon the foundational insights of the first year 2025 task, where participants focused extensively on localized clinical text spans, the 2026 edition pivots to a macro-level objective, evaluating participating systems exclusively on document-level diagnostic code assignment for Greek cardiology hospital discharge letters",
+          "source_id": "S2",
+          "rank": 2
+        }
+      ],
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "url": "https://clef-staging.pages.dev/paper3.pdf",
+          "end_char": 1180,
+          "chunk_id": "e4dd05c34edf8f18b0370e0764cc74d80acdc4b919acb6d29215ccbe4db0d0a4",
+          "proceedings_pages": "65-74",
+          "filename": "paper3.pdf",
+          "title": "Overview of the BioASQ BioNNE-R Task on Nested Biomedical Relation Extraction at CLEF 2026",
+          "page": 1,
+          "document_id": "paper3",
+          "start_char": 0,
+          "id": "e4dd05c34edf8f18b0370e0764cc74d80acdc4b919acb6d29215ccbe4db0d0a4",
+          "text": "Overview of the BioASQ BioNNE-R Task on Nested Biomedical Relation Extraction at CLEF 2026 Igor Rozhkov1,∗, Natalia Loukachevitch1 and Elena Tutubalina2,3 1Lomonosov Moscow State University, Russia 2HSE University, Russia 3Artificial Intelligence Research Institute, Russia Abstract Biomedical relation extraction is typically studied under flat named entities, keeping only relations that involve nested named entities, where one entity is contained within another, unexplored. This paper presents an overview of the BioNNE-R shared task on biomedical nested relation extraction, organized within the BioASQ 2026 workshop at CLEF. Building on the NEREL-BIO corpus and the earlier BioNNE and BioNNE-L shared tasks, BioNNE-R requires systems to extract semantic relations between nested biomedical entities in English and Russian PubMed abstracts. The task covers 8 entity types and 14 relation types and is organized into three subtasks under two evaluation tracks: a monolingual track, with separate English and Russian subtasks, and a bilingual track combining both languages. We received 20 Codabench registrations, and 7 teams submitted predictions during the evaluation phase",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "document_id": "paper4",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "proceedings_pages": "75-86",
+          "filename": "paper4.pdf",
+          "end_char": 1287,
+          "title": "Overview of ELCardioCC Task on Clinical Coding in Cardiology at BioASQ 2026",
+          "url": "https://clef-staging.pages.dev/paper4.pdf",
+          "start_char": 0,
+          "page": 1,
+          "chunk_id": "a0f6412087bf1a2661cffe30336eb6855cd39e8a1ebbda22f0bea9547b50dd81",
+          "id": "a0f6412087bf1a2661cffe30336eb6855cd39e8a1ebbda22f0bea9547b50dd81",
+          "text": "Overview of ELCardioCC Task on Clinical Coding in Cardiology at BioASQ 2026 BioASQ at CLEF 2026 Dimitris Dimitriadis1,*, Vasiliki Patsiou 2, Eleonora Stoikopoulou 1,†, Achilleas Toumpas 1,†, Alexandra Bekiaridou2, Athanasios Samaras 1, George Giannakoulas 1 and Grigorios Tsoumakas1,3 1Aristotle University of Thessaloniki, Greece 2Elmezzi Graduate School of Molecular Medicine, Northwell Health, Manhasset, NY, USA 3Archimedes, Athena Research Center, Greece Abstract While automated clinical coding via standardized frameworks like ICD-10 has revolutionized electronic health record (EHR) analytics, the vast majority of progress remains confined to English-language narratives within general medicine, leaving cardiovascular and low-resource settings comparatively underexplored. To address this linguistic disparity in low-resource medical NLP, we present the second iteration of the ELCardioCC 2026 shared task, organized within the BioASQ challenge. Building upon the foundational insights of the first year 2025 task, where participants focused extensively on localized clinical text spans, the 2026 edition pivots to a macro-level objective, evaluating participating systems exclusively on document-level diagnostic code assignment for Greek cardiology hospital discharge letters",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "url": "https://clef-staging.pages.dev/paper3.pdf",
+          "chunk_id": "4d64cd0b2b6a60e8d5afc4b63d05f9f6c97592b5108c3ad0e3d69316061751d2",
+          "proceedings_pages": "65-74",
+          "document_id": "paper3",
+          "title": "Overview of the BioASQ BioNNE-R Task on Nested Biomedical Relation Extraction at CLEF 2026",
+          "filename": "paper3.pdf",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "page": 2,
+          "start_char": 0,
+          "end_char": 1392,
+          "id": "4d64cd0b2b6a60e8d5afc4b63d05f9f6c97592b5108c3ad0e3d69316061751d2",
+          "text": "Figure 1: Example of nested named entity relations in the BioNNE-R dataset. biomedical concepts such as disorders, chemicals, anatomical structures, physiological functions, laboratory procedures, and other medically relevant entity types. In this paper, we present an overview of the shared task on Biomedical Nested Named Entity Relation Extraction (BioNNE-R). The BioNNE-R shared task continues the BioNNE shared task series [ 17, 18] organized within the BioASQ workshop at CLEF [ 19] and based on the NEREL-BIO corpus. The earlier editions of the series focused on multilingual nested biomedical named entity recognition (BioNNE) [17] and nested biomedical entity linking (BioNNE-L) [ 18], respectively. These shared tasks established benchmark datasets and evaluation settings for multilingual information extraction and highlighted the challenges associated with processing nested biomedical entities. This year, the BioNNE-R task addresses the extraction of semantic relations between nested biomedical entities in English and Russian scientific abstracts. Participants were invited to develop systems for multilingual, English-oriented, or Russian-oriented nested relation extraction. All BioNNE-R materials can be found on the shared task’s GitHub 1 and Codabench pages 2. The paper is organized as follows. Section 2 describes the BioNNE-R task formulation and dataset construction",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "Paper3 extracts relations between nested biomedical entities in English/Russian abstracts; paper4 assigns diagnostic codes to Greek cardiology discharge letters.",
+      "retrieved_pages": [
+        [
+          "paper3",
+          1
+        ],
+        [
+          "paper4",
+          1
+        ],
+        [
+          "paper3",
+          2
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 0.5,
+          "ndcg": 1.0
+        },
+        "3": {
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "6": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "retrieval_pass": true,
+      "elapsed_seconds": 39.359
+    },
+    {
+      "id": "synthesis-3",
+      "category": "synthesis",
+      "question": "What is the purpose of BioASQ 14b and Synergy14 in CLEF 2026?",
+      "gold_pages": [
+        [
+          "paper1",
+          1
+        ]
+      ],
+      "kind": "content",
+      "answer": "BioASQ 14b is a biomedical semantic QA task. [S1]\n\nSynergy14 is a QA task about developing biomedical topics where the questions may still miss a definite answer. [S1]",
+      "supported": true,
+      "sources": [
+        {
+          "title": "Overview of BioASQ Tasks 14b and Synergy14 in CLEF2026",
+          "chunk_id": "5b9a2f963ac046bc4cb2c59104ffe59fa63cc1a851b4f9e7966799d17d9ad7a2",
+          "start_char": 0,
+          "document_id": "paper1",
+          "filename": "paper1.pdf",
+          "page": 1,
+          "end_char": 1397,
+          "url": "https://clef-staging.pages.dev/paper1.pdf",
+          "proceedings_pages": "1-19",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "id": "5b9a2f963ac046bc4cb2c59104ffe59fa63cc1a851b4f9e7966799d17d9ad7a2",
+          "text": "Overview of BioASQ Tasks 14b and Synergy14 in CLEF2026 Anastasios Nentidis1, Georgios Katsimpras 1, Anastasia Krithara 1 and Georgios Paliouras 1 1NCSR Demokritos, Athens, Greece Abstract This paper provides an overview of the Question Answering (QA) tasks in the fourteenth edition of the BioASQ challenge (BioASQ 14), on large-scale biomedical semantic indexing and QA, which is organised as part of the Conference and Labs of the Evaluation Forum (CLEF) 2026. Over more than a decade, BioASQ has acted as a central venue for advancing the state-of-the-art in semantic indexing, information extraction, information retrieval, and QA in biomedicine. This year, 48 teams participated in the biomedical QA tasks 14b, and Synergy14, developing more than 150 systems. In particular, 45 of them took part in task 14b, on biomedical semantic QA, and 7 on task Synergy14, on QA about developing biomedical topics where the questions may still miss a definite answer. The strong performance reached by several of the participating systems in the QA tasks of BioASQ 14 confirms the steady progress of state-of-the-art methods in the field, consistent with earlier editions of the tasks. Keywords Biomedical knowledge, Semantic Indexing, Question Answering 1. Introduction This paper gives an overview of the fourteenth BioASQ challenge (2026), with a particular focus on the shared tasks 14b and Synergy14",
+          "source_id": "S1",
+          "rank": 1
+        }
+      ],
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "title": "Overview of BioASQ Tasks 14b and Synergy14 in CLEF2026",
+          "chunk_id": "5b9a2f963ac046bc4cb2c59104ffe59fa63cc1a851b4f9e7966799d17d9ad7a2",
+          "start_char": 0,
+          "document_id": "paper1",
+          "filename": "paper1.pdf",
+          "page": 1,
+          "end_char": 1397,
+          "url": "https://clef-staging.pages.dev/paper1.pdf",
+          "proceedings_pages": "1-19",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "id": "5b9a2f963ac046bc4cb2c59104ffe59fa63cc1a851b4f9e7966799d17d9ad7a2",
+          "text": "Overview of BioASQ Tasks 14b and Synergy14 in CLEF2026 Anastasios Nentidis1, Georgios Katsimpras 1, Anastasia Krithara 1 and Georgios Paliouras 1 1NCSR Demokritos, Athens, Greece Abstract This paper provides an overview of the Question Answering (QA) tasks in the fourteenth edition of the BioASQ challenge (BioASQ 14), on large-scale biomedical semantic indexing and QA, which is organised as part of the Conference and Labs of the Evaluation Forum (CLEF) 2026. Over more than a decade, BioASQ has acted as a central venue for advancing the state-of-the-art in semantic indexing, information extraction, information retrieval, and QA in biomedicine. This year, 48 teams participated in the biomedical QA tasks 14b, and Synergy14, developing more than 150 systems. In particular, 45 of them took part in task 14b, on biomedical semantic QA, and 7 on task Synergy14, on QA about developing biomedical topics where the questions may still miss a definite answer. The strong performance reached by several of the participating systems in the QA tasks of BioASQ 14 confirms the steady progress of state-of-the-art methods in the field, consistent with earlier editions of the tasks. Keywords Biomedical knowledge, Semantic Indexing, Question Answering 1. Introduction This paper gives an overview of the fourteenth BioASQ challenge (2026), with a particular focus on the shared tasks 14b and Synergy14",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "chunk_id": "194a8a767b6e68d66f1fe947e7e4527c29ec2afe7f7500099e860e768c5c0bb4",
+          "page": 1,
+          "filename": "paper1.pdf",
+          "start_char": 1177,
+          "title": "Overview of BioASQ Tasks 14b and Synergy14 in CLEF2026",
+          "document_id": "paper1",
+          "url": "https://clef-staging.pages.dev/paper1.pdf",
+          "proceedings_pages": "1-19",
+          "end_char": 1905,
+          "id": "194a8a767b6e68d66f1fe947e7e4527c29ec2afe7f7500099e860e768c5c0bb4",
+          "text": ". Keywords Biomedical knowledge, Semantic Indexing, Question Answering 1. Introduction This paper gives an overview of the fourteenth BioASQ challenge (2026), with a particular focus on the shared tasks 14b and Synergy14. We outline the datasets that were used to train and evaluate the participating systems. Tasks 14b and Synergy14, which ran from March to May and from January to March 2026, respectively, are detailed in Section 2. Section 3 offers a short summary of the participation in these two tasks. A more detailed analysis of the approaches adopted by the participating systems will appear in the proceedings of the fourteenth BioASQ workshop [1]. The paper closes with a brief discussion of our main observations. 2",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "url": "https://clef-staging.pages.dev/paper1.pdf",
+          "proceedings_pages": "1-19",
+          "start_char": 0,
+          "chunk_id": "84b76c5814216834aa303ac5d33c11135dcf78658dcee2b032870cc23d75c224",
+          "page": 13,
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "document_id": "paper1",
+          "filename": "paper1.pdf",
+          "end_char": 1316,
+          "title": "Overview of BioASQ Tasks 14b and Synergy14 in CLEF2026",
+          "id": "84b76c5814216834aa303ac5d33c11135dcf78658dcee2b032870cc23d75c224",
+          "text": "Figure 4:The evaluation scores of the best-performing systems in task B, Phase B, forexact answers, across the years of BioASQ. Since BioASQ6 [52], accuracy (Acc) was replaced by macro F1 as the official measure for Yes/No questions. The black dot in BioASQ10 [53] indicates an additional batch consisting of questions from new experts exclusively [49]. 4.2. Task Synergy14 In task Synergy14, no relevant material was initially available for the new questions. For the questions carried over from previous rounds, however, per-question feedback was provided, i.e. the documents and snippets submitted by the participants together with manual annotations of their relevance. Consequently, the documents and snippets of the feedback, which had already been assessed and released, were not considered valid for submission in the following rounds. As in task 14b, document and snippet retrieval are evaluated with MAP and F-measure, respectively, while the information retrieval component considers only newly retrieved material, following the residual collection evaluation approach [54]. Moreover, due to the developing nature of the topics, no answer is available for all of the open questions in each round. Therefore, only the questions marked as “answer ready” were evaluated for exactandideal answersin each round",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "Biomedical semantic question answering; Synergy14 addresses developing biomedical topics whose questions may lack definite answers.",
+      "retrieved_pages": [
+        [
+          "paper1",
+          1
+        ],
+        [
+          "paper1",
+          13
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "6": {
+          "precision": 0.16666666666666666,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "retrieval_pass": true,
+      "elapsed_seconds": 28.051
+    },
+    {
+      "id": "synthesis-4",
+      "category": "synthesis",
+      "question": "What is CheckThat! 2026 Task 1 trying to retrieve, and which three languages does it cover?",
+      "gold_pages": [
+        [
+          "paper51",
+          1
+        ]
+      ],
+      "kind": "content",
+      "answer": "The task aims to retrieve the mentioned paper from a pool of candidate papers, given a social media post that contains a scientific claim and an implicit reference to a scientific paper. [S1][S2]\n\nThe task covers English, German, and French languages. [S2]",
+      "supported": true,
+      "sources": [
+        {
+          "url": "https://clef-staging.pages.dev/paper51.pdf",
+          "page": 1,
+          "proceedings_pages": "809-818",
+          "chunk_id": "11802f4f1a8bfbb0fd6107a75c5cac0b60b7abbf4ac81ae7872fbf4b60c2defb",
+          "filename": "paper51.pdf",
+          "track": "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles",
+          "document_id": "paper51",
+          "end_char": 1376,
+          "start_char": 0,
+          "title": "Overview of the CLEF-2026 CheckThat! Lab Task 1 on Source Retrieval for Scientific Web Claims",
+          "id": "11802f4f1a8bfbb0fd6107a75c5cac0b60b7abbf4ac81ae7872fbf4b60c2defb",
+          "text": "Overview of the CLEF-2026 CheckThat! Lab Task 1 on Source Retrieval for Scientific Web Claims CheckThat! Lab at CLEF 2026 Sebastian Schellhammer1,2,*, Salim Hafid 4,*, Yavuz Selim Kartal 1, Katarina Boland 2, Dimitar Dimitrov1, Konstantin Todorov 3 and Stefan Dietze 1,2 1GESIS - Leibniz Institute for the Social Sciences, Cologne, Germany 2Heinrich-Heine-University, Düsseldorf, Germany 3LIRMM, CNRS, University of Montpellier, Montpellier, France 4médialab Sciences Po, Paris, France Abstract We present an overview of Task 1 of the CheckThat! Lab at the 2026 edition of the Conference and Labs of the Evaluation Forum (CLEF). The task focuses on source retrieval for scientific web claims, which given a social media post that contains a scientific claim and an implicit reference to a scientific paper, aims to retrieve the mentioned paper from a larger pool of candidates. The task is a follow-up from Task 4b of the previous lab edition and extends it to a multilingual setting, providing more than 30k posts in English, German, and French along with a collection set of 10k publications. In the context of the CheckThat! Lab that aims to improve automated fact-checking, this task contributes to the retrieval of scientific evidence for claim verification. The task attracted considerable attention with 37 participating teams and 21 submitted system description papers",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "url": "https://clef-staging.pages.dev/paper51.pdf",
+          "end_char": 1350,
+          "filename": "paper51.pdf",
+          "start_char": 0,
+          "proceedings_pages": "809-818",
+          "title": "Overview of the CLEF-2026 CheckThat! Lab Task 1 on Source Retrieval for Scientific Web Claims",
+          "track": "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles",
+          "page": 2,
+          "chunk_id": "487a14b317240cc37edb20a5b85c7c4f506a275bf458bb6ba87ebc2e0e30435f",
+          "document_id": "paper51",
+          "id": "487a14b317240cc37edb20a5b85c7c4f506a275bf458bb6ba87ebc2e0e30435f",
+          "text": "Figure 1:Task overview: the left box shows a scientific web claim with an implicit reference for which the source publication (right box) needs to be retrieved from a pool of candidate papers. Building on this motivation, the task ofsource retrieval for scientific web claimswas introduced in the 2025 edition of the lab [7]. In this iteration, the task is extended to a multilingual setting, providing scientific web claims in English, German, and French [8]. An overview of the task is shown in Figure 1. Task definitionGiven a social media post that contains a scientific claim and an implicit reference to a scientific paper (mentions it without a URL), retrieve the mentioned paper from a pool of candidate papers. 2. Dataset The datasets cover three languages: English, German, and French, with language-specific query sets and a single collection set shared across all languages. The query sets consist of social media posts from X (formerly Twitter) that contain scientific claims and implicit references to scientific publications. For each language, the query set is divided into training, development, and test splits. Table 1 summarizes the query set statistics for each language and split. The collection set contains metadata for 10k scientific publications referenced by the posts, including titles, abstracts, author names, and venues",
+          "source_id": "S2",
+          "rank": 2
+        }
+      ],
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "url": "https://clef-staging.pages.dev/paper51.pdf",
+          "page": 1,
+          "proceedings_pages": "809-818",
+          "chunk_id": "11802f4f1a8bfbb0fd6107a75c5cac0b60b7abbf4ac81ae7872fbf4b60c2defb",
+          "filename": "paper51.pdf",
+          "track": "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles",
+          "document_id": "paper51",
+          "end_char": 1376,
+          "start_char": 0,
+          "title": "Overview of the CLEF-2026 CheckThat! Lab Task 1 on Source Retrieval for Scientific Web Claims",
+          "id": "11802f4f1a8bfbb0fd6107a75c5cac0b60b7abbf4ac81ae7872fbf4b60c2defb",
+          "text": "Overview of the CLEF-2026 CheckThat! Lab Task 1 on Source Retrieval for Scientific Web Claims CheckThat! Lab at CLEF 2026 Sebastian Schellhammer1,2,*, Salim Hafid 4,*, Yavuz Selim Kartal 1, Katarina Boland 2, Dimitar Dimitrov1, Konstantin Todorov 3 and Stefan Dietze 1,2 1GESIS - Leibniz Institute for the Social Sciences, Cologne, Germany 2Heinrich-Heine-University, Düsseldorf, Germany 3LIRMM, CNRS, University of Montpellier, Montpellier, France 4médialab Sciences Po, Paris, France Abstract We present an overview of Task 1 of the CheckThat! Lab at the 2026 edition of the Conference and Labs of the Evaluation Forum (CLEF). The task focuses on source retrieval for scientific web claims, which given a social media post that contains a scientific claim and an implicit reference to a scientific paper, aims to retrieve the mentioned paper from a larger pool of candidates. The task is a follow-up from Task 4b of the previous lab edition and extends it to a multilingual setting, providing more than 30k posts in English, German, and French along with a collection set of 10k publications. In the context of the CheckThat! Lab that aims to improve automated fact-checking, this task contributes to the retrieval of scientific evidence for claim verification. The task attracted considerable attention with 37 participating teams and 21 submitted system description papers",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "url": "https://clef-staging.pages.dev/paper51.pdf",
+          "end_char": 1350,
+          "filename": "paper51.pdf",
+          "start_char": 0,
+          "proceedings_pages": "809-818",
+          "title": "Overview of the CLEF-2026 CheckThat! Lab Task 1 on Source Retrieval for Scientific Web Claims",
+          "track": "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles",
+          "page": 2,
+          "chunk_id": "487a14b317240cc37edb20a5b85c7c4f506a275bf458bb6ba87ebc2e0e30435f",
+          "document_id": "paper51",
+          "id": "487a14b317240cc37edb20a5b85c7c4f506a275bf458bb6ba87ebc2e0e30435f",
+          "text": "Figure 1:Task overview: the left box shows a scientific web claim with an implicit reference for which the source publication (right box) needs to be retrieved from a pool of candidate papers. Building on this motivation, the task ofsource retrieval for scientific web claimswas introduced in the 2025 edition of the lab [7]. In this iteration, the task is extended to a multilingual setting, providing scientific web claims in English, German, and French [8]. An overview of the task is shown in Figure 1. Task definitionGiven a social media post that contains a scientific claim and an implicit reference to a scientific paper (mentions it without a URL), retrieve the mentioned paper from a pool of candidate papers. 2. Dataset The datasets cover three languages: English, German, and French, with language-specific query sets and a single collection set shared across all languages. The query sets consist of social media posts from X (formerly Twitter) that contain scientific claims and implicit references to scientific publications. For each language, the query set is divided into training, development, and test splits. Table 1 summarizes the query set statistics for each language and split. The collection set contains metadata for 10k scientific publications referenced by the posts, including titles, abstracts, author names, and venues",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "end_char": 4050,
+          "track": "CheckThat!: Source Retrieval for Scientific Web Claims, Fact-Checking Numerical Claims, and Generating Full Fact-Checking Articles",
+          "page": 2,
+          "url": "https://clef-staging.pages.dev/paper54.pdf",
+          "chunk_id": "f1cb2ace9fe2c9f8179c38b378d5cbf17ca58e837b2d4750fbb234cad6cb3c4d",
+          "title": "NEXA at CheckThat! 2026: Hybrid Source Retrieval for Cross-Lingual Scientific Web Claims",
+          "document_id": "paper54",
+          "start_char": 2780,
+          "filename": "paper54.pdf",
+          "proceedings_pages": "845-868",
+          "id": "f1cb2ace9fe2c9f8179c38b378d5cbf17ca58e837b2d4750fbb234cad6cb3c4d",
+          "text": ". External lexical resources such as WordNet provide another expansion route by injecting synonyms, but they cover general-vocabulary words rather than scientific terminology, which limits their usefulness in this task. 2.3. Dense and Hybrid Retrieval Transformer-based bi-encoders have shifted the state of the art in retrieval by encoding queries and documents independently into a shared dense space and using cosine similarity for ranking [7]. Unlike BM25, bi-encoders capture semantic similarity rather than lexical overlap, which is precisely what is needed to bridge informal paraphrases and formal abstracts. BGE-M3 [12] is a multilingual dense encoder that extends this paradigm to more than 100 languages in a single model, covering all three languages of the CheckThat! corpus without requiring separate encoders or translation at inference time. Its training mixture includes informal-to-formal cross-domain text pairs, which makes it a natural fit for the claim-to-abstract matching problem we address. Hybrid retrieval combines lexical and dense signals to benefit from the complementary strengths of both. BM25 is precise for queries that contain exact vocabulary from the target document; dense retrieval captures paraphrases and domain-adjacent concepts",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "Scientific papers implicitly referenced by scientific claims in social media posts; English, German and French.",
+      "retrieved_pages": [
+        [
+          "paper51",
+          1
+        ],
+        [
+          "paper51",
+          2
+        ],
+        [
+          "paper54",
+          2
+        ]
+      ],
+      "retrieval_metrics": {
+        "1": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "3": {
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        },
+        "6": {
+          "precision": 0.16666666666666666,
+          "recall": 1.0,
+          "hit": 1.0,
+          "reciprocal_rank": 1.0,
+          "average_precision": 1.0,
+          "ndcg": 1.0
+        }
+      },
+      "retrieval_pass": true,
+      "elapsed_seconds": 31.37
+    },
+    {
+      "id": "unsupported-1",
+      "category": "unsupported",
+      "question": "According to these papers, what is the Wi-Fi password at my home?",
+      "kind": "content",
+      "answer": "I don't have enough evidence in the available corpus to answer this question.",
+      "sources": [],
+      "supported": false,
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "document_id": "paper137",
+          "title": "INSA-Lyon at eRisk 2026 Task 1: Multi-Agent BDI-II Assessment with Coverage Tracking and Post-hoc Correction",
+          "end_char": 1307,
+          "filename": "paper137.pdf",
+          "url": "https://clef-staging.pages.dev/paper137.pdf",
+          "start_char": 0,
+          "proceedings_pages": "1866-1895",
+          "chunk_id": "3e4a390c4eaa485c5713deec5bc284bdfd101d8c3ae74928a344d8ed0804bb7c",
+          "page": 1,
+          "track": "eRisk: Early Risk Prediction on the Internet",
+          "id": "3e4a390c4eaa485c5713deec5bc284bdfd101d8c3ae74928a344d8ed0804bb7c",
+          "text": "INSA-Lyon at eRisk 2026 Task 1: Multi-Agent BDI-II Assessment with Coverage Tracking and Post-hoc Correction Notebook for the eRisk Lab at CLEF 2026 Diana Nurbakova1,∗ 1INSA Lyon, CNRS, Universite Claude Bernard Lyon 1, LIRIS, UMR5205, 69100 Villeurbanne, France Abstract eRisk 2026 Task 1 frames depression detection as active conversational assessment: a system interviews one of twenty fine-tuned large language model personas of unknown depression profile, then reports a Beck Depression Inventory-II (BDI-II) total and the four most active symptoms. We present a multi-agent pipeline that pairs an orchestrator and an interviewer guided by Motivational-Interviewing principles with four domain-specialised BDI-II assessors, prompts calibrated against the DepreSym corpus, a Theory-of-Mind module that tracks symptom coverage across the conversation, and a post-hoc band-correction stage. Over 19 of the 20 personas, our strongest run reached a latency-weighted symptom hit rate of 0.1525, second among the incomplete-submission runs, with an unweighted symptom hit rate of 0.2237. Alongside this, we report three findings that bound how the result should be read. Severe under-prediction was universal: no severe persona reached the severe band, which alone caps band accuracy on this balanced test set",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "proceedings_pages": "1866-1895",
+          "title": "INSA-Lyon at eRisk 2026 Task 1: Multi-Agent BDI-II Assessment with Coverage Tracking and Post-hoc Correction",
+          "end_char": 2694,
+          "page": 3,
+          "url": "https://clef-staging.pages.dev/paper137.pdf",
+          "start_char": 1390,
+          "filename": "paper137.pdf",
+          "track": "eRisk: Early Risk Prediction on the Internet",
+          "document_id": "paper137",
+          "chunk_id": "636f3016e413d58f6e9c8e7027f8183192728d5b1e9de70988462bd1cd6c089d",
+          "id": "636f3016e413d58f6e9c8e7027f8183192728d5b1e9de70988462bd1cd6c089d",
+          "text": ". The total BDI-II score is the sum across the 21 items and lies in[0, 63]; as indicated in Section1, the severity bands used by eRisk 2026 are minimal (0–9), mild (10–18), moderate (19–29), and severe (30–63). Mind that this per-item, statement-anchored structure is what makes the instrument a tractable target for an LLM scorer: each item amounts to a small, well-defined four-way classification rather than a free-form severity estimate, and the assessor design in Section4 exploits this by organising the 21 items into four content clusters. To make the per-item structure concrete, consider this turn from a development-time interview with Linda, one of the trial personas of the TalkDep set [1]. Asked to elaborate on what made her feel as she did, Linda replied:“I just feel like I am not pulling my weight anymore. My husband works so hard, and I just stay at home. I feel like a failure. ” The closing clause maps cleanly onto BDI-II item 14 (Worthlessness): the score-3 anchor for that item is, in the published wording,I feel I am a complete failure as a person, and the persona’s phrasing is a near-verbatim rephrasing. The earlier clauses fit lower anchors of the same item, describing a more contingent sense of inadequacy (not pulling one’s weight) rather than a totalising self-judgement",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "track": "ELOQUENT: Evaluation of Generative Language Model Quality",
+          "document_id": "paper105",
+          "proceedings_pages": "1523-1532",
+          "title": "University of Amsterdam at the CLEF 2026 ELOQUENT Cultural Robustness Task: Influence of Conversational Context, Personalization, and Prompt Framing on Cultural Signal Purity",
+          "filename": "paper105.pdf",
+          "start_char": 0,
+          "end_char": 1250,
+          "chunk_id": "3ec73a6469886aeeadfc1faac01980a7886d2fbe24a6462a2a20744c5bba491b",
+          "page": 3,
+          "url": "https://clef-staging.pages.dev/paper105.pdf",
+          "id": "3ec73a6469886aeeadfc1faac01980a7886d2fbe24a6462a2a20744c5bba491b",
+          "text": "• User:“I’m trying to understand how to behave appropriately in different situations and cultures. ” Assistant:“It depends a lot on the situation and the local norms, so the best approach is to stay observant, be respectful, and adapt to the context you are in. ” • User:“I’m worried about misreading what is expected of me and accidentally doing the wrong thing. ”Assistant:“That is understandable; paying attention to how others behave and asking when you are unsure usually goes a long way. ” 2.3.2. Conflict culture The conflicting history places the user in a specific country that differs from the one named in the question. The user explains that they have recently moved there and want to fit in with the local culture, and the assistant replies about adjusting. The two turns are: • User:“I recently moved to [country] and I want to embrace the local culture. ”Assistant:“That is wonderful; immersing yourself in the local food, customs, and everyday habits is the best way to settle in and feel at home. ” • User:“I’m worried about misreading what is expected here and accidentally doing the wrong thing. ”Assistant:“That is natural when adjusting to a new place; observing how locals do things and following their lead will help you fit in",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "abstention_pass": true,
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "Insufficient evidence.",
+      "elapsed_seconds": 12.462
+    },
+    {
+      "id": "unsupported-2",
+      "category": "unsupported",
+      "question": "What will be the exact winning score at CLEF 2030?",
+      "kind": "content",
+      "answer": "I don't have enough evidence in the available corpus to answer this question.",
+      "sources": [],
+      "supported": false,
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "proceedings_pages": "4237-4245",
+          "title": "Testing LLMs on JOKER Task 3: Onomastic Wordplay Translation and Task 4: Humour Generation. UBO at CLEF 2026",
+          "chunk_id": "19f807ee78793281d53fb2458d7f5793240f079ae4aa4310657396ff73204924",
+          "url": "https://clef-staging.pages.dev/paper309.pdf",
+          "end_char": 1359,
+          "page": 1,
+          "start_char": 0,
+          "track": "JOKER: Humor Detection, Search, and Translation",
+          "filename": "paper309.pdf",
+          "document_id": "paper309",
+          "id": "19f807ee78793281d53fb2458d7f5793240f079ae4aa4310657396ff73204924",
+          "text": "Testing LLMs on JOKER Task 3: Onomastic Wordplay Translation and Task 4: Humour Generation UBO at CLEF 2026 Liana Ermakova, Yaël Naud, Lilian Binet and Baptiste Dumas HCTI, University of Brest, France Abstract This paper presents the UBO participation in JOKER at CLEF 2026 for Task 3 on onomastic wordplay translation and Task 4 on humour generation. We evaluate prompt-based large language models (Gemini, Qwen, Llama, Gemma, and Mistral) without task-specific fine-tuning. For Task 3, we translate English named-entity wordplay into French using contextual descriptions of the source named entities. Gemini produced the highest number of genuine alternative translations among all systems. For Task 4, we generate puns from structured context and, for French, additionally explore the generation of contrepèteries (spoonerisms). Beyond the official evaluation, we provide an in-depth manual analysis of Gemini-generated puns and contrepèteries, highlighting the current capabilities and limitations of LLMs for multilingual computational humour. Keywords onomastic wordplay, machine translation, humour generation, Large Language Models, LLM 1. Introduction Wordplay is one of the most challenging aspects of natural language processing, as it relies on lexical ambiguity, phonetic similarity, cultural knowledge, and language-specific linguistic phenomena",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "end_char": 3674,
+          "url": "https://clef-staging.pages.dev/paper309.pdf",
+          "document_id": "paper309",
+          "chunk_id": "2cab8a2400378b1adb848c9b3dfd048f78e9f145d659b5fcc0f08e6e75d37754",
+          "page": 8,
+          "track": "JOKER: Humor Detection, Search, and Translation",
+          "filename": "paper309.pdf",
+          "title": "Testing LLMs on JOKER Task 3: Onomastic Wordplay Translation and Task 4: Humour Generation. UBO at CLEF 2026",
+          "proceedings_pages": "4237-4245",
+          "start_char": 2325,
+          "id": "2cab8a2400378b1adb848c9b3dfd048f78e9f145d659b5fcc0f08e6e75d37754",
+          "text": ". Since each instance was assessed by a single annotator, the manual evaluation may be affected by subjective judgments. Future work will investigate prompt optimization techniques, including multi-step prompting and self-refinement, as well as extend our study to additional types of humour and wordplay and specialized evaluation methods for computational humour. Acknowledgments We thank the track and task organizers for their amazing service and effort in making realistic benchmarks available for analyzing and processing humorous text. This project is funded by the National Research Agency (ANR-19-GURE-0001) under the program “Investissements d’avenir” integrated into France 2030. Declaration on Generative AI During the preparation of this work, the authors usedChatGPTandGrammarlyin order to:Grammar and spelling checkandParaphrase and reword. After using these tools/services, the authors reviewed and edited the content as needed and take full responsibility for the publication’s content. References [1] L. Ermakova, et al., Overview of the CLEF 2026 JOKER track: Humor detection, search, and translation, in: M. Hagen, M. Potthast, B. Stein, P. Schaer, E. Zangerle, S. MacAvaney, J. M. Struß, E. Sánchez Salido, A. Barrón Cedeño, A. García Seco de Herrera (Eds.), Experimental IR Meets Multilinguality, Multimodality, and Interaction",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "end_char": 1259,
+          "title": "SynapFlow at BioASQ@CLEF 2026: Retrieval-Augmented Generation with Diversity-Enhanced Hybrid Retrieval",
+          "url": "https://clef-staging.pages.dev/paper18.pdf",
+          "page": 7,
+          "proceedings_pages": "309-329",
+          "start_char": 0,
+          "document_id": "paper18",
+          "filename": "paper18.pdf",
+          "chunk_id": "da32c5552a643785c43d29978e89812f07490b7ceb9c1e5bfdce65b1dfb74f5e",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "id": "da32c5552a643785c43d29978e89812f07490b7ceb9c1e5bfdce65b1dfb74f5e",
+          "text": "3.4.4. Hybrid Retrieval We use a hybrid retrieval technique, dense semantic retrieval (FAISS) plus sparse lexical retrieval (BM25) [2]. The rationale behind using both search techniques is that, for some questions, the key entities may appear heavily in many documents, facilitating an exact match, but for others, the exact-matched document might exist but may not contain many of the query’s keywords. With BM25 alone, these documents will be discarded, but with FAISS plus BM25, both semantically related documents and documents with exact keywords from the query are considered. The final score is the alpha-weighted sum of the scores from FAISS and BM25, as shown in the equation below. 𝛼·𝑠 dense(𝑑) + (1−𝛼)·𝑠 sparse(𝑑)(4) In this system, we retrieve the top 100 documents using FAISS and the top 100 using BM25. After combining both, we select the top 50 documents. 3.5. Documents re-ranking Re-ranking is implemented by a cross-encoder model (pritamdeka/S-PubMedBert-MS-MARCO) [2]. It takes the input query and all 50 candidate documents, jointly scores each query-document pair, replaces each document’s score with the re-ranking score, and sorts the documents in descending order. The top 10 documents are selected for the extraction of snippets. 3.6",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "abstention_pass": true,
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "Insufficient evidence; no future prediction presented as fact.",
+      "elapsed_seconds": 13.57
+    },
+    {
+      "id": "unsupported-3",
+      "category": "unsupported",
+      "question": "How many papers use retrieval-augmented generation?",
+      "kind": "unsupported",
+      "answer": "Counting methods or results across the corpus requires a full-corpus classification pass. I can find cited examples, but cannot provide an exhaustive count from passage search.",
+      "sources": [],
+      "abstention_pass": true,
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "Cannot give an exhaustive method count from top-k retrieval; offer cited examples.",
+      "elapsed_seconds": 0.001
+    },
+    {
+      "id": "unsupported-4",
+      "category": "unsupported",
+      "question": "What private reviewer scores were assigned to paper6?",
+      "kind": "content",
+      "answer": "I don't have enough evidence in the available corpus to answer this question.",
+      "sources": [],
+      "supported": false,
+      "chat_model": "gemma3:12b",
+      "chat_digest": "f4031aab637d1ffa37b42570452ae0e4fad0314754d17ded67322e4b95836f8a",
+      "retrieved_sources": [
+        {
+          "title": "Retrieval-Bound Generation: Lean RAG pipelines for Biomedical QA",
+          "start_char": 0,
+          "document_id": "paper6",
+          "url": "https://clef-staging.pages.dev/paper6.pdf",
+          "filename": "paper6.pdf",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "chunk_id": "1aede7238bdd439cb25eb8372936252161c5577bb311765bcb243e0e089f82a3",
+          "page": 1,
+          "end_char": 1300,
+          "proceedings_pages": "123-145",
+          "id": "1aede7238bdd439cb25eb8372936252161c5577bb311765bcb243e0e089f82a3",
+          "text": "Retrieval-Bound Generation: Lean RAG pipelines for Biomedical QA Notebook for the BioASQ Lab at CLEF 2026. Diogo M. C.Antunes1,∗, Paulo R. C.Lopes1 and Francisco M.Couto1 1LASIGE, Departamento de Informática, Faculdade de Ciências, Universidade de Lisboa, 1749-016 Lisboa, Portugal Abstract Biomedical question answering requires retrieving relevant evidence from large literature collections and generating accurate answers grounded in the retrieved evidence, a task made challenging by the scale of PubMed and the characteristics of biomedical terminology. In this work we describe our participation in BioASQ Task 14b, covering all three phases of the challenge (A, A+, and B), with a focus on lean, locally deployable Retrieval-Augmented Generation. We developed four retrieval pipeline variants that share a common query expansion, snippet extraction, and cross-encoder re-ranking stage, differing in their retrieval strategy: sparse-only, sparse-dense hybrid, dense pseudo-relevance feedback, and a cross-encoder ensemble. For answer generation, we used lean and instruction-tuned large language models under a few-shot prompting strategy with a few-pass inference scheme, in which an exact answer is generated first and then used to condition a more comprehensive ideal natural language answer",
+          "source_id": "S1",
+          "rank": 1
+        },
+        {
+          "url": "https://clef-staging.pages.dev/paper6.pdf",
+          "end_char": 2202,
+          "start_char": 987,
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "title": "Retrieval-Bound Generation: Lean RAG pipelines for Biomedical QA",
+          "chunk_id": "c02fbb023620750a2772c48c80819da07b85bf2cde74fb4d3adfa9af29f21877",
+          "document_id": "paper6",
+          "filename": "paper6.pdf",
+          "page": 11,
+          "proceedings_pages": "123-145",
+          "id": "c02fbb023620750a2772c48c80819da07b85bf2cde74fb4d3adfa9af29f21877",
+          "text": ". The ideal answers, are evaluated automatically with ROUGE-2 and ROUGE-SU4 against the gold-standard answers, complemented by manual scoring from the biomedical experts. However, according to the BioASQ team, the official and final scores for Phase B and Phase A+ are based solely on manual evaluation, while the automatic metrics based on ROUGE are presented as preliminary results that may not perfectly align with human judgment [25]. 4. Results In this section we report official BioASQ preliminary scores across all three phases. Due to a temporary infrastructure outage at our institution, we were unable to submit results for batch 1 of Phases A+ and B, results for those phases therefore begin at batch 2. In Phase A, the five systems were introduced incrementally across batches as the development of this work progressed. 4.1. Phase A: Document and Snippet Retrieval Document and snippet retrieval results are reported in Tables1 and 2, respectively. In batch 1, the hybrid pipelines (lean_rag and lean_rag_ft) perform around the submission median for document MAP (0.169 vs. a median of 0.170), whereas in batch 2 they clearly exceed it (0.179 vs. 0.147), withlean_rag_ft ranking 20th of all submissions",
+          "source_id": "S2",
+          "rank": 2
+        },
+        {
+          "proceedings_pages": "123-145",
+          "url": "https://clef-staging.pages.dev/paper6.pdf",
+          "start_char": 2367,
+          "title": "Retrieval-Bound Generation: Lean RAG pipelines for Biomedical QA",
+          "track": "BioASQ: A Challenge on Large-Scale Biomedical Semantic Indexing and Question Answering",
+          "document_id": "paper6",
+          "end_char": 2920,
+          "filename": "paper6.pdf",
+          "chunk_id": "154db12d1501964184328f4eed6f944a9a8427d26c6ed02db1c1b58783236a71",
+          "page": 16,
+          "id": "154db12d1501964184328f4eed6f944a9a8427d26c6ed02db1c1b58783236a71",
+          "text": ". This indicates that additional in-context examples helped mainly on the structured factoid and list outputs rather than uniformly across question types. In batch 4, the 0-shot variant produced the highest ROUGE scores under the newly introduced Gemma-4 model, possibly because the absence of in-context examples let the model generate morefluently, producingtextthatoverlapsmorewiththereferenceidealanswers. Asmentioned for Phase A+, these observations rest on automatic metrics and may not align with the manual scores assigned by the BioASQ experts.",
+          "source_id": "S3",
+          "rank": 3
+        }
+      ],
+      "abstention_pass": true,
+      "manual_review": "Pending: verify factual claims and page support against expected_answer.",
+      "expected_answer": "Insufficient evidence for private reviewer scores.",
+      "elapsed_seconds": 10.256
+    }
+  ],
+  "summary": {
+    "cases_run": 20,
+    "errors": 0,
+    "retrieval_passed": 12,
+    "retrieval_eligible": 12,
+    "retrieval_checked": 12,
+    "retrieval_metrics": {
+      "1": {
+        "precision": 1.0,
+        "recall": 0.9166666666666666,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "map": 0.9166666666666666,
+        "ndcg": 1.0
+      },
+      "3": {
+        "precision": 0.38888888888888884,
+        "recall": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "map": 1.0,
+        "ndcg": 1.0
+      },
+      "6": {
+        "precision": 0.19444444444444442,
+        "recall": 1.0,
+        "hit_rate": 1.0,
+        "mrr": 1.0,
+        "map": 1.0,
+        "ndcg": 1.0
+      }
+    },
+    "catalog_passed": 4,
+    "abstention_passed": 4,
+    "answerable_questions_supported": 12,
+    "manual_claim_review": "Required; automatic checks do not establish factual correctness.",
+    "retrieval_unscored": 0
+  }
+}

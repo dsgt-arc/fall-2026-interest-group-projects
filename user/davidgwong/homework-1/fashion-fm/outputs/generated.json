@@ -1,0 +1,282 @@
+[
+  {
+    "index": 0,
+    "prompt": "t-shirt/top",
+    "label": 0,
+    "class": "t-shirt/top",
+    "file": "outputs/generated/0000-t-shirt-top.png"
+  },
+  {
+    "index": 1,
+    "prompt": "t-shirt/top",
+    "label": 0,
+    "class": "t-shirt/top",
+    "file": "outputs/generated/0001-t-shirt-top.png"
+  },
+  {
+    "index": 2,
+    "prompt": "t-shirt/top",
+    "label": 0,
+    "class": "t-shirt/top",
+    "file": "outputs/generated/0002-t-shirt-top.png"
+  },
+  {
+    "index": 3,
+    "prompt": "t-shirt/top",
+    "label": 0,
+    "class": "t-shirt/top",
+    "file": "outputs/generated/0003-t-shirt-top.png"
+  },
+  {
+    "index": 4,
+    "prompt": "trouser",
+    "label": 1,
+    "class": "trouser",
+    "file": "outputs/generated/0004-trouser.png"
+  },
+  {
+    "index": 5,
+    "prompt": "trouser",
+    "label": 1,
+    "class": "trouser",
+    "file": "outputs/generated/0005-trouser.png"
+  },
+  {
+    "index": 6,
+    "prompt": "trouser",
+    "label": 1,
+    "class": "trouser",
+    "file": "outputs/generated/0006-trouser.png"
+  },
+  {
+    "index": 7,
+    "prompt": "trouser",
+    "label": 1,
+    "class": "trouser",
+    "file": "outputs/generated/0007-trouser.png"
+  },
+  {
+    "index": 8,
+    "prompt": "pullover",
+    "label": 2,
+    "class": "pullover",
+    "file": "outputs/generated/0008-pullover.png"
+  },
+  {
+    "index": 9,
+    "prompt": "pullover",
+    "label": 2,
+    "class": "pullover",
+    "file": "outputs/generated/0009-pullover.png"
+  },
+  {
+    "index": 10,
+    "prompt": "pullover",
+    "label": 2,
+    "class": "pullover",
+    "file": "outputs/generated/0010-pullover.png"
+  },
+  {
+    "index": 11,
+    "prompt": "pullover",
+    "label": 2,
+    "class": "pullover",
+    "file": "outputs/generated/0011-pullover.png"
+  },
+  {
+    "index": 12,
+    "prompt": "dress",
+    "label": 3,
+    "class": "dress",
+    "file": "outputs/generated/0012-dress.png"
+  },
+  {
+    "index": 13,
+    "prompt": "dress",
+    "label": 3,
+    "class": "dress",
+    "file": "outputs/generated/0013-dress.png"
+  },
+  {
+    "index": 14,
+    "prompt": "dress",
+    "label": 3,
+    "class": "dress",
+    "file": "outputs/generated/0014-dress.png"
+  },
+  {
+    "index": 15,
+    "prompt": "dress",
+    "label": 3,
+    "class": "dress",
+    "file": "outputs/generated/0015-dress.png"
+  },
+  {
+    "index": 16,
+    "prompt": "coat",
+    "label": 4,
+    "class": "coat",
+    "file": "outputs/generated/0016-coat.png"
+  },
+  {
+    "index": 17,
+    "prompt": "coat",
+    "label": 4,
+    "class": "coat",
+    "file": "outputs/generated/0017-coat.png"
+  },
+  {
+    "index": 18,
+    "prompt": "coat",
+    "label": 4,
+    "class": "coat",
+    "file": "outputs/generated/0018-coat.png"
+  },
+  {
+    "index": 19,
+    "prompt": "coat",
+    "label": 4,
+    "class": "coat",
+    "file": "outputs/generated/0019-coat.png"
+  },
+  {
+    "index": 20,
+    "prompt": "sandal",
+    "label": 5,
+    "class": "sandal",
+    "file": "outputs/generated/0020-sandal.png"
+  },
+  {
+    "index": 21,
+    "prompt": "sandal",
+    "label": 5,
+    "class": "sandal",
+    "file": "outputs/generated/0021-sandal.png"
+  },
+  {
+    "index": 22,
+    "prompt": "sandal",
+    "label": 5,
+    "class": "sandal",
+    "file": "outputs/generated/0022-sandal.png"
+  },
+  {
+    "index": 23,
+    "prompt": "sandal",
+    "label": 5,
+    "class": "sandal",
+    "file": "outputs/generated/0023-sandal.png"
+  },
+  {
+    "index": 24,
+    "prompt": "shirt",
+    "label": 6,
+    "class": "shirt",
+    "file": "outputs/generated/0024-shirt.png"
+  },
+  {
+    "index": 25,
+    "prompt": "shirt",
+    "label": 6,
+    "class": "shirt",
+    "file": "outputs/generated/0025-shirt.png"
+  },
+  {
+    "index": 26,
+    "prompt": "shirt",
+    "label": 6,
+    "class": "shirt",
+    "file": "outputs/generated/0026-shirt.png"
+  },
+  {
+    "index": 27,
+    "prompt": "shirt",
+    "label": 6,
+    "class": "shirt",
+    "file": "outputs/generated/0027-shirt.png"
+  },
+  {
+    "index": 28,
+    "prompt": "sneaker",
+    "label": 7,
+    "class": "sneaker",
+    "file": "outputs/generated/0028-sneaker.png"
+  },
+  {
+    "index": 29,
+    "prompt": "sneaker",
+    "label": 7,
+    "class": "sneaker",
+    "file": "outputs/generated/0029-sneaker.png"
+  },
+  {
+    "index": 30,
+    "prompt": "sneaker",
+    "label": 7,
+    "class": "sneaker",
+    "file": "outputs/generated/0030-sneaker.png"
+  },
+  {
+    "index": 31,
+    "prompt": "sneaker",
+    "label": 7,
+    "class": "sneaker",
+    "file": "outputs/generated/0031-sneaker.png"
+  },
+  {
+    "index": 32,
+    "prompt": "bag",
+    "label": 8,
+    "class": "bag",
+    "file": "outputs/generated/0032-bag.png"
+  },
+  {
+    "index": 33,
+    "prompt": "bag",
+    "label": 8,
+    "class": "bag",
+    "file": "outputs/generated/0033-bag.png"
+  },
+  {
+    "index": 34,
+    "prompt": "bag",
+    "label": 8,
+    "class": "bag",
+    "file": "outputs/generated/0034-bag.png"
+  },
+  {
+    "index": 35,
+    "prompt": "bag",
+    "label": 8,
+    "class": "bag",
+    "file": "outputs/generated/0035-bag.png"
+  },
+  {
+    "index": 36,
+    "prompt": "ankle boot",
+    "label": 9,
+    "class": "ankle boot",
+    "file": "outputs/generated/0036-ankle boot.png"
+  },
+  {
+    "index": 37,
+    "prompt": "ankle boot",
+    "label": 9,
+    "class": "ankle boot",
+    "file": "outputs/generated/0037-ankle boot.png"
+  },
+  {
+    "index": 38,
+    "prompt": "ankle boot",
+    "label": 9,
+    "class": "ankle boot",
+    "file": "outputs/generated/0038-ankle boot.png"
+  },
+  {
+    "index": 39,
+    "prompt": "ankle boot",
+    "label": 9,
+    "class": "ankle boot",
+    "file": "outputs/generated/0039-ankle boot.png"
+  }
+]

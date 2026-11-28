@@ -8,7 +8,7 @@ training:
   output_dir: outputs/fashion-fm
 
   # Full passes over the dataset; increase for convergence or reduce for faster trials; recommended range: 10-200.
-  epochs: 1
+  epochs: 100
 
   # Images processed per optimizer step; tune for memory use and throughput; recommended range: 32-512.
   batch_size: 256

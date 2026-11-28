@@ -26,8 +26,14 @@ cd "${SLURM_SUBMIT_DIR:-$PWD}"
 
 uv sync --locked
 
+uv run fashion-fm train --config configs/train.yml
+
+uv run fashion-fm generate
+
+exit 0
+
 # Make sure to use exec for the job to automatically stop!
-exec uv run fashion-fm train --config configs/train.yml
+# exec uv run fashion-fm train --config configs/train.yml
 
 # to run with profiling, using the following below
 

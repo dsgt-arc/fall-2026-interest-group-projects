@@ -41,6 +41,7 @@ def overlaps(left, right):
 class Retriever:
     def __init__(self, index, models):
         self.index, self.models = index, models
+        self.max_candidates = 20
 
     def search(self, question, *, track=None, author=None, paper_ids=None, top_k=6):
         store = self.index.vectorstore(self.models)
@@ -73,7 +74,7 @@ class Retriever:
                 )
                 for paper_id in paper_ids
             ]
-            ranked = [group[i] for i in range(20) for group in groups if len(group) > i]
+            ranked = [group[i] for i in range(self.max_candidates) for group in groups if len(group) > i]
         else:
             ranked = self._rank(question, store, chunks)
         leading_ids = paper_ids or (
@@ -106,15 +107,43 @@ class Retriever:
         ids = sorted({d.metadata["document_id"] for d in documents})
         semantic = store.as_retriever(
             search_kwargs={
-                "k": min(20, len(documents)),
+                "k": min(self.max_candidates, len(documents)),
                 "filter": {"document_id": {"$in": ids}},
             }
         )
         lexical = BM25Retriever.from_documents(
-            documents, k=min(20, len(documents)), preprocess_func=lexical_tokens
+            documents, k=min(self.max_candidates, len(documents)), preprocess_func=lexical_tokens
         )
         ensemble = EnsembleRetriever(
             retrievers=[semantic, lexical], weights=[0.5, 0.5], c=60, id_key="chunk_id"
+        )
+        try:
+            with tracing_context(enabled=False):
+                return ensemble.invoke(question)
+        except Exception as exc:
+            raise RagError(f"LangChain retrieval failed: {exc}") from exc
+
+class WeightedRetriever(Retriever):
+    def __init__(self, index, models, weights=(0.5, 0.5), max_candidates=20):
+        super().__init__(index, models)
+        self.weights = weights
+        self.max_candidates = max_candidates
+
+    def _rank(self, question, store, documents):
+        if not documents:
+            return []
+        ids = sorted({d.metadata["document_id"] for d in documents})
+        semantic = store.as_retriever(
+            search_kwargs={
+                "k": min(self.max_candidates, len(documents)),
+                "filter": {"document_id": {"$in": ids}},
+            }
+        )
+        lexical = BM25Retriever.from_documents(
+            documents, k=min(self.max_candidates, len(documents)), preprocess_func=lexical_tokens
+        )
+        ensemble = EnsembleRetriever(
+            retrievers=[semantic, lexical], weights=list(self.weights), c=60, id_key="chunk_id"
         )
         try:
             with tracing_context(enabled=False):

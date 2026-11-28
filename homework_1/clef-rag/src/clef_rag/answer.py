@@ -5,7 +5,7 @@ import re
 
 from clef_rag.catalog import list_documents, normalized, resolve_papers, stats
 from clef_rag.config import RagError
-from clef_rag.retrieve import Retriever
+from clef_rag.retrieve import Retriever, WeightedRetriever
 
 ROUTE_SCHEMA = {
     "type": "object",
@@ -419,7 +419,7 @@ def generate_answer(question, sources, models, *, _feedback=None):
     }
 
 
-def ask(index, models, question, *, track=None, author=None, paper_refs=None):
+def ask(index, models, question, *, track=None, author=None, paper_refs=None, retriever_weights=(0.5, 0.5), top_k=6, max_candidates=20):
     refs = list(paper_refs or []) + paper_references(question, index.db)
     paper_ids = resolve_papers(index.db, refs) if refs else None
     route = route_question(question, index.db, models)
@@ -435,8 +435,8 @@ def ask(index, models, question, *, track=None, author=None, paper_refs=None):
         return catalog_answer(
             index, route["operation"], track, author, route.get("title"), paper_ids
         )
-    sources = Retriever(index, models).search(
-        question, track=track, author=author, paper_ids=paper_ids
+    sources = WeightedRetriever(index, models, retriever_weights, max_candidates).search(
+        question, track=track, author=author, paper_ids=paper_ids, top_k=top_k
     )
     result = generate_answer(question, sources, models)
     result["chat_model"] = models.chat_model
